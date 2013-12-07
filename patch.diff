@@ -1,0 +1,16 @@
+diff --git a/includes/Preferences.php b/includes/Preferences.php
+index c9caf4f..9097a9a 100644
+--- a/includes/Preferences.php
++++ b/includes/Preferences.php
+@@ -1462,7 +1462,10 @@ class Preferences {
+ 				$user->setOption( $key, $value );
+ 			}
+ 
+-			$user->saveSettings();
++			if ( wfRunHooks( 'PreferencesFormSubmit', array( $formData, $form, $user, &$result ) ) ) {
++				$user->saveSettings();
++			}
++
+ 		}
+ 
+ 		$wgAuth->updateExternalDB( $user );
