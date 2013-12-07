@@ -54,6 +54,21 @@ class GlobalPreferences {
 	}
 
 	/**
+	 * Deletes all of a user's settings
+	 * Assumes that the user is globalized
+	 * @param User $user
+	 */
+	public static function resetUserSettings( User $user ) {
+		if ( count( $user->mGlobalPrefs ) ) {
+			self::getPrefsDB( DB_MASTER )->delete(
+				'global_preferences',
+				array( 'gp_user' => self::getUserID( $user ) ),
+				__METHOD__
+			);
+		}
+	}
+
+	/**
 	 * Convenience function to check if we're on the global
 	 * prefs page
 	 * @param IContextSource $context

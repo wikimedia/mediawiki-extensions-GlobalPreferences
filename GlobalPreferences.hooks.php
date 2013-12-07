@@ -130,7 +130,8 @@ class GlobalPreferencesHooks {
 
 		}
 
-		// FIXME: We should clear a user's existing global preferences first
+		// Reset preferences, and then save new ones
+		GlobalPreferences::resetUserSettings( $user );
 		if ( $rows ) {
 			$dbw = GlobalPreferences::getPrefsDB( DB_MASTER );
 			$dbw->replace(

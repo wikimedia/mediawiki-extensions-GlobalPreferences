@@ -25,13 +25,7 @@ class SpecialGlobalPreferences extends SpecialPreferences {
 			throw new PermissionsError( 'editmyoptions' );
 		}
 
-		$dbw = GlobalPreferences::getPrefsDB( DB_MASTER );
-		$id = GlobalPreferences::getUserID( $this->getUser() );
-		$dbw->delete(
-			'global_preferences',
-			array( 'gp_user' => $id ),
-			__METHOD__
-		);
+		GlobalPreferences::resetUserSettings( $this->getUser() );
 
 		$url = $this->getTitle()->getFullURL( 'success' );
 
