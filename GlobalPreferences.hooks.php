@@ -152,6 +152,10 @@ class GlobalPreferencesHooks {
 	}
 
 	public static function onGetPreferences( User $user, &$prefs ) {
+		if ( !GlobalPreferences::isUserGlobalized( $user ) ) {
+			return true;
+		}
+
 		if ( GlobalPreferences::onGlobalPrefsPage() ) {
 			if ( !isset( $user->mGlobalPrefs ) ) {
 				// Just in case the user hasn't been loaded yet.
@@ -199,7 +203,21 @@ class GlobalPreferencesHooks {
 
 				}
 			}
+		}
 
+		// Provide a link to Special:GlobalPreferences
+		// if we're not on that page.
+		if ( !GlobalPreferences::onGlobalPrefsPage() ) {
+			$prefs['global-info'] = array(
+				'type' => 'info',
+				'section' => 'personal/info',
+				'label-message' => 'globalprefs-info-label',
+				'raw' => true,
+				'default' => Linker::link(
+					SpecialPage::getTitleFor( 'GlobalPreferences' ),
+					wfMessage( 'globalprefs-info-link' )->escaped()
+				),
+			);
 		}
 
 		return true;

@@ -12,6 +12,8 @@ $messages['en'] = array(
 	'globalprefs-error-header' => 'Error',
 	'globalprefs-notglobal' => 'Your account is not a global account and cannot set global preferences.',
 	'globalpreferences' => 'Global preferences',
+	'globalprefs-info-label' => 'Global preferences:',
+	'globalprefs-info-link' => 'Set your global preferences',
 );
 
 /** Message documentation (Message documentation)
@@ -26,4 +28,7 @@ $messages['qqq'] = array(
 {{Identical|error}}',
 	'globalprefs-notglobal' => 'Error message a user sees if they don not have a global account.',
 	'globalpreferences' => '{{doc-special|GlobalPreferences}}',
+	'globalprefs-info-label' => 'Label for link in Special:Preferences to go set your global preferences',
+	'globalprefs-info-link' => 'Link text to Special:GlobalPreferences',
+
 );
