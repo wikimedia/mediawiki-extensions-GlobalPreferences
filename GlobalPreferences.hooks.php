@@ -107,7 +107,7 @@ class GlobalPreferencesHooks {
 		$prefs = array();
 		foreach ( $formData as $name => $value ) {
 			if ( substr( $name, -strlen( 'global' ) ) === 'global' && $value === true ) {
-				$realName = rtrim( $name, '-global' );
+				$realName = substr( $name, 0, -strlen( '-global' ) );
 				if ( isset( $formData[$realName] ) && !in_array( $realName, self::$badPrefs ) ) {
 					$prefs[$realName] = $formData[$realName];
 				} else {
