@@ -32,6 +32,20 @@ $messages['qqq'] = array(
 	'globalprefs-info-link' => 'Link text to [[Special:GlobalPreferences]].',
 );
 
+/** Bengali (বাংলা)
+ * @author Aftab1995
+ */
+$messages['bn'] = array(
+	'globalprefs-desc' => 'ব্যবহারকারীদের গ্লোবাল পছন্দগুলি নির্ধারণ করার অনুমতি দেয়',
+	'globalprefs-set-globally' => 'এই পছন্দগুলি গ্লোব্যালি নির্ধারিত হয়েছে এবং [[Special:GlobalPreferences|আপনার গ্লোবাল পছন্দগুলির]] মাধ্যমে পরিবর্তন করা আবশ্যক।',
+	'globalprefs-check-label' => 'সব উইকিগুলোতে এই পছন্দসমূহ ব্যবহার করো',
+	'globalprefs-error-header' => 'ত্রুটি',
+	'globalprefs-notglobal' => 'আপনার অ্যাকাউন্ট একটি গ্লোবাল অ্যাকাউন্ট নয় এবং গ্লোবাল পছন্দসমূহ নির্ধারণ করতে পারবেন না।',
+	'globalpreferences' => 'গ্লোবাল পছন্দসমূহ',
+	'globalprefs-info-label' => 'গ্লোবাল পছন্দসমূহ:',
+	'globalprefs-info-link' => 'আপনার গ্লোবাল পছন্দগুলি নির্ধারণ করুন',
+);
+
 /** Welsh (Cymraeg)
  * @author Cymrodor
  */
@@ -102,7 +116,7 @@ $messages['it'] = array(
 $messages['ja'] = array(
 	'globalprefs-desc' => '利用者がグローバル個人設定を使用できるようにする',
 	'globalprefs-set-globally' => 'この個人設定はグローバルに適用されます。[[Special:GlobalPreferences|グローバル個人設定]]ページで変更するようにください。',
-	'globalprefs-check-label' => '上記の設定をすべてのウィキで使用する。',
+	'globalprefs-check-label' => '上記の設定をすべてのウィキで使用する',
 	'globalprefs-error-header' => 'エラー',
 	'globalprefs-notglobal' => 'あなたのアカウントはグローバル アカウントではないため、グローバル個人設定を使用できません。',
 	'globalpreferences' => 'グローバル個人設定',
@@ -124,6 +138,20 @@ $messages['lb'] = array(
 	'globalprefs-info-link' => 'Är global Astellunge festleeën',
 );
 
+/** Polish (polski)
+ * @author Chrumps
+ */
+$messages['pl'] = array(
+	'globalprefs-desc' => 'Pozwala użytkownikom ustawiać preferencje globalne',
+	'globalprefs-set-globally' => 'Ta preferencja została ustawiona jako globalna i może być zmieniona tylko w [[Special:GlobalPreferences|preferencjach globalnych]].',
+	'globalprefs-check-label' => 'Użyj tych preferencji na wszystkich wiki',
+	'globalprefs-error-header' => 'Błąd',
+	'globalprefs-notglobal' => 'Twoje konto nie jest uniwersalne i nie można ustawić preferencji globalnych.',
+	'globalpreferences' => 'Preferencje globalne',
+	'globalprefs-info-label' => 'Preferencje globalne:',
+	'globalprefs-info-link' => 'Ustaw swoje preferencje globalne',
+);
+
 /** Russian (русский)
  * @author Okras
  */
@@ -138,10 +166,21 @@ $messages['ru'] = array(
 	'globalprefs-info-link' => 'Установите свои глобальные настройки',
 );
 
+/** Sinhala (සිංහල)
+ * @author පසිඳු කාවින්ද
+ */
+$messages['si'] = array(
+	'globalprefs-error-header' => 'දෝෂය',
+);
+
 /** Swedish (svenska)
+ * @author Jopparn
  * @author Tobulos1
  */
 $messages['sv'] = array(
+	'globalprefs-desc' => 'Tillåter användare att ange globala inställningar',
+	'globalprefs-set-globally' => 'Den här inställningen har fastställts globalt och måste ändras genom [[Special:GlobalPreferences|dina globala inställningar]].',
+	'globalprefs-check-label' => 'Använd den här inställningen på alla wikier',
 	'globalprefs-error-header' => 'Fel',
 	'globalprefs-notglobal' => 'Ditt konto är inte ett globalt konto och kan inte ange globala inställningar.',
 	'globalpreferences' => 'Globala inställningar',
@@ -182,17 +221,20 @@ $messages['uk'] = array(
  */
 $messages['yi'] = array(
 	'globalprefs-error-header' => 'גרײַז',
+	'globalpreferences' => 'גלאבלע פרעפערענצן',
+	'globalprefs-info-link' => 'שטעלן אייער גלאבאלע פרעפערענצן',
 );
 
 /** Simplified Chinese (中文（简体）‎)
  * @author Liuxinyu970226
+ * @author Yfdyh000
  */
 $messages['zh-hans'] = array(
 	'globalprefs-desc' => '允许用户设置全局设置项',
 	'globalprefs-set-globally' => '此设置已被设定为全局设置，因此必须前往[[Special:GlobalPreferences|您的全局设置页]]设置。',
 	'globalprefs-check-label' => '在全部wiki使用此设置。',
 	'globalprefs-error-header' => '错误',
-	'globalprefs-notglobal' => '您的账户不是全局账户因此不能设置全局设置项。',
+	'globalprefs-notglobal' => '您的账户不是一个全局账户，因此不能设置全局设置项。',
 	'globalpreferences' => '全局设置',
 	'globalprefs-info-label' => '全局设置：',
 	'globalprefs-info-link' => '设置您的全局设置项',
