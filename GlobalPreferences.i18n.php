@@ -53,6 +53,20 @@ $messages['cy'] = array(
 	'globalprefs-error-header' => 'Gwall',
 );
 
+/** Danish (dansk)
+ * @author Christian List
+ */
+$messages['da'] = array(
+	'globalprefs-desc' => 'Giver brugerne mulighed for at angive globale indstillinger',
+	'globalprefs-set-globally' => 'Denne indstilling er angivet globalt og skal ændres gennem [[Special: GlobalPreferences|dine globale indstillinger]].', # Fuzzy
+	'globalprefs-check-label' => 'Brug denne indstilling på alle wikier',
+	'globalprefs-error-header' => 'Fejl',
+	'globalprefs-notglobal' => 'Din konto er ikke en global konto og kan ikke angive globale indstillinger.',
+	'globalpreferences' => 'Globale indstillinger',
+	'globalprefs-info-label' => 'Globale indstillinger:',
+	'globalprefs-info-link' => 'Angiv din globale indstillinger',
+);
+
 /** German (Deutsch)
  * @author Metalhead64
  */
@@ -65,6 +79,20 @@ $messages['de'] = array(
 	'globalpreferences' => 'Globale Einstellungen',
 	'globalprefs-info-label' => 'Globale Einstellungen:',
 	'globalprefs-info-link' => 'Deine globalen Einstellungen festlegen',
+);
+
+/** Finnish (suomi)
+ * @author Stryn
+ */
+$messages['fi'] = array(
+	'globalprefs-desc' => 'Antaa käyttäjien asettaa järjestelmänlaajuiset asetukset',
+	'globalprefs-set-globally' => 'Nämä asetukset on asetettu järjestelmänlaajuisesti, ja niitä täytyy muokata [[Special:GlobalPreferences|järjestelmänlaajuisista asetuksistasi]].',
+	'globalprefs-check-label' => 'Käytä näitä asetuksia kaikissa wikeissä',
+	'globalprefs-error-header' => 'Virhe',
+	'globalprefs-notglobal' => 'Tunnuksesi ei ole järjestelmänlaajuinen tunnus, joten siihen ei voi asettaa järjestelmänlaajuisia asetuksia.',
+	'globalpreferences' => 'Järjestelmänlaajuiset asetukset',
+	'globalprefs-info-label' => 'Järjestelmänlaajuiset asetukset:',
+	'globalprefs-info-link' => 'Aseta järjestelmänlaajuiset asetuksesi',
 );
 
 /** French (français)
@@ -138,6 +166,19 @@ $messages['lb'] = array(
 	'globalprefs-info-link' => 'Är global Astellunge festleeën',
 );
 
+/** Dutch (Nederlands)
+ * @author Siebrand
+ */
+$messages['nl'] = array(
+	'globalprefs-desc' => 'Maakt het mogelijk voor gebruikers om globale voorkeuren in te stellen',
+	'globalprefs-check-label' => "Deze voorkeur op alle wiki's gebruiken",
+	'globalprefs-error-header' => 'Fout',
+	'globalprefs-notglobal' => 'Uw gebruiker is geen globale gebruiker en deze kan geen globale voorkeuren instellen.',
+	'globalpreferences' => 'Globale voorkeuren',
+	'globalprefs-info-label' => 'Globale voorkeuren:',
+	'globalprefs-info-link' => 'Globale voorkeuren instellen',
+);
+
 /** Polish (polski)
  * @author Chrumps
  */
@@ -150,6 +191,19 @@ $messages['pl'] = array(
 	'globalpreferences' => 'Preferencje globalne',
 	'globalprefs-info-label' => 'Preferencje globalne:',
 	'globalprefs-info-link' => 'Ustaw swoje preferencje globalne',
+);
+
+/** Pashto (پښتو)
+ * @author Ahmed-Najib-Biabani-Ibrahimkhel
+ */
+$messages['ps'] = array(
+	'globalprefs-desc' => 'کارنان پرېږدي چې خپل نړېوال غورتوبونه وټاکي',
+	'globalprefs-check-label' => 'دا غوره توبونه په ټولو ويکي گانو کارول',
+	'globalprefs-error-header' => 'تېروتنه',
+	'globalprefs-notglobal' => 'ستاسې گڼون يو نړېوال گڼون نه دی او نه شی کولی چې نړېوال غوره توبونه وټاکۍ',
+	'globalpreferences' => 'نړېوال غوره توبونه',
+	'globalprefs-info-label' => 'نړېوال غوره توبونه:',
+	'globalprefs-info-link' => 'خپل نړېوال غوره توبونه وټاکئ',
 );
 
 /** Russian (русский)
