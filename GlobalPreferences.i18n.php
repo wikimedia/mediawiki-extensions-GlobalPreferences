@@ -32,6 +32,25 @@ $messages['qqq'] = array(
 	'globalprefs-info-link' => 'Link text to [[Special:GlobalPreferences]].',
 );
 
+/** Arabic (العربية)
+ * @author محمد أحمد عبد الفتاح
+ */
+$messages['ar'] = array(
+	'globalprefs-check-label' => 'استخدم هذه التفضيلات على كل الويكيات',
+	'globalprefs-error-header' => 'خطأ',
+);
+
+/** Bulgarian (български)
+ * @author DCLXVI
+ */
+$messages['bg'] = array(
+	'globalprefs-desc' => 'Позволява на потребителите да правят глобални настройки',
+	'globalprefs-check-label' => 'Използване на тази настройка във всички уикита',
+	'globalprefs-error-header' => 'Грешка',
+	'globalpreferences' => 'Глобални настройки',
+	'globalprefs-info-label' => 'Глобални настройки:',
+);
+
 /** Bengali (বাংলা)
  * @author Aftab1995
  */
