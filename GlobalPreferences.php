@@ -28,7 +28,7 @@ $wgExtensionCredits['specialpage'][] = array(
 	'author' => 'Kunal Mehta',
 	'url' => 'https://www.mediawiki.org/wiki/Extension:GlobalPreferences',
 	'descriptionmsg' => 'globalprefs-desc',
-	'version' => '0.0.1',
+	'version' => '0.0.2',
 );
 
 $wgSpecialPages['GlobalPreferences'] = 'SpecialGlobalPreferences';
