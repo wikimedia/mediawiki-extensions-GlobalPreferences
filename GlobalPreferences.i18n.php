@@ -185,6 +185,20 @@ $messages['lb'] = array(
 	'globalprefs-info-link' => 'Är global Astellunge festleeën',
 );
 
+/** Macedonian (македонски)
+ * @author Bjankuloski06
+ */
+$messages['mk'] = array(
+	'globalprefs-desc' => 'Овозможува корисниците да прават глобални нагодувања',
+	'globalprefs-set-globally' => 'Оваа поставка е зададена глобално и може да се менува само преку [[Special:GlobalPreferences|вашите глобални нагодувања]].',
+	'globalprefs-check-label' => 'Користи ја поставката на сите викија',
+	'globalprefs-error-header' => 'Грешка',
+	'globalprefs-notglobal' => 'Сметката не ви е глобална и затоа не можете да задавате глобални нагодувања.',
+	'globalpreferences' => 'Глобални нагодувања',
+	'globalprefs-info-label' => 'Глобални нагодувања:',
+	'globalprefs-info-link' => 'Задај глобални нагодувања',
+);
+
 /** Dutch (Nederlands)
  * @author Siebrand
  */
