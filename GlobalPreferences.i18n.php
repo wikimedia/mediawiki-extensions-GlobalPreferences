@@ -100,6 +100,20 @@ $messages['de'] = array(
 	'globalprefs-info-link' => 'Deine globalen Einstellungen festlegen',
 );
 
+/** Lower Sorbian (dolnoserbski)
+ * @author Michawiki
+ */
+$messages['dsb'] = array(
+	'globalprefs-desc' => 'Zmóžnja wužywarjam póstajanje globalnych nastajenjow',
+	'globalprefs-set-globally' => 'Toś to nastajenje jo se globalnje póstajiło a musy se pśez [[Special:GlobalPreferences|twóje globalne nastajenja]] změniś.',
+	'globalprefs-check-label' => 'Toś to nastajenje we wšych wikijach wužywaś',
+	'globalprefs-error-header' => 'Zmólka',
+	'globalprefs-notglobal' => 'Twójo konto njejo globalne konto a njamóžo globalne nastajenja póstajiś.',
+	'globalpreferences' => 'Globalne nastajenja',
+	'globalprefs-info-label' => 'Globalne nastajenja:',
+	'globalprefs-info-link' => 'Twóje globalne nastajenja póstajiś',
+);
+
 /** Finnish (suomi)
  * @author Stryn
  */
@@ -140,6 +154,20 @@ $messages['he'] = array(
 	'globalpreferences' => 'העדפות גלובליות',
 	'globalprefs-info-label' => 'העדפות גלובליות:',
 	'globalprefs-info-link' => 'הגדרת ההעדפות הגלובליות שלך',
+);
+
+/** Upper Sorbian (hornjoserbsce)
+ * @author Michawiki
+ */
+$messages['hsb'] = array(
+	'globalprefs-desc' => 'Zmóžnja wužiwarjam postajenje globalnych nastajenjow',
+	'globalprefs-set-globally' => 'Tute nastajenje je so globalnje postajiło a dyrbi so přez [[Special:GlobalPreferences|twoje globalne nastajenja]] změnić.',
+	'globalprefs-check-label' => 'Tute nastajenje we wšěch wikijach wužiwać',
+	'globalprefs-error-header' => 'Zmylk',
+	'globalprefs-notglobal' => 'Twoje konto njeje globalne konto a njemóže globalne nastajenja postajić.',
+	'globalpreferences' => 'Globalne nastajenja',
+	'globalprefs-info-label' => 'Globalne nastajenja:',
+	'globalprefs-info-link' => 'Twoje globalne nastajenja postajić',
 );
 
 /** Italian (italiano)
