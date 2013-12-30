@@ -114,6 +114,13 @@ $messages['dsb'] = array(
 	'globalprefs-info-link' => 'Twóje globalne nastajenja póstajiś',
 );
 
+/** Persian (فارسی)
+ * @author Reza1615
+ */
+$messages['fa'] = array(
+	'globalprefs-error-header' => 'خطا',
+);
+
 /** Finnish (suomi)
  * @author Stryn
  */
