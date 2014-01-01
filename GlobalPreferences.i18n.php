@@ -206,6 +206,20 @@ $messages['ja'] = array(
 	'globalprefs-info-link' => 'グローバル個人設定の閲覧と変更',
 );
 
+/** Korean (한국어)
+ * @author Hym411
+ */
+$messages['ko'] = array(
+	'globalprefs-desc' => '사용자가 전역 설정을 할 수 있도록 허용',
+	'globalprefs-set-globally' => '이 환경 설정은 전역적으로 설정되었으며 [[Special:GlobalPreferences|전역 환경 설정]] 특수 문서를 통해 수정되어야 합니다.',
+	'globalprefs-check-label' => '이 설정을 모든 위키에서 사용',
+	'globalprefs-error-header' => '에러',
+	'globalprefs-notglobal' => '당신의 계정은 전역 계정이 아니므로 전역 설정을 할 수 없습니다.',
+	'globalpreferences' => '전역 설정',
+	'globalprefs-info-label' => '전역 설정:',
+	'globalprefs-info-link' => '전역 설정 하기',
+);
+
 /** Luxembourgish (Lëtzebuergesch)
  * @author Robby
  */
