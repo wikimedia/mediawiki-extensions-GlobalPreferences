@@ -77,7 +77,7 @@ $messages['cy'] = array(
  */
 $messages['da'] = array(
 	'globalprefs-desc' => 'Giver brugerne mulighed for at angive globale indstillinger',
-	'globalprefs-set-globally' => 'Denne indstilling er angivet globalt og skal ændres gennem [[Special: GlobalPreferences|dine globale indstillinger]].', # Fuzzy
+	'globalprefs-set-globally' => 'Denne indstilling er angivet globalt og skal ændres gennem [[Special:GlobalPreferences|dine globale indstillinger]].',
 	'globalprefs-check-label' => 'Brug denne indstilling på alle wikier',
 	'globalprefs-error-header' => 'Fejl',
 	'globalprefs-notglobal' => 'Din konto er ikke en global konto og kan ikke angive globale indstillinger.',
@@ -114,20 +114,43 @@ $messages['dsb'] = array(
 	'globalprefs-info-link' => 'Twóje globalne nastajenja póstajiś',
 );
 
+/** Spanish (español)
+ * @author Fitoschido
+ */
+$messages['es'] = array(
+	'globalprefs-desc' => 'Permite a los usuarios establecer preferencias globales',
+	'globalprefs-set-globally' => 'Se ha establecido esta preferencia globalmente. Para modificarla, ve al [[Special:GlobalPreferences|panel de preferencias globales]].',
+	'globalprefs-check-label' => 'Usar esta preferencia en todos los wikis',
+	'globalprefs-error-header' => 'Error',
+	'globalprefs-notglobal' => 'Tu cuenta no es global, no se pueden establecer preferencias globales.',
+	'globalpreferences' => 'Preferencias globales',
+	'globalprefs-info-label' => 'Preferencias globales:',
+	'globalprefs-info-link' => 'Definir las preferencias globales',
+);
+
 /** Persian (فارسی)
+ * @author Armin1392
  * @author Reza1615
  */
 $messages['fa'] = array(
+	'globalprefs-desc' => 'اجازهٔ کاربران برای تنظیم اولویت‌های جهانی',
+	'globalprefs-set-globally' => 'این اولویت به طور جهانی تنظیم شده‌است و باید از طریق [[Special:اولویت‌های جهان|اولویت‌های جهانی شما]] تغییر یابد.', # Fuzzy
+	'globalprefs-check-label' => 'استفاده کردن از این اولویت در همهٔ ویکی‌ها',
 	'globalprefs-error-header' => 'خطا',
+	'globalprefs-notglobal' => 'حساب شما یک حساب جهانی نیست و نمی‌تواند اولویت‌های جهانی تنظیم کند.',
+	'globalpreferences' => 'اولویت‌های جهانی',
+	'globalprefs-info-label' => 'اولویت‌های جهانی:',
+	'globalprefs-info-link' => 'تنظیم اولویت‌های جهانی خود',
 );
 
 /** Finnish (suomi)
+ * @author Nike
  * @author Stryn
  */
 $messages['fi'] = array(
 	'globalprefs-desc' => 'Antaa käyttäjien asettaa järjestelmänlaajuiset asetukset',
 	'globalprefs-set-globally' => 'Nämä asetukset on asetettu järjestelmänlaajuisesti, ja niitä täytyy muokata [[Special:GlobalPreferences|järjestelmänlaajuisista asetuksistasi]].',
-	'globalprefs-check-label' => 'Käytä näitä asetuksia kaikissa wikeissä',
+	'globalprefs-check-label' => 'Käytä tätä asetusta kaikissa wikeissä',
 	'globalprefs-error-header' => 'Virhe',
 	'globalprefs-notglobal' => 'Tunnuksesi ei ole järjestelmänlaajuinen tunnus, joten siihen ei voi asettaa järjestelmänlaajuisia asetuksia.',
 	'globalpreferences' => 'Järjestelmänlaajuiset asetukset',
