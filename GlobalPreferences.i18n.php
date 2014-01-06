@@ -67,9 +67,17 @@ $messages['bn'] = array(
 
 /** Welsh (Cymraeg)
  * @author Cymrodor
+ * @author Lloffiwr
  */
 $messages['cy'] = array(
+	'globalprefs-desc' => 'Yn galluogi defnyddwyr i osod dewisiadau cydwici',
+	'globalprefs-set-globally' => "Mae'r dewis hwn wedi ei osod ar bob wici ar y cyd. Os am ei newid, rhaid gwneud drwy [[Special:GlobalPreferences|eich dewisiadau cydwici]].",
+	'globalprefs-check-label' => "Defnyddio'r dewis hwn ar bob wici",
 	'globalprefs-error-header' => 'Gwall',
+	'globalprefs-notglobal' => 'Nid yw eich cyfrif yn un cydwici, felly ni allwch osod dewisiadau cydwici.',
+	'globalpreferences' => 'Dewisiadau cydwici',
+	'globalprefs-info-label' => 'Dewisiadau cydwici:',
+	'globalprefs-info-link' => 'Gosod eich dewisiadau cydwici',
 );
 
 /** Danish (dansk)
