@@ -65,6 +65,13 @@ $messages['bn'] = array(
 	'globalprefs-info-link' => 'আপনার গ্লোবাল পছন্দগুলি নির্ধারণ করুন',
 );
 
+/** Breton (brezhoneg)
+ * @author Y-M D
+ */
+$messages['br'] = array(
+	'globalprefs-error-header' => 'Fazi',
+);
+
 /** Welsh (Cymraeg)
  * @author Cymrodor
  * @author Lloffiwr
@@ -138,11 +145,12 @@ $messages['es'] = array(
 
 /** Persian (فارسی)
  * @author Armin1392
+ * @author Mcuteangel
  * @author Reza1615
  */
 $messages['fa'] = array(
 	'globalprefs-desc' => 'اجازهٔ کاربران برای تنظیم اولویت‌های جهانی',
-	'globalprefs-set-globally' => 'این اولویت به طور جهانی تنظیم شده‌است و باید از طریق [[Special:اولویت‌های جهان|اولویت‌های جهانی شما]] تغییر یابد.', # Fuzzy
+	'globalprefs-set-globally' => 'این اولویت به طور جهانی تنظیم شده‌است و باید از طریق [[Special:GlobalPreferences|اولویت‌های جهانی شما]] تغییر یابد.',
 	'globalprefs-check-label' => 'استفاده کردن از این اولویت در همهٔ ویکی‌ها',
 	'globalprefs-error-header' => 'خطا',
 	'globalprefs-notglobal' => 'حساب شما یک حساب جهانی نیست و نمی‌تواند اولویت‌های جهانی تنظیم کند.',
