@@ -3,7 +3,7 @@
 class GlobalPreferences {
 
 	/**
-	 * @param int $type
+	 * @param int $type one of the DB_* constants
 	 * @return DatabaseBase
 	 */
 	public static function getPrefsDB( $type = DB_SLAVE ) {
@@ -91,6 +91,4 @@ class GlobalPreferences {
 		return $context->getTitle()
 		&& $context->getTitle()->isSpecial( 'Preferences' );
 	}
-
-
 }

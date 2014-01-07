@@ -1,12 +1,6 @@
 <?php
 
 class GlobalPreferencesHooks {
-	/**
-	 * Load global options when loading normal user options
-	 * @param User $user
-	 * @param array $options
-	 * @return bool
-	 */
 
 	/**
 	 * "bad" preferences that we should remove from
