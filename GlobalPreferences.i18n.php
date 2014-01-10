@@ -40,6 +40,20 @@ $messages['ar'] = array(
 	'globalprefs-error-header' => 'خطأ',
 );
 
+/** Asturian (asturianu)
+ * @author Xuacu
+ */
+$messages['ast'] = array(
+	'globalprefs-desc' => 'Permite a los usuarios configurar preferencies globales',
+	'globalprefs-set-globally' => 'Esta preferencia configuróse de mou global y tien de camudase dende les sos [[Special:GlobalPreferences|preferencies globales]].',
+	'globalprefs-check-label' => 'Usar esta preferencia en toles wikis',
+	'globalprefs-error-header' => 'Error',
+	'globalprefs-notglobal' => 'La so cuenta nun ye global y nun pue configurar preferencies globales.',
+	'globalpreferences' => 'Preferencies globales',
+	'globalprefs-info-label' => 'Preferencies globales:',
+	'globalprefs-info-link' => 'Configurar les preferencies globales',
+);
+
 /** Bulgarian (български)
  * @author DCLXVI
  */
