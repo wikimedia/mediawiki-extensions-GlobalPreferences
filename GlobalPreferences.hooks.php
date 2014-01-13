@@ -37,11 +37,6 @@ class GlobalPreferencesHooks {
 			return true;
 		}
 
-		if ( GlobalPreferences::onGlobalPrefsPage() ) {
-			// Okay so don't let any local prefs show up on this page.
-			$user->mOptions = User::getDefaultOptions();
-		}
-
 		$dbr = GlobalPreferences::getPrefsDB( DB_SLAVE );
 		$res = $dbr->select(
 			'global_preferences',
