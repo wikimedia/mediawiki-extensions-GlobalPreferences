@@ -135,7 +135,11 @@ class GlobalPreferencesHooks {
 	}
 
 	public static function onLoadExtensionSchemaUpdates( DatabaseUpdater $updater ) {
-		$updater->addExtensionTable( 'global_preferences', __DIR__ . '/schema.sql' );
+		global $wgGlobalPreferencesDB;
+		if ( is_null( $wgGlobalPreferencesDB ) || $wgGlobalPreferencesDB === wfWikiID() ) {
+			// Only add the table if it's supposed to be on this wiki.
+			$updater->addExtensionTable( 'global_preferences', __DIR__ . '/schema.sql' );
+		}
 
 		return true;
 	}
