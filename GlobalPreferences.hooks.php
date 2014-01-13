@@ -120,7 +120,7 @@ class GlobalPreferencesHooks {
 		}
 
 		// Reset preferences, and then save new ones
-		GlobalPreferences::resetUserSettings( $user );
+		GlobalPreferences::resetGlobalUserSettings( $user );
 		if ( $rows ) {
 			$dbw = GlobalPreferences::getPrefsDB( DB_MASTER );
 			$dbw->replace(

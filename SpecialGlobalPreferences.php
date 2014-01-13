@@ -25,7 +25,7 @@ class SpecialGlobalPreferences extends SpecialPreferences {
 			throw new PermissionsError( 'editmyoptions' );
 		}
 
-		GlobalPreferences::resetUserSettings( $this->getUser() );
+		GlobalPreferences::resetGlobalUserSettings( $this->getUser() );
 
 		$url = $this->getTitle()->getFullURL( 'success' );
 
