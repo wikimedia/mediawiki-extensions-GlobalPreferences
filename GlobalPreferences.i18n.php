@@ -202,6 +202,20 @@ $messages['fr'] = array(
 	'globalprefs-info-link' => 'Fixer vos préférences globales',
 );
 
+/** Galician (galego)
+ * @author Toliño
+ */
+$messages['gl'] = array(
+	'globalprefs-desc' => 'Permite aos usuarios definir preferencias globais',
+	'globalprefs-set-globally' => 'Esta preferencia definiuse globalmente e debe modificarse a través das súas [[Special:GlobalPreferences|preferencias globais]].',
+	'globalprefs-check-label' => 'Utilizar esta preferencia en todos os wikis',
+	'globalprefs-error-header' => 'Erro',
+	'globalprefs-notglobal' => 'A súa conta non é global e non pode definir preferencias globais.',
+	'globalpreferences' => 'Preferencias globais',
+	'globalprefs-info-label' => 'Preferencias globais:',
+	'globalprefs-info-link' => 'Definir as súas preferencias globais',
+);
+
 /** Hebrew (עברית)
  * @author Amire80
  */
