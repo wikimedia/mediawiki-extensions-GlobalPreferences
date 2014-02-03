@@ -28,7 +28,7 @@ $wgExtensionCredits['specialpage'][] = array(
 	'author' => 'Kunal Mehta',
 	'url' => 'https://www.mediawiki.org/wiki/Extension:GlobalPreferences',
 	'descriptionmsg' => 'globalprefs-desc',
-	'version' => '0.0.3',
+	'version' => '0.0.4',
 );
 
 $wgSpecialPages['GlobalPreferences'] = 'SpecialGlobalPreferences';
@@ -39,7 +39,7 @@ $wgAutoloadClasses['SpecialGlobalPreferences'] = __DIR__ . "/SpecialGlobalPrefer
 
 $wgHooks['UserLoadOptions'][] = 'GlobalPreferencesHooks::onUserLoadOptions';
 $wgHooks['UserSaveOptions'][] = 'GlobalPreferencesHooks::onUserSaveOptions';
-$wgHooks['PreferencesFormSubmit'][] = 'GlobalPreferencesHooks::onPreferencesFormSubmit';
+$wgHooks['PreferencesFormPreSave'][] = 'GlobalPreferencesHooks::onPreferencesFormPreSave';
 $wgHooks['LoadExtensionSchemaUpdates'][] = 'GlobalPreferencesHooks::onLoadExtensionSchemaUpdates';
 $wgExtensionFunctions[] = function() {
 	global $wgHooks;

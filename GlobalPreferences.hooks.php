@@ -86,7 +86,7 @@ class GlobalPreferencesHooks {
 		return true;
 	}
 
-	public static function onPreferencesFormSubmit( array $formData, PreferencesForm $form, User $user, &$result ) {
+	public static function onPreferencesFormPreSave( array $formData, PreferencesForm $form, User $user, &$result ) {
 		if ( !GlobalPreferences::onGlobalPrefsPage( $form ) ) {
 			// Don't interfere with local preferences
 			return true;
