@@ -317,9 +317,11 @@ $messages['mk'] = array(
 
 /** Dutch (Nederlands)
  * @author Siebrand
+ * @author Southparkfan
  */
 $messages['nl'] = array(
 	'globalprefs-desc' => 'Maakt het mogelijk voor gebruikers om globale voorkeuren in te stellen',
+	'globalprefs-set-globally' => 'Deze instelling is globaal ingesteld en kan alleen gewijzigd worden via uw [[Special:GlobalPreferences|uw globale instellingen]].',
 	'globalprefs-check-label' => "Deze voorkeur op alle wiki's gebruiken",
 	'globalprefs-error-header' => 'Fout',
 	'globalprefs-notglobal' => 'Uw gebruiker is geen globale gebruiker en deze kan geen globale voorkeuren instellen.',
