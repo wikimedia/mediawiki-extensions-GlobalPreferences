@@ -393,6 +393,15 @@ $messages['sv'] = array(
 	'globalprefs-info-link' => 'Ange dina globala inställningar',
 );
 
+/** Telugu (తెలుగు)
+ * @author Chaduvari
+ */
+$messages['te'] = array(
+	'globalprefs-error-header' => 'లోపం',
+	'globalpreferences' => 'సార్వత్రిక అభిరుచులు',
+	'globalprefs-info-label' => 'సార్వత్రిక అభిరుచులు:',
+);
+
 /** Turkish (Türkçe)
  * @author Joseph
  */
