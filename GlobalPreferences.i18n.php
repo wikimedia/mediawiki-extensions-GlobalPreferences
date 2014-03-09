@@ -244,6 +244,20 @@ $messages['hsb'] = array(
 	'globalprefs-info-link' => 'Twoje globalne nastajenja postajić',
 );
 
+/** Iloko (Ilokano)
+ * @author Lam-ang
+ */
+$messages['ilo'] = array(
+	'globalprefs-desc' => 'Mangpalubos kadagiti agar-aramat a mangisaad kadagiti global a kakaykayatan',
+	'globalprefs-set-globally' => 'Daytoy a kakaykayatan ket global a naisaad ken nasken a mabaliwan babaen dagiti [[Special:GlobalPreferences|global a kakaykayatam]].',
+	'globalprefs-check-label' => 'Usaren daytoy a kakaykayatan kadagiti amin a wiki',
+	'globalprefs-error-header' => 'Biddut',
+	'globalprefs-notglobal' => 'Ti pakabilangam ket saan a global a pakabilangan ken saan a makaisaad kadagiti global a kakaykayatan.',
+	'globalpreferences' => 'Dagiti global a kakaykayatan',
+	'globalprefs-info-label' => 'Dagiti global a kakaykayatan:',
+	'globalprefs-info-link' => 'Isaad dagiti global a kakaykayatam',
+);
+
 /** Italian (italiano)
  * @author Beta16
  */
