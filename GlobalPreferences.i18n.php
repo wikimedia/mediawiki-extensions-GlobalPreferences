@@ -287,6 +287,20 @@ $messages['ja'] = array(
 	'globalprefs-info-link' => 'グローバル個人設定の閲覧と変更',
 );
 
+/** Khmer (ភាសាខ្មែរ)
+ * @author Sovichet
+ */
+$messages['km'] = array(
+	'globalprefs-desc' => 'អនុញ្ញាត​ឲ្យ​អ្នក​ប្រើ​អាច​កំណត់​ចំណូល​ចិត្ត​ជា​សាកល',
+	'globalprefs-set-globally' => 'ចំណូល​ចិត្ត​នេះ​ត្រូវ​បាន​កំណត់​ជា​សាកល​ហើយ ហើយ​អាច​កែ​សម្រួល​បាន​នៅ [[Special:GlobalPreferences|ទំព័រ​ចំណូល​ចិត្ត​សាកល​របស់​អ្នក]]។',
+	'globalprefs-check-label' => 'ប្រើ​ចំណូល​ចិត្ត​នេះ​លើ​វិគី​ទាំង​អស់',
+	'globalprefs-error-header' => 'កំហុស',
+	'globalprefs-notglobal' => 'គណនី​របស់​អ្នក​មិន​មែន​ជា​គណនី​សាកល​ទេ ដូច្នេះ​ក៏​មិន​អាច​កំណត់​ចំណូល​ចិត្ត​សាកល​បាន​ដែរ។',
+	'globalpreferences' => 'ចំណូល​ចិត្ត​ជា​សាកល',
+	'globalprefs-info-label' => 'ចំណូល​ចិត្ត​ជា​សាកល៖',
+	'globalprefs-info-link' => 'កំណត់​ចំណូល​ចិត្ត​ជា​សាកល​របស់​អ្នក',
+);
+
 /** Korean (한국어)
  * @author Hym411
  */
