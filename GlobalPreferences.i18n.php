@@ -358,6 +358,20 @@ $messages['nl'] = array(
 	'globalprefs-info-link' => 'Globale voorkeuren instellen',
 );
 
+/** Occitan (occitan)
+ * @author Cedric31
+ */
+$messages['oc'] = array(
+	'globalprefs-desc' => 'Permet als utilizaires de fixar de preferéncias globalas',
+	'globalprefs-set-globally' => 'Aquesta preferéncia es estada fixada globalament e deu èsser modificada via [[Special:GlobalPreferences|vòstras preferéncias globalas]].',
+	'globalprefs-check-label' => 'Utilizar aquesta preferéncia sus totes los wikis.',
+	'globalprefs-error-header' => 'Error',
+	'globalprefs-notglobal' => 'Vòstre compte es pas un compte global e pòt pas fixar de preferéncias globalas.',
+	'globalpreferences' => 'Preferéncias globalas',
+	'globalprefs-info-label' => 'Preferéncias globalas :',
+	'globalprefs-info-link' => 'Fixar vòstras preferéncias globalas',
+);
+
 /** Polish (polski)
  * @author Chrumps
  */
