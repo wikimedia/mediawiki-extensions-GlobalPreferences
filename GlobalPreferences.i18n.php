@@ -483,12 +483,13 @@ $messages['yi'] = array(
 
 /** Simplified Chinese (中文（简体）‎)
  * @author Liuxinyu970226
+ * @author Xiaomingyan
  * @author Yfdyh000
  */
 $messages['zh-hans'] = array(
 	'globalprefs-desc' => '允许用户设置全局设置项',
 	'globalprefs-set-globally' => '此设置已被设定为全局设置，因此必须前往[[Special:GlobalPreferences|您的全局设置页]]设置。',
-	'globalprefs-check-label' => '在全部wiki使用此设置。',
+	'globalprefs-check-label' => '在所有wiki使用该设置',
 	'globalprefs-error-header' => '错误',
 	'globalprefs-notglobal' => '您的账户不是一个全局账户，因此不能设置全局设置项。',
 	'globalpreferences' => '全局设置',
