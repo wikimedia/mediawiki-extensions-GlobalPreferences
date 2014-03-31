@@ -1,0 +1,14 @@
+{
+    "@metadata": {
+        "authors": [
+            "Ahmed-Najib-Biabani-Ibrahimkhel"
+        ]
+    },
+    "globalprefs-desc": "کارنان پرېږدي چې خپل نړېوال غورتوبونه وټاکي",
+    "globalprefs-check-label": "دا غوره توبونه په ټولو ويکي گانو کارول",
+    "globalprefs-error-header": "تېروتنه",
+    "globalprefs-notglobal": "ستاسې گڼون يو نړېوال گڼون نه دی او نه شی کولی چې نړېوال غوره توبونه وټاکۍ",
+    "globalpreferences": "نړېوال غوره توبونه",
+    "globalprefs-info-label": "نړېوال غوره توبونه:",
+    "globalprefs-info-link": "خپل نړېوال غوره توبونه وټاکئ"
+}

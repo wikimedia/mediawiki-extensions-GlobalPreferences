@@ -1,0 +1,15 @@
+{
+    "@metadata": {
+        "authors": [
+            "Robby"
+        ]
+    },
+    "globalprefs-desc": "Erlaabt et Benotzer hir global Astellunge festzeleeën",
+    "globalprefs-set-globally": "Dës Astellung gouf global festgeluecht a muss iwwer [[Special:GlobalPreferences|Är global Astelunge]] geännert ginn.",
+    "globalprefs-check-label": "Dës Astellung op alle Wikie benotzen.",
+    "globalprefs-error-header": "Feeler",
+    "globalprefs-notglobal": "Äre Benotzerkont ass kee globale Benotzerkont a ka keng global Astellunge festleeën.",
+    "globalpreferences": "Global Astellungen",
+    "globalprefs-info-label": "Global Astellungen:",
+    "globalprefs-info-link": "Är global Astellunge festleeën"
+}

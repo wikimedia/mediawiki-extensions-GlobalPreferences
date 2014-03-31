@@ -28,10 +28,11 @@ $wgExtensionCredits['specialpage'][] = array(
 	'author' => 'Kunal Mehta',
 	'url' => 'https://www.mediawiki.org/wiki/Extension:GlobalPreferences',
 	'descriptionmsg' => 'globalprefs-desc',
-	'version' => '0.0.4',
+	'version' => '0.1.0',
 );
 
 $wgSpecialPages['GlobalPreferences'] = 'SpecialGlobalPreferences';
+$wgMessagesDirs['GlobalPreferences'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['GlobalPreferences'] = __DIR__ . "/GlobalPreferences.i18n.php";
 $wgAutoloadClasses['GlobalPreferences'] = __DIR__ . "/GlobalPreferences.body.php";
 $wgAutoloadClasses['GlobalPreferencesHooks'] = __DIR__ . "/GlobalPreferences.hooks.php";

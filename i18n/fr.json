@@ -1,0 +1,15 @@
+{
+    "@metadata": {
+        "authors": [
+            "Gomoko"
+        ]
+    },
+    "globalprefs-desc": "Permet aux utilisateurs de fixer des préférences globales",
+    "globalprefs-set-globally": "Cette préférence a été fixée globalement et doit être modifiée via [[Special:GlobalPreferences|vos préférences globales]].",
+    "globalprefs-check-label": "Utiliser cette préférence sur tous les wikis.",
+    "globalprefs-error-header": "Erreur",
+    "globalprefs-notglobal": "Votre compte n’est pas un compte global et ne peut pas fixer de préférences globales.",
+    "globalpreferences": "Préférences globales",
+    "globalprefs-info-label": "Préférences globales :",
+    "globalprefs-info-link": "Fixer vos préférences globales"
+}

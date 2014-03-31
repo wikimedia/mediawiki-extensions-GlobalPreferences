@@ -1,0 +1,15 @@
+{
+    "@metadata": {
+        "authors": [
+            "Metalhead64"
+        ]
+    },
+    "globalprefs-desc": "Ermöglicht es Benutzern, globale Einstellungen festzulegen.",
+    "globalprefs-set-globally": "Diese Einstellung wurde global festgelegt und muss mithilfe [[Special:GlobalPreferences|deinen globalen Einstellungen]] verändert werden.",
+    "globalprefs-check-label": "Diese Einstellung auf allen Wikis verwenden.",
+    "globalprefs-error-header": "Fehler",
+    "globalprefs-notglobal": "Dein Benutzerkonto ist nicht global und kann deshalb keine globalen Einstellungen festlegen.",
+    "globalpreferences": "Globale Einstellungen",
+    "globalprefs-info-label": "Globale Einstellungen:",
+    "globalprefs-info-link": "Deine globalen Einstellungen festlegen"
+}

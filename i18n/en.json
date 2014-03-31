@@ -1,0 +1,15 @@
+{
+    "@metadata": {
+        "authors": [
+            "Kunal Mehta"
+        ]
+    },
+    "globalprefs-desc": "Allows users to set global preferences",
+    "globalprefs-set-globally": "This preference has been set globally and must be modified through [[Special:GlobalPreferences|your global preferences]].",
+    "globalprefs-check-label": "Use this preference on all wikis",
+    "globalprefs-error-header": "Error",
+    "globalprefs-notglobal": "Your account is not a global account and cannot set global preferences.",
+    "globalpreferences": "Global preferences",
+    "globalprefs-info-label": "Global preferences:",
+    "globalprefs-info-link": "Set your global preferences"
+}

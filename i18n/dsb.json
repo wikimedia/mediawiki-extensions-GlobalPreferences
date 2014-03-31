@@ -1,0 +1,15 @@
+{
+    "@metadata": {
+        "authors": [
+            "Michawiki"
+        ]
+    },
+    "globalprefs-desc": "Zmóžnja wužywarjam póstajanje globalnych nastajenjow",
+    "globalprefs-set-globally": "Toś to nastajenje jo se globalnje póstajiło a musy se pśez [[Special:GlobalPreferences|twóje globalne nastajenja]] změniś.",
+    "globalprefs-check-label": "Toś to nastajenje we wšych wikijach wužywaś",
+    "globalprefs-error-header": "Zmólka",
+    "globalprefs-notglobal": "Twójo konto njejo globalne konto a njamóžo globalne nastajenja póstajiś.",
+    "globalpreferences": "Globalne nastajenja",
+    "globalprefs-info-label": "Globalne nastajenja:",
+    "globalprefs-info-link": "Twóje globalne nastajenja póstajiś"
+}

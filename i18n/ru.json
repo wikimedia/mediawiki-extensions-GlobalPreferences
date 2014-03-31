@@ -1,0 +1,15 @@
+{
+    "@metadata": {
+        "authors": [
+            "Okras"
+        ]
+    },
+    "globalprefs-desc": "Позволяет пользователям задавать глобальные настройки",
+    "globalprefs-set-globally": "Этот параметр был установлен глобально и должен быть изменён через [[Special:GlobalPreferences|ваши глобальные настройки]].",
+    "globalprefs-check-label": "Использовать этот параметр на всех вики.",
+    "globalprefs-error-header": "Ошибка",
+    "globalprefs-notglobal": "Ваша учётная запись не является глобальной и для неё не могут быть установлены глобальные настройки.",
+    "globalpreferences": "Глобальные настройки",
+    "globalprefs-info-label": "Глобальные настройки:",
+    "globalprefs-info-link": "Установите свои глобальные настройки"
+}
