@@ -1,17 +1,17 @@
 {
-    "@metadata": {
-        "authors": [
-            "Liuxinyu970226",
-            "Xiaomingyan",
-            "Yfdyh000"
-        ]
-    },
-    "globalprefs-desc": "允许用户设置全局设置项",
-    "globalprefs-set-globally": "此设置已被设定为全局设置，因此必须前往[[Special:GlobalPreferences|您的全局设置页]]设置。",
-    "globalprefs-check-label": "在所有wiki使用该设置",
-    "globalprefs-error-header": "错误",
-    "globalprefs-notglobal": "您的账户不是一个全局账户，因此不能设置全局设置项。",
-    "globalpreferences": "全局设置",
-    "globalprefs-info-label": "全局设置：",
-    "globalprefs-info-link": "设置您的全局设置项"
+	"@metadata": {
+		"authors": [
+			"Liuxinyu970226",
+			"Xiaomingyan",
+			"Yfdyh000"
+		]
+	},
+	"globalprefs-desc": "允许用户设置全局设置项",
+	"globalprefs-set-globally": "此设置已被设定为全局设置，因此必须前往[[Special:GlobalPreferences|您的全局设置页]]设置。",
+	"globalprefs-check-label": "在所有wiki使用该设置",
+	"globalprefs-error-header": "错误",
+	"globalprefs-notglobal": "您的账户不是一个全局账户，因此不能设置全局设置项。",
+	"globalpreferences": "全局设置",
+	"globalprefs-info-label": "全局设置：",
+	"globalprefs-info-link": "设置您的全局设置项"
 }

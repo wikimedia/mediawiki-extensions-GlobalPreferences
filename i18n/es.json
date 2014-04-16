@@ -1,15 +1,15 @@
 {
-    "@metadata": {
-        "authors": [
-            "Fitoschido"
-        ]
-    },
-    "globalprefs-desc": "Permite a los usuarios establecer preferencias globales",
-    "globalprefs-set-globally": "Se ha establecido esta preferencia globalmente. Para modificarla, ve al [[Special:GlobalPreferences|panel de preferencias globales]].",
-    "globalprefs-check-label": "Usar esta preferencia en todos los wikis",
-    "globalprefs-error-header": "Error",
-    "globalprefs-notglobal": "Tu cuenta no es global, no se pueden establecer preferencias globales.",
-    "globalpreferences": "Preferencias globales",
-    "globalprefs-info-label": "Preferencias globales:",
-    "globalprefs-info-link": "Definir las preferencias globales"
+	"@metadata": {
+		"authors": [
+			"Fitoschido"
+		]
+	},
+	"globalprefs-desc": "Permite a los usuarios establecer preferencias globales",
+	"globalprefs-set-globally": "Se ha establecido esta preferencia globalmente. Para modificarla, ve al [[Special:GlobalPreferences|panel de preferencias globales]].",
+	"globalprefs-check-label": "Usar esta preferencia en todos los wikis",
+	"globalprefs-error-header": "Error",
+	"globalprefs-notglobal": "Tu cuenta no es global, no se pueden establecer preferencias globales.",
+	"globalpreferences": "Preferencias globales",
+	"globalprefs-info-label": "Preferencias globales:",
+	"globalprefs-info-link": "Definir las preferencias globales"
 }

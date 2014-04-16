@@ -1,15 +1,15 @@
 {
-    "@metadata": {
-        "authors": [
-            "Joseph"
-        ]
-    },
-    "globalprefs-desc": "Kullanıcıların küresel tercihleri ayarlamasına izin verir",
-    "globalprefs-set-globally": "Bu tercih küresel olarak ayarlanmış ve [[Special:GlobalPreferences|küresel tercihleriniz]] ile değiştirilmesi gerekir.",
-    "globalprefs-check-label": "Bu tercihi tüm vikilerde kullan.",
-    "globalprefs-error-header": "Hata",
-    "globalprefs-notglobal": "Hesabınızın küresel hesap değil ve küresel tercihler ayarlayamazsınız.",
-    "globalpreferences": "Küresel tercihler",
-    "globalprefs-info-label": "Küresel tercihler:",
-    "globalprefs-info-link": "Küresel tercihlerinizi ayarlayın"
+	"@metadata": {
+		"authors": [
+			"Joseph"
+		]
+	},
+	"globalprefs-desc": "Kullanıcıların küresel tercihleri ayarlamasına izin verir",
+	"globalprefs-set-globally": "Bu tercih küresel olarak ayarlanmış ve [[Special:GlobalPreferences|küresel tercihleriniz]] ile değiştirilmesi gerekir.",
+	"globalprefs-check-label": "Bu tercihi tüm vikilerde kullan.",
+	"globalprefs-error-header": "Hata",
+	"globalprefs-notglobal": "Hesabınızın küresel hesap değil ve küresel tercihler ayarlayamazsınız.",
+	"globalpreferences": "Küresel tercihler",
+	"globalprefs-info-label": "Küresel tercihler:",
+	"globalprefs-info-link": "Küresel tercihlerinizi ayarlayın"
 }

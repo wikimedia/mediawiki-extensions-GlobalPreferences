@@ -1,16 +1,16 @@
 {
-    "@metadata": {
-        "authors": [
-            "Kunal Mehta",
-            "Shirayuki"
-        ]
-    },
-    "globalprefs-desc": "{{desc|name=Global Preferences|url=https://www.mediawiki.org/wiki/Extension:GlobalPreferences}}",
-    "globalprefs-set-globally": "Help message below a disabled preference option instructing the user to change it at their global preferences page.",
-    "globalprefs-check-label": "Label for a checkbox that enables the user to save that (the above) preference globally.",
-    "globalprefs-error-header": "Page title for error message.\n{{Identical|Error}}",
-    "globalprefs-notglobal": "Error message a user sees if they don not have a global account.",
-    "globalpreferences": "{{doc-special|GlobalPreferences}}",
-    "globalprefs-info-label": "Label for link in [[Special:Preferences]] to go set your global preferences.",
-    "globalprefs-info-link": "Link text to [[Special:GlobalPreferences]]."
+	"@metadata": {
+		"authors": [
+			"Kunal Mehta",
+			"Shirayuki"
+		]
+	},
+	"globalprefs-desc": "{{desc|name=Global Preferences|url=https://www.mediawiki.org/wiki/Extension:GlobalPreferences}}",
+	"globalprefs-set-globally": "Help message below a disabled preference option instructing the user to change it at their global preferences page.",
+	"globalprefs-check-label": "Label for a checkbox that enables the user to save that (the above) preference globally.",
+	"globalprefs-error-header": "Page title for error message.\n{{Identical|Error}}",
+	"globalprefs-notglobal": "Error message a user sees if they don not have a global account.",
+	"globalpreferences": "{{doc-special|GlobalPreferences}}",
+	"globalprefs-info-label": "Label for link in [[Special:Preferences]] to go set your global preferences.",
+	"globalprefs-info-link": "Link text to [[Special:GlobalPreferences]]."
 }

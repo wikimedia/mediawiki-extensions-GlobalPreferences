@@ -1,15 +1,15 @@
 {
-    "@metadata": {
-        "authors": [
-            "Andriykopanytsia"
-        ]
-    },
-    "globalprefs-desc": "Дозволяє користувачам задавати глобальні налаштування",
-    "globalprefs-set-globally": "Цей параметр вже установлений глобально і ви повинні його змінити за допомогою [[Special:GlobalPreferences|ваших глобальних налаштувань]].",
-    "globalprefs-check-label": "Вживати цю установку на всіх вікі.",
-    "globalprefs-error-header": "Помилка",
-    "globalprefs-notglobal": "Ваш обліковий запис не є глобальним обліковим записом і не може встановити глобальні налаштування.",
-    "globalpreferences": "Глобальні налаштування",
-    "globalprefs-info-label": "Глобальні налаштування:",
-    "globalprefs-info-link": "Встановити глобальні параметри"
+	"@metadata": {
+		"authors": [
+			"Andriykopanytsia"
+		]
+	},
+	"globalprefs-desc": "Дозволяє користувачам задавати глобальні налаштування",
+	"globalprefs-set-globally": "Цей параметр вже установлений глобально і ви повинні його змінити за допомогою [[Special:GlobalPreferences|ваших глобальних налаштувань]].",
+	"globalprefs-check-label": "Вживати цю установку на всіх вікі.",
+	"globalprefs-error-header": "Помилка",
+	"globalprefs-notglobal": "Ваш обліковий запис не є глобальним обліковим записом і не може встановити глобальні налаштування.",
+	"globalpreferences": "Глобальні налаштування",
+	"globalprefs-info-label": "Глобальні налаштування:",
+	"globalprefs-info-link": "Встановити глобальні параметри"
 }

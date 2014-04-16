@@ -1,15 +1,15 @@
 {
-    "@metadata": {
-        "authors": [
-            "Christian List"
-        ]
-    },
-    "globalprefs-desc": "Giver brugerne mulighed for at angive globale indstillinger",
-    "globalprefs-set-globally": "Denne indstilling er angivet globalt og skal ændres gennem [[Special:GlobalPreferences|dine globale indstillinger]].",
-    "globalprefs-check-label": "Brug denne indstilling på alle wikier",
-    "globalprefs-error-header": "Fejl",
-    "globalprefs-notglobal": "Din konto er ikke en global konto og kan ikke angive globale indstillinger.",
-    "globalpreferences": "Globale indstillinger",
-    "globalprefs-info-label": "Globale indstillinger:",
-    "globalprefs-info-link": "Angiv din globale indstillinger"
+	"@metadata": {
+		"authors": [
+			"Christian List"
+		]
+	},
+	"globalprefs-desc": "Giver brugerne mulighed for at angive globale indstillinger",
+	"globalprefs-set-globally": "Denne indstilling er angivet globalt og skal ændres gennem [[Special:GlobalPreferences|dine globale indstillinger]].",
+	"globalprefs-check-label": "Brug denne indstilling på alle wikier",
+	"globalprefs-error-header": "Fejl",
+	"globalprefs-notglobal": "Din konto er ikke en global konto og kan ikke angive globale indstillinger.",
+	"globalpreferences": "Globale indstillinger",
+	"globalprefs-info-label": "Globale indstillinger:",
+	"globalprefs-info-link": "Angiv din globale indstillinger"
 }

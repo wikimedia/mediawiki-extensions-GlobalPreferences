@@ -1,15 +1,15 @@
 {
-    "@metadata": {
-        "authors": [
-            "Amire80"
-        ]
-    },
-    "globalprefs-desc": "מתן אפשרות למשתמשים להגדיר העדפות גלובליות",
-    "globalprefs-set-globally": "ההעדפה הזאת הוגדרה באופן גלובלי דרך [[Special:GlobalPreferences|ההעדפות הגלובליות שלך]].",
-    "globalprefs-check-label": "להשתמש בהעדפה הזאת בכל אתרי הוויקי.",
-    "globalprefs-error-header": "שגיאה",
-    "globalprefs-notglobal": "החשבון שלך אינו חשבון גלובלי ואינו יכול להגדיר העדפות גלובליות.",
-    "globalpreferences": "העדפות גלובליות",
-    "globalprefs-info-label": "העדפות גלובליות:",
-    "globalprefs-info-link": "הגדרת ההעדפות הגלובליות שלך"
+	"@metadata": {
+		"authors": [
+			"Amire80"
+		]
+	},
+	"globalprefs-desc": "מתן אפשרות למשתמשים להגדיר העדפות גלובליות",
+	"globalprefs-set-globally": "ההעדפה הזאת הוגדרה באופן גלובלי דרך [[Special:GlobalPreferences|ההעדפות הגלובליות שלך]].",
+	"globalprefs-check-label": "להשתמש בהעדפה הזאת בכל אתרי הוויקי.",
+	"globalprefs-error-header": "שגיאה",
+	"globalprefs-notglobal": "החשבון שלך אינו חשבון גלובלי ואינו יכול להגדיר העדפות גלובליות.",
+	"globalpreferences": "העדפות גלובליות",
+	"globalprefs-info-label": "העדפות גלובליות:",
+	"globalprefs-info-link": "הגדרת ההעדפות הגלובליות שלך"
 }

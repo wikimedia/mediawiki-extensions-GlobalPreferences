@@ -1,15 +1,15 @@
 {
-    "@metadata": {
-        "authors": [
-            "Michawiki"
-        ]
-    },
-    "globalprefs-desc": "Zmóžnja wužiwarjam postajenje globalnych nastajenjow",
-    "globalprefs-set-globally": "Tute nastajenje je so globalnje postajiło a dyrbi so přez [[Special:GlobalPreferences|twoje globalne nastajenja]] změnić.",
-    "globalprefs-check-label": "Tute nastajenje we wšěch wikijach wužiwać",
-    "globalprefs-error-header": "Zmylk",
-    "globalprefs-notglobal": "Twoje konto njeje globalne konto a njemóže globalne nastajenja postajić.",
-    "globalpreferences": "Globalne nastajenja",
-    "globalprefs-info-label": "Globalne nastajenja:",
-    "globalprefs-info-link": "Twoje globalne nastajenja postajić"
+	"@metadata": {
+		"authors": [
+			"Michawiki"
+		]
+	},
+	"globalprefs-desc": "Zmóžnja wužiwarjam postajenje globalnych nastajenjow",
+	"globalprefs-set-globally": "Tute nastajenje je so globalnje postajiło a dyrbi so přez [[Special:GlobalPreferences|twoje globalne nastajenja]] změnić.",
+	"globalprefs-check-label": "Tute nastajenje we wšěch wikijach wužiwać",
+	"globalprefs-error-header": "Zmylk",
+	"globalprefs-notglobal": "Twoje konto njeje globalne konto a njemóže globalne nastajenja postajić.",
+	"globalpreferences": "Globalne nastajenja",
+	"globalprefs-info-label": "Globalne nastajenja:",
+	"globalprefs-info-link": "Twoje globalne nastajenja postajić"
 }

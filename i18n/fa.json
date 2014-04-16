@@ -1,17 +1,17 @@
 {
-    "@metadata": {
-        "authors": [
-            "Armin1392",
-            "Mcuteangel",
-            "Reza1615"
-        ]
-    },
-    "globalprefs-desc": "اجازهٔ کاربران برای تنظیم اولویت‌های جهانی",
-    "globalprefs-set-globally": "این اولویت به طور جهانی تنظیم شده‌است و باید از طریق [[Special:GlobalPreferences|اولویت‌های جهانی شما]] تغییر یابد.",
-    "globalprefs-check-label": "استفاده کردن از این اولویت در همهٔ ویکی‌ها",
-    "globalprefs-error-header": "خطا",
-    "globalprefs-notglobal": "حساب شما یک حساب جهانی نیست و نمی‌تواند اولویت‌های جهانی تنظیم کند.",
-    "globalpreferences": "اولویت‌های جهانی",
-    "globalprefs-info-label": "اولویت‌های جهانی:",
-    "globalprefs-info-link": "تنظیم اولویت‌های جهانی خود"
+	"@metadata": {
+		"authors": [
+			"Armin1392",
+			"Mcuteangel",
+			"Reza1615"
+		]
+	},
+	"globalprefs-desc": "اجازهٔ کاربران برای تنظیم اولویت‌های جهانی",
+	"globalprefs-set-globally": "این اولویت به طور جهانی تنظیم شده‌است و باید از طریق [[Special:GlobalPreferences|اولویت‌های جهانی شما]] تغییر یابد.",
+	"globalprefs-check-label": "استفاده کردن از این اولویت در همهٔ ویکی‌ها",
+	"globalprefs-error-header": "خطا",
+	"globalprefs-notglobal": "حساب شما یک حساب جهانی نیست و نمی‌تواند اولویت‌های جهانی تنظیم کند.",
+	"globalpreferences": "اولویت‌های جهانی",
+	"globalprefs-info-label": "اولویت‌های جهانی:",
+	"globalprefs-info-link": "تنظیم اولویت‌های جهانی خود"
 }
