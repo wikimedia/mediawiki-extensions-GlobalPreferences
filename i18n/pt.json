@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Vitorvicentevalente"
+		]
+	},
+	"globalprefs-desc": "Permite aos utilizadores definirem as suas preferências globais",
+	"globalprefs-set-globally": "Esta preferência foi definida de forma global e pode ser modificada através das [[Special:GlobalPreferences|preferências globais]].",
+	"globalprefs-check-label": "Usar esta preferência em todas as wikis",
+	"globalprefs-error-header": "Erro",
+	"globalprefs-notglobal": "A sua conta não é uma conta global e não é possível definir preferências globais.",
+	"globalpreferences": "Preferências globais",
+	"globalprefs-info-label": "Preferências globais:",
+	"globalprefs-info-link": "Definir as suas preferências globais"
+}
