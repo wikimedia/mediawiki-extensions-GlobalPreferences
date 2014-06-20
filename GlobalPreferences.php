@@ -34,6 +34,7 @@ $wgExtensionCredits['specialpage'][] = array(
 $wgSpecialPages['GlobalPreferences'] = 'SpecialGlobalPreferences';
 $wgMessagesDirs['GlobalPreferences'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['GlobalPreferences'] = __DIR__ . "/GlobalPreferences.i18n.php";
+$wgExtensionMessagesFiles['GlobalPreferencesAlias'] = __DIR__ . "/GlobalPreferences.alias.php";
 $wgAutoloadClasses['GlobalPreferences'] = __DIR__ . "/GlobalPreferences.body.php";
 $wgAutoloadClasses['GlobalPreferencesHooks'] = __DIR__ . "/GlobalPreferences.hooks.php";
 $wgAutoloadClasses['SpecialGlobalPreferences'] = __DIR__ . "/SpecialGlobalPreferences.php";
