@@ -13,3 +13,8 @@ $specialPageAliases = array();
 $specialPageAliases['en'] = array(
 	'GlobalPreferences' => array( 'GlobalPreferences' ),
 );
+
+/** German (Deutsch) */
+$specialPageAliases['de'] = array(
+	'GlobalPreferences' => array( 'Globale_Einstellungen' ),
+);
