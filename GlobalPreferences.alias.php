@@ -18,3 +18,13 @@ $specialPageAliases['en'] = array(
 $specialPageAliases['de'] = array(
 	'GlobalPreferences' => array( 'Globale_Einstellungen' ),
 );
+
+/** Polish (polski) */
+$specialPageAliases['pl'] = array(
+	'GlobalPreferences' => array( 'Globalne_preferencje' ),
+);
+
+/** Simplified Chinese (中文（简体）‎) */
+$specialPageAliases['zh-hans'] = array(
+	'GlobalPreferences' => array( '全域设置' ),
+);
