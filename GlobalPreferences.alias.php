@@ -19,6 +19,11 @@ $specialPageAliases['de'] = array(
 	'GlobalPreferences' => array( 'Globale_Einstellungen' ),
 );
 
+/** Macedonian (македонски) */
+$specialPageAliases['mk'] = array(
+	'GlobalPreferences' => array( 'ГлобалниНагодувања' ),
+);
+
 /** Malay (Bahasa Melayu) */
 $specialPageAliases['ms'] = array(
 	'GlobalPreferences' => array( 'Keutamaan_global' ),
