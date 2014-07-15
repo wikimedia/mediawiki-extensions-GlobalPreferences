@@ -14,6 +14,16 @@ $specialPageAliases['en'] = array(
 	'GlobalPreferences' => array( 'GlobalPreferences' ),
 );
 
+/** Arabic (العربية) */
+$specialPageAliases['ar'] = array(
+	'GlobalPreferences' => array( 'تفضيلات_عامة' ),
+);
+
+/** Egyptian Spoken Arabic (مصرى) */
+$specialPageAliases['arz'] = array(
+	'GlobalPreferences' => array( 'تفضيلات_عامه' ),
+);
+
 /** German (Deutsch) */
 $specialPageAliases['de'] = array(
 	'GlobalPreferences' => array( 'Globale_Einstellungen' ),
