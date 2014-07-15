@@ -168,6 +168,7 @@ class GlobalPreferencesHooks {
 							'label-message' => 'globalprefs-check-label',
 							'default' => in_array( $name, $user->mGlobalPrefs ),
 							'section' => $info['section'],
+							'cssclass' => 'mw-globalprefs-global-check',
 						)
 					), $name );
 				} elseif ( in_array( $name, self::$badPrefs ) ) {
