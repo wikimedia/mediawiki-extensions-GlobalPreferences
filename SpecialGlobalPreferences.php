@@ -16,6 +16,7 @@ class SpecialGlobalPreferences extends SpecialPreferences {
 			$this->setHeaders();
 			throw new ErrorPageError( 'globalprefs-error-header', 'globalprefs-notglobal' );
 		}
+		$this->getOutput()->addModuleStyles( 'ext.GlobalPreferences.special' );
 		parent::execute( $par );
 	}
 

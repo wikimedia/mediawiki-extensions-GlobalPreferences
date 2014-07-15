@@ -28,7 +28,7 @@ $wgExtensionCredits['specialpage'][] = array(
 	'author' => 'Kunal Mehta',
 	'url' => 'https://www.mediawiki.org/wiki/Extension:GlobalPreferences',
 	'descriptionmsg' => 'globalprefs-desc',
-	'version' => '0.1.0',
+	'version' => '0.1.1',
 );
 
 $wgSpecialPages['GlobalPreferences'] = 'SpecialGlobalPreferences';
@@ -48,3 +48,9 @@ $wgExtensionFunctions[] = function() {
 	// Register this as late as possible!
 	$wgHooks['GetPreferences'][] = 'GlobalPreferencesHooks::onGetPreferences';
 };
+
+$wgResourceModules['ext.GlobalPreferences.special'] = array(
+	'styles' => 'ext.GlobalPreferences.special.css',
+	'localBasePath' => __DIR__ . '/resources',
+	'remoteExtPath' => 'GlobalPreferences/resources',
+);
