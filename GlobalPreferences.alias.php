@@ -34,6 +34,11 @@ $specialPageAliases['he'] = array(
 	'GlobalPreferences' => array( 'העדפות_גלובליות' ),
 );
 
+/** Korean (한국어) */
+$specialPageAliases['ko'] = array(
+	'GlobalPreferences' => array( '전역환경설정' ),
+);
+
 /** Macedonian (македонски) */
 $specialPageAliases['mk'] = array(
 	'GlobalPreferences' => array( 'ГлобалниНагодувања' ),
