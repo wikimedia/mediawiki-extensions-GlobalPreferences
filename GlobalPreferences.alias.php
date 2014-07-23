@@ -39,6 +39,11 @@ $specialPageAliases['ko'] = array(
 	'GlobalPreferences' => array( '전역환경설정' ),
 );
 
+/** Luxembourgish (Lëtzebuergesch) */
+$specialPageAliases['lb'] = array(
+	'GlobalPreferences' => array( 'Global_Astellungen' ),
+);
+
 /** Macedonian (македонски) */
 $specialPageAliases['mk'] = array(
 	'GlobalPreferences' => array( 'ГлобалниНагодувања' ),
