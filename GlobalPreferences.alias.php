@@ -59,6 +59,11 @@ $specialPageAliases['pl'] = array(
 	'GlobalPreferences' => array( 'Globalne_preferencje' ),
 );
 
+/** Portuguese (português) */
+$specialPageAliases['pt'] = array(
+	'GlobalPreferences' => array( 'Preferências_globais' ),
+);
+
 /** Swedish (svenska) */
 $specialPageAliases['sv'] = array(
 	'GlobalPreferences' => array( 'Globala_inställningar' ),
