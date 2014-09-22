@@ -69,6 +69,11 @@ $specialPageAliases['sv'] = array(
 	'GlobalPreferences' => array( 'Globala_inställningar' ),
 );
 
+/** Vietnamese (Tiếng Việt) */
+$specialPageAliases['vi'] = array(
+	'GlobalPreferences' => array( 'Tùy_chọn_toàn_cục', 'Tuỳ_chọn_toàn_cục' ),
+);
+
 /** Simplified Chinese (中文（简体）‎) */
 $specialPageAliases['zh-hans'] = array(
 	'GlobalPreferences' => array( '全域设置' ),
