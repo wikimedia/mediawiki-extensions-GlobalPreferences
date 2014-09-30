@@ -29,6 +29,11 @@ $specialPageAliases['de'] = array(
 	'GlobalPreferences' => array( 'Globale_Einstellungen' ),
 );
 
+/** Persian (فارسی) */
+$specialPageAliases['fa'] = array(
+	'GlobalPreferences' => array( 'ترجیحات_سراسری' ),
+);
+
 /** Hebrew (עברית) */
 $specialPageAliases['he'] = array(
 	'GlobalPreferences' => array( 'העדפות_גלובליות' ),
