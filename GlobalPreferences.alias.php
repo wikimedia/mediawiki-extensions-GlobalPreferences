@@ -59,6 +59,11 @@ $specialPageAliases['ms'] = array(
 	'GlobalPreferences' => array( 'Keutamaan_global' ),
 );
 
+/** Dutch (Nederlands) */
+$specialPageAliases['nl'] = array(
+	'GlobalPreferences' => array( 'GlobaleVoorkeuren' ),
+);
+
 /** Polish (polski) */
 $specialPageAliases['pl'] = array(
 	'GlobalPreferences' => array( 'Globalne_preferencje' ),
