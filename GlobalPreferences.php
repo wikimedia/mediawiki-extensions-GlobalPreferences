@@ -29,6 +29,7 @@ $wgExtensionCredits['specialpage'][] = array(
 	'url' => 'https://www.mediawiki.org/wiki/Extension:GlobalPreferences',
 	'descriptionmsg' => 'globalprefs-desc',
 	'version' => '0.1.1',
+	'license-name' => 'GPL-2.0+',
 );
 
 $wgSpecialPages['GlobalPreferences'] = 'SpecialGlobalPreferences';
