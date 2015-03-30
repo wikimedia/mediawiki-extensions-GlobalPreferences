@@ -31,7 +31,7 @@ $specialPageAliases['de'] = array(
 
 /** Persian (فارسی) */
 $specialPageAliases['fa'] = array(
-	'GlobalPreferences' => array( 'گزینه‌های_سراسری', 'ترجیحات_سراسری' ),
+	'GlobalPreferences' => array( 'ترجیحات_سراسری' ),
 );
 
 /** Hebrew (עברית) */
