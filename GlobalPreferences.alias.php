@@ -79,6 +79,11 @@ $specialPageAliases['sv'] = array(
 	'GlobalPreferences' => array( 'Globala_inställningar' ),
 );
 
+/** Ukrainian (українська) */
+$specialPageAliases['uk'] = array(
+	'GlobalPreferences' => array( 'Глобальні_налаштування' ),
+);
+
 /** Vietnamese (Tiếng Việt) */
 $specialPageAliases['vi'] = array(
 	'GlobalPreferences' => array( 'Tùy_chọn_toàn_cục', 'Tuỳ_chọn_toàn_cục' ),
