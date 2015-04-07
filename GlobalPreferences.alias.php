@@ -24,6 +24,11 @@ $specialPageAliases['arz'] = array(
 	'GlobalPreferences' => array( 'تفضيلات_عامه' ),
 );
 
+/** Western Balochi (بلوچی رخشانی) */
+$specialPageAliases['bgn'] = array(
+	'GlobalPreferences' => array( 'سراسرین_تنزیمات' ),
+);
+
 /** German (Deutsch) */
 $specialPageAliases['de'] = array(
 	'GlobalPreferences' => array( 'Globale_Einstellungen' ),
