@@ -19,7 +19,7 @@ $specialPageAliases['ar'] = array(
 	'GlobalPreferences' => array( 'تفضيلات_عامة' ),
 );
 
-/** Egyptian Spoken Arabic (مصرى) */
+/** Egyptian Arabic (مصرى) */
 $specialPageAliases['arz'] = array(
 	'GlobalPreferences' => array( 'تفضيلات_عامه' ),
 );
