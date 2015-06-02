@@ -44,11 +44,7 @@ $wgHooks['UserLoadOptions'][] = 'GlobalPreferencesHooks::onUserLoadOptions';
 $wgHooks['UserSaveOptions'][] = 'GlobalPreferencesHooks::onUserSaveOptions';
 $wgHooks['PreferencesFormPreSave'][] = 'GlobalPreferencesHooks::onPreferencesFormPreSave';
 $wgHooks['LoadExtensionSchemaUpdates'][] = 'GlobalPreferencesHooks::onLoadExtensionSchemaUpdates';
-$wgExtensionFunctions[] = function() {
-	global $wgHooks;
-	// Register this as late as possible!
-	$wgHooks['GetPreferences'][] = 'GlobalPreferencesHooks::onGetPreferences';
-};
+$wgExtensionFunctions[] = 'GlobalPreferencesHooks::onExtensionFunctions';
 
 $wgResourceModules['ext.GlobalPreferences.special'] = array(
 	'styles' => 'ext.GlobalPreferences.special.css',

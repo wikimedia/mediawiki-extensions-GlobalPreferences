@@ -26,6 +26,15 @@ class GlobalPreferencesHooks {
 	);
 
 	/**
+	 * @FIXME This is terrible
+	 */
+	public static function onExtensionFunctions() {
+		global $wgHooks;
+		// Register this as late as possible!
+		$wgHooks['GetPreferences'][] = 'GlobalPreferencesHooks::onGetPreferences';
+	}
+
+	/**
 	 * Load our global prefs
 	 * @param User $user
 	 * @param array $options
