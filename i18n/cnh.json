@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Salai"
+		]
+	},
+	"globalprefs-desc": "Hmangtu kha vawleipi duhning hmannak nawl pe",
+	"globalprefs-set-globally": "Hi duhning hi vawleipi ning in a thleng. [[Special:GlobalPreferences|your global preferences]] ning in remh a si lai.",
+	"globalprefs-check-label": "Wiki zapi caah hi duhning hin hmanpiak",
+	"globalprefs-error-header": "A palh",
+	"globalprefs-notglobal": "Na account hi vawleipi account a si lo caah vawleipi duhning in a thleng kholo.",
+	"globalpreferences": "Vawleipi duhning",
+	"globalprefs-info-label": "Vawleipi duhning",
+	"globalprefs-info-link": "Na vawleipi duhning in thleng"
+}
