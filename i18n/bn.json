@@ -9,8 +9,8 @@
 	"globalprefs-set-globally": "এই পছন্দগুলি বৈশ্বিকভাবে নির্ধারিত হয়েছে এবং [[Special:GlobalPreferences|আপনার বৈশ্বিক পছন্দগুলির]] মাধ্যমে পরিবর্তন করা আবশ্যক।",
 	"globalprefs-check-label": "সব উইকিগুলোতে এই পছন্দসমূহ ব্যবহার করো",
 	"globalprefs-error-header": "ত্রুটি",
-	"globalprefs-notglobal": "আপনার অ্যাকাউন্ট একটি গ্লোবাল অ্যাকাউন্ট নয় এবং গ্লোবাল পছন্দসমূহ নির্ধারণ করতে পারবেন না।",
-	"globalpreferences": "গ্লোবাল পছন্দসমূহ",
+	"globalprefs-notglobal": "আপনার অ্যাকাউন্ট একটি বৈশ্বিক অ্যাকাউন্ট নয় এবং বৈশ্বিক পছন্দসমূহ নির্ধারণ করতে পারবেন না।",
+	"globalpreferences": "বৈশ্বিক পছন্দসমূহ",
 	"globalprefs-info-label": "বৈশ্বিক পছন্দসমূহ:",
 	"globalprefs-info-link": "আপনার বৈশ্বিক পছন্দসমূহ নির্ধারণ করুন"
 }
