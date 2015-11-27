@@ -1,0 +1,57 @@
+{
+	"name": "GlobalPreferences",
+	"version": "0.1.2",
+	"author": [
+		"Kunal Mehta"
+	],
+	"license-name": "GPL-2.0+",
+	"url": "https://www.mediawiki.org/wiki/Extension:GlobalPreferences",
+	"descriptionmsg": "globalprefs-desc",
+	"type": "specialpage",
+	"config": {
+		"GlobalPreferencesDB": null
+	},
+	"SpecialPages": {
+		"GlobalPreferences": "SpecialGlobalPreferences"
+	},
+	"MessagesDirs": {
+		"GlobalPreferences": [
+			"i18n"
+		]
+	},
+	"ExtensionMessagesFiles": {
+		"GlobalPreferencesAlias": "GlobalPreferences.alias.php"
+	},
+	"AutoloadClasses": {
+		"GlobalPreferences": "GlobalPreferences.body.php",
+		"GlobalPreferencesHooks": "GlobalPreferences.hooks.php",
+		"SpecialGlobalPreferences": "SpecialGlobalPreferences.php"
+	},
+	"Hooks": {
+		"UserLoadOptions": [
+			"GlobalPreferencesHooks::onUserLoadOptions"
+		],
+		"UserSaveOptions": [
+			"GlobalPreferencesHooks::onUserSaveOptions"
+		],
+		"PreferencesFormPreSave": [
+			"GlobalPreferencesHooks::onPreferencesFormPreSave"
+		],
+		"LoadExtensionSchemaUpdates": [
+			"GlobalPreferencesHooks::onLoadExtensionSchemaUpdates"
+		]
+	},
+	"ExtensionFunctions": [
+		"GlobalPreferencesHooks::onExtensionFunctions"
+	],
+	"ResourceFileModulePaths": {
+		"localBasePath": "resources",
+		"remoteExtPath": "GlobalPreferences/resources"
+	},
+	"ResourceModules": {
+		"ext.GlobalPreferences.special": {
+			"styles": "ext.GlobalPreferences.special.css"
+		}
+	},
+	"manifest_version": 1
+}

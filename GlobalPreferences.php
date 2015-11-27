@@ -12,42 +12,16 @@
  * https://www.mediawiki.org/wiki/Special:Code/MediaWiki/49790
  */
 
-if ( !defined( 'MEDIAWIKI' ) ) {
-	die;
+if ( function_exists( 'wfLoadExtension' ) ) {
+	wfLoadExtension( 'GlobalPreferences' );
+	// Keep i18n globals so mergeMessageFileList.php doesn't break
+	$wgMessagesDirs['GlobalPreferences'] = __DIR__ . '/i18n';
+	$wgExtensionMessagesFiles['GlobalPreferencesAlias'] = __DIR__ . '/GlobalPreferences.alias.php';
+	wfWarn(
+		'Deprecated PHP entry point used for GlobalPreferences extension. Please use wfLoadExtension instead, ' .
+		'see https://www.mediawiki.org/wiki/Extension_registration for more details.'
+	);
+	return true;
+} else {
+	die( 'This version of the GlobalPreferences extension requires MediaWiki 1.25+' );
 }
-
-/**
- * Database to store preferences in
- * if null, uses $wgDBname
- */
-$wgGlobalPreferencesDB = null;
-
-$wgExtensionCredits['specialpage'][] = array(
-	'path' => __FILE__,
-	'name' => 'GlobalPreferences',
-	'author' => 'Kunal Mehta',
-	'url' => 'https://www.mediawiki.org/wiki/Extension:GlobalPreferences',
-	'descriptionmsg' => 'globalprefs-desc',
-	'version' => '0.1.1',
-	'license-name' => 'GPL-2.0+',
-);
-
-$wgSpecialPages['GlobalPreferences'] = 'SpecialGlobalPreferences';
-$wgMessagesDirs['GlobalPreferences'] = __DIR__ . '/i18n';
-$wgExtensionMessagesFiles['GlobalPreferences'] = __DIR__ . "/GlobalPreferences.i18n.php";
-$wgExtensionMessagesFiles['GlobalPreferencesAlias'] = __DIR__ . "/GlobalPreferences.alias.php";
-$wgAutoloadClasses['GlobalPreferences'] = __DIR__ . "/GlobalPreferences.body.php";
-$wgAutoloadClasses['GlobalPreferencesHooks'] = __DIR__ . "/GlobalPreferences.hooks.php";
-$wgAutoloadClasses['SpecialGlobalPreferences'] = __DIR__ . "/SpecialGlobalPreferences.php";
-
-$wgHooks['UserLoadOptions'][] = 'GlobalPreferencesHooks::onUserLoadOptions';
-$wgHooks['UserSaveOptions'][] = 'GlobalPreferencesHooks::onUserSaveOptions';
-$wgHooks['PreferencesFormPreSave'][] = 'GlobalPreferencesHooks::onPreferencesFormPreSave';
-$wgHooks['LoadExtensionSchemaUpdates'][] = 'GlobalPreferencesHooks::onLoadExtensionSchemaUpdates';
-$wgExtensionFunctions[] = 'GlobalPreferencesHooks::onExtensionFunctions';
-
-$wgResourceModules['ext.GlobalPreferences.special'] = array(
-	'styles' => 'ext.GlobalPreferences.special.css',
-	'localBasePath' => __DIR__ . '/resources',
-	'remoteExtPath' => 'GlobalPreferences/resources',
-);

@@ -1,5 +1,15 @@
 <?php
-
+/**
+ * Implements global preferences for MediaWiki
+ *
+ * @author Kunal Mehta <legoktm@gmail.com>
+ * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ * @file
+ * @ingroup Extensions
+ *
+ * Partially based off of work by Werdna
+ * https://www.mediawiki.org/wiki/Special:Code/MediaWiki/49790
+ */
 class GlobalPreferences {
 
 	/**
