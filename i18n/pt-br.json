@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"TheEduGobi"
+		]
+	},
+	"globalprefs-desc": "Permite que usuários definam preferências globais",
+	"globalprefs-set-globally": "Esta preferência foi definida globalmente e só pode ser modificada nas [[Special:GlobalPreferences|suas preferências globais]].",
+	"globalprefs-check-label": "Usar esta preferência em todas as wikis",
+	"globalprefs-error-header": "Erro",
+	"globalprefs-notglobal": "Sua conta não é global, sendo impossível de definir preferências globais.",
+	"globalpreferences": "Preferências globais",
+	"globalprefs-info-label": "Preferências globais:",
+	"globalprefs-info-link": "Definir suas preferências globais"
+}
