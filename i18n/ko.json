@@ -3,7 +3,8 @@
 		"authors": [
 			"Hym411",
 			"아라",
-			"Revi"
+			"Revi",
+			"Ykhwong"
 		]
 	},
 	"globalprefs-desc": "사용자가 전역 설정을 할 수 있도록 허용",
@@ -13,5 +14,5 @@
 	"globalprefs-notglobal": "당신의 계정은 전역 계정이 아니므로 전역 설정을 할 수 없습니다.",
 	"globalpreferences": "전역 설정",
 	"globalprefs-info-label": "전역 설정:",
-	"globalprefs-info-link": "전역 설정 하기"
+	"globalprefs-info-link": "전역 설정하기"
 }
