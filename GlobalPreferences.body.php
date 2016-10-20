@@ -35,13 +35,8 @@ class GlobalPreferences {
 			// No prefs for anons, sorry :(
 			return false;
 		}
-		if ( class_exists( 'CentralAuthUser' ) ) {
-			$caUser = CentralAuthUser::getInstance( $user );
-			return $caUser->exists();
-		}
 
-		// Assume that we're using shared user tables...
-		return true;
+		return self::getUserID( $user ) !== 0;
 	}
 
 	/**
@@ -51,16 +46,8 @@ class GlobalPreferences {
 	 * @return int
 	 */
 	public static function getUserID( User $user ) {
-		if ( !self::isUserGlobalized( $user ) ) {
-			return 0;
-		}
-		if ( class_exists( 'CentralAuthUser' ) ) {
-			$caUser = CentralAuthUser::getInstance( $user );
-			return $caUser->getId();
-		} else {
-			// shared user tables use the same user_id
-			return $user->getId();
-		}
+		$lookup = CentralIdLookup::factory();
+		return $lookup->centralIdFromLocalUser( $user );
 	}
 
 	/**
