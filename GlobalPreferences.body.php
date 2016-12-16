@@ -14,7 +14,7 @@ class GlobalPreferences {
 
 	/**
 	 * @param int $type one of the DB_* constants
-	 * @return DatabaseBase
+	 * @return Database
 	 */
 	public static function getPrefsDB( $type = DB_SLAVE ) {
 		global $wgGlobalPreferencesDB;
