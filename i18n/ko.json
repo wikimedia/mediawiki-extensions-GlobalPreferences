@@ -7,7 +7,7 @@
 			"Ykhwong"
 		]
 	},
-	"globalprefs-desc": "사용자가 전역 설정을 할 수 있도록 허용",
+	"globalprefs-desc": "사용자가 전역 환경 설정을 설정할 수 있게 합니다",
 	"globalprefs-set-globally": "이 환경 설정은 전역적으로 설정되었으며 [[Special:GlobalPreferences|전역 환경 설정]] 특수 문서를 통해 수정되어야 합니다.",
 	"globalprefs-check-label": "이 설정을 모든 위키에서 사용",
 	"globalprefs-error-header": "오류",
