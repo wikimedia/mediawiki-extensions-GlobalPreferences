@@ -47,7 +47,7 @@ class GlobalPreferences {
 	 */
 	public static function getUserID( User $user ) {
 		$lookup = CentralIdLookup::factory();
-		return $lookup->centralIdFromLocalUser( $user );
+		return $lookup->centralIdFromLocalUser( $user, CentralIdLookup::AUDIENCE_RAW );
 	}
 
 	/**
