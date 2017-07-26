@@ -50,7 +50,11 @@
 	},
 	"ResourceModules": {
 		"ext.GlobalPreferences.special": {
-			"styles": "ext.GlobalPreferences.special.css"
+			"styles": "ext.GlobalPreferences.special.css",
+			"scripts": "ext.GlobalPreferences.special.js"
+		},
+		"ext.GlobalPreferences.special.nojs": {
+			"styles": "ext.GlobalPreferences.special.nojs.css"
 		}
 	},
 	"manifest_version": 1

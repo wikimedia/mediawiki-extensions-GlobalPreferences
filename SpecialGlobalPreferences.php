@@ -16,7 +16,10 @@ class SpecialGlobalPreferences extends SpecialPreferences {
 			$this->setHeaders();
 			throw new ErrorPageError( 'globalprefs-error-header', 'globalprefs-notglobal' );
 		}
-		$this->getOutput()->addModuleStyles( 'ext.GlobalPreferences.special' );
+		// Add module styles and scripts separately
+		// so non-JS users get the styles quicker and to avoid a FOUC.
+		$this->getOutput()->addModuleStyles( 'ext.GlobalPreferences.special.nojs' );
+		$this->getOutput()->addModules( 'ext.GlobalPreferences.special' );
 		parent::execute( $par );
 	}
 

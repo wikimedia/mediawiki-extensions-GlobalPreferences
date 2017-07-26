@@ -1,6 +1,9 @@
-input.mw-globalprefs-global-check {
-	margin-left: 20px;
+.globalprefs-disabled {
+	opacity: 0.5;
 }
-tr.mw-globalprefs-global-check {
-	font-size: 13px;
+.globalprefs-hover {
+	background-color: rgba( 255, 224, 97, 0.4 );
+}
+.mw-special-GlobalPreferences form.mw-htmlform table {
+	border-collapse: collapse;
 }
