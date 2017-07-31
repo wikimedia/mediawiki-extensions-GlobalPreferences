@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Vitorvicentevalente"
+			"Vitorvicentevalente",
+			"Hamilton Abreu"
 		]
 	},
-	"globalprefs-desc": "Permite aos utilizadores definirem as suas preferências globais",
+	"globalprefs-desc": "Permite que os utilizadores definam as suas preferências globais",
 	"globalprefs-set-globally": "Esta preferência foi definida de forma global e pode ser modificada através das [[Special:GlobalPreferences|preferências globais]].",
 	"globalprefs-check-label": "Usar esta preferência em todas as wikis",
 	"globalprefs-error-header": "Erro",
