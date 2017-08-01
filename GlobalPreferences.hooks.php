@@ -7,23 +7,27 @@ class GlobalPreferencesHooks {
 	 * Special:GlobalPrefs
 	 * @var array
 	 */
-	static $badPrefs = array(
-		'realname', // Stored in user table, doesn't work yet
-		'userid', // @todo Show CA user id / shared user table id?
-		'usergroups', // @todo Show CA global groups instead?
-		'editcount', // @todo Should global edit count instead?
+	protected static $badPrefs = [
+		// Stored in user table, doesn't work yet
+		'realname',
+		// @todo Show CA user id / shared user table id?
+		'userid',
+		// @todo Show CA global groups instead?
+		'usergroups',
+		// @todo Should global edit count instead?
+		'editcount',
 		'registrationdate',
-	);
+	];
 
 	/**
 	 * Preference types that we should not add a checkbox for
 	 * @var array
 	 */
-	static $badTypes = array(
+	protected static $badTypes = [
 		'info',
 		'hidden',
 		'api',
-	);
+	];
 
 	/**
 	 * @FIXME This is terrible
@@ -36,26 +40,28 @@ class GlobalPreferencesHooks {
 
 	/**
 	 * Load our global prefs
-	 * @param User $user
-	 * @param array $options
+	 * @link https://www.mediawiki.org/wiki/Manual:Hooks/UserLoadOptions
+	 * @param User $user The user for whom options are being loaded.
+	 * @param array &$options The user's options; can be modified.
 	 * @return bool
 	 */
 	public static function onUserLoadOptions( User $user, &$options ) {
 		$id = GlobalPreferences::getUserID( $user );
-		if ( !$id ) { // Not a global user :(
+		if ( !$id ) {
+			// Not a global user.
 			return true;
 		}
 
 		$dbr = GlobalPreferences::getPrefsDB( DB_SLAVE );
 		$res = $dbr->select(
 			'global_preferences',
-			array( 'gp_property', 'gp_value' ),
-			array( 'gp_user' => $id ),
+			[ 'gp_property', 'gp_value' ],
+			[ 'gp_user' => $id ],
 			__METHOD__
 		);
 
-		$user->mGlobalPrefs = array();
-		$user->mLocalPrefs = array();
+		$user->mGlobalPrefs = [];
+		$user->mLocalPrefs = [];
 
 		foreach ( $res as $row ) {
 			if ( isset( $user->mOptions[$row->gp_property] ) ) {
@@ -71,8 +77,9 @@ class GlobalPreferencesHooks {
 
 	/**
 	 * Don't save global prefs
-	 * @param User $user
-	 * @param $options
+	 * @link https://www.mediawiki.org/wiki/Manual:Hooks/UserSaveOptions
+	 * @param User $user The user for whom options are being saved.
+	 * @param array &$options The user's options; can be modified.
 	 * @return bool
 	 */
 	public static function onUserSaveOptions( User $user, &$options ) {
@@ -95,14 +102,27 @@ class GlobalPreferencesHooks {
 		return true;
 	}
 
-	public static function onPreferencesFormPreSave( array $formData, PreferencesForm $form, User $user, &$result ) {
+	/**
+	 * @link https://www.mediawiki.org/wiki/Manual:Hooks/PreferencesFormPreSave
+	 * @param array $formData An associative array containing the data from the preferences form.
+	 * @param PreferencesForm $form The PreferencesForm object that represents the preferences form.
+	 * @param User $user The User object that can be used to change the user's preferences.
+	 * @param array &$result The boolean return value of the Preferences::tryFormSubmit method.
+	 * @return bool
+	 */
+	public static function onPreferencesFormPreSave(
+		array $formData,
+		PreferencesForm $form,
+		User $user,
+		&$result
+	) {
 		if ( !GlobalPreferences::onGlobalPrefsPage( $form ) ) {
 			// Don't interfere with local preferences
 			return true;
 		}
 
-		$rows = array();
-		$prefs = array();
+		$rows = [];
+		$prefs = [];
 		foreach ( $formData as $name => $value ) {
 			if ( substr( $name, -strlen( 'global' ) ) === 'global' && $value === true ) {
 				$realName = substr( $name, 0, -strlen( '-global' ) );
@@ -120,11 +140,11 @@ class GlobalPreferencesHooks {
 
 		$id = GlobalPreferences::getUserID( $user );
 		foreach ( $prefs as $prop => $value ) {
-			$rows[] = array(
+			$rows[] = [
 				'gp_user' => $id,
 				'gp_property' => $prop,
 				'gp_value' => $value,
-			);
+			];
 
 		}
 
@@ -134,7 +154,7 @@ class GlobalPreferencesHooks {
 			$dbw = GlobalPreferences::getPrefsDB( DB_MASTER );
 			$dbw->replace(
 				'global_preferences',
-				array( 'gp_user', 'gp_property' ),
+				[ 'gp_user', 'gp_property' ],
 				$rows,
 				__METHOD__
 			);
@@ -143,6 +163,11 @@ class GlobalPreferencesHooks {
 		return false;
 	}
 
+	/**
+	 * @link https://www.mediawiki.org/wiki/Manual:Hooks/LoadExtensionSchemaUpdates
+	 * @param DatabaseUpdater $updater The database updater.
+	 * @return bool
+	 */
 	public static function onLoadExtensionSchemaUpdates( DatabaseUpdater $updater ) {
 		global $wgGlobalPreferencesDB;
 		if ( is_null( $wgGlobalPreferencesDB ) || $wgGlobalPreferencesDB === wfWikiID() ) {
@@ -153,6 +178,12 @@ class GlobalPreferencesHooks {
 		return true;
 	}
 
+	/**
+	 * @link https://www.mediawiki.org/wiki/Manual:Hooks/GetPreferences
+	 * @param User $user User whose preferences are being modified.
+	 * @param array &$prefs Preferences description array, to be fed to an HTMLForm object.
+	 * @return bool
+	 */
 	public static function onGetPreferences( User $user, &$prefs ) {
 		if ( !GlobalPreferences::isUserGlobalized( $user ) ) {
 			return true;
@@ -160,8 +191,8 @@ class GlobalPreferencesHooks {
 
 		if ( GlobalPreferences::onGlobalPrefsPage() ) {
 			if ( !isset( $user->mGlobalPrefs ) ) {
-				// Just in case the user hasn't been loaded yet.
-				$user->getOption(''); // Triggers User::loadOptions
+				// Just in case the user hasn't been loaded yet. Triggers User::loadOptions.
+				$user->getOption( '' );
 			}
 			foreach ( $prefs as $name => $info ) {
 				// FIXME: This whole code section sucks
@@ -171,23 +202,23 @@ class GlobalPreferencesHooks {
 					&& !in_array( $info['type'], self::$badTypes )
 					&& !in_array( $name, self::$badPrefs )
 				) {
-					$prefs = wfArrayInsertAfter( $prefs, array(
-						"$name-global" => array(
+					$prefs = wfArrayInsertAfter( $prefs, [
+						"$name-global" => [
 							'type' => 'toggle',
 							'label-message' => 'globalprefs-check-label',
 							'default' => in_array( $name, $user->mGlobalPrefs ),
 							'section' => $info['section'],
 							'cssclass' => 'mw-globalprefs-global-check',
-						)
-					), $name );
+						]
+					], $name );
 				} elseif ( in_array( $name, self::$badPrefs ) ) {
 					$prefs[$name]['type'] = 'hidden';
 				}
 			}
 		} elseif ( GlobalPreferences::onLocalPrefsPage() ) {
 			if ( !isset( $user->mGlobalPrefs ) ) {
-				// Just in case the user hasn't been loaded yet.
-				$user->getOption(''); // Triggers User::loadOptions
+				// Just in case the user hasn't been loaded yet. Triggers User::loadOptions.
+				$user->getOption( '' );
 			}
 			foreach ( $user->mGlobalPrefs as $name ) {
 				if ( isset( $prefs[$name] ) ) {
@@ -211,7 +242,7 @@ class GlobalPreferencesHooks {
 		// Provide a link to Special:GlobalPreferences
 		// if we're not on that page.
 		if ( !GlobalPreferences::onGlobalPrefsPage() ) {
-			$prefs['global-info'] = array(
+			$prefs['global-info'] = [
 				'type' => 'info',
 				'section' => 'personal/info',
 				'label-message' => 'globalprefs-info-label',
@@ -220,7 +251,7 @@ class GlobalPreferencesHooks {
 					SpecialPage::getTitleFor( 'GlobalPreferences' ),
 					wfMessage( 'globalprefs-info-link' )->escaped()
 				),
-			);
+			];
 		}
 
 		return true;
