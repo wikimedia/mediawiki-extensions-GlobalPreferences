@@ -5,6 +5,12 @@ class SpecialGlobalPreferences extends SpecialPreferences {
 		SpecialPage::__construct( 'GlobalPreferences' );
 	}
 
+	/**
+	 * Execute the special page.
+	 * @param null|string $par The subpage name, if any.
+	 * @throws ErrorPageError
+	 * @throws UserNotLoggedIn
+	 */
 	public function execute( $par ) {
 		// Dirty override to check user can set global prefs.
 		if ( $this->getUser()->isAnon() ) {
@@ -23,6 +29,12 @@ class SpecialGlobalPreferences extends SpecialPreferences {
 		parent::execute( $par );
 	}
 
+	/**
+	 * Handle reset submission (subpage '/reset').
+	 * @param string[] $formData The submitted data (not used).
+	 * @return bool
+	 * @throws PermissionsError
+	 */
 	public function submitReset( $formData ) {
 		// TODO: Should we have our own userright here?
 		if ( !$this->getUser()->isAllowed( 'editmyoptions' ) ) {

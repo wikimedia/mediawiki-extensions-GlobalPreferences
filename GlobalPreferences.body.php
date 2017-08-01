@@ -19,7 +19,7 @@ class GlobalPreferences {
 	public static function getPrefsDB( $type = DB_SLAVE ) {
 		global $wgGlobalPreferencesDB;
 		if ( $wgGlobalPreferencesDB ) {
-			return wfGetDB( $type, array(), $wgGlobalPreferencesDB );
+			return wfGetDB( $type, [], $wgGlobalPreferencesDB );
 		} else {
 			return wfGetDB( $type );
 		}
@@ -27,7 +27,7 @@ class GlobalPreferences {
 
 	/**
 	 * Checks if the user is globalized
-	 * @param User $user
+	 * @param User $user The user
 	 * @return bool
 	 */
 	public static function isUserGlobalized( User $user ) {
@@ -42,7 +42,7 @@ class GlobalPreferences {
 	/**
 	 * Gets the user's ID that we're using in the table
 	 * Returns 0 if the user is not global
-	 * @param User $user
+	 * @param User $user The user for whom to get the ID.
 	 * @return int
 	 */
 	public static function getUserID( User $user ) {
@@ -53,37 +53,36 @@ class GlobalPreferences {
 	/**
 	 * Deletes all of a user's global prefs
 	 * Assumes that the user is globalized
-	 * @param User $user
+	 * @param User $user The user.
 	 */
 	public static function resetGlobalUserSettings( User $user ) {
 		if ( !isset( $user->mGlobalPrefs ) ) {
-			$user->getOption( '' ); // Trigger loading
+			// Triggers User::loadOptions.
+			$user->getOption( '' );
 		}
 		if ( count( $user->mGlobalPrefs ) ) {
 			self::getPrefsDB( DB_MASTER )->delete(
 				'global_preferences',
-				array( 'gp_user' => self::getUserID( $user ) ),
+				[ 'gp_user' => self::getUserID( $user ) ],
 				__METHOD__
 			);
 		}
 	}
 
 	/**
-	 * Convenience function to check if we're on the global
-	 * prefs page
-	 * @param IContextSource $context
+	 * Convenience function to check if we're on the global prefs page.
+	 * @param IContextSource $context The context to use; if not set main request context is used.
 	 * @return bool
 	 */
 	public static function onGlobalPrefsPage( $context = null ) {
 		$context = $context ?: RequestContext::getMain();
-		return $context->getTitle()
-		&& $context->getTitle()->isSpecial( 'GlobalPreferences' );
+		return $context->getTitle() && $context->getTitle()->isSpecial( 'GlobalPreferences' );
 	}
 
 	/**
 	 * Convenience function to check if we're on the local
 	 * prefs page
-	 * @param IContextSource $context
+	 * @param IContextSource $context The context to use; if not set main request context is used.
 	 * @return bool
 	 */
 	public static function onLocalPrefsPage( $context = null ) {
