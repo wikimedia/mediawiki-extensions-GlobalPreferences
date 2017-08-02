@@ -1,6 +1,14 @@
 <?php
 
-class GlobalPreferencesHooks {
+namespace GlobalPreferences;
+
+use DatabaseUpdater;
+use Linker;
+use PreferencesForm;
+use SpecialPage;
+use User;
+
+class Hooks {
 
 	/**
 	 * "bad" preferences that we should remove from
@@ -35,7 +43,7 @@ class GlobalPreferencesHooks {
 	public static function onExtensionFunctions() {
 		global $wgHooks;
 		// Register this as late as possible!
-		$wgHooks['GetPreferences'][] = 'GlobalPreferencesHooks::onGetPreferences';
+		$wgHooks['GetPreferences'][] = self::class . '::onGetPreferences';
 	}
 
 	/**
@@ -172,7 +180,8 @@ class GlobalPreferencesHooks {
 		global $wgGlobalPreferencesDB;
 		if ( is_null( $wgGlobalPreferencesDB ) || $wgGlobalPreferencesDB === wfWikiID() ) {
 			// Only add the table if it's supposed to be on this wiki.
-			$updater->addExtensionTable( 'global_preferences', __DIR__ . '/schema.sql' );
+			$sqlPath = __DIR__ . '/../schema.sql';
+			$updater->addExtensionTable( 'global_preferences', $sqlPath );
 		}
 
 		return true;
