@@ -23,9 +23,11 @@
 		"GlobalPreferencesAlias": "GlobalPreferences.alias.php"
 	},
 	"AutoloadClasses": {
-		"GlobalPreferences\\GlobalPreferences": "includes/GlobalPreferences.php",
 		"GlobalPreferences\\Hooks": "includes/Hooks.php",
-		"GlobalPreferences\\SpecialGlobalPreferences": "includes/SpecialGlobalPreferences.php"
+		"GlobalPreferences\\SpecialGlobalPreferences": "includes/SpecialGlobalPreferences.php",
+		"GlobalPreferences\\GlobalPreferencesFactory": "includes/GlobalPreferencesFactory.php",
+		"GlobalPreferences\\GlobalPreferencesForm": "includes/GlobalPreferencesForm.php",
+		"GlobalPreferences\\Storage": "includes/Storage.php"
 	},
 	"Hooks": {
 		"UserLoadOptions": [
@@ -39,11 +41,11 @@
 		],
 		"LoadExtensionSchemaUpdates": [
 			"GlobalPreferences\\Hooks::onLoadExtensionSchemaUpdates"
+		],
+		"MediaWikiServices": [
+			"GlobalPreferences\\Hooks::onMediaWikiServices"
 		]
 	},
-	"ExtensionFunctions": [
-		"GlobalPreferences\\Hooks::onExtensionFunctions"
-	],
 	"ResourceFileModulePaths": {
 		"localBasePath": "resources",
 		"remoteExtPath": "GlobalPreferences/resources"
@@ -51,7 +53,8 @@
 	"ResourceModules": {
 		"ext.GlobalPreferences.special": {
 			"styles": "ext.GlobalPreferences.special.css",
-			"scripts": "ext.GlobalPreferences.special.js"
+			"scripts": "ext.GlobalPreferences.special.js",
+			"messages": [ "globalprefs-select-all" ]
 		},
 		"ext.GlobalPreferences.special.nojs": {
 			"styles": "ext.GlobalPreferences.special.nojs.css"

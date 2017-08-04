@@ -5,13 +5,18 @@ namespace GlobalPreferences;
 use DerivativeContext;
 use ErrorPageError;
 use HTMLForm;
+use IContextSource;
+use MediaWiki\MediaWikiServices;
 use PermissionsError;
+use PreferencesForm;
 use SpecialPage;
 use SpecialPreferences;
+use User;
 use UserNotLoggedIn;
 
 class SpecialGlobalPreferences extends SpecialPreferences {
-	function __construct() {
+
+	public function __construct() {
 		SpecialPage::__construct( 'GlobalPreferences' );
 	}
 
@@ -34,7 +39,10 @@ class SpecialGlobalPreferences extends SpecialPreferences {
 			$this->setHeaders();
 			throw new UserNotLoggedIn();
 		}
-		if ( !GlobalPreferences::isUserGlobalized( $this->getUser() ) ) {
+		/** @var GlobalPreferencesFactory $globalPreferencesFactory */
+		$globalPreferencesFactory = MediaWikiServices::getInstance()->getPreferencesFactory();
+		$globalPreferencesFactory->setUser( $this->getUser() );
+		if ( !$globalPreferencesFactory->isUserGlobalized() ) {
 			$this->setHeaders();
 			throw new ErrorPageError( 'globalprefs-error-header', 'globalprefs-notglobal' );
 		}
@@ -52,6 +60,18 @@ class SpecialGlobalPreferences extends SpecialPreferences {
 		$this->getOutput()->addModuleStyles( 'ext.GlobalPreferences.special.nojs' );
 		$this->getOutput()->addModules( 'ext.GlobalPreferences.special' );
 		parent::execute( $par );
+	}
+
+	/**
+	 * Get the preferences form to use.
+	 * @param User $user The user.
+	 * @param IContextSource $context The context.
+	 * @return PreferencesForm|HTMLForm
+	 */
+	protected function getFormObject( $user, IContextSource $context ) {
+		$preferencesFactory = MediaWikiServices::getInstance()->getPreferencesFactory();
+		$form = $preferencesFactory->getForm( $user, $context, GlobalPreferencesForm::class );
+		return $form;
 	}
 
 	/**
@@ -90,6 +110,15 @@ class SpecialGlobalPreferences extends SpecialPreferences {
 	}
 
 	/**
+	 * Adds help link with an icon via page indicators.
+	 * @param string $to Ignored.
+	 * @param bool $overrideBaseUrl Whether $url is a full URL, to avoid MW.o.
+	 */
+	public function addHelpLink( $to, $overrideBaseUrl = false ) {
+		parent::addHelpLink( 'Help:Extension:GlobalPreferences', $overrideBaseUrl );
+	}
+
+	/**
 	 * Handle reset submission (subpage '/reset').
 	 * @param string[] $formData The submitted data (not used).
 	 * @return bool
@@ -101,7 +130,10 @@ class SpecialGlobalPreferences extends SpecialPreferences {
 			throw new PermissionsError( 'editmyoptions' );
 		}
 
-		GlobalPreferences::resetGlobalUserSettings( $this->getUser() );
+		/** @var GlobalPreferencesFactory $preferencesFactory */
+		$preferencesFactory = MediaWikiServices::getInstance()->getPreferencesFactory();
+		$preferencesFactory->setUser( $this->getUser() );
+		$preferencesFactory->resetGlobalUserSettings();
 
 		$url = $this->getTitle()->getFullURL( 'success' );
 
@@ -109,5 +141,4 @@ class SpecialGlobalPreferences extends SpecialPreferences {
 
 		return true;
 	}
-
 }

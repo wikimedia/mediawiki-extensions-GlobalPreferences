@@ -1,9 +1,15 @@
-.globalprefs-disabled {
-	opacity: 0.5;
-}
 .globalprefs-hover {
-	background-color: rgba( 255, 224, 97, 0.4 );
+	background-color: #eaecf0;
 }
-.mw-special-GlobalPreferences form.mw-htmlform table {
-	border-collapse: collapse;
+
+/* Style fixes for Skin:Vector. The ID selector is whitelisted in .stylelintrc because Vector uses it. */
+body.skin-vector #preferences fieldset.ext-globalpreferences-select-all {
+	padding-bottom: 0;
+	margin-bottom: 0;
+	border: 0;
+}
+
+/* Style fixes for Extension:BetaFeatures. */
+body.skin-vector #preferences #mw-prefsection-betafeatures fieldset.ext-globalpreferences-select-all {
+	padding-left: 0;
 }

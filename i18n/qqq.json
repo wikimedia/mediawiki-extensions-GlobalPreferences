@@ -7,12 +7,13 @@
 	},
 	"globalprefs-desc": "{{desc|name=Global Preferences|url=https://www.mediawiki.org/wiki/Extension:GlobalPreferences}}",
 	"globalprefs-set-globally": "Help message below a disabled preference option instructing the user to change it at their global preferences page.",
-	"globalprefs-check-label": "Label for a checkbox that enables the user to save that (the above) preference globally.",
+	"tooltip-globalprefs-check-label": "The tooltip and the label text for the checkbox to enable a preference globally.",
 	"globalprefs-error-header": "Page title for error message.\n{{Identical|Error}}",
-	"globalprefs-notglobal": "Error message a user sees if they don not have a global account.",
+	"globalprefs-notglobal": "Error message a user sees if they do not have a global account.",
 	"globalpreferences": "{{doc-special|GlobalPreferences}}",
 	"globalprefs-info-label": "Label for link in [[Special:Preferences]] to go set your global preferences.",
 	"globalprefs-info-link": "Link text to [[Special:GlobalPreferences]].",
 	"globalprefs-reset-intro": "Used in [[Special:GlobalPreferences/reset]].",
-	"globalprefs-restoreprefs": "Used as link text in [[Special:GlobalPreferences]]. The link points to [[Special:GlobalPreferences/reset]] which shows the \"Remove all global preferences\" form.\n\nAlso used as label for the Submit button in [[Special:GlobalPreferences/reset]]."
+	"globalprefs-restoreprefs": "Used as link text in [[Special:GlobalPreferences]]. The link points to [[Special:GlobalPreferences/reset]] which shows the \"Remove all global preferences\" form.\n\nAlso used as label for the Submit button in [[Special:GlobalPreferences/reset]].",
+	"globalprefs-select-all": "Label for the checkbox for selecting all of a section's preferences."
 }

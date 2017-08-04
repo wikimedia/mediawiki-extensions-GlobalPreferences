@@ -1,7 +1,11 @@
 ( function ( mw, $ ) {
 	'use strict';
 
-	$( 'input.mw-globalprefs-global-check' ).on( 'change', function () {
+	/**
+	 * When one of the global checkboxes is changed enable or disable its matching preference.
+	 * Also highlight the relevant preference when hovering on the checkbox.
+	 */
+	function onChangeGlobalCheckboxes() {
 		var $labels,
 
 			// Find the name (without the '-global' suffix, but with the 'wp' prefix).
@@ -11,44 +15,93 @@
 			// Is this preference enabled globally?
 			enabled = $( this ).prop( 'checked' ),
 
-			// The table rows relating to this preference
-			// (two or three rows, depending on whether there's a help row).
+			// This selector is required because there's no common class on these.
+			fieldSelector = '[class^="mw-htmlform-field-"]',
+
+			// The form 'rows' (which are adjacent divs) relating to this preference
+			// (two or three rows, depending on whether there's a help row, all contained in $rows).
 			$globalCheckRow,
-			$labelRow,
-			$rows;
+			$mainFieldRow,
+			$rows,
+
+			// The current preference's inputs (can be multiple, and not all will have the same name).
+			$inputs = $( ':input[name="' + name + '"]' ).parents( '.mw-input' ).find( ':input' );
 
 		// All the labels for this preference (not all have for='').
-		$labels = $( 'label[for^=\'mw-input-' + name + '\']' )
-			.closest( 'tr' )
+		$labels = $inputs
+			.closest( fieldSelector )
 			.find( 'label' )
-			.not( '[for$=\'-global\']' );
+			.not( '[for$="-global"]' );
+
+		// Collect the related rows. The main field row is sometimes followed by a help-tip row.
+		$globalCheckRow = $( this ).closest( fieldSelector );
+		$mainFieldRow = $labels.closest( fieldSelector );
+		$rows = $().add( $globalCheckRow ).add( $mainFieldRow );
+		if ( $mainFieldRow.next().hasClass( 'htmlform-tip' ) ) {
+			$rows = $rows.add( $mainFieldRow.next() );
+		}
 
 		// Disable or enable the related preferences inputs.
-		$( ':input[name=\'' + name + '\']' ).prop( 'disabled', !enabled );
+		$inputs.prop( 'disabled', !enabled );
 		if ( enabled ) {
 			$labels.removeClass( 'globalprefs-disabled' );
 		} else {
 			$labels.addClass( 'globalprefs-disabled' );
 		}
 
-		// Collect the related rows. The latter two in the $rows array will often be the same element.
-		$globalCheckRow = $( this ).closest( 'tr' );
-		$labelRow = $labels.closest( 'tr' );
-		$rows = $( [
-			$labelRow[ 0 ],
-			$labelRow.next()[ 0 ],
-			$globalCheckRow[ 0 ]
-		] );
-
 		// Add a class on hover, to highlight the related rows.
-		$( this ).add( 'label[for=\'' + $( this ).attr( 'id' ) + '\']' ).hover( function () {
-			// Hover on.
-			$rows.addClass( 'globalprefs-hover' );
-		}, function () {
-			// Hover off.
-			$rows.removeClass( 'globalprefs-hover' );
+		$( this ).add( 'label[for="' + $( this ).attr( 'id' ) + '"]' ).on( {
+			mouseenter: function () {
+				$rows.addClass( 'globalprefs-hover' );
+			},
+			mouseleave: function () {
+				$rows.removeClass( 'globalprefs-hover' );
+			}
 		} );
+	}
 
-	} ).change();
+	/**
+	 * Add select all behaviour to a group of checkboxes.
+	 * @param {jQuery} $selectAll The select-all checkbox.
+	 * @param {jQuery} $targets The target checkboxes.
+	 */
+	function selectAllCheckboxes( $selectAll, $targets ) {
+		// Handle the select-all box changing.
+		$selectAll.on( 'change', function () {
+			$targets.prop( 'checked', $( this ).prop( 'checked' ) ).change();
+		} );
+		// Handle any of the targets changing.
+		$targets.on( 'change', function () {
+			var allSelected = true;
+			$targets.each( function () {
+				allSelected = allSelected && $( this ).prop( 'checked' );
+			} );
+			$selectAll.prop( 'checked', allSelected );
+		} );
+	}
 
+	/**
+	 * Add the 'select all' checkbox to the form section headers.
+	 */
+	function addSelectAllToHeader() {
+		// For each preferences form tab, add a select-all checkbox to the header.
+		$( '.globalprefs-section-header' ).each( function () {
+			var selectAll = mw.message( 'globalprefs-select-all' ),
+				$checkbox,
+				$allGlobalCheckboxes;
+			// Wrap the checkbox in a fieldset so it acts/looks the same as all the global checkboxes.
+			$checkbox = $( '<fieldset class="ext-globalpreferences-select-all"><label><input type="checkbox" /> ' + selectAll + '</label></fieldset>' );
+			$( this ).append( $checkbox );
+
+			// Determine all the matching checkboxes.
+			$allGlobalCheckboxes = $( this ).parent( 'fieldset' ).find( '.mw-globalprefs-global-check:checkbox' );
+
+			// Enable the select-all behaviour.
+			selectAllCheckboxes( $checkbox.find( ':checkbox' ), $allGlobalCheckboxes );
+		} );
+	}
+
+	// Activate the above functions.
+	addSelectAllToHeader();
+	$( 'input.mw-globalprefs-global-check' ).on( 'change', onChangeGlobalCheckboxes ).change();
 }( mediaWiki, jQuery ) );

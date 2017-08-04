@@ -1,6 +1,80 @@
-input.mw-globalprefs-global-check {
-	margin-left: 2em;
+.mw-htmlform-nolabel .mw-label {
+	display: none;
 }
-tr.mw-globalprefs-global-check {
+
+.mw-globalprefs-global-check .mw-label,
+.mw-globalprefs-global-check label {
+	display: none;
+}
+
+/* For core fields */
+.mw-htmlform-field-HTMLAutoCompleteSelectField,
+.mw-htmlform-field-HTMLButtonField,
+.mw-htmlform-field-HTMLCheckField,
+.mw-htmlform-field-HTMLCheckMatrix,
+.mw-htmlform-field-HTMLComboboxField,
+.mw-htmlform-field-HTMLDateTimeField,
+.mw-htmlform-field-HTMLEditTools,
+.mw-htmlform-field-HTMLFloatField,
+.mw-htmlform-field-HTMLFormFieldCloner,
+.mw-htmlform-field-HTMLFormFieldWithButton,
+.mw-htmlform-field-HTMLHiddenField,
+.mw-htmlform-field-HTMLInfoField,
+.mw-htmlform-field-HTMLIntField,
+.mw-htmlform-field-HTMLMultiSelectField,
+.mw-htmlform-field-HTMLRadioField,
+.mw-htmlform-field-HTMLRestrictionsField,
+.mw-htmlform-field-HTMLSelectAndOtherField,
+.mw-htmlform-field-HTMLSelectField,
+.mw-htmlform-field-HTMLSelectLimitField,
+.mw-htmlform-field-HTMLSelectNamespace,
+.mw-htmlform-field-HTMLSelectNamespaceWithButton,
+.mw-htmlform-field-HTMLSelectOrOtherField,
+.mw-htmlform-field-HTMLSizeFilterField,
+.mw-htmlform-field-HTMLSubmitField,
+.mw-htmlform-field-HTMLTagFilter,
+.mw-htmlform-field-HTMLTextAreaField,
+.mw-htmlform-field-HTMLTextField,
+.mw-htmlform-field-HTMLTextFieldWithButton,
+.mw-htmlform-field-HTMLTitleTextField,
+.mw-htmlform-field-HTMLUsersMultiselectField,
+.mw-htmlform-field-HTMLUserTextField,
+/* For Extension:BetaFeatures */
+.mw-htmlform-field-NewHTMLCheckField,
+.mw-htmlform-field-HTMLFeatureField,
+/* For Extension:GlobalPrefences */
+.mw-special-GlobalPreferences .htmlform-tip {
+	padding-left: 7%;
+}
+
+.mw-globalprefs-global-check {
 	font-size: smaller;
+	padding-left: 0;
+	float: left;
+	width: 5%;
+}
+.mw-globalprefs-global-check input.mw-globalprefs-global-check {
+	float: none;
+	width: auto;
+}
+
+/** Make the column header a bit narrower so it looks more associated with the column. */
+.globalprefs-section-header .col-header {
+	display: block;
+	width: 7%;
+	text-align: center;
+}
+
+/* Style fixes for Extension:BetaFeatures. */
+fieldset#mw-prefsection-betafeatures .mw-globalprefs-global-check .mw-input {
+	/* To match .mw-htmlform-field-HTMLFeatureField .mw-input */
+	padding-top: 10px;
+	/* To match .oo-ui-fieldLayout.oo-ui-labelElement > .oo-ui-fieldLayout-body > .oo-ui-fieldLayout-header > .oo-ui-labelElement-label */
+	font-size: 24px;
+	margin-top: 0.3em;
+}
+fieldset#mw-prefsection-betafeatures .mw-globalprefs-checkbox-for-betafeatures-auto-enroll .mw-input {
+	padding-top: 0;
+	font-size: inherit;
+	margin-top: 0;
 }
