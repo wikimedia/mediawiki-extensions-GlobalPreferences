@@ -15,7 +15,7 @@ class Hooks {
 	 * Special:GlobalPrefs
 	 * @var array
 	 */
-	protected static $badPrefs = [
+	protected static $prefsBlacklist = [
 		// Stored in user table, doesn't work yet
 		'realname',
 		// @todo Show CA user id / shared user table id?
@@ -31,10 +31,21 @@ class Hooks {
 	 * Preference types that we should not add a checkbox for
 	 * @var array
 	 */
-	protected static $badTypes = [
+	protected static $typeBlacklist = [
 		'info',
 		'hidden',
 		'api',
+	];
+
+	/**
+	 * Preference classes that are allowed to be global
+	 * @var array
+	 */
+	protected static $classWhitelist = [
+		'HTMLSelectOrOtherField',
+		'CirrusSearch\HTMLCompletionProfileSettings',
+		'NewHTMLCheckField',
+		'HTMLFeatureField',
 	];
 
 	/**
@@ -134,7 +145,7 @@ class Hooks {
 		foreach ( $formData as $name => $value ) {
 			if ( substr( $name, -strlen( 'global' ) ) === 'global' && $value === true ) {
 				$realName = substr( $name, 0, -strlen( '-global' ) );
-				if ( isset( $formData[$realName] ) && !in_array( $realName, self::$badPrefs ) ) {
+				if ( isset( $formData[$realName] ) && !in_array( $realName, self::$prefsBlacklist ) ) {
 					$prefs[$realName] = $formData[$realName];
 				} else {
 					// FIXME: Handle checkbox matrixes properly
@@ -205,11 +216,8 @@ class Hooks {
 			}
 			foreach ( $prefs as $name => $info ) {
 				// FIXME: This whole code section sucks
-				if ( isset( $info['type'] )
-					&& substr( $name, -strlen( 'global' ) ) !== 'global'
-					&& !isset( $prefs["$name-global"] )
-					&& !in_array( $info['type'], self::$badTypes )
-					&& !in_array( $name, self::$badPrefs )
+				if ( !isset( $prefs["$name-global"] )
+					&& self::isGlobalizablePreference( $name, $info )
 				) {
 					$prefs = wfArrayInsertAfter( $prefs, [
 						"$name-global" => [
@@ -220,7 +228,7 @@ class Hooks {
 							'cssclass' => 'mw-globalprefs-global-check',
 						]
 					], $name );
-				} elseif ( in_array( $name, self::$badPrefs ) ) {
+				} elseif ( in_array( $name, self::$prefsBlacklist ) ) {
 					$prefs[$name]['type'] = 'hidden';
 				}
 			}
@@ -264,5 +272,24 @@ class Hooks {
 		}
 
 		return true;
+	}
+
+	/**
+	 * Checks whether the given preference is localizable
+	 *
+	 * @param string $name Preference name
+	 * @param array|mixed $info Preference description, by reference to avoid unnecessary cloning
+	 * @return bool
+	 */
+	private static function isGlobalizablePreference( $name, &$info ) {
+		$isAllowedType = isset( $info['type'] )
+			&& !in_array( $info['type'], self::$typeBlacklist )
+			&& !in_array( $name, self::$prefsBlacklist );
+
+		$isAllowedClass = isset( $info['class'] )
+			&& in_array( $info['class'], self::$classWhitelist );
+
+		return substr( $name, -strlen( 'global' ) ) !== 'global'
+			&& ( $isAllowedType || $isAllowedClass );
 	}
 }
