@@ -1,5 +1,13 @@
 <?php
 
+namespace GlobalPreferences;
+
+use ErrorPageError;
+use PermissionsError;
+use SpecialPage;
+use SpecialPreferences;
+use UserNotLoggedIn;
+
 class SpecialGlobalPreferences extends SpecialPreferences {
 	function __construct() {
 		SpecialPage::__construct( 'GlobalPreferences' );

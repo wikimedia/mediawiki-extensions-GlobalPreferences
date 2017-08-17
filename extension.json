@@ -12,7 +12,7 @@
 		"GlobalPreferencesDB": null
 	},
 	"SpecialPages": {
-		"GlobalPreferences": "SpecialGlobalPreferences"
+		"GlobalPreferences": "GlobalPreferences\\SpecialGlobalPreferences"
 	},
 	"MessagesDirs": {
 		"GlobalPreferences": [
@@ -23,26 +23,26 @@
 		"GlobalPreferencesAlias": "GlobalPreferences.alias.php"
 	},
 	"AutoloadClasses": {
-		"GlobalPreferences": "GlobalPreferences.body.php",
-		"GlobalPreferencesHooks": "GlobalPreferences.hooks.php",
-		"SpecialGlobalPreferences": "SpecialGlobalPreferences.php"
+		"GlobalPreferences\\GlobalPreferences": "includes/GlobalPreferences.php",
+		"GlobalPreferences\\Hooks": "includes/Hooks.php",
+		"GlobalPreferences\\SpecialGlobalPreferences": "includes/SpecialGlobalPreferences.php"
 	},
 	"Hooks": {
 		"UserLoadOptions": [
-			"GlobalPreferencesHooks::onUserLoadOptions"
+			"GlobalPreferences\\Hooks::onUserLoadOptions"
 		],
 		"UserSaveOptions": [
-			"GlobalPreferencesHooks::onUserSaveOptions"
+			"GlobalPreferences\\Hooks::onUserSaveOptions"
 		],
 		"PreferencesFormPreSave": [
-			"GlobalPreferencesHooks::onPreferencesFormPreSave"
+			"GlobalPreferences\\Hooks::onPreferencesFormPreSave"
 		],
 		"LoadExtensionSchemaUpdates": [
-			"GlobalPreferencesHooks::onLoadExtensionSchemaUpdates"
+			"GlobalPreferences\\Hooks::onLoadExtensionSchemaUpdates"
 		]
 	},
 	"ExtensionFunctions": [
-		"GlobalPreferencesHooks::onExtensionFunctions"
+		"GlobalPreferences\\Hooks::onExtensionFunctions"
 	],
 	"ResourceFileModulePaths": {
 		"localBasePath": "resources",

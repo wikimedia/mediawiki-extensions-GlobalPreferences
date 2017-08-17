@@ -10,6 +10,15 @@
  * Partially based off of work by Werdna
  * https://www.mediawiki.org/wiki/Special:Code/MediaWiki/49790
  */
+
+namespace GlobalPreferences;
+
+use CentralIdLookup;
+use IContextSource;
+use RequestContext;
+use User;
+use Wikimedia\Rdbms\Database;
+
 class GlobalPreferences {
 
 	/**
@@ -82,6 +91,7 @@ class GlobalPreferences {
 	/**
 	 * Convenience function to check if we're on the local
 	 * prefs page
+	 *
 	 * @param IContextSource $context The context to use; if not set main request context is used.
 	 * @return bool
 	 */
