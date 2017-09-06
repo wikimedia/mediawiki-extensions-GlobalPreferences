@@ -215,6 +215,13 @@ class Hooks {
 				$user->getOption( '' );
 			}
 			foreach ( $prefs as $name => $info ) {
+				// Preferences can opt out of being globalized by setting the 'noglobal' flag.
+				$hasOptedOut = ( isset( $info['noglobal'] ) && $info['noglobal'] === true );
+				if ( $hasOptedOut ) {
+					unset( $prefs[ $name ] );
+					continue;
+				}
+
 				// FIXME: This whole code section sucks
 				if ( !isset( $prefs["$name-global"] )
 					&& self::isGlobalizablePreference( $name, $info )
