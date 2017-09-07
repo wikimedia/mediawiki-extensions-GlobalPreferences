@@ -30,6 +30,15 @@ class SpecialGlobalPreferences extends SpecialPreferences {
 			$this->setHeaders();
 			throw new ErrorPageError( 'globalprefs-error-header', 'globalprefs-notglobal' );
 		}
+
+		// Add link back to (local) Preferences.
+		$link = $this->getLinkRenderer()->makeKnownLink(
+			static::getSafeTitleFor( 'Preferences' ),
+			$this->msg( 'mypreferences' )->escaped()
+		);
+		// Same left-arrow as used in Skin::subPageSubtitle().
+		$this->getOutput()->addSubtitle( "&lt; $link" );
+
 		// Add module styles and scripts separately
 		// so non-JS users get the styles quicker and to avoid a FOUC.
 		$this->getOutput()->addModuleStyles( 'ext.GlobalPreferences.special.nojs' );
