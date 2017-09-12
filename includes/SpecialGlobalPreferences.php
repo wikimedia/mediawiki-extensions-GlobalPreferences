@@ -2,7 +2,9 @@
 
 namespace GlobalPreferences;
 
+use DerivativeContext;
 use ErrorPageError;
+use HTMLForm;
 use PermissionsError;
 use SpecialPage;
 use SpecialPreferences;
@@ -20,6 +22,12 @@ class SpecialGlobalPreferences extends SpecialPreferences {
 	 * @throws UserNotLoggedIn
 	 */
 	public function execute( $par ) {
+		// Because parent::showResetForm() is private, we have to override it separately here.
+		if ( $par == 'reset' ) {
+			$this->showGlobalPrefsResetForm();
+			return;
+		}
+
 		// Dirty override to check user can set global prefs.
 		if ( $this->getUser()->isAnon() ) {
 			// @todo use our own error messages here
@@ -44,6 +52,41 @@ class SpecialGlobalPreferences extends SpecialPreferences {
 		$this->getOutput()->addModuleStyles( 'ext.GlobalPreferences.special.nojs' );
 		$this->getOutput()->addModules( 'ext.GlobalPreferences.special' );
 		parent::execute( $par );
+	}
+
+	/**
+	 * Display the preferences-reset confirmation page.
+	 * This mostly repeats code in parent::execute() and parent::showResetForm().
+	 * @throws PermissionsError
+	 */
+	protected function showGlobalPrefsResetForm() {
+		// TODO: Should we have our own userright here?
+		if ( !$this->getUser()->isAllowed( 'editmyoptions' ) ) {
+			throw new PermissionsError( 'editmyoptions' );
+		}
+
+		// This section is duplicated from parent::execute().
+		$this->setHeaders();
+		$this->outputHeader();
+		$out = $this->getOutput();
+		// Prevent hijacked user scripts from sniffing passwords etc.
+		$out->disallowUserJs();
+		// Use the same message as normal Preferences for the login-redirection message.
+		$this->requireLogin( 'prefsnologintext2' );
+		$this->checkReadOnly();
+
+		$this->getOutput()->addWikiMsg( 'globalprefs-reset-intro' );
+
+		$context = new DerivativeContext( $this->getContext() );
+		$context->setTitle( $this->getPageTitle( 'reset' ) );
+		$htmlForm = new HTMLForm( [], $context, 'globalprefs-restore' );
+
+		$htmlForm->setSubmitTextMsg( 'globalprefs-restoreprefs' );
+		$htmlForm->setSubmitDestructive();
+		$htmlForm->setSubmitCallback( [ $this, 'submitReset' ] );
+		$htmlForm->suppressReset();
+
+		$htmlForm->show();
 	}
 
 	/**

@@ -11,5 +11,7 @@
 	"globalprefs-notglobal": "Your account is not a global account and cannot set global preferences.",
 	"globalpreferences": "Global preferences",
 	"globalprefs-info-label": "Global preferences:",
-	"globalprefs-info-link": "Set your global preferences"
+	"globalprefs-info-link": "Set your global preferences",
+	"globalprefs-reset-intro": "You can use this page to disable all global preferences and return to your local preferences.\nThis cannot be undone.",
+	"globalprefs-restoreprefs": "Remove all global preferences (in all sections)"
 }
