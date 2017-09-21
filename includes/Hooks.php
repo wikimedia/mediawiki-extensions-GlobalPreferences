@@ -82,16 +82,26 @@ class Hooks {
 
 		$prefs = [];
 		foreach ( $formData as $name => $value ) {
+			// If this is the '-global' counterpart of a preference.
 			if ( substr( $name, -strlen( 'global' ) ) === 'global' && $value === true ) {
+				// Determine the real name of the preference.
 				$realName = substr( $name, 0, -strlen( '-global' ) );
 				if ( isset( $formData[$realName] ) ) {
+					// Store normal preference values.
 					$prefs[$realName] = $formData[$realName];
+
 				} else {
-					// FIXME: Handle checkbox matrixes properly
-					/*
-					var_dump($realName);
-					var_dump($name);
-					*/
+					// If the real-named preference isn't set, this must be a CheckMatrix value
+					// where the preference names are of the form "$realName-$column-$row"
+					// (we also have to remove the "$realName-global" entry).
+					$checkMatrix = preg_grep( "/^$realName/", array_keys( $formData ) );
+					unset( $checkMatrix[ array_search( $name, $checkMatrix ) ] );
+					$checkMatrixVals = array_intersect_key( $formData, array_flip( $checkMatrix ) );
+					$prefs = array_merge( $prefs, $checkMatrixVals );
+					// Also store a global $realName preference for benefit of the the
+					// 'globalize-this' checkbox.
+					$prefs[ $realName ] = true;
+
 				}
 			}
 		}

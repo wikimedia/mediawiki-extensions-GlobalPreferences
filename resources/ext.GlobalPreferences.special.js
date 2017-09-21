@@ -25,12 +25,15 @@
 			$rows,
 
 			// The current preference's inputs (can be multiple, and not all will have the same name).
-			$inputs = $( ':input[name="' + name + '"]' ).parents( '.mw-input' ).find( ':input' );
+			$inputs = $( ':input[name="' + name + '"], :input[name="' + name + '[]"]' )
+				.parents( '.mw-input' )
+				.find( ':input' )
+				.not( '.checkmatrix-forced' );
 
-		// All the labels for this preference (not all have for='').
+		// All the labels for this preference (not all have for='' nor are even labels).
 		$labels = $inputs
 			.closest( fieldSelector )
-			.find( 'label' )
+			.find( 'label, td' )
 			.not( '[for$="-global"]' );
 
 		// Collect the related rows. The main field row is sometimes followed by a help-tip row.

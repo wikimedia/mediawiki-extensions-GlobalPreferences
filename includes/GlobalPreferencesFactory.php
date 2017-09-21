@@ -69,6 +69,7 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 		'CirrusSearch\HTMLCompletionProfileSettings',
 		'NewHTMLCheckField',
 		'HTMLFeatureField',
+		'HTMLCheckMatrix',
 	];
 
 	/**
