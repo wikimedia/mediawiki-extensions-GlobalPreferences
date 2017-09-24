@@ -71,7 +71,7 @@ class Hooks {
 			return true;
 		}
 
-		$dbr = GlobalPreferences::getPrefsDB( DB_SLAVE );
+		$dbr = GlobalPreferences::getPrefsDB( DB_REPLICA );
 		$res = $dbr->select(
 			'global_preferences',
 			[ 'gp_property', 'gp_value' ],
