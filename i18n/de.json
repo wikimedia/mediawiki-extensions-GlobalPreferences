@@ -11,5 +11,7 @@
 	"globalprefs-notglobal": "Dein Benutzerkonto ist nicht global und kann deshalb keine globalen Einstellungen festlegen.",
 	"globalpreferences": "Globale Einstellungen",
 	"globalprefs-info-label": "Globale Einstellungen:",
-	"globalprefs-info-link": "Deine globalen Einstellungen festlegen"
+	"globalprefs-info-link": "Deine globalen Einstellungen festlegen",
+	"globalprefs-reset-intro": "Du kannst diese Seite verwenden, um alle globalen Einstellungen zu deaktivieren und um zu deinen lokalen Einstellungen zurückzukehren.\nDies kann nicht rückgängig gemacht werden.",
+	"globalprefs-restoreprefs": "Alle globalen Einstellungen entfernen (in allen Abschnitten)"
 }
