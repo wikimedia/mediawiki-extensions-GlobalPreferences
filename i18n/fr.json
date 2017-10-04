@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Gomoko"
+			"Gomoko",
+			"Wladek92"
 		]
 	},
 	"globalprefs-desc": "Permet aux utilisateurs de fixer des préférences globales",
@@ -11,5 +12,7 @@
 	"globalprefs-notglobal": "Votre compte n’est pas un compte global et ne peut pas fixer de préférences globales.",
 	"globalpreferences": "Préférences globales",
 	"globalprefs-info-label": "Préférences globales :",
-	"globalprefs-info-link": "Fixer vos préférences globales"
+	"globalprefs-info-link": "Fixer vos préférences globales",
+	"globalprefs-reset-intro": "Vous pouvez utiliser cette page pour désactiver toutes les préférences globales et retourner à vos préférences locales.\nCette opération ne pourra pas être annulée.",
+	"globalprefs-restoreprefs": "Enlever toutes les préférences globales (dans toutes les sections)"
 }

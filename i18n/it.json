@@ -12,5 +12,7 @@
 	"globalprefs-notglobal": "La tua non è un'utenza globale e non puoi impostare una preferenza globale.",
 	"globalpreferences": "Preferenze globali",
 	"globalprefs-info-label": "Preferenze globali:",
-	"globalprefs-info-link": "Imposta le preferenze globali"
+	"globalprefs-info-link": "Imposta le preferenze globali",
+	"globalprefs-reset-intro": "Puoi utilizzare questa pagina per disattivare tutte le preferenze globali e tornare alle preferenze locali.\nQuesta operazione non può essere annullata.",
+	"globalprefs-restoreprefs": "Rimuovi tutte le preferenze globali (in tutte le sezioni)"
 }

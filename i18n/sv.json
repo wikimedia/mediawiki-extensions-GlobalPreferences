@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Jopparn",
-			"Tobulos1"
+			"Tobulos1",
+			"WikiPhoenix"
 		]
 	},
 	"globalprefs-desc": "Tillåter användare att ange globala inställningar",
@@ -12,5 +13,7 @@
 	"globalprefs-notglobal": "Ditt konto är inte ett globalt konto och kan inte ange globala inställningar.",
 	"globalpreferences": "Globala inställningar",
 	"globalprefs-info-label": "Globala inställningar:",
-	"globalprefs-info-link": "Ange dina globala inställningar"
+	"globalprefs-info-link": "Ange dina globala inställningar",
+	"globalprefs-reset-intro": "Du kan använda denna sida för att inaktivera alla globala inställningar och återvända till dina lokala inställningar. Detta kan inte ångras.",
+	"globalprefs-restoreprefs": "Ta bort alla globala inställningar (i alla avsnitt)"
 }

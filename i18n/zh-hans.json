@@ -13,5 +13,7 @@
 	"globalprefs-notglobal": "您的账户不是一个全域账户，因此不能设置全域设置项。",
 	"globalpreferences": "全域设置",
 	"globalprefs-info-label": "全域设置：",
-	"globalprefs-info-link": "设置您的全域设置项"
+	"globalprefs-info-link": "设置您的全域设置项",
+	"globalprefs-reset-intro": "您可以使用该页面来禁用所有全域参数设置，并改回您的本地参数设置。这不能撤销。",
+	"globalprefs-restoreprefs": "移除所有全域参数设置（所有节）"
 }
