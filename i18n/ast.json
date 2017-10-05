@@ -11,5 +11,7 @@
 	"globalprefs-notglobal": "La so cuenta nun ye global y nun pue configurar preferencies globales.",
 	"globalpreferences": "Preferencies globales",
 	"globalprefs-info-label": "Preferencies globales:",
-	"globalprefs-info-link": "Configurar les preferencies globales"
+	"globalprefs-info-link": "Configurar les preferencies globales",
+	"globalprefs-reset-intro": "Puedes usar esta páxina pa desactivar toles preferencies globales y volver a les preferencies llocales.\nEsto nun puede desfacese.",
+	"globalprefs-restoreprefs": "Desaniciar toles preferencies globales (de toles seiciones)"
 }
