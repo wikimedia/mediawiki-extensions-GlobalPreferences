@@ -27,6 +27,17 @@ use User;
  */
 class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 
+	/**
+	 * The suffix appended to preference names
+	 * for the associated preference that tracks whether they have a local override.
+	 */
+	const LOCAL_EXCEPTION_SUFFIX = '-local-exception';
+
+	/**
+	 * The suffix appended to preference names for their global counterparts.
+	 */
+	const GLOBAL_EXCEPTION_SUFFIX = '-global';
+
 	/** @var User */
 	protected $user;
 
@@ -106,30 +117,33 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	 * @return mixed[][]
 	 */
 	protected function getPreferencesLocal( $preferences, $globalPrefNames ) {
+		$modifiedPrefs = [];
 		foreach ( $preferences as $name => $def ) {
+			$modifiedPrefs[$name] = $def;
+
 			// If this has been set globally.
 			if ( in_array( $name, $globalPrefNames ) ) {
-				// Disable this preference.
-				$preferences[$name]['disabled'] = true;
+				// Disable this preference unless it has a local exception.
+				$localException = $this->user->getOption( $name . static::LOCAL_EXCEPTION_SUFFIX );
+				$modifiedPrefs[$name]['disabled'] = is_null( $localException );
 
-				// Append a help message.
-				$help = '';
-				if ( isset( $preferences[$name]['help-message'] ) ) {
-					$help .= wfMessage( $preferences[$name]['help-message'] )->parse() . '<br />';
-				} elseif ( isset( $preferences[$name]['help'] ) ) {
-					$help .= $preferences[$name]['help'] . '<br />';
-				}
-
-				// Create a link to the relevant section of GlobalPreferences.
-				$section = substr( $def['section'], 0, strpos( $def['section'], '/' ) );
-				$secFragment = 'mw-prefsection-' . $section;
-
-				// Set the new full help text.
-				$help .= wfMessage( 'globalprefs-set-globally', [ $secFragment ] )->parse();
-				$preferences[$name]['help'] = $help;
-				unset( $preferences[$name]['help-message'] );
+				// Add a new local exception preference after this one.
+				$cssClasses = [
+					'mw-globalprefs-local-exception',
+					'mw-globalprefs-local-exception-for-' . $name,
+				];
+				$secFragment = static::getSectionFragmentId( $def['section'] );
+				$labelMsg = wfMessage( 'globalprefs-set-local-exception', [ $secFragment ] );
+				$modifiedPrefs[ $name . static::LOCAL_EXCEPTION_SUFFIX ] = [
+					'type' => 'toggle',
+					'label-raw' => $labelMsg->parse(),
+					'default' => $this->user->getOption( $name . static::LOCAL_EXCEPTION_SUFFIX ),
+					'section' => $def['section'],
+					'cssclass' => join( ' ', $cssClasses ),
+				];
 			}
 		}
+		$preferences = $modifiedPrefs;
 
 		// Add a link to GlobalPreferences to the local preferences form.
 		$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
@@ -162,19 +176,48 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 				continue;
 			}
 			// Create the new preference.
-			$allPrefs[$pref.'-global'] = [
+			$isGlobal = in_array( $pref, $globalPrefNames );
+			$allPrefs[$pref . static::GLOBAL_EXCEPTION_SUFFIX] = [
 				'type' => 'toggle',
 				// Make the tooltip and the label the same, because the label is normally hidden.
 				'tooltip' => 'globalprefs-check-label',
 				'label-message' => 'tooltip-globalprefs-check-label',
-				'default' => in_array( $pref, $globalPrefNames ),
+				'default' => $isGlobal,
 				'section' => $def['section'],
 				'cssclass' => 'mw-globalprefs-global-check mw-globalprefs-checkbox-for-' . $pref,
 			];
+			// If this has a local exception, append a help message to say so.
+			if ( $isGlobal
+				&& $this->user->getOption( $pref . static::LOCAL_EXCEPTION_SUFFIX )
+			) {
+				$help = '';
+				if ( isset( $def['help-message'] ) ) {
+					$help .= wfMessage( $def['help-message'] )->parse() . '<br />';
+				} elseif ( isset( $def['help'] ) ) {
+					$help .= $def['help'] . '<br />';
+				}
+				// Create a link to the relevant section of GlobalPreferences.
+				$secFragment = static::getSectionFragmentId( $def['section'] );
+				// Merge the help texts.
+				$helpMsg = wfMessage( 'globalprefs-has-local-exception', [ $secFragment ] );
+				unset( $def['help-message'] );
+				$def['help'] = $help . $helpMsg->parse();
+			}
 
 			$allPrefs[$pref] = $def;
 		}
 		return $allPrefs;
+	}
+
+	/**
+	 * Get the HTML fragment identifier for a given preferences section. This is the leading part
+	 * of the provided section name, up to a slash (if there is one).
+	 * @param string $section A section name, as used in a preference definition.
+	 * @return string
+	 */
+	public static function getSectionFragmentId( $section ) {
+		$sectionId = preg_replace( '#/.*$#', '', $section );
+		return 'mw-prefsection-' . $sectionId;
 	}
 
 	/**
@@ -191,7 +234,7 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 		}
 
 		// Ignore "is global" checkboxes
-		if ( substr( $name, -strlen( '-global' ) ) === '-global' ) {
+		if ( static::isGlobalPrefName( $name ) ) {
 			return false;
 		}
 
@@ -208,6 +251,36 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 						  && in_array( $info['class'], $this->classWhitelist );
 
 		return $isAllowedType || $isAllowedClass;
+	}
+
+	/**
+	 * A convenience function to check if a preference name is for a global one.
+	 * @param string $name The name to check.
+	 * @return bool
+	 */
+	public static function isGlobalPrefName( $name ) {
+		return static::strEndsWith( $name, static::GLOBAL_EXCEPTION_SUFFIX );
+	}
+
+	/**
+	 * A convenience function to check if a preference name is for a local-exception preference.
+	 * @param string $name The name to check.
+	 * @return bool
+	 */
+	public static function isLocalPrefName( $name ) {
+		return static::strEndsWith( $name, static::LOCAL_EXCEPTION_SUFFIX );
+	}
+
+	/**
+	 * A convenience function to check a string to see if it ends in a given suffix.
+	 * @todo This could probably exist somewhere like StringUtils.
+	 * @param string $name The name to check.
+	 * @param string $suffix The suffix to check for.
+	 * @return bool
+	 */
+	protected static function strEndsWith( $name, $suffix ) {
+		$nameSuffix = substr( $name, -strlen( $suffix ) );
+		return ( $nameSuffix === $suffix );
 	}
 
 	/**

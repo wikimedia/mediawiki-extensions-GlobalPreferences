@@ -6,10 +6,27 @@ use DatabaseUpdater;
 use Language;
 use MediaWiki\Auth\AuthManager;
 use MediaWiki\MediaWikiServices;
+use OutputPage;
 use PreferencesForm;
+use Skin;
 use User;
 
 class Hooks {
+
+	/**
+	 * Allows last minute changes to the output page, e.g. adding of CSS or JavaScript by extensions.
+	 * @link https://www.mediawiki.org/wiki/Manual:Hooks/BeforePageDisplay
+	 * @param OutputPage &$out The output page.
+	 * @param Skin &$skin The skin. Not used.
+	 */
+	public static function onBeforePageDisplay( OutputPage &$out, Skin &$skin ) {
+		if ( $out->getTitle()->isSpecial( 'Preferences' ) ) {
+			// Add module styles and scripts separately
+			// so non-JS users get the styles quicker and to avoid a FOUC.
+			$out->addModuleStyles( 'ext.GlobalPreferences.local-nojs' );
+			$out->addModules( 'ext.GlobalPreferences.local' );
+		}
+	}
 
 	/**
 	 * Load global preferences.
@@ -28,6 +45,10 @@ class Hooks {
 
 		// Overwrite all options that have a global counterpart.
 		foreach ( $globalPreferences->getGlobalPreferencesValues() as $optName => $globalValue ) {
+			// But not if it has a local exception.
+			if ( $user->getOption( $optName . GlobalPreferencesFactory::LOCAL_EXCEPTION_SUFFIX ) ) {
+				continue;
+			}
 			$options[ $optName ] = $globalValue;
 		}
 	}
@@ -51,11 +72,10 @@ class Hooks {
 
 		foreach ( $options as $optName => $optVal ) {
 			// Ignore if ends in "-global".
-			if ( substr( $optName, -strlen( '-global' ) ) === '-global' ) {
+			if ( GlobalPreferencesFactory::isGlobalPrefName( $optName ) ) {
 				unset( $options[ $optName ] );
 			}
 		}
-
 		return true;
 	}
 
@@ -82,10 +102,11 @@ class Hooks {
 
 		$prefs = [];
 		foreach ( $formData as $name => $value ) {
-			// If this is the '-global' counterpart of a preference.
-			if ( substr( $name, -strlen( 'global' ) ) === 'global' && $value === true ) {
+			// If this is the '-global' counterpart to a preference.
+			if ( GlobalPreferencesFactory::isGlobalPrefName( $name ) && $value === true ) {
 				// Determine the real name of the preference.
-				$realName = substr( $name, 0, -strlen( '-global' ) );
+				$suffixLen = strlen( GlobalPreferencesFactory::GLOBAL_EXCEPTION_SUFFIX );
+				$realName = substr( $name, 0, -$suffixLen );
 				if ( isset( $formData[$realName] ) ) {
 					// Store normal preference values.
 					$prefs[$realName] = $formData[$realName];

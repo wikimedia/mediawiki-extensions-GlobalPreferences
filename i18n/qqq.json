@@ -6,7 +6,8 @@
 		]
 	},
 	"globalprefs-desc": "{{desc|name=Global Preferences|url=https://www.mediawiki.org/wiki/Extension:GlobalPreferences}}",
-	"globalprefs-set-globally": "Help message below a disabled preference option instructing the user to change it at their global preferences page.",
+	"globalprefs-set-local-exception": "Label for the checkbox below a globally-set preference, inviting user to set a local exception for it. $1 is the fragment identifier for the current preferences section, with which to link to the correct section on Special:GlobalPreferences.",
+	"globalprefs-has-local-exception": "Help text on a global preference that has a local exception. $1 is the fragment identifier for the current preferences section, with which to link to the correct section on Special:Preferences.",
 	"tooltip-globalprefs-check-label": "The tooltip and the label text for the checkbox to enable a preference globally.",
 	"globalprefs-error-header": "Page title for error message.\n{{Identical|Error}}",
 	"globalprefs-notglobal": "Error message a user sees if they do not have a global account.",
