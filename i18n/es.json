@@ -11,5 +11,7 @@
 	"globalprefs-notglobal": "Tu cuenta no es global, no se pueden establecer preferencias globales.",
 	"globalpreferences": "Preferencias globales",
 	"globalprefs-info-label": "Preferencias globales:",
-	"globalprefs-info-link": "Definir las preferencias globales"
+	"globalprefs-info-link": "Definir las preferencias globales",
+	"globalprefs-reset-intro": "Puedes emplear esta página para desactivar todas las preferencias globales y volver a tus preferencias locales.\nNo se puede deshacer esta acción.",
+	"globalprefs-restoreprefs": "Quitar todas las preferencias globales (en todas las secciones)"
 }
