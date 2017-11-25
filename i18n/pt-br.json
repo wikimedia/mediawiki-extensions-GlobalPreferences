@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"TheEduGobi"
+			"TheEduGobi",
+			"Eduardo Addad de Oliveira"
 		]
 	},
 	"globalprefs-desc": "Permite que usuários definam preferências globais",
@@ -11,5 +12,7 @@
 	"globalprefs-notglobal": "Sua conta não é global, sendo impossível de definir preferências globais.",
 	"globalpreferences": "Preferências globais",
 	"globalprefs-info-label": "Preferências globais:",
-	"globalprefs-info-link": "Definir suas preferências globais"
+	"globalprefs-info-link": "Definir suas preferências globais",
+	"globalprefs-reset-intro": "Pode usar esta página para desativar todas as preferências globais e voltar às suas preferências locais.\nEsta operação não pode ser desfeita.",
+	"globalprefs-restoreprefs": "Remover todas as preferências globais (em todas as seções)"
 }
