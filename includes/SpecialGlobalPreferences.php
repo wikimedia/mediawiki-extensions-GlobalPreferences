@@ -80,7 +80,6 @@ class SpecialGlobalPreferences extends SpecialPreferences {
 	 * @throws PermissionsError
 	 */
 	protected function showGlobalPrefsResetForm() {
-		// TODO: Should we have our own userright here?
 		if ( !$this->getUser()->isAllowed( 'editmyoptions' ) ) {
 			throw new PermissionsError( 'editmyoptions' );
 		}
@@ -125,7 +124,6 @@ class SpecialGlobalPreferences extends SpecialPreferences {
 	 * @throws PermissionsError
 	 */
 	public function submitReset( $formData ) {
-		// TODO: Should we have our own userright here?
 		if ( !$this->getUser()->isAllowed( 'editmyoptions' ) ) {
 			throw new PermissionsError( 'editmyoptions' );
 		}
