@@ -6,6 +6,7 @@ use GlobalPreferences\GlobalPreferencesFactory;
 use GlobalPreferences\Storage;
 use MediaWiki\MediaWikiServices;
 use MediaWikiTestCase;
+use Wikimedia\TestingAccessWrapper;
 
 /**
  * @group GlobalPreferences
@@ -65,5 +66,122 @@ class GlobalPreferencesTest extends MediaWikiTestCase {
 		$this->assertEquals( [], $globalPreferences->getGlobalPreferencesValues() );
 		// @TODO Instance caching on User doesn't clear User::$mOptionOverrides
 		// $this->assertEquals( 'bn', $user->getOption( 'language' ) );
+	}
+
+	/**
+	 * @dataProvider provideIsGlobalizablePreference
+	 *
+	 * @param string $message
+	 * @param bool $expected
+	 * @param string $name
+	 * @param array $info
+	 */
+	public function testIsGlobalizablePreference( $message, $expected, $name, array $info ) {
+		/** @var GlobalPreferencesFactory $globalPreferences */
+		$globalPreferences = TestingAccessWrapper::newFromObject(
+			MediaWikiServices::getInstance()->getPreferencesFactory()
+		);
+
+		// Not calling directly because TestingAccessWrapper strips reference otherwise
+		$result = call_user_func_array(
+			[ $globalPreferences, 'isGlobalizablePreference' ],
+			[ $name, &$info ]
+		);
+		$this->assertEquals( $expected, $result, $message );
+	}
+
+	public function provideIsGlobalizablePreference() {
+		return [
+			// message, expected, name, info
+			[
+				'Globalize simple text preferences',
+				true,
+				'foo',
+				[
+					'type' => 'text',
+				],
+			],
+			[
+				'Globalize select controls',
+				true,
+				'language',
+				[
+					'type' => 'select',
+					'options' => [ 'foo' => 'bar', 'baz' => 'quux' ],
+				],
+			],
+			[
+				'Globalize preferences with known class',
+				true,
+				'foo',
+				[
+					'class' => 'HTMLCheckMatrix',
+				],
+			],
+			[
+				'Ignore info "preferences"',
+				false,
+				'username',
+				[
+					"label-message" => [
+						"username",
+						"Foo"
+					],
+					"default" => "Foo",
+					"section" => "personal/info",
+				],
+			],
+			[
+				'Ignore preferences explicitly marked as non-global',
+				false,
+				'foo',
+				[
+					'type' => 'text',
+					'noglobal' => true,
+				],
+			],
+			[
+				'Ignore checkboxes added by this very extension',
+				false,
+				'foo-global',
+				[
+					'type' => 'text',
+				],
+			],
+			[
+				'Ignore disabled preferences',
+				false,
+				'foo',
+				[
+					'type' => 'text',
+					'disabled' => true,
+				],
+			],
+			[
+				'Globalize preferences with disabled=false',
+				true,
+				'foo',
+				[
+					'type' => 'text',
+					'disabled' => false,
+				],
+			],
+			[
+				'Ignore preferences with blacklisted names',
+				false,
+				'realname',
+				[
+					'type' => 'text',
+				],
+			],
+			[
+				'Ignore preferences with unknown class',
+				false,
+				'foo',
+				[
+					'class' => 'SomethingNew',
+				],
+			],
+		];
 	}
 }
