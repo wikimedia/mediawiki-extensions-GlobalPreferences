@@ -8,13 +8,14 @@
 		]
 	},
 	"globalprefs-desc": "사용자가 전역 환경 설정을 설정할 수 있게 합니다",
-	"globalprefs-set-globally": "이 환경 설정은 전역적으로 설정되었으며 [[Special:GlobalPreferences|전역 환경 설정]] 특수 문서를 통해 수정되어야 합니다.",
-	"globalprefs-check-label": "이 설정을 모든 위키에서 사용",
+	"globalprefs-set-globally": "이 환경 설정은 전역적으로 설정되었으며 [[Special:GlobalPreferences#$1|전역 환경 설정]] 특수 문서를 통해 수정되어야 합니다.",
+	"tooltip-globalprefs-check-label": "이 설정을 전역적으로 적용하기",
 	"globalprefs-error-header": "오류",
 	"globalprefs-notglobal": "당신의 계정은 전역 계정이 아니므로 전역 설정을 할 수 없습니다.",
 	"globalpreferences": "전역 설정",
 	"globalprefs-info-label": "전역 설정:",
 	"globalprefs-info-link": "전역 설정하기",
 	"globalprefs-reset-intro": "이 문서에서 모든 환경 설정을 비활성화하거나 로컬 환경 설정으로 돌아갈 수 있습니다.\n이 작업은 취소할 수 없습니다.",
-	"globalprefs-restoreprefs": "모든 전역 환경 설정 제거 (모든 섹션에서)"
+	"globalprefs-restoreprefs": "모든 전역 환경 설정 제거 (모든 섹션에서)",
+	"globalprefs-select-all": "모두 선택"
 }

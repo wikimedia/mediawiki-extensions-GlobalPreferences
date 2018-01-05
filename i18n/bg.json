@@ -5,7 +5,6 @@
 		]
 	},
 	"globalprefs-desc": "Позволява на потребителите да правят глобални настройки",
-	"globalprefs-check-label": "Използване на тази настройка във всички уикита",
 	"globalprefs-error-header": "Грешка",
 	"globalpreferences": "Глобални настройки",
 	"globalprefs-info-label": "Глобални настройки:"

@@ -6,13 +6,14 @@
 		]
 	},
 	"globalprefs-desc": "Consente agli utenti di impostare le preferenze globali",
-	"globalprefs-set-globally": "Questa preferenza è stata impostata globalmente e può essere modificata attraverso le tue [[Special:GlobalPreferences|preferenze globali]].",
-	"globalprefs-check-label": "Utilizza questa preferenza su tutti i wiki.",
+	"globalprefs-set-globally": "Questa preferenza è stata impostata globalmente e può essere modificata attraverso le tue [[Special:GlobalPreferences#$1|preferenze globali]].",
+	"tooltip-globalprefs-check-label": "Rendi globale questa impostazione",
 	"globalprefs-error-header": "Errore",
 	"globalprefs-notglobal": "La tua non è un'utenza globale e non puoi impostare una preferenza globale.",
 	"globalpreferences": "Preferenze globali",
 	"globalprefs-info-label": "Preferenze globali:",
 	"globalprefs-info-link": "Imposta le preferenze globali",
 	"globalprefs-reset-intro": "Puoi utilizzare questa pagina per disattivare tutte le preferenze globali e tornare alle preferenze locali.\nQuesta operazione non può essere annullata.",
-	"globalprefs-restoreprefs": "Rimuovi tutte le preferenze globali (in tutte le sezioni)"
+	"globalprefs-restoreprefs": "Rimuovi tutte le preferenze globali (in tutte le sezioni)",
+	"globalprefs-select-all": "Seleziona tutto"
 }

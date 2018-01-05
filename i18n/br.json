@@ -2,12 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"Y-M D",
-			"Fohanno"
+			"Fohanno",
+			"Dishual"
 		]
 	},
-	"globalprefs-check-label": "Implijout ar penndibab-mañ en holl wikioù",
 	"globalprefs-error-header": "Fazi",
 	"globalpreferences": "Penndibaboù hollek",
 	"globalprefs-info-label": "Penndibaboù hollek :",
-	"globalprefs-info-link": "Lakaat ho penndibaboù hollek"
+	"globalprefs-info-link": "Lakaat ho penndibaboù hollek",
+	"globalprefs-select-all": "Diuzañ pep tra"
 }

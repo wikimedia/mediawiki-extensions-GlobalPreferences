@@ -5,8 +5,7 @@
 		]
 	},
 	"globalprefs-desc": "Zmóžnja wužiwarjam postajenje globalnych nastajenjow",
-	"globalprefs-set-globally": "Tute nastajenje je so globalnje postajiło a dyrbi so přez [[Special:GlobalPreferences|twoje globalne nastajenja]] změnić.",
-	"globalprefs-check-label": "Tute nastajenje we wšěch wikijach wužiwać",
+	"globalprefs-set-globally": "Tute nastajenje je so globalnje postajiło a dyrbi so přez [[Special:GlobalPreferences#$1|twoje globalne nastajenja]] změnić.",
 	"globalprefs-error-header": "Zmylk",
 	"globalprefs-notglobal": "Twoje konto njeje globalne konto a njemóže globalne nastajenja postajić.",
 	"globalpreferences": "Globalne nastajenja",

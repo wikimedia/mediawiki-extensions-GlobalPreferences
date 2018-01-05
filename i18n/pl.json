@@ -5,8 +5,7 @@
 		]
 	},
 	"globalprefs-desc": "Pozwala użytkownikom ustawiać preferencje globalne",
-	"globalprefs-set-globally": "Ta preferencja została ustawiona jako globalna i może być zmieniona tylko w [[Special:GlobalPreferences|preferencjach globalnych]].",
-	"globalprefs-check-label": "Użyj tych preferencji na wszystkich wiki",
+	"globalprefs-set-globally": "Ta preferencja została ustawiona jako globalna i może być zmieniona tylko w [[Special:GlobalPreferences#$1|preferencjach globalnych]].",
 	"globalprefs-error-header": "Błąd",
 	"globalprefs-notglobal": "Twoje konto nie jest uniwersalne i nie można ustawić preferencji globalnych.",
 	"globalpreferences": "Preferencje globalne",

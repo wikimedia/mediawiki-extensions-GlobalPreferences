@@ -7,8 +7,7 @@
 		]
 	},
 	"globalprefs-desc": "Maakt het mogelijk voor gebruikers om globale voorkeuren in te stellen",
-	"globalprefs-set-globally": "Deze instelling is globaal ingesteld en kan alleen gewijzigd worden via uw [[Special:GlobalPreferences|uw globale instellingen]].",
-	"globalprefs-check-label": "Deze voorkeur op alle wiki's gebruiken",
+	"globalprefs-set-globally": "Deze instelling is globaal ingesteld en kan alleen gewijzigd worden via uw [[Special:GlobalPreferences#$1|uw globale instellingen]].",
 	"globalprefs-error-header": "Fout",
 	"globalprefs-notglobal": "Uw account is geen globaal account en kan geen globale voorkeuren instellen.",
 	"globalpreferences": "Globale voorkeuren",

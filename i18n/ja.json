@@ -6,8 +6,7 @@
 		]
 	},
 	"globalprefs-desc": "利用者がグローバル個人設定を使用できるようにする",
-	"globalprefs-set-globally": "この個人設定はグローバルに適用されます。[[Special:GlobalPreferences|グローバル個人設定]]ページで変更するようにください。",
-	"globalprefs-check-label": "上記の設定をすべてのウィキで使用する",
+	"globalprefs-set-globally": "この個人設定はグローバルに適用されます。[[Special:GlobalPreferences#$1|グローバル個人設定]]ページで変更するようにください。",
 	"globalprefs-error-header": "エラー",
 	"globalprefs-notglobal": "あなたのアカウントはグローバル アカウントではないため、グローバル個人設定を使用できません。",
 	"globalpreferences": "グローバル個人設定",

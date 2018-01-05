@@ -6,8 +6,7 @@
 		]
 	},
 	"globalprefs-desc": "Antaa käyttäjien asettaa järjestelmänlaajuiset asetukset",
-	"globalprefs-set-globally": "Nämä asetukset on asetettu järjestelmänlaajuisesti, ja niitä täytyy muokata [[Special:GlobalPreferences|järjestelmänlaajuisista asetuksistasi]].",
-	"globalprefs-check-label": "Käytä tätä asetusta kaikissa wikeissä",
+	"globalprefs-set-globally": "Nämä asetukset on asetettu järjestelmänlaajuisesti, ja niitä täytyy muokata [[Special:GlobalPreferences#$1|järjestelmänlaajuisista asetuksistasi]].",
 	"globalprefs-error-header": "Virhe",
 	"globalprefs-notglobal": "Tunnuksesi ei ole järjestelmänlaajuinen tunnus, joten siihen ei voi asettaa järjestelmänlaajuisia asetuksia.",
 	"globalpreferences": "Järjestelmänlaajuiset asetukset",

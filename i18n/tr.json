@@ -1,12 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Joseph"
+			"Joseph",
+			"Hedda"
 		]
 	},
 	"globalprefs-desc": "Kullanıcıların küresel tercihleri ayarlamasına izin verir",
-	"globalprefs-set-globally": "Bu tercih küresel olarak ayarlanmış ve [[Special:GlobalPreferences|küresel tercihleriniz]] ile değiştirilmesi gerekir.",
-	"globalprefs-check-label": "Bu tercihi tüm vikilerde kullan.",
+	"globalprefs-set-globally": "Bu tercih küresel olarak ayarlanmış ve [[Special:GlobalPreferences#$1|küresel tercihleriniz]] doğrultusunda değiştirilmelidir.",
 	"globalprefs-error-header": "Hata",
 	"globalprefs-notglobal": "Hesabınızın küresel hesap değil ve küresel tercihler ayarlayamazsınız.",
 	"globalpreferences": "Küresel tercihler",

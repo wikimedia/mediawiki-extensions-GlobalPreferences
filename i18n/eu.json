@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Subi"
+			"Subi",
+			"Mikel Ibaiba"
 		]
 	},
-	"globalprefs-error-header": "Errorea"
+	"globalprefs-error-header": "Errorea",
+	"globalprefs-select-all": "Denak aukeratu"
 }

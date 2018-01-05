@@ -5,8 +5,7 @@
 		]
 	},
 	"globalprefs-desc": "Permite a los usuarios configurar preferencies globales",
-	"globalprefs-set-globally": "Esta preferencia configuróse de mou global y tien de camudase dende les sos [[Special:GlobalPreferences|preferencies globales]].",
-	"globalprefs-check-label": "Usar esta preferencia en toles wikis",
+	"globalprefs-set-globally": "Esta preferencia configuróse de mou global y tien de camudase dende les sos [[Special:GlobalPreferences#$1|preferencies globales]].",
 	"globalprefs-error-header": "Error",
 	"globalprefs-notglobal": "La so cuenta nun ye global y nun pue configurar preferencies globales.",
 	"globalpreferences": "Preferencies globales",

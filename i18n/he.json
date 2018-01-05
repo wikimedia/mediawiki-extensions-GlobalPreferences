@@ -5,8 +5,7 @@
 		]
 	},
 	"globalprefs-desc": "מתן אפשרות למשתמשים להגדיר העדפות גלובליות",
-	"globalprefs-set-globally": "ההעדפה הזאת הוגדרה באופן גלובלי דרך [[Special:GlobalPreferences|ההעדפות הגלובליות שלך]].",
-	"globalprefs-check-label": "להשתמש בהעדפה הזאת בכל אתרי הוויקי",
+	"globalprefs-set-globally": "ההעדפה הזאת הוגדרה באופן גלובלי דרך [[Special:GlobalPreferences#$1|ההעדפות הגלובליות שלך]].",
 	"globalprefs-error-header": "שגיאה",
 	"globalprefs-notglobal": "החשבון שלך אינו חשבון גלובלי ואינו יכול להגדיר העדפות גלובליות.",
 	"globalpreferences": "העדפות גלובליות",
