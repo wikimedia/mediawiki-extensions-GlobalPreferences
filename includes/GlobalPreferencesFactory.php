@@ -186,7 +186,19 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	 */
 	protected function isGlobalizablePreference( $name, &$info ) {
 		// Preferences can opt out of being globalized by setting the 'noglobal' flag.
-		$hasOptedOut = ( isset( $info['noglobal'] ) && $info['noglobal'] === true );
+		if ( isset( $info['noglobal'] ) && $info['noglobal'] === true ) {
+			return false;
+		}
+
+		// Ignore "is global" checkboxes
+		if ( substr( $name, -strlen( '-global' ) ) === '-global' ) {
+			return false;
+		}
+
+		// If a setting can't be changed, don't bother globalizing it
+		if ( isset( $info['disabled'] ) && $info['disabled'] ) {
+			return false;
+		}
 
 		$isAllowedType = isset( $info['type'] )
 						 && !in_array( $info['type'], $this->typeBlacklist )
@@ -195,9 +207,7 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 		$isAllowedClass = isset( $info['class'] )
 						  && in_array( $info['class'], $this->classWhitelist );
 
-		$endsInGlobal = ( substr( $name, -strlen( '-global' ) ) === '-global' );
-
-		return !$hasOptedOut && !$endsInGlobal && ( $isAllowedType || $isAllowedClass );
+		return $isAllowedType || $isAllowedClass;
 	}
 
 	/**
