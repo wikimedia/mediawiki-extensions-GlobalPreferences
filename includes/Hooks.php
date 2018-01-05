@@ -234,8 +234,6 @@ class Hooks {
 
 			return $factory;
 		} );
-		// Now instantiate the new Preferences, to prevent it being overwritten.
-		$services->getPreferencesFactory();
 	}
 
 	/**
