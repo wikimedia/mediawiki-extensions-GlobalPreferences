@@ -5,11 +5,13 @@
 		]
 	},
 	"globalprefs-desc": "Erlaabt et Benotzer hir global Astellunge festzeleeën",
-	"globalprefs-set-globally": "Dës Astellung gouf global festgeluecht a muss iwwer [[Special:GlobalPreferences#$1|Är global Astelunge]] geännert ginn.",
+	"globalprefs-set-globally": "Dës Astellung gouf global festgeluecht a muss iwwer [[Special:GlobalPreferences#$1|Är global Astellunge]] geännert ginn.",
+	"tooltip-globalprefs-check-label": "Dës Astellung global maachen",
 	"globalprefs-error-header": "Feeler",
 	"globalprefs-notglobal": "Äre Benotzerkont ass kee globale Benotzerkont a ka keng global Astellunge festleeën.",
 	"globalpreferences": "Global Astellungen",
 	"globalprefs-info-label": "Global Astellungen:",
 	"globalprefs-info-link": "Är global Astellunge festleeën",
-	"globalprefs-restoreprefs": "All global Astellungen (an alle Beräicher) ewechhuelen"
+	"globalprefs-restoreprefs": "All global Astellungen (an alle Beräicher) ewechhuelen",
+	"globalprefs-select-all": "Alles uwielen"
 }

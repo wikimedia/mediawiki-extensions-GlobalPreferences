@@ -6,12 +6,14 @@
 		]
 	},
 	"globalprefs-desc": "Permite que usuários definam preferências globais",
-	"globalprefs-set-globally": "Esta preferência foi definida globalmente e só pode ser modificada nas [[Special:GlobalPreferences#$1|suas preferências globais]].",
+	"globalprefs-set-globally": "Esta preferência foi definida de forma global e pode ser modificada através das [[Special:GlobalPreferences#$1|suas preferências globais]].",
+	"tooltip-globalprefs-check-label": "Torne esta configuração global",
 	"globalprefs-error-header": "Erro",
 	"globalprefs-notglobal": "Sua conta não é global, sendo impossível de definir preferências globais.",
 	"globalpreferences": "Preferências globais",
 	"globalprefs-info-label": "Preferências globais:",
 	"globalprefs-info-link": "Definir suas preferências globais",
 	"globalprefs-reset-intro": "Pode usar esta página para desativar todas as preferências globais e voltar às suas preferências locais.\nEsta operação não pode ser desfeita.",
-	"globalprefs-restoreprefs": "Remover todas as preferências globais (em todas as seções)"
+	"globalprefs-restoreprefs": "Remover todas as preferências globais (em todas as seções)",
+	"globalprefs-select-all": "Selecionar tudo"
 }
