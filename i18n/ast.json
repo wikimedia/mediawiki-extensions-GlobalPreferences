@@ -5,12 +5,14 @@
 		]
 	},
 	"globalprefs-desc": "Permite a los usuarios configurar preferencies globales",
-	"globalprefs-set-globally": "Esta preferencia configuróse de mou global y tien de camudase dende les sos [[Special:GlobalPreferences#$1|preferencies globales]].",
+	"globalprefs-set-globally": "Esta preferencia configuróse de mou global y tien de camudase dende les tos [[Special:GlobalPreferences#$1|preferencies globales]].",
+	"tooltip-globalprefs-check-label": "Facer global esta configuración",
 	"globalprefs-error-header": "Error",
 	"globalprefs-notglobal": "La so cuenta nun ye global y nun pue configurar preferencies globales.",
 	"globalpreferences": "Preferencies globales",
 	"globalprefs-info-label": "Preferencies globales:",
 	"globalprefs-info-link": "Configurar les preferencies globales",
 	"globalprefs-reset-intro": "Puedes usar esta páxina pa desactivar toles preferencies globales y volver a les preferencies llocales.\nEsto nun puede desfacese.",
-	"globalprefs-restoreprefs": "Desaniciar toles preferencies globales (de toles seiciones)"
+	"globalprefs-restoreprefs": "Desaniciar toles preferencies globales (de toles seiciones)",
+	"globalprefs-select-all": "Seleccionar too"
 }

@@ -8,7 +8,7 @@
 	"globalprefs-set-globally": "Se ha establecido esta preferencia globalmente. Para modificarla, ve al [[Special:GlobalPreferences#$1|panel de preferencias globales]].",
 	"tooltip-globalprefs-check-label": "Convertir esta configuración en global",
 	"globalprefs-error-header": "Error",
-	"globalprefs-notglobal": "Tu cuenta no es global, no se pueden establecer preferencias globales.",
+	"globalprefs-notglobal": "Tu cuenta no es global; no se pueden establecer preferencias globales.",
 	"globalpreferences": "Preferencias globales",
 	"globalprefs-info-label": "Preferencias globales:",
 	"globalprefs-info-link": "Definir las preferencias globales",
