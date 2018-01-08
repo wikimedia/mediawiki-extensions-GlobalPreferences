@@ -22,12 +22,8 @@
 	"ExtensionMessagesFiles": {
 		"GlobalPreferencesAlias": "GlobalPreferences.alias.php"
 	},
-	"AutoloadClasses": {
-		"GlobalPreferences\\Hooks": "includes/Hooks.php",
-		"GlobalPreferences\\SpecialGlobalPreferences": "includes/SpecialGlobalPreferences.php",
-		"GlobalPreferences\\GlobalPreferencesFactory": "includes/GlobalPreferencesFactory.php",
-		"GlobalPreferences\\GlobalPreferencesForm": "includes/GlobalPreferencesForm.php",
-		"GlobalPreferences\\Storage": "includes/Storage.php"
+	"AutoloadNamespaces": {
+		"GlobalPreferences\\": "includes/"
 	},
 	"Hooks": {
 		"UserLoadOptions": [
