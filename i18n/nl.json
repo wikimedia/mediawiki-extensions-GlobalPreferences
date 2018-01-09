@@ -3,14 +3,19 @@
 		"authors": [
 			"Siebrand",
 			"Southparkfan",
-			"Mar(c)"
+			"Mar(c)",
+			"Mainframe98"
 		]
 	},
 	"globalprefs-desc": "Maakt het mogelijk voor gebruikers om globale voorkeuren in te stellen",
-	"globalprefs-set-globally": "Deze instelling is globaal ingesteld en kan alleen gewijzigd worden via uw [[Special:GlobalPreferences#$1|uw globale instellingen]].",
+	"globalprefs-set-globally": "Deze voorkeur is globaal ingesteld en kan alleen gewijzigd worden via uw [[Special:GlobalPreferences#$1|uw globale voorkeuren]].",
+	"tooltip-globalprefs-check-label": "Deze voorkeur globaal maken",
 	"globalprefs-error-header": "Fout",
 	"globalprefs-notglobal": "Uw account is geen globaal account en kan geen globale voorkeuren instellen.",
 	"globalpreferences": "Globale voorkeuren",
 	"globalprefs-info-label": "Globale voorkeuren:",
-	"globalprefs-info-link": "Globale voorkeuren instellen"
+	"globalprefs-info-link": "Globale voorkeuren instellen",
+	"globalprefs-reset-intro": "U kunt deze pagina gebruiken om alle globale voorkeuren uit te schakelen en terug the keren naar uw lokale voorkeuren.\nU kunt dit niet ongedaan maken.",
+	"globalprefs-restoreprefs": "Alle globale voorkeuren verwijderen (in alle onderdelen)",
+	"globalprefs-select-all": "Alles selecteren"
 }
