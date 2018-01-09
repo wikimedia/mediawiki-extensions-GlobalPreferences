@@ -4,6 +4,7 @@ namespace GlobalPreferences;
 
 use Html;
 use IContextSource;
+use MediaWiki\MediaWikiServices;
 use PreferencesForm;
 
 /**
@@ -33,6 +34,28 @@ class GlobalPreferencesForm extends PreferencesForm {
 	 * @return string
 	 */
 	function getBody() {
+		// Load global values for any preferences with local exceptions.
+		/** @var GlobalPreferencesFactory $globalPreferences */
+		$globalPreferences = MediaWikiServices::getInstance()->getPreferencesFactory();
+		$globalPreferences->setUser( $this->getUser() );
+		$globalPrefValues = $globalPreferences->getGlobalPreferencesValues();
+		foreach ( $this->mFlatFields as $fieldName => $field ) {
+			// Ignore this if it's a global or a local-exception preference.
+			$isGlobal = GlobalPreferencesFactory::isGlobalPrefName( $fieldName );
+			$isLocalException = GlobalPreferencesFactory::isLocalPrefName( $fieldName );
+			if ( $isGlobal || $isLocalException ) {
+				continue;
+			}
+			// See if it's got a local exception. It should also always then have a global value,
+			// but we check anyway just to be sure.
+			$localExceptionName = $fieldName . GlobalPreferencesFactory::LOCAL_EXCEPTION_SUFFIX;
+			$hasGlobalValue = isset( $globalPrefValues[ $fieldName ] );
+			if ( $this->getUser()->getOption( $localExceptionName ) && $hasGlobalValue ) {
+				// And if it does, use the global value.
+				$this->mFieldData[ $fieldName ] = $globalPrefValues[ $fieldName ];
+			}
+		}
+
 		// Add help text to the top of every section.
 		foreach ( $this->getPreferenceSections() as $section ) {
 			$colHeaderText = Html::element(
@@ -47,6 +70,7 @@ class GlobalPreferencesForm extends PreferencesForm {
 			);
 			$this->addHeaderText( $secHeader, $section );
 		}
+
 		return parent::getBody();
 	}
 }

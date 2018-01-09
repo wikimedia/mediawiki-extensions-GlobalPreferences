@@ -5,7 +5,8 @@
 		]
 	},
 	"globalprefs-desc": "Allows users to set global preferences",
-	"globalprefs-set-globally": "This preference has been set globally and must be modified through [[Special:GlobalPreferences#$1|your global preferences]].",
+	"globalprefs-set-local-exception": "Set a local exception for this [[Special:GlobalPreferences#$1|global preference]].",
+	"globalprefs-has-local-exception": "This global preference has a [[Special:Preferences#$1|local exception on this wiki]].",
 	"tooltip-globalprefs-check-label": "Make this setting global",
 	"globalprefs-error-header": "Error",
 	"globalprefs-notglobal": "Your account is not a global account and cannot set global preferences.",

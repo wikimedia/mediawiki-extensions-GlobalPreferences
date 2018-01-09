@@ -40,6 +40,9 @@
 		],
 		"MediaWikiServices": [
 			"GlobalPreferences\\Hooks::onMediaWikiServices"
+		],
+		"BeforePageDisplay": [
+			"GlobalPreferences\\Hooks::onBeforePageDisplay"
 		]
 	},
 	"ResourceFileModulePaths": {
@@ -47,13 +50,20 @@
 		"remoteExtPath": "GlobalPreferences/resources"
 	},
 	"ResourceModules": {
-		"ext.GlobalPreferences.special": {
-			"styles": "ext.GlobalPreferences.special.css",
-			"scripts": "ext.GlobalPreferences.special.js",
+		"ext.GlobalPreferences.global": {
+			"styles": "ext.GlobalPreferences.global.css",
+			"scripts": "ext.GlobalPreferences.global.js",
 			"messages": [ "globalprefs-select-all" ]
 		},
-		"ext.GlobalPreferences.special.nojs": {
-			"styles": "ext.GlobalPreferences.special.nojs.css"
+		"ext.GlobalPreferences.global-nojs": {
+			"styles": "ext.GlobalPreferences.global-nojs.css"
+		},
+		"ext.GlobalPreferences.local": {
+			"styles": "ext.GlobalPreferences.local.css",
+			"scripts": "ext.GlobalPreferences.local.js"
+		},
+		"ext.GlobalPreferences.local-nojs": {
+			"styles": "ext.GlobalPreferences.local-nojs.css"
 		}
 	},
 	"manifest_version": 1
