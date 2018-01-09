@@ -144,8 +144,12 @@ class Hooks {
 		global $wgGlobalPreferencesDB;
 		if ( is_null( $wgGlobalPreferencesDB ) || $wgGlobalPreferencesDB === wfWikiID() ) {
 			// Only add the table if it's supposed to be on this wiki.
-			$sqlPath = __DIR__ . '/../schema.sql';
-			$updater->addExtensionTable( 'global_preferences', $sqlPath );
+			$sqlPath = dirname( __DIR__ ) . '/sql';
+			$updater->addExtensionTable( 'global_preferences', "$sqlPath/tables.sql" );
+			$updater->dropExtensionIndex( 'global_preferences',
+				'global_preferences_user_property',
+				"$sqlPath/patch_primary_index.sql"
+			);
 		}
 
 		return true;
