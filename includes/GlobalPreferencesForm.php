@@ -3,6 +3,7 @@
 namespace GlobalPreferences;
 
 use Html;
+use HTMLFormField;
 use IContextSource;
 use MediaWiki\MediaWikiServices;
 use PreferencesForm;
@@ -26,6 +27,27 @@ class GlobalPreferencesForm extends PreferencesForm {
 	public function __construct( $descriptor, IContextSource $context = null, $messagePrefix = '' ) {
 		parent::__construct( $descriptor, $context, $messagePrefix );
 		$this->setDisplayFormat( 'div' );
+	}
+
+	/**
+	 * Override this in order to hide empty labels.
+	 * @param array[]|HTMLFormField[] $fields Array of fields (either arrays or objects).
+	 * @param string $sectionName Identifier for this section.
+	 * @param string $fieldsetIDPrefix Prefix for the fieldset of each subsection.
+	 * @param bool &$hasUserVisibleFields Whether the section had user-visible fields.
+	 * @return string
+	 */
+	public function displaySection(
+		$fields, $sectionName = '', $fieldsetIDPrefix = '', &$hasUserVisibleFields = false
+	) {
+		foreach ( $fields as $key => $value ) {
+			if ( $value instanceof HTMLFormField ) {
+				$value->setShowEmptyLabel( false );
+			}
+		}
+		return parent::displaySection(
+			$fields, $sectionName, $fieldsetIDPrefix, $hasUserVisibleFields
+		);
 	}
 
 	/**

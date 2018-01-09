@@ -1,7 +1,3 @@
-.mw-htmlform-nolabel .mw-label {
-	display: none;
-}
-
 .mw-globalprefs-global-check .mw-label,
 .mw-globalprefs-global-check label {
 	display: none;
@@ -45,6 +41,14 @@
 /* For Extension:GlobalPrefences */
 .mw-special-GlobalPreferences .htmlform-tip {
 	padding-left: 7%;
+}
+
+div.mw-input,
+div.mw-label {
+	display: table-cell;
+}
+div.mw-label {
+	padding-right: 0.5em;
 }
 
 .mw-globalprefs-global-check {
