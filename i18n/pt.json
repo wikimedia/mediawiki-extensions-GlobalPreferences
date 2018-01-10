@@ -7,7 +7,8 @@
 		]
 	},
 	"globalprefs-desc": "Permite que os utilizadores definam as suas preferências globais",
-	"globalprefs-set-globally": "Esta preferência foi definida de forma global e pode ser modificada através das [[Special:GlobalPreferences#$1|suas preferências globais]].",
+	"globalprefs-set-local-exception": "Defina uma exceção local para esta [[Special:GlobalPreferences#$1|preferência global]].",
+	"globalprefs-has-local-exception": "Esta preferência global tem uma [[Special:Preferences#$1|exceção local sobre esta wiki]].",
 	"tooltip-globalprefs-check-label": "Torne esta configuração global",
 	"globalprefs-error-header": "Erro",
 	"globalprefs-notglobal": "A sua conta não é uma conta global e não é possível definir preferências globais.",

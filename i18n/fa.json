@@ -7,7 +7,6 @@
 		]
 	},
 	"globalprefs-desc": "اجازهٔ کاربران برای تنظیم اولویت‌های جهانی",
-	"globalprefs-set-globally": "این اولویت به طور جهانی تنظیم شده‌است و باید از طریق [[Special:GlobalPreferences#$1|اولویت‌های جهانی شما]] تغییر یابد.",
 	"globalprefs-error-header": "خطا",
 	"globalprefs-notglobal": "حساب شما یک حساب جهانی نیست و نمی‌تواند اولویت‌های جهانی تنظیم کند.",
 	"globalpreferences": "اولویت‌های جهانی",

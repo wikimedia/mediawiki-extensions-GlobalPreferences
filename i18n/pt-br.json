@@ -6,7 +6,6 @@
 		]
 	},
 	"globalprefs-desc": "Permite que usuários definam preferências globais",
-	"globalprefs-set-globally": "Esta preferência foi definida de forma global e pode ser modificada através das [[Special:GlobalPreferences#$1|suas preferências globais]].",
 	"tooltip-globalprefs-check-label": "Torne esta configuração global",
 	"globalprefs-error-header": "Erro",
 	"globalprefs-notglobal": "Sua conta não é global, sendo impossível de definir preferências globais.",

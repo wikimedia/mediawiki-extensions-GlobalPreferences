@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Kunal Mehta",
-			"Shirayuki"
+			"Shirayuki",
+			"Liuxinyu970226"
 		]
 	},
 	"globalprefs-desc": "{{desc|name=Global Preferences|url=https://www.mediawiki.org/wiki/Extension:GlobalPreferences}}",
@@ -16,5 +17,5 @@
 	"globalprefs-info-link": "Link text to [[Special:GlobalPreferences]].",
 	"globalprefs-reset-intro": "Used in [[Special:GlobalPreferences/reset]].",
 	"globalprefs-restoreprefs": "Used as link text in [[Special:GlobalPreferences]]. The link points to [[Special:GlobalPreferences/reset]] which shows the \"Remove all global preferences\" form.\n\nAlso used as label for the Submit button in [[Special:GlobalPreferences/reset]].",
-	"globalprefs-select-all": "Label for the checkbox for selecting all of a section's preferences."
+	"globalprefs-select-all": "Label for the checkbox for selecting all of a section's preferences.\n{{Identical|Select all}}"
 }

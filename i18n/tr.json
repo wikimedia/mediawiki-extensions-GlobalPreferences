@@ -7,7 +7,6 @@
 		]
 	},
 	"globalprefs-desc": "Kullanıcıların küresel tercihleri ayarlamasına izin verir",
-	"globalprefs-set-globally": "Bu tercih küresel olarak ayarlanmış ve [[Special:GlobalPreferences#$1|küresel tercihleriniz]] doğrultusunda değiştirilmelidir.",
 	"tooltip-globalprefs-check-label": "Bu ayarı küresel yap",
 	"globalprefs-error-header": "Hata",
 	"globalprefs-notglobal": "Hesabınızın küresel hesap değil ve küresel tercihler ayarlayamazsınız.",

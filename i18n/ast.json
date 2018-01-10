@@ -5,7 +5,6 @@
 		]
 	},
 	"globalprefs-desc": "Permite a los usuarios configurar preferencies globales",
-	"globalprefs-set-globally": "Esta preferencia configuróse de mou global y tien de camudase dende les tos [[Special:GlobalPreferences#$1|preferencies globales]].",
 	"tooltip-globalprefs-check-label": "Facer global esta configuración",
 	"globalprefs-error-header": "Error",
 	"globalprefs-notglobal": "La so cuenta nun ye global y nun pue configurar preferencies globales.",

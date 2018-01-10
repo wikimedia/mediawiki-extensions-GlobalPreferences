@@ -5,7 +5,6 @@
 		]
 	},
 	"globalprefs-desc": "Zmóžnja wužywarjam póstajanje globalnych nastajenjow",
-	"globalprefs-set-globally": "Toś to nastajenje jo se globalnje póstajiło a musy se pśez [[Special:GlobalPreferences#$1|twóje globalne nastajenja]] změniś.",
 	"globalprefs-error-header": "Zmólka",
 	"globalprefs-notglobal": "Twójo konto njejo globalne konto a njamóžo globalne nastajenja póstajiś.",
 	"globalpreferences": "Globalne nastajenja",

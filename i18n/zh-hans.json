@@ -3,11 +3,12 @@
 		"authors": [
 			"Liuxinyu970226",
 			"Xiaomingyan",
-			"Yfdyh000"
+			"Yfdyh000",
+			"Suesue"
 		]
 	},
 	"globalprefs-desc": "允许用户设置全域设置项",
-	"globalprefs-set-globally": "此设置已被设定为全域设置，因此必须前往[[Special:GlobalPreferences#$1|您的全域设置页]]设置。",
+	"globalprefs-set-local-exception": "将[[Special:GlobalPreferences#$1|global preference]]设为本地异常。",
 	"tooltip-globalprefs-check-label": "将此设置全域化",
 	"globalprefs-error-header": "错误",
 	"globalprefs-notglobal": "您的账户不是一个全域账户，因此不能设置全域设置项。",

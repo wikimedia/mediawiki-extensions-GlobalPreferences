@@ -5,7 +5,6 @@
 		]
 	},
 	"globalprefs-desc": "Овозможува корисниците да прават глобални нагодувања",
-	"globalprefs-set-globally": "Оваа поставка е зададена глобално и може да се менува само преку [[Special:GlobalPreferences#$1|вашите глобални нагодувања]].",
 	"tooltip-globalprefs-check-label": "Направи ја поставкава глобална",
 	"globalprefs-error-header": "Грешка",
 	"globalprefs-notglobal": "Сметката не ви е глобална и затоа не можете да задавате глобални нагодувања.",

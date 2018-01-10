@@ -5,7 +5,6 @@
 		]
 	},
 	"globalprefs-desc": "Giver brugerne mulighed for at angive globale indstillinger",
-	"globalprefs-set-globally": "Denne indstilling er angivet globalt og skal ændres gennem [[Special:GlobalPreferences#$1|dine globale indstillinger]].",
 	"globalprefs-error-header": "Fejl",
 	"globalprefs-notglobal": "Din konto er ikke en global konto og kan ikke angive globale indstillinger.",
 	"globalpreferences": "Globale indstillinger",

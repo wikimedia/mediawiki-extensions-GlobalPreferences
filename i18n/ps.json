@@ -5,7 +5,6 @@
 		]
 	},
 	"globalprefs-desc": "کارنان پرېږدي چې خپل نړېوال غورتوبونه وټاکي",
-	"globalprefs-set-globally": "دا غوره توبونه په نړېواله توگه تنظيم شوي او بايد [[Special:GlobalPreferences#$1|ستاسې نړېوالو غوره توبونو]] لخوا بدل شي.",
 	"globalprefs-error-header": "تېروتنه",
 	"globalprefs-notglobal": "ستاسې گڼون يو نړېوال گڼون نه دی او نه شی کولی چې نړېوال غوره توبونه وټاکۍ",
 	"globalpreferences": "نړېوال غوره توبونه",

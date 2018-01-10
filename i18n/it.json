@@ -6,7 +6,8 @@
 		]
 	},
 	"globalprefs-desc": "Consente agli utenti di impostare le preferenze globali",
-	"globalprefs-set-globally": "Questa preferenza è stata impostata globalmente e può essere modificata attraverso le tue [[Special:GlobalPreferences#$1|preferenze globali]].",
+	"globalprefs-set-local-exception": "Imposta un'eccezione locale per questa [[Special:GlobalPreferences#$1|preferenza globale]].",
+	"globalprefs-has-local-exception": "Questa preferenza globale ha un'[[Special:Preferences#$1|eccezione locale su questo wiki]].",
 	"tooltip-globalprefs-check-label": "Rendi globale questa impostazione",
 	"globalprefs-error-header": "Errore",
 	"globalprefs-notglobal": "La tua non è un'utenza globale e non puoi impostare una preferenza globale.",

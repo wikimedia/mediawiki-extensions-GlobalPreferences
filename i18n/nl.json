@@ -8,7 +8,6 @@
 		]
 	},
 	"globalprefs-desc": "Maakt het mogelijk voor gebruikers om globale voorkeuren in te stellen",
-	"globalprefs-set-globally": "Deze voorkeur is globaal ingesteld en kan alleen gewijzigd worden via uw [[Special:GlobalPreferences#$1|uw globale voorkeuren]].",
 	"tooltip-globalprefs-check-label": "Deze voorkeur globaal maken",
 	"globalprefs-error-header": "Fout",
 	"globalprefs-notglobal": "Uw account is geen globaal account en kan geen globale voorkeuren instellen.",

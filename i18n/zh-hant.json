@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Cwlin0416"
+			"Cwlin0416",
+			"Liuxinyu970226"
 		]
 	},
-	"globalprefs-error-header": "錯誤"
+	"globalprefs-error-header": "錯誤",
+	"globalprefs-select-all": "全部選擇"
 }

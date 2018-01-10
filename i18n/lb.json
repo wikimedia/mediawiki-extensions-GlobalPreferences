@@ -5,7 +5,8 @@
 		]
 	},
 	"globalprefs-desc": "Erlaabt et Benotzer hir global Astellunge festzeleeën",
-	"globalprefs-set-globally": "Dës Astellung gouf global festgeluecht a muss iwwer [[Special:GlobalPreferences#$1|Är global Astellunge]] geännert ginn.",
+	"globalprefs-set-local-exception": "Eng lokal Ausnam fir dës  [[Special:GlobalPreferences#$1|global Astellung]] festleeën.",
+	"globalprefs-has-local-exception": "Dës Global Astellung huet eng [[Special:Preferences#$1|lokal Ausnam op dëser Wiki]].",
 	"tooltip-globalprefs-check-label": "Dës Astellung global maachen",
 	"globalprefs-error-header": "Feeler",
 	"globalprefs-notglobal": "Äre Benotzerkont ass kee globale Benotzerkont a ka keng global Astellunge festleeën.",

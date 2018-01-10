@@ -5,7 +5,6 @@
 		]
 	},
 	"globalprefs-desc": "Permet als utilizaires de fixar de preferéncias globalas",
-	"globalprefs-set-globally": "Aquesta preferéncia es estada fixada globalament e deu èsser modificada via [[Special:GlobalPreferences#$1|vòstras preferéncias globalas]].",
 	"globalprefs-error-header": "Error",
 	"globalprefs-notglobal": "Vòstre compte es pas un compte global e pòt pas fixar de preferéncias globalas.",
 	"globalpreferences": "Preferéncias globalas",
