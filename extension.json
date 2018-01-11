@@ -60,7 +60,8 @@
 		},
 		"ext.GlobalPreferences.local": {
 			"styles": "ext.GlobalPreferences.local.css",
-			"scripts": "ext.GlobalPreferences.local.js"
+			"scripts": "ext.GlobalPreferences.local.js",
+			"dependencies": [ "oojs-ui-core" ]
 		},
 		"ext.GlobalPreferences.local-nojs": {
 			"styles": "ext.GlobalPreferences.local-nojs.css"
