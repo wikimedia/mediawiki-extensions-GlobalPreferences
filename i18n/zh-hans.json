@@ -8,7 +8,8 @@
 		]
 	},
 	"globalprefs-desc": "允许用户设置全域设置项",
-	"globalprefs-set-local-exception": "将[[Special:GlobalPreferences#$1|global preference]]设为本地异常。",
+	"globalprefs-set-local-exception": "为此[[Special:GlobalPreferences#$1|全域参数设置]]设置本地例外。",
+	"globalprefs-has-local-exception": "此全域参数设置[[Special:Preferences#$1|在该wiki有本地例外]]。",
 	"tooltip-globalprefs-check-label": "将此设置全域化",
 	"globalprefs-error-header": "错误",
 	"globalprefs-notglobal": "您的账户不是一个全域账户，因此不能设置全域设置项。",
