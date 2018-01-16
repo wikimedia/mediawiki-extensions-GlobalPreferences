@@ -20,6 +20,7 @@ use MediaWiki\Preferences\DefaultPreferencesFactory;
 use RequestContext;
 use SpecialPage;
 use User;
+use WebRequest;
 
 /**
  * Global preferences.
@@ -106,7 +107,7 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 		if ( $this->onGlobalPrefsPage() ) {
 			return $this->getPreferencesGlobal( $preferences, $globalPrefNames );
 		}
-		return $this->getPreferencesLocal( $preferences, $globalPrefNames );
+		return $this->getPreferencesLocal( $preferences, $globalPrefNames, $context->getRequest() );
 	}
 
 	/**
@@ -114,18 +115,26 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	 * and add the link to Special:GlobalPreferences to the personal preferences tab.
 	 * @param mixed[][] $preferences The preferences array.
 	 * @param string[] $globalPrefNames The names of those preferences that are already global.
+	 * @param WebRequest $request The current request, to check for local exceptions being set.
 	 * @return mixed[][]
 	 */
-	protected function getPreferencesLocal( $preferences, $globalPrefNames ) {
+	protected function getPreferencesLocal( $preferences, $globalPrefNames, WebRequest $request ) {
 		$modifiedPrefs = [];
 		foreach ( $preferences as $name => $def ) {
 			$modifiedPrefs[$name] = $def;
 
 			// If this has been set globally.
 			if ( in_array( $name, $globalPrefNames ) ) {
-				// Disable this preference unless it has a local exception.
-				$localException = $this->user->getOption( $name . static::LOCAL_EXCEPTION_SUFFIX );
-				$modifiedPrefs[$name]['disabled'] = is_null( $localException );
+				// Disable this local preference unless it either
+				// A) already has a local exception, or
+				// B) a local exception is being enabled in the current request.
+				// This is because HTMLForm changes submitted values to their defaults
+				// after preferences have been defined here, if a field is disabled.
+				$localExName = $name . static::LOCAL_EXCEPTION_SUFFIX;
+				$localExValueUser = $this->user->getOption( $localExName );
+				$localExValueRequest = $request->getVal( 'wp' . $localExName );
+				$modifiedPrefs[$name]['disabled'] = is_null( $localExValueUser )
+					&& is_null( $localExValueRequest );
 
 				// Add a new local exception preference after this one.
 				$cssClasses = [
@@ -134,10 +143,10 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 				];
 				$secFragment = static::getSectionFragmentId( $def['section'] );
 				$labelMsg = wfMessage( 'globalprefs-set-local-exception', [ $secFragment ] );
-				$modifiedPrefs[ $name . static::LOCAL_EXCEPTION_SUFFIX ] = [
+				$modifiedPrefs[ $localExName ] = [
 					'type' => 'toggle',
 					'label-raw' => $labelMsg->parse(),
-					'default' => $this->user->getOption( $name . static::LOCAL_EXCEPTION_SUFFIX ),
+					'default' => $localExValueUser,
 					'section' => $def['section'],
 					'cssclass' => join( ' ', $cssClasses ),
 				];
