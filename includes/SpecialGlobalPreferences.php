@@ -27,12 +27,6 @@ class SpecialGlobalPreferences extends SpecialPreferences {
 	 * @throws UserNotLoggedIn
 	 */
 	public function execute( $par ) {
-		// Because parent::showResetForm() is private, we have to override it separately here.
-		if ( $par == 'reset' ) {
-			$this->showGlobalPrefsResetForm();
-			return;
-		}
-
 		// Dirty override to check user can set global prefs.
 		if ( $this->getUser()->isAnon() ) {
 			// @todo use our own error messages here
@@ -76,23 +70,13 @@ class SpecialGlobalPreferences extends SpecialPreferences {
 
 	/**
 	 * Display the preferences-reset confirmation page.
-	 * This mostly repeats code in parent::execute() and parent::showResetForm().
+	 * This is identical to parent::showResetForm except with the message names changed.
 	 * @throws PermissionsError
 	 */
-	protected function showGlobalPrefsResetForm() {
+	protected function showResetForm() {
 		if ( !$this->getUser()->isAllowed( 'editmyoptions' ) ) {
 			throw new PermissionsError( 'editmyoptions' );
 		}
-
-		// This section is duplicated from parent::execute().
-		$this->setHeaders();
-		$this->outputHeader();
-		$out = $this->getOutput();
-		// Prevent hijacked user scripts from sniffing passwords etc.
-		$out->disallowUserJs();
-		// Use the same message as normal Preferences for the login-redirection message.
-		$this->requireLogin( 'prefsnologintext2' );
-		$this->checkReadOnly();
 
 		$this->getOutput()->addWikiMsg( 'globalprefs-reset-intro' );
 
