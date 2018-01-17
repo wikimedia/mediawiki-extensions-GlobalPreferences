@@ -3,7 +3,8 @@
 		"authors": [
 			"Okras",
 			"Kaganer",
-			"Facenapalm"
+			"Facenapalm",
+			"Kareyac"
 		]
 	},
 	"globalprefs-desc": "Позволяет пользователям задавать глобальные настройки",
@@ -13,5 +14,6 @@
 	"globalprefs-info-label": "Глобальные настройки:",
 	"globalprefs-info-link": "Установите свои глобальные настройки",
 	"globalprefs-reset-intro": "Вы можете использовать эту страницу для отключения всех глобальных настройках и возвращения к локальным.\nЭто действие не может быть отменено.",
-	"globalprefs-restoreprefs": "Удалить все глобальные настройки (во всех секциях)"
+	"globalprefs-restoreprefs": "Удалить все глобальные настройки (во всех секциях)",
+	"globalprefs-select-all": "Выбрать все"
 }
