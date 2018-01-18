@@ -51,21 +51,31 @@ div.mw-label {
 	padding-right: 0.5em;
 }
 
-.mw-globalprefs-global-check {
-	font-size: smaller;
+div.mw-globalprefs-global-check {
 	padding-left: 0;
 	float: left;
 	width: 5%;
+	min-width: 2em;
+	text-align: center;
 }
-.mw-globalprefs-global-check input.mw-globalprefs-global-check {
+div.mw-globalprefs-global-check div.mw-input {
+	display: inline;
+}
+div.mw-globalprefs-global-check input.mw-globalprefs-global-check {
 	float: none;
 	width: auto;
+}
+
+/** Remove fieldset border to distinguish it from other 'proper' fieldsets. */
+fieldset.ext-globalpreferences-select-all {
+	border: 0;
 }
 
 /** Make the column header a bit narrower so it looks more associated with the column. */
 .globalprefs-section-header .col-header {
 	display: block;
 	width: 7%;
+	min-width: 7em;
 	text-align: center;
 }
 
