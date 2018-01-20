@@ -2,9 +2,20 @@
 	"@metadata": {
 		"authors": [
 			"Cwlin0416",
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"Kly"
 		]
 	},
+	"globalprefs-desc": "允許使用者設定全域偏好設置",
+	"globalprefs-set-local-exception": "為此[[Special:GlobalPreferences#$1|全域偏好設置]]設定一個本地例外內容.",
+	"globalprefs-has-local-exception": "此全域偏好設置俱有[[Special:Preferences#$1|在此 wiki 上本地例外內容]]。",
+	"tooltip-globalprefs-check-label": "讓此設定全域化",
 	"globalprefs-error-header": "錯誤",
+	"globalprefs-notglobal": "您的帳號不是全域帳號，因此不能設定全域偏好設置。",
+	"globalpreferences": "全域偏好設置",
+	"globalprefs-info-label": "全域偏好設置",
+	"globalprefs-info-link": "設定您的全域偏好設置",
+	"globalprefs-reset-intro": "您可以使用此頁面來停用所有全域偏好設置，並改回您的本地偏好設置。請注意此操作這不可撤銷。",
+	"globalprefs-restoreprefs": "移除所有全域偏好設置（所有部份）",
 	"globalprefs-select-all": "全部選擇"
 }
