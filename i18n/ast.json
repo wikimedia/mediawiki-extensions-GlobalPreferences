@@ -5,6 +5,8 @@
 		]
 	},
 	"globalprefs-desc": "Permite a los usuarios configurar preferencies globales",
+	"globalprefs-set-local-exception": "Definir una esceición llocal pa esta [[Special:GlobalPreferences#$1|preferencia global]].",
+	"globalprefs-has-local-exception": "Esta preferencia global tien una [[Special:Preferences#$1|esceición llocal nesta wiki]].",
 	"tooltip-globalprefs-check-label": "Facer global esta configuración",
 	"globalprefs-error-header": "Error",
 	"globalprefs-notglobal": "La so cuenta nun ye global y nun pue configurar preferencies globales.",
