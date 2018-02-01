@@ -4,7 +4,7 @@
 	"author": [
 		"Kunal Mehta"
 	],
-	"license-name": "GPL-2.0+",
+	"license-name": "GPL-2.0-or-later",
 	"url": "https://www.mediawiki.org/wiki/Extension:GlobalPreferences",
 	"descriptionmsg": "globalprefs-desc",
 	"type": "specialpage",
