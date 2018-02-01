@@ -330,15 +330,17 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	/**
 	 * Save the user's global preferences.
 	 * @param array $newGlobalPrefs Array keyed by preference name.
+	 * @param IContextSource $context The request context.
 	 * @return bool True on success, false if the user isn't global.
 	 */
-	public function setGlobalPreferences( $newGlobalPrefs ) {
+	public function setGlobalPreferences( $newGlobalPrefs, IContextSource $context ) {
 		$id = $this->getUserID();
 		if ( !$id ) {
 			return false;
 		}
 		$storage = new Storage( $this->getUserID() );
-		$storage->save( $newGlobalPrefs );
+		$knownPrefs = array_keys( $this->getFormDescriptor( $this->user, $context ) );
+		$storage->save( $newGlobalPrefs, $knownPrefs );
 		$this->user->clearInstanceCache();
 		return true;
 	}

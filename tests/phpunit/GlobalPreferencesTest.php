@@ -6,6 +6,8 @@ use GlobalPreferences\GlobalPreferencesFactory;
 use GlobalPreferences\Storage;
 use MediaWiki\MediaWikiServices;
 use MediaWikiTestCase;
+use RequestContext;
+use Title;
 use Wikimedia\TestingAccessWrapper;
 
 /**
@@ -28,16 +30,24 @@ class GlobalPreferencesTest extends MediaWikiTestCase {
 		$this->assertEmpty( $gpStorage->load() );
 
 		// Save one, and retrieve it.
-		$gpStorage->save( [ 'testpref' => 'test' ] );
+		$gpStorage->save( [ 'testpref' => 'test' ], [ 'testpref' ] );
 		$this->assertCount( 1, $gpStorage->load() );
 
 		// Save different ones, and it should overwrite.
-		$gpStorage->save( [ 'testpref2' => 'test2' ] );
+		$gpStorage->save( [ 'testpref2' => 'test2' ], [ 'testpref', 'testpref2' ] );
 		$this->assertCount( 1, $gpStorage->load() );
-		$gpStorage->save( [ 'testpref2' => 'test2', 'testpref3' => 'test3' ] );
+		$gpStorage->save(
+			[ 'testpref2' => 'test2', 'testpref3' => 'test3' ],
+			[ 'testpref2', 'testpref3' ]
+		);
 		$this->assertCount( 2, $gpStorage->load() );
 
-		// Delete all
+		// Delete all (in two stages).
+		$gpStorage->delete( [ 'testpref' ] );
+		$this->assertEquals(
+			[ 'testpref2' => 'test2', 'testpref3' => 'test3' ],
+			$gpStorage->load()
+		);
 		$gpStorage->delete();
 		$this->assertEmpty( $gpStorage->load() );
 	}
@@ -47,9 +57,14 @@ class GlobalPreferencesTest extends MediaWikiTestCase {
 		/** @var GlobalPreferencesFactory $globalPreferences */
 		$globalPreferences = MediaWikiServices::getInstance()->getPreferencesFactory();
 		$globalPreferences->setUser( $user );
+		// Set up the context.
+		// Once preference definitions don't require the context, this can be removed.
+		$context = RequestContext::getMain();
+		$context->setTitle( Title::newFromText( 'Test' ) );
 
 		// Confirm the site default.
 		$this->assertEquals( 'en', $user->getOption( 'language' ) );
+		$this->assertEquals( [], $globalPreferences->getGlobalPreferencesValues() );
 
 		// Set a local preference.
 		$user->setOption( 'language', 'bn' );
@@ -57,14 +72,17 @@ class GlobalPreferencesTest extends MediaWikiTestCase {
 		$this->assertEquals( 'bn', $user->getOption( 'language' ) );
 
 		// Set it to be global (with a different value).
-		$globalPreferences->setGlobalPreferences( [ 'language' => 'de' ] );
-		$this->assertEquals( [ 'language' => 'de' ], $globalPreferences->getGlobalPreferencesValues() );
+		$globalPreferences->setGlobalPreferences( [ 'language' => 'de' ], $context );
+		$this->assertEquals(
+			[ 'language' => 'de' ],
+			$globalPreferences->getGlobalPreferencesValues()
+		);
 		$this->assertEquals( 'de', $user->getOption( 'language' ) );
-		$globalPreferences->setGlobalPreferences( [ 'language' => 'ru' ] );
+		$globalPreferences->setGlobalPreferences( [ 'language' => 'ru' ], $context );
 		$this->assertEquals( 'ru', $user->getOption( 'language' ) );
 
 		// Then unglobalize it, and it should return to the local value.
-		$globalPreferences->setGlobalPreferences( [] );
+		$globalPreferences->setGlobalPreferences( [], $context );
 		$this->assertEquals( [], $globalPreferences->getGlobalPreferencesValues() );
 		// @TODO Instance caching on User doesn't clear User::$mOptionOverrides
 		// $this->assertEquals( 'bn', $user->getOption( 'language' ) );

@@ -130,7 +130,7 @@ class Hooks {
 		/** @var GlobalPreferencesFactory $preferencesFactory */
 		$preferencesFactory = MediaWikiServices::getInstance()->getPreferencesFactory();
 		$preferencesFactory->setUser( $user );
-		$preferencesFactory->setGlobalPreferences( $prefs );
+		$preferencesFactory->setGlobalPreferences( $prefs, $form->getContext() );
 
 		return false;
 	}
