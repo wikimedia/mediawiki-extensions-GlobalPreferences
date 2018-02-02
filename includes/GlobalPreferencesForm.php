@@ -3,10 +3,12 @@
 namespace GlobalPreferences;
 
 use Html;
+use HTMLForm;
 use HTMLFormField;
 use IContextSource;
 use MediaWiki\MediaWikiServices;
 use PreferencesForm;
+use Xml;
 
 /**
  * The GlobalPreferencesForm changes the display format, and adds section headers linking back to
@@ -55,7 +57,7 @@ class GlobalPreferencesForm extends PreferencesForm {
 	 * section. Javascript will later add the 'select all' checkbox to this header.
 	 * @return string
 	 */
-	function getBody() {
+	public function getBody() {
 		// Load global values for any preferences with local exceptions.
 		/** @var GlobalPreferencesFactory $globalPreferences */
 		$globalPreferences = MediaWikiServices::getInstance()->getPreferencesFactory();
@@ -94,5 +96,36 @@ class GlobalPreferencesForm extends PreferencesForm {
 		}
 
 		return parent::getBody();
+	}
+
+	/**
+	 * Override (and duplicate most of) PreferencesForm::getButtons() in order to change the
+	 * reset-link message.
+	 * @return string
+	 */
+	public function getButtons() {
+		$attrs = [ 'id' => 'mw-prefs-restoreprefs' ];
+
+		if ( !$this->getModifiedUser()->isAllowedAny( 'editmyprivateinfo', 'editmyoptions' ) ) {
+			return '';
+		}
+
+		// Use grand-parent's getButtons().
+		$html = HTMLForm::getButtons();
+
+		if ( $this->getModifiedUser()->isAllowed( 'editmyoptions' ) ) {
+			$t = $this->getTitle()->getSubpage( 'reset' );
+
+			$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
+			$html .= "\n" . $linkRenderer->makeLink(
+				$t,
+				$this->msg( 'globalprefs-restoreprefs' )->text(),
+				Html::buttonAttributes( $attrs, [ 'mw-ui-quiet' ] )
+			);
+
+			$html = Xml::tags( 'div', [ 'class' => 'mw-prefs-buttons' ], $html );
+		}
+
+		return $html;
 	}
 }

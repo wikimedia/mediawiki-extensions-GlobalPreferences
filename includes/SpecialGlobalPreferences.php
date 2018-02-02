@@ -27,6 +27,11 @@ class SpecialGlobalPreferences extends SpecialPreferences {
 	 * @throws UserNotLoggedIn
 	 */
 	public function execute( $par ) {
+		// Remove subpages other than 'reset', including trailing slash.
+		if ( !is_null( $par ) && $par !== 'reset' ) {
+			$this->getOutput()->redirect( rtrim( $this->getPageTitle()->getCanonicalURL(), '/' ) );
+			return;
+		}
 		// Dirty override to check user can set global prefs.
 		if ( $this->getUser()->isAnon() ) {
 			// @todo use our own error messages here
@@ -42,12 +47,14 @@ class SpecialGlobalPreferences extends SpecialPreferences {
 		}
 
 		// Add link back to (local) Preferences.
-		$link = $this->getLinkRenderer()->makeKnownLink(
-			static::getSafeTitleFor( 'Preferences' ),
-			$this->msg( 'mypreferences' )->escaped()
-		);
-		// Same left-arrow as used in Skin::subPageSubtitle().
-		$this->getOutput()->addSubtitle( "&lt; $link" );
+		if ( is_null( $par ) ) {
+			$link = $this->getLinkRenderer()->makeKnownLink(
+				static::getSafeTitleFor( 'Preferences' ),
+				$this->msg( 'mypreferences' )->escaped()
+			);
+			// Same left-arrow as used in Skin::subPageSubtitle().
+			$this->getOutput()->addSubtitle( "&lt; $link" );
+		}
 
 		// Add module styles and scripts separately
 		// so non-JS users get the styles quicker and to avoid a FOUC.
