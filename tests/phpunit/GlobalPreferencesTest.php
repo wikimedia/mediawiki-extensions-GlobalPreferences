@@ -9,6 +9,8 @@ use MediaWikiTestCase;
 use Wikimedia\TestingAccessWrapper;
 
 /**
+ * @covers \GlobalPreferences\GlobalPreferencesFactory
+ * @covers \GlobalPreferences\Storage
  * @group GlobalPreferences
  */
 class GlobalPreferencesTest extends MediaWikiTestCase {
