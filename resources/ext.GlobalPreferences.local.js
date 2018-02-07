@@ -23,4 +23,28 @@
 		}
 	} );
 
+	/**
+	 * Highlight related preference fields when hovering on the local-exception checkbox.
+	 */
+	$( '.mw-globalprefs-local-exception input, .mw-globalprefs-local-exception label' ).on( {
+		mouseenter: function () {
+			var $localExRow,
+				$rows = $();
+			// Find this table row and the previous one.
+			$localExRow = $( this ).parents( 'tr' );
+			$rows = $rows.add( $localExRow ).add( $localExRow.prev() );
+			// If the previous row isn't a 'mw-htmlform-field-*' then it must be a help text row,
+			// and we also want the row before it.
+			if ( $localExRow.prev( 'tr[class^="mw-htmlform-field-"]' ).length === 0 ) {
+				$rows = $rows.add( $localExRow.prev().prev() );
+			}
+			// Add a class to all of these rows.
+			$rows.addClass( 'mw-globalprefs-hover' );
+		},
+		mouseleave: function () {
+			// Remove hover class from everywhere.
+			$( this ).parents( 'table' ).find( 'tr' ).removeClass( 'mw-globalprefs-hover' );
+		}
+	} );
+
 }( mediaWiki, jQuery, OO ) );
