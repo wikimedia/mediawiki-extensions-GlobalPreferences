@@ -6,6 +6,7 @@
 
 namespace GlobalPreferences;
 
+use MediaWiki\MediaWikiServices;
 use Wikimedia\Rdbms\Database;
 
 /**
@@ -93,9 +94,13 @@ class Storage {
 	 * @return Database
 	 */
 	protected function getDatabase( $type = DB_REPLICA ) {
-		global $wgGlobalPreferencesDB;
-		if ( $wgGlobalPreferencesDB ) {
-			return wfGetDB( $type, [], $wgGlobalPreferencesDB );
+		$config = MediaWikiServices::getInstance()->getMainConfig();
+		$globalPreferencesDB = $config->get( 'GlobalPreferencesDB' );
+		$sharedDB = $config->get( 'SharedDB' );
+		if ( $globalPreferencesDB ) {
+			return wfGetDB( $type, [], $globalPreferencesDB );
+		} elseif ( $sharedDB ) {
+			return wfGetDB( $type, [], $sharedDB );
 		} else {
 			return wfGetDB( $type );
 		}
