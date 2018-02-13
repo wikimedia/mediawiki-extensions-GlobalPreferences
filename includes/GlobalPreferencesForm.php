@@ -85,7 +85,7 @@ class GlobalPreferencesForm extends PreferencesForm {
 			$colHeaderText = Html::element(
 				'span',
 				[ 'class' => 'col-header' ],
-				$this->getMessage( 'tooltip-globalprefs-check-label' )
+				$this->getMessage( 'tooltip-globalprefs-check-label' )->text()
 			);
 			$secHeader = Html::rawElement(
 				'div',

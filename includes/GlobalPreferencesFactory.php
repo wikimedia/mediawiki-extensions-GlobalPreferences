@@ -163,7 +163,7 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 			'raw' => true,
 			'default' => $linkRenderer->makeKnownLink(
 				SpecialPage::getTitleFor( 'GlobalPreferences' ),
-				wfMessage( 'globalprefs-info-link' )->escaped()
+				wfMessage( 'globalprefs-info-link' )->text()
 			),
 		];
 

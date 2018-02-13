@@ -50,7 +50,7 @@ class SpecialGlobalPreferences extends SpecialPreferences {
 		if ( is_null( $par ) ) {
 			$link = $this->getLinkRenderer()->makeKnownLink(
 				static::getSafeTitleFor( 'Preferences' ),
-				$this->msg( 'mypreferences' )->escaped()
+				$this->msg( 'mypreferences' )->text()
 			);
 			// Same left-arrow as used in Skin::subPageSubtitle().
 			$this->getOutput()->addSubtitle( "&lt; $link" );
