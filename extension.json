@@ -2,7 +2,8 @@
 	"name": "GlobalPreferences",
 	"version": "0.1.2",
 	"author": [
-		"Kunal Mehta"
+		"Kunal Mehta",
+		"Sam Wilson"
 	],
 	"license-name": "GPL-2.0-or-later",
 	"url": "https://www.mediawiki.org/wiki/Extension:GlobalPreferences",
