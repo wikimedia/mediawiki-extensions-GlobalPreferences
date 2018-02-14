@@ -90,7 +90,7 @@
 	function addSelectAllToHeader() {
 		// For each preferences form tab, add a select-all checkbox to the header.
 		$( '.globalprefs-section-header' ).each( function () {
-			var selectAll = mw.message( 'globalprefs-select-all' ).parse(),
+			var selectAll = mw.message( 'globalprefs-select-all' ).escaped(),
 				$checkbox,
 				$allGlobalCheckboxes;
 			// Wrap the checkbox in a fieldset so it acts/looks the same as all the global checkboxes.
