@@ -8,7 +8,8 @@
 		var localExName, prefName, enabled, $prefInput, oouiWidget;
 		// Figure out what the preference name is by stripping the local exception suffix.
 		localExName = $( this ).attr( 'name' );
-		prefName = localExName.substr( 0, localExName.length - '-local-exception'.length );
+		prefName = localExName.substr( 0, localExName.length - '-local-exception'.length )
+			.replace( /[\\"]/g, '\\$&' );
 		enabled = $( this ).prop( 'checked' );
 		$prefInput = $( ':input[name="' + prefName + '"]' );
 

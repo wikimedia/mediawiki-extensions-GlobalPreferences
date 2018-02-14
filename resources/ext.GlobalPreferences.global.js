@@ -6,11 +6,12 @@
 	 * Also highlight the relevant preference when hovering on the checkbox.
 	 */
 	function onChangeGlobalCheckboxes() {
-		var $labels,
+		var $labels, $inputs,
 
 			// Find the name (without the '-global' suffix, but with the 'wp' prefix).
 			fullName = $( this ).attr( 'name' ),
-			name = fullName.substr( 0, fullName.length - '-global'.length ),
+			name = fullName.substr( 0, fullName.length - '-global'.length ).replace( /[\\"]/g, '\\$&' ),
+			id = $( this ).attr( 'id' ).replace( /[\\"]/g, '\\$&' ),
 
 			// Is this preference enabled globally?
 			enabled = $( this ).prop( 'checked' ),
@@ -22,13 +23,13 @@
 			// (two or three rows, depending on whether there's a help row, all contained in $rows).
 			$globalCheckRow,
 			$mainFieldRow,
-			$rows,
+			$rows;
 
-			// The current preference's inputs (can be multiple, and not all will have the same name).
-			$inputs = $( ':input[name="' + name + '"], :input[name="' + name + '[]"]' )
-				.parents( '.mw-input' )
-				.find( ':input' )
-				.not( '.checkmatrix-forced' );
+		// The current preference's inputs (can be multiple, and not all will have the same name).
+		$inputs = $( ':input[name="' + name + '"], :input[name="' + name + '[]"]' )
+			.parents( '.mw-input' )
+			.find( ':input' )
+			.not( '.checkmatrix-forced' );
 
 		// All the labels for this preference (not all have for='' nor are even labels).
 		$labels = $inputs
@@ -53,7 +54,7 @@
 		}
 
 		// Add a class on hover, to highlight the related rows.
-		$( this ).add( 'label[for="' + $( this ).attr( 'id' ) + '"]' ).on( {
+		$( this ).add( 'label[for="' + id + '"]' ).on( {
 			mouseenter: function () {
 				$rows.addClass( 'globalprefs-hover' );
 			},
@@ -89,7 +90,7 @@
 	function addSelectAllToHeader() {
 		// For each preferences form tab, add a select-all checkbox to the header.
 		$( '.globalprefs-section-header' ).each( function () {
-			var selectAll = mw.message( 'globalprefs-select-all' ),
+			var selectAll = mw.message( 'globalprefs-select-all' ).parse(),
 				$checkbox,
 				$allGlobalCheckboxes;
 			// Wrap the checkbox in a fieldset so it acts/looks the same as all the global checkboxes.
