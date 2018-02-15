@@ -148,7 +148,7 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 					'label-raw' => $labelMsg->parse(),
 					'default' => $localExValueUser,
 					'section' => $def['section'],
-					'cssclass' => join( ' ', $cssClasses ),
+					'cssclass' => implode( ' ', $cssClasses ),
 				];
 			}
 		}
