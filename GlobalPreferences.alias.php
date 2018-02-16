@@ -5,101 +5,100 @@
  * @file
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
-// @codingStandardsIgnoreFile
 
-$specialPageAliases = array();
+$specialPageAliases = [];
 
 /** English (English) */
-$specialPageAliases['en'] = array(
-	'GlobalPreferences' => array( 'GlobalPreferences' ),
-);
+$specialPageAliases['en'] = [
+	'GlobalPreferences' => [ 'GlobalPreferences' ],
+];
 
 /** Arabic (العربية) */
-$specialPageAliases['ar'] = array(
-	'GlobalPreferences' => array( 'تفضيلات_عامة' ),
-);
+$specialPageAliases['ar'] = [
+	'GlobalPreferences' => [ 'تفضيلات_عامة' ],
+];
 
 /** Egyptian Arabic (مصرى) */
-$specialPageAliases['arz'] = array(
-	'GlobalPreferences' => array( 'تفضيلات_عامه' ),
-);
+$specialPageAliases['arz'] = [
+	'GlobalPreferences' => [ 'تفضيلات_عامه' ],
+];
 
 /** Western Balochi (بلوچی رخشانی) */
-$specialPageAliases['bgn'] = array(
-	'GlobalPreferences' => array( 'سراسرین_تنزیمات' ),
-);
+$specialPageAliases['bgn'] = [
+	'GlobalPreferences' => [ 'سراسرین_تنزیمات' ],
+];
 
 /** German (Deutsch) */
-$specialPageAliases['de'] = array(
-	'GlobalPreferences' => array( 'Globale_Einstellungen' ),
-);
+$specialPageAliases['de'] = [
+	'GlobalPreferences' => [ 'Globale_Einstellungen' ],
+];
 
 /** Persian (فارسی) */
-$specialPageAliases['fa'] = array(
-	'GlobalPreferences' => array( 'ترجیحات_سراسری' ),
-);
+$specialPageAliases['fa'] = [
+	'GlobalPreferences' => [ 'ترجیحات_سراسری' ],
+];
 
 /** Hebrew (עברית) */
-$specialPageAliases['he'] = array(
-	'GlobalPreferences' => array( 'העדפות_גלובליות' ),
-);
+$specialPageAliases['he'] = [
+	'GlobalPreferences' => [ 'העדפות_גלובליות' ],
+];
 
 /** Korean (한국어) */
-$specialPageAliases['ko'] = array(
-	'GlobalPreferences' => array( '전역환경설정' ),
-);
+$specialPageAliases['ko'] = [
+	'GlobalPreferences' => [ '전역환경설정' ],
+];
 
 /** Luxembourgish (Lëtzebuergesch) */
-$specialPageAliases['lb'] = array(
-	'GlobalPreferences' => array( 'Global_Astellungen' ),
-);
+$specialPageAliases['lb'] = [
+	'GlobalPreferences' => [ 'Global_Astellungen' ],
+];
 
 /** Macedonian (македонски) */
-$specialPageAliases['mk'] = array(
-	'GlobalPreferences' => array( 'ГлобалниНагодувања' ),
-);
+$specialPageAliases['mk'] = [
+	'GlobalPreferences' => [ 'ГлобалниНагодувања' ],
+];
 
 /** Malay (Bahasa Melayu) */
-$specialPageAliases['ms'] = array(
-	'GlobalPreferences' => array( 'Keutamaan_global' ),
-);
+$specialPageAliases['ms'] = [
+	'GlobalPreferences' => [ 'Keutamaan_global' ],
+];
 
 /** Dutch (Nederlands) */
-$specialPageAliases['nl'] = array(
-	'GlobalPreferences' => array( 'GlobaleVoorkeuren' ),
-);
+$specialPageAliases['nl'] = [
+	'GlobalPreferences' => [ 'GlobaleVoorkeuren' ],
+];
 
 /** Polish (polski) */
-$specialPageAliases['pl'] = array(
-	'GlobalPreferences' => array( 'Globalne_preferencje' ),
-);
+$specialPageAliases['pl'] = [
+	'GlobalPreferences' => [ 'Globalne_preferencje' ],
+];
 
 /** Portuguese (português) */
-$specialPageAliases['pt'] = array(
-	'GlobalPreferences' => array( 'Preferências_globais' ),
-);
+$specialPageAliases['pt'] = [
+	'GlobalPreferences' => [ 'Preferências_globais' ],
+];
 
 /** Swedish (svenska) */
-$specialPageAliases['sv'] = array(
-	'GlobalPreferences' => array( 'Globala_inställningar' ),
-);
+$specialPageAliases['sv'] = [
+	'GlobalPreferences' => [ 'Globala_inställningar' ],
+];
 
 /** Ukrainian (українська) */
-$specialPageAliases['uk'] = array(
-	'GlobalPreferences' => array( 'Глобальні_налаштування' ),
-);
+$specialPageAliases['uk'] = [
+	'GlobalPreferences' => [ 'Глобальні_налаштування' ],
+];
 
 /** Vietnamese (Tiếng Việt) */
-$specialPageAliases['vi'] = array(
-	'GlobalPreferences' => array( 'Tùy_chọn_toàn_cục', 'Tuỳ_chọn_toàn_cục' ),
-);
+$specialPageAliases['vi'] = [
+	'GlobalPreferences' => [ 'Tùy_chọn_toàn_cục', 'Tuỳ_chọn_toàn_cục' ],
+];
 
 /** Simplified Chinese (中文（简体）‎) */
-$specialPageAliases['zh-hans'] = array(
-	'GlobalPreferences' => array( '全域设置' ),
-);
+$specialPageAliases['zh-hans'] = [
+	'GlobalPreferences' => [ '全域设置' ],
+];
 
 /** Traditional Chinese (中文（繁體）‎) */
-$specialPageAliases['zh-hant'] = array(
-	'GlobalPreferences' => array( '全域設定' ),
-);
+$specialPageAliases['zh-hant'] = [
+	'GlobalPreferences' => [ '全域設定' ],
+];
