@@ -5,9 +5,15 @@
 		]
 	},
 	"globalprefs-desc": "מתן אפשרות למשתמשים להגדיר העדפות גלובליות",
+	"globalprefs-set-local-exception": "הגדרה מיוחדת מקומית עבור [[Special:GlobalPreferences#$1|ההעדפה הגלובלית]] הזאת.",
+	"globalprefs-has-local-exception": "להעדפה הגלובלית הזאת יש [[Special:Preferences#$1|הגדרה מיוחדת בוויקי הזה]].",
+	"tooltip-globalprefs-check-label": "להגדיר את זה גלובלית",
 	"globalprefs-error-header": "שגיאה",
 	"globalprefs-notglobal": "החשבון שלך אינו חשבון גלובלי ואינו יכול להגדיר העדפות גלובליות.",
 	"globalpreferences": "העדפות גלובליות",
 	"globalprefs-info-label": "העדפות גלובליות:",
-	"globalprefs-info-link": "הגדרת ההעדפות הגלובליות שלך"
+	"globalprefs-info-link": "הגדרת ההעדפות הגלובליות שלך",
+	"globalprefs-reset-intro": "אפשר להשתמש גדף הזה כדי לכבות את כל ההעדפות הגלובליות ולחזור להעדפות המקומיות שלך. לא ניתן לבטל את הפעולה הזאת.",
+	"globalprefs-restoreprefs": "הסרת כל ההעדפות הגלובליות (בכל החלקים)",
+	"globalprefs-select-all": "לבחור הכול"
 }
