@@ -13,7 +13,7 @@
 	"globalpreferences": "Globale Einstellungen",
 	"globalprefs-info-label": "Globale Einstellungen:",
 	"globalprefs-info-link": "Deine globalen Einstellungen festlegen",
-	"globalprefs-reset-intro": "Du kannst diese Seite verwenden, um alle globalen Einstellungen zu deaktivieren und um zu deinen lokalen Einstellungen zurückzukehren.\nDies kann nicht rückgängig gemacht werden.",
+	"globalprefs-reset-intro": "Du kannst diese Seite verwenden, um alle globalen Einstellungen auf allen Wikis zu deaktivieren und um zu deinen lokalen Einstellungen zurückzukehren. Dies betrifft nicht lokale Wikieinstellungen. Diese Aktion kann nicht rückgängig gemacht werden.",
 	"globalprefs-restoreprefs": "Alle globalen Einstellungen entfernen (in allen Abschnitten)",
 	"globalprefs-select-all": "Alle auswählen"
 }
