@@ -14,7 +14,7 @@
 	"globalpreferences": "Préférences globales",
 	"globalprefs-info-label": "Préférences globales :",
 	"globalprefs-info-link": "Fixer vos préférences globales",
-	"globalprefs-reset-intro": "Vous pouvez utiliser cette page pour désactiver toutes les préférences globales et retourner à vos préférences locales.\nCette opération ne pourra pas être annulée.",
+	"globalprefs-reset-intro": "Vous pouvez utiliser cette page pour désactiver toutes les préférences globales sur tous les wikis et retourner à vos préférences locales. Cela n’affectera pas les préférences locales d’un wiki. Cette opération ne pourra pas être annulée.",
 	"globalprefs-restoreprefs": "Enlever toutes les préférences globales (dans toutes les sections)",
 	"globalprefs-select-all": "Tout séléctionner"
 }
