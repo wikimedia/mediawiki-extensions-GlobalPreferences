@@ -17,7 +17,7 @@
 			enabled = $( this ).prop( 'checked' ),
 
 			// This selector is required because there's no common class on these.
-			fieldSelector = '[class^="mw-htmlform-field-"]',
+			fieldSelector = '[class^="mw-htmlform-field-"]:not([class*="oo-ui-widget"])',
 
 			// The form 'rows' (which are adjacent divs) relating to this preference
 			// (two or three rows, depending on whether there's a help row, all contained in $rows).
@@ -46,7 +46,18 @@
 		}
 
 		// Disable or enable the related preferences inputs.
-		$inputs.prop( 'disabled', !enabled );
+		$inputs.each( function () {
+			var widget;
+			if ( $( this ).hasClass( 'oo-ui-inputWidget-input' ) ) {
+				// OOUI widget.
+				widget = OO.ui.infuse( $( this ).parents( '.oo-ui-widget' ) );
+				widget.setDisabled( !enabled );
+			} else {
+				// Normal form input.
+				$inputs.prop( 'disabled', !enabled );
+			}
+		} );
+		// Mark the relevant input's labels to match (only required for non-OOUI).
 		if ( enabled ) {
 			$labels.removeClass( 'globalprefs-disabled' );
 		} else {
@@ -106,6 +117,8 @@
 	}
 
 	// Activate the above functions.
-	addSelectAllToHeader();
-	$( 'input.mw-globalprefs-global-check' ).on( 'change', onChangeGlobalCheckboxes ).change();
+	$( document ).ready( function () {
+		addSelectAllToHeader();
+		$( 'input.mw-globalprefs-global-check' ).on( 'change', onChangeGlobalCheckboxes ).change();
+	} );
 }( mediaWiki, jQuery ) );

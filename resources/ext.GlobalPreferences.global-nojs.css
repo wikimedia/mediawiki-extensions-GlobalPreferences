@@ -58,7 +58,9 @@ div.mw-globalprefs-global-check {
 	min-width: 2em;
 	text-align: center;
 }
-div.mw-globalprefs-global-check div.mw-input {
+div.mw-globalprefs-global-check div.mw-input,
+div.mw-htmlform-field-HTMLUsersMultiselectField div.mw-input
+{
 	display: inline;
 }
 div.mw-globalprefs-global-check input.mw-globalprefs-global-check {
