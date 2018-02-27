@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Fryed-peach",
-			"Shirayuki"
+			"Shirayuki",
+			"Omotecho"
 		]
 	},
 	"globalprefs-desc": "利用者がグローバル個人設定を使用できるようにする",
@@ -10,5 +11,6 @@
 	"globalprefs-notglobal": "あなたのアカウントはグローバル アカウントではないため、グローバル個人設定を使用できません。",
 	"globalpreferences": "グローバル個人設定",
 	"globalprefs-info-label": "グローバル個人設定:",
-	"globalprefs-info-link": "グローバル個人設定の閲覧と変更"
+	"globalprefs-info-link": "グローバル個人設定の閲覧と変更",
+	"globalprefs-reset-intro": "このページの操作により、すべてのウィキでグローバルな個人設定を無効にして、ローカルの個人設定を有効に戻します。ローカルのウィキの個人設定はこの操作の影響を受けません。この操作は取り消せません。"
 }

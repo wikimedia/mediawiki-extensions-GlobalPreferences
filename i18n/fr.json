@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Gomoko",
-			"Wladek92"
+			"Wladek92",
+			"Trizek (WMF)"
 		]
 	},
 	"globalprefs-desc": "Permet aux utilisateurs de fixer des préférences globales",
@@ -13,7 +14,7 @@
 	"globalprefs-notglobal": "Votre compte n’est pas un compte global et ne peut pas fixer de préférences globales.",
 	"globalpreferences": "Préférences globales",
 	"globalprefs-info-label": "Préférences globales :",
-	"globalprefs-info-link": "Fixer vos préférences globales",
+	"globalprefs-info-link": "Configurer vos préférences globales",
 	"globalprefs-reset-intro": "Vous pouvez utiliser cette page pour désactiver toutes les préférences globales sur tous les wikis et retourner à vos préférences locales. Cela n’affectera pas les préférences locales d’un wiki. Cette opération ne pourra pas être annulée.",
 	"globalprefs-restoreprefs": "Enlever toutes les préférences globales (dans toutes les sections)",
 	"globalprefs-select-all": "Tout séléctionner"

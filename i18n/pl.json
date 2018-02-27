@@ -1,14 +1,20 @@
 {
 	"@metadata": {
 		"authors": [
-			"Chrumps"
+			"Chrumps",
+			"Woytecr"
 		]
 	},
 	"globalprefs-desc": "Pozwala użytkownikom ustawiać preferencje globalne",
+	"globalprefs-set-local-exception": "Ustaw lokalny wyjątek dla tego [[Special:GlobalPreferences#$1|globalnego ustawienia]].",
+	"globalprefs-has-local-exception": "To ustawienie globalne ma [[Special:Preferences#$1|lokalny wyjątek dla tej wiki]].",
+	"tooltip-globalprefs-check-label": "Zastosuj to ustawienie globalnie",
 	"globalprefs-error-header": "Błąd",
 	"globalprefs-notglobal": "Twoje konto nie jest uniwersalne i nie można ustawić preferencji globalnych.",
 	"globalpreferences": "Preferencje globalne",
 	"globalprefs-info-label": "Preferencje globalne:",
 	"globalprefs-info-link": "Ustaw swoje preferencje globalne",
+	"globalprefs-reset-intro": "Możesz użyć tej strony do wyłączenia wszystkich ustawionych preferencji globalnych dla wszystkich wiki. Zostanie przywrócone stosowanie lokalnych preferencji. Lokalne preferencje pozostaną bez zmian. Nie będzie można tego cofnąć.",
+	"globalprefs-restoreprefs": "Usuń wszystkie globalne ustawienia (dla wszystkich sekcji)",
 	"globalprefs-select-all": "Wybierz wszystko"
 }
