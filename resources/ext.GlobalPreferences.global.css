@@ -4,13 +4,13 @@
 }
 
 /* Style fixes for Skin:Vector. The ID selector is whitelisted in .stylelintrc because Vector uses it. */
-body.skin-vector #preferences fieldset.ext-globalpreferences-select-all {
+body.skin-vector #preferences fieldset.globalprefs-section-header {
 	padding-bottom: 0;
 	margin-bottom: 0;
 	border: 0;
 }
 
 /* Style fixes for Extension:BetaFeatures. */
-body.skin-vector #preferences #mw-prefsection-betafeatures fieldset.ext-globalpreferences-select-all {
+#preferences #mw-prefsection-betafeatures fieldset.globalprefs-section-header {
 	padding-left: 0;
 }

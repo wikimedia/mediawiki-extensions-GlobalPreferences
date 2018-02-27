@@ -3,13 +3,14 @@
 		"authors": [
 			"Kunal Mehta",
 			"Shirayuki",
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"Sam Wilson"
 		]
 	},
 	"globalprefs-desc": "{{desc|name=Global Preferences|url=https://www.mediawiki.org/wiki/Extension:GlobalPreferences}}",
 	"globalprefs-set-local-exception": "Label for the checkbox below a globally-set preference, inviting user to set a local exception for it. $1 is the fragment identifier for the current preferences section, with which to link to the correct section on Special:GlobalPreferences.",
 	"globalprefs-has-local-exception": "Help text on a global preference that has a local exception. $1 is the fragment identifier for the current preferences section, with which to link to the correct section on Special:Preferences.",
-	"tooltip-globalprefs-check-label": "The tooltip and the label text for the checkbox to enable a preference globally.",
+	"tooltip-globalprefs-check-label": "The tooltip for the checkboxes that enable preferences globally.",
 	"globalprefs-error-header": "Page title for error message.\n{{Identical|Error}}",
 	"globalprefs-notglobal": "Error message a user sees if they do not have a global account.",
 	"globalpreferences": "{{doc-special|GlobalPreferences}}",
@@ -17,5 +18,6 @@
 	"globalprefs-info-link": "Link text to [[Special:GlobalPreferences]].",
 	"globalprefs-reset-intro": "Used in [[Special:GlobalPreferences/reset]].",
 	"globalprefs-restoreprefs": "Used as link text in [[Special:GlobalPreferences]]. The link points to [[Special:GlobalPreferences/reset]] which shows the \"Remove all global preferences\" form.\n\nAlso used as label for the Submit button in [[Special:GlobalPreferences/reset]].",
-	"globalprefs-select-all": "Label for the checkbox for selecting all of a section's preferences.\n{{Identical|Select all}}"
+	"globalprefs-select-all": "Label for the checkbox for selecting all of a section's preferences.",
+	"globalprefs-col-header": "Label at the top of the global checkboxes. Informative for non-JS users, and becomes a label for the select-all checkbox for JS users."
 }

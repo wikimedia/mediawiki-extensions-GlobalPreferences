@@ -61,7 +61,7 @@ div.mw-globalprefs-global-check {
 	float: left;
 	width: 5%;
 	min-width: 2em;
-	text-align: center;
+	text-align: left;
 }
 div.mw-globalprefs-global-check div.mw-input,
 div.mw-htmlform-field-HTMLUsersMultiselectField div.mw-input
@@ -74,16 +74,15 @@ div.mw-globalprefs-global-check input.mw-globalprefs-global-check {
 }
 
 /** Remove fieldset border to distinguish it from other 'proper' fieldsets. */
-fieldset.ext-globalpreferences-select-all {
+fieldset.globalprefs-section-header,
+.client-js #preferences fieldset.globalprefs-section-header {
 	border: 0;
 }
 
-/** Make the column header a bit narrower so it looks more associated with the column. */
-.globalprefs-section-header .col-header {
-	display: block;
-	width: 7%;
-	min-width: 7em;
-	text-align: center;
+/** Embolden the column header (both JS and non-JS). */
+fieldset.globalprefs-section-header label {
+	font-weight: bolder;
+	margin-left: 5px;
 }
 
 /* Style fixes for Extension:BetaFeatures. */

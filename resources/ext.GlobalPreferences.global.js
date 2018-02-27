@@ -104,15 +104,17 @@
 			var selectAll = mw.message( 'globalprefs-select-all' ).escaped(),
 				$checkbox,
 				$allGlobalCheckboxes;
-			// Wrap the checkbox in a fieldset so it acts/looks the same as all the global checkboxes.
-			$checkbox = $( '<fieldset class="ext-globalpreferences-select-all"><label><input type="checkbox" /> ' + selectAll + '</label></fieldset>' );
-			$( this ).append( $checkbox );
+
+			// Add the checkbox. Its label is already present, so we just need to update the label tooltip.
+			$checkbox = $( '<input>', { id: 'globalprefs-select-all', type: 'checkbox', title: selectAll } );
+			$( this ).prepend( $checkbox );
+			$( this ).find( 'label' ).attr( 'title', selectAll );
 
 			// Determine all the matching checkboxes.
 			$allGlobalCheckboxes = $( this ).parent( 'fieldset' ).find( '.mw-globalprefs-global-check:checkbox' );
 
 			// Enable the select-all behaviour.
-			selectAllCheckboxes( $checkbox.find( ':checkbox' ), $allGlobalCheckboxes );
+			selectAllCheckboxes( $checkbox, $allGlobalCheckboxes );
 		} );
 	}
 

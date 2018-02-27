@@ -80,17 +80,14 @@ class GlobalPreferencesForm extends PreferencesForm {
 			}
 		}
 
-		// Add help text to the top of every section.
+		// Add help text to the top of every section. This creates form components because the
+		// select-all checkbox will be added here by JS in the ext.GlobalPreferencs.global module.
 		foreach ( $this->getPreferenceSections() as $section ) {
-			$colHeaderText = Html::element(
-				'span',
-				[ 'class' => 'col-header' ],
-				$this->getMessage( 'tooltip-globalprefs-check-label' )->text()
-			);
+			$colHeaderText = $this->getMessage( 'globalprefs-col-header' )->text();
 			$secHeader = Html::rawElement(
-				'div',
+				'fieldset',
 				[ 'class' => 'globalprefs-section-header' ],
-				$colHeaderText
+				Html::label( $colHeaderText, 'globalprefs-select-all' )
 			);
 			$this->addHeaderText( $secHeader, $section );
 		}

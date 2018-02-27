@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kunal Mehta"
+			"Kunal Mehta",
+			"Sam Wilson"
 		]
 	},
 	"globalprefs-desc": "Allows users to set global preferences",
@@ -15,5 +16,6 @@
 	"globalprefs-info-link": "Set your global preferences",
 	"globalprefs-reset-intro": "You can use this page to disable all global preferences on all wikis and return to your local preferences. This does not affect any local wiki preferences. This cannot be undone.",
 	"globalprefs-restoreprefs": "Remove all global preferences (in all sections)",
-	"globalprefs-select-all": "Select all"
+	"globalprefs-select-all": "Toggle all checkboxes on or off",
+	"globalprefs-col-header": "Select options below to be global"
 }
