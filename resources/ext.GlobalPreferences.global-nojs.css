@@ -94,3 +94,7 @@ fieldset#mw-prefsection-betafeatures .mw-globalprefs-checkbox-for-betafeatures-a
 	font-size: inherit;
 	margin-top: 0;
 }
+/* Hide user counts as they're for current wiki only */
+.mw-ui-feature-user-count {
+	display: none;
+}
