@@ -2,6 +2,7 @@
 
 namespace GlobalPreferences;
 
+use CentralIdLookup;
 use DatabaseUpdater;
 use Language;
 use MediaWiki\Auth\AuthManager;
@@ -12,6 +13,11 @@ use Skin;
 use User;
 
 class Hooks {
+
+	protected static $userIdListPreferences = [
+		'email-blacklist',
+		'echo-notifications-blacklist',
+	];
 
 	/**
 	 * Allows last minute changes to the output page, e.g. adding of CSS or JavaScript by extensions.
@@ -45,9 +51,23 @@ class Hooks {
 
 		// Overwrite all options that have a global counterpart.
 		foreach ( $globalPreferences->getGlobalPreferencesValues() as $optName => $globalValue ) {
-			// But not if it has a local exception.
-			if ( $user->getOption( $optName . GlobalPreferencesFactory::LOCAL_EXCEPTION_SUFFIX ) ) {
+			// Don't overwrite if it has a local exception, unless we're just trying to get .
+			if (
+				!GlobalPreferencesForm::gettingGlobalOnly()
+				&& $user->getOption( $optName . GlobalPreferencesFactory::LOCAL_EXCEPTION_SUFFIX )
+			) {
 				continue;
+			}
+			// Replicate any transformations that are done in User::loadOption()
+			// and those for any other extensions that don't play nicely.
+			// 1. Convert specific preferences from newline delimited strings to arrays of IDs.
+			if ( in_array( $optName, static::$userIdListPreferences ) ) {
+				$globalValue = array_map( 'intval', explode( "\n", $globalValue ) );
+			}
+			// 2. Convert '0' to 0. PHP's boolean conversion considers them both false,
+			// but e.g. JavaScript considers the former as true.
+			if ( $globalValue === '0' ) {
+				$globalValue = 0;
 			}
 			$options[ $optName ] = $globalValue;
 		}
@@ -108,8 +128,17 @@ class Hooks {
 				$suffixLen = strlen( GlobalPreferencesFactory::GLOBAL_EXCEPTION_SUFFIX );
 				$realName = substr( $name, 0, -$suffixLen );
 				if ( isset( $formData[$realName] ) ) {
-					// Store normal preference values.
-					$prefs[$realName] = $formData[$realName];
+					// Replicate any transformations that are done in User::saveOptions().
+					if ( in_array( $realName, static::$userIdListPreferences ) ) {
+						// Some preferences are strings of newline-delimited user names.
+						$lookup = CentralIdLookup::factory();
+						$values = explode( "\n", $formData[$realName] );
+						$ids = $lookup->centralIdsFromNames( $values, $user );
+						$prefs[$realName] = implode( "\n", $ids );
+					} else {
+						// Store normal preference values.
+						$prefs[$realName] = $formData[$realName];
+					}
 
 				} else {
 					// If the real-named preference isn't set, this must be a CheckMatrix value
