@@ -52,8 +52,9 @@ class Storage {
 	 * Save a set of global preferences. All existing preferences will be deleted before the new
 	 * ones are saved.
 	 * @param string[] $newPrefs Keyed by the preference name.
+	 * @param string[] $knownPrefs Only work with the preferences we know about.
 	 */
-	public function save( $newPrefs ) {
+	public function save( $newPrefs, $knownPrefs ) {
 		// Assemble the records to save.
 		$rows = [];
 		foreach ( $newPrefs as $prop => $value ) {
@@ -64,7 +65,7 @@ class Storage {
 			];
 		}
 		// Delete all global preferences, and then save new ones.
-		$this->delete();
+		$this->delete( $knownPrefs );
 		if ( $rows ) {
 			$dbw = $this->getDatabase( DB_MASTER );
 			$dbw->replace(
@@ -78,14 +79,15 @@ class Storage {
 
 	/**
 	 * Delete all of this user's global preferences.
+	 * @param string[] $knownPrefs Only delete the preferences we know about.
 	 */
-	public function delete() {
+	public function delete( $knownPrefs = null ) {
 		$db = $this->getDatabase( DB_MASTER );
-		$db->delete(
-			static::TABLE_NAME,
-			[ 'gp_user' => $this->userId ],
-			__METHOD__
-		);
+		$conds = [ 'gp_user' => $this->userId ];
+		if ( is_array( $knownPrefs ) ) {
+			$conds['gp_property'] = $knownPrefs;
+		}
+		$db->delete( static::TABLE_NAME, $conds, __METHOD__ );
 	}
 
 	/**
