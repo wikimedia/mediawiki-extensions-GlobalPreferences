@@ -1,0 +1,19 @@
+{
+	"@metadata": {
+		"authors": [
+			"Tacsipacsi"
+		]
+	},
+	"globalprefs-desc": "Globális beállítások tárolásának lehetővé tétele a felhasználóknak",
+	"globalprefs-set-local-exception": "Helyi kivétel beállítása erre a [[Special:GlobalPreferences#$1|globális beállításra]].",
+	"globalprefs-has-local-exception": "Ez a globális beállítás [[Special:Preferences#$1|helyileg felül van írva]] ezen a wikin.",
+	"tooltip-globalprefs-check-label": "A beállítás globálissá tétele",
+	"globalprefs-error-header": "Hiba",
+	"globalprefs-notglobal": "A fiókod nem globális fiók, így nem tudod használni a globális beállításokat.",
+	"globalpreferences": "Globális beállítások",
+	"globalprefs-info-label": "Globális beállítások:",
+	"globalprefs-info-link": "Globális beállításaid módosítása",
+	"globalprefs-reset-intro": "Ezen a lapon tilthatod le a globális beállításaidat és térhetsz vissza a helyi beállításaidhoz. Ez nem érinti a helyi beállításokat. A műveletet nem lehet visszavonni.",
+	"globalprefs-restoreprefs": "A globális beállítások alaphelyzetbe állítása (minden szakaszban)",
+	"globalprefs-select-all": "Összes kijelölése"
+}

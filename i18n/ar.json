@@ -1,9 +1,19 @@
 {
 	"@metadata": {
 		"authors": [
-			"محمد أحمد عبد الفتاح"
+			"محمد أحمد عبد الفتاح",
+			"Meno25"
 		]
 	},
+	"globalprefs-desc": "يسمح للمستخدمين بضبط التفضيلات العالمية",
+	"globalprefs-set-local-exception": "اضبط استثناء محليا لهذا [[Special:GlobalPreferences#$1|التفضيل العالمي]].",
+	"globalprefs-has-local-exception": "هذا التفضيل العالمي له [[Special:Preferences#$1|استثناء محلي على هذه الويكي]].",
+	"tooltip-globalprefs-check-label": "اجعل هذا الإعداد عالميا",
 	"globalprefs-error-header": "خطأ",
+	"globalprefs-notglobal": "حسابك ليس حسابا عالميا ولا يمكنه ضبط التفضيلات العالمية.",
+	"globalpreferences": "تفضيلات عالمية",
+	"globalprefs-info-label": "التفضيلات العالمية:",
+	"globalprefs-info-link": "ضبط تفضيلاتك العالمية",
+	"globalprefs-restoreprefs": "إزالة كل التفضيلات العالمية (في كل الأقسام)",
 	"globalprefs-select-all": "اختر الكل"
 }

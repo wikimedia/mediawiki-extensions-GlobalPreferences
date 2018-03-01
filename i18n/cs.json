@@ -1,8 +1,20 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ilimanaq29"
+			"Ilimanaq29",
+			"Mormegil"
 		]
 	},
-	"globalprefs-reset-intro": "Můžete použít tuto stránku, abyste zrušili všechna globální nastavení na všech wiki a vrátili se do svých lokálních nastavení. Toto neplatí na jakákoliv lokální nastavení wiki. Toto nemůže být vráceno zpět."
+	"globalprefs-desc": "Umožňuje uživatelům volit si globální nastavení",
+	"globalprefs-set-local-exception": "Použít lokální výjimku pro toto [[Special:GlobalPreferences#$1|globální nastavení]].",
+	"globalprefs-has-local-exception": "Toto globální nastavení má [[Special:Preferences#$1|na této wiki lokální výjimku]].",
+	"tooltip-globalprefs-check-label": "Učinit toto nastavení globální",
+	"globalprefs-error-header": "Chyba",
+	"globalprefs-notglobal": "Váš účet není globální účet a nemůže používat globální nastavení.",
+	"globalpreferences": "Globální nastavení",
+	"globalprefs-info-label": "Globální nastavení:",
+	"globalprefs-info-link": "Přizpůsobit globální nastavení",
+	"globalprefs-reset-intro": "Můžete použít tuto stránku, abyste zrušili všechna globální nastavení na všech wiki a vrátili se do svých lokálních nastavení. Toto neplatí na jakákoliv lokální nastavení wiki. Toto nemůže být vráceno zpět.",
+	"globalprefs-restoreprefs": "Odstranit všechna globální nastavení (ve všech sekcích)",
+	"globalprefs-select-all": "Vybrat vše"
 }
