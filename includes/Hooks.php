@@ -150,6 +150,10 @@ class Hooks {
 				'global_preferences_user_property',
 				"$sqlPath/patch_primary_index.sql"
 			);
+			$updater->modifyExtensionField( 'global_preferences',
+				'gp_user',
+				"$sqlPath/patch-gp_user.sql"
+			);
 		}
 
 		return true;

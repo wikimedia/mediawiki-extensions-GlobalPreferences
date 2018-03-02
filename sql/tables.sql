@@ -1,7 +1,7 @@
 -- Central table that stores global preferences
 CREATE TABLE /*_*/global_preferences (
   -- Key to globaluser.gu_id
-  gp_user INT(11) NOT NULL,
+  gp_user INT UNSIGNED NOT NULL,
   -- Property name, same as user_properties.up_property
   gp_property VARBINARY(255) NOT NULL,
   -- Property value, same as user_properties.up_value
