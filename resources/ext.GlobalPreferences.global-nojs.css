@@ -47,6 +47,11 @@ div.mw-input,
 div.mw-label {
 	display: table-cell;
 }
+/* Extension:BetaFeatures does other styling and we don't want to interfere. */
+.mw-htmlform-field-NewHTMLCheckField div.mw-input,
+.mw-htmlform-field-HTMLFeatureField div.mw-input {
+	display: block;
+}
 div.mw-label {
 	padding-right: 0.5em;
 }
