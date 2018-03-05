@@ -124,7 +124,7 @@ class SpecialGlobalPreferences extends SpecialPreferences {
 		$preferencesFactory->setUser( $this->getUser() );
 		$preferencesFactory->resetGlobalUserSettings();
 
-		$url = $this->getTitle()->getFullURL( 'success' );
+		$url = $this->getPageTitle()->getFullURL( 'success' );
 
 		$this->getOutput()->redirect( $url );
 
