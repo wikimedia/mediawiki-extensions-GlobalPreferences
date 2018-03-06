@@ -52,7 +52,9 @@ div.mw-label {
 .mw-htmlform-field-HTMLFeatureField div.mw-input {
 	display: block;
 }
+/* Make field labels a consistent width so their fields line up to the right (or left, in RTL). */
 div.mw-label {
+	width: 20em;
 	padding-right: 0.5em;
 }
 
