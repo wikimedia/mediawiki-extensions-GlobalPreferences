@@ -8,6 +8,7 @@ use HTMLFormField;
 use IContextSource;
 use MediaWiki\MediaWikiServices;
 use PreferencesForm;
+use User;
 use Xml;
 
 /**
@@ -17,6 +18,22 @@ use Xml;
  * @package GlobalPreferences
  */
 class GlobalPreferencesForm extends PreferencesForm {
+
+	/**
+	 * Flag that we're in the process of getting global preferences ONLY, i.e. we want to ignore
+	 * local exceptions. This is used when we need to overwrite the values of the
+	 * GlobalPreferences form and not display the local exception values.
+	 * @var bool
+	 */
+	protected static $gettingGlobalOnly = false;
+
+	/**
+	 * Get the value of static::$gettingGlobalOnly (see there for why).
+	 * @return bool
+	 */
+	public static function gettingGlobalOnly() {
+		return static::$gettingGlobalOnly;
+	}
 
 	/**
 	 * Build a new GlobalPreferencesForm from an array of field attributes, and force it to be
@@ -63,6 +80,19 @@ class GlobalPreferencesForm extends PreferencesForm {
 		$globalPreferences = MediaWikiServices::getInstance()->getPreferencesFactory();
 		$globalPreferences->setUser( $this->getUser() );
 		$globalPrefValues = $globalPreferences->getGlobalPreferencesValues();
+
+		// Fetch a set of global-only preferences with which we can populate the form,
+		// but none of which will actually be in effect (i.e. when viewing the global form, all
+		// local exceptions should be in use, but the global values are the ones shown).
+		static::$gettingGlobalOnly = true;
+		$globalOnlyUser = User::newFromId( $this->getUser()->getId() );
+		$globalPrefDefinitions = $globalPreferences->getFormDescriptor(
+			$globalOnlyUser,
+			$this->getContext()
+		);
+		static::$gettingGlobalOnly = false;
+
+		// Manually set global pref fields to their global values if they have a local exception.
 		foreach ( $this->mFlatFields as $fieldName => $field ) {
 			// Ignore this if it's a global or a local-exception preference.
 			$isGlobal = GlobalPreferencesFactory::isGlobalPrefName( $fieldName );
@@ -76,7 +106,7 @@ class GlobalPreferencesForm extends PreferencesForm {
 			$hasGlobalValue = isset( $globalPrefValues[ $fieldName ] );
 			if ( $this->getUser()->getOption( $localExceptionName ) && $hasGlobalValue ) {
 				// And if it does, use the global value.
-				$this->mFieldData[ $fieldName ] = $globalPrefValues[ $fieldName ];
+				$this->mFieldData[$fieldName] = $globalPrefDefinitions[$fieldName]['default'];
 			}
 		}
 
