@@ -16,5 +16,6 @@
 	"globalprefs-info-link": "Imposta le preferenze globali",
 	"globalprefs-reset-intro": "Puoi utilizzare questa pagina per disattivare tutte le preferenze globali su tutti gli wiki e tornare alle preferenze locali. Questa operazione non influenzerà le preferenze locali e può essere annullata.",
 	"globalprefs-restoreprefs": "Rimuovi tutte le preferenze globali (in tutte le sezioni)",
-	"globalprefs-select-all": "Seleziona tutto"
+	"globalprefs-select-all": "Attiva o disattiva tutte le caselle di controllo",
+	"globalprefs-col-header": "Seleziona le opzioni di seguito per essere globali"
 }

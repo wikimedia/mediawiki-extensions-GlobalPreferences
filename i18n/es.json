@@ -15,5 +15,5 @@
 	"globalprefs-info-link": "Definir las preferencias globales",
 	"globalprefs-reset-intro": "Puedes emplear esta página para desactivar todas las preferencias globales y volver a tus preferencias locales.\nNo se puede deshacer esta acción.",
 	"globalprefs-restoreprefs": "Quitar todas las preferencias globales (en todas las secciones)",
-	"globalprefs-select-all": "Seleccionar todo"
+	"globalprefs-select-all": "Marcar o desmarcar todas las casillas"
 }

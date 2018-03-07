@@ -18,5 +18,6 @@
 	"globalprefs-info-link": "设置您的全域设置项",
 	"globalprefs-reset-intro": "您可以使用此页面在所有wiki禁用所有全域参数设置，并改回您的本地参数设置。这不会涉及任何本地wiki的参数设置。这不能撤销。",
 	"globalprefs-restoreprefs": "移除所有全域参数设置（所有节）",
-	"globalprefs-select-all": "全选"
+	"globalprefs-select-all": "切换所有复选框开启或关闭",
+	"globalprefs-col-header": "在下方选择选项以使其全域化"
 }
