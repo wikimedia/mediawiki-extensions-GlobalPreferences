@@ -165,6 +165,7 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 				SpecialPage::getTitleFor( 'GlobalPreferences' ),
 				wfMessage( 'globalprefs-info-link' )->text()
 			),
+			'help-message' => 'globalprefs-info-help',
 		];
 
 		return $preferences;
