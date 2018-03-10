@@ -14,6 +14,7 @@
 	"globalpreferences": "전역 설정",
 	"globalprefs-info-label": "전역 설정:",
 	"globalprefs-info-link": "전역 설정하기",
+	"globalprefs-info-help": "통합 환경 설정 페이지를 통한 환경 설정 집합은 모든 위키에 적용됩니다.",
 	"globalprefs-reset-intro": "이 문서에서 모든 위키의 모든 환경 설정을 비활성화한 다음 로컬 환경 설정으로 돌아갈 수 있습니다. 로컬 위키 환경 설정에는 영향을 주지 않습니다. 이 작업은 취소할 수 없습니다.",
 	"globalprefs-restoreprefs": "모든 전역 환경 설정 제거 (모든 섹션에서)",
 	"globalprefs-select-all": "모든 체크 상자 체크/체크 해제",
