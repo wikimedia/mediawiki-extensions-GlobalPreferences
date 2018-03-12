@@ -12,6 +12,7 @@
 	"globalpreferences": "Globala inställningar",
 	"globalprefs-info-label": "Globala inställningar:",
 	"globalprefs-info-link": "Ange dina globala inställningar",
+	"globalprefs-info-help": "Inställningar som har ändrats via den globala inställningssidan kommer att tillämpas på alla wikier.",
 	"globalprefs-reset-intro": "Du kan använda denna sida för att inaktivera alla globala inställningar och återvända till dina lokala inställningar. Detta kan inte ångras.",
 	"globalprefs-restoreprefs": "Ta bort alla globala inställningar (i alla avsnitt)",
 	"globalprefs-col-header": "Välj alternativ nedan som ska vara globala"
