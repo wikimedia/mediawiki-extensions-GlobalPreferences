@@ -13,7 +13,9 @@
 	"globalpreferences": "Preferencies globales",
 	"globalprefs-info-label": "Preferencies globales:",
 	"globalprefs-info-link": "Configurar les preferencies globales",
+	"globalprefs-info-help": "Les opciones definíes al traviés de la páxina de preferencies globales aplicaránse a toles wikis.",
 	"globalprefs-reset-intro": "Puedes usar esta páxina pa desactivar toles preferencies globales en toles wikis y volver a les preferencies llocales. Esto nun afeuta a nenguna preferencia de la wiki llocal, y nun puede desfacese.",
 	"globalprefs-restoreprefs": "Desaniciar toles preferencies globales (de toles seiciones)",
-	"globalprefs-select-all": "Seleccionar too"
+	"globalprefs-select-all": "Marcar o desmarcar tolos caxellos",
+	"globalprefs-col-header": "Seleiciona les opciones de más abaxo que van ser globales"
 }
