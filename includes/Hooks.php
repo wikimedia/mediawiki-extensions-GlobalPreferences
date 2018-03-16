@@ -170,9 +170,17 @@ class Hooks {
 	 * @return bool
 	 */
 	public static function onLoadExtensionSchemaUpdates( DatabaseUpdater $updater ) {
-		global $wgGlobalPreferencesDB;
-		if ( is_null( $wgGlobalPreferencesDB ) || $wgGlobalPreferencesDB === wfWikiID() ) {
-			// Only add the table if it's supposed to be on this wiki.
+		$config = MediaWikiServices::getInstance()->getMainConfig();
+		$dBname = $config->get( 'DBname' );
+		$sharedDB = $config->get( 'SharedDB' );
+		$globalPreferencesDB = $config->get( 'GlobalPreferencesDB' );
+
+		// Only add the global_preferences table to the $wgGlobalPreferencesDB or the $wgSharedDB,
+		// unless neither of them is set. See also \GlobalPreferences\Storage::getDatabase().
+		if ( ( is_null( $globalPreferencesDB ) && is_null( $sharedDB ) )
+			|| $dBname === $globalPreferencesDB
+			|| ( is_null( $globalPreferencesDB ) && $dBname === $sharedDB )
+		) {
 			$sqlPath = dirname( __DIR__ ) . '/sql';
 			$updater->addExtensionTable( 'global_preferences', "$sqlPath/tables.sql" );
 			$updater->dropExtensionIndex( 'global_preferences',
