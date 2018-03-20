@@ -14,8 +14,9 @@
 	"globalpreferences": "Globální nastavení",
 	"globalprefs-info-label": "Globální nastavení:",
 	"globalprefs-info-link": "Přizpůsobit globální nastavení",
-	"globalprefs-info-help": "Nastavení nastavena pomocí globálních nastavení budou platit na všech wiki.",
-	"globalprefs-reset-intro": "Můžete použít tuto stránku, abyste zrušili všechna globální nastavení na všech wiki a vrátili se do svých lokálních nastavení. Toto neplatí na jakákoliv lokální nastavení wiki. Toto nemůže být vráceno zpět.",
+	"globalprefs-info-help": "Nastavení zvolená na stránce globálních nastavení budou platit na všech wiki.",
+	"globalprefs-reset-intro": "Pomocí této stránky můžete zrušit všechna globální nastavení na všech wiki a vrátit se ke svých lokálním nastavením. Nijak se tím nezmění lokální nastavení na žádné wiki. Tuto operaci nelze vrátit zpět.",
 	"globalprefs-restoreprefs": "Odstranit všechna globální nastavení (ve všech sekcích)",
-	"globalprefs-select-all": "Vybrat vše"
+	"globalprefs-select-all": "Vybrat vše",
+	"globalprefs-col-header": "Níže vyberte nastavení, která mají být globální"
 }
