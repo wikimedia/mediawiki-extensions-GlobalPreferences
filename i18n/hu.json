@@ -13,7 +13,9 @@
 	"globalpreferences": "Globális beállítások",
 	"globalprefs-info-label": "Globális beállítások:",
 	"globalprefs-info-link": "Globális beállításaid módosítása",
+	"globalprefs-info-help": "A globális beállítások lapon megadott beállítások az összes wikire érvényesek lesznek.",
 	"globalprefs-reset-intro": "Ezen a lapon tilthatod le a globális beállításaidat és térhetsz vissza a helyi beállításaidhoz. Ez nem érinti a helyi beállításokat. A műveletet nem lehet visszavonni.",
 	"globalprefs-restoreprefs": "A globális beállítások alaphelyzetbe állítása (minden szakaszban)",
-	"globalprefs-select-all": "Összes kijelölése"
+	"globalprefs-select-all": "Az összes jelölőnégyzet be- vagy kikapcsolása",
+	"globalprefs-col-header": "Az alábbi beállítások globálisra állítása"
 }

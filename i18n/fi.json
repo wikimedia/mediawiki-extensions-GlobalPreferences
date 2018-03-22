@@ -17,5 +17,6 @@
 	"globalprefs-info-link": "Aseta järjestelmänlaajuiset asetuksesi",
 	"globalprefs-info-help": "Järjestelmänlaajuisten asetusten kautta asetetut valinnat koskevat kaikkia wikejä.",
 	"globalprefs-restoreprefs": "Poista kaikki järjestelmänlaajuiset asetukset (kaikissa osioissa)",
-	"globalprefs-select-all": "Valitse tai tyhjennä kaikki valintaruudut"
+	"globalprefs-select-all": "Valitse tai tyhjennä kaikki valintaruudut",
+	"globalprefs-col-header": "Valitse kaikki alla olevat valinnat ja tee niistä järjestelmänlaajuiset"
 }
