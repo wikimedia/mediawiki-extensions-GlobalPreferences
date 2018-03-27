@@ -1,20 +1,22 @@
 {
 	"@metadata": {
 		"authors": [
-			"Amire80"
+			"Amire80",
+			"Guycn2"
 		]
 	},
 	"globalprefs-desc": "מתן אפשרות למשתמשים להגדיר העדפות גלובליות",
 	"globalprefs-set-local-exception": "הגדרה מיוחדת מקומית עבור [[Special:GlobalPreferences#$1|ההעדפה הגלובלית]] הזאת.",
-	"globalprefs-has-local-exception": "להעדפה הגלובלית הזאת יש [[Special:Preferences#$1|הגדרה מיוחדת בוויקי הזה]].",
-	"tooltip-globalprefs-check-label": "להגדיר את זה גלובלית",
+	"globalprefs-has-local-exception": "להעדפה הגלובלית הזאת יש [[Special:Preferences#$1|הגדרה מקומית מיוחדת באתר הוויקי הזה]].",
+	"tooltip-globalprefs-check-label": "הפיכת הגדרה זו לגלובלית",
 	"globalprefs-error-header": "שגיאה",
 	"globalprefs-notglobal": "החשבון שלך אינו חשבון גלובלי ואינו יכול להגדיר העדפות גלובליות.",
 	"globalpreferences": "העדפות גלובליות",
 	"globalprefs-info-label": "העדפות גלובליות:",
 	"globalprefs-info-link": "הגדרת ההעדפות הגלובליות שלך",
-	"globalprefs-reset-intro": "אפשר להשתמש גדף הזה כדי לכבות את כל ההעדפות הגלובליות בכל אתרי הוויקי ולחזור להעדפות המקומיות שלך. זה לא ישפיע על העדפות בשום ויקי מקומי. לא ניתן לבטל את הפעולה הזאת.",
-	"globalprefs-restoreprefs": "הסרת כל ההעדפות הגלובליות (בכל החלקים)",
-	"globalprefs-select-all": "להפעיל או לכבות את כל תיבות הסימון",
+	"globalprefs-info-help": "העדפות שמוגדרות בדף ההעדפות הגלובליות יחולו על כל אתרי הוויקי.",
+	"globalprefs-reset-intro": "אפשר להשתמש בדף הזה כדי לכבות את כל ההעדפות הגלובליות בכל אתרי הוויקי ולחזור להעדפות המקומיות שלך. זה לא ישפיע על העדפות בשום ויקי מקומי. לא ניתן לבטל את הפעולה הזאת.",
+	"globalprefs-restoreprefs": "הסרת כל ההעדפות הגלובליות (בכל הלשוניות)",
+	"globalprefs-select-all": "הפעלה או ביטול של כל תיבות הסימון",
 	"globalprefs-col-header": "נא לבחור אילו מההעדפות להלן תהיינה גלובליות"
 }
