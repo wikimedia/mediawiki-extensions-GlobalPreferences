@@ -339,9 +339,21 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 		if ( !$id ) {
 			return false;
 		}
+
+		// Use a new instance of the current user to fetch the form descriptor because that way
+		// we're working with the previous user options and not those that are currently in the
+		// process of being saved (we only want the option names here, so don't care what the
+		// values are).
+		$actualUser = $this->user;
+		$this->user = User::newFromId( $this->user->getId() );
+
+		// Save the global options.
 		$storage = new Storage( $this->getUserID() );
 		$knownPrefs = array_keys( $this->getFormDescriptor( $this->user, $context ) );
 		$storage->save( $newGlobalPrefs, $knownPrefs );
+
+		// Return to the actual user object.
+		$this->user = $actualUser;
 		$this->user->clearInstanceCache();
 		return true;
 	}

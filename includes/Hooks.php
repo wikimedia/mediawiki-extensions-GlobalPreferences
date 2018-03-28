@@ -128,12 +128,17 @@ class Hooks {
 				$suffixLen = strlen( GlobalPreferencesFactory::GLOBAL_EXCEPTION_SUFFIX );
 				$realName = substr( $name, 0, -$suffixLen );
 				if ( isset( $formData[$realName] ) ) {
-					// Replicate any transformations that are done in User::saveOptions().
+					// Replicate any transformations that are done in User::saveOptions() or in
+					// any extensions that do similar things.
 					if ( in_array( $realName, static::$userIdListPreferences ) ) {
 						// Some preferences are strings of newline-delimited user names.
-						$lookup = CentralIdLookup::factory();
-						$values = explode( "\n", $formData[$realName] );
-						$ids = $lookup->centralIdsFromNames( $values, $user );
+						if ( is_array( $value ) ) {
+							$ids = array_filter( $value, 'is_numeric' );
+						} else {
+							$lookup = CentralIdLookup::factory();
+							$values = explode( "\n", $formData[$realName] );
+							$ids = $lookup->centralIdsFromNames( $values, $user );
+						}
 						$prefs[$realName] = implode( "\n", $ids );
 					} else {
 						// Store normal preference values.
