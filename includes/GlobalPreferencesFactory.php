@@ -3,7 +3,7 @@
  * Implements global preferences for MediaWiki
  *
  * @author Kunal Mehta <legoktm@gmail.com>
- * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ * @license http://www.gnu.org/copyleft/gpl.html GPL-2.0-or-later
  * @file
  * @ingroup Extensions
  *
