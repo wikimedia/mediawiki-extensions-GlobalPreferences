@@ -1,0 +1,21 @@
+{
+	"@metadata": {
+		"authors": [
+			"Pikne"
+		]
+	},
+	"globalprefs-desc": "Võimaldab määrata kasutajal globaalsed eelistused.",
+	"globalprefs-set-local-exception": "Määra sellele [[Special:GlobalPreferences#$1|globaalsele eelistusele]] kohalik erand.",
+	"globalprefs-has-local-exception": "Sellel globaalsel eelistusel on [[Special:Preferences#$1|siin vikis kohalik erand]].",
+	"tooltip-globalprefs-check-label": "Tee see eelistus globaalseks",
+	"globalprefs-error-header": "Tõrge",
+	"globalprefs-notglobal": "Sinu konto pole globaalne ja sellega ei saa määrata globaalseid eelistusi.",
+	"globalpreferences": "Globaalsed eelistused",
+	"globalprefs-info-label": "Globaalsed eelistused:",
+	"globalprefs-info-link": "Määra globaalsed eelistused",
+	"globalprefs-info-help": "Globaalsete eelistuste leheküljel määratud eelistused kehtivad kõigis vikides.",
+	"globalprefs-reset-intro": "Selle lehekülje abil saad tühistada kõik globaalsed eelistused kõigis vikides ja jätkata kohalike eelistuste kasutamist. See ei mõjuta ühegi kohaliku viki eelistusi. Seda ei saa tagasi võtta.",
+	"globalprefs-restoreprefs": "Eemalda kõik globaalsed eelistused (kõigis alaosades)",
+	"globalprefs-select-all": "Vali kõik märkeruudud või tühista nende valik",
+	"globalprefs-col-header": "Vali järgmised suvandid, et määrata need globaalseks"
+}
