@@ -6,6 +6,7 @@ use CentralIdLookup;
 use DatabaseUpdater;
 use Language;
 use MediaWiki\Auth\AuthManager;
+use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use OutputPage;
 use PreferencesForm;
@@ -49,6 +50,7 @@ class Hooks {
 			return;
 		}
 
+		wfDebugLog( 'preferences', "Loading global options for user '{$user->getName()}'" );
 		// Overwrite all options that have a global counterpart.
 		foreach ( $globalPreferences->getGlobalPreferencesValues() as $optName => $globalValue ) {
 			// Don't overwrite if it has a local exception, unless we're just trying to get .
@@ -209,14 +211,19 @@ class Hooks {
 	public static function onMediaWikiServices( MediaWikiServices $services ) {
 		$services->redefineService( 'PreferencesFactory', function ( MediaWikiServices $services ) {
 			global $wgContLang, $wgLanguageCode;
+
 			$wgContLang = Language::factory( $wgLanguageCode );
 			$wgContLang->initContLang();
 			$authManager = AuthManager::singleton();
 			$linkRenderer = $services->getLinkRendererFactory()->create();
 			$config = $services->getMainConfig();
-			return new GlobalPreferencesFactory(
+
+			$factory = new GlobalPreferencesFactory(
 				$config, $wgContLang, $authManager, $linkRenderer
 			);
+			$factory->setLogger( LoggerFactory::getInstance( 'preferences' ) );
+
+			return $factory;
 		} );
 		// Now instantiate the new Preferences, to prevent it being overwritten.
 		$services->getPreferencesFactory();

@@ -119,6 +119,7 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	 * @return mixed[][]
 	 */
 	protected function getPreferencesLocal( $preferences, $globalPrefNames, WebRequest $request ) {
+		$this->logger->debug( "Creating local preferences array for '{$this->user->getName()}'" );
 		$modifiedPrefs = [];
 		foreach ( $preferences as $name => $def ) {
 			$modifiedPrefs[$name] = $def;
