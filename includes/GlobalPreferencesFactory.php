@@ -15,6 +15,7 @@ namespace GlobalPreferences;
 
 use CentralIdLookup;
 use IContextSource;
+use MapCacheLRU;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Preferences\DefaultPreferencesFactory;
 use RequestContext;
@@ -41,6 +42,9 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 
 	/** @var User */
 	protected $user;
+
+	/** @var MapCacheLRU Runtime cache of users' central IDs. */
+	protected static $centralIds;
 
 	/**
 	 * "bad" preferences that we should remove from
@@ -312,8 +316,18 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	 * @return int
 	 */
 	public function getUserID() {
+		$id = $this->user->getId();
+		if ( !static::$centralIds instanceof MapCacheLRU ) {
+			// Max of 20 is arbitrary and matches what CentralAuth uses.
+			static::$centralIds = new MapCacheLRU( 20 );
+		}
+		if ( static::$centralIds->has( $id ) ) {
+			return static::$centralIds->get( $id );
+		}
 		$lookup = CentralIdLookup::factory();
-		return $lookup->centralIdFromLocalUser( $this->user, CentralIdLookup::AUDIENCE_RAW );
+		$gid = $lookup->centralIdFromLocalUser( $this->user, CentralIdLookup::AUDIENCE_RAW );
+		static::$centralIds->set( $id, $gid );
+		return $gid;
 	}
 
 	/**
