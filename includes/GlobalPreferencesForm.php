@@ -79,7 +79,7 @@ class GlobalPreferencesForm extends PreferencesForm {
 		/** @var GlobalPreferencesFactory $globalPreferences */
 		$globalPreferences = MediaWikiServices::getInstance()->getPreferencesFactory();
 		$globalPreferences->setUser( $this->getUser() );
-		$globalPrefValues = $globalPreferences->getGlobalPreferencesValues();
+		$globalPrefValues = $globalPreferences->getGlobalPreferencesValues( Storage::SKIP_CACHE );
 
 		// Fetch a set of global-only preferences with which we can populate the form,
 		// but none of which will actually be in effect (i.e. when viewing the global form, all
