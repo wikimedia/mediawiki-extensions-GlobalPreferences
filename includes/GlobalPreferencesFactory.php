@@ -44,7 +44,7 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	protected $user;
 
 	/** @var MapCacheLRU Runtime cache of users' central IDs. */
-	protected static $centralIds;
+	protected $centralIds;
 
 	/**
 	 * "bad" preferences that we should remove from
@@ -112,6 +112,18 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 			return $this->getPreferencesGlobal( $preferences, $globalPrefNames );
 		}
 		return $this->getPreferencesLocal( $preferences, $globalPrefNames, $context->getRequest() );
+	}
+
+	/**
+	 * Lazy-init getter for central ID instance cache
+	 * @return MapCacheLRU
+	 */
+	protected function getCache() {
+		if ( !$this->centralIds ) {
+			// Max of 20 is arbitrary and matches what CentralAuth uses.
+			$this->centralIds = new MapCacheLRU( 20 );
+		}
+		return $this->centralIds;
 	}
 
 	/**
@@ -317,16 +329,13 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	 */
 	public function getUserID() {
 		$id = $this->user->getId();
-		if ( !static::$centralIds instanceof MapCacheLRU ) {
-			// Max of 20 is arbitrary and matches what CentralAuth uses.
-			static::$centralIds = new MapCacheLRU( 20 );
-		}
-		if ( static::$centralIds->has( $id ) ) {
-			return static::$centralIds->get( $id );
+		$cache = $this->getCache();
+		if ( $cache->has( $id ) ) {
+			return $cache->get( $id );
 		}
 		$lookup = CentralIdLookup::factory();
 		$gid = $lookup->centralIdFromLocalUser( $this->user, CentralIdLookup::AUDIENCE_RAW );
-		static::$centralIds->set( $id, $gid );
+		$cache->set( $id, $gid );
 		return $gid;
 	}
 
