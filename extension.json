@@ -47,6 +47,9 @@
 		],
 		"BeforePageDisplay": [
 			"GlobalPreferences\\Hooks::onBeforePageDisplay"
+		],
+		"DeleteUnknownPreferences": [
+			"GlobalPreferences\\Hooks::onDeleteUnknownPreferences"
 		]
 	},
 	"ResourceFileModulePaths": {

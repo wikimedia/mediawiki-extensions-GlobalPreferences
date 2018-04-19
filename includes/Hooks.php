@@ -12,6 +12,7 @@ use OutputPage;
 use PreferencesForm;
 use Skin;
 use User;
+use Wikimedia\Rdbms\IDatabase;
 
 class Hooks {
 
@@ -227,5 +228,16 @@ class Hooks {
 		} );
 		// Now instantiate the new Preferences, to prevent it being overwritten.
 		$services->getPreferencesFactory();
+	}
+
+	/**
+	 * Prevent local exception preferences from being cleaned up.
+	 * @link https://www.mediawiki.org/wiki/Manual:Hooks/DeleteUnknownPreferences
+	 * @param string[] &$where Array of where clause conditions to add to.
+	 * @param IDatabase $db
+	 */
+	public static function onDeleteUnknownPreferences( &$where, IDatabase $db ) {
+		$like = $db->buildLike( $db->anyString(), GlobalPreferencesFactory::LOCAL_EXCEPTION_SUFFIX );
+		$where[] = "up_property NOT $like";
 	}
 }
