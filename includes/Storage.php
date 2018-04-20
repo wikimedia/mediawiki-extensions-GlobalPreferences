@@ -6,7 +6,9 @@
 
 namespace GlobalPreferences;
 
+use IExpiringStore;
 use MediaWiki\MediaWikiServices;
+use WANObjectCache;
 use Wikimedia\Rdbms\IDatabase;
 
 /**
@@ -17,6 +19,15 @@ class Storage {
 
 	/** The non-prefixed name of the global preferences database table. */
 	const TABLE_NAME = 'global_preferences';
+
+	/** Update this constant when making incompatible changes to caching */
+	const CACHE_VERSION = 1;
+
+	/** Cache lifetime */
+	const CACHE_TTL = IExpiringStore::TTL_WEEK;
+
+	/** Instructs pereference loading code to load the preferences from cache directly */
+	const SKIP_CACHE = true;
 
 	/** @var int The global user ID. */
 	protected $userId;
@@ -31,9 +42,27 @@ class Storage {
 
 	/**
 	 * Get the user's global preferences.
+	 *
+	 * @param bool $skipCache Whether the preferences should be loaded strictly from DB
 	 * @return string[] Keyed by the preference name.
 	 */
-	public function load() {
+	public function load( $skipCache = false ) {
+		if ( $skipCache ) {
+			return $this->loadFromDB();
+		}
+
+		$cache = $this->getCache();
+		$key = $this->getCacheKey();
+
+		return $cache->getWithSetCallback( $key, self::CACHE_TTL, function () {
+			return $this->loadFromDB();
+		} );
+	}
+
+	/**
+	 * @return string[]
+	 */
+	protected function loadFromDB() {
 		$dbr = $this->getDatabase( DB_REPLICA );
 		$res = $dbr->select(
 			static::TABLE_NAME,
@@ -75,6 +104,9 @@ class Storage {
 				__METHOD__
 			);
 		}
+		$key = $this->getCacheKey();
+		// Because we don't have the full preferences, just clear the cache
+		$this->getCache()->delete( $key );
 	}
 
 	/**
@@ -88,6 +120,8 @@ class Storage {
 			$conds['gp_property'] = $knownPrefs;
 		}
 		$db->delete( static::TABLE_NAME, $conds, __METHOD__ );
+		$key = $this->getCacheKey();
+		$this->getCache()->delete( $key );
 	}
 
 	/**
@@ -110,5 +144,28 @@ class Storage {
 		}
 
 		return $lbf->getMainLB( $domainId )->getConnectionRef( $type, [], $domainId );
+	}
+
+	/**
+	 * @return WANObjectCache
+	 */
+	protected function getCache() {
+		return MediaWikiServices::getInstance()->getMainWANObjectCache();
+	}
+
+	/**
+	 * @return string
+	 */
+	protected function getCacheKey() {
+		return $this->getCache()
+			->makeGlobalKey( 'globalpreferences', 'prefs', self::CACHE_VERSION, $this->userId );
+	}
+
+	/**
+	 * @param mixed $preferences
+	 */
+	protected function saveToCache( $preferences ) {
+		$key = $this->getCacheKey();
+		$this->getCache()->set( $key, $preferences, self::CACHE_TTL );
 	}
 }

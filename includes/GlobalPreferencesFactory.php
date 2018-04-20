@@ -106,7 +106,7 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	 */
 	public function getFormDescriptor( User $user, IContextSource $context ) {
 		$this->setUser( $user );
-		$globalPrefNames = array_keys( $this->getGlobalPreferencesValues() );
+		$globalPrefNames = array_keys( $this->getGlobalPreferencesValues( Storage::SKIP_CACHE ) );
 		$preferences = parent::getFormDescriptor( $user, $context );
 		if ( $this->onGlobalPrefsPage() ) {
 			return $this->getPreferencesGlobal( $preferences, $globalPrefNames );
@@ -341,15 +341,16 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 
 	/**
 	 * Get the user's global preferences.
-	 * @return string[]|bool Array keyed by preference name, or false if not found.
+	 * @param bool $skipCache Whether the preferences should be loaded strictly from DB
+	 * @return bool|string[] Array keyed by preference name, or false if not found.
 	 */
-	public function getGlobalPreferencesValues() {
+	public function getGlobalPreferencesValues( $skipCache = false ) {
 		$id = $this->getUserID();
 		if ( !$id ) {
 			return false;
 		}
 		$storage = new Storage( $id );
-		return $storage->load();
+		return $storage->load( $skipCache );
 	}
 
 	/**
