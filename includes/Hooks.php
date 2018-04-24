@@ -4,6 +4,7 @@ namespace GlobalPreferences;
 
 use CentralIdLookup;
 use DatabaseUpdater;
+use ExtensionRegistry;
 use Language;
 use MediaWiki\Auth\AuthManager;
 use MediaWiki\Logger\LoggerFactory;
@@ -65,7 +66,14 @@ class Hooks {
 			// and those for any other extensions that don't play nicely.
 			// 1. Convert specific preferences from newline delimited strings to arrays of IDs.
 			if ( in_array( $optName, static::$userIdListPreferences ) ) {
-				$globalValue = array_map( 'intval', explode( "\n", $globalValue ) );
+				// Only convert to array if it's a core preference
+				// or Echo has already been loaded (and won't now get a chance to convert for us).
+				$loaded = array_keys( ExtensionRegistry::getInstance()->getAllThings() );
+				if ( $optName === 'email-blacklist'
+					|| array_search( 'Echo', $loaded ) < array_search( 'GlobalPreferences', $loaded )
+				) {
+					$globalValue = array_map( 'intval', explode( "\n", $globalValue ) );
+				}
 			}
 			// 2. Convert '0' to 0. PHP's boolean conversion considers them both false,
 			// but e.g. JavaScript considers the former as true.
