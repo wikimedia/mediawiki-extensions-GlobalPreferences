@@ -60,7 +60,7 @@
 		"ext.GlobalPreferences.global": {
 			"styles": "ext.GlobalPreferences.global.css",
 			"scripts": "ext.GlobalPreferences.global.js",
-			"dependencies": [ "oojs-ui-core", "mediawiki.widgets" ],
+			"dependencies": [ "oojs-ui-core", "mediawiki.widgets", "mediawiki.widgets.UsersMultiselectWidget" ],
 			"messages": [ "globalprefs-select-all" ]
 		},
 		"ext.GlobalPreferences.global-nojs": {

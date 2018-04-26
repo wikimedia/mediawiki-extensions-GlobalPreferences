@@ -47,10 +47,11 @@
 
 		// Disable or enable the related preferences inputs.
 		$inputs.each( function () {
-			var widget;
-			if ( $( this ).hasClass( 'oo-ui-inputWidget-input' ) ) {
+			var widget, $widgetElement;
+			$widgetElement = $( this ).parents( '.oo-ui-widget' );
+			if ( $widgetElement.length === 1 ) {
 				// OOUI widget.
-				widget = OO.ui.infuse( $( this ).parents( '.oo-ui-widget' ) );
+				widget = OO.ui.infuse( $widgetElement );
 				widget.setDisabled( !enabled );
 			} else {
 				// Normal form input.
