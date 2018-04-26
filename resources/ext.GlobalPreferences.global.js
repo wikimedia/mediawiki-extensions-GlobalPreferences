@@ -28,7 +28,7 @@
 		// The current preference's inputs (can be multiple, and not all will have the same name).
 		$inputs = $( ':input[name="' + name + '"], :input[name="' + name + '[]"]' )
 			.parents( '.mw-input' )
-			.find( ':input' )
+			.find( ':input[name]' )
 			.not( '.checkmatrix-forced' );
 
 		// All the labels for this preference (not all have for='' nor are even labels).
