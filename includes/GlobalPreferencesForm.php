@@ -7,7 +7,7 @@ use HTMLForm;
 use HTMLFormField;
 use IContextSource;
 use MediaWiki\MediaWikiServices;
-use PreferencesForm;
+use PreferencesFormLegacy;
 use User;
 use Xml;
 
@@ -17,7 +17,7 @@ use Xml;
  *
  * @package GlobalPreferences
  */
-class GlobalPreferencesForm extends PreferencesForm {
+class GlobalPreferencesForm extends PreferencesFormLegacy {
 
 	/**
 	 * Flag that we're in the process of getting global preferences ONLY, i.e. we want to ignore
