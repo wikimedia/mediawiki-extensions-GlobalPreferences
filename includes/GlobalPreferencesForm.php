@@ -27,6 +27,8 @@ class GlobalPreferencesForm extends PreferencesFormLegacy {
 	 */
 	protected static $gettingGlobalOnly = false;
 
+	protected $displayFormat = 'div';
+
 	/**
 	 * Get the value of static::$gettingGlobalOnly (see there for why).
 	 * @return bool
@@ -45,7 +47,6 @@ class GlobalPreferencesForm extends PreferencesFormLegacy {
 	 */
 	public function __construct( $descriptor, IContextSource $context = null, $messagePrefix = '' ) {
 		parent::__construct( $descriptor, $context, $messagePrefix );
-		$this->setDisplayFormat( 'div' );
 	}
 
 	/**
