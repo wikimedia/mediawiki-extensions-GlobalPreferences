@@ -21,7 +21,6 @@ use MediaWiki\Preferences\DefaultPreferencesFactory;
 use RequestContext;
 use SpecialPage;
 use User;
-use WebRequest;
 
 /**
  * Global preferences.
@@ -101,7 +100,7 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	/**
 	 * Get all user preferences.
 	 * @param User $user The user.
-	 * @param IContextSource $context The preferences page.
+	 * @param IContextSource $context The current request context
 	 * @return array|null
 	 */
 	public function getFormDescriptor( User $user, IContextSource $context ) {
@@ -109,9 +108,9 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 		$globalPrefNames = array_keys( $this->getGlobalPreferencesValues( Storage::SKIP_CACHE ) );
 		$preferences = parent::getFormDescriptor( $user, $context );
 		if ( $this->onGlobalPrefsPage() ) {
-			return $this->getPreferencesGlobal( $preferences, $globalPrefNames );
+			return $this->getPreferencesGlobal( $preferences, $globalPrefNames, $context );
 		}
-		return $this->getPreferencesLocal( $preferences, $globalPrefNames, $context->getRequest() );
+		return $this->getPreferencesLocal( $preferences, $globalPrefNames, $context );
 	}
 
 	/**
@@ -131,10 +130,10 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	 * and add the link to Special:GlobalPreferences to the personal preferences tab.
 	 * @param mixed[][] $preferences The preferences array.
 	 * @param string[] $globalPrefNames The names of those preferences that are already global.
-	 * @param WebRequest $request The current request, to check for local exceptions being set.
+	 * @param IContextSource $context The current request context
 	 * @return mixed[][]
 	 */
-	protected function getPreferencesLocal( $preferences, $globalPrefNames, WebRequest $request ) {
+	protected function getPreferencesLocal( $preferences, $globalPrefNames, IContextSource $context ) {
 		$this->logger->debug( "Creating local preferences array for '{$this->user->getName()}'" );
 		$modifiedPrefs = [];
 		foreach ( $preferences as $name => $def ) {
@@ -149,7 +148,7 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 				// after preferences have been defined here, if a field is disabled.
 				$localExName = $name . static::LOCAL_EXCEPTION_SUFFIX;
 				$localExValueUser = $this->user->getOption( $localExName );
-				$localExValueRequest = $request->getVal( 'wp' . $localExName );
+				$localExValueRequest = $context->getRequest()->getVal( 'wp' . $localExName );
 				$modifiedPrefs[$name]['disabled'] = is_null( $localExValueUser )
 					&& is_null( $localExValueRequest );
 
@@ -159,7 +158,7 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 					'mw-globalprefs-local-exception-for-' . $name,
 				];
 				$secFragment = static::getSectionFragmentId( $def['section'] );
-				$labelMsg = wfMessage( 'globalprefs-set-local-exception', [ $secFragment ] );
+				$labelMsg = $context->msg( 'globalprefs-set-local-exception', [ $secFragment ] );
 				$modifiedPrefs[ $localExName ] = [
 					'type' => 'toggle',
 					'label-raw' => $labelMsg->parse(),
@@ -180,7 +179,7 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 			'raw' => true,
 			'default' => $linkRenderer->makeKnownLink(
 				SpecialPage::getTitleFor( 'GlobalPreferences' ),
-				wfMessage( 'globalprefs-info-link' )->text()
+				$context->msg( 'globalprefs-info-link' )->text()
 			),
 			'help-message' => 'globalprefs-info-help',
 		];
@@ -192,9 +191,10 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	 * Add the '-global' counterparts to all preferences.
 	 * @param mixed[][] $preferences The preferences array.
 	 * @param string[] $globalPrefNames The names of those preferences that are already global.
+	 * @param IContextSource $context The current request context
 	 * @return mixed[][]
 	 */
-	protected function getPreferencesGlobal( $preferences, $globalPrefNames ) {
+	protected function getPreferencesGlobal( $preferences, $globalPrefNames, $context ) {
 		// Add all corresponding new global fields.
 		$allPrefs = [];
 		foreach ( $preferences as $pref => $def ) {
@@ -219,14 +219,14 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 			) {
 				$help = '';
 				if ( isset( $def['help-message'] ) ) {
-					$help .= wfMessage( $def['help-message'] )->parse() . '<br />';
+					$help .= $context->msg( $def['help-message'] )->parse() . '<br />';
 				} elseif ( isset( $def['help'] ) ) {
 					$help .= $def['help'] . '<br />';
 				}
 				// Create a link to the relevant section of GlobalPreferences.
 				$secFragment = static::getSectionFragmentId( $def['section'] );
 				// Merge the help texts.
-				$helpMsg = wfMessage( 'globalprefs-has-local-exception', [ $secFragment ] );
+				$helpMsg = $context->msg( 'globalprefs-has-local-exception', [ $secFragment ] );
 				unset( $def['help-message'] );
 				$def['help'] = $help . $helpMsg->parse();
 			}
