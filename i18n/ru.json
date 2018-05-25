@@ -5,16 +5,22 @@
 			"Kaganer",
 			"Facenapalm",
 			"Kareyac",
-			"Patrick Star"
+			"Patrick Star",
+			"Ole Yves"
 		]
 	},
 	"globalprefs-desc": "Позволяет пользователям задавать глобальные настройки",
+	"globalprefs-set-local-exception": "Задать местное исключение для этой [[Special:GlobalPreferences#$1|глобальной настройки]].",
+	"globalprefs-has-local-exception": "Эта глобальная настройка имеет [[Special:Preferences#$1|местное исключение в этой вики]].",
+	"tooltip-globalprefs-check-label": "Сделать эту настройку глобальной",
 	"globalprefs-error-header": "Ошибка",
 	"globalprefs-notglobal": "Ваша учётная запись — не часть глобальной, и для неё не могут быть установлены глобальные настройки.",
 	"globalpreferences": "Глобальные настройки",
 	"globalprefs-info-label": "Глобальные настройки:",
 	"globalprefs-info-link": "Установите свои глобальные настройки",
+	"globalprefs-info-help": "Настройки, установленные через страницу глобальных настроек, будут применяться на всех вики.",
 	"globalprefs-reset-intro": "Вы можете использовать эту страницу для отключения всех глобальных настройках во всех вики и возвращения к локальным. Это не влияет на локальные настройки вики. Это действие не может быть отменено.",
 	"globalprefs-restoreprefs": "Удалить все глобальные настройки (во всех секциях)",
-	"globalprefs-select-all": "Выбрать все"
+	"globalprefs-select-all": "Включить или отключить все флажки",
+	"globalprefs-col-header": "Выбрать все настройки ниже как глобальные"
 }
