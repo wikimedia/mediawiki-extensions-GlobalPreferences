@@ -111,7 +111,7 @@ class Storage {
 
 	/**
 	 * Delete all of this user's global preferences.
-	 * @param string[] $knownPrefs Only delete the preferences we know about.
+	 * @param string[]|null $knownPrefs Only delete the preferences we know about.
 	 */
 	public function delete( $knownPrefs = null ) {
 		$db = $this->getDatabase( DB_MASTER );

@@ -42,7 +42,7 @@ class GlobalPreferencesForm extends PreferencesFormLegacy {
 	 * have a 'div' display format.
 	 *
 	 * @param array $descriptor Array of Field constructs, as described above.
-	 * @param IContextSource $context The context of the form.
+	 * @param IContextSource|null $context The context of the form.
 	 * @param string $messagePrefix A prefix to go in front of default messages.
 	 */
 	public function __construct( $descriptor, IContextSource $context = null, $messagePrefix = '' ) {

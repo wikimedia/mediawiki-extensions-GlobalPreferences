@@ -394,7 +394,7 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 
 	/**
 	 * Convenience function to check if we're on the global prefs page.
-	 * @param IContextSource $context The context to use; if not set main request context is used.
+	 * @param IContextSource|null $context The context to use; if not set main request context is used.
 	 * @return bool
 	 */
 	public function onGlobalPrefsPage( $context = null ) {
@@ -406,7 +406,7 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	 * Convenience function to check if we're on the local
 	 * prefs page
 	 *
-	 * @param IContextSource $context The context to use; if not set main request context is used.
+	 * @param IContextSource|null $context The context to use; if not set main request context is used.
 	 * @return bool
 	 */
 	public function onLocalPrefsPage( $context = null ) {
