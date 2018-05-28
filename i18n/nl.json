@@ -8,13 +8,16 @@
 		]
 	},
 	"globalprefs-desc": "Maakt het mogelijk voor gebruikers om globale voorkeuren in te stellen",
+	"globalprefs-set-local-exception": "Stel een lokale uitzondering voor deze [[Special:GlobalPreferences#$1|globale voorkeur]].",
+	"globalprefs-has-local-exception": "Deze globale voorkeur heeft een [[Special:Preferences#$1|lokale uitzondering op deze wiki]].",
 	"tooltip-globalprefs-check-label": "Deze voorkeur globaal maken",
 	"globalprefs-error-header": "Fout",
 	"globalprefs-notglobal": "Uw account is geen globaal account en kan geen globale voorkeuren instellen.",
 	"globalpreferences": "Globale voorkeuren",
 	"globalprefs-info-label": "Globale voorkeuren:",
 	"globalprefs-info-link": "Globale voorkeuren instellen",
-	"globalprefs-reset-intro": "U kunt deze pagina gebruiken om alle globale voorkeuren uit te schakelen en terug the keren naar uw lokale voorkeuren.\nU kunt dit niet ongedaan maken.",
+	"globalprefs-info-help": "Voorkeuren ingesteld via de pagina met globale voorkeuren zijn van toepassing op alle wiki's.",
+	"globalprefs-reset-intro": "U kunt deze pagina gebruiken om alle globale voorkeuren uit te schakelen op alle wiki's en terug the keren naar uw lokale voorkeuren. Dit heeft geen invloed op lokale voorkeuren. U kunt dit niet ongedaan maken.",
 	"globalprefs-restoreprefs": "Alle globale voorkeuren verwijderen (in alle onderdelen)",
 	"globalprefs-select-all": "Alles selecteren"
 }
