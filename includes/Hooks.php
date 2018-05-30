@@ -5,12 +5,12 @@ namespace GlobalPreferences;
 use CentralIdLookup;
 use DatabaseUpdater;
 use ExtensionRegistry;
+use HTMLForm;
 use Language;
 use MediaWiki\Auth\AuthManager;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use OutputPage;
-use PreferencesForm;
 use Skin;
 use User;
 use Wikimedia\Rdbms\IDatabase;
@@ -113,14 +113,14 @@ class Hooks {
 	/**
 	 * @link https://www.mediawiki.org/wiki/Manual:Hooks/PreferencesFormPreSave
 	 * @param array $formData An associative array containing the data from the preferences form.
-	 * @param PreferencesForm $form The PreferencesForm object that represents the preferences form.
+	 * @param HTMLForm $form The HTMLForm object that represents the preferences form.
 	 * @param User $user The User object that can be used to change the user's preferences.
 	 * @param array &$result The boolean return value of the Preferences::tryFormSubmit method.
 	 * @return bool
 	 */
 	public static function onPreferencesFormPreSave(
 		array $formData,
-		PreferencesForm $form,
+		HTMLForm $form,
 		User $user,
 		&$result
 	) {
