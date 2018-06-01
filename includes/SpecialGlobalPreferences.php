@@ -21,6 +21,13 @@ class SpecialGlobalPreferences extends SpecialPreferences {
 	}
 
 	/**
+	 * @inheritDoc
+	 */
+	public static function isOouiEnabled( IContextSource $context ) {
+		return false;
+	}
+
+	/**
 	 * Execute the special page.
 	 * @param null|string $par The subpage name, if any.
 	 * @throws ErrorPageError
