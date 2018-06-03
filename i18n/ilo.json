@@ -5,9 +5,16 @@
 		]
 	},
 	"globalprefs-desc": "Mangipalubos kadagiti agar-aramat a mangisaad kadagiti global a kakaykayatan",
+	"globalprefs-set-local-exception": "Mangisaad iti lokal a mailaksid para iti daytoy a [[Special:GlobalPreferences#$1|global a kakaykayatan]].",
+	"globalprefs-has-local-exception": "Daytoy a global a kakaykayatan ket addaan iti [[Special:Preferences#$1|lokal a mailaksid iti daytoy a wiki]].",
+	"tooltip-globalprefs-check-label": "Aramiden a global daytoy a pannakaisaad",
 	"globalprefs-error-header": "Biddut",
 	"globalprefs-notglobal": "Ti pakabilangam ket saan a global a pakabilangan ken saan a makaisaad kadagiti global a kakaykayatan.",
 	"globalpreferences": "Dagiti global a kakaykayatan",
 	"globalprefs-info-label": "Dagiti global a kakaykayatan:",
-	"globalprefs-info-link": "Isaad dagiti global a kakaykayatam"
+	"globalprefs-info-link": "Isaad dagiti global a kakaykayatam",
+	"globalprefs-info-help": "Dagiti kakaykayatan a naisaad babaen ti panid dagiti global a kakaykayatan ket maipakatto kadagiti amin a wiki.",
+	"globalprefs-reset-intro": "Mabalinmo nga usaren daytoy a panid tapno maibaldado amin dagiti global a kakaykayatan kadagiti amin a wiki ken agsubli kadagiti lokal a kakalkayatam. Daytoy ket saanna nga apektaran dagiti ania man a kakaykayatan iti lokal a wiki. Daytoy ket saan a mabalin a mawaswas.",
+	"globalprefs-restoreprefs": "Ikkaten amin dagiti global a kakaykayatan (kadagiti amin a seksion)",
+	"globalprefs-col-header": "Agpili kadagiti pagpilian dita baba tapno agbalinto a global"
 }
