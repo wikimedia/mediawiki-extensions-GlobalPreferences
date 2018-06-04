@@ -52,7 +52,12 @@ class Hooks {
 			return;
 		}
 
-		wfDebugLog( 'preferences', "Loading global options for user '{$user->getName()}'" );
+		$logger = LoggerFactory::getInstance( 'preferences' );
+		$logger->info(
+			'Loading global options for user \'{user}\'',
+			[ 'user' => $user->getName() ]
+		);
+
 		// Overwrite all options that have a global counterpart.
 		foreach ( $globalPreferences->getGlobalPreferencesValues() as $optName => $globalValue ) {
 			// Don't overwrite if it has a local exception, unless we're just trying to get .
