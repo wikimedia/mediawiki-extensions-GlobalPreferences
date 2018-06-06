@@ -1,8 +1,20 @@
 {
 	"@metadata": {
 		"authors": [
-			"Fitoschido"
+			"Fitoschido",
+			"Vriullop"
 		]
 	},
-	"globalprefs-select-all": "Selecciona-ho tot"
+	"globalprefs-desc": "Permet als usuaris definir preferències globals",
+	"tooltip-globalprefs-check-label": "Marca aquesta opció com a global",
+	"globalprefs-error-header": "Error",
+	"globalprefs-notglobal": "El vostre compte no és un compte global i no es poden configurar preferències globals.",
+	"globalpreferences": "Preferències globals",
+	"globalprefs-info-label": "Preferències globals:",
+	"globalprefs-info-link": "Configuració de les vostres preferències globals",
+	"globalprefs-info-help": "Les preferències configurades via la pàgina de preferències globals s'aplicaran a tots els wikis.",
+	"globalprefs-reset-intro": "Podeu utilitzar aquesta pàgina per desactivar totes les preferències globals en tots els wikis i retornar a les vostres preferències locals. Això no afecta cap preferència local en un wiki. Aquesta operació no es podrà desfer.",
+	"globalprefs-restoreprefs": "Elimina totes les preferències globals (en totes les  seccions)",
+	"globalprefs-select-all": "Marca o desmarca totes les caselles",
+	"globalprefs-col-header": "Selecciona les opcions de sota com a globals"
 }
