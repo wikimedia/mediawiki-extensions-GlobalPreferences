@@ -60,10 +60,11 @@ class Storage {
 	}
 
 	/**
+	 * @param int $dbType One of DB_* constants
 	 * @return string[]
 	 */
-	protected function loadFromDB() {
-		$dbr = $this->getDatabase( DB_REPLICA );
+	protected function loadFromDB( $dbType = DB_REPLICA ) {
+		$dbr = $this->getDatabase( $dbType );
 		$res = $dbr->select(
 			static::TABLE_NAME,
 			[ 'gp_property', 'gp_value' ],
@@ -84,17 +85,26 @@ class Storage {
 	 * @param string[] $knownPrefs Only work with the preferences we know about.
 	 */
 	public function save( $newPrefs, $knownPrefs ) {
-		// Assemble the records to save.
-		$rows = [];
+		$currentPrefs = $this->loadFromDB( DB_MASTER );
+
+		// Find records needing an insert or update
+		$save = [];
 		foreach ( $newPrefs as $prop => $value ) {
+			if ( !isset( $currentPrefs[$prop] ) || $currentPrefs[$prop] != $value ) {
+				$save[$prop] = $value;
+			}
+		}
+
+		// Assemble the records to save
+		$rows = [];
+		foreach ( $save as $prop => $value ) {
 			$rows[] = [
 				'gp_user' => $this->userId,
 				'gp_property' => $prop,
 				'gp_value' => $value,
 			];
 		}
-		// Delete all global preferences, and then save new ones.
-		$this->delete( $knownPrefs );
+		// Save
 		if ( $rows ) {
 			$dbw = $this->getDatabase( DB_MASTER );
 			$dbw->replace(
@@ -104,6 +114,16 @@ class Storage {
 				__METHOD__
 			);
 		}
+
+		// Delete unneeded rows
+		$keys = array_keys( $currentPrefs );
+		// Only delete prefs present on the local wiki
+		$keys = array_intersect( $keys, $knownPrefs );
+		$keys = array_diff( $keys, array_keys( $newPrefs ) );
+		if ( $keys ) {
+			$this->delete( $keys );
+		}
+
 		$key = $this->getCacheKey();
 		// Because we don't have the full preferences, just clear the cache
 		$this->getCache()->delete( $key );
