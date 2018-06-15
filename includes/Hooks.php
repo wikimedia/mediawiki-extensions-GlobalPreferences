@@ -53,7 +53,7 @@ class Hooks {
 		}
 
 		$logger = LoggerFactory::getInstance( 'preferences' );
-		$logger->info(
+		$logger->debug(
 			'Loading global options for user \'{user}\'',
 			[ 'user' => $user->getName() ]
 		);
