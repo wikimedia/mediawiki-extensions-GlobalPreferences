@@ -16,5 +16,6 @@
 	"globalprefs-info-help": "Las opciones definidas a través de las preferencias globales se aplicarán a todos los wikis.",
 	"globalprefs-reset-intro": "Puedes emplear esta página para desactivar las preferencias globales de todos los wikis y volver a tus preferencias locales. No se afectarán las preferencias locales de ningún wiki. No se puede deshacer esta acción.",
 	"globalprefs-restoreprefs": "Quitar todas las preferencias globales (en todas las secciones)",
-	"globalprefs-select-all": "Marcar o desmarcar todas las casillas"
+	"globalprefs-select-all": "Marcar o desmarcar todas las casillas",
+	"globalprefs-col-header": "Selecciona las opciones que serán globales más abajo"
 }
