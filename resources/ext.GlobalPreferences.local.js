@@ -11,7 +11,10 @@
 		prefName = localExName.substr( 0, localExName.length - '-local-exception'.length )
 			.replace( /[\\"]/g, '\\$&' );
 		enabled = $( this ).prop( 'checked' );
-		$prefInput = $( ':input[name="' + prefName + '"]' );
+		$prefInput = $( ':input[name="' + prefName + '"], :input[name="' + prefName + '[]"]' )
+			.parents( '.mw-input' )
+			.find( ':input' )
+			.not( '.checkmatrix-forced' );
 
 		if ( $prefInput.parent( '.oo-ui-widget' ).length > 0 ) {
 			// First see if this is a OOUI field.

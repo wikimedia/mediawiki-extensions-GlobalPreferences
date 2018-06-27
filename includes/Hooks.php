@@ -132,8 +132,7 @@ class Hooks {
 		/** @var GlobalPreferencesFactory $preferencesFactory */
 		$preferencesFactory = MediaWikiServices::getInstance()->getPreferencesFactory();
 		if ( !$preferencesFactory->onGlobalPrefsPage( $form ) ) {
-			// Don't interfere with local preferences
-			return true;
+			return self::localPreferencesFormPreSave( $formData, $user );
 		}
 
 		$prefs = [];
@@ -183,6 +182,35 @@ class Hooks {
 		$preferencesFactory->setGlobalPreferences( $prefs, $form->getContext() );
 
 		return false;
+	}
+
+	/**
+	 * Process PreferencesFormPreSave for Special:Preferences
+	 * Handles CheckMatrix
+	 *
+	 * @param array $formData Associative array of [ preference name => value ]
+	 * @param User $user Current user
+	 * @return bool Hook return value
+	 */
+	private static function localPreferencesFormPreSave( array $formData, User $user ) {
+		foreach ( $formData as $pref => $value ) {
+			if ( !GlobalPreferencesFactory::isLocalPrefName( $pref ) ) {
+				continue;
+			}
+			// Determine the real name of the preference.
+			$suffixLen = strlen( GlobalPreferencesFactory::LOCAL_EXCEPTION_SUFFIX );
+			$realName = substr( $pref, 0, -$suffixLen );
+			if ( isset( $formData[$realName] ) || !$value ) {
+				// Not a checked CheckMatrix
+				continue;
+			}
+			$checkMatrix = preg_grep( "/^$realName-/", array_keys( $formData ) );
+			foreach ( $checkMatrix as $check ) {
+				$exceptionName = $check . GlobalPreferencesFactory::LOCAL_EXCEPTION_SUFFIX;
+				$user->setOption( $exceptionName, true );
+			}
+		}
+		return true;
 	}
 
 	/**
