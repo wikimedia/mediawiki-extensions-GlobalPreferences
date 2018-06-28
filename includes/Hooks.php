@@ -2,6 +2,7 @@
 
 namespace GlobalPreferences;
 
+use ApiQuery;
 use CentralIdLookup;
 use DatabaseUpdater;
 use ExtensionRegistry;
@@ -250,5 +251,18 @@ class Hooks {
 	public static function onDeleteUnknownPreferences( &$where, IDatabase $db ) {
 		$like = $db->buildLike( $db->anyString(), GlobalPreferencesFactory::LOCAL_EXCEPTION_SUFFIX );
 		$where[] = "up_property NOT $like";
+	}
+
+	/**
+	 * Factory function for API query=globalpreferences
+	 *
+	 * @param ApiQuery $queryModule
+	 * @param string $moduleName
+	 * @return ApiQueryGlobalPreferences
+	 */
+	public static function makeApiQueryGlobalPreferences( ApiQuery $queryModule, $moduleName ) {
+		/** @var GlobalPreferencesFactory $factory */
+		$factory = MediaWikiServices::getInstance()->getPreferencesFactory();
+		return new ApiQueryGlobalPreferences( $queryModule, $moduleName, $factory );
 	}
 }
