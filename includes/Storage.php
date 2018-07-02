@@ -180,12 +180,4 @@ class Storage {
 		return $this->getCache()
 			->makeGlobalKey( 'globalpreferences', 'prefs', self::CACHE_VERSION, $this->userId );
 	}
-
-	/**
-	 * @param mixed $preferences
-	 */
-	protected function saveToCache( $preferences ) {
-		$key = $this->getCacheKey();
-		$this->getCache()->set( $key, $preferences, self::CACHE_TTL );
-	}
 }
