@@ -13,7 +13,9 @@
 	"globalpreferences": "Globale innstillinger",
 	"globalprefs-info-label": "Globale innstillinger:",
 	"globalprefs-info-link": "Sett dine globale innstillinger",
-	"globalprefs-reset-intro": "Du ka bruke denne siden for å lå av alle globale innstillinger og komme tilbake til dine lokale innstillinger.\nDette kan ikke gjøres om.",
+	"globalprefs-info-help": "Innstillinger som er satt via siden for globale innstillinger vil gjelde alle wikier.",
+	"globalprefs-reset-intro": "Du ka bruke denne siden for å slå av alle globale innstillinger på alle wikier og komme tilbake til dine lokale innstillinger.\nDette påvirker ikke lokale innstillinger på enkeltwikiene. Dette kan ikke gjøres om.",
 	"globalprefs-restoreprefs": "Fjern alle globale innstillinger (i alle seksjoner)",
-	"globalprefs-select-all": "Velg alle"
+	"globalprefs-select-all": "Slå alle avmerkingsbokser på eller av",
+	"globalprefs-col-header": "Velg hvilke innstillinger som skal være globale"
 }
