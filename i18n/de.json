@@ -17,5 +17,11 @@
 	"globalprefs-reset-intro": "Du kannst diese Seite verwenden, um alle globalen Einstellungen auf allen Wikis zu deaktivieren und um zu deinen lokalen Einstellungen zurückzukehren. Dies betrifft nicht lokale Wikieinstellungen. Diese Aktion kann nicht rückgängig gemacht werden.",
 	"globalprefs-restoreprefs": "Alle globalen Einstellungen entfernen (in allen Abschnitten)",
 	"globalprefs-select-all": "Alle Kontrollkästchen aus- oder abwählen",
-	"globalprefs-col-header": "Unten Optionen auswählen, die global sein sollen"
+	"globalprefs-col-header": "Unten Optionen auswählen, die global sein sollen",
+	"apihelp-globalpreferences-param-resetkinds": "Liste der Typen von Einstellungen, die zurückgesetzt werden sollen, falls die Option <var>reset</var> festgelegt ist.",
+	"apihelp-globalpreferences-example-reset-one": "Macht eine einzelne Einstellung nicht-global.",
+	"apihelp-globalpreferences-example-reset": "Macht alle Einstellungen nicht-global.",
+	"apihelp-query+globalpreferences-summary": "Ruft globale Einstellungen für den aktuellen Benutzer ab.",
+	"apihelp-query+globalpreferences-paramvalue-prop-localoverrides": "Lokale Umgehungen für globale Einstellungen.",
+	"apierror-globalpreferences-notglobalized": "Der aktuelle Benutzer ist nicht global."
 }

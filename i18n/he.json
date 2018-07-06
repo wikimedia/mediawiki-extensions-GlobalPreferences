@@ -18,5 +18,21 @@
 	"globalprefs-reset-intro": "אפשר להשתמש בדף הזה כדי לכבות את כל ההעדפות הגלובליות בכל אתרי הוויקי ולחזור להעדפות המקומיות שלך. זה לא ישפיע על העדפות בשום ויקי מקומי. לא ניתן לבטל את הפעולה הזאת.",
 	"globalprefs-restoreprefs": "הסרת כל ההעדפות הגלובליות (בכל הלשוניות)",
 	"globalprefs-select-all": "הפעלה או ביטול של כל תיבות הסימון",
-	"globalprefs-col-header": "נא לבחור אילו מההעדפות להלן תהיינה גלובליות"
+	"globalprefs-col-header": "נא לבחור אילו מההעדפות להלן תהיינה גלובליות",
+	"apihelp-globalpreferences-summary": "שינוי ההעדפות הגלובליות של המשתמש הנוכחי.",
+	"apihelp-globalpreferences-extended-description": "ניתן לשנות באופן מקומי רק העדפות שקיימות באתר הוויקי הנוכחי.",
+	"apihelp-globalpreferences-param-reset": "איפוס ההעדפות הגלובליות. אפשרות זו תסיר את כל ההעדפות הגלובליות, או רק סוגים מסוימים שלהן בהתאם לערך של הפרמטר <code>resetkinds</code>, ותגרום לכך שהן לא תהיינה גלובליות יותר.",
+	"apihelp-globalpreferences-param-resetkinds": "רשימה של סוגי ההעדפות שתאופסנה כשהאפשרות <var>reset</var> מוגדרת.",
+	"apihelp-globalpreferences-param-change": "רשימת השינויים, בתסדיר name=value (לדוגמה skin=vector). אם לא מצוין ערך (וגם לא סימן =), למשל, <span dir=\"ltr\">preferencename|otherpreference|...</span>, ההעדפה תוגדר כבלתי־גלובלית. אם הערך הרלוונטי מכיל תו מקל (<kbd>|</kbd>), יש להשתמש ב[[Special:ApiHelp/main#main/datatypes|מפריד הערכים החלופי]] כדי שהפעולה תתבצע כראוי.",
+	"apihelp-globalpreferences-param-optionname": "שם ההעדפה שתוגדר לערך שסופק על־ידי <var>optionvalue</var>.",
+	"apihelp-globalpreferences-param-optionvalue": "הערך של ההעדפה המצוינת בפרמטר <var>optionname</var>.",
+	"apihelp-globalpreferences-example-reset-one": "הפיכת העדפה אחת לבלתי־גלובלית.",
+	"apihelp-globalpreferences-example-reset": "הפיכת כל ההעדפות לבלתי־גלובליות.",
+	"apihelp-globalpreferences-example-change": "שינוי ההעדפות <kbd>skin</kbd> ו־<kbd>hideminor</kbd>.",
+	"apihelp-query+globalpreferences-summary": "שליפת ההעדפות הגלובליות של המשתמש הנוכחי.",
+	"apihelp-query+globalpreferences-extended-description": "ניתן לשלוף גם את ההעדפות הגלובליות וגם את החריגים המקומיים שלהן.",
+	"apihelp-query+globalpreferences-param-prop": "אילו העדפות לכלול:",
+	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "העדפות גלובליות.",
+	"apihelp-query+globalpreferences-paramvalue-prop-localoverrides": "חריגים מקומיים עבור ההעדפות הגלובליות.",
+	"apierror-globalpreferences-notglobalized": "המשתמש הנוכחי אינו גלובלי."
 }
