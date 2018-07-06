@@ -18,5 +18,11 @@
 	"globalprefs-reset-intro": "You can use this page to disable all global preferences on all wikis and return to your local preferences. This does not affect any local wiki preferences. This cannot be undone.",
 	"globalprefs-restoreprefs": "Remove all global preferences (in all sections)",
 	"globalprefs-select-all": "Toggle all checkboxes on or off",
-	"globalprefs-col-header": "Select options below to be global"
+	"globalprefs-col-header": "Select options below to be global",
+	"apihelp-query+globalpreferences-summary": "Retrieve global preferences for the current user.",
+	"apihelp-query+globalpreferences-extended-description": "Can retrieve both global preferences and their local overrides.",
+	"apihelp-query+globalpreferences-param-prop": "Which prererences to include:",
+	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Global preferences.",
+	"apihelp-query+globalpreferences-paramvalue-prop-localoverrides": "Local overrides for global preferences.",
+	"apierror-globalpreferences-notglobalized": "Current user is not global."
 }

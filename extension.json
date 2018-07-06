@@ -75,5 +75,11 @@
 			"styles": "ext.GlobalPreferences.local-nojs.css"
 		}
 	},
+	"APIMetaModules": {
+		"globalpreferences": {
+			"class": "GlobalPreferences\\ApiQueryGlobalPreferences",
+			"factory": "GlobalPreferences\\Hooks::makeApiQueryGlobalPreferences"
+		}
+	},
 	"manifest_version": 1
 }
