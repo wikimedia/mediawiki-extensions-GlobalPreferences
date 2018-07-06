@@ -75,6 +75,9 @@
 			"styles": "ext.GlobalPreferences.local-nojs.css"
 		}
 	},
+	"APIModules": {
+		"globalpreferences": "GlobalPreferences\\ApiGlobalPreferences"
+	},
 	"APIMetaModules": {
 		"globalpreferences": {
 			"class": "GlobalPreferences\\ApiQueryGlobalPreferences",
