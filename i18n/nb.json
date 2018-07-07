@@ -17,5 +17,20 @@
 	"globalprefs-reset-intro": "Du ka bruke denne siden for å slå av alle globale innstillinger på alle wikier og komme tilbake til dine lokale innstillinger.\nDette påvirker ikke lokale innstillinger på enkeltwikiene. Dette kan ikke gjøres om.",
 	"globalprefs-restoreprefs": "Fjern alle globale innstillinger (i alle seksjoner)",
 	"globalprefs-select-all": "Slå alle avmerkingsbokser på eller av",
-	"globalprefs-col-header": "Velg hvilke innstillinger som skal være globale"
+	"globalprefs-col-header": "Velg hvilke innstillinger som skal være globale",
+	"apihelp-globalpreferences-summary": "Endre de globale innstillingene til den gjeldende brukeren.",
+	"apihelp-globalpreferences-extended-description": "Bare innstillinger registrert for den gjeldende wikien kan endres lokalt.",
+	"apihelp-globalpreferences-param-reset": "Nullstill globale innstillinger. Fjerner alle eller – avhengig av parameterne <code>resetkinds</code> – noen typer globale innstillinger og gjør at de ikke blir globale lenger.",
+	"apihelp-globalpreferences-param-resetkinds": "Liste over typer innstillinger som skal nullstilles når valget <var>reset</var> er satt.",
+	"apihelp-globalpreferences-param-optionname": "Navnet til innstillingen som skal setes til verdien gitt av <var>optionvalue</var>.",
+	"apihelp-globalpreferences-param-optionvalue": "Verdien for innstillingen spesifisert av <var>optionname</var>.",
+	"apihelp-globalpreferences-example-reset-one": "Gjør én innstilling ikke-global.",
+	"apihelp-globalpreferences-example-reset": "Gjør alle innstillinger ikke-globale.",
+	"apihelp-globalpreferences-example-change": "Endre innstillingene <kbd>skin</kbd> og <kbd>hideminor</kbd>.",
+	"apihelp-query+globalpreferences-summary": "Hent globale innstillinger for den gjeldende brukeren.",
+	"apihelp-query+globalpreferences-extended-description": "Kan hente både globale innstillinger og lokale overstyringer.",
+	"apihelp-query+globalpreferences-param-prop": "Hvilke innstillinger som skal inkluderes:",
+	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Globale innstillinger.",
+	"apihelp-query+globalpreferences-paramvalue-prop-localoverrides": "Lokale overstyringer av globale innstillinger.",
+	"apierror-globalpreferences-notglobalized": "Den gjeldende brukeren er ikke global."
 }
