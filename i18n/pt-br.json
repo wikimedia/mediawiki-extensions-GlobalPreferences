@@ -18,5 +18,21 @@
 	"globalprefs-reset-intro": "Pode usar esta página para desativar todas as preferências globais em todas as wikis e voltar às suas preferências locais. Isto não afeta as preferências locais da wiki. Esta operação não pode ser desfeita.",
 	"globalprefs-restoreprefs": "Remover todas as preferências globais (em todas as seções)",
 	"globalprefs-select-all": "Alternar todas as caixas de seleção, marcando-as ou desmarcando-as",
-	"globalprefs-col-header": "Selecionar as opções abaixo que serão globais"
+	"globalprefs-col-header": "Selecionar as opções abaixo que serão globais",
+	"apihelp-globalpreferences-summary": "Alterar as preferências globais do usuário atual.",
+	"apihelp-globalpreferences-extended-description": "Só as preferências registadas para a wiki atual podem ser alteradas localmente.",
+	"apihelp-globalpreferences-param-reset": "Reinicializar as preferências globais. Remove todos os tipos, ou, dependendo do valor do parâmetro <code>resetkinds</code>, só alguns tipos de preferências globais e desfaz o seu carácter global.",
+	"apihelp-globalpreferences-param-resetkinds": "Lista dos tipos de preferências a reinicializar quando a opção <var>reset</var> está definida.",
+	"apihelp-globalpreferences-param-change": "Lista de alterações, com o formato nome=valor (ex: skin=vector). Se não for dado um valor (nem sequer um sinal de igual), por exemplo, umapreferência|outrapreferência|..., a preferência deixará de ser global. Se qualquer um dos valores passados contém uma barra vertical (<kbd>|</kbd>), use o [[Special:ApiHelp/main#main/datatypes|separador de valores alternativo]] para obter o resultado correto.",
+	"apihelp-globalpreferences-param-optionname": "O nome da preferência que deve ser definida com o valor dado em <var>optionvalue</var>.",
+	"apihelp-globalpreferences-param-optionvalue": "O valor para a preferência especificada por <var>optionname</var>.",
+	"apihelp-globalpreferences-example-reset-one": "Tornar uma única preferência não global.",
+	"apihelp-globalpreferences-example-reset": "Tornar todas as preferências não globais.",
+	"apihelp-globalpreferences-example-change": "Mudar preferências <kbd>skin</kbd> e <kbd>hideminor</kbd>.",
+	"apihelp-query+globalpreferences-summary": "Obter as preferências globais do usuário corrente.",
+	"apihelp-query+globalpreferences-extended-description": "Pode obter tanto as preferências globais como as suas sobreposições locais.",
+	"apihelp-query+globalpreferences-param-prop": "Quais prererências incluir:",
+	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Preferências globais.",
+	"apihelp-query+globalpreferences-paramvalue-prop-localoverrides": "Sobreposições locais de preferências globais.",
+	"apierror-globalpreferences-notglobalized": "O usuário corrente não é global."
 }

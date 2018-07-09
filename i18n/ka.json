@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Otogi"
+		]
+	},
+	"globalpreferences": "გლობალური მომართვები",
+	"globalprefs-info-label": "გლობალური მომართვები:",
+	"globalprefs-info-link": "დააყენეთ თქვენი გლობალური მომართვები",
+	"globalprefs-info-help": "მომართვები დაყენებული გლობალური მომართვების გვერდიდან გამოყენებული იქნება ყველა ვიკიში.",
+	"globalprefs-restoreprefs": "ყველა გლობალური მომართვების წაშლა (ყველა სექციაში)",
+	"globalprefs-col-header": "ყველა ოფციონის არჩევა ქვემოთ როგორც გლობალური",
+	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "გლობალური მომართვები."
+}

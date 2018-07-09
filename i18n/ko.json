@@ -23,7 +23,11 @@
 	"apihelp-globalpreferences-extended-description": "현재 위키에 등록된 환경 설정만 지역적으로 변경할 수 있습니다.",
 	"apihelp-globalpreferences-param-optionname": "환경 설정의 이름은 <var>optionvalue</var>를 통해 지정된 값으로 설정해야 합니다.",
 	"apihelp-globalpreferences-param-optionvalue": "<var>optionname</var>에 지정된 환경 설정의 값입니다.",
+	"apihelp-globalpreferences-example-reset-one": "하나의 환경 설정을 통합 계정으로 적용되지 않게 합니다.",
 	"apihelp-globalpreferences-example-reset": "모든 환경 설정을 통합 계정으로 적용되지 않게 합니다.",
 	"apihelp-globalpreferences-example-change": "<kbd>skin</kbd>과 <kbd>hideminor</kbd> 환경설정을 변경합니다.",
+	"apihelp-query+globalpreferences-summary": "현재 사용자의 통합 계정 환경 설정을 검색합니다.",
+	"apihelp-query+globalpreferences-extended-description": "통합 계정 환경 설정과 로컬 계정 환경 설정을 둘 다 검색할 수 있습니다.",
+	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "통합 계정 환경 설정입니다.",
 	"apierror-globalpreferences-notglobalized": "현재 사용자는 통합 계정이 아닙니다."
 }

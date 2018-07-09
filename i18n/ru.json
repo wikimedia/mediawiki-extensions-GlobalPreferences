@@ -8,7 +8,9 @@
 			"Patrick Star",
 			"Ole Yves",
 			"Movses",
-			"Stjn"
+			"Stjn",
+			"Evs",
+			"Vlad5250"
 		]
 	},
 	"globalprefs-desc": "Позволяет пользователям задавать глобальные настройки",
@@ -24,5 +26,10 @@
 	"globalprefs-reset-intro": "Вы можете использовать эту страницу для отключения всех глобальных настроек во всех вики и вернуться к локальным настройкам. Это не повлияет на локальные настройки вики. Это действие не может быть отменено.",
 	"globalprefs-restoreprefs": "Удалить все глобальные настройки (во всех секциях)",
 	"globalprefs-select-all": "Включить или отключить все флажки",
-	"globalprefs-col-header": "Выбрать все настройки ниже как глобальные"
+	"globalprefs-col-header": "Выбрать все настройки ниже как глобальные",
+	"apihelp-globalpreferences-summary": "Сменить глобальные настройки текущего участника.",
+	"apihelp-globalpreferences-extended-description": "Только настройки, зарегистрированные для текущего вики-проекта, могут быть изменены локально.",
+	"apihelp-globalpreferences-param-optionvalue": "Значение настройки, заданной <var>optionname</var>.",
+	"apihelp-globalpreferences-example-change": "Изменить настройки <kbd>skin</kbd> и <kbd>hideminor</kbd>.",
+	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Глобальные настройки."
 }
