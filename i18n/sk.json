@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Teslaton"
+		]
+	},
+	"globalpreferences": "Globálne nastavenia",
+	"globalprefs-info-label": "Globálne nastavenia:",
+	"globalprefs-info-link": "Prispôsobiť globálne nastavenia",
+	"globalprefs-info-help": "Nastavenia zvolené na stránke globálnych nastavení budú platiť na všetkých wiki.",
+	"globalprefs-restoreprefs": "Odstrániť všetky globálne nastavenia (vo všetkých sekciách)",
+	"globalprefs-col-header": "Nižšie vyberte nastavenia, ktoré majú byť globálne"
+}

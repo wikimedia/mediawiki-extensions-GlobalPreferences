@@ -3,7 +3,8 @@
 		"authors": [
 			"Cwlin0416",
 			"Liuxinyu970226",
-			"Kly"
+			"Kly",
+			"A2093064"
 		]
 	},
 	"globalprefs-desc": "允許使用者設定全域偏好設置",
@@ -13,9 +14,27 @@
 	"globalprefs-error-header": "錯誤",
 	"globalprefs-notglobal": "您的帳號不是全域帳號，因此不能設定全域偏好設置。",
 	"globalpreferences": "全域偏好設置",
-	"globalprefs-info-label": "全域偏好設置",
-	"globalprefs-info-link": "設定您的全域偏好設置",
-	"globalprefs-reset-intro": "您可以使用此頁面來停用所有全域偏好設置，並改回您的本地偏好設置。請注意此操作這不可撤銷。",
+	"globalprefs-info-label": "全域偏好設定：",
+	"globalprefs-info-link": "設定您的全域偏好設定",
+	"globalprefs-info-help": "通過全域偏好設定頁面設定的設定集將應用到所有wiki。",
+	"globalprefs-reset-intro": "您可以使用此頁面在所有wiki禁用所有全域偏好設定，並改回您的本地偏好設定。這不會涉及任何本地wiki的偏好設定。這不能撤銷。",
 	"globalprefs-restoreprefs": "移除所有全域偏好設置（所有部份）",
-	"globalprefs-select-all": "全部選擇"
+	"globalprefs-select-all": "切換所有核取方塊開啟或關閉",
+	"globalprefs-col-header": "選擇下方的選項以使其全域化",
+	"apihelp-globalpreferences-summary": "更改當前使用者的全域偏好設定。",
+	"apihelp-globalpreferences-extended-description": "只有為當前wiki註冊的參數可以本地更改。",
+	"apihelp-globalpreferences-param-reset": "重設全域偏好設定。移除所有（或基於<code>resetkinds</code>參數值，一些全域偏好設定類型），並使它們不再全域有效。",
+	"apihelp-globalpreferences-param-resetkinds": "當<var>reset</var>選項設定時，要重設的偏好設定類型列表。",
+	"apihelp-globalpreferences-param-change": "更改列表，格式化為「名稱=值」（例如skin=vector）。如果未提供值（甚至沒有等號，例如preferencename|otherpreference|...），那麼參數將不會全域設定。如果傳遞的任何值包含豎線字元（<kbd>|</kbd>），請使用[[Special:ApiHelp/main#main/datatypes|替代多值分隔符號]]以便正確操作。",
+	"apihelp-globalpreferences-param-optionname": "偏好設定名稱，其應設定為由<var>optionvalue</var>提供的值。",
+	"apihelp-globalpreferences-param-optionvalue": "由<var>optionname</var>指定，用於偏好設定的值。",
+	"apihelp-globalpreferences-example-reset-one": "將單個偏好設定為取消全域。",
+	"apihelp-globalpreferences-example-reset": "將所有偏好設定為取消全域。",
+	"apihelp-globalpreferences-example-change": "更改<kbd>skin</kbd>和<kbd>hideminor</kbd>偏好設定。",
+	"apihelp-query+globalpreferences-summary": "檢索當前使用者的全域偏好設定。",
+	"apihelp-query+globalpreferences-extended-description": "可以檢索全域偏好設定及其本地覆蓋。",
+	"apihelp-query+globalpreferences-param-prop": "要包含的偏好設定：",
+	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "全域偏好設定。",
+	"apihelp-query+globalpreferences-paramvalue-prop-localoverrides": "用於全域偏好設定的本地覆蓋。",
+	"apierror-globalpreferences-notglobalized": "當前使用者並非全域使用者。"
 }

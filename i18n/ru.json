@@ -29,7 +29,10 @@
 	"globalprefs-col-header": "Выбрать все настройки ниже как глобальные",
 	"apihelp-globalpreferences-summary": "Сменить глобальные настройки текущего участника.",
 	"apihelp-globalpreferences-extended-description": "Только настройки, зарегистрированные для текущего вики-проекта, могут быть изменены локально.",
+	"apihelp-globalpreferences-param-resetkinds": "Список типов сбрасываемых настроек, если задана опция <var>reset</var>.",
+	"apihelp-globalpreferences-param-change": "Список изменений в формате название=значение (например, skin=vector). Если значения не даётся (нет даже знака равенства), например, названиенастройки|другаянастройка|..., настройка будет неглобальной. Если какое-либо значение содержит знак пайпа (<kbd>|</kbd>), используйте [[Special:ApiHelp/main#main/datatypes|альтернативный разделитель значений]] для корректного проведения операции.",
 	"apihelp-globalpreferences-param-optionvalue": "Значение настройки, заданной <var>optionname</var>.",
+	"apihelp-globalpreferences-example-reset": "Сделать все настройки неглобальными",
 	"apihelp-globalpreferences-example-change": "Изменить настройки <kbd>skin</kbd> и <kbd>hideminor</kbd>.",
 	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Глобальные настройки."
 }

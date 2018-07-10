@@ -4,7 +4,14 @@
 			"פוילישער"
 		]
 	},
+	"globalprefs-desc": "דערמעגלעכט באנציער צו שטעלן גלאבאלע פרעפערענצן",
+	"tooltip-globalprefs-check-label": "מאכן די דאזיקע איינשטעלונג גלאבאל",
 	"globalprefs-error-header": "גרײַז",
+	"globalprefs-notglobal": "אייער קאנטע איז נישט קיין גלאבאלע קאנטע און קען נישט שטעלן גלאבאלע פרעפֿערענצן.",
 	"globalpreferences": "גלאבלע פרעפערענצן",
-	"globalprefs-info-link": "שטעלן אייער גלאבאלע פרעפערענצן"
+	"globalprefs-info-label": "גלאבלע פרעפערענצן:",
+	"globalprefs-info-link": "שטעלן אייער גלאבאלע פרעפערענצן",
+	"globalprefs-info-help": "פרעפֿערענן געשטעלט דורכן גלאבאלע פרעפֿערענצן בלאט וועלן ווערן אנגעוואנדן צו אלע וויקיס.",
+	"globalprefs-restoreprefs": "אראפנעמען אלע גלאבאלע פרעפֿערענצן (אין אלע אפטיילונגען)",
+	"globalprefs-col-header": "אויסוויילן ברירות אונטן צו זיין גלאבאל"
 }
