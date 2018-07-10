@@ -88,6 +88,11 @@ $specialPageAliases['uk'] = [
 	'GlobalPreferences' => [ 'Глобальні_налаштування' ],
 ];
 
+/** Urdu (اردو) */
+$specialPageAliases['ur'] = [
+	'GlobalPreferences' => [ 'عالمی_ترجیحات' ],
+];
+
 /** Vietnamese (Tiếng Việt) */
 $specialPageAliases['vi'] = [
 	'GlobalPreferences' => [ 'Tùy_chọn_toàn_cục', 'Tuỳ_chọn_toàn_cục' ],
