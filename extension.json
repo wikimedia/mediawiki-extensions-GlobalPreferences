@@ -76,7 +76,8 @@
 		}
 	},
 	"APIModules": {
-		"globalpreferences": "GlobalPreferences\\ApiGlobalPreferences"
+		"globalpreferences": "GlobalPreferences\\ApiGlobalPreferences",
+		"globalpreferenceoverrides": "GlobalPreferences\\ApiGlobalPreferenceOverrides"
 	},
 	"APIMetaModules": {
 		"globalpreferences": {
