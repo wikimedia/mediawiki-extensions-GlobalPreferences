@@ -4,5 +4,25 @@
 			"Janezdrilc"
 		]
 	},
-	"globalprefs-desc": "Uporabnikom omogoči, da si nastavijo globalne nastavitve"
+	"globalprefs-desc": "Uporabnikom omogoči, da si nastavijo globalne nastavitve",
+	"globalprefs-set-local-exception": "Nastavi lokalno izjemo za to [[Posebno:GlobalPreferences#$1|globalno nastavitev]].",
+	"globalprefs-has-local-exception": "Ta globalna nastavitev ima [[Posebno:Preferences#$1|lokalno izjemo na tem wikiju]].",
+	"tooltip-globalprefs-check-label": "Nastavi to možnost kot globalno",
+	"globalprefs-error-header": "Napaka",
+	"globalprefs-notglobal": "Tvoj račun ni globalen, zato ni mogoče shraniti globalnih nastavitev.",
+	"globalpreferences": "Globalne nastavitve",
+	"globalprefs-info-label": "Globalne nastavitve:",
+	"globalprefs-info-link": "Nastavi si svoje globalne nastavitve",
+	"globalprefs-info-help": "Nastavitve, ki so nastavljene na globalnih nastavitvah, bodo uveljavljene na tem wikiju.",
+	"globalprefs-reset-intro": "Na tej strani lahko izključite vse globalne nastavitve na vseh wikijih in povrnete lokalne nastavitve. To ne vpliva na noben lokalni wiki. Tega dejanja se ne da razveljaviti.",
+	"globalprefs-restoreprefs": "Odstrani vse globalne nastavitve (v vseh razdelkih)",
+	"globalprefs-select-all": "Obkljukaj ali odkljukaj vse kvadratke",
+	"globalprefs-col-header": "Izberite spodnje možnosti, da postanejo globalne",
+	"apihelp-globalpreferences-summary": "Spremeni globalne nastavitve trenutnega uporabnika.",
+	"apihelp-globalpreferences-example-reset-one": "Nastavi samo eno nastavitev za neglobalno.",
+	"apihelp-globalpreferences-example-reset": "Nastavi vse nastavitve za neglobalne",
+	"apihelp-query+globalpreferences-param-prop": "Katere nastavitve so vključene:",
+	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Globalne nastavitve.",
+	"apihelp-query+globalpreferences-paramvalue-prop-localoverrides": "Lokalne nastavitve, ki povozijo globalne.",
+	"apierror-globalpreferences-notglobalized": "Trenutni uporabnik ni globalni."
 }

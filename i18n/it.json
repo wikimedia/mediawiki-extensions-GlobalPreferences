@@ -15,7 +15,7 @@
 	"globalpreferences": "Preferenze globali",
 	"globalprefs-info-label": "Preferenze globali:",
 	"globalprefs-info-link": "Imposta le preferenze globali",
-	"globalprefs-info-help": "Le preferenze impostate tramite la pagina delle preferenze globali saranno applicate a tutte le wiki.",
+	"globalprefs-info-help": "Le preferenze impostate tramite la pagina delle preferenze globali saranno applicate a tutti i wiki.",
 	"globalprefs-reset-intro": "Puoi utilizzare questa pagina per disattivare tutte le preferenze globali su tutti gli wiki e tornare alle preferenze locali. Questa operazione non influenzerà le preferenze locali e può essere annullata.",
 	"globalprefs-restoreprefs": "Rimuovi tutte le preferenze globali (in tutte le sezioni)",
 	"globalprefs-select-all": "Attiva o disattiva tutte le caselle di controllo",
