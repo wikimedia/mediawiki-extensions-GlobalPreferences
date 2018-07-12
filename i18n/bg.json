@@ -1,11 +1,17 @@
 {
 	"@metadata": {
 		"authors": [
-			"DCLXVI"
+			"DCLXVI",
+			"ShockD"
 		]
 	},
 	"globalprefs-desc": "Позволява на потребителите да правят глобални настройки",
+	"globalprefs-has-local-exception": "Тази глобална настройка има [[Special:Preferences#$1|локално изключение в това уики]].",
 	"globalprefs-error-header": "Грешка",
 	"globalpreferences": "Глобални настройки",
-	"globalprefs-info-label": "Глобални настройки:"
+	"globalprefs-info-label": "Глобални настройки:",
+	"globalprefs-info-link": "Задаване на глобални настройки",
+	"globalprefs-info-help": "Настройките, зададени чрез страницата за глобални настройки, се прилагат за всички уикита.",
+	"globalprefs-restoreprefs": "Премахване на всички глобални настройки (във всички раздели)",
+	"globalprefs-select-all": "Включване или изключване на всички отметки"
 }

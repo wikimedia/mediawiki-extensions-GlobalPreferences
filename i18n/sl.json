@@ -1,12 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Janezdrilc"
+			"Janezdrilc",
+			"Dbc334"
 		]
 	},
 	"globalprefs-desc": "Uporabnikom omogoči, da si nastavijo globalne nastavitve",
-	"globalprefs-set-local-exception": "Nastavi lokalno izjemo za to [[Posebno:GlobalPreferences#$1|globalno nastavitev]].",
-	"globalprefs-has-local-exception": "Ta globalna nastavitev ima [[Posebno:Preferences#$1|lokalno izjemo na tem wikiju]].",
+	"globalprefs-set-local-exception": "Nastavi lokalno izjemo za to [[Special:GlobalPreferences#$1|globalno nastavitev]].",
+	"globalprefs-has-local-exception": "Ta globalna nastavitev ima [[Special:Preferences#$1|lokalno izjemo na tem wikiju]].",
 	"tooltip-globalprefs-check-label": "Nastavi to možnost kot globalno",
 	"globalprefs-error-header": "Napaka",
 	"globalprefs-notglobal": "Tvoj račun ni globalen, zato ni mogoče shraniti globalnih nastavitev.",

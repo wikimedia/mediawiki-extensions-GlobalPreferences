@@ -4,5 +4,6 @@
 			"Njardarlogar"
 		]
 	},
+	"globalprefs-restoreprefs": "Fjern alle globale innstillingar (i alle bolkar)",
 	"globalprefs-col-header": "Vel innstillingar under som skal gjelda globalt"
 }

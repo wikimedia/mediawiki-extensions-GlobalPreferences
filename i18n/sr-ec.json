@@ -1,8 +1,18 @@
 {
 	"@metadata": {
 		"authors": [
-			"Milicevic01"
+			"Milicevic01",
+			"BadDog"
 		]
 	},
-	"globalprefs-select-all": "Изабери све"
+	"globalprefs-set-local-exception": "Постави локални изузетак за ово [[Special:GlobalPreferences#$1|глобално подешавање]].",
+	"tooltip-globalprefs-check-label": "Начините ово подешавање глобалним",
+	"globalpreferences": "Глобална подешавања",
+	"globalprefs-info-label": "Глобална подешавања",
+	"globalprefs-info-link": "постави своја глобална подешавања",
+	"globalprefs-info-help": "Подешавања која су постављена помоћу странице глобалних подешавања примењиваће се на све викије.",
+	"globalprefs-restoreprefs": "Уклони сва глобална подешавања (у свим одељцима)",
+	"globalprefs-select-all": "Изабери све",
+	"globalprefs-col-header": "Изабери опције испод да буду глобалне",
+	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Глобална подешавања."
 }

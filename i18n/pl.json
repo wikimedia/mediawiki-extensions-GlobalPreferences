@@ -18,5 +18,6 @@
 	"globalprefs-reset-intro": "Możesz użyć tej strony do wyłączenia wszystkich ustawionych preferencji globalnych dla wszystkich wiki. Zostanie przywrócone stosowanie lokalnych preferencji. Lokalne preferencje pozostaną bez zmian. Nie będzie można tego cofnąć.",
 	"globalprefs-restoreprefs": "Usuń wszystkie globalne ustawienia (dla wszystkich sekcji)",
 	"globalprefs-select-all": "Zaznacz/odznacz wszystkie",
-	"globalprefs-col-header": "Zaznacz wszystkie opcje poniżej jako globalne"
+	"globalprefs-col-header": "Zaznacz wszystkie opcje poniżej jako globalne",
+	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Preferencje globalne."
 }
