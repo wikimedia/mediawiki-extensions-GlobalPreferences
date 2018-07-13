@@ -4,6 +4,9 @@
 			"Njardarlogar"
 		]
 	},
+	"globalpreferences": "Globale innstillingar",
+	"globalprefs-info-link": "Vel dei globale innstillingane dine",
+	"globalprefs-info-help": "Innstillingar som er valde gjennom sida for globale innstillingar vil gjelda for alle wikiar.",
 	"globalprefs-restoreprefs": "Fjern alle globale innstillingar (i alle bolkar)",
 	"globalprefs-col-header": "Vel innstillingar under som skal gjelda globalt"
 }

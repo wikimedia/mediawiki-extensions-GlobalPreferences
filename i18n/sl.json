@@ -18,7 +18,7 @@
 	"globalprefs-reset-intro": "Na tej strani lahko izključite vse globalne nastavitve na vseh wikijih in povrnete lokalne nastavitve. To ne vpliva na noben lokalni wiki. Tega dejanja se ne da razveljaviti.",
 	"globalprefs-restoreprefs": "Odstrani vse globalne nastavitve (v vseh razdelkih)",
 	"globalprefs-select-all": "Obkljukaj ali odkljukaj vse kvadratke",
-	"globalprefs-col-header": "Izberite spodnje možnosti, da postanejo globalne",
+	"globalprefs-col-header": "Izberi spodnje možnosti, da postanejo globalne",
 	"apihelp-globalpreferences-summary": "Spremeni globalne nastavitve trenutnega uporabnika.",
 	"apihelp-globalpreferences-example-reset-one": "Nastavi samo eno nastavitev za neglobalno.",
 	"apihelp-globalpreferences-example-reset": "Nastavi vse nastavitve za neglobalne",
