@@ -3,7 +3,8 @@
 		"authors": [
 			"Joseph",
 			"Hedda",
-			"Rapsar"
+			"Rapsar",
+			"Sayginer"
 		]
 	},
 	"globalprefs-desc": "Kullanıcıların küresel tercihleri ayarlamasına izin verir",
@@ -13,5 +14,6 @@
 	"globalpreferences": "Küresel tercihler",
 	"globalprefs-info-label": "Küresel tercihler:",
 	"globalprefs-info-link": "Küresel tercihlerinizi ayarlayın",
-	"globalprefs-select-all": "Tümünü seç"
+	"globalprefs-select-all": "Tümünü seç",
+	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Küresel tercihler."
 }

@@ -10,7 +10,7 @@
 	"globalprefs-error-header": "Pogrješka",
 	"globalpreferences": "Globalne postavke",
 	"globalprefs-info-label": "Globalne postavke:",
-	"globalprefs-info-link": "Postavi svoje globalne postavke",
+	"globalprefs-info-link": "postavi svoje globalne postavke",
 	"globalprefs-info-help": "Postavke koje su postavljene pomoću stranice globalnih postavki primjenjivat će se na sve wikije.",
 	"globalprefs-restoreprefs": "Ukloni sve globalne postavke (u svim odjeljcima)",
 	"globalprefs-col-header": "Niže označite mogućnosti za koje želite da vrijede globalno"

@@ -19,5 +19,6 @@
 	"globalprefs-restoreprefs": "Usuń wszystkie globalne ustawienia (dla wszystkich sekcji)",
 	"globalprefs-select-all": "Zaznacz/odznacz wszystkie",
 	"globalprefs-col-header": "Zaznacz wszystkie opcje poniżej jako globalne",
-	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Preferencje globalne."
+	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Preferencje globalne.",
+	"apierror-globalpreferences-notglobalized": "Bieżący użytkownik nie jest globalny."
 }
