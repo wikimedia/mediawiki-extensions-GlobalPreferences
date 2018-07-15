@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Srdjan m"
+		]
+	},
+	"globalpreferences": "Globalne postavke",
+	"globalprefs-info-label": "Globalne postavke:",
+	"globalprefs-info-link": "Postavi globalne postavke",
+	"globalprefs-info-help": "Postavke koje izaberete pomoću stranice za globalne postavke primjenjivat će na sve wikije.",
+	"globalprefs-restoreprefs": "Ukloni sve globalne postavke (u svim odjeljcima)",
+	"globalprefs-select-all": "Izaberi/poništi sve",
+	"globalprefs-col-header": "Primijeni sve donje opcije globalno"
+}
