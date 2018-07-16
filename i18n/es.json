@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Fitoschido"
+			"Fitoschido",
+			"MarcoAurelio"
 		]
 	},
 	"globalprefs-desc": "Permite a los usuarios establecer preferencias globales",
@@ -17,5 +18,8 @@
 	"globalprefs-reset-intro": "Puedes emplear esta página para desactivar las preferencias globales de todos los wikis y volver a tus preferencias locales. No se afectarán las preferencias locales de ningún wiki. No se puede deshacer esta acción.",
 	"globalprefs-restoreprefs": "Quitar todas las preferencias globales (en todas las secciones)",
 	"globalprefs-select-all": "Marcar o desmarcar todas las casillas",
-	"globalprefs-col-header": "Selecciona las opciones que serán globales más abajo"
+	"globalprefs-col-header": "Selecciona las opciones que serán globales más abajo",
+	"apihelp-globalpreferences-summary": "Cambiar las preferencias globales del usuario actual.",
+	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Preferencias globales.",
+	"apierror-globalpreferences-notglobalized": "El usuario actual no es global."
 }
