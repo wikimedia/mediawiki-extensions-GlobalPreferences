@@ -43,6 +43,11 @@ $specialPageAliases['he'] = [
 	'GlobalPreferences' => [ 'העדפות_גלובליות' ],
 ];
 
+/** Hungarian (magyar) */
+$specialPageAliases['hu'] = [
+	'GlobalPreferences' => [ 'Globális_beállításaim' ],
+];
+
 /** Korean (한국어) */
 $specialPageAliases['ko'] = [
 	'GlobalPreferences' => [ '전역환경설정' ],
