@@ -35,5 +35,8 @@
 	"apihelp-query+globalpreferences-param-prop": "Quelles préférences inclure :",
 	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Préférences globales.",
 	"apihelp-query+globalpreferences-paramvalue-prop-localoverrides": "Valeurs d’écrasement locales pour les préférences globales.",
-	"apierror-globalpreferences-notglobalized": "L’utilisateur actuel n’est pas global."
+	"apierror-globalpreferences-notglobalized": "L’utilisateur actuel n’est pas global.",
+	"apihelp-globalpreferenceoverrides-summary": "Réinitialiser les redéfinitions locales avec les préférences globales pour l'utilisateur actuel.",
+	"apihelp-globalpreferenceoverrides-example-reset": "Supprimer toutes les redéfinitions locales.",
+	"apihelp-globalpreferenceoverrides-example-change": "Initialiser ou modifier les redéfinitions pour les préférences de <kbd>skin</kbd> et <kbd>hideminor</kbd> ."
 }

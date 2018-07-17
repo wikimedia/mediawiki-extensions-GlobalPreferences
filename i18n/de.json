@@ -22,6 +22,15 @@
 	"apihelp-globalpreferences-example-reset-one": "Macht eine einzelne Einstellung nicht-global.",
 	"apihelp-globalpreferences-example-reset": "Macht alle Einstellungen nicht-global.",
 	"apihelp-query+globalpreferences-summary": "Ruft globale Einstellungen für den aktuellen Benutzer ab.",
+	"apihelp-query+globalpreferences-extended-description": "Kann sowohl globale Einstellungen als auch ihre lokalen Umgehungen abrufen.",
+	"apihelp-query+globalpreferences-param-prop": "Welche Einstellungen eingeschlossen werden sollen:",
+	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Globale Einstellungen.",
 	"apihelp-query+globalpreferences-paramvalue-prop-localoverrides": "Lokale Umgehungen für globale Einstellungen.",
-	"apierror-globalpreferences-notglobalized": "Der aktuelle Benutzer ist nicht global."
+	"apierror-globalpreferences-notglobalized": "Der aktuelle Benutzer ist nicht global.",
+	"apihelp-globalpreferenceoverrides-summary": "Ändert lokale Umgehungen für globale Einstellungen für den aktuellen Benutzer.",
+	"apihelp-globalpreferenceoverrides-param-resetkinds": "Liste der Typen von Umgehungen, die zurückgesetzt werden sollen, wenn die Option <var>reset</var> festgelegt ist.",
+	"apihelp-globalpreferenceoverrides-param-optionname": "Der Name der Umgehung, die auf den Wert festgelegt werden soll, der durch <var>optionvalue</var> angegeben ist.",
+	"apihelp-globalpreferenceoverrides-param-optionvalue": "Der Wert für die Umgehung, angegeben durch <var>optionname</var>.",
+	"apihelp-globalpreferenceoverrides-example-reset": "Entfernt alle lokalen Umgehungen.",
+	"apihelp-globalpreferenceoverrides-example-change": "Legt Umgehungen für die Einstellungen <kbd>skin</kbd> und <kbd>hideminor</kbd> fest oder ändert sie."
 }

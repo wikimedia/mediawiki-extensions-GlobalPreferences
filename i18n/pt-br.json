@@ -34,5 +34,13 @@
 	"apihelp-query+globalpreferences-param-prop": "Quais prererências incluir:",
 	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Preferências globais.",
 	"apihelp-query+globalpreferences-paramvalue-prop-localoverrides": "Sobreposições locais de preferências globais.",
-	"apierror-globalpreferences-notglobalized": "O usuário corrente não é global."
+	"apierror-globalpreferences-notglobalized": "O usuário corrente não é global.",
+	"apihelp-globalpreferenceoverrides-summary": "Alterar as sobreposições locais das preferências globais do usuário corrente.",
+	"apihelp-globalpreferenceoverrides-param-reset": "Reinicializar as sobreposições locais. Remove todos os tipos, ou, dependendo do valor do parâmetro <code>resetkinds</code>, só alguns tipos de sobreposição local e torna-os novamente globais.",
+	"apihelp-globalpreferenceoverrides-param-resetkinds": "Lista dos tipos de sobreposições a reinicializar quando a opção <var>reset</var> está definida.",
+	"apihelp-globalpreferenceoverrides-param-change": "Lista de alterações, com o formato nome=valor (ex: skin=vector). Se não for dado um valor (nem sequer um sinal de igual), por exemplo, umapreferência|outrapreferência|..., a sobreposição será removida. Se qualquer um dos valores passados contém uma barra vertical (<kbd>|</kbd>), use o [[Special:ApiHelp/main#main/datatypes|separador de valores alternativo]] para obter o resultado correto.",
+	"apihelp-globalpreferenceoverrides-param-optionname": "O nome da sobreposição que deve ser definida com o valor dado em <var>optionvalue</var>.",
+	"apihelp-globalpreferenceoverrides-param-optionvalue": "O valor para a sobreposição especificada por <var>optionname</var>.",
+	"apihelp-globalpreferenceoverrides-example-reset": "Remover todas as sobreposições locais.",
+	"apihelp-globalpreferenceoverrides-example-change": "Definir ou alterar sobreposições para as preferências <kbd>skin</kbd> e <kbd>hideminor</kbd>."
 }
