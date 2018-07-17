@@ -61,6 +61,7 @@ div.mw-label {
 div.mw-globalprefs-global-check {
 	padding-left: 0;
 	float: left;
+	clear: left;
 	width: 5%;
 	min-width: 2em;
 	text-align: left;
