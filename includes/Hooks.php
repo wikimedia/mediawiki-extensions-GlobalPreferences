@@ -3,9 +3,7 @@
 namespace GlobalPreferences;
 
 use ApiQuery;
-use CentralIdLookup;
 use DatabaseUpdater;
-use ExtensionRegistry;
 use HTMLForm;
 use Language;
 use MediaWiki\Auth\AuthManager;
@@ -17,11 +15,6 @@ use User;
 use Wikimedia\Rdbms\IDatabase;
 
 class Hooks {
-
-	protected static $userIdListPreferences = [
-		'email-blacklist',
-		'echo-notifications-blacklist',
-	];
 
 	/**
 	 * Allows last minute changes to the output page, e.g. adding of CSS or JavaScript by extensions.
@@ -68,20 +61,7 @@ class Hooks {
 			) {
 				continue;
 			}
-			// Replicate any transformations that are done in User::loadOption()
-			// and those for any other extensions that don't play nicely.
-			// 1. Convert specific preferences from newline delimited strings to arrays of IDs.
-			if ( in_array( $optName, static::$userIdListPreferences ) ) {
-				// Only convert to array if it's a core preference
-				// or Echo has already been loaded (and won't now get a chance to convert for us).
-				$loaded = array_keys( ExtensionRegistry::getInstance()->getAllThings() );
-				if ( $optName === 'email-blacklist'
-					|| array_search( 'Echo', $loaded ) < array_search( 'GlobalPreferences', $loaded )
-				) {
-					$globalValue = array_map( 'intval', explode( "\n", $globalValue ) );
-				}
-			}
-			// 2. Convert '0' to 0. PHP's boolean conversion considers them both false,
+			// Convert '0' to 0. PHP's boolean conversion considers them both false,
 			// but e.g. JavaScript considers the former as true.
 			if ( $globalValue === '0' ) {
 				$globalValue = 0;
@@ -144,23 +124,7 @@ class Hooks {
 				$suffixLen = strlen( GlobalPreferencesFactory::GLOBAL_EXCEPTION_SUFFIX );
 				$realName = substr( $name, 0, -$suffixLen );
 				if ( isset( $formData[$realName] ) ) {
-					// Replicate any transformations that are done in User::saveOptions() or in
-					// any extensions that do similar things.
-					if ( in_array( $realName, static::$userIdListPreferences ) ) {
-						// Some preferences are strings of newline-delimited user names.
-						if ( is_array( $value ) ) {
-							$ids = array_filter( $value, 'is_numeric' );
-						} else {
-							$lookup = CentralIdLookup::factory();
-							$values = explode( "\n", $formData[$realName] );
-							$ids = $lookup->centralIdsFromNames( $values, $user );
-						}
-						$prefs[$realName] = implode( "\n", $ids );
-					} else {
-						// Store normal preference values.
-						$prefs[$realName] = $formData[$realName];
-					}
-
+					$prefs[$realName] = $formData[$realName];
 				} else {
 					// If the real-named preference isn't set, this must be a CheckMatrix value
 					// where the preference names are of the form "$realName-$column-$row"
@@ -171,8 +135,11 @@ class Hooks {
 					$prefs = array_merge( $prefs, $checkMatrixVals );
 					// Also store a global $realName preference for benefit of the the
 					// 'globalize-this' checkbox.
-					$prefs[ $realName ] = true;
-
+					$prefs[$realName] = true;
+				}
+				if ( $prefs[$realName] === null ) {
+					// Special case: null means don't save this row, which can keep the previous value
+					$prefs[$realName] = '';
 				}
 			}
 		}
