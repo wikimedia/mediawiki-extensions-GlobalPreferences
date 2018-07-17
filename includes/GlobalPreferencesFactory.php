@@ -18,8 +18,10 @@ use IContextSource;
 use MapCacheLRU;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Preferences\DefaultPreferencesFactory;
+use OOUI\ButtonWidget;
 use RequestContext;
 use SpecialPage;
+use SpecialPreferences;
 use User;
 
 /**
@@ -171,16 +173,26 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 		$preferences = $modifiedPrefs;
 
 		// Add a link to GlobalPreferences to the local preferences form.
-		$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
+		if ( SpecialPreferences::isOouiEnabled( $context ) ) {
+			$linkObject = new ButtonWidget( [
+				'href' => SpecialPage::getTitleFor( 'GlobalPreferences' )->getLinkURL(),
+				'label' => $context->msg( 'globalprefs-info-link' )->text(),
+			] );
+			$link = $linkObject->toString();
+		} else {
+			$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
+			$link = $linkRenderer->makeKnownLink(
+				SpecialPage::getTitleFor( 'GlobalPreferences' ),
+				$context->msg( 'globalprefs-info-link' )->text()
+			);
+		}
+
 		$preferences['global-info'] = [
 			'type' => 'info',
 			'section' => 'personal/info',
 			'label-message' => 'globalprefs-info-label',
 			'raw' => true,
-			'default' => $linkRenderer->makeKnownLink(
-				SpecialPage::getTitleFor( 'GlobalPreferences' ),
-				$context->msg( 'globalprefs-info-link' )->text()
-			),
+			'default' => $link,
 			'help-message' => 'globalprefs-info-help',
 		];
 
