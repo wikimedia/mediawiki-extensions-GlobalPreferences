@@ -16,8 +16,11 @@ class ApiGlobalPreferences extends ApiOptions {
 	public function execute() {
 		$factory = $this->getFactory();
 		$user = $this->getUserForUpdates();
-		if ( $user && $factory->isUserGlobalized() ) {
-			$this->dieWithError( 'apierror-globalpreferences-notglobalized', 'notglobalized' );
+		if ( $user ) {
+			$factory->setUser( $user );
+			if ( !$factory->isUserGlobalized() ) {
+				$this->dieWithError( 'apierror-globalpreferences-notglobalized', 'notglobalized' );
+			}
 		}
 		parent::execute();
 	}
