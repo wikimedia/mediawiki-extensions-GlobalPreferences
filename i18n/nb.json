@@ -33,5 +33,9 @@
 	"apihelp-query+globalpreferences-param-prop": "Hvilke innstillinger som skal inkluderes:",
 	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Globale innstillinger.",
 	"apihelp-query+globalpreferences-paramvalue-prop-localoverrides": "Lokale overstyringer av globale innstillinger.",
-	"apierror-globalpreferences-notglobalized": "Den gjeldende brukeren er ikke global."
+	"apierror-globalpreferences-notglobalized": "Den gjeldende brukeren er ikke global.",
+	"apihelp-globalpreferenceoverrides-summary": "Endre lokal overstyring av globale innstillinger for den gjeldende brukeren.",
+	"apihelp-globalpreferenceoverrides-extended-description": "Globale verdier for påvirkede innstillinger vil ignoreres.",
+	"apihelp-globalpreferenceoverrides-param-reset": "Resett lokale overstyringer. Fjerner alle, eller, avhengig av verdien til paremeteren <code>resetkinds</code>, noen typer lokale overstyringer og gjør dem globale igjen.",
+	"apihelp-globalpreferenceoverrides-param-resetkinds": "Liste over overstyringstyper som skal resettes når valget <var>reset</var> er satt."
 }

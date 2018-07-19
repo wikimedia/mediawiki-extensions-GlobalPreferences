@@ -37,6 +37,12 @@
 	"apihelp-query+globalpreferences-paramvalue-prop-localoverrides": "Valeurs d’écrasement locales pour les préférences globales.",
 	"apierror-globalpreferences-notglobalized": "L’utilisateur actuel n’est pas global.",
 	"apihelp-globalpreferenceoverrides-summary": "Réinitialiser les redéfinitions locales avec les préférences globales pour l'utilisateur actuel.",
+	"apihelp-globalpreferenceoverrides-extended-description": "Les valeurs globales pour les préférences affectées seront ignorées.",
+	"apihelp-globalpreferenceoverrides-param-reset": "Réinitialiser les surcharges locales. Supprime tout ou,  selon la valeur du paramètre <code>resetkinds</code>, certains types de surcharges locales, et les rend de nouveau globales.",
+	"apihelp-globalpreferenceoverrides-param-resetkinds": "Liste des types de surcharge à réinitialiser quand l’option <var>reset</var> est positionnée.",
+	"apihelp-globalpreferenceoverrides-param-change": "Liste des modifications, au format nom=valeur (par ex. skin=vector). Si aucune valeur n’est donnée (pas même un signe égal), par ex., nompréférence|autrepréférence|…, la surcharge sera supprimée. Si une valeur passée contient le caractère barre verticale (<kbd>|</kbd>), utilisez le [[Special:ApiHelp/main#main/datatypes|séparateur alternatif de valeurs multiples]] pour que l’opération soit correcte.",
+	"apihelp-globalpreferenceoverrides-param-optionname": "Le nom de la surcharge qui doit être positionnée à la valeur donnée par <var>optionvalue</var>.",
+	"apihelp-globalpreferenceoverrides-param-optionvalue": "La valeur de la surcharge spécifiée par <var>optionname</var>.",
 	"apihelp-globalpreferenceoverrides-example-reset": "Supprimer toutes les redéfinitions locales.",
 	"apihelp-globalpreferenceoverrides-example-change": "Initialiser ou modifier les redéfinitions pour les préférences de <kbd>skin</kbd> et <kbd>hideminor</kbd> ."
 }

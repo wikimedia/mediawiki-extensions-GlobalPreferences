@@ -44,6 +44,7 @@
 	"apihelp-query+globalpreferences-paramvalue-prop-localoverrides": "Локальные замены для глобальных настроек.",
 	"apierror-globalpreferences-notglobalized": "Текущий пользователь не является глобальным.",
 	"apihelp-globalpreferenceoverrides-summary": "Изменить локальную замену для глобальных настроек текущего участника.",
+	"apihelp-globalpreferenceoverrides-extended-description": "Глобальные значения для затронутых настроек будут проигнорированы.",
 	"apihelp-globalpreferenceoverrides-param-reset": "Сбросить локальные замены. Убирает все или, в зависимости от значения параметра <code>resetkinds</code>, некоторые виды глобальных замен и делает их глобальными.",
 	"apihelp-globalpreferenceoverrides-param-resetkinds": "Список типов сбрасываемых настроек, если задана опция <var>reset</var>.",
 	"apihelp-globalpreferenceoverrides-param-change": "Список изменений в формате название=значение (например, skin=vector). Если значения не задано (нет даже знака равенства), например, названиенастройки|другаянастройка|..., настройка будет неглобальной. Если какое-либо значение содержит знак пайпа (<kbd>|</kbd>), используйте [[Special:ApiHelp/main#main/datatypes|альтернативный разделитель значений]] для корректного проведения операции.",

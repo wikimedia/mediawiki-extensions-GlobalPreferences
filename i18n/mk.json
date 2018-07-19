@@ -36,6 +36,7 @@
 	"apihelp-query+globalpreferences-paramvalue-prop-localoverrides": "Месни замени за глобални нагодувања.",
 	"apierror-globalpreferences-notglobalized": "Тековниот корисник не е глобален.",
 	"apihelp-globalpreferenceoverrides-summary": "Измена на месната замена на глобалните нагодувања за тековниот корисник.",
+	"apihelp-globalpreferenceoverrides-extended-description": "Глобалните вредности за засегнати нагодувања ќе бидат занемарани.",
 	"apihelp-globalpreferenceoverrides-param-reset": "Повраток одново на месни замени. Ги отстранува сите, или пак, зависно од вредноста на параметарот <code>resetkinds</code>, некои видови глобални замени и ги прави неглобални.",
 	"apihelp-globalpreferenceoverrides-param-resetkinds": "Список на типови замени за повраток кога ќе се зададе можноста <var>reset</var>.",
 	"apihelp-globalpreferenceoverrides-param-change": "Список на промени, форматиран како назив=вредност (на пр. skin=vector). Ако нема зададено вредност (ниту знак еднакво), на пр. називнанагодувањето|другонагодување|..., замената ќе стане глобално. Ако некоја дадена вредност има исправена црта (<kbd>|</kbd>), послужете се со [[Special:ApiHelp/main#main/datatypes|алтернативниот одделувач на повеќе вредности]] за исправна работа.",
