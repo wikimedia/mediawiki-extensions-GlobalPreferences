@@ -190,7 +190,11 @@ class Hooks {
 		$config = MediaWikiServices::getInstance()->getMainConfig();
 		$dBname = $config->get( 'DBname' );
 		$sharedDB = $config->get( 'SharedDB' );
-		$globalPreferencesDB = $config->get( 'GlobalPreferencesDB' );
+
+		// During install, extension registry config is not loaded - T198330
+		$globalPreferencesDB = $config->has( 'GlobalPreferencesDB' )
+			? $config->get( 'GlobalPreferencesDB' )
+			: null;
 
 		// Only add the global_preferences table to the $wgGlobalPreferencesDB or the $wgSharedDB,
 		// unless neither of them is set. See also \GlobalPreferences\Storage::getDatabase().
