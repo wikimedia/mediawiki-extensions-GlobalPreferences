@@ -36,5 +36,9 @@
 	"apihelp-query+globalpreferences-param-prop": "要包含的偏好設定：",
 	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "全域偏好設定。",
 	"apihelp-query+globalpreferences-paramvalue-prop-localoverrides": "用於全域偏好設定的本地覆蓋。",
-	"apierror-globalpreferences-notglobalized": "當前使用者並非全域使用者。"
+	"apierror-globalpreferences-notglobalized": "當前使用者並非全域使用者。",
+	"apihelp-globalpreferenceoverrides-param-resetkinds": "當設定 <var>reset</var> 選項時，要重設的覆蓋類型清單。",
+	"apihelp-globalpreferenceoverrides-param-optionname": "覆蓋名稱，其應設定為由 <var>optionvalue</var> 所提供的值。",
+	"apihelp-globalpreferenceoverrides-param-optionvalue": "由 <var>optionname</var> 所指定，用於覆蓋的值。",
+	"apihelp-globalpreferenceoverrides-example-reset": "移除所有本地覆蓋內容。"
 }

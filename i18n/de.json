@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Metalhead64"
+			"Metalhead64",
+			"FF11"
 		]
 	},
 	"globalprefs-desc": "Ermöglicht es Benutzern, globale Einstellungen festzulegen.",
@@ -18,9 +19,15 @@
 	"globalprefs-restoreprefs": "Alle globalen Einstellungen entfernen (in allen Abschnitten)",
 	"globalprefs-select-all": "Alle Kontrollkästchen aus- oder abwählen",
 	"globalprefs-col-header": "Unten Optionen auswählen, die global sein sollen",
+	"apihelp-globalpreferences-summary": "Ändert die globalen Einstellungen des aktuellen Benutzers.",
+	"apihelp-globalpreferences-extended-description": "Nur Einstellungen, die auf dem aktuellen Wiki registriert sind, können lokal geändert werden.",
+	"apihelp-globalpreferences-param-reset": "Setzt die globalen Einstellungen zurück. Entfernt alle oder abhängig von dem Wert des Parameters <code>resetkinds</code>, einige Typen von globalen Einstellungen und macht sie nicht mehr global.",
 	"apihelp-globalpreferences-param-resetkinds": "Liste der Typen von Einstellungen, die zurückgesetzt werden sollen, falls die Option <var>reset</var> festgelegt ist.",
+	"apihelp-globalpreferences-param-optionname": "Der Name der Einstellung, die auf den mit <var>optionvalue</var> angegebenen Wert gesetzt werden soll.",
+	"apihelp-globalpreferences-param-optionvalue": "Der Wert für die Option, die durch <var>optionname</var> angegeben ist.",
 	"apihelp-globalpreferences-example-reset-one": "Macht eine einzelne Einstellung nicht-global.",
 	"apihelp-globalpreferences-example-reset": "Macht alle Einstellungen nicht-global.",
+	"apihelp-globalpreferences-example-change": "Ändert die Einstellungen <kbd>skin</kbd> und <kbd>hideminor</kbd>.",
 	"apihelp-query+globalpreferences-summary": "Ruft globale Einstellungen für den aktuellen Benutzer ab.",
 	"apihelp-query+globalpreferences-extended-description": "Kann sowohl globale Einstellungen als auch ihre lokalen Umgehungen abrufen.",
 	"apihelp-query+globalpreferences-param-prop": "Welche Einstellungen eingeschlossen werden sollen:",
@@ -28,6 +35,8 @@
 	"apihelp-query+globalpreferences-paramvalue-prop-localoverrides": "Lokale Umgehungen für globale Einstellungen.",
 	"apierror-globalpreferences-notglobalized": "Der aktuelle Benutzer ist nicht global.",
 	"apihelp-globalpreferenceoverrides-summary": "Ändert lokale Umgehungen für globale Einstellungen für den aktuellen Benutzer.",
+	"apihelp-globalpreferenceoverrides-extended-description": "Globale Werte für betroffene Einstellungen werden ignoriert.",
+	"apihelp-globalpreferenceoverrides-param-reset": "Setzt die lokalen Überschreibungen zurück. Entfernt alle oder abhängig von dem Wert des Parameters <code>resetkinds</code>, einige Typen von lokalen Überschreibungen und macht sie wieder global.",
 	"apihelp-globalpreferenceoverrides-param-resetkinds": "Liste der Typen von Umgehungen, die zurückgesetzt werden sollen, wenn die Option <var>reset</var> festgelegt ist.",
 	"apihelp-globalpreferenceoverrides-param-optionname": "Der Name der Umgehung, die auf den Wert festgelegt werden soll, der durch <var>optionvalue</var> angegeben ist.",
 	"apihelp-globalpreferenceoverrides-param-optionvalue": "Der Wert für die Umgehung, angegeben durch <var>optionname</var>.",
