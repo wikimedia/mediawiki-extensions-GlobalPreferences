@@ -123,7 +123,7 @@ class Hooks {
 				// Determine the real name of the preference.
 				$suffixLen = strlen( GlobalPreferencesFactory::GLOBAL_EXCEPTION_SUFFIX );
 				$realName = substr( $name, 0, -$suffixLen );
-				if ( isset( $formData[$realName] ) ) {
+				if ( array_key_exists( $realName, $formData ) ) {
 					$prefs[$realName] = $formData[$realName];
 				} else {
 					// If the real-named preference isn't set, this must be a CheckMatrix value
