@@ -15,5 +15,6 @@
 	"globalprefs-info-label": "Küresel tercihler:",
 	"globalprefs-info-link": "Küresel tercihlerinizi ayarlayın",
 	"globalprefs-select-all": "Tümünü seç",
+	"apihelp-globalpreferences-example-change": "<kbd>Temayı</kbd> değiştir ve küçük tercihleri <kbd>gizle</kbd>.",
 	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Küresel tercihler."
 }

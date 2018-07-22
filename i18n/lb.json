@@ -18,5 +18,6 @@
 	"globalprefs-col-header": "Optiounen hei drënner eraussichen déi global si sollen",
 	"apihelp-globalpreferences-example-reset": "All Astellungen net global maachen.",
 	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Global Astellungen",
-	"apierror-globalpreferences-notglobalized": "Aktuelle Benotzer ass net global."
+	"apierror-globalpreferences-notglobalized": "Aktuelle Benotzer ass net global.",
+	"apihelp-globalpreferenceoverrides-example-reset": "All lokal Iwwerschreiwungen ewechhuelen."
 }

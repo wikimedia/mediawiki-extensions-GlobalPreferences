@@ -34,5 +34,14 @@
 	"apihelp-query+globalpreferences-param-prop": "אילו העדפות לכלול:",
 	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "העדפות גלובליות.",
 	"apihelp-query+globalpreferences-paramvalue-prop-localoverrides": "חריגים מקומיים עבור ההעדפות הגלובליות.",
-	"apierror-globalpreferences-notglobalized": "המשתמש הנוכחי אינו גלובלי."
+	"apierror-globalpreferences-notglobalized": "המשתמש הנוכחי אינו גלובלי.",
+	"apihelp-globalpreferenceoverrides-summary": "שינוי החריגות המקומיות של ההעדפות הגלובליות עבור המשתמש הנוכחי.",
+	"apihelp-globalpreferenceoverrides-extended-description": "לא תהיה התייחסות לערכים גלובליים בהעדפות המושפעות.",
+	"apihelp-globalpreferenceoverrides-param-reset": "איפוס החריגות המקומיות. אפשרות זו תסיר את כל החריגות המקומיות (או רק סוגים מסוימים שלהן, בהתאם לערך של הפרמטר <code>resetkinds</code>), ותהפוך את ההעדפות הללו לגלובליות.",
+	"apihelp-globalpreferenceoverrides-param-resetkinds": "רשימה של סוגי החריגות שתאופסנה כאשר האפשרות <var>reset</var> מוגדרת.",
+	"apihelp-globalpreferenceoverrides-param-change": "רשימה של שינויים, בתסדיר name=value (לדוגמה skin=vector). אם לא צוין ערך (וגם לא סימן =), למשל, <span dir=\"ltr\">preferencename|otherpreference|...</span>, החריגה תוסר. אם ערך כלשהו שהועבר מכיל את תו המקל (<kbd>|</kbd>), יש להשתמש ב[[Special:ApiHelp/main#main/datatypes|מפריד הערכים המרובים החלופי]] כדי שהפעולה תתבצע כראוי.",
+	"apihelp-globalpreferenceoverrides-param-optionname": "שם החריגה שתוגדר לערך שצוין בפרמטר <var>optionvalue</var>.",
+	"apihelp-globalpreferenceoverrides-param-optionvalue": "הערך של החריגה שצוינה בפרמטר <var>optionname</var>.",
+	"apihelp-globalpreferenceoverrides-example-reset": "הסרת כל החריגות המקומיות.",
+	"apihelp-globalpreferenceoverrides-example-change": "הגדרה או שינוי של חריגות עבור ההעדפות <kbd>skin</kbd> ו־<kbd>hideminor</kbd>."
 }

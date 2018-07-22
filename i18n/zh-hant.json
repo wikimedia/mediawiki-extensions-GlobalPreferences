@@ -37,8 +37,13 @@
 	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "全域偏好設定。",
 	"apihelp-query+globalpreferences-paramvalue-prop-localoverrides": "用於全域偏好設定的本地覆蓋。",
 	"apierror-globalpreferences-notglobalized": "當前使用者並非全域使用者。",
+	"apihelp-globalpreferenceoverrides-summary": "替目前使用者的全域偏好設置更改本地覆蓋內容。",
+	"apihelp-globalpreferenceoverrides-extended-description": "用於所影響到偏好設置的全域值內容將會忽略。",
+	"apihelp-globalpreferenceoverrides-param-reset": "重設本地覆蓋內容。移除全部，或是基於 <code>resetkinds</code> 參數值（一些本地覆蓋內容類型）來讓全域內容再次生效。",
 	"apihelp-globalpreferenceoverrides-param-resetkinds": "當設定 <var>reset</var> 選項時，要重設的覆蓋類型清單。",
+	"apihelp-globalpreferenceoverrides-param-change": "更改列表，格式化為「名稱=值」（例如：skin=vector）。如果未提供值（甚至沒有等號，例如：preferencename|otherpreference|...），那麼覆蓋內容將不會被移除。如果傳遞的任何值包含豎線字元（<kbd>|</kbd>），請使用[[Special:ApiHelp/main#main/datatypes|替代多值分隔符號]]以便正確操作。",
 	"apihelp-globalpreferenceoverrides-param-optionname": "覆蓋名稱，其應設定為由 <var>optionvalue</var> 所提供的值。",
 	"apihelp-globalpreferenceoverrides-param-optionvalue": "由 <var>optionname</var> 所指定，用於覆蓋的值。",
-	"apihelp-globalpreferenceoverrides-example-reset": "移除所有本地覆蓋內容。"
+	"apihelp-globalpreferenceoverrides-example-reset": "移除所有本地覆蓋內容。",
+	"apihelp-globalpreferenceoverrides-example-change": "替 <kbd>skin</kbd> 以及 <kbd>hideminor</kbd> 的偏好設置來設定或更改覆蓋內容。"
 }
