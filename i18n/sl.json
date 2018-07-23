@@ -25,5 +25,8 @@
 	"apihelp-query+globalpreferences-param-prop": "Katere nastavitve so vključene:",
 	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Globalne nastavitve.",
 	"apihelp-query+globalpreferences-paramvalue-prop-localoverrides": "Lokalne nastavitve, ki povozijo globalne.",
-	"apierror-globalpreferences-notglobalized": "Trenutni uporabnik ni globalni."
+	"apierror-globalpreferences-notglobalized": "Trenutni uporabnik ni globalni.",
+	"apihelp-globalpreferenceoverrides-summary": "Spremeni lokalne prepise za globalne nastavitve trenutnega uporabnika.",
+	"apihelp-globalpreferenceoverrides-extended-description": "Globalne vrednosti zadevajočih nastavitev bodo spregledane.",
+	"apihelp-globalpreferenceoverrides-example-reset": "Odstrani vse lokalne prepise."
 }
