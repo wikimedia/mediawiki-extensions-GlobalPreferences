@@ -2,12 +2,14 @@
 
 namespace GlobalPreferences;
 
+use ApiOptions;
 use ApiQuery;
 use DatabaseUpdater;
 use HTMLForm;
 use MediaWiki\Auth\AuthManager;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
+use Message;
 use OutputPage;
 use Skin;
 use User;
@@ -232,5 +234,50 @@ class Hooks {
 		/** @var GlobalPreferencesFactory $factory */
 		$factory = MediaWikiServices::getInstance()->getPreferencesFactory();
 		return new ApiQueryGlobalPreferences( $queryModule, $moduleName, $factory );
+	}
+
+	/**
+	 * @param ApiOptions $apiModule
+	 * @param User $user
+	 * @param array $changes
+	 */
+	public static function onApiOptions( ApiOptions $apiModule, User $user,
+		array $changes
+	) {
+		// Only hook to the core module but not to our code that inherits from it
+		if ( $apiModule->getModuleName() !== 'options' ) {
+			return;
+		}
+
+		/** @var GlobalPreferencesFactory $factory */
+		$factory = MediaWikiServices::getInstance()->getPreferencesFactory();
+		$factory->setUser( $user );
+		$globalPrefs = $factory->getGlobalPreferencesValues();
+
+		$toWarn = [];
+		foreach ( array_keys( $changes ) as $preference ) {
+			if ( GlobalPreferencesFactory::isLocalPrefName( $preference ) ) {
+				continue;
+			}
+			$exceptionName = $preference . GlobalPreferencesFactory::LOCAL_EXCEPTION_SUFFIX;
+			if ( $user->getOption( $exceptionName ) === null ) {
+				if ( array_key_exists( $preference, $globalPrefs ) ) {
+					$toWarn[] = $preference;
+				}
+			}
+		}
+		if ( $toWarn ) {
+			$toWarn = array_map( function ( $str ) {
+				return wfEscapeWikiText( "`$str`" );
+			}, $toWarn );
+			$apiModule->addWarning(
+				[
+					'apiwarn-globally-overridden',
+					Message::listParam( $toWarn ),
+					count( $toWarn ),
+				],
+				'globally-overridden'
+			);
+		}
 	}
 }

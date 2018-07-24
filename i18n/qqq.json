@@ -45,5 +45,6 @@
 	"apihelp-globalpreferenceoverrides-param-optionname": "{{doc-apihelp-param|globalpreferenceoverrides|optionname}}",
 	"apihelp-globalpreferenceoverrides-param-optionvalue": "{{doc-apihelp-param|globalpreferenceoverrides|optionvalue}}",
 	"apihelp-globalpreferenceoverrides-example-reset": "{{doc-apihelp-example|globalpreferenceoverrides}}",
-	"apihelp-globalpreferenceoverrides-example-change": "{{doc-apihelp-example|globalpreferenceoverrides}}"
+	"apihelp-globalpreferenceoverrides-example-change": "{{doc-apihelp-example|globalpreferenceoverrides}}",
+	"apiwarn-globally-overridden": "{{doc-apiwarn}}\nParameters:\n* $1 - human-readable list of options\n* $2 - number of options in $1 for {{PLURAL}}"
 }

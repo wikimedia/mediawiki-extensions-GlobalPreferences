@@ -50,6 +50,9 @@
 		],
 		"DeleteUnknownPreferences": [
 			"GlobalPreferences\\Hooks::onDeleteUnknownPreferences"
+		],
+		"ApiOptions": [
+			"GlobalPreferences\\Hooks::onApiOptions"
 		]
 	},
 	"ResourceFileModulePaths": {
