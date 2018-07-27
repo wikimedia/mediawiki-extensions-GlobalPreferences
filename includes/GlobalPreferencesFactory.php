@@ -92,7 +92,7 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	/**
 	 * Set the preferences user.
 	 * Note that not many of this class's methods use this, and you have to pass $user again.
-	 * @TODO This should really be higher up the class hierarchy.
+	 * @todo This should really be higher up the class hierarchy.
 	 * @param User $user The user.
 	 */
 	public function setUser( User $user ) {
