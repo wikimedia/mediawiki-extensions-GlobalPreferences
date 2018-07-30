@@ -68,8 +68,10 @@
 		},
 		"ext.GlobalPreferences.local": {
 			"styles": "ext.GlobalPreferences.local.css",
-			"scripts": "ext.GlobalPreferences.local.js",
-			"dependencies": [ "oojs-ui-core" ]
+			"scripts": [
+				"ext.GlobalPreferences.local.js"
+			],
+			"dependencies": [ "oojs-ui-core", "mediawiki.widgets.CheckMatrixWidget" ]
 		},
 		"ext.GlobalPreferences.local-nojs": {
 			"styles": "ext.GlobalPreferences.local-nojs.css"
