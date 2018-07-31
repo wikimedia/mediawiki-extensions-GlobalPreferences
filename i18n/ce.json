@@ -4,5 +4,12 @@
 			"Умар"
 		]
 	},
-	"globalprefs-error-header": "ГӀалат"
+	"globalprefs-error-header": "ГӀалат",
+	"globalpreferences": "Глобалан нисдаран гӀирс",
+	"globalprefs-info-label": "Глобалан нисдаран гӀирс:",
+	"globalprefs-info-link": "Глобалан нисдаран гӀирс дӀахӀоттабе",
+	"globalprefs-restoreprefs": "ДӀабаккха берриге глобалан нисдаран гӀирс (массо секцешкахь)",
+	"globalprefs-col-header": "Лахара берриге нисдаран гӀирс глобалан санна харжа",
+	"apihelp-query+globalpreferences-summary": "Карара декъашхочун глобалан нисдаран гӀирс гайта.",
+	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Глобалан нисдаран гӀирс."
 }
