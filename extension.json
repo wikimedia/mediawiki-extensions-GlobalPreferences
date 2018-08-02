@@ -60,7 +60,17 @@
 		"ext.GlobalPreferences.global": {
 			"styles": "ext.GlobalPreferences.global.css",
 			"scripts": "ext.GlobalPreferences.global.js",
-			"dependencies": [ "oojs-ui-core", "mediawiki.widgets", "mediawiki.widgets.UsersMultiselectWidget" ],
+			"dependencies": [ "oojs-ui-core", "mediawiki.widgets.UsersMultiselectWidget" ],
+			"messages": [ "globalprefs-select-all" ]
+		},
+		"ext.GlobalPreferences.global.ooui": {
+			"scripts": "ext.GlobalPreferences.global.ooui.js",
+			"dependencies": [
+				"oojs-ui-core",
+				"mediawiki.widgets",
+				"mediawiki.widgets.CheckMatrixWidget",
+				"mediawiki.widgets.UsersMultiselectWidget"
+			],
 			"messages": [ "globalprefs-select-all" ]
 		},
 		"ext.GlobalPreferences.global-nojs": {

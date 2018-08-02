@@ -21,19 +21,15 @@ class SpecialGlobalPreferences extends SpecialPreferences {
 	}
 
 	/**
-	 * @inheritDoc
-	 */
-	public static function isOouiEnabled( IContextSource $context ) {
-		return false;
-	}
-
-	/**
 	 * Execute the special page.
 	 * @param null|string $par The subpage name, if any.
 	 * @throws ErrorPageError
 	 * @throws UserNotLoggedIn
 	 */
 	public function execute( $par ) {
+		// Call the parent
+		parent::execute( $par );
+
 		// Remove subpages other than 'reset', including trailing slash.
 		if ( !is_null( $par ) && $par !== 'reset' ) {
 			$this->getOutput()->redirect( rtrim( $this->getPageTitle()->getCanonicalURL(), '/' ) );
@@ -66,8 +62,11 @@ class SpecialGlobalPreferences extends SpecialPreferences {
 		// Add module styles and scripts separately
 		// so non-JS users get the styles quicker and to avoid a FOUC.
 		$this->getOutput()->addModuleStyles( 'ext.GlobalPreferences.global-nojs' );
-		$this->getOutput()->addModules( 'ext.GlobalPreferences.global' );
-		parent::execute( $par );
+		if ( static::isOouiEnabled( $this->getContext() ) ) {
+			$this->getOutput()->addModules( 'ext.GlobalPreferences.global.ooui' );
+		} else {
+			$this->getOutput()->addModules( 'ext.GlobalPreferences.global' );
+		}
 	}
 
 	/**
@@ -78,7 +77,11 @@ class SpecialGlobalPreferences extends SpecialPreferences {
 	 */
 	protected function getFormObject( $user, IContextSource $context ) {
 		$preferencesFactory = MediaWikiServices::getInstance()->getPreferencesFactory();
-		$form = $preferencesFactory->getForm( $user, $context, GlobalPreferencesForm::class );
+		if ( static::isOouiEnabled( $this->getContext() ) ) {
+			$form = $preferencesFactory->getForm( $user, $context, GlobalPreferencesFormOOUI::class );
+		} else {
+			$form = $preferencesFactory->getForm( $user, $context, GlobalPreferencesForm::class );
+		}
 		return $form;
 	}
 
@@ -95,8 +98,9 @@ class SpecialGlobalPreferences extends SpecialPreferences {
 		$this->getOutput()->addWikiMsg( 'globalprefs-reset-intro' );
 
 		$context = new DerivativeContext( $this->getContext() );
+		// Reset subpage
 		$context->setTitle( $this->getPageTitle( 'reset' ) );
-		$htmlForm = new HTMLForm( [], $context, 'globalprefs-restore' );
+		$htmlForm = HTMLForm::factory( 'ooui', [], $context, 'globalprefs-restore' );
 
 		$htmlForm->setSubmitTextMsg( 'globalprefs-restoreprefs' );
 		$htmlForm->setSubmitDestructive();
