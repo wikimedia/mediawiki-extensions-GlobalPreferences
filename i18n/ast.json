@@ -17,5 +17,9 @@
 	"globalprefs-reset-intro": "Puedes usar esta páxina pa desactivar toles preferencies globales en toles wikis y volver a les preferencies llocales. Esto nun afeuta a nenguna preferencia de la wiki llocal, y nun puede desfacese.",
 	"globalprefs-restoreprefs": "Desaniciar toles preferencies globales (de toles seiciones)",
 	"globalprefs-select-all": "Marcar o desmarcar tolos caxellos",
-	"globalprefs-col-header": "Seleiciona les opciones de más abaxo que van ser globales"
+	"globalprefs-col-header": "Seleiciona les opciones de más abaxo que van ser globales",
+	"apihelp-globalpreferences-summary": "Camudar les preferencies globales del usuariu actual.",
+	"apihelp-globalpreferences-extended-description": "Sólo les preferencies rexistraes pa la wiki actual pueden cambiase de manera llocal.",
+	"apihelp-globalpreferences-param-reset": "Reaniciar les preferencies globales. Desanicia toes o, dependiendo del valor del parámetru <code>resetkinds</code>, delles tribes de preferencies globales y facer que dexen de ser globales.",
+	"apihelp-globalpreferences-param-resetkinds": "Llista de tipos de preferencies a reaniciar cuando s'active la opción <var>reset</var>."
 }

@@ -1,0 +1,21 @@
+{
+	"@metadata": {
+		"authors": [
+			"Minh Nguyen"
+		]
+	},
+	"globalprefs-desc": "Cho phép thành viên đặt tùy chọn toàn cục",
+	"globalprefs-set-local-exception": "Định rõ ngoại lệ cho [[Special:GlobalPreferences#$1|tùy chọn toàn cục]] này.",
+	"globalprefs-has-local-exception": "Tùy chọn toàn cục này có [[Special:Preferences#$1|ngoại lệ địa phương tại wiki này]].",
+	"tooltip-globalprefs-check-label": "Áp dụng tùy chọn này toàn cục",
+	"globalprefs-error-header": "Lỗi",
+	"globalprefs-notglobal": "Tài khoản này không phải là tài khoản toàn cục nên không thể áp dụng tùy chọn toàn cục.",
+	"globalpreferences": "Tùy chọn toàn cục",
+	"globalprefs-info-label": "Tùy chọn toàn cục:",
+	"globalprefs-info-link": "Thay đổi tùy chọn toàn cục",
+	"globalprefs-info-help": "Các tùy chọn được định rõ trong trang tùy chọn toàn cục sẽ được áp dụng tại tất cả các wiki.",
+	"globalprefs-reset-intro": "Bạn có thể sử dụng trang này để vô hiệu các tùy chọn toàn cục và đặt lại các tùy chọn địa phương tại các wiki. Tác vụ này sẽ không có ảnh hưởng đến tùy chọn tại wiki địa phương. Không thể hoàn tác tác vụ này.",
+	"globalprefs-restoreprefs": "Hủy bỏ các tùy chọn toàn cục (trong các phần)",
+	"globalprefs-select-all": "Bật/tắt tất cả các hộp kiểm",
+	"globalprefs-col-header": "Chọn các tùy chọn bên dưới để áp dụng toàn cục"
+}
