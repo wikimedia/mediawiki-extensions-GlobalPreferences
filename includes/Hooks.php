@@ -51,9 +51,9 @@ class Hooks {
 			'Loading global options for user \'{user}\'',
 			[ 'user' => $user->getName() ]
 		);
-
 		// Overwrite all options that have a global counterpart.
-		foreach ( $globalPreferences->getGlobalPreferencesValues() as $optName => $globalValue ) {
+		$globalPrefs = $globalPreferences->getGlobalPreferencesValues();
+		foreach ( $globalPrefs as $optName => $globalValue ) {
 			// Don't overwrite if it has a local exception, unless we're just trying to get .
 			if (
 				!GlobalPreferencesForm::gettingGlobalOnly()
@@ -61,6 +61,15 @@ class Hooks {
 			) {
 				continue;
 			}
+
+			// FIXME: temporary plug for T201340: DB might have rows for deglobalized
+			// Echo notifications. Don't allow these through if the main checkbox is not checked.
+			if ( !( $globalPrefs['echo-subscriptions'] ?? false )
+				&& strpos( $optName, 'echo-subscriptions-' ) === 0
+			) {
+				continue;
+			}
+
 			// Convert '0' to 0. PHP's boolean conversion considers them both false,
 			// but e.g. JavaScript considers the former as true.
 			if ( $globalValue === '0' ) {
@@ -115,41 +124,7 @@ class Hooks {
 		if ( !$preferencesFactory->onGlobalPrefsPage( $form ) ) {
 			return self::localPreferencesFormPreSave( $formData, $user );
 		}
-
-		$prefs = [];
-		foreach ( $formData as $name => $value ) {
-			// If this is the '-global' counterpart to a preference.
-			if ( GlobalPreferencesFactory::isGlobalPrefName( $name ) && $value === true ) {
-				// Determine the real name of the preference.
-				$suffixLen = strlen( GlobalPreferencesFactory::GLOBAL_EXCEPTION_SUFFIX );
-				$realName = substr( $name, 0, -$suffixLen );
-				if ( array_key_exists( $realName, $formData ) ) {
-					$prefs[$realName] = $formData[$realName];
-				} else {
-					// If the real-named preference isn't set, this must be a CheckMatrix value
-					// where the preference names are of the form "$realName-$column-$row"
-					// (we also have to remove the "$realName-global" entry).
-					$checkMatrix = preg_grep( "/^$realName/", array_keys( $formData ) );
-					unset( $checkMatrix[ array_search( $name, $checkMatrix ) ] );
-					$checkMatrixVals = array_intersect_key( $formData, array_flip( $checkMatrix ) );
-					$prefs = array_merge( $prefs, $checkMatrixVals );
-					// Also store a global $realName preference for benefit of the the
-					// 'globalize-this' checkbox.
-					$prefs[$realName] = true;
-				}
-				if ( $prefs[$realName] === null ) {
-					// Special case: null means don't save this row, which can keep the previous value
-					$prefs[$realName] = '';
-				}
-			}
-		}
-
-		/** @var GlobalPreferencesFactory $preferencesFactory */
-		$preferencesFactory = MediaWikiServices::getInstance()->getPreferencesFactory();
-		$preferencesFactory->setUser( $user );
-		$preferencesFactory->setGlobalPreferences( $prefs, $form->getContext() );
-
-		return false;
+		return true;
 	}
 
 	/**
