@@ -5,7 +5,8 @@
 			"Xiaomingyan",
 			"Yfdyh000",
 			"Suesue",
-			"A2093064"
+			"A2093064",
+			"Hanyanbo98"
 		]
 	},
 	"globalprefs-desc": "允许用户设置全域设置项",
@@ -37,5 +38,6 @@
 	"apihelp-query+globalpreferences-param-prop": "要包含的参数设置：",
 	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "全域参数设置。",
 	"apihelp-query+globalpreferences-paramvalue-prop-localoverrides": "用于全域参数设置的本地覆盖。",
-	"apierror-globalpreferences-notglobalized": "当前用户并非全域用户。"
+	"apierror-globalpreferences-notglobalized": "当前用户并非全域用户。",
+	"apihelp-globalpreferenceoverrides-param-resetkinds": "当<var>reset</var>选项设置时，要重置的参数设置类型列表。"
 }
