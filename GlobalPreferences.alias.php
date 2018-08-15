@@ -83,6 +83,16 @@ $specialPageAliases['pt'] = [
 	'GlobalPreferences' => [ 'Preferências_globais' ],
 ];
 
+/** Serbian (Cyrillic script) (српски (ћирилица)‎) */
+$specialPageAliases['sr-ec'] = [
+	'GlobalPreferences' => [ 'Глобална_подешавања' ],
+];
+
+/** Serbian (Latin script) (srpski (latinica)‎) */
+$specialPageAliases['sr-el'] = [
+	'GlobalPreferences' => [ 'Globalna_podešavanja' ],
+];
+
 /** Swedish (svenska) */
 $specialPageAliases['sv'] = [
 	'GlobalPreferences' => [ 'Globala_inställningar' ],
