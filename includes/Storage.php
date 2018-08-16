@@ -83,15 +83,22 @@ class Storage {
 	 * ones are saved.
 	 * @param string[] $newPrefs Keyed by the preference name.
 	 * @param string[] $knownPrefs Only work with the preferences we know about.
+	 * @param string[] $checkMatricesToClear List of check matrix controls that
+	 *        need their rows purged
 	 */
-	public function save( $newPrefs, $knownPrefs ) {
+	public function save( $newPrefs, $knownPrefs, array $checkMatricesToClear = [] ) {
 		$currentPrefs = $this->loadFromDB( DB_MASTER );
 
 		// Find records needing an insert or update
 		$save = [];
+		$delete = [];
 		foreach ( $newPrefs as $prop => $value ) {
-			if ( !isset( $currentPrefs[$prop] ) || $currentPrefs[$prop] != $value ) {
-				$save[$prop] = $value;
+			if ( $value !== null ) {
+				if ( !isset( $currentPrefs[$prop] ) || $currentPrefs[$prop] != $value ) {
+					$save[$prop] = $value;
+				}
+			} else {
+				$delete[] = $prop;
 			}
 		}
 
@@ -119,9 +126,21 @@ class Storage {
 		$keys = array_keys( $currentPrefs );
 		// Only delete prefs present on the local wiki
 		$keys = array_intersect( $keys, $knownPrefs );
-		$keys = array_diff( $keys, array_keys( $newPrefs ) );
-		if ( $keys ) {
-			$this->delete( $keys );
+		$keys = array_values( array_diff( $keys, array_keys( $newPrefs ) ) );
+		$delete = array_merge( $delete, $keys );
+
+		// And specifically nuke the rows of a deglobalized CheckMatrix
+		foreach ( $checkMatricesToClear as $matrix ) {
+			foreach ( array_keys( $currentPrefs ) as $pref ) {
+				if ( strpos( $pref, $matrix ) === 0 ) {
+					$delete[] = $pref;
+				}
+			}
+		}
+		$delete = array_unique( $delete );
+
+		if ( $delete ) {
+			$this->delete( $delete );
 		}
 
 		$key = $this->getCacheKey();

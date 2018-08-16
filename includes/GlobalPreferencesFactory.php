@@ -14,7 +14,10 @@
 namespace GlobalPreferences;
 
 use CentralIdLookup;
+use HTMLCheckMatrix;
+use HTMLForm;
 use IContextSource;
+use LogicException;
 use MapCacheLRU;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Preferences\DefaultPreferencesFactory;
@@ -22,6 +25,7 @@ use OOUI\ButtonWidget;
 use RequestContext;
 use SpecialPage;
 use SpecialPreferences;
+use Status;
 use User;
 
 /**
@@ -249,6 +253,115 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	}
 
 	/**
+	 * @inheritDoc
+	 */
+	protected function saveFormData( $formData, HTMLForm $form, array $formDescriptor ) {
+		if ( !$this->onGlobalPrefsPage( $form ) ) {
+			return parent::saveFormData( $formData, $form, $formDescriptor );
+		}
+		/** @var \User $user */
+		$user = $form->getModifiedUser();
+		$hiddenPrefs = $this->config->get( 'HiddenPrefs' );
+		$result = true;
+
+		// Difference from parent: removed 'editmyprivateinfo'
+		if ( !$user->isAllowed( 'editmyoptions' ) ) {
+			return Status::newFatal( 'mypreferencesprotected' );
+		}
+
+		// Filter input
+		$this->applyFilters( $formData, $formDescriptor, 'filterFromForm' );
+
+		// In the parent, we remove 'realname', but this is unnecessary
+		// here because GlobalPreferences removes this elsewhere, so
+		// the field will not even appear in this form
+
+		// Difference from parent: We are not collecting old user settings
+
+		foreach ( $this->getSaveBlacklist() as $b ) {
+			unset( $formData[$b] );
+		}
+
+		# If users have saved a value for a preference which has subsequently been disabled
+		# via $wgHiddenPrefs, we don't want to destroy that setting in case the preference
+		# is subsequently re-enabled
+		foreach ( $hiddenPrefs as $pref ) {
+			# If the user has not set a non-default value here, the default will be returned
+			# and subsequently discarded
+			$formData[$pref] = $user->getOption( $pref, null, true );
+		}
+
+		// Difference from parent: We are ignoring RClimit preference; the parent
+		// checks for changes in that preference to update a hidden one, but the
+		// RCFilters product is okay with having that be localized
+
+		// We are also not resetting unused preferences in the global context
+
+		// Setting the actual preference values:
+		$prefs = [];
+		foreach ( $formData as $name => $value ) {
+			// If this is the '-global' counterpart to a preference.
+			if ( self::isGlobalPrefName( $name ) && $value === true ) {
+				// Determine the real name of the preference.
+				$suffixLen = strlen( self::GLOBAL_EXCEPTION_SUFFIX );
+				$realName = substr( $name, 0, -$suffixLen );
+				if ( array_key_exists( $realName, $formData ) ) {
+					$prefs[$realName] = $formData[$realName];
+					if ( $prefs[$realName] === null ) {
+						// Special case: null means don't save this row, which can keep the previous value
+						$prefs[$realName] = '';
+					}
+				}
+			}
+		}
+
+		$matricesToClear = [];
+		// Now special processing for CheckMatrices
+		foreach ( $this->findCheckMatrices( $formDescriptor ) as $name ) {
+			$globalName = $name . self::GLOBAL_EXCEPTION_SUFFIX;
+			// Find all separate controls for this CheckMatrix
+			$checkMatrix = preg_grep( '/^' . preg_quote( $name ) . '/', array_keys( $formData ) );
+			if ( array_key_exists( $globalName, $formData ) && $formData[$globalName] ) {
+				// Setting is global, copy the checkmatrices
+				foreach ( $checkMatrix as $input ) {
+					$prefs[$input] = $formData[$input];
+				}
+				$prefs[$name] = true;
+			} else {
+				// Remove all the rows for this CheckMatrix
+				foreach ( $checkMatrix as $input ) {
+					unset( $prefs[$input] );
+				}
+				$matricesToClear[] = $name;
+			}
+			unset( $prefs[$globalName] );
+		}
+		$this->setUser( $user );
+		$this->setGlobalPreferences( $prefs, $form->getContext(), $matricesToClear );
+
+		return $result;
+	}
+
+	/**
+	 * Finds CheckMatrix inputs in a form descriptor
+	 *
+	 * @param array $formDescriptor
+	 * @return string[] Names of CheckMatrix options (parent only, not sub-checkboxes)
+	 */
+	private function findCheckMatrices( array $formDescriptor ) {
+		$result = [];
+		foreach ( $formDescriptor as $name => $info ) {
+			if ( ( isset( $info['type'] ) && $info['type'] == 'checkmatrix' ) ||
+				 ( isset( $info['class'] ) && $info['class'] == HTMLCheckMatrix::class )
+			) {
+				$result[] = $name;
+			}
+		}
+
+		return $result;
+	}
+
+	/**
 	 * Get the HTML fragment identifier for a given preferences section. This is the leading part
 	 * of the provided section name, up to a slash (if there is one).
 	 * @param string $section A section name, as used in a preference definition.
@@ -361,7 +474,7 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 		if ( !$id ) {
 			return false;
 		}
-		$storage = new Storage( $id );
+		$storage = $this->makeStorage();
 		return $storage->load( $skipCache );
 	}
 
@@ -369,9 +482,14 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	 * Save the user's global preferences.
 	 * @param array $newGlobalPrefs Array keyed by preference name.
 	 * @param IContextSource $context The request context.
+	 * @param string[] $checkMatricesToClear List of check matrix controls that
+	 *        need their rows purged
 	 * @return bool True on success, false if the user isn't global.
 	 */
-	public function setGlobalPreferences( $newGlobalPrefs, IContextSource $context ) {
+	public function setGlobalPreferences( $newGlobalPrefs,
+		IContextSource $context,
+		array $checkMatricesToClear = []
+	) {
 		$id = $this->getUserID();
 		if ( !$id ) {
 			return false;
@@ -385,9 +503,10 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 		$this->user = User::newFromId( $this->user->getId() );
 
 		// Save the global options.
-		$storage = new Storage( $this->getUserID() );
+		$storage = $this->makeStorage();
 		$knownPrefs = array_keys( $this->getFormDescriptor( $this->user, $context ) );
-		$storage->save( $newGlobalPrefs, $knownPrefs );
+
+		$storage->save( $newGlobalPrefs, $knownPrefs, $checkMatricesToClear );
 
 		// Return to the actual user object.
 		$this->user = $actualUser;
@@ -400,8 +519,7 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	 * Assumes that the user is globalized.
 	 */
 	public function resetGlobalUserSettings() {
-		$storage = new Storage( $this->getUserID() );
-		$storage->delete();
+		$this->makeStorage()->delete();
 	}
 
 	/**
@@ -425,5 +543,18 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 		$context = $context ?: RequestContext::getMain();
 		return $context->getTitle()
 		&& $context->getTitle()->isSpecial( 'Preferences' );
+	}
+
+	/**
+	 * Factory for preference storage
+	 *
+	 * @return Storage
+	 */
+	protected function makeStorage() {
+		$id = $this->getUserID();
+		if ( !$id ) {
+			throw new LogicException( 'User not set or is not global on call to ' . __METHOD__ );
+		}
+		return new Storage( $id );
 	}
 }
