@@ -4,7 +4,8 @@
 			"Joseph",
 			"Hedda",
 			"Rapsar",
-			"Sayginer"
+			"Sayginer",
+			"TmY e12"
 		]
 	},
 	"globalprefs-desc": "Kullanıcıların küresel tercihleri ayarlamasına izin verir",
@@ -14,6 +15,7 @@
 	"globalpreferences": "Küresel tercihler",
 	"globalprefs-info-label": "Küresel tercihler:",
 	"globalprefs-info-link": "Küresel tercihlerinizi ayarlayın",
+	"globalprefs-info-help": "Genel tercihler sayfası aracılığıyla ayarlanan tercihler, tüm vikilere uygulanır.",
 	"globalprefs-select-all": "Tümünü seç",
 	"apihelp-globalpreferences-example-change": "<kbd>Temayı</kbd> değiştir ve küçük tercihleri <kbd>gizle</kbd>.",
 	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Küresel tercihler."
