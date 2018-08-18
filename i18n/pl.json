@@ -20,6 +20,8 @@
 	"globalprefs-select-all": "Zaznacz/odznacz wszystkie",
 	"globalprefs-col-header": "Zaznacz wszystkie opcje poniżej jako globalne",
 	"apihelp-globalpreferences-summary": "Zmień globalne preferencje bieżącego użytkownika.",
+	"apihelp-globalpreferences-extended-description": "Tylko preferencje zarejestrowane dla bieżącej wiki mogą być zmieniane lokalnie.",
+	"apihelp-globalpreferences-param-optionvalue": "Wartość dla preferencji określona przez <var>optionname</var>.",
 	"apihelp-globalpreferences-example-reset": "Ustaw wszystkie preferencje na nieglobalne.",
 	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Preferencje globalne.",
 	"apihelp-query+globalpreferences-paramvalue-prop-localoverrides": "Lokalne nadpisania dla preferencji globalnych.",
