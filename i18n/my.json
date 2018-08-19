@@ -1,0 +1,20 @@
+{
+	"@metadata": {
+		"authors": [
+			"Dr Lotus Black"
+		]
+	},
+	"globalprefs-desc": "အသုံးပြုသူများကို ဂလိုဘယ် ရွေးချယ်စရာများအား သတ်မှတ်ရန် ခွင့်ပြုမည်",
+	"globalprefs-set-local-exception": "ဤ[[Special:GlobalPreferences#$1|ဂလိုဘယ် ရွေးချယ်စရာများ]]အတွက် ဒေသတွင်းခြွင်းချက်တစ်ခု သတ်မှတ်ရန်",
+	"globalprefs-has-local-exception": "ဤဂလိုဘယ် ရွေးချယ်စရာများတွင် [[Special:Preferences#$1|ဒေသတွင်းခြွင်းချက်တစ်ခု ဤဝီကီ၌ရှိသည်]]။",
+	"tooltip-globalprefs-check-label": "ဤသတ်မှတ်ချက်ကို ဂလိုဘယ်ပြုလုပ်ရန်",
+	"globalprefs-error-header": "အမှား",
+	"globalprefs-notglobal": "သင်၏အကောင့်သည် ဂလိုဂယ်အကောင့် မဟုတ်ပါ၊ ဂလိုဂယ် ရွေးချယ်စရာများကို မသတ်မှတ်နိုင်ပါ။",
+	"globalpreferences": "ဂလိုဘယ် ရွေးချယ်စရာများ",
+	"globalprefs-info-label": "ဂလိုဘယ် ရွေးချယ်စရာများ:",
+	"globalprefs-info-link": "သင်၏ ဂလိုဘယ် ရွေးချယ်စရာများကို သတ်မှတ်ရန်",
+	"globalprefs-info-help": "ဂလိုဘယ် ရွေးချယ်စရာစာမျက်နှာမှတဆင့် ရွေးချယ်စရာများသည် ဝီကီအားလုံးတွင် သက်ဝင်မည်ဖြစ်သည်။",
+	"globalprefs-restoreprefs": "ဂလိုဘယ် ရွေးချယ်စရာများအားလုံးကို ဖယ်ရှားရန် (အပိုင်းအားလုံးတွင်)",
+	"globalprefs-col-header": "ဂလိုဘယ်ဖြစ်ရန် အောက်ပါရွေးချယ်စရာများကို ရွေးပါ",
+	"apierror-globalpreferences-notglobalized": "လက်ရှိအသုံးပြုသူသည် ဂလိုဘယ်မဟုတ်ပါ။"
+}
