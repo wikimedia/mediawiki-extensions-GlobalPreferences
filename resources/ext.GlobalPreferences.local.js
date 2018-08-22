@@ -1,6 +1,6 @@
 ( function ( mw, $, OO ) {
 	'use strict';
-
+	var matrixWidget;
 	/**
 	 * Updates preference input based if user wants to set a local exception.
 	 *
@@ -16,7 +16,14 @@
 		enabled = checked;
 		$prefInput = $( ':input[name="' + prefName + '"], :input[name="' + prefName + '[]"]' );
 
-		if ( $prefInput.parent( '.oo-ui-widget' ).length > 0 ) {
+		if ( $prefInput.parents( '.mw-widget-checkMatrixWidget' ).length ) {
+			// Complex widget; make sure we find the parent widget rather
+			// than the individual inner widgets
+			matrixWidget = matrixWidget || OO.ui.infuse(
+				$prefInput.parents( '.mw-widget-checkMatrixWidget' )
+			);
+			matrixWidget.setDisabled( !enabled );
+		} else if ( $prefInput.parent( '.oo-ui-widget' ).length > 0 ) {
 			// First see if this is a OOUI field.
 			$prefInput = $prefInput
 				.parents( '[data-ooui]' )
