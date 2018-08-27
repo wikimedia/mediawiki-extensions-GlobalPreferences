@@ -5,7 +5,6 @@ namespace GlobalPreferences;
 use ApiQuery;
 use DatabaseUpdater;
 use HTMLForm;
-use Language;
 use MediaWiki\Auth\AuthManager;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
@@ -199,16 +198,11 @@ class Hooks {
 	 */
 	public static function onMediaWikiServices( MediaWikiServices $services ) {
 		$services->redefineService( 'PreferencesFactory', function ( MediaWikiServices $services ) {
-			global $wgContLang, $wgLanguageCode;
-
-			$wgContLang = Language::factory( $wgLanguageCode );
-			$wgContLang->initContLang();
-			$authManager = AuthManager::singleton();
-			$linkRenderer = $services->getLinkRendererFactory()->create();
-			$config = $services->getMainConfig();
-
 			$factory = new GlobalPreferencesFactory(
-				$config, $wgContLang, $authManager, $linkRenderer
+				$services->getMainConfig(),
+				$services->getContentLanguage(),
+				AuthManager::singleton(),
+				$services->getLinkRendererFactory()->create()
 			);
 			$factory->setLogger( LoggerFactory::getInstance( 'preferences' ) );
 
