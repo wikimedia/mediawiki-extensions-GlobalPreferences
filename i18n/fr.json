@@ -19,7 +19,7 @@
 	"globalprefs-reset-intro": "Vous pouvez utiliser cette page pour désactiver toutes les préférences globales sur tous les wikis et retourner à vos préférences locales. Cela n’affectera pas les préférences locales d’un wiki. Cette opération ne pourra pas être annulée.",
 	"globalprefs-restoreprefs": "Enlever toutes les préférences globales (dans toutes les sections)",
 	"globalprefs-select-all": "Basculer toutes les cases à cocher à « activé » ou « désactivé »",
-	"globalprefs-col-header": "Sélectionner les options ci-dessous pour être global",
+	"globalprefs-col-header": "Sélectionner ci-dessous les options qui seront globales",
 	"apihelp-globalpreferences-summary": "Modifier les préférences globales de l’utilisateur actuel.",
 	"apihelp-globalpreferences-extended-description": "Seules les préférences enregistrées pour le wiki actuel peuvent être modifiées localement.",
 	"apihelp-globalpreferences-param-reset": "Réinitialiser les préférences globales. Supprime tout ou, selon la valeur du paramètre <code>resetkinds</code>, certains types de préférences globales, supprimant ainsi leur caractère global.",
