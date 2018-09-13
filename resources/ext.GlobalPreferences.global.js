@@ -91,6 +91,8 @@
 			var allSelected = true;
 			$targets.each( function () {
 				allSelected = allSelected && $( this ).prop( 'checked' );
+				// Break as soon as we get to false
+				return allSelected;
 			} );
 			$selectAll.prop( 'checked', allSelected );
 		} );
