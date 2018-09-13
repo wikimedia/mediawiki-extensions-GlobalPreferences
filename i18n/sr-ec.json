@@ -20,6 +20,6 @@
 	"globalprefs-restoreprefs": "Уклони сва глобална подешавања (у свим одељцима)",
 	"globalprefs-select-all": "Укључите или искључите сва поља за потврду.",
 	"globalprefs-col-header": "Изабери опције испод да буду глобалне",
-	"apihelp-globalpreferences-summary": "Промена глобалних подешавања актуелног корисника.",
+	"apihelp-globalpreferences-summary": "Промена глобалних подешавања тренутног корисника.",
 	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Глобална подешавања."
 }

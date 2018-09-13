@@ -4,6 +4,8 @@
 			"Épine"
 		]
 	},
+	"globalprefs-set-local-exception": "دانانی بەھایەکی جیاوازی ناوخۆ بۆ ئەم [[Special:GlobalPreferences#$1|ھەڵبژاردە سەرانسەرییە]].",
+	"globalprefs-has-local-exception": "ئەم ھەڵبژاردە سەرانسەرییە [[Special:Preferences#$1|local بەھایەکی جیاوازی ھەیە]] لەسەر ئەم ویکییە.",
 	"globalpreferences": "ھەڵبژاردە سەرانسەرییەکان",
 	"globalprefs-info-label": "ھەڵبژاردە سەرانسەرییەکان:",
 	"globalprefs-info-help": "ئەو ھەڵبژاردانەی بە ھەڵبژاردە سەرانسەرییەکان دادەنرێت بۆ ھەموو ویکییەکان پەسەند دەبن."
