@@ -108,7 +108,8 @@
 				$checkbox,
 				$allGlobalCheckboxes;
 
-			// Add the checkbox. Its label is already present, so we just need to update the label tooltip.
+			// Add the checkbox. Its label is already present,
+			// so we just need to update the label tooltip.
 			$checkbox = $( '<input>', { id: 'globalprefs-select-all', type: 'checkbox', title: selectAll } );
 			$( this ).prepend( $checkbox );
 			$( this ).find( 'label' ).attr( 'title', selectAll );
