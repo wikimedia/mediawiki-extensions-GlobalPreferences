@@ -7,7 +7,7 @@
 		]
 	},
 	"globalprefs-desc": "Permet aux utilisateurs de fixer des préférences globales",
-	"globalprefs-set-local-exception": "Lever une exception locale pour cette [[Special:GlobalPreferences#$1|préférence globale]].",
+	"globalprefs-set-local-exception": "Définir une exception locale pour cette [[Special:GlobalPreferences#$1|préférence globale]].",
 	"globalprefs-has-local-exception": "Cette préférence globale a une [[Special:Preferences#$1|exception locale sur ce wiki]].",
 	"tooltip-globalprefs-check-label": "Rendre cette initialisation globale",
 	"globalprefs-error-header": "Erreur",
