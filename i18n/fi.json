@@ -3,7 +3,8 @@
 		"authors": [
 			"Nike",
 			"Stryn",
-			"Pyscowicz"
+			"Pyscowicz",
+			"01miki10"
 		]
 	},
 	"globalprefs-desc": "Antaa käyttäjien asettaa järjestelmänlaajuiset asetukset",
@@ -19,5 +20,10 @@
 	"globalprefs-restoreprefs": "Poista kaikki järjestelmänlaajuiset asetukset (kaikissa osioissa)",
 	"globalprefs-select-all": "Valitse tai tyhjennä kaikki valintaruudut",
 	"globalprefs-col-header": "Valitse kaikki alla olevat valinnat ja tee niistä järjestelmänlaajuiset",
-	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Järjestelmänlaajuiset asetukset."
+	"apihelp-globalpreferences-summary": "Muuta nykyisen käyttäjän järjestelmänlaajuisia asetuksia.",
+	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Järjestelmänlaajuiset asetukset.",
+	"apihelp-query+globalpreferences-paramvalue-prop-localoverrides": "Järjestelmänlaajuisten asetusten paikalliset poikkeukset.",
+	"apierror-globalpreferences-notglobalized": "Nykyinen käyttäjä ei ole järjestelmänlaajuinen.",
+	"apihelp-globalpreferenceoverrides-summary": "Muuta nykyisen käyttäjän järjestelmänlaajuisten asetusten paikallisia poikkeuksia.",
+	"apihelp-globalpreferenceoverrides-example-reset": "Poista kaikki paikalliset poikkeukset."
 }
