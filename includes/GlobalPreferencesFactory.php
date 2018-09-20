@@ -163,15 +163,18 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 					'mw-globalprefs-local-exception',
 					'mw-globalprefs-local-exception-for-' . $name,
 				];
-				$secFragment = static::getSectionFragmentId( $def['section'] );
+				$section = $def['section'] ?? '';
+				$secFragment = static::getSectionFragmentId( $section );
 				$labelMsg = $context->msg( 'globalprefs-set-local-exception', [ $secFragment ] );
-				$modifiedPrefs[ $localExName ] = [
+				$modifiedPrefs[$localExName] = [
 					'type' => 'toggle',
 					'label-raw' => $labelMsg->parse(),
 					'default' => $localExValueUser,
-					'section' => $def['section'],
 					'cssclass' => implode( ' ', $cssClasses ),
 				];
+				if ( $section !== '' ) {
+					$modifiedPrefs[$localExName]['section'] = $section;
+				}
 			}
 		}
 		$preferences = $modifiedPrefs;
