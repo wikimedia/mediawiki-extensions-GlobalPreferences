@@ -46,7 +46,7 @@
 			} );
 			checkbox.on( 'change', function ( isChecked ) {
 				var sectionID = checkbox.$element.closest( '.oo-ui-layout.oo-ui-tabPanelLayout' ).prop( 'id' );
-				if ( selectAllCheckboxesOngoing ) {
+				if ( selectAllCheckboxesOngoing && checkboxesBySection[ sectionID ] ) {
 					checkboxesBySection[ sectionID ].forEach( function ( checkboxWidget ) {
 						checkboxWidget.setSelected( isChecked );
 					} );
@@ -96,7 +96,13 @@
 				$associatedWidget = $( ':input[name="' + prefName + '"], :input[name="' + prefName + '[]"]' )
 					.closest( '.oo-ui-widget[data-ooui]' );
 
-			associatedWidgetOOUI = OO.ui.infuse( $associatedWidget );
+			try {
+				associatedWidgetOOUI = OO.ui.infuse( $associatedWidget );
+			} catch ( err ) {
+				// If, for whatever reason, we could not find an associated widget,
+				// or infuse it, fail gracefully and move to the next iteration
+				return true;
+			}
 
 			// Store references to associated widgets
 			widgets[ prefName ] = associatedWidgetOOUI;
