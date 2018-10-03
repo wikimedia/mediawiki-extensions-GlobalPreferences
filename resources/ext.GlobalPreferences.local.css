@@ -11,3 +11,7 @@ form.mw-htmlform table td {
 	/* Replace the collapsed border-spacing with padding. */
 	padding: 2px;
 }
+
+.globalprefs-section-header {
+	padding-left: 0;
+}
