@@ -5,11 +5,12 @@
 			"Southparkfan",
 			"Mar(c)",
 			"Mainframe98",
-			"Akoopal"
+			"Akoopal",
+			"Jeroen N"
 		]
 	},
 	"globalprefs-desc": "Maakt het mogelijk voor gebruikers om globale voorkeuren in te stellen",
-	"globalprefs-set-local-exception": "Stel een lokale uitzondering voor deze [[Special:GlobalPreferences#$1|globale voorkeur]].",
+	"globalprefs-set-local-exception": "Stel een lokale uitzondering in voor deze [[Special:GlobalPreferences#$1|globale voorkeur]].",
 	"globalprefs-has-local-exception": "Deze globale voorkeur heeft een [[Special:Preferences#$1|lokale uitzondering op deze wiki]].",
 	"tooltip-globalprefs-check-label": "Deze voorkeur globaal maken",
 	"globalprefs-error-header": "Fout",

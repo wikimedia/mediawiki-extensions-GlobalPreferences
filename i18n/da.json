@@ -2,11 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"Christian List",
-			"Sarrus"
+			"Sarrus",
+			"Saederup92"
 		]
 	},
 	"globalprefs-desc": "Giver brugerne mulighed for at angive globale indstillinger",
 	"globalprefs-set-local-exception": "Sæt en lokal undtagelse for denne [[Special:GlobalPreferences#$1|globale indstilling]].",
+	"tooltip-globalprefs-check-label": "Gør denne indstilling global",
 	"globalprefs-error-header": "Fejl",
 	"globalprefs-notglobal": "Din konto er ikke en global konto og kan ikke angive globale indstillinger.",
 	"globalpreferences": "Globale indstillinger",
