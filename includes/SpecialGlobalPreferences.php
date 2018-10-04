@@ -62,11 +62,7 @@ class SpecialGlobalPreferences extends SpecialPreferences {
 		// Add module styles and scripts separately
 		// so non-JS users get the styles quicker and to avoid a FOUC.
 		$this->getOutput()->addModuleStyles( 'ext.GlobalPreferences.global-nojs' );
-		if ( static::isOouiEnabled( $this->getContext() ) ) {
-			$this->getOutput()->addModules( 'ext.GlobalPreferences.global.ooui' );
-		} else {
-			$this->getOutput()->addModules( 'ext.GlobalPreferences.global' );
-		}
+		$this->getOutput()->addModules( 'ext.GlobalPreferences.global.ooui' );
 	}
 
 	/**
@@ -77,11 +73,7 @@ class SpecialGlobalPreferences extends SpecialPreferences {
 	 */
 	protected function getFormObject( $user, IContextSource $context ) {
 		$preferencesFactory = MediaWikiServices::getInstance()->getPreferencesFactory();
-		if ( static::isOouiEnabled( $this->getContext() ) ) {
-			$form = $preferencesFactory->getForm( $user, $context, GlobalPreferencesFormOOUI::class );
-		} else {
-			$form = $preferencesFactory->getForm( $user, $context, GlobalPreferencesForm::class );
-		}
+		$form = $preferencesFactory->getForm( $user, $context, GlobalPreferencesFormOOUI::class );
 		return $form;
 	}
 
