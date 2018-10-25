@@ -46,5 +46,6 @@
 	"apihelp-globalpreferenceoverrides-param-optionname": "覆蓋名稱，其應設定為由 <var>optionvalue</var> 所提供的值。",
 	"apihelp-globalpreferenceoverrides-param-optionvalue": "由 <var>optionname</var> 所指定，用於覆蓋的值。",
 	"apihelp-globalpreferenceoverrides-example-reset": "移除所有本地覆蓋內容。",
-	"apihelp-globalpreferenceoverrides-example-change": "替 <kbd>skin</kbd> 以及 <kbd>hideminor</kbd> 的偏好設置來設定或更改覆蓋內容。"
+	"apihelp-globalpreferenceoverrides-example-change": "替 <kbd>skin</kbd> 以及 <kbd>hideminor</kbd> 的偏好設置來設定或更改覆蓋內容。",
+	"apiwarn-globally-overridden": "{{PLURAL:$2|選項|選項}}$1{{PLURAL:$2|已|已}}全域覆蓋。"
 }
