@@ -21,5 +21,6 @@
 	"globalprefs-select-all": "Укључите или искључите сва поља за потврду.",
 	"globalprefs-col-header": "Изабери опције испод да буду глобалне",
 	"apihelp-globalpreferences-summary": "Промена глобалних подешавања тренутног корисника.",
-	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Глобална подешавања."
+	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Глобална подешавања.",
+	"apiwarn-globally-overridden": "{{PLURAL:$2|Опција|Опције}} $1 {{PLURAL:$2|је глобално замењена|су глобално замењене}}."
 }

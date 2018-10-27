@@ -43,5 +43,6 @@
 	"apihelp-globalpreferenceoverrides-param-optionname": "שם החריגה שתוגדר לערך שצוין בפרמטר <var>optionvalue</var>.",
 	"apihelp-globalpreferenceoverrides-param-optionvalue": "הערך של החריגה שצוינה בפרמטר <var>optionname</var>.",
 	"apihelp-globalpreferenceoverrides-example-reset": "הסרת כל החריגות המקומיות.",
-	"apihelp-globalpreferenceoverrides-example-change": "הגדרה או שינוי של חריגות עבור ההעדפות <kbd>skin</kbd> ו־<kbd>hideminor</kbd>."
+	"apihelp-globalpreferenceoverrides-example-change": "הגדרה או שינוי של חריגות עבור ההעדפות <kbd>skin</kbd> ו־<kbd>hideminor</kbd>.",
+	"apiwarn-globally-overridden": "{{PLURAL:$2|האופציה $1 דרוסה|האופציות $1 דרוסות}} גלובלית."
 }
