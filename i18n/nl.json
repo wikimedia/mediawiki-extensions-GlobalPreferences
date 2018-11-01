@@ -23,5 +23,6 @@
 	"globalprefs-restoreprefs": "Alle globale voorkeuren verwijderen (in alle onderdelen)",
 	"globalprefs-select-all": "Alle selectievakjes aan of uit zetten",
 	"globalprefs-col-header": "Selecteer opties hier beneden die globaal moeten zijn",
+	"apihelp-globalpreferences-summary": "De globale voorkeuren van de huidige gebruiker wijzigen.",
 	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Globale voorkeuren"
 }
