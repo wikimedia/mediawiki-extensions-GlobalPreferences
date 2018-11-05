@@ -51,5 +51,6 @@
 	"apihelp-globalpreferenceoverrides-param-optionname": "Название замены, которая задаётся значением переменной <var>optionvalue</var>.",
 	"apihelp-globalpreferenceoverrides-param-optionvalue": "Значение настройки, заданной <var>optionname</var>.",
 	"apihelp-globalpreferenceoverrides-example-reset": "Убрать все локальные замены.",
-	"apihelp-globalpreferenceoverrides-example-change": "Задать или изменить замены для настроек <kbd>skin</kbd> и <kbd>hideminor</kbd>."
+	"apihelp-globalpreferenceoverrides-example-change": "Задать или изменить замены для настроек <kbd>skin</kbd> и <kbd>hideminor</kbd>.",
+	"apiwarn-globally-overridden": "{{PLURAL:$2|Опция|Опции}} $1 {{PLURAL:$2|глобально заменена|глобально заменены}}."
 }
