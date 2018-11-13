@@ -1,4 +1,4 @@
-( function ( mw, $, OO ) {
+( function () {
 	'use strict';
 	var matrixWidget;
 	/**
@@ -79,4 +79,4 @@
 		}
 	} );
 
-}( mediaWiki, jQuery, OO ) );
+}() );

@@ -1,4 +1,4 @@
-( function ( mw, $ ) {
+( function () {
 	'use strict';
 	/**
 	 * Store all OOUI widgets with their reference so we can toggle
@@ -16,7 +16,8 @@
 		// For each preferences form tab, add a select-all checkbox to the header.
 		$( '.globalprefs-section-header' ).each( function () {
 			var selectAll = mw.message( 'globalprefs-select-all' ).text(),
-				// Add the checkbox. Its label is already present, so we just need to update the label tooltip.
+				// Add the checkbox. Its label is already present,
+				// so we just need to update the label tooltip.
 				checkbox = new OO.ui.CheckboxInputWidget( {
 					inputId: 'globalprefs-select-all',
 					title: selectAll
@@ -139,4 +140,4 @@
 		initialize();
 	} );
 
-}( mediaWiki, jQuery ) );
+}() );
