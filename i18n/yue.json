@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Hello903hello"
+		]
+	},
+	"globalprefs-error-header": "錯",
+	"globalpreferences": "全域喜好設定",
+	"globalprefs-info-label": "全域喜好設定：",
+	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "全域喜好設定。"
+}
