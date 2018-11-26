@@ -76,16 +76,21 @@ div.mw-globalprefs-global-check input.mw-globalprefs-global-check {
 	width: auto;
 }
 
-/** Remove fieldset border to distinguish it from other 'proper' fieldsets. */
 fieldset.globalprefs-section-header,
 .client-js #preferences fieldset.globalprefs-section-header {
+	/* Remove fieldset border to distinguish it from other 'proper' fieldsets. */
 	border: 0;
+	/* Remove fieldset general selector's `padding` */
+	padding-left: 0;
+}
+
+fieldset.globalprefs-section-header > .oo-ui-checkboxInputWidget {
+	margin-right: 0.857125em; /* Equals ~12px at base `font-size` of 14px; Increasing slightly over normal distance to emphasize importance of first checkbox */
 }
 
 /** Embolden the column header (both JS and non-JS). */
 fieldset.globalprefs-section-header label {
-	font-weight: bolder;
-	margin-left: 5px;
+	font-weight: bold;
 }
 
 /* Style fixes for Extension:BetaFeatures. */
