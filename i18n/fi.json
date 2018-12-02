@@ -4,7 +4,8 @@
 			"Nike",
 			"Stryn",
 			"Pyscowicz",
-			"01miki10"
+			"01miki10",
+			"Pxos"
 		]
 	},
 	"globalprefs-desc": "Antaa käyttäjien asettaa järjestelmänlaajuiset asetukset",
@@ -15,8 +16,8 @@
 	"globalprefs-notglobal": "Tunnuksesi ei ole järjestelmänlaajuinen tunnus, joten siihen ei voi asettaa järjestelmänlaajuisia asetuksia.",
 	"globalpreferences": "Järjestelmänlaajuiset asetukset",
 	"globalprefs-info-label": "Järjestelmänlaajuiset asetukset:",
-	"globalprefs-info-link": "Aseta järjestelmänlaajuiset asetuksesi",
-	"globalprefs-info-help": "Järjestelmänlaajuisten asetusten kautta asetetut valinnat koskevat kaikkia wikejä.",
+	"globalprefs-info-link": "Määritä järjestelmänlaajuiset asetuksesi",
+	"globalprefs-info-help": "Järjestelmänlaajuisten asetusten kautta määritetyt valinnat ovat voimassa kaikissa wikeissä.",
 	"globalprefs-restoreprefs": "Poista kaikki järjestelmänlaajuiset asetukset (kaikissa osioissa)",
 	"globalprefs-select-all": "Valitse tai tyhjennä kaikki valintaruudut",
 	"globalprefs-col-header": "Valitse kaikki alla olevat valinnat ja tee niistä järjestelmänlaajuiset",
