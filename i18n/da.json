@@ -13,5 +13,7 @@
 	"globalprefs-notglobal": "Din konto er ikke en global konto og kan ikke angive globale indstillinger.",
 	"globalpreferences": "Globale indstillinger",
 	"globalprefs-info-label": "Globale indstillinger:",
-	"globalprefs-info-link": "Angiv dine globale indstillinger"
+	"globalprefs-info-link": "Angiv dine globale indstillinger",
+	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Globale indstillinger.",
+	"apierror-globalpreferences-notglobalized": "Nuværende bruger er ikke global."
 }
