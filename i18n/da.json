@@ -14,6 +14,9 @@
 	"globalpreferences": "Globale indstillinger",
 	"globalprefs-info-label": "Globale indstillinger:",
 	"globalprefs-info-link": "Angiv dine globale indstillinger",
+	"globalprefs-restoreprefs": "Fjern alle globale indstillinger (i alle sektioner)",
+	"apihelp-globalpreferences-example-reset-one": "Gør en indstilling ikke-global.",
+	"apihelp-globalpreferences-example-reset": "Gør alle indstillinger ikke-globale.",
 	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Globale indstillinger.",
 	"apierror-globalpreferences-notglobalized": "Nuværende bruger er ikke global."
 }
