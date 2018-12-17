@@ -3,7 +3,8 @@
 		"authors": [
 			"Christian List",
 			"Sarrus",
-			"Saederup92"
+			"Saederup92",
+			"Weblars"
 		]
 	},
 	"globalprefs-desc": "Giver brugerne mulighed for at angive globale indstillinger",
@@ -14,7 +15,9 @@
 	"globalpreferences": "Globale indstillinger",
 	"globalprefs-info-label": "Globale indstillinger:",
 	"globalprefs-info-link": "Angiv dine globale indstillinger",
+	"globalprefs-info-help": "Indstillinger som er angivet på den globale indstillingsside vil gælde for alle wikier.",
 	"globalprefs-restoreprefs": "Fjern alle globale indstillinger (i alle sektioner)",
+	"globalprefs-col-header": "Vælg hvilke indstillinger som skal være globale",
 	"apihelp-globalpreferences-example-reset-one": "Gør en indstilling ikke-global.",
 	"apihelp-globalpreferences-example-reset": "Gør alle indstillinger ikke-globale.",
 	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Globale indstillinger.",
