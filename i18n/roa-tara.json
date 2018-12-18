@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Joetaras"
+		]
+	},
+	"globalprefs-desc": "Permette a le utinde de 'mbostà preferenze globbale",
+	"globalprefs-error-header": "Errore",
+	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Preferenze globbale."
+}
