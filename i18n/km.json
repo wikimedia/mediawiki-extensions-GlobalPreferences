@@ -1,13 +1,21 @@
 {
 	"@metadata": {
 		"authors": [
-			"Sovichet"
+			"Sovichet",
+			"គីមស៊្រុន"
 		]
 	},
-	"globalprefs-desc": "អនុញ្ញាត​ឲ្យ​អ្នក​ប្រើ​អាច​កំណត់​ចំណូល​ចិត្ត​ជា​សាកល",
-	"globalprefs-error-header": "កំហុស",
+	"globalprefs-desc": "អនុញ្ញាត​ឲ្យ​អ្នក​ប្រើ​ប្រាស់​កំណត់​ចំណង់ចំណូល​ចិត្ត​សាកល",
+	"globalprefs-set-local-exception": "កំណត់ករណីលើកលែកសម្រាប់[[Special:GlobalPreferences#$1|ចំណង់ចំណូលចិត្តសាកល]]។",
+	"globalprefs-has-local-exception": "ចំណង់ចំណូលចិត្តសាកលនេះមាន[[Special:Preferences#$1|ករណីលើកលែងនៅក្នុងវិគីនេះ]]។",
+	"tooltip-globalprefs-check-label": "ដាក់ការកំណត់នេះជាសាកល",
+	"globalprefs-error-header": "បញ្ហា",
 	"globalprefs-notglobal": "គណនី​របស់​អ្នក​មិន​មែន​ជា​គណនី​សាកល​ទេ ដូច្នេះ​ក៏​មិន​អាច​កំណត់​ចំណូល​ចិត្ត​សាកល​បាន​ដែរ។",
 	"globalpreferences": "ចំណូល​ចិត្ត​ជា​សាកល",
-	"globalprefs-info-label": "ចំណូល​ចិត្ត​ជា​សាកល៖",
-	"globalprefs-info-link": "កំណត់​ចំណូល​ចិត្ត​ជា​សាកល​របស់​អ្នក"
+	"globalprefs-info-label": "ចំណង់ចំណូល​ចិត្ត​សាកល៖",
+	"globalprefs-info-link": "កំណត់​ចំណូល​ចិត្ត​ជា​សាកល​របស់​អ្នក",
+	"globalprefs-info-help": "ចំណង់ចំណូលចិត្តដែលបានកំណត់តាមរយៈទំព័រចំណង់ចំណូលចិត្តសាកលនឹងត្រូវអនុវត្តទៅលើវិគីទាំងអស់។",
+	"globalprefs-restoreprefs": "ដកចេញចំណង់ចំណូលចិត្តសាកលទាំងអស់ (ក្នុងផ្នែកទាំងអស់)",
+	"globalprefs-col-header": "ជ្រើសរើសជម្រើសខាងក្រោមជាចំណង់ចំណូលចិត្តសាកល",
+	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "ចំណង់ចំណូល​ចិត្ត​សាកល។"
 }
