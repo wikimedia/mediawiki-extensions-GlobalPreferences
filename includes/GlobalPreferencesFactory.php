@@ -138,6 +138,15 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	 * @return mixed[][]
 	 */
 	protected function getPreferencesLocal( $preferences, $globalPrefNames, IContextSource $context ) {
+		if ( !is_array( $globalPrefNames ) ) {
+			$this->logger->error( 'Invalid global preferences for user {user}: {prefs}', [
+				'user' => $this->user->getName(),
+				'prefs' => print_r( $globalPrefNames, true ),
+			] );
+			// HACK: gotta fix the root cause
+			$globalPrefNames = [];
+		}
+
 		$this->logger->debug( "Creating local preferences array for '{$this->user->getName()}'" );
 		$modifiedPrefs = [];
 		foreach ( $preferences as $name => $def ) {
