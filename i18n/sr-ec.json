@@ -6,7 +6,7 @@
 			"Prevodim"
 		]
 	},
-	"globalprefs-desc": "Дозвољава корисницима да постављају глобална подешавања",
+	"globalprefs-desc": "Омогућава корисницима да постављају глобална подешавања",
 	"globalprefs-set-local-exception": "Постави локални изузетак за ово [[Special:GlobalPreferences#$1|глобално подешавање]].",
 	"globalprefs-has-local-exception": "Ово глобално подешавање има [[Special:Preferences#$1|локални изузетак на овом викију]].",
 	"tooltip-globalprefs-check-label": "Начините ово подешавање глобалним",
