@@ -2,10 +2,12 @@
 	/** WikimediaUI background color layer 3. */
 	background-color: #eaecf0;
 }
+
 form.mw-htmlform table {
 	/* Collapse the border so the hover color doesn't have lines through it. */
 	border-collapse: collapse;
 }
+
 form.mw-htmlform table th,
 form.mw-htmlform table td {
 	/* Replace the collapsed border-spacing with padding. */

@@ -66,11 +66,12 @@ div.mw-globalprefs-global-check {
 	min-width: 2em;
 	text-align: left;
 }
+
 div.mw-globalprefs-global-check div.mw-input,
-div.mw-htmlform-field-HTMLUsersMultiselectField div.mw-input
-{
+div.mw-htmlform-field-HTMLUsersMultiselectField div.mw-input {
 	display: inline;
 }
+
 div.mw-globalprefs-global-check input.mw-globalprefs-global-check {
 	float: none;
 	width: auto;
@@ -101,11 +102,13 @@ fieldset#mw-prefsection-betafeatures .mw-globalprefs-global-check .mw-input {
 	font-size: 24px;
 	margin-top: 0.3em;
 }
+
 fieldset#mw-prefsection-betafeatures .mw-globalprefs-checkbox-for-betafeatures-auto-enroll .mw-input {
 	padding-top: 0;
 	font-size: inherit;
 	margin-top: 0;
 }
+
 /* Hide user counts as they're for current wiki only */
 .mw-ui-feature-user-count {
 	display: none;
