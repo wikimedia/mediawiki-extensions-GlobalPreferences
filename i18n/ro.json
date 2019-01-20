@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Strainu"
+		]
+	},
+	"globalprefs-desc": "Permite utilizatorilor să seteze preferințe globale",
+	"tooltip-globalprefs-check-label": "Fă această setare globală",
+	"globalprefs-error-header": "Eroare",
+	"globalpreferences": "Preferințe globale",
+	"globalprefs-info-label": "Preferințe globale:",
+	"globalprefs-info-link": "Setați-vă preferințele globale",
+	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Preferințe globale.",
+	"apierror-globalpreferences-notglobalized": "Utilizatorul curent nu are un cont global.",
+	"apihelp-globalpreferenceoverrides-example-reset": "Elimină toate valorile locale."
+}
