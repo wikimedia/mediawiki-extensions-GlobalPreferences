@@ -14,6 +14,7 @@
 namespace GlobalPreferences;
 
 use CentralIdLookup;
+use Exception;
 use HTMLCheckMatrix;
 use HTMLForm;
 use IContextSource;
@@ -109,9 +110,17 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	 */
 	public function getFormDescriptor( User $user, IContextSource $context ) {
 		$this->setUser( $user );
-		$globalPrefNames = array_keys( $this->getGlobalPreferencesValues( Storage::SKIP_CACHE ) );
+		$prefs = $this->getGlobalPreferencesValues( Storage::SKIP_CACHE );
+		// The above function can return false
+		$globalPrefNames = $prefs ? array_keys( $prefs ) : [];
 		$preferences = parent::getFormDescriptor( $user, $context );
 		if ( $this->onGlobalPrefsPage() ) {
+			if ( $prefs === false ) {
+				throw new Exception(
+					"Attempted to load global preferences page for {$user->getName()} whose "
+					. 'preference values failed to load'
+				);
+			}
 			return $this->getPreferencesGlobal( $preferences, $globalPrefNames, $context );
 		}
 		return $this->getPreferencesLocal( $preferences, $globalPrefNames, $context );
@@ -137,16 +146,10 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	 * @param IContextSource $context The current request context
 	 * @return mixed[][]
 	 */
-	protected function getPreferencesLocal( $preferences, $globalPrefNames, IContextSource $context ) {
-		if ( !is_array( $globalPrefNames ) ) {
-			$this->logger->error( 'Invalid global preferences for user {user}: {prefs}', [
-				'user' => $this->user->getName(),
-				'prefs' => print_r( $globalPrefNames, true ),
-			] );
-			// HACK: gotta fix the root cause
-			$globalPrefNames = [];
-		}
-
+	protected function getPreferencesLocal( array $preferences,
+		array $globalPrefNames,
+		IContextSource $context
+	) {
 		$this->logger->debug( "Creating local preferences array for '{$this->user->getName()}'" );
 		$modifiedPrefs = [];
 		foreach ( $preferences as $name => $def ) {
@@ -212,7 +215,10 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	 * @param IContextSource $context The current request context
 	 * @return mixed[][]
 	 */
-	protected function getPreferencesGlobal( $preferences, $globalPrefNames, $context ) {
+	protected function getPreferencesGlobal( array $preferences,
+		array $globalPrefNames,
+		IContextSource $context
+	) {
 		// Add all corresponding new global fields.
 		$allPrefs = [];
 		foreach ( $preferences as $pref => $def ) {
@@ -471,6 +477,9 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	public function getGlobalPreferencesValues( $skipCache = false ) {
 		$id = $this->getUserID();
 		if ( !$id ) {
+			$this->logger->warning( "Couldn't find a global ID for user {user}",
+				[ 'user' => $this->user->getName() ]
+			);
 			return false;
 		}
 		$storage = $this->makeStorage();
