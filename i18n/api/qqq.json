@@ -1,0 +1,36 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kunal Mehta",
+			"Shirayuki",
+			"Liuxinyu970226",
+			"Sam Wilson"
+		]
+	},
+	"apihelp-globalpreferences-summary": "{{doc-apihelp-summary|globalpreferences}}",
+	"apihelp-globalpreferences-extended-description": "{{doc-apihelp-extended-description|globalpreferences}}",
+	"apihelp-globalpreferences-param-reset": "{{doc-apihelp-param|globalpreferences|reset}}",
+	"apihelp-globalpreferences-param-resetkinds": "{{doc-apihelp-param|globalpreferences|resetkinds}}",
+	"apihelp-globalpreferences-param-change": "{{doc-apihelp-param|globalpreferences|change}}",
+	"apihelp-globalpreferences-param-optionname": "{{doc-apihelp-param|globalpreferences|optionname}}",
+	"apihelp-globalpreferences-param-optionvalue": "{{doc-apihelp-param|globalpreferences|optionvalue}}",
+	"apihelp-globalpreferences-example-reset-one": "{{doc-apihelp-example|globalpreferences}}",
+	"apihelp-globalpreferences-example-reset": "{{doc-apihelp-example|globalpreferences}}",
+	"apihelp-globalpreferences-example-change": "{{doc-apihelp-example|globalpreferences}}",
+	"apihelp-query+globalpreferences-summary": "{{doc-apihelp-summary|query+globalpreferences}}",
+	"apihelp-query+globalpreferences-extended-description": "{{doc-apihelp-extended-description|query+globalpreferences}}",
+	"apihelp-query+globalpreferences-param-prop": "{{doc-apihelp-param|query+globalpreferences|prop}}",
+	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "{{doc-apihelp-paramvalue|query+globalpreferences|prop|preferences}}",
+	"apihelp-query+globalpreferences-paramvalue-prop-localoverrides": "{{doc-apihelp-paramvalue|query+globalpreferences|prop|localoverrides}}",
+	"apierror-globalpreferences-notglobalized": "{{doc-apierror}}",
+	"apihelp-globalpreferenceoverrides-summary": "{{doc-apihelp-summary|globalpreferenceoverrides}}",
+	"apihelp-globalpreferenceoverrides-extended-description": "{{doc-apihelp-extended-description|globalpreferenceoverrides}}",
+	"apihelp-globalpreferenceoverrides-param-reset": "{{doc-apihelp-param|globalpreferenceoverrides|reset}}",
+	"apihelp-globalpreferenceoverrides-param-resetkinds": "{{doc-apihelp-param|globalpreferenceoverrides|resetkinds}}",
+	"apihelp-globalpreferenceoverrides-param-change": "{{doc-apihelp-param|globalpreferenceoverrides|change}}",
+	"apihelp-globalpreferenceoverrides-param-optionname": "{{doc-apihelp-param|globalpreferenceoverrides|optionname}}",
+	"apihelp-globalpreferenceoverrides-param-optionvalue": "{{doc-apihelp-param|globalpreferenceoverrides|optionvalue}}",
+	"apihelp-globalpreferenceoverrides-example-reset": "{{doc-apihelp-example|globalpreferenceoverrides}}",
+	"apihelp-globalpreferenceoverrides-example-change": "{{doc-apihelp-example|globalpreferenceoverrides}}",
+	"apiwarn-globally-overridden": "{{doc-apiwarn}}\nParameters:\n* $1 - human-readable list of options\n* $2 - number of options in $1 for {{PLURAL}}"
+}
