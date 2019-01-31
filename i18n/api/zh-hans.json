@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Hanyanbo98",
+			"Liuxinyu970226"
+		]
+	},
+	"apihelp-globalpreferences-summary": "更改当前用户的全域参数设置。",
+	"apihelp-globalpreferences-extended-description": "只有为当前wiki注册的参数可以本地更改。",
+	"apihelp-globalpreferences-param-reset": "重置全域参数设置。移除所有（或基于<code>resetkinds</code>参数值，一些全域参数设置类型），并使它们不再全域有效。",
+	"apihelp-globalpreferences-param-resetkinds": "当<var>reset</var>选项设置时，要重置的参数设置类型列表。",
+	"apihelp-globalpreferences-param-change": "更改列表，格式化为“名称=值”（例如skin=vector）。如果未提供值（甚至没有等号，例如preferencename|otherpreference|...），那么参数将不会全域设置。如果传递的任何值包含竖线字符（<kbd>|</kbd>），请使用[[Special:ApiHelp/main#main/datatypes|备选多值分隔符]]以便正确操作。",
+	"apihelp-globalpreferences-param-optionname": "参数设置名称，其应设置为由<var>optionvalue</var>提供的值。",
+	"apihelp-globalpreferences-param-optionvalue": "由<var>optionname</var>指定，用于参数设置的值。",
+	"apihelp-globalpreferences-example-reset-one": "将单个参数设置取消全域。",
+	"apihelp-globalpreferences-example-reset": "将所有参数设置取消全域。",
+	"apihelp-globalpreferences-example-change": "更改<kbd>skin</kbd>和<kbd>hideminor</kbd>参数设置。",
+	"apihelp-query+globalpreferences-summary": "检索当前用户的全域参数设置。",
+	"apihelp-query+globalpreferences-extended-description": "可以检索全域参数设置及其本地覆盖。",
+	"apihelp-query+globalpreferences-param-prop": "要包含的参数设置：",
+	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "全域参数设置。",
+	"apihelp-query+globalpreferences-paramvalue-prop-localoverrides": "用于全域参数设置的本地覆盖。",
+	"apierror-globalpreferences-notglobalized": "当前用户并非全域用户。",
+	"apihelp-globalpreferenceoverrides-param-resetkinds": "当<var>reset</var>选项设置时，要重置的参数设置类型列表。"
+}

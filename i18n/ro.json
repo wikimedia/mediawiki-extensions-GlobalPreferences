@@ -9,10 +9,5 @@
 	"globalprefs-error-header": "Eroare",
 	"globalpreferences": "Preferințe globale",
 	"globalprefs-info-label": "Preferințe globale:",
-	"globalprefs-info-link": "Setați-vă preferințele globale",
-	"apihelp-query+globalpreferences-param-prop": "Ce preferințe să fie incluse:",
-	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Preferințe globale.",
-	"apierror-globalpreferences-notglobalized": "Utilizatorul curent nu are un cont global.",
-	"apihelp-globalpreferenceoverrides-example-reset": "Elimină toate valorile locale.",
-	"apiwarn-globally-overridden": "{{PLURAL:$2|Opțiunea|Opțiunile}} $1 {{PLURAL:$2|este|sunt}} suprascrise global."
+	"globalprefs-info-link": "Setați-vă preferințele globale"
 }

@@ -1,0 +1,33 @@
+{
+	"@metadata": {
+		"authors": [
+			"Jon Harald Søby"
+		]
+	},
+	"apihelp-globalpreferences-summary": "Endre de globale innstillingene til den gjeldende brukeren.",
+	"apihelp-globalpreferences-extended-description": "Bare innstillinger registrert for den gjeldende wikien kan endres lokalt.",
+	"apihelp-globalpreferences-param-reset": "Nullstill globale innstillinger. Fjerner alle eller – avhengig av parameterne <code>resetkinds</code> – noen typer globale innstillinger og gjør at de ikke blir globale lenger.",
+	"apihelp-globalpreferences-param-resetkinds": "Liste over typer innstillinger som skal nullstilles når valget <var>reset</var> er satt.",
+	"apihelp-globalpreferences-param-change": "Liste over endringer, formatert som navn=verdi (f.eks. skin=vector). Om ingen verdi er gitt (ikke engang et likhetstegn), f.eks. innstillingsnavn|anneninnstilling|…, vil innstillingen gjøres ikke-global. Om en verdi som skal sendes inneholder vertikalstrek-tegnet (<kbd>|</kbd>), bruk den [[Special:ApiHelp/main#main/datatypes|alternative flerverdisatskilleren]] for korrekt funksjon.",
+	"apihelp-globalpreferences-param-optionname": "Navnet til innstillingen som skal setes til verdien gitt av <var>optionvalue</var>.",
+	"apihelp-globalpreferences-param-optionvalue": "Verdien for innstillingen spesifisert av <var>optionname</var>.",
+	"apihelp-globalpreferences-example-reset-one": "Gjør én innstilling ikke-global.",
+	"apihelp-globalpreferences-example-reset": "Gjør alle innstillinger ikke-globale.",
+	"apihelp-globalpreferences-example-change": "Endre innstillingene <kbd>skin</kbd> og <kbd>hideminor</kbd>.",
+	"apihelp-query+globalpreferences-summary": "Hent globale innstillinger for den gjeldende brukeren.",
+	"apihelp-query+globalpreferences-extended-description": "Kan hente både globale innstillinger og lokale overstyringer.",
+	"apihelp-query+globalpreferences-param-prop": "Hvilke innstillinger som skal inkluderes:",
+	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Globale innstillinger.",
+	"apihelp-query+globalpreferences-paramvalue-prop-localoverrides": "Lokale overstyringer av globale innstillinger.",
+	"apierror-globalpreferences-notglobalized": "Den gjeldende brukeren er ikke global.",
+	"apihelp-globalpreferenceoverrides-summary": "Endre lokal overstyring av globale innstillinger for den gjeldende brukeren.",
+	"apihelp-globalpreferenceoverrides-extended-description": "Globale verdier for påvirkede innstillinger vil ignoreres.",
+	"apihelp-globalpreferenceoverrides-param-reset": "Resett lokale overstyringer. Fjerner alle, eller, avhengig av verdien til paremeteren <code>resetkinds</code>, noen typer lokale overstyringer og gjør dem globale igjen.",
+	"apihelp-globalpreferenceoverrides-param-resetkinds": "Liste over overstyringstyper som skal resettes når valget <var>reset</var> er satt.",
+	"apihelp-globalpreferenceoverrides-param-change": "Liste over endringer, formatert som navn=verdi (f.eks. skin=vector). Om ingen verdi er gitt (ikke engang et erlik-egn), f.eks. innstillingsnavn|anneninnstilling|…, vil overstyringen fjernes. Om en verdi som inneholder vertikalstrek-tegnet (<kbd>|</kbd>), bruk [[Special:ApiHelp/main#main/datatypes|den alternative flerverdiseparatoren]] for at det skal fungere ordentlig.",
+	"apihelp-globalpreferenceoverrides-param-optionname": "Navnet på overstyringen som skal settes til verdien gitt av <var>optionvalue</var>.",
+	"apihelp-globalpreferenceoverrides-param-optionvalue": "Verdien til overstyringen angitt av <var>optionname</var>.",
+	"apihelp-globalpreferenceoverrides-example-reset": "Fjern alle lokale overstyringer.",
+	"apihelp-globalpreferenceoverrides-example-change": "Sett eller endre overstyringene for innstillingene for <kbd>skin</kbd> og <kbd>hideminor</kbd>.",
+	"apiwarn-globally-overridden": "{{PLURAL:$2|Alternativet|Alternativene}} $1 blir overstyrt globalt."
+}

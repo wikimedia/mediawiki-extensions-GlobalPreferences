@@ -22,7 +22,5 @@
 	"globalprefs-reset-intro": "U kunt deze pagina gebruiken om alle globale voorkeuren uit te schakelen op alle wiki's en terug the keren naar uw lokale voorkeuren. Dit heeft geen invloed op lokale voorkeuren. U kunt dit niet ongedaan maken.",
 	"globalprefs-restoreprefs": "Alle globale voorkeuren verwijderen (in alle onderdelen)",
 	"globalprefs-select-all": "Alle selectievakjes aan- of uitvinken",
-	"globalprefs-col-header": "Selecteer opties hier beneden die globaal moeten zijn",
-	"apihelp-globalpreferences-summary": "De globale voorkeuren van de huidige gebruiker wijzigen.",
-	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Globale voorkeuren"
+	"globalprefs-col-header": "Selecteer opties hier beneden die globaal moeten zijn"
 }

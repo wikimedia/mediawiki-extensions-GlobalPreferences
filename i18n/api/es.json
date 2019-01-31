@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"MarcoAurelio"
+		]
+	},
+	"apihelp-globalpreferences-summary": "Cambiar las preferencias globales del usuario actual.",
+	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Preferencias globales.",
+	"apierror-globalpreferences-notglobalized": "El usuario actual no es global."
+}

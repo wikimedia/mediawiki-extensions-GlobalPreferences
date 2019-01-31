@@ -20,11 +20,5 @@
 	"globalprefs-info-help": "Järjestelmänlaajuisten asetusten kautta määritetyt valinnat ovat voimassa kaikissa wikeissä.",
 	"globalprefs-restoreprefs": "Poista kaikki järjestelmänlaajuiset asetukset (kaikissa osioissa)",
 	"globalprefs-select-all": "Valitse tai tyhjennä kaikki valintaruudut",
-	"globalprefs-col-header": "Valitse kaikki alla olevat valinnat ja tee niistä järjestelmänlaajuiset",
-	"apihelp-globalpreferences-summary": "Muuta nykyisen käyttäjän järjestelmänlaajuisia asetuksia.",
-	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Järjestelmänlaajuiset asetukset.",
-	"apihelp-query+globalpreferences-paramvalue-prop-localoverrides": "Järjestelmänlaajuisten asetusten paikalliset poikkeukset.",
-	"apierror-globalpreferences-notglobalized": "Nykyinen käyttäjä ei ole järjestelmänlaajuinen.",
-	"apihelp-globalpreferenceoverrides-summary": "Muuta nykyisen käyttäjän järjestelmänlaajuisten asetusten paikallisia poikkeuksia.",
-	"apihelp-globalpreferenceoverrides-example-reset": "Poista kaikki paikalliset poikkeukset."
+	"globalprefs-col-header": "Valitse kaikki alla olevat valinnat ja tee niistä järjestelmänlaajuiset"
 }

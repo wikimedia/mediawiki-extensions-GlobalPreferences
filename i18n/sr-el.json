@@ -7,6 +7,5 @@
 	"globalpreferences": "Globalna podešavanja",
 	"globalprefs-info-label": "Globalna podešavanja:",
 	"globalprefs-info-link": "Postavi svoja globalna podešavanja",
-	"globalprefs-restoreprefs": "Ukloni sva globalna podešavanja (u svim odeljcima)",
-	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Globalna podešavanja."
+	"globalprefs-restoreprefs": "Ukloni sva globalna podešavanja (u svim odeljcima)"
 }

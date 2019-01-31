@@ -18,14 +18,5 @@
 	"globalprefs-reset-intro": "Możesz użyć tej strony do wyłączenia wszystkich ustawionych preferencji globalnych dla wszystkich wiki. Zostanie przywrócone stosowanie lokalnych preferencji. Lokalne preferencje pozostaną bez zmian. Nie będzie można tego cofnąć.",
 	"globalprefs-restoreprefs": "Usuń wszystkie globalne ustawienia (dla wszystkich sekcji)",
 	"globalprefs-select-all": "Zaznacz/odznacz wszystkie",
-	"globalprefs-col-header": "Zaznacz wszystkie opcje poniżej jako globalne",
-	"apihelp-globalpreferences-summary": "Zmień globalne preferencje bieżącego użytkownika.",
-	"apihelp-globalpreferences-extended-description": "Tylko preferencje zarejestrowane dla bieżącej wiki mogą być zmieniane lokalnie.",
-	"apihelp-globalpreferences-param-optionvalue": "Wartość dla preferencji określona przez <var>optionname</var>.",
-	"apihelp-globalpreferences-example-reset": "Ustaw wszystkie preferencje na nieglobalne.",
-	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Preferencje globalne.",
-	"apihelp-query+globalpreferences-paramvalue-prop-localoverrides": "Lokalne nadpisania dla preferencji globalnych.",
-	"apierror-globalpreferences-notglobalized": "Bieżący użytkownik nie jest globalny.",
-	"apihelp-globalpreferenceoverrides-summary": "Zmień lokalne nadpisania dla globalnych preferencji dla bieżącego użytkownika.",
-	"apihelp-globalpreferenceoverrides-example-reset": "Usuń wszystkie lokalne nadpisania."
+	"globalprefs-col-header": "Zaznacz wszystkie opcje poniżej jako globalne"
 }

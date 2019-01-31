@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Aefgh39622"
+		]
+	},
+	"apihelp-globalpreferences-summary": "เปลี่ยนการตั้งค่ากลางของผู้ใช้ปัจจุบัน",
+	"apihelp-globalpreferences-extended-description": "สามารถเปลี่ยนเฉพาะการตั้งค่าที่ลงทะเบียนสำหรับวิกิปัจจุบันได้ในท้องถิ่นเท่านั้น",
+	"apihelp-globalpreferences-param-reset": "รีเซ็ตการตั้งค่ากลาง ลบชนิดการตั้งค่าทั้งหมด บางส่วน หรือตามค่าที่ระบุในพารามิเตอร์ <code>resetkinds</code> และทำให้ไม่เป็นการตั้งค่ากลางอีกต่อไป",
+	"apihelp-globalpreferences-param-resetkinds": "รายการชนิดการตั้งค่าที่จะรีเซ็ตเมื่อตัวเลือก <var>reset</var> ถูกตั้งค่า"
+}

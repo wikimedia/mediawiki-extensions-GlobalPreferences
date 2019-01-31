@@ -1,0 +1,33 @@
+{
+	"@metadata": {
+		"authors": [
+			"ديفيد"
+		]
+	},
+	"apihelp-globalpreferences-summary": "تغيير التفضيلات العالمية للمستخدم الحالي.",
+	"apihelp-globalpreferences-extended-description": "التفضيلات المسجلة في الويكي الحالي فقط يمكن أن تتغير محليا.",
+	"apihelp-globalpreferences-param-reset": "إعادة تعيين التفضيلات العالمية، تزيل الكل، أو، استنادا إلى قيمة الوسيط <code>resetkinds</code> المعلمة ،بعض أنواع التفضيلات العالمية تجعلها لم تعد عالمية.",
+	"apihelp-globalpreferences-param-resetkinds": "قائمة أنواع التفضيلات لإعادة التعيين عند تعيين الخيار <var>reset</var>.",
+	"apihelp-globalpreferences-param-change": "قائمة بالتغييرات، formatted name=value (مثل skin=vector)، إذا لم يتم إعطاء أية قيمة (ولا حتى علامة مساواة)، على سبيل المثال، preferencename|otherpreference|...، فسيكون التفضيل غير عالمي، إذا كانت أية قيمة تم تمريرها تحتوي على حرف الأنبوب (<kbd>|</kbd>)، فاستخدم [[Special:ApiHelp/main#main/datatypes|الفاصل متعدد القيم البديلة]] للعملية الصحيحة.",
+	"apihelp-globalpreferences-param-optionname": "اسم التفضيل الذي يجب تعيينه إلى القيمة المعطاة بواسطة <var>optionvalue</var>.",
+	"apihelp-globalpreferences-param-optionvalue": "قيمة التفضيل المحددة بواسطة <var>optionname</var>.",
+	"apihelp-globalpreferences-example-reset-one": "جعل تفضيل واحد غير عالمي.",
+	"apihelp-globalpreferences-example-reset": "اجعل جميع التفضيلات غير عالمية.",
+	"apihelp-globalpreferences-example-change": "تغيير التفضيلين <kbd>skin</kbd> و<kbd>hideminor</kbd> preferences.",
+	"apihelp-query+globalpreferences-summary": "استرجاع التفضيلات العالمية للمستخدم الحالي.",
+	"apihelp-query+globalpreferences-extended-description": "يمكن استرداد كل من التفضيلات العالمية وتجاوزاتها المحلية.",
+	"apihelp-query+globalpreferences-param-prop": "أي التفضيلات لتضمينها:",
+	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "التفضيلات العالمية.",
+	"apihelp-query+globalpreferences-paramvalue-prop-localoverrides": "تجاوزات محلية للتفضيلات العالمية.",
+	"apierror-globalpreferences-notglobalized": "المستخدم الحالي ليس عالميا.",
+	"apihelp-globalpreferenceoverrides-summary": "تغيير التجاوزات المحلية للتفضيلات العالمية للمستخدم الحالي.",
+	"apihelp-globalpreferenceoverrides-extended-description": "سيتم تجاهل القيم العالمية للتفضيلات المتأثرة.",
+	"apihelp-globalpreferenceoverrides-param-reset": "إعادة تعيين التجاوزات المحلية، تزيل الكل، أو، استنادا إلى قيمة الوسيط <code>resetkinds</code>، بعض أنواع التجاوزات المحلية وتجعلها عامة مرة أخرى.",
+	"apihelp-globalpreferenceoverrides-param-resetkinds": "قائمة أنواع الاستبدالات التي سيتم إعادة تعيينها عند تعيين الخيار <var>reset</var>.",
+	"apihelp-globalpreferenceoverrides-param-change": "قائمة بالتغييرات، formatted name=value (مثل skin=vector)، إذا لم يتم إعطاء أية قيمة (ولا حتى علامة المساواة)، على سبيل المثال، preferencename|otherpreference|...، ستتم إزالة التجاوز، إذا كانت أية قيمة تم تمريرها تحتوي على حرف الأنبوب (<kbd>|</kbd>)، فاستخدم [[Special:ApiHelp/main#main/datatypes|فاصلا متعدد القيم البديلة]] للعملية الصحيحة.",
+	"apihelp-globalpreferenceoverrides-param-optionname": "اسم التفضيل الذي يجب تعيينه إلى القيمة المعطاة بواسطة <var>optionvalue</var>.",
+	"apihelp-globalpreferenceoverrides-param-optionvalue": "قيمة التجاوز المحددة بواسطة <var>optionname</var>.",
+	"apihelp-globalpreferenceoverrides-example-reset": "أزل جميع التجاوزات المحلية.",
+	"apihelp-globalpreferenceoverrides-example-change": "قم بتعيين أو تغيير التجاوزات لتفضيلات <kbd>skin</kbd> و<kbd>hideminor</kbd>.",
+	"apiwarn-globally-overridden": "{{PLURAL:$2|الخيار|الخيارات}} $1 تم {{PLURAL:$2|تجاوزه|تجاوزها}} عالميا."
+}

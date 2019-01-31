@@ -1,0 +1,34 @@
+{
+	"@metadata": {
+		"authors": [
+			"Evs",
+			"Vlad5250"
+		]
+	},
+	"apihelp-globalpreferences-summary": "Сменить глобальные настройки текущего участника.",
+	"apihelp-globalpreferences-extended-description": "Только настройки, зарегистрированные для текущего вики-проекта, могут быть изменены локально.",
+	"apihelp-globalpreferences-param-reset": "Сбросить локальные настройки. Убирает все или, в зависимости от значения параметра <code>resetkinds</code>, некоторые виды глобальных настроек и делает их глобальными.",
+	"apihelp-globalpreferences-param-resetkinds": "Список типов сбрасываемых настроек, если задана опция <var>reset</var>.",
+	"apihelp-globalpreferences-param-change": "Список изменений в формате название=значение (например, skin=vector). Если значения не даётся (нет даже знака равенства), например, названиенастройки|другаянастройка|..., настройка будет неглобальной. Если какое-либо значение содержит знак пайпа (<kbd>|</kbd>), используйте [[Special:ApiHelp/main#main/datatypes|альтернативный разделитель значений]] для корректного проведения операции.",
+	"apihelp-globalpreferences-param-optionname": "Название настройки, которая должна быть установлена в значение, переданное через <var>optionvalue</var>.",
+	"apihelp-globalpreferences-param-optionvalue": "Значение настройки, заданной <var>optionname</var>.",
+	"apihelp-globalpreferences-example-reset-one": "Сделать одну настройку неглобальной.",
+	"apihelp-globalpreferences-example-reset": "Сделать все настройки неглобальными",
+	"apihelp-globalpreferences-example-change": "Изменить настройки <kbd>skin</kbd> и <kbd>hideminor</kbd>.",
+	"apihelp-query+globalpreferences-summary": "Показать глобальные настройки текущего участника.",
+	"apihelp-query+globalpreferences-extended-description": "Может получить и глобальные настройки, и их локальные замены.",
+	"apihelp-query+globalpreferences-param-prop": "Какие настройки необходимо включить:",
+	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Глобальные настройки.",
+	"apihelp-query+globalpreferences-paramvalue-prop-localoverrides": "Локальные замены для глобальных настроек.",
+	"apierror-globalpreferences-notglobalized": "Текущий пользователь не является глобальным.",
+	"apihelp-globalpreferenceoverrides-summary": "Изменить локальную замену для глобальных настроек текущего участника.",
+	"apihelp-globalpreferenceoverrides-extended-description": "Глобальные значения для затронутых настроек будут проигнорированы.",
+	"apihelp-globalpreferenceoverrides-param-reset": "Сбросить локальные замены. Убирает все или, в зависимости от значения параметра <code>resetkinds</code>, некоторые виды глобальных замен и делает их глобальными.",
+	"apihelp-globalpreferenceoverrides-param-resetkinds": "Список типов сбрасываемых настроек, если задана опция <var>reset</var>.",
+	"apihelp-globalpreferenceoverrides-param-change": "Список изменений в формате название=значение (например, skin=vector). Если значения не задано (нет даже знака равенства), например, названиенастройки|другаянастройка|..., настройка будет неглобальной. Если какое-либо значение содержит знак пайпа (<kbd>|</kbd>), используйте [[Special:ApiHelp/main#main/datatypes|альтернативный разделитель значений]] для корректного проведения операции.",
+	"apihelp-globalpreferenceoverrides-param-optionname": "Название замены, которая задаётся значением переменной <var>optionvalue</var>.",
+	"apihelp-globalpreferenceoverrides-param-optionvalue": "Значение настройки, заданной <var>optionname</var>.",
+	"apihelp-globalpreferenceoverrides-example-reset": "Убрать все локальные замены.",
+	"apihelp-globalpreferenceoverrides-example-change": "Задать или изменить замены для настроек <kbd>skin</kbd> и <kbd>hideminor</kbd>.",
+	"apiwarn-globally-overridden": "{{PLURAL:$2|Опция|Опции}} $1 {{PLURAL:$2|глобально заменена|глобально заменены}}."
+}

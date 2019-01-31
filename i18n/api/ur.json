@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Muhammad Shuaib"
+		]
+	},
+	"apihelp-globalpreferences-summary": "موجودہ صارف کی عالمی ترجیحات تبدیل کریں۔",
+	"apihelp-globalpreferences-example-reset-one": "ایک ترجیح کو غیر عالمی بنائیں۔",
+	"apihelp-globalpreferences-example-reset": "تمام ترجیحات کو غیر عالمی بنائیں۔",
+	"apihelp-query+globalpreferences-summary": "موجودہ صارف کی عالمی ترجیحات ختم کریں۔",
+	"apihelp-query+globalpreferences-param-prop": "کن ترجیحات کو شامل کرنا مقصود ہے:",
+	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "عالمی ترجیحات۔",
+	"apierror-globalpreferences-notglobalized": "موجودہ صارف کا کھاتا عالمی نہیں ہے۔"
+}

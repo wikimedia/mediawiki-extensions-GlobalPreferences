@@ -17,9 +17,5 @@
 	"globalprefs-info-link": "Angiv dine globale indstillinger",
 	"globalprefs-info-help": "Indstillinger som er angivet på den globale indstillingsside vil gælde for alle wikier.",
 	"globalprefs-restoreprefs": "Fjern alle globale indstillinger (i alle sektioner)",
-	"globalprefs-col-header": "Vælg hvilke indstillinger som skal være globale",
-	"apihelp-globalpreferences-example-reset-one": "Gør en indstilling ikke-global.",
-	"apihelp-globalpreferences-example-reset": "Gør alle indstillinger ikke-globale.",
-	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Globale indstillinger.",
-	"apierror-globalpreferences-notglobalized": "Nuværende bruger er ikke global."
+	"globalprefs-col-header": "Vælg hvilke indstillinger som skal være globale"
 }

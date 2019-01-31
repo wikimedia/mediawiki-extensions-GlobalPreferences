@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Hedda",
+			"Sayginer"
+		]
+	},
+	"apihelp-globalpreferences-example-change": "<kbd>Temayı</kbd> değiştir ve küçük tercihleri <kbd>gizle</kbd>.",
+	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Küresel tercihler."
+}

@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Mainframe98"
+		]
+	},
+	"apihelp-globalpreferences-summary": "De globale voorkeuren van de huidige gebruiker wijzigen.",
+	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Globale voorkeuren"
+}

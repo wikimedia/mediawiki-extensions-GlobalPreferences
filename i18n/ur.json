@@ -18,12 +18,5 @@
 	"globalprefs-reset-intro": "اس صفحہ کی مدد سے آپ اپنی عالمی ترجیحات کو غیر فعال کرکے مقامی ترجیحات کو پھر سے استعمال کر سکتے ہیں۔ اس سے آپ کی مقامی ترجیحات میں کوئی تبدیلی نہیں ہوگی البتہ اسے واپس پرانی ترتیب پر بحال نہیں کیا جا سکے گا۔",
 	"globalprefs-restoreprefs": "تمام عالمی ترجیحات کو ختم کریں",
 	"globalprefs-select-all": "تمام خانہ ہائے اختیار کو منتخب یا غیر منتخب کریں",
-	"globalprefs-col-header": "عالمی بنانے کے لیے ذیل کے اختیارات کو منتخب کریں",
-	"apihelp-globalpreferences-summary": "موجودہ صارف کی عالمی ترجیحات تبدیل کریں۔",
-	"apihelp-globalpreferences-example-reset-one": "ایک ترجیح کو غیر عالمی بنائیں۔",
-	"apihelp-globalpreferences-example-reset": "تمام ترجیحات کو غیر عالمی بنائیں۔",
-	"apihelp-query+globalpreferences-summary": "موجودہ صارف کی عالمی ترجیحات ختم کریں۔",
-	"apihelp-query+globalpreferences-param-prop": "کن ترجیحات کو شامل کرنا مقصود ہے:",
-	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "عالمی ترجیحات۔",
-	"apierror-globalpreferences-notglobalized": "موجودہ صارف کا کھاتا عالمی نہیں ہے۔"
+	"globalprefs-col-header": "عالمی بنانے کے لیے ذیل کے اختیارات کو منتخب کریں"
 }

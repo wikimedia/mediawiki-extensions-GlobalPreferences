@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"V.narsikar"
+		]
+	},
+	"apihelp-globalpreferences-example-reset-one": "कोणत्याही एका पसंतीक्रमास अ-वैश्विक करा.",
+	"apihelp-globalpreferences-example-reset": "सर्व पसंतीक्रमांना अ-वैश्विक करा.",
+	"apihelp-query+globalpreferences-param-prop": "कोणते पसंतीक्रम अंतर्भूत करावयाचे आहेत:",
+	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "वैश्विक पसंतीक्रम.",
+	"apierror-globalpreferences-notglobalized": "हा सदस्य वैश्विक नाही."
+}

@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"Yusuke1109"
+		]
+	},
+	"apihelp-globalpreferences-summary": "現在の利用者のグローバル設定を変更します。",
+	"apihelp-globalpreferences-extended-description": "現在のウィキに登録されている環境設定のみをローカルで変更することができます。",
+	"apihelp-globalpreferences-param-reset": "グローバル個人設定をリセットします。すべてを削除するか、<code>resetkinds</code>パラメータの値に応じていくつかのタイプのグローバル個人設定を削除し、それらをグローバルにしないようにします。",
+	"apihelp-globalpreferences-param-resetkinds": "<var>reset</var>が設定されている場合、リセットする設定項目の種類のリスト。",
+	"apihelp-globalpreferences-param-change": "名前=値 の形式 (例えば skin=vector) で整形された変更のリスト。preferencename|otherpreference|... のように値が与えられなかった (イコール記号すら無い) 場合、設定は非グローバルにセットされます。与えられた値がパイプ(<kbd>|</kbd>)を含む場合、[[Special:ApiHelp/main#main/datatypes|ほかのセパレーター]]をお使いください。",
+	"apihelp-globalpreferences-param-optionname": "<var>optionvalue</var>で指定された値に設定する必要がある設定の名前。",
+	"apihelp-globalpreferences-param-optionvalue": "<var>optionname</var>で指定された設定の値。",
+	"apihelp-globalpreferences-example-reset": "全ての個人設定を非グローバルに設定します",
+	"apihelp-globalpreferences-example-change": "<kbd>skin</kbd> および <kbd>hideminor</kbd> の個人設定を変更する。",
+	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "グローバル個人設定。"
+}

@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"01miki10",
+			"Nike"
+		]
+	},
+	"apihelp-globalpreferences-summary": "Muuta nykyisen käyttäjän järjestelmänlaajuisia asetuksia.",
+	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Järjestelmänlaajuiset asetukset.",
+	"apihelp-query+globalpreferences-paramvalue-prop-localoverrides": "Järjestelmänlaajuisten asetusten paikalliset poikkeukset.",
+	"apierror-globalpreferences-notglobalized": "Nykyinen käyttäjä ei ole järjestelmänlaajuinen.",
+	"apihelp-globalpreferenceoverrides-summary": "Muuta nykyisen käyttäjän järjestelmänlaajuisten asetusten paikallisia poikkeuksia.",
+	"apihelp-globalpreferenceoverrides-example-reset": "Poista kaikki paikalliset poikkeukset."
+}

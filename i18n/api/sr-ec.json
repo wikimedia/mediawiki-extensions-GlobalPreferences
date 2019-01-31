@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"BadDog"
+		]
+	},
+	"apihelp-globalpreferences-summary": "Промена глобалних подешавања тренутног корисника.",
+	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Глобална подешавања.",
+	"apiwarn-globally-overridden": "{{PLURAL:$2|Опција|Опције}} $1 {{PLURAL:$2|је глобално замењена|су глобално замењене}}."
+}

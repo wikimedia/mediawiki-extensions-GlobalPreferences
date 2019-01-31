@@ -19,10 +19,5 @@
 	"globalprefs-info-link": "تنظیم ترجیحات سراسری شما",
 	"globalprefs-reset-intro": "از این صفحه برای غیرفعال‌کردن همهٔ ترجیحات سراسری در همهٔ ویکی‌ها و بازگشت به ترجیحات محلی استفاده کنید. تأثیری بر روی تنظیمات محلی در سایر ویکی‌ها ندارد. این تغییر غیر قابل بازگشت است.",
 	"globalprefs-restoreprefs": "حذف همهٔ تنظیمات سراسری (در همهٔ بخش‌ها)",
-	"globalprefs-select-all": "خاموش یا روشن کردن ه‍مهٔ جعبه‌های انتخاب",
-	"apihelp-globalpreferences-example-reset": "تمام ترجیحات را غیرسراسری کن.",
-	"apihelp-query+globalpreferences-param-prop": "کدام ترجیحات را شامل شود:",
-	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "ترجیحات سراسری.",
-	"apierror-globalpreferences-notglobalized": "کاربر کنونی سراسری نیست.",
-	"apihelp-globalpreferenceoverrides-example-reset": "حذف همه بازنویسی‌های محلی"
+	"globalprefs-select-all": "خاموش یا روشن کردن ه‍مهٔ جعبه‌های انتخاب"
 }

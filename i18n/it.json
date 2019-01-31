@@ -19,8 +19,5 @@
 	"globalprefs-reset-intro": "Puoi utilizzare questa pagina per disattivare tutte le preferenze globali su tutti gli wiki e tornare alle preferenze locali. Questa operazione non influenzerà le preferenze locali e può essere annullata.",
 	"globalprefs-restoreprefs": "Rimuovi tutte le preferenze globali (in tutte le sezioni)",
 	"globalprefs-select-all": "Attiva o disattiva tutte le caselle di controllo",
-	"globalprefs-col-header": "Rendi globali le preferenze selezionate sotto",
-	"apihelp-globalpreferences-param-optionvalue": "Il valore per la preferenza specificata da <var>optionname</var>.",
-	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Preferenze globali.",
-	"apierror-globalpreferences-notglobalized": "L'utente attuale non è globale."
+	"globalprefs-col-header": "Rendi globali le preferenze selezionate sotto"
 }

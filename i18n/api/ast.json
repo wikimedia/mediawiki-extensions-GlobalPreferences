@@ -1,0 +1,32 @@
+{
+	"@metadata": {
+		"authors": [
+			"Xuacu"
+		]
+	},
+	"apihelp-globalpreferences-summary": "Camudar les preferencies globales del usuariu actual.",
+	"apihelp-globalpreferences-extended-description": "Sólo les preferencies rexistraes pa la wiki actual pueden cambiase de manera llocal.",
+	"apihelp-globalpreferences-param-reset": "Reaniciar les preferencies globales. Desanicia toes o, dependiendo del valor del parámetru <code>resetkinds</code>, delles tribes de preferencies globales y facer que dexen de ser globales.",
+	"apihelp-globalpreferences-param-resetkinds": "Llista de tipos de preferencies a reaniciar cuando s'active la opción <var>reset</var>.",
+	"apihelp-globalpreferences-param-change": "Llista de cambios, col formatu nome=valor (p.ex. skin=vector). Si nun se da un valor (nin siquiera un signu igual), p.ex., nomepreferencia|otrapreferencia|..., la preferencia va facese non-global. Si dalgún valor pasáu contién el caráuter tubería (<kbd>|</kbd>), usa'l [[Special:ApiHelp/main#main/datatypes|separador alternativu de valores múltiples]] pa operar correutamente.",
+	"apihelp-globalpreferences-param-optionname": "El nome de la preferencia que tien de configurase pal valor dau por <var>optionvalue</var>.",
+	"apihelp-globalpreferences-param-optionvalue": "El valor de la preferencia especificada por <var>optionname</var>.",
+	"apihelp-globalpreferences-example-reset-one": "Facer non-global una sola preferencia.",
+	"apihelp-globalpreferences-example-reset": "Facer non-globales toles preferencies.",
+	"apihelp-globalpreferences-example-change": "Cambiar la <kbd>piel</kbd> y tapecer les preferencies <kbd>menores</kbd>.",
+	"apihelp-query+globalpreferences-summary": "Recuperar les preferencies globales del usuariu actual.",
+	"apihelp-query+globalpreferences-extended-description": "pueden recuperase tanto les preferencies globales como les variaciones llocales.",
+	"apihelp-query+globalpreferences-param-prop": "Qué preferencies incluir:",
+	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Preferencies globales",
+	"apihelp-query+globalpreferences-paramvalue-prop-localoverrides": "Variaciones llocales de les preferencies globales.",
+	"apierror-globalpreferences-notglobalized": "L'usuariu actual nun ye global.",
+	"apihelp-globalpreferenceoverrides-summary": "Cambiar les variaciones llocales de les preferencies globales del usuariu actual.",
+	"apihelp-globalpreferenceoverrides-extended-description": "Inoraránse los valores globales de les preferencies afeutaes.",
+	"apihelp-globalpreferenceoverrides-param-reset": "Reaniciar les preferencies llocales. Desanicia toes o, dependiendo del valor del parámetru <code>resetkinds</code>, delles tribes de preferencies llocales y facer que vuelvan a ser globales.",
+	"apihelp-globalpreferenceoverrides-param-resetkinds": "Llista de tipos de variaciones a reaniciar cuando s'active la opción <var>reset</var>.",
+	"apihelp-globalpreferenceoverrides-param-change": "Llista de cambios, col formatu nome=valor (p.ex. skin=vector). Si nun se da un valor (nin siquiera un signu igual), p.ex., nomepreferencia|otrapreferencia|..., la preferencia va desaniciase. Si dalgún valor pasáu contién el caráuter tubería (<kbd>|</kbd>), usa'l [[Special:ApiHelp/main#main/datatypes|separador alternativu de valores múltiples]] pa operar correutamente.",
+	"apihelp-globalpreferenceoverrides-param-optionname": "El nome de la variación que tien de configurase pal valor dau por <var>optionvalue</var>.",
+	"apihelp-globalpreferenceoverrides-param-optionvalue": "El valor de la variación especificada por <var>optionname</var>.",
+	"apihelp-globalpreferenceoverrides-example-reset": "Desaniciar toles variaciones llocales.",
+	"apihelp-globalpreferenceoverrides-example-change": "Configurar o cambiar les variaciones pa les preferencies de <kbd>skin</kbd> y <kbd>hideminor</kbd>."
+}

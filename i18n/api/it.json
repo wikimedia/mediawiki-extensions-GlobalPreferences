@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Beta16"
+		]
+	},
+	"apihelp-globalpreferences-param-optionvalue": "Il valore per la preferenza specificata da <var>optionname</var>.",
+	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Preferenze globali.",
+	"apierror-globalpreferences-notglobalized": "L'utente attuale non è globale."
+}

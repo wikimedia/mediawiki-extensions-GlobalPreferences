@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"Chaduvari"
+		]
+	},
+	"apihelp-globalpreferences-summary": "ప్రస్తుత వాడుకరి సార్వత్రిక అభిరుచులను మార్చు.",
+	"apihelp-globalpreferences-extended-description": "ఈ వికీలో నమోదైన అభిరుచులను మాత్రమే స్థానికంగా మార్చవచ్చు.",
+	"apihelp-query+globalpreferences-summary": "ఈ వాడుకరి సార్వత్రిక అభిరుచులను తీసుకురా.",
+	"apihelp-query+globalpreferences-param-prop": "ఏ అభిరుచులను చేర్చాలి:",
+	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "సార్వత్రిక అభిరుచులు.",
+	"apihelp-query+globalpreferences-paramvalue-prop-localoverrides": "సార్వత్రిక అభిరుచులకు స్థానిక ఓవర్‌రైడులు.",
+	"apierror-globalpreferences-notglobalized": "ప్రస్తుత వాడుకరి సార్వత్రికం కాదు.",
+	"apihelp-globalpreferenceoverrides-summary": "ప్రస్తుత వాడుకరికి చెందిన సార్వత్రిక అభిరుచులకు స్థానిక ఓవర్‌రైడులను మార్చండి.",
+	"apihelp-globalpreferenceoverrides-extended-description": "ఎంచుకున్న అభిరుచులకు ఉన్న సార్వత్రిక విలువలను పట్టించుకోదు.",
+	"apihelp-globalpreferenceoverrides-example-reset": "స్థాఅనిక ఓవర్‌రైడులన్నిటినీ తీసెయ్యి."
+}

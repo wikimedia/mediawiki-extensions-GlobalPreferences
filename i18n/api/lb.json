@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Robby"
+		]
+	},
+	"apihelp-globalpreferences-summary": "Déi global Astellunge vum aktuelle Benotzer änneren.",
+	"apihelp-globalpreferences-example-reset": "All Astellungen net global maachen.",
+	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Global Astellungen",
+	"apierror-globalpreferences-notglobalized": "Aktuelle Benotzer ass net global.",
+	"apihelp-globalpreferenceoverrides-example-reset": "All lokal Iwwerschreiwungen ewechhuelen.",
+	"apiwarn-globally-overridden": "D'{{PLURAL:$2|Optioun|Optioune(n)}} $1 {{PLURAL:$2|gouf|goufe}} global iwwerschriwwen."
+}

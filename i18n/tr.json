@@ -18,7 +18,5 @@
 	"globalprefs-info-help": "Genel tercihler sayfası aracılığıyla ayarlanan tercihler, tüm vikilere uygulanır.",
 	"globalprefs-restoreprefs": "Tüm global tercihleri sil (tüm bölümlerde)",
 	"globalprefs-select-all": "Tümünü seç",
-	"globalprefs-col-header": "Ayarın global olması için seçin",
-	"apihelp-globalpreferences-example-change": "<kbd>Temayı</kbd> değiştir ve küçük tercihleri <kbd>gizle</kbd>.",
-	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Küresel tercihler."
+	"globalprefs-col-header": "Ayarın global olması için seçin"
 }
