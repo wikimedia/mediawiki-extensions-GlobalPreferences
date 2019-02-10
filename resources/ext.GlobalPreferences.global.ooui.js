@@ -84,7 +84,7 @@
 	 * Initialize the OOUI widgets by infusing all checkboxes and their
 	 * related widgets, so we can refer to them later when toggling.
 	 */
-	function initialize() {
+	$( function () {
 		// Go over all checkboxes, assign their matching widgets, and connect to events
 		$( '.mw-globalprefs-global-check.oo-ui-checkboxInputWidget' ).each( function () {
 			var associatedWidgetOOUI,
@@ -133,11 +133,5 @@
 		Object.keys( checkboxSelectAllBySection ).forEach( function ( sectionID ) {
 			updateSelectAllCheckboxState( sectionID );
 		} );
-	}
-
-	// Activate the above functions.
-	$( document ).ready( function () {
-		initialize();
 	} );
-
 }() );
