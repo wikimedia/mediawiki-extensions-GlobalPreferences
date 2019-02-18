@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Gitartha.bordoloi"
+		]
+	},
+	"globalprefs-desc": "ব্যৱহাৰকাৰীক গোলকীয় পছন্দসমূহ নিৰ্ধাৰণ কৰিবলৈ অনুমতি দিয়ে",
+	"globalpreferences": "গোলকীয় পছন্দসমূহ",
+	"globalprefs-info-label": "গোলকীয় পছন্দসমূহ:",
+	"globalprefs-info-link": "আপোনাৰ গোলকীয় পছন্দসমূহ নিৰ্ধাৰণ কৰক",
+	"globalprefs-info-help": "গোলকীয় পছন্দসমূহ পৃষ্ঠাত নিৰ্ধাৰণ কৰা পছন্দবোৰ সকলো ৱিকিতে প্ৰয়োগ কৰা হ'ব।"
+}
