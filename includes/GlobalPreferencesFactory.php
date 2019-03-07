@@ -153,8 +153,11 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 		$this->logger->debug( "Creating local preferences array for '{$this->user->getName()}'" );
 		$modifiedPrefs = [];
 		foreach ( $preferences as $name => $def ) {
+			if ( !isset( $def['section'] ) ) {
+				// Preference has no control in the UI
+				continue;
+			}
 			$modifiedPrefs[$name] = $def;
-
 			// If this has been set globally.
 			if ( in_array( $name, $globalPrefNames ) ) {
 				// Disable this local preference unless it either
@@ -173,7 +176,7 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 					'mw-globalprefs-local-exception',
 					'mw-globalprefs-local-exception-for-' . $name,
 				];
-				$section = $def['section'] ?? '';
+				$section = $def['section'];
 				$secFragment = static::getSectionFragmentId( $section );
 				$labelMsg = $context->msg( 'globalprefs-set-local-exception', [ $secFragment ] );
 				$modifiedPrefs[$localExName] = [
