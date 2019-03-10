@@ -5,6 +5,8 @@
 		]
 	},
 	"globalprefs-desc": "Дазваляе ўдзельнікам вызначаць глябальныя налады",
+	"globalprefs-set-local-exception": "Вызначыць лякальнае выключэньне для гэтай [[Special:GlobalPreferences#$1|глябальнай налады]].",
+	"globalprefs-has-local-exception": "Гэтая глябальныя налада мае [[Special:Preferences#$1|лякальнае выключэньне ў гэтай вікі]].",
 	"globalpreferences": "Глябальныя налады",
 	"globalprefs-info-label": "Глябальныя налады:",
 	"globalprefs-info-link": "Вызначыць свае глябальныя налады",
