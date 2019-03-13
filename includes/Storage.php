@@ -116,7 +116,7 @@ class Storage {
 			$dbw = $this->getDatabase( DB_MASTER );
 			$dbw->replace(
 				static::TABLE_NAME,
-				[ 'gp_user', 'gp_property' ],
+				[ [ 'gp_user', 'gp_property' ] ],
 				$rows,
 				__METHOD__
 			);
