@@ -9,6 +9,7 @@
 	"globalprefs-has-local-exception": "Гэтая глябальныя налада мае [[Special:Preferences#$1|лякальнае выключэньне ў гэтай вікі]].",
 	"tooltip-globalprefs-check-label": "Зрабіць гэтую наладу глябальнай",
 	"globalprefs-error-header": "Памылка",
+	"globalprefs-notglobal": "Ваш рахунак не зьяўляецца глябальным і ня можа вызначаць глябальныя налады.",
 	"globalpreferences": "Глябальныя налады",
 	"globalprefs-info-label": "Глябальныя налады:",
 	"globalprefs-info-link": "Вызначыць свае глябальныя налады",
