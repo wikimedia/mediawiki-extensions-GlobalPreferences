@@ -57,7 +57,7 @@ class StorageTest extends MediaWikiTestCase {
 		$db->expects( self::once() )
 			->method( 'replace' )
 			->with( Storage::TABLE_NAME,
-				[ 'gp_user', 'gp_property' ],
+				[ [ 'gp_user', 'gp_property' ] ],
 				[
 					[ 'gp_user' => self::USER_ID, 'gp_property' => 'add this', 'gp_value' => 'added' ],
 					[ 'gp_user' => self::USER_ID, 'gp_property' => 'change this', 'gp_value' => 'changed' ],
