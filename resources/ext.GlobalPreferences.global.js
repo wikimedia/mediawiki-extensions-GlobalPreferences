@@ -9,50 +9,24 @@
 		selectAllCheckboxesOngoing = false;
 
 	/**
-	 * Add the 'select all' checkbox to the form section headers.
+	 * Infuse the 'select all' checkbox
+	 *
+	 * @param {jQuery} $root Section root
 	 */
-	function addSelectAllToHeader() {
-		// For each preferences form tab, add a select-all checkbox to the header.
-		$( '.globalprefs-section-header' ).each( function () {
-			var selectAll = mw.message( 'globalprefs-select-all' ).text(),
-				// Add the checkbox. Its label is already present,
-				// so we just need to update the label tooltip.
-				checkbox = new OO.ui.CheckboxInputWidget( {
-					inputId: 'globalprefs-select-all',
-					title: selectAll
-				} ),
-				sectionID = $( this ).closest( '.oo-ui-layout.oo-ui-tabPanelLayout' ).prop( 'id' );
+	function infuseSelectAllToHeader( $root ) {
+		var checkbox = OO.ui.infuse( $root.find( '.globalprefs-section-select-all' ) ),
+			sectionID = $root.prop( 'id' );
 
-			$( this ).prepend( checkbox.$element );
+		// Store for reference
+		checkboxSelectAllBySection[ sectionID ] = checkbox;
 
-			// Store for reference
-			checkboxSelectAllBySection[ sectionID ] = checkbox;
-
-			// Connect to change event to toggle all checkboxes in the section
-			// HACK: We want to separate the 'change' event
-			// of the 'select all' checkbox to two:
-			// - The case of a user actively clicking
-			//   it - in which case all sub checkboxes should change their states
-			// - The case where the state of all associated checkboxes are the same
-			//   or not the same, and the 'select all' checked state changes to
-			//   reflect that, but in that case, it should not trigger changes todo
-			//   its associated checkboxes.
-			// We use a global variable that changes to 'true' when the mousedown
-			// event is triggered to state specifically that this represent user-click
-			// rather than automated state change.
-			// TODO: This should be upstreamed into OOUI's CheckboxInputWidget's behavior.
-			checkbox.$element.on( 'mousedown', function () {
-				selectAllCheckboxesOngoing = true;
-			} );
-			checkbox.on( 'change', function ( isChecked ) {
-				var sectionID = checkbox.$element.closest( '.oo-ui-layout.oo-ui-tabPanelLayout' ).prop( 'id' );
-				if ( selectAllCheckboxesOngoing && checkboxesBySection[ sectionID ] ) {
-					checkboxesBySection[ sectionID ].forEach( function ( checkboxWidget ) {
-						checkboxWidget.setSelected( isChecked );
-					} );
-					selectAllCheckboxesOngoing = false;
-				}
-			} );
+		checkbox.on( 'change', function ( isChecked ) {
+			// Don't update child widgets if event was triggered by updateSelectAllCheckboxState
+			if ( !selectAllCheckboxesOngoing && checkboxesBySection[ sectionID ] ) {
+				checkboxesBySection[ sectionID ].forEach( function ( checkboxWidget ) {
+					checkboxWidget.setSelected( isChecked );
+				} );
+			}
 		} );
 	}
 
@@ -69,6 +43,8 @@
 			// in the relevant page on purpose
 			return;
 		}
+		// Suppress event listener
+		selectAllCheckboxesOngoing = true;
 		checkboxSelectAllBySection[ sectionID ].setSelected(
 			// Selection state should be only set if all checkboxes
 			// are selected
@@ -77,6 +53,7 @@
 				return checkboxWidget.isSelected();
 			} )
 		);
+		selectAllCheckboxesOngoing = false;
 	}
 
 	/**
@@ -84,11 +61,12 @@
 	 * related widgets, so we can refer to them later when toggling.
 	 */
 	$( function () {
-		// Add the 'select all' checkbox
-		addSelectAllToHeader();
 
 		// htmlform.enhance is run when a preference tab is made visible
 		mw.hook( 'htmlform.enhance' ).add( function ( $root ) {
+			// Add the 'select all' checkbox
+			infuseSelectAllToHeader( $root );
+
 			// Go over all checkboxes, assign their matching widgets, and connect to events
 			$root.find( '.mw-globalprefs-global-check.oo-ui-checkboxInputWidget' ).each( function () {
 				var associatedWidgetOOUI,

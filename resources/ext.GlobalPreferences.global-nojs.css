@@ -77,21 +77,35 @@ div.mw-globalprefs-global-check input.mw-globalprefs-global-check {
 	width: auto;
 }
 
-fieldset.globalprefs-section-header,
-.client-js #preferences fieldset.globalprefs-section-header {
-	/* Remove fieldset border to distinguish it from other 'proper' fieldsets. */
-	border: 0;
-	/* Remove fieldset general selector's `padding` */
-	padding-left: 0;
-}
-
-fieldset.globalprefs-section-header > .oo-ui-checkboxInputWidget {
-	margin-right: 0.857125em; /* Equals ~12px at base `font-size` of 14px; Increasing slightly over normal distance to emphasize importance of first checkbox */
-}
-
-/** Embolden the column header (both JS and non-JS). */
-fieldset.globalprefs-section-header label {
+.globalprefs-section-header {
+	/* Embolden the column header (both JS and non-JS). */
 	font-weight: bold;
+}
+
+.globalprefs-section-header .oo-ui-fieldLayout-header {
+	/* stylelint-disable-next-line declaration-no-important */
+	padding-left: 0.857125em !important; /* Equals ~12px at base `font-size` of 14px; Increasing slightly over normal distance to emphasize importance of first checkbox */
+}
+
+/* Hack: Fix top margin change caused by upstream hack */
+.globalprefs-section-header.oo-ui-fieldLayout.oo-ui-fieldLayout-align-inline:first-child {
+	margin-top: 0.857125em;
+}
+
+.client-js #preferences .oo-ui-panelLayout-framed .oo-ui-panelLayout-framed .globalprefs-section-header {
+	margin-top: 0;
+}
+
+.client-nojs .globalprefs-section-header .oo-ui-fieldLayout-field {
+	/* Select all checkbox won't work without JS, so hide */
+	/* stylelint-disable-next-line declaration-no-important */
+	display: none !important;
+}
+
+.client-nojs .globalprefs-section-header .oo-ui-fieldLayout-header {
+	/* Label is still meaningful without the checkbox. Fix alignment */
+	/* stylelint-disable-next-line declaration-no-important */
+	padding-left: 0 !important; /* Equals ~12px at base `font-size` of 14px; Increasing slightly over normal distance to emphasize importance of first checkbox */
 }
 
 /* Style fixes for Extension:BetaFeatures. */

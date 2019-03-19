@@ -2,7 +2,6 @@
 
 namespace GlobalPreferences;
 
-use Html;
 use MediaWiki\MediaWikiServices;
 use PreferencesFormOOUI;
 use User;
@@ -73,14 +72,19 @@ class GlobalPreferencesFormOOUI extends PreferencesFormOOUI {
 			}
 		}
 
-		// Add help text to the top of every section. This creates form components because the
-		// select-all checkbox will be added here by JS in the ext.GlobalPreferencs.global module.
+		// Add checbox to the top of every section.
 		foreach ( $this->getPreferenceSections() as $section ) {
 			$colHeaderText = $this->getMessage( 'globalprefs-col-header' )->text();
-			$secHeader = Html::rawElement(
-				'fieldset',
-				[ 'class' => 'globalprefs-section-header' ],
-				Html::label( $colHeaderText, 'globalprefs-select-all' )
+			$secHeader = new \OOUI\FieldLayout(
+				new \OOUI\CheckboxInputWidget( [
+					'infusable' => true,
+					'classes' => [ 'globalprefs-section-select-all' ],
+				] ),
+				[
+					'align' => 'inline',
+					'label' => $colHeaderText,
+					'classes' => [ 'globalprefs-section-header' ],
+				]
 			);
 			$this->addHeaderText( $secHeader, $section );
 		}
