@@ -4,8 +4,7 @@
 	 * Store all OOUI widgets with their reference so we can toggle
 	 * them easily on/off.
 	 */
-	var widgets = {},
-		checkboxesBySection = {},
+	var checkboxesBySection = {},
 		checkboxSelectAllBySection = {},
 		selectAllCheckboxesOngoing = false;
 
@@ -110,22 +109,16 @@
 					return true;
 				}
 
-				// Store references to associated widgets
-				widgets[ prefName ] = associatedWidgetOOUI;
 				// Store references to all checkboxes in the same section
 				checkboxesBySection[ sectionID ] = checkboxesBySection[ sectionID ] || [];
 				checkboxesBySection[ sectionID ].push( checkbox );
 
 				// Initialize starting state depending on checkbox state
-				widgets[ prefName ].setDisabled( !checkbox.isSelected() );
+				associatedWidgetOOUI.setDisabled( !checkbox.isSelected() );
 				updateSelectAllCheckboxState( sectionID );
 				// Respond to event
 				checkbox.on( 'change', function ( isChecked ) {
-					var fullName = checkbox.$input.prop( 'name' ),
-						prefName = fullName.substr( 0, fullName.length - '-global'.length ).replace( /[\\"]/g, '\\$&' ),
-						sectionID = checkbox.$element.closest( '.oo-ui-layout.oo-ui-tabPanelLayout' ).prop( 'id' );
-
-					widgets[ prefName ].setDisabled( !isChecked );
+					associatedWidgetOOUI.setDisabled( !isChecked );
 
 					// Update the 'select all' checkbox for this section
 					updateSelectAllCheckboxState( sectionID );
