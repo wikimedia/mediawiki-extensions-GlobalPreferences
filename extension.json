@@ -61,8 +61,8 @@
 		"remoteExtPath": "GlobalPreferences/resources"
 	},
 	"ResourceModules": {
-		"ext.GlobalPreferences.global.ooui": {
-			"scripts": "ext.GlobalPreferences.global.ooui.js",
+		"ext.GlobalPreferences.global": {
+			"scripts": "ext.GlobalPreferences.global.js",
 			"dependencies": [
 				"oojs-ui-core",
 				"mediawiki.widgets",

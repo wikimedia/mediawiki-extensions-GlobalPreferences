@@ -62,7 +62,7 @@ class SpecialGlobalPreferences extends SpecialPreferences {
 		// Add module styles and scripts separately
 		// so non-JS users get the styles quicker and to avoid a FOUC.
 		$this->getOutput()->addModuleStyles( 'ext.GlobalPreferences.global-nojs' );
-		$this->getOutput()->addModules( 'ext.GlobalPreferences.global.ooui' );
+		$this->getOutput()->addModules( 'ext.GlobalPreferences.global' );
 	}
 
 	/**
