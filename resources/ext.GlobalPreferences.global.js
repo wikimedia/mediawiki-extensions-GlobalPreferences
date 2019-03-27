@@ -37,6 +37,8 @@
 	 * @param {string} sectionID Section ID
 	 */
 	function updateSelectAllCheckboxState( sectionID ) {
+		var sectionCheckbox = checkboxSelectAllBySection[ sectionID ],
+			sectionCheckboxes = checkboxesBySection[ sectionID ];
 		if ( selectAllCheckboxesOngoing ) {
 			// Do not change the state of the 'select all' checkbox
 			// while we change the selection of the sub-checkboxes
@@ -45,14 +47,23 @@
 		}
 		// Suppress event listener
 		selectAllCheckboxesOngoing = true;
-		checkboxSelectAllBySection[ sectionID ].setSelected(
-			// Selection state should be only set if all checkboxes
-			// are selected
-			checkboxesBySection[ sectionID ] &&
-			checkboxesBySection[ sectionID ].every( function ( checkboxWidget ) {
-				return checkboxWidget.isSelected();
+		if (
+			sectionCheckboxes.every( function ( c ) {
+				return c.isSelected();
 			} )
-		);
+		) {
+			sectionCheckbox.setSelected( true );
+			sectionCheckbox.setIndeterminate( false );
+		} else if (
+			sectionCheckboxes.some( function ( c ) {
+				return c.isSelected();
+			} )
+		) {
+			sectionCheckbox.setIndeterminate( true );
+		} else {
+			sectionCheckbox.setSelected( false );
+			sectionCheckbox.setIndeterminate( false );
+		}
 		selectAllCheckboxesOngoing = false;
 	}
 
