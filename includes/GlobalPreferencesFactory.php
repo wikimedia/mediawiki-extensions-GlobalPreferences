@@ -153,11 +153,11 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 		$this->logger->debug( "Creating local preferences array for '{$this->user->getName()}'" );
 		$modifiedPrefs = [];
 		foreach ( $preferences as $name => $def ) {
+			$modifiedPrefs[$name] = $def;
 			if ( !isset( $def['section'] ) ) {
 				// Preference has no control in the UI
 				continue;
 			}
-			$modifiedPrefs[$name] = $def;
 			// If this has been set globally.
 			if ( in_array( $name, $globalPrefNames ) ) {
 				// Disable this local preference unless it either
