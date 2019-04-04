@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Robby"
+			"Robby",
+			"Les Meloures"
 		]
 	},
 	"globalprefs-desc": "Erlaabt et Benotzer hir global Astellunge festzeleeën",
@@ -15,5 +16,5 @@
 	"globalprefs-info-link": "Är global Astellunge festleeën",
 	"globalprefs-restoreprefs": "All global Astellungen (an alle Beräicher) ewechhuelen",
 	"globalprefs-select-all": "All Kontrollkëschten aktivéieren oder desaktivéieren",
-	"globalprefs-col-header": "Optiounen hei drënner eraussichen déi global si sollen"
+	"globalprefs-col-header": "Optiounen déi global solle sinn, hei drënner eraussichen"
 }
