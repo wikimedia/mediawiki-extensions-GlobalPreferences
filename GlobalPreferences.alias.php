@@ -28,6 +28,11 @@ $specialPageAliases['bgn'] = [
 	'GlobalPreferences' => [ 'سراسرین_تنزیمات' ],
 ];
 
+/** Czech (čeština) */
+$specialPageAliases['cs'] = [
+	'GlobalPreferences' => [ 'Globální_nastavení' ],
+];
+
 /** German (Deutsch) */
 $specialPageAliases['de'] = [
 	'GlobalPreferences' => [ 'Globale_Einstellungen' ],
