@@ -7,6 +7,7 @@ use ApiQuery;
 use DatabaseUpdater;
 use HTMLForm;
 use MediaWiki\Auth\AuthManager;
+use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use Message;
@@ -200,8 +201,15 @@ class Hooks {
 	 */
 	public static function onMediaWikiServices( MediaWikiServices $services ) {
 		$services->redefineService( 'PreferencesFactory', function ( MediaWikiServices $services ) {
+			if ( class_exists( 'MediaWiki\\Config\\ServiceOptions' ) ) {
+				// New 1.34 calling convention
+				$firstArg = new ServiceOptions(
+					GlobalPreferencesFactory::$constructorOptions, $services->getMainConfig() );
+			} else {
+				$firstArg = $services->getMainConfig();
+			}
 			$factory = new GlobalPreferencesFactory(
-				$services->getMainConfig(),
+				$firstArg,
 				$services->getContentLanguage(),
 				AuthManager::singleton(),
 				$services->getLinkRendererFactory()->create()
