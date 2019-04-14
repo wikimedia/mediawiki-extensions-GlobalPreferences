@@ -8,7 +8,7 @@ use HTMLForm;
 use IContextSource;
 use MediaWiki\MediaWikiServices;
 use PermissionsError;
-use PreferencesForm;
+use PreferencesFormOOUI;
 use SpecialPage;
 use SpecialPreferences;
 use User;
@@ -69,7 +69,7 @@ class SpecialGlobalPreferences extends SpecialPreferences {
 	 * Get the preferences form to use.
 	 * @param User $user The user.
 	 * @param IContextSource $context The context.
-	 * @return PreferencesForm|HTMLForm
+	 * @return PreferencesFormOOUI|HTMLForm
 	 */
 	protected function getFormObject( $user, IContextSource $context ) {
 		$preferencesFactory = MediaWikiServices::getInstance()->getPreferencesFactory();
