@@ -272,7 +272,9 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 		}
 		/** @var \User $user */
 		$user = $form->getModifiedUser();
-		$hiddenPrefs = $this->config->get( 'HiddenPrefs' );
+		// In 1.34 this is called $options, previously it's a Config
+		$hiddenPrefs = property_exists( $this, 'options' )
+			? $this->options->get( 'HiddenPrefs' ) : $this->config->get( 'HiddenPrefs' );
 		$result = true;
 
 		// Difference from parent: removed 'editmyprivateinfo'

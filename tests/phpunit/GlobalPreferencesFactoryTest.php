@@ -5,6 +5,7 @@ namespace GlobalPreferences\Test;
 use GlobalPreferences\GlobalPreferencesFactory;
 use GlobalPreferences\Storage;
 use HTMLCheckMatrix;
+use MediaWiki\Config\ServiceOptions;
 use MediaWikiTestCase;
 use User;
 use Wikimedia\TestingAccessWrapper;
@@ -113,8 +114,13 @@ class GlobalPreferencesFactoryTest extends MediaWikiTestCase {
 		$factory->method( 'makeStorage' )
 			->willReturn( $storage );
 		$factory->method( 'getFormDescriptor' )->willReturn( $this->formDescriptor );
-		$factory = TestingAccessWrapper::newFromObject( $factory );
-		$factory->config = new \HashConfig( [ 'HiddenPrefs' => [] ] );
+		$wrapper = TestingAccessWrapper::newFromObject( $factory );
+		// In 1.34 this is an array called $options, previously it's a Config
+		if ( property_exists( $factory, 'options' ) ) {
+			$wrapper->options = new ServiceOptions( [ 'HiddenPrefs' ], [ 'HiddenPrefs' => [] ] );
+		} else {
+			$wrapper->config = new \HashConfig( [ 'HiddenPrefs' => [] ] );
+		}
 
 		$postData = [ 'wpFormIdentifier' => 'testFormSaving' ];
 		foreach ( $formData as $name => $value ) {
