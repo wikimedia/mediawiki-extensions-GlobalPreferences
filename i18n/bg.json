@@ -7,6 +7,7 @@
 		]
 	},
 	"globalprefs-desc": "Позволява на потребителите да правят глобални настройки",
+	"globalprefs-set-local-exception": "Задаване на локално изключение за тази [[Special:GlobalPreferences#$1|глобална настройка]].",
 	"globalprefs-has-local-exception": "Тази глобална настройка има [[Special:Preferences#$1|локално изключение в това уики]].",
 	"globalprefs-error-header": "Грешка",
 	"globalpreferences": "Глобални настройки",
