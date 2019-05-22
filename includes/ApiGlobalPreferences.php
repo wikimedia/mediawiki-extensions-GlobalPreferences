@@ -14,10 +14,9 @@ class ApiGlobalPreferences extends ApiOptions {
 	 * @inheritDoc
 	 */
 	public function execute() {
-		$factory = $this->getFactory();
 		$user = $this->getUserForUpdates();
 		if ( $user ) {
-			$factory->setUser( $user );
+			$factory = $this->getFactory();
 			if ( !$factory->isUserGlobalized() ) {
 				$this->dieWithError( 'apierror-globalpreferences-notglobalized', 'notglobalized' );
 			}
