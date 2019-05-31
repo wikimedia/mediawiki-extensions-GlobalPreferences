@@ -16,6 +16,7 @@ class ApiGlobalPreferenceOverrides extends ApiOptions {
 	public function execute() {
 		/** @var GlobalPreferencesFactory $factory */
 		$factory = MediaWikiServices::getInstance()->getPreferencesFactory();
+		'@phan-var GlobalPreferencesFactory $factory';
 		$user = $this->getUserForUpdates();
 		if ( $user ) {
 			$factory->setUser( $user );

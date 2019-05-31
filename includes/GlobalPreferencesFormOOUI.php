@@ -40,6 +40,7 @@ class GlobalPreferencesFormOOUI extends PreferencesFormOOUI {
 		// Load global values for any preferences with local exceptions.
 		/** @var GlobalPreferencesFactory $globalPreferences */
 		$globalPreferences = MediaWikiServices::getInstance()->getPreferencesFactory();
+		'@phan-var GlobalPreferencesFactory $globalPreferences';
 		$globalPreferences->setUser( $this->getUser() );
 		$globalPrefValues = $globalPreferences->getGlobalPreferencesValues( Storage::SKIP_CACHE );
 

@@ -270,10 +270,12 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 		if ( !$this->onGlobalPrefsPage( $form ) ) {
 			return parent::saveFormData( $formData, $form, $formDescriptor );
 		}
+		'@phan-var GlobalPreferencesFormOOUI $form';
 		/** @var \User $user */
 		$user = $form->getModifiedUser();
 		// In 1.34 this is called $options, previously it's a Config
 		$hiddenPrefs = property_exists( $this, 'options' )
+			/** @phan-suppress-next-line PhanUndeclaredProperty */
 			? $this->options->get( 'HiddenPrefs' ) : $this->config->get( 'HiddenPrefs' );
 		$result = true;
 

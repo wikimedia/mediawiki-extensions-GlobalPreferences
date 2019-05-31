@@ -42,6 +42,7 @@ class Hooks {
 	public static function onUserLoadOptions( User $user, &$options ) {
 		/** @var GlobalPreferencesFactory $globalPreferences */
 		$globalPreferences = MediaWikiServices::getInstance()->getPreferencesFactory();
+		'@phan-var GlobalPreferencesFactory $globalPreferences';
 		$globalPreferences->setUser( $user );
 		if ( !$globalPreferences->isUserGlobalized() ) {
 			// Not a global user.
@@ -91,6 +92,7 @@ class Hooks {
 	public static function onUserSaveOptions( User $user, &$options ) {
 		/** @var GlobalPreferencesFactory $preferencesFactory */
 		$preferencesFactory = MediaWikiServices::getInstance()->getPreferencesFactory();
+		'@phan-var GlobalPreferencesFactory $preferencesFactory';
 		$preferencesFactory->setUser( $user );
 		if ( $preferencesFactory->onGlobalPrefsPage() ) {
 			// It shouldn't be possible to save local options here,
@@ -123,6 +125,7 @@ class Hooks {
 	) {
 		/** @var GlobalPreferencesFactory $preferencesFactory */
 		$preferencesFactory = MediaWikiServices::getInstance()->getPreferencesFactory();
+		'@phan-var GlobalPreferencesFactory $preferencesFactory';
 		if ( !$preferencesFactory->onGlobalPrefsPage( $form ) ) {
 			return self::localPreferencesFormPreSave( $formData, $user );
 		}
@@ -242,6 +245,7 @@ class Hooks {
 	public static function makeApiQueryGlobalPreferences( ApiQuery $queryModule, $moduleName ) {
 		/** @var GlobalPreferencesFactory $factory */
 		$factory = MediaWikiServices::getInstance()->getPreferencesFactory();
+		'@phan-var GlobalPreferencesFactory $factory';
 		return new ApiQueryGlobalPreferences( $queryModule, $moduleName, $factory );
 	}
 
@@ -260,6 +264,7 @@ class Hooks {
 
 		/** @var GlobalPreferencesFactory $factory */
 		$factory = MediaWikiServices::getInstance()->getPreferencesFactory();
+		'@phan-var GlobalPreferencesFactory $factory';
 		$factory->setUser( $user );
 		$globalPrefs = $factory->getGlobalPreferencesValues();
 

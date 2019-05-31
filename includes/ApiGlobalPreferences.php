@@ -30,6 +30,7 @@ class ApiGlobalPreferences extends ApiOptions {
 	private function getFactory() {
 		/** @var GlobalPreferencesFactory $factory */
 		$factory = MediaWikiServices::getInstance()->getPreferencesFactory();
+		'@phan-var GlobalPreferencesFactory $factory';
 		$factory->setUser( $this->getUserForUpdates() );
 		return $factory;
 	}
