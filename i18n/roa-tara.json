@@ -5,5 +5,17 @@
 		]
 	},
 	"globalprefs-desc": "Permette a le utinde de 'mbostà preferenze globbale",
-	"globalprefs-error-header": "Errore"
+	"globalprefs-set-local-exception": "Scacchie 'n'estenzione locale pe sta [[Special:GlobalPreferences#$1|preferenze globbale]].",
+	"globalprefs-has-local-exception": "Sta preferenze globbale ave 'n'[[Special:Preferences#$1|eccezzione locale sus a sta uicchi]].",
+	"tooltip-globalprefs-check-label": "Fà devendà globbale sta 'mbostazione",
+	"globalprefs-error-header": "Errore",
+	"globalprefs-notglobal": "'U cunde tune non g'è 'nu cunde globbale e non ge puè 'mbostà preferenze globbale.",
+	"globalpreferences": "Preferenze globbale",
+	"globalprefs-info-label": "Preferenze globbale:",
+	"globalprefs-info-link": "'Mboste le preferenze globbale tune",
+	"globalprefs-info-help": "Le preferenze 'mbostate ausanne 'a pàgene de le preferenze globbale avènene ausate sus a tutte le uicchi.",
+	"globalprefs-reset-intro": "Puè ausà sta pàgene pe disabbilità tutte le preferenze globbale sus a tutte le uicchi e turnà a le preferenze locale. Sta operazione non ge 'nfluenze le preferenze locale. L'operazione non ge pò essere annullate.",
+	"globalprefs-restoreprefs": "Live tutte le preferenze globbale (jndr'à tutte le seziune)",
+	"globalprefs-select-all": "Live e mitte tutte le caselle de condrolle",
+	"globalprefs-col-header": "Fà devendà globbale le le opziune scacchiate aqquà sotte"
 }
