@@ -273,10 +273,7 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 		'@phan-var GlobalPreferencesFormOOUI $form';
 		/** @var \User $user */
 		$user = $form->getModifiedUser();
-		// In 1.34 this is called $options, previously it's a Config
-		$hiddenPrefs = property_exists( $this, 'options' )
-			/** @phan-suppress-next-line PhanUndeclaredProperty */
-			? $this->options->get( 'HiddenPrefs' ) : $this->config->get( 'HiddenPrefs' );
+		$hiddenPrefs = $this->options->get( 'HiddenPrefs' );
 		$result = true;
 
 		// Difference from parent: removed 'editmyprivateinfo'
