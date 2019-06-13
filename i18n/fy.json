@@ -6,11 +6,18 @@
 			"PiefPafPier"
 		]
 	},
+	"globalprefs-desc": "Lit meidoggers globale foarkarren ynstelle",
+	"globalprefs-set-local-exception": "Lokale útsûndering foar dizze [[Special:GlobalPreferences#$1|globale foarkar]] ynstelle.",
+	"globalprefs-has-local-exception": "Dizze globale foarkar hat in [[Special:Preferences#$1|lokale útsûndering op dizze wiki]].",
+	"tooltip-globalprefs-check-label": "Dizze ynstelling globaal meitsje",
 	"globalprefs-error-header": "Flater",
+	"globalprefs-notglobal": "Jo akkount is gjin globalenien, dat globale foarkarren kinne net ynsteld wurde.",
 	"globalpreferences": "Globale foarkarren",
 	"globalprefs-info-label": "Globale foarkarren:",
 	"globalprefs-info-link": "Jo globale foarkarren ynstelle",
 	"globalprefs-info-help": "Ynstellings fia de side Globale foarkarren wurde op alle wiki's tapast.",
+	"globalprefs-reset-intro": "Jo kinne dizze side brûke, en skeakelje alle globale foarkarren út op alle wiki's. Dat kin net ûngedien makke wurde. It hat gjin ynfloed op jo lokale wikifoarkarren, oars as dat dy dêrnei wer brûkt wurde.",
 	"globalprefs-restoreprefs": "Alle globale foarkarren wiskje (yn alle parten)",
+	"globalprefs-select-all": "Alles oan- as útfinkje",
 	"globalprefs-col-header": "Opsjes hjirûnder selektearje om globaal te meitsjen"
 }
