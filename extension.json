@@ -13,7 +13,8 @@
 		"MediaWiki": ">= 1.34.0"
 	},
 	"config": {
-		"GlobalPreferencesDB": null
+		"GlobalPreferencesDB": null,
+		"GlobalPreferencesAutoPrefs": []
 	},
 	"SpecialPages": {
 		"GlobalPreferences": "GlobalPreferences\\SpecialGlobalPreferences"
