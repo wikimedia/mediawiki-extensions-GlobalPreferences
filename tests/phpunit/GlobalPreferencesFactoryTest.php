@@ -115,12 +115,7 @@ class GlobalPreferencesFactoryTest extends MediaWikiTestCase {
 			->willReturn( $storage );
 		$factory->method( 'getFormDescriptor' )->willReturn( $this->formDescriptor );
 		$wrapper = TestingAccessWrapper::newFromObject( $factory );
-		// In 1.34 this is an array called $options, previously it's a Config
-		if ( property_exists( $factory, 'options' ) ) {
-			$wrapper->options = new ServiceOptions( [ 'HiddenPrefs' ], [ 'HiddenPrefs' => [] ] );
-		} else {
-			$wrapper->config = new \HashConfig( [ 'HiddenPrefs' => [] ] );
-		}
+		$wrapper->options = new ServiceOptions( [ 'HiddenPrefs' ], [ 'HiddenPrefs' => [] ] );
 
 		$postData = [ 'wpFormIdentifier' => 'testFormSaving' ];
 		foreach ( $formData as $name => $value ) {

@@ -204,15 +204,11 @@ class Hooks {
 	 */
 	public static function onMediaWikiServices( MediaWikiServices $services ) {
 		$services->redefineService( 'PreferencesFactory', function ( MediaWikiServices $services ) {
-			if ( class_exists( 'MediaWiki\\Config\\ServiceOptions' ) ) {
-				// New 1.34 calling convention
-				$firstArg = new ServiceOptions(
+			$config = new ServiceOptions(
 					GlobalPreferencesFactory::$constructorOptions, $services->getMainConfig() );
-			} else {
-				$firstArg = $services->getMainConfig();
-			}
+
 			$factory = new GlobalPreferencesFactory(
-				$firstArg,
+				$config,
 				$services->getContentLanguage(),
 				AuthManager::singleton(),
 				$services->getLinkRendererFactory()->create(),
