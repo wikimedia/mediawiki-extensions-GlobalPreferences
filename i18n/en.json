@@ -14,7 +14,7 @@
 	"globalpreferences": "Global preferences",
 	"globalprefs-info-label": "Global preferences:",
 	"globalprefs-info-link": "Set your global preferences",
-	"globalprefs-info-help": "Preferences set via global preferences page will apply to all wikis.",
+	"globalprefs-info-help": "Preferences set via the global preferences page will apply to all wikis.",
 	"globalprefs-reset-intro": "You can use this page to disable all global preferences on all wikis and return to your local preferences. This does not affect any local wiki preferences. This cannot be undone.",
 	"globalprefs-restoreprefs": "Remove all global preferences (in all sections)",
 	"globalprefs-select-all": "Toggle all checkboxes on or off",
