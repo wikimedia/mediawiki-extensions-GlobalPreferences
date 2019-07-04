@@ -51,6 +51,11 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	protected $centralIds;
 
 	/**
+	 * @var string[] Names of autoglobal options
+	 */
+	protected $autoGlobals = [];
+
+	/**
 	 * "bad" preferences that we should remove from
 	 * Special:GlobalPrefs
 	 * @var array
@@ -100,6 +105,16 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	 */
 	public function setUser( User $user ) {
 		$this->user = $user;
+	}
+
+	/**
+	 * Sets the list of options for which setting the local value should transparently update
+	 * the global value.
+	 *
+	 * @param string[] $list
+	 */
+	public function setAutoGlobals( array $list ) {
+		$this->autoGlobals = $list;
 	}
 
 	/**
@@ -555,6 +570,35 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 		$context = $context ?: RequestContext::getMain();
 		return $context->getTitle()
 		&& $context->getTitle()->isSpecial( 'Preferences' );
+	}
+
+	/**
+	 * Processes local user options before they're saved
+	 *
+	 * @param array &$options
+	 * @throws Exception
+	 */
+	public function handleLocalPreferencesChange( array &$options ) {
+		$globals = [];
+
+		foreach ( $options as $optName => $optVal ) {
+			// Ignore if ends in "-global".
+			if ( static::isGlobalPrefName( $optName ) ) {
+				unset( $options[ $optName ] );
+			}
+
+			$isAutoGlobal = in_array( $optName, $this->autoGlobals );
+
+			$localOverride = $optName . static::LOCAL_EXCEPTION_SUFFIX;
+			if ( $isAutoGlobal && !array_key_exists( $localOverride, $options ) ) {
+				$globals[$optName] = $optVal;
+			}
+		}
+
+		if ( $globals ) {
+			$globals += $this->getGlobalPreferencesValues( true );
+			$this->makeStorage()->save( $globals, array_keys( $globals ) );
+		}
 	}
 
 	/**

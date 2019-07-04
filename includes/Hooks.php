@@ -86,7 +86,7 @@ class Hooks {
 	 * @param string[] &$options The user's options.
 	 * @return bool False if nothing changed, true otherwise.
 	 */
-	public static function onUserSaveOptions( User $user, &$options ) {
+	public static function onUserSaveOptions( User $user, array &$options ) {
 		$preferencesFactory = self::getPreferencesFactory( $user );
 		if ( $preferencesFactory->onGlobalPrefsPage() ) {
 			// It shouldn't be possible to save local options here,
@@ -94,12 +94,8 @@ class Hooks {
 			return false;
 		}
 
-		foreach ( $options as $optName => $optVal ) {
-			// Ignore if ends in "-global".
-			if ( GlobalPreferencesFactory::isGlobalPrefName( $optName ) ) {
-				unset( $options[ $optName ] );
-			}
-		}
+		$preferencesFactory->handleLocalPreferencesChange( $options );
+
 		return true;
 	}
 
@@ -196,8 +192,10 @@ class Hooks {
 	 */
 	public static function onMediaWikiServices( MediaWikiServices $services ) {
 		$services->redefineService( 'PreferencesFactory', function ( MediaWikiServices $services ) {
-			$config = new ServiceOptions(
-					GlobalPreferencesFactory::$constructorOptions, $services->getMainConfig() );
+			$mainConfig = $services->getMainConfig();
+			$config = new ServiceOptions( GlobalPreferencesFactory::$constructorOptions,
+				$mainConfig
+			);
 
 			$factory = new GlobalPreferencesFactory(
 				$config,
@@ -207,6 +205,7 @@ class Hooks {
 				$services->getNamespaceInfo()
 			);
 			$factory->setLogger( LoggerFactory::getInstance( 'preferences' ) );
+			$factory->setAutoGlobals( $mainConfig->get( 'GlobalPreferencesAutoPrefs' ) );
 
 			return $factory;
 		} );
