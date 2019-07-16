@@ -13,7 +13,7 @@ module.exports = function ( grunt ) {
 				reportUnusedDisableDirectives: true,
 				cache: true
 			},
-			src: [
+			all: [
 				'**/*.js',
 				'!node_modules/**',
 				'!vendor/**',
