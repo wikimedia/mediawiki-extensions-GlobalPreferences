@@ -1,8 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Αντιγόνη"
+			"Αντιγόνη",
+			"Geraki"
 		]
 	},
-	"globalpreferences": "Καθολικές προτιμήσεις"
+	"globalprefs-set-local-exception": "Ορίστε μια τοπική εξαίρεση για αυτή την [[Special:GlobalPreferences#$1|καθολική προτίμηση]].",
+	"globalpreferences": "Καθολικές προτιμήσεις",
+	"globalprefs-info-label": "Καθολικές προτιμήσεις:",
+	"globalprefs-info-link": "Ορίστε τις καθολικές προτιμήσεις σας",
+	"globalprefs-info-help": "Προτιμήσεις που θα οριστούν μέσα από τη σελίδα καθολικών προτιμήσεων θα ισχύουν σε όλα τα wiki."
 }
