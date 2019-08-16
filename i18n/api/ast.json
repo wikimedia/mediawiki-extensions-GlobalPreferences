@@ -28,5 +28,6 @@
 	"apihelp-globalpreferenceoverrides-param-optionname": "El nome de la variación que tien de configurase pal valor dau por <var>optionvalue</var>.",
 	"apihelp-globalpreferenceoverrides-param-optionvalue": "El valor de la variación especificada por <var>optionname</var>.",
 	"apihelp-globalpreferenceoverrides-example-reset": "Desaniciar toles variaciones llocales.",
-	"apihelp-globalpreferenceoverrides-example-change": "Configurar o cambiar les variaciones pa les preferencies de <kbd>skin</kbd> y <kbd>hideminor</kbd>."
+	"apihelp-globalpreferenceoverrides-example-change": "Configurar o cambiar les variaciones pa les preferencies de <kbd>skin</kbd> y <kbd>hideminor</kbd>.",
+	"apiwarn-globally-overridden": "{{PLURAL:$2|La opción|Les opciones}} $1 {{PLURAL:$2|saltóse|saltáronse}} de mou global."
 }
