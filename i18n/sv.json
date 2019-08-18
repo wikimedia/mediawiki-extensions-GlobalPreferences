@@ -6,7 +6,7 @@
 			"WikiPhoenix"
 		]
 	},
-	"globalprefs-desc": "Tillåter användare att ange globala inställningar",
+	"globalprefs-desc": "Låter användare ändra globala inställningar",
 	"globalprefs-set-local-exception": "Ange ett lokalt undantag för denna [[Special:GlobalPreferences#$1|globala inställning]].",
 	"globalprefs-has-local-exception": "Denna globala inställning har ett [[Special:Preferences#$1|lokalt undantag på denna wiki]].",
 	"tooltip-globalprefs-check-label": "Gör denna inställning global",
