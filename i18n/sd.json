@@ -1,13 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"Tweety"
+			"Tweety",
+			"Mehtab ahmed"
 		]
 	},
 	"globalpreferences": "عالمي ترجيحون",
 	"globalprefs-info-label": "عالمي ترجيحون",
-	"globalprefs-info-link": "پنهنجيون عالمي ترجيحات مرتب ڪيو",
+	"globalprefs-info-link": "پنھنجيون عالمي ترجيحون مرتب ڪيو",
 	"globalprefs-info-help": "عالمي ترجيحن ذريعي مقرر ڪيل ترجيحون سمورين وڪين تي لاڳو ٿيندو.",
-	"globalprefs-restoreprefs": "عالمي ترجيحات ختم ڪيو (سمورنن خانن مان)",
+	"globalprefs-restoreprefs": "سڀ عالمي ترجيحون ختم ڪريو (سمورنن خانن مان)",
 	"globalprefs-col-header": "هيٺ ڏنل عالمي ترجيحون چونڊيو"
 }
