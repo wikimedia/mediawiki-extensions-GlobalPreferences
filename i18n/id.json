@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Iwan Novirion"
+		]
+	},
+	"globalpreferences": "Preferensi global",
+	"globalprefs-info-link": "Atur preferensi global",
+	"globalprefs-info-help": "Preferensi yang diatur melalui preferensi global akan tampil disemua wiki.",
+	"globalprefs-col-header": "Pilih pilihan di bawah untuk diatur global"
+}

@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Iwan Novirion"
+		]
+	},
+	"globalpreferences": "Pangaturan global",
+	"globalprefs-info-link": "Set pangaturan global",
+	"globalprefs-info-help": "Set nan diatua malalui pangaturan global tampak pado sagalo wiki",
+	"globalprefs-col-header": "Piliah piliahan di bawah bia jadi global"
+}
