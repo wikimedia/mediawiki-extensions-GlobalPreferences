@@ -16,7 +16,6 @@ namespace GlobalPreferences;
 use CentralIdLookup;
 use Exception;
 use HTMLCheckMatrix;
-use HTMLForm;
 use IContextSource;
 use LogicException;
 use MapCacheLRU;
@@ -281,12 +280,12 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	/**
 	 * @inheritDoc
 	 */
-	protected function saveFormData( $formData, HTMLForm $form, array $formDescriptor ) {
+	protected function saveFormData( $formData, \PreferencesFormOOUI $form, array $formDescriptor ) {
 		if ( !$this->onGlobalPrefsPage( $form ) ) {
 			return parent::saveFormData( $formData, $form, $formDescriptor );
 		}
 		'@phan-var GlobalPreferencesFormOOUI $form';
-		/** @var \User $user */
+
 		$user = $form->getModifiedUser();
 		$hiddenPrefs = $this->options->get( 'HiddenPrefs' );
 		$result = true;
