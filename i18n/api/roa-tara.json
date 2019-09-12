@@ -4,5 +4,6 @@
 			"Joetaras"
 		]
 	},
+	"apihelp-globalpreferences-summary": "Cange le preferenze globbale de l'utende de mò.",
 	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Preferenze globbale."
 }

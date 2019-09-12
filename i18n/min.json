@@ -4,7 +4,10 @@
 			"Iwan Novirion"
 		]
 	},
+	"globalprefs-desc": "Maijinan pangguno malakuan pangaturan global",
+	"globalprefs-set-local-exception": "Atua pangacualian lokal untuk [[Special:GlobalPreferences#$1|pangaturan global]] ko.",
 	"globalpreferences": "Pangaturan global",
+	"globalprefs-info-label": "Pangaturan global",
 	"globalprefs-info-link": "Set pangaturan global",
 	"globalprefs-info-help": "Set nan diatua malalui pangaturan global tampak pado sagalo wiki",
 	"globalprefs-col-header": "Piliah piliahan di bawah bia jadi global"
