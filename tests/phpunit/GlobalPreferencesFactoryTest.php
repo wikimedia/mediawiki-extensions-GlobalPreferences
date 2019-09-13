@@ -6,6 +6,7 @@ use GlobalPreferences\GlobalPreferencesFactory;
 use GlobalPreferences\Storage;
 use HTMLCheckMatrix;
 use MediaWiki\Config\ServiceOptions;
+use MediaWiki\MediaWikiServices;
 use MediaWikiTestCase;
 use User;
 use Wikimedia\TestingAccessWrapper;
@@ -102,8 +103,7 @@ class GlobalPreferencesFactoryTest extends MediaWikiTestCase {
 			->getMock();
 		$user->expects( self::never() )->method( 'setOption' );
 		$user->expects( self::never() )->method( 'saveSettings' );
-		$user->method( 'isAllowed' )
-			->willReturn( true );
+		$this->overrideUserPermissions( $user, [ 'editmyoptions' ] );
 
 		$factory = $this->getMockBuilder( GlobalPreferencesFactory::class )
 			->disableOriginalConstructor()
@@ -116,6 +116,7 @@ class GlobalPreferencesFactoryTest extends MediaWikiTestCase {
 		$factory->method( 'getFormDescriptor' )->willReturn( $this->formDescriptor );
 		$wrapper = TestingAccessWrapper::newFromObject( $factory );
 		$wrapper->options = new ServiceOptions( [ 'HiddenPrefs' ], [ 'HiddenPrefs' => [] ] );
+		$wrapper->permissionManager = MediaWikiServices::getInstance()->getPermissionManager();
 
 		$postData = [ 'wpFormIdentifier' => 'testFormSaving' ];
 		foreach ( $formData as $name => $value ) {
