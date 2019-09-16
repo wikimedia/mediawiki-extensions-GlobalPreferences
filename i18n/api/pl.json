@@ -1,16 +1,26 @@
 {
 	"@metadata": {
 		"authors": [
-			"Chrumps"
+			"Chrumps",
+			"Rail"
 		]
 	},
 	"apihelp-globalpreferences-summary": "Zmień globalne preferencje bieżącego użytkownika.",
 	"apihelp-globalpreferences-extended-description": "Tylko preferencje zarejestrowane dla bieżącej wiki mogą być zmieniane lokalnie.",
+	"apihelp-globalpreferences-param-reset": "Zresetuj globalne preferencje. Usuwa wszystko, lub w zależności od wartości parametru <code>resetkinds</code> tylko niektóre typy globalnych preferencji i sprawia, że nie są już globalne.",
+	"apihelp-globalpreferences-param-resetkinds": "Lista typów opcji do zresetowania, jeżeli ustawiono opcję <var>reset</var>.",
+	"apihelp-globalpreferences-param-optionname": "Nazwa opcji, która powinna być ustawiona na wartość <var>optionvalue</var>.",
 	"apihelp-globalpreferences-param-optionvalue": "Wartość dla preferencji określona przez <var>optionname</var>.",
+	"apihelp-globalpreferences-example-reset-one": "Ustaw pojedynczą preferencję jako nie-globalną.",
 	"apihelp-globalpreferences-example-reset": "Ustaw wszystkie preferencje na nieglobalne.",
+	"apihelp-globalpreferences-example-change": "Zmień preferencje <kbd>skin</kbd> (skórka) i <kbd>hideminor</kbd> (ukryj drobne edycje).",
+	"apihelp-query+globalpreferences-summary": "Pozyskaj globalne preferencje bieżącego użytkownika.",
+	"apihelp-query+globalpreferences-extended-description": "Pozyskuje zarówno globalne preferencje, jak i ich lokalne nadpisania.",
+	"apihelp-query+globalpreferences-param-prop": "Jakie preferencje uwzględnić:",
 	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Preferencje globalne.",
 	"apihelp-query+globalpreferences-paramvalue-prop-localoverrides": "Lokalne nadpisania dla preferencji globalnych.",
 	"apierror-globalpreferences-notglobalized": "Bieżący użytkownik nie jest globalny.",
 	"apihelp-globalpreferenceoverrides-summary": "Zmień lokalne nadpisania dla globalnych preferencji dla bieżącego użytkownika.",
+	"apihelp-globalpreferenceoverrides-param-reset": "Zresetuj lokalne nadpisania. Usuwa wszystko, lub w zależności od wartości parametru <code>resetkinds</code> tylko niektóre typy lokalnych nadpisań i sprawia, że są ponownie globalne.",
 	"apihelp-globalpreferenceoverrides-example-reset": "Usuń wszystkie lokalne nadpisania."
 }

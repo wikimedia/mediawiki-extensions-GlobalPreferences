@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Silraks"
+			"Silraks",
+			"Papuass"
 		]
 	},
+	"globalprefs-error-header": "Kļūda",
 	"globalpreferences": "Globālās izvēles",
 	"globalprefs-info-label": "Globālās izvēles:",
 	"globalprefs-info-link": "Iestati savas globālās izvēles",
