@@ -5,5 +5,16 @@
 		]
 	},
 	"apihelp-globalpreferences-summary": "Cange le preferenze globbale de l'utende de mò.",
-	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Preferenze globbale."
+	"apihelp-globalpreferences-extended-description": "Sulamende le preferenze reggistrate pe uicchi de mò ponne essere cangiate in locale.",
+	"apihelp-globalpreferences-param-resetkinds": "Elenghe de le tipe de preferenze da azzerà quanne l'opzione <var>reset</var> jè 'mbostate.",
+	"apihelp-globalpreferences-example-reset-one": "Fà 'na sola preferenze non-globbale.",
+	"apihelp-globalpreferences-example-reset": "Fà tutte le preferenze non-globbale.",
+	"apihelp-globalpreferences-example-change": "Cange le preferenze <kbd>skin</kbd> e <kbd>hideminor</kbd>.",
+	"apihelp-query+globalpreferences-param-prop": "Ce preferenze vuè 'ngludere:",
+	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Preferenze globbale.",
+	"apihelp-query+globalpreferences-paramvalue-prop-localoverrides": "Sovrascretture locale pe le preferenze globbale.",
+	"apierror-globalpreferences-notglobalized": "L'utende de mò non g'è globbale.",
+	"apihelp-globalpreferenceoverrides-example-reset": "Live tutte le sovrascretture locale.",
+	"apihelp-globalpreferenceoverrides-example-change": "'Mboste o cnage le sovrascretture pe le preferenze <kbd>skin</kbd> e <kbd>hideminor</kbd>.",
+	"apiwarn-globally-overridden": "{{PLURAL:$2|Opzione|Opziune}} $1 {{PLURAL:$2|jè|sò}} globbalmende sovrascritte."
 }
