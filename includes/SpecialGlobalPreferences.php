@@ -84,7 +84,9 @@ class SpecialGlobalPreferences extends SpecialPreferences {
 	 * @throws PermissionsError
 	 */
 	protected function showResetForm() {
-		if ( !$this->getUser()->isAllowed( 'editmyoptions' ) ) {
+		if ( !MediaWikiServices::getInstance()->getPermissionManager()
+				->userHasRight( $this->getUser(), 'editmyoptions' )
+		) {
 			throw new PermissionsError( 'editmyoptions' );
 		}
 
@@ -119,7 +121,9 @@ class SpecialGlobalPreferences extends SpecialPreferences {
 	 * @throws PermissionsError
 	 */
 	public function submitReset( $formData ) {
-		if ( !$this->getUser()->isAllowed( 'editmyoptions' ) ) {
+		if ( !MediaWikiServices::getInstance()->getPermissionManager()
+				->userHasRight( $this->getUser(), 'editmyoptions' )
+		) {
 			throw new PermissionsError( 'editmyoptions' );
 		}
 

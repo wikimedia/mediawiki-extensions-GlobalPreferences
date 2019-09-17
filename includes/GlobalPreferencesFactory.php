@@ -291,7 +291,7 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 		$result = true;
 
 		// Difference from parent: removed 'editmyprivateinfo'
-		if ( !$user->isAllowed( 'editmyoptions' ) ) {
+		if ( !$this->permissionManager->userHasRight( $user, 'editmyoptions' ) ) {
 			return Status::newFatal( 'mypreferencesprotected' );
 		}
 
