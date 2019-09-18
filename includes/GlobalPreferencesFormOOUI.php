@@ -99,7 +99,7 @@ class GlobalPreferencesFormOOUI extends PreferencesFormOOUI {
 	 * @return string
 	 */
 	public function getButtons() {
-		if ( !$this->getModifiedUser()->isAllowedAny( 'editmyprivateinfo', 'editmyoptions' ) ) {
+		if ( !$this->areOptionsEditable() && !$this->isPrivateInfoEditable() ) {
 			return '';
 		}
 
@@ -111,7 +111,7 @@ class GlobalPreferencesFormOOUI extends PreferencesFormOOUI {
 		// We're going to call the grandparent directly and skip the parent
 		$html = \OOUIHTMLForm::getButtons();
 
-		if ( $this->getModifiedUser()->isAllowed( 'editmyoptions' ) ) {
+		if ( $this->areOptionsEditable() ) {
 			$t = $this->getTitle()->getSubpage( 'reset' );
 
 			$html .= new \OOUI\ButtonWidget( [
