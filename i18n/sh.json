@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Vlad5250"
+			"Vlad5250",
+			"Hmxhmx"
 		]
 	},
 	"globalprefs-desc": "Omogućava suradnicima postavljanje globalnih podešavanja",
@@ -13,7 +14,7 @@
 	"globalpreferences": "Globalna podešavanja",
 	"globalprefs-info-label": "Globalna podešavanja:",
 	"globalprefs-info-link": "Postavi globalna podešavanja",
-	"globalprefs-info-help": "Podešavanja postavljena pomoću stranice globalnih podešavanja \n primjenjivat će se na sve wikije.",
+	"globalprefs-info-help": "Podešavanja postavljena pomoću stranice globalnih podešavanja primjenjivat će se na sve wikije.",
 	"globalprefs-reset-intro": "Ova stranica služi za onemogućavanje svih globalnih podešavanja na svim wikijama za povratak mjesnih podešavanja. To ne utječe na mjesna podešavanja. Djelovanje je nepovratno.",
 	"globalprefs-restoreprefs": "Ukloni sva globalna podešavanja (u svim odeljcima)",
 	"globalprefs-select-all": "Izaberi/poništi sve"
