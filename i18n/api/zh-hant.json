@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"A2093064",
-			"Kly"
+			"Kly",
+			"Xiplus"
 		]
 	},
 	"apihelp-globalpreferences-summary": "更改當前使用者的全域偏好設定。",
