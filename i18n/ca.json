@@ -2,11 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"Fitoschido",
-			"Vriullop"
+			"Vriullop",
+			"Qllach"
 		]
 	},
 	"globalprefs-desc": "Permet als usuaris definir preferències globals",
 	"globalprefs-set-local-exception": "Defineix una excepció local per a aquesta [[Special:GlobalPreferences#$1|preferència global]].",
+	"globalprefs-has-local-exception": "Aquesta preferència global [[Special:Preferences#$1|no s'aplica en aquest  wiki]].",
 	"tooltip-globalprefs-check-label": "Marca aquesta opció com a global",
 	"globalprefs-error-header": "Error",
 	"globalprefs-notglobal": "El vostre compte no és un compte global i no es poden configurar preferències globals.",
