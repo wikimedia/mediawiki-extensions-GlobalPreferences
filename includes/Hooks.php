@@ -193,7 +193,7 @@ class Hooks {
 	public static function onMediaWikiServices( MediaWikiServices $services ) {
 		$services->redefineService( 'PreferencesFactory', function ( MediaWikiServices $services ) {
 			$mainConfig = $services->getMainConfig();
-			$config = new ServiceOptions( GlobalPreferencesFactory::$constructorOptions,
+			$config = new ServiceOptions( GlobalPreferencesFactory::CONSTRUCTOR_OPTIONS,
 				$mainConfig
 			);
 
