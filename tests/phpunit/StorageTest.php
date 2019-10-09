@@ -11,8 +11,8 @@ use Wikimedia\TestingAccessWrapper;
  * @group GlobalPreferences
  */
 class StorageTest extends MediaWikiTestCase {
-	const USER_ID = 123;
-	const CACHE_KEY = 'test:cache:key';
+	protected const USER_ID = 123;
+	protected const CACHE_KEY = 'test:cache:key';
 
 	private function makeMock() {
 		return $this->getMockBuilder( Storage::class )

@@ -18,16 +18,16 @@ use Wikimedia\Rdbms\IDatabase;
 class Storage {
 
 	/** The non-prefixed name of the global preferences database table. */
-	const TABLE_NAME = 'global_preferences';
+	public const TABLE_NAME = 'global_preferences';
 
 	/** Update this constant when making incompatible changes to caching */
-	const CACHE_VERSION = 1;
+	protected const CACHE_VERSION = 1;
 
 	/** Cache lifetime */
-	const CACHE_TTL = IExpiringStore::TTL_WEEK;
+	protected const CACHE_TTL = IExpiringStore::TTL_WEEK;
 
-	/** Instructs pereference loading code to load the preferences from cache directly */
-	const SKIP_CACHE = true;
+	/** Instructs preference loading code to load the preferences from cache directly */
+	public const SKIP_CACHE = true;
 
 	/** @var int The global user ID. */
 	protected $userId;

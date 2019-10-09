@@ -36,12 +36,12 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	 * The suffix appended to preference names
 	 * for the associated preference that tracks whether they have a local override.
 	 */
-	const LOCAL_EXCEPTION_SUFFIX = '-local-exception';
+	public const LOCAL_EXCEPTION_SUFFIX = '-local-exception';
 
 	/**
 	 * The suffix appended to preference names for their global counterparts.
 	 */
-	const GLOBAL_EXCEPTION_SUFFIX = '-global';
+	public const GLOBAL_EXCEPTION_SUFFIX = '-global';
 
 	/** @var User */
 	protected $user;
