@@ -40,12 +40,12 @@ class StorageTest extends MediaWikiTestCase {
 
 		$storage->expects( self::once() )
 			->method( 'getDatabase' )
-			->with( 'test' )
+			->with( DB_REPLICA )
 			->willReturn( $db );
 		$storage = TestingAccessWrapper::newFromObject( $storage );
 
 		/** @var Storage $storage */
-		self::assertEquals( [ 'foo' => 'bar' ], $storage->loadFromDB( 'test' ) );
+		self::assertEquals( [ 'foo' => 'bar' ], $storage->loadFromDB() );
 	}
 
 	/**
