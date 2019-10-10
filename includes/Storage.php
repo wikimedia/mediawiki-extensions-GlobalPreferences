@@ -21,10 +21,10 @@ class Storage {
 	public const TABLE_NAME = 'global_preferences';
 
 	/** Update this constant when making incompatible changes to caching */
-	protected const CACHE_VERSION = 1;
+	private const CACHE_VERSION = 1;
 
 	/** Cache lifetime */
-	protected const CACHE_TTL = IExpiringStore::TTL_WEEK;
+	private const CACHE_TTL = IExpiringStore::TTL_WEEK;
 
 	/** Instructs preference loading code to load the preferences from cache directly */
 	public const SKIP_CACHE = true;
