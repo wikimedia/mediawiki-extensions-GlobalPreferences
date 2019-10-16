@@ -36,7 +36,7 @@ class Storage {
 	 * Create a new Global Preferences Storage object for a given user.
 	 * @param int $userId The global user ID.
 	 */
-	public function __construct( $userId ) {
+	public function __construct( int $userId ) {
 		$this->userId = $userId;
 	}
 
@@ -46,7 +46,7 @@ class Storage {
 	 * @param bool $skipCache Whether the preferences should be loaded strictly from DB
 	 * @return string[] Keyed by the preference name.
 	 */
-	public function load( $skipCache = false ) {
+	public function load( bool $skipCache = false ) : array {
 		if ( $skipCache ) {
 			return $this->loadFromDB();
 		}
@@ -63,7 +63,7 @@ class Storage {
 	 * @param int $dbType One of DB_* constants
 	 * @return string[]
 	 */
-	protected function loadFromDB( $dbType = DB_REPLICA ) {
+	protected function loadFromDB( $dbType = DB_REPLICA ) : array {
 		$dbr = $this->getDatabase( $dbType );
 		$res = $dbr->select(
 			static::TABLE_NAME,
@@ -86,7 +86,8 @@ class Storage {
 	 * @param string[] $checkMatricesToClear List of check matrix controls that
 	 *        need their rows purged
 	 */
-	public function save( $newPrefs, $knownPrefs, array $checkMatricesToClear = [] ) {
+	public function save( array $newPrefs, array $knownPrefs, array $checkMatricesToClear = []
+	) : void {
 		$currentPrefs = $this->loadFromDB( DB_MASTER );
 
 		// Find records needing an insert or update
@@ -152,10 +153,10 @@ class Storage {
 	 * Delete all of this user's global preferences.
 	 * @param string[]|null $knownPrefs Only delete the preferences we know about.
 	 */
-	public function delete( $knownPrefs = null ) {
+	public function delete( ?array $knownPrefs = null ) : void {
 		$db = $this->getDatabase( DB_MASTER );
 		$conds = [ 'gp_user' => $this->userId ];
-		if ( is_array( $knownPrefs ) ) {
+		if ( $knownPrefs !== null ) {
 			$conds['gp_property'] = $knownPrefs;
 		}
 		$db->delete( static::TABLE_NAME, $conds, __METHOD__ );
@@ -168,7 +169,7 @@ class Storage {
 	 * @param int $type One of the DB_* constants
 	 * @return IDatabase
 	 */
-	protected function getDatabase( $type = DB_REPLICA ) {
+	protected function getDatabase( int $type = DB_REPLICA ) : IDatabase {
 		$config = MediaWikiServices::getInstance()->getMainConfig();
 		$globalPreferencesDB = (string)$config->get( 'GlobalPreferencesDB' );
 		$sharedDB = (string)$config->get( 'SharedDB' );
@@ -188,14 +189,14 @@ class Storage {
 	/**
 	 * @return WANObjectCache
 	 */
-	protected function getCache() {
+	protected function getCache() : WANObjectCache {
 		return MediaWikiServices::getInstance()->getMainWANObjectCache();
 	}
 
 	/**
 	 * @return string
 	 */
-	protected function getCacheKey() {
+	protected function getCacheKey() : string {
 		return $this->getCache()
 			->makeGlobalKey( 'globalpreferences', 'prefs', self::CACHE_VERSION, $this->userId );
 	}
