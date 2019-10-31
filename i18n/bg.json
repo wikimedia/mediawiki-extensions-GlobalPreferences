@@ -3,13 +3,15 @@
 		"authors": [
 			"DCLXVI",
 			"ShockD",
-			"Vlad5250"
+			"Vlad5250",
+			"StanProg"
 		]
 	},
 	"globalprefs-desc": "Позволява на потребителите да правят глобални настройки",
 	"globalprefs-set-local-exception": "Задаване на локално изключение за тази [[Special:GlobalPreferences#$1|глобална настройка]].",
 	"globalprefs-has-local-exception": "Тази глобална настройка има [[Special:Preferences#$1|локално изключение в това уики]].",
 	"globalprefs-error-header": "Грешка",
+	"globalprefs-notglobal": "Вашата сметка не е глобална и на нея не могат да се установяват глобални предпочитания.",
 	"globalpreferences": "Глобални настройки",
 	"globalprefs-info-label": "Глобални настройки:",
 	"globalprefs-info-link": "Задаване на глобални настройки",
