@@ -69,6 +69,7 @@ class GlobalPreferencesFormOOUI extends PreferencesFormOOUI {
 			$hasGlobalValue = isset( $globalPrefValues[ $fieldName ] );
 			if ( $this->getUser()->getOption( $localExceptionName ) && $hasGlobalValue ) {
 				// And if it does, use the global value.
+				// @phan-suppress-next-line PhanTypeArraySuspiciousNullable
 				$this->mFieldData[$fieldName] = $globalPrefDefinitions[$fieldName]['default'];
 			}
 		}
