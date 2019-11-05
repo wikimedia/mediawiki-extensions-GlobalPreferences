@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Teslaton"
+			"Teslaton",
+			"Luky001"
 		]
 	},
+	"globalprefs-desc": "Umožňuje používateľov nastaviť si globálne nastavenia",
 	"globalpreferences": "Globálne nastavenia",
 	"globalprefs-info-label": "Globálne nastavenia:",
 	"globalprefs-info-link": "Prispôsobiť globálne nastavenia",
