@@ -2,9 +2,34 @@
 	"@metadata": {
 		"authors": [
 			"Hedda",
-			"Sayginer"
+			"Sayginer",
+			"BaRaN6161 TURK"
 		]
 	},
+	"apihelp-globalpreferences-summary": "Geçerli kullanıcının genel tercihlerini değiştirin.",
+	"apihelp-globalpreferences-extended-description": "Yalnızca geçerli wiki için kaydedilen tercihler yerel olarak değiştirilebilir.",
+	"apihelp-globalpreferences-param-reset": "Küresel tercihleri sıfırlayın. Tümünü kaldırır veya <code>resetkinds</code> parametresinin değerine bağlı olarak, bazı global tercih türleri ve bunları artık global değiller.",
+	"apihelp-globalpreferences-param-resetkinds": "<var>reset</var> seçeneği ayarlandığında sıfırlanacak tercihlerin listesi.",
+	"apihelp-globalpreferences-param-change": "Değişikliklerin listesi, biçimlendirilmiş ad=değer (örneğin, skin=vector). Herhangi bir değer verilmezse (eşittir işareti bile olmasa bile), örneğin, tercihadı|diğer tercih|..., tercih küresel değildir. Geçirilen herhangi bir değer boru karakterini içeriyorsa (<kbd>|</kbd>), doğru çalışma için [[Special:ApiHelp/main#main/datatypes|alternatif çok değerli ayırıcı]] kullanın.",
+	"apihelp-globalpreferences-param-optionname": "<var>optionvalue</var> tarafından verilen değere ayarlanması gereken tercihin adı.",
+	"apihelp-globalpreferences-param-optionvalue": "<var>optionname</var> tarafından belirtilen tercihin değeri.",
+	"apihelp-globalpreferences-example-reset-one": "Küresel olmayan tek bir tercih yapın.",
+	"apihelp-globalpreferences-example-reset": "Tüm tercihleri küresel değil yapın.",
 	"apihelp-globalpreferences-example-change": "<kbd>Temayı</kbd> değiştir ve küçük tercihleri <kbd>gizle</kbd>.",
-	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Küresel tercihler."
+	"apihelp-query+globalpreferences-summary": "Geçerli kullanıcı için genel tercihleri alın.",
+	"apihelp-query+globalpreferences-extended-description": "Hem küresel tercihleri hem de yerel geçersiz kılmalarını alabilir.",
+	"apihelp-query+globalpreferences-param-prop": "Hangi önkoşullar eklenecek:",
+	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Küresel tercihler.",
+	"apihelp-query+globalpreferences-paramvalue-prop-localoverrides": "Küresel tercihler için yerel geçersiz kılmalar.",
+	"apierror-globalpreferences-notglobalized": "Mevcut kullanıcı küresel değil.",
+	"apihelp-globalpreferenceoverrides-summary": "Geçerli kullanıcının genel tercihleri için yerel geçersiz kılmaları değiştirin.",
+	"apihelp-globalpreferenceoverrides-extended-description": "Etkilenen tercihler için genel değerler göz ardı edilir.",
+	"apihelp-globalpreferenceoverrides-param-reset": "Yerel geçersiz kılmaları sıfırla. Tümünü kaldırır veya <code>resetkinds</code> parametresinin değerine bağlı olarak bazı yerel geçersiz kılma türleri ve bunları yeniden genel yapar.",
+	"apihelp-globalpreferenceoverrides-param-resetkinds": "<var>reset</var> seçeneği ayarlandığında sıfırlanacak geçersiz kılma türlerinin listesi.",
+	"apihelp-globalpreferenceoverrides-param-change": "Değişikliklerin listesi, biçimlendirilmiş ad=değer (örneğin, skin=vector). Herhangi bir değer verilmezse (eşittir işareti bile değil), örneğin, tercihadı|diğer tercih|..., geçersiz kılma kaldırılır. Geçirilen herhangi bir değer boru karakterini içeriyorsa (<kbd>|</kbd>), doğru çalışma için [[Special:ApiHelp/main#main/datatypes|alternatif çok değerli ayırıcı]] kullanın.",
+	"apihelp-globalpreferenceoverrides-param-optionname": "<var>optionvalue</var> tarafından verilen değere ayarlanması gereken geçersiz kılma adı.",
+	"apihelp-globalpreferenceoverrides-param-optionvalue": "<var>optionname</var> tarafından belirtilen geçersiz kılma değeri.",
+	"apihelp-globalpreferenceoverrides-example-reset": "Tüm yerel geçersiz kılmaları kaldırın.",
+	"apihelp-globalpreferenceoverrides-example-change": "<kbd>skin</kbd> ve <kbd>hideminor</kbd> tercihleri için geçersiz kılmaları ayarlayın veya değiştirin.",
+	"apiwarn-globally-overridden": "{{PLURAL:$2|Seçenek|Seçenek}} $1 küresel olarak geçersiz kılındı."
 }
