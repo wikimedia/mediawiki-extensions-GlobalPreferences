@@ -14,6 +14,8 @@
 	"globalpreferences": "Global Astellungen",
 	"globalprefs-info-label": "Global Astellungen:",
 	"globalprefs-info-link": "Är global Astellunge festleeën",
+	"globalprefs-info-help": "Astellungen déi iwwer déi global Astellungssäit festgeluecht goufen ginn op alle Wikien applizéiert.",
+	"globalprefs-reset-intro": "Dir kënnt dës Säit benotze fir all global Astellungen op alle Wikien ze desaktivéieren an op Är lokal Astellungen zréck ze goen. Dëst huet keen Afloss op lokal Wiki-Astellungen. Dës Aktioun kann net réckgängeg gemaach ginn.",
 	"globalprefs-restoreprefs": "All global Astellungen (an alle Beräicher) ewechhuelen",
 	"globalprefs-select-all": "All Kontrollkëschten aktivéieren oder desaktivéieren",
 	"globalprefs-col-header": "Optiounen déi global solle sinn, hei drënner eraussichen"
