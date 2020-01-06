@@ -70,48 +70,46 @@
 	/**
 	 * Initialize the OOUI widgets by infusing all checkboxes and their
 	 * related widgets, so we can refer to them later when toggling.
+	 *
+	 * htmlform.enhance is run when a preference tab is made visible
 	 */
-	$( function () {
+	mw.hook( 'htmlform.enhance' ).add( function ( $root ) {
+		// Add the 'select all' checkbox
+		infuseSelectAllToHeader( $root );
 
-		// htmlform.enhance is run when a preference tab is made visible
-		mw.hook( 'htmlform.enhance' ).add( function ( $root ) {
-			// Add the 'select all' checkbox
-			infuseSelectAllToHeader( $root );
+		// Go over all checkboxes, assign their matching widgets, and connect to events
+		$root.find( '.mw-globalprefs-global-check.oo-ui-checkboxInputWidget' ).each( function () {
+			var associatedWidgetOOUI,
+				checkbox = OO.ui.infuse( this ),
+				sectionID = checkbox.$element.closest( '.oo-ui-layout.oo-ui-tabPanelLayout' ).prop( 'id' ),
+				fullName = checkbox.$input.prop( 'name' ),
+				// id = checkbox.$input.prop( 'id' ).replace( /[\\"]/g, '\\$&' ),
+				// Find the name (without the '-global' suffix, but with the 'wp' prefix).
+				prefName = fullName.substr( 0, fullName.length - '-global'.length ).replace( /[\\"]/g, '\\$&' ),
+				$associatedWidget = $( ':input[name="' + prefName + '"], :input[name="' + prefName + '[]"]' )
+					.closest( '.oo-ui-widget[data-ooui]' );
 
-			// Go over all checkboxes, assign their matching widgets, and connect to events
-			$root.find( '.mw-globalprefs-global-check.oo-ui-checkboxInputWidget' ).each( function () {
-				var associatedWidgetOOUI,
-					checkbox = OO.ui.infuse( this ),
-					sectionID = checkbox.$element.closest( '.oo-ui-layout.oo-ui-tabPanelLayout' ).prop( 'id' ),
-					fullName = checkbox.$input.prop( 'name' ),
-					// id = checkbox.$input.prop( 'id' ).replace( /[\\"]/g, '\\$&' ),
-					// Find the name (without the '-global' suffix, but with the 'wp' prefix).
-					prefName = fullName.substr( 0, fullName.length - '-global'.length ).replace( /[\\"]/g, '\\$&' ),
-					$associatedWidget = $( ':input[name="' + prefName + '"], :input[name="' + prefName + '[]"]' )
-						.closest( '.oo-ui-widget[data-ooui]' );
+			try {
+				associatedWidgetOOUI = OO.ui.infuse( $associatedWidget );
+			} catch ( err ) {
+				// If, for whatever reason, we could not find an associated widget,
+				// or infuse it, fail gracefully and move to the next iteration
+				return true;
+			}
 
-				try {
-					associatedWidgetOOUI = OO.ui.infuse( $associatedWidget );
-				} catch ( err ) {
-					// If, for whatever reason, we could not find an associated widget,
-					// or infuse it, fail gracefully and move to the next iteration
-					return true;
-				}
+			// Store references to all checkboxes in the same section
+			checkboxesBySection[ sectionID ] = checkboxesBySection[ sectionID ] || [];
+			checkboxesBySection[ sectionID ].push( checkbox );
 
-				// Store references to all checkboxes in the same section
-				checkboxesBySection[ sectionID ] = checkboxesBySection[ sectionID ] || [];
-				checkboxesBySection[ sectionID ].push( checkbox );
+			// Initialize starting state depending on checkbox state
+			associatedWidgetOOUI.setDisabled( !checkbox.isSelected() );
+			updateSelectAllCheckboxState( sectionID );
+			// Respond to event
+			checkbox.on( 'change', function ( isChecked ) {
+				associatedWidgetOOUI.setDisabled( !isChecked );
 
-				// Initialize starting state depending on checkbox state
-				associatedWidgetOOUI.setDisabled( !checkbox.isSelected() );
+				// Update the 'select all' checkbox for this section
 				updateSelectAllCheckboxState( sectionID );
-				// Respond to event
-				checkbox.on( 'change', function ( isChecked ) {
-					associatedWidgetOOUI.setDisabled( !isChecked );
-
-					// Update the 'select all' checkbox for this section
-					updateSelectAllCheckboxState( sectionID );
-				} );
 			} );
 		} );
 	} );
