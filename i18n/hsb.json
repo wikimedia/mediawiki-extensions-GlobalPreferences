@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Michawiki"
+			"Michawiki",
+			"J budissin"
 		]
 	},
 	"globalprefs-desc": "Zmóžnja wužiwarjam postajenje globalnych nastajenjow",
@@ -9,5 +10,6 @@
 	"globalprefs-notglobal": "Twoje konto njeje globalne konto a njemóže globalne nastajenja postajić.",
 	"globalpreferences": "Globalne nastajenja",
 	"globalprefs-info-label": "Globalne nastajenja:",
-	"globalprefs-info-link": "Twoje globalne nastajenja postajić"
+	"globalprefs-info-link": "Twoje globalne nastajenja postajić",
+	"globalprefs-info-help": "Nastajenja na stronje globalnych nastajenjow so na wšěch wikijach nałožuja."
 }
