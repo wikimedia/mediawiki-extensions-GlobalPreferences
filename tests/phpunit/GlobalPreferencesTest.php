@@ -18,6 +18,14 @@ use Wikimedia\TestingAccessWrapper;
  */
 class GlobalPreferencesTest extends MediaWikiTestCase {
 
+	protected function setUp() : void {
+		parent::setUp();
+
+		$this->setMwGlobals( [
+			'wgCentralIdLookupProvider' => 'local',
+		] );
+	}
+
 	public function testService() {
 		$factory = MediaWikiServices::getInstance()->getPreferencesFactory();
 		$this->assertInstanceOf( GlobalPreferencesFactory::class, $factory );
