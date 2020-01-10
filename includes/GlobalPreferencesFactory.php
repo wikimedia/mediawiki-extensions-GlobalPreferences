@@ -578,25 +578,35 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	 * @throws Exception
 	 */
 	public function handleLocalPreferencesChange( array &$options ) {
-		$globals = [];
-
-		foreach ( $options as $optName => $optVal ) {
-			// Ignore if ends in "-global".
-			if ( static::isGlobalPrefName( $optName ) ) {
-				unset( $options[ $optName ] );
-			}
-
-			$isAutoGlobal = in_array( $optName, $this->autoGlobals );
-
-			$localOverride = $optName . static::LOCAL_EXCEPTION_SUFFIX;
-			if ( $isAutoGlobal && !array_key_exists( $localOverride, $options ) ) {
-				$globals[$optName] = $optVal;
-			}
+		// nothing to do if autoGlobals is empty
+		if ( !$this->autoGlobals ) {
+			return;
 		}
 
+		$preferencesChanged = false;
+		$globals = $this->getGlobalPreferencesValues( true );
+
 		if ( $globals ) {
-			$globals += $this->getGlobalPreferencesValues( true );
-			$this->makeStorage()->save( $globals, array_keys( $globals ) );
+			foreach ( $options as $optName => $optVal ) {
+				// Ignore if ends in "-global".
+				if ( static::isGlobalPrefName( $optName ) ) {
+					unset( $options[ $optName ] );
+				}
+
+				$isAutoGlobal = in_array( $optName, $this->autoGlobals );
+				$localOverride = $optName . static::LOCAL_EXCEPTION_SUFFIX;
+				if ( $isAutoGlobal
+					&& !array_key_exists( $localOverride, $options )
+					&& array_key_exists( $optName, $globals )
+				) {
+					$globals[$optName] = $optVal;
+					$preferencesChanged = true;
+				}
+			}
+
+			if ( $preferencesChanged ) {
+				$this->makeStorage()->save( $globals, array_keys( $globals ) );
+			}
 		}
 	}
 
