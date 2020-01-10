@@ -128,7 +128,7 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 		// The above function can return false
 		$globalPrefNames = $prefs ? array_keys( $prefs ) : [];
 		$preferences = parent::getFormDescriptor( $user, $context );
-		if ( $this->onGlobalPrefsPage() ) {
+		if ( $this->onGlobalPrefsPage( $context ) ) {
 			if ( $prefs === false ) {
 				throw new Exception(
 					"Attempted to load global preferences page for {$user->getName()} whose "
