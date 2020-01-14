@@ -182,8 +182,8 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 				$localExName = $name . static::LOCAL_EXCEPTION_SUFFIX;
 				$localExValueUser = $this->user->getOption( $localExName );
 				$localExValueRequest = $context->getRequest()->getVal( 'wp' . $localExName );
-				$modifiedPrefs[$name]['disabled'] = is_null( $localExValueUser )
-					&& is_null( $localExValueRequest );
+				$modifiedPrefs[$name]['disabled'] = $localExValueUser === null
+					&& $localExValueRequest === null;
 
 				// Add a new local exception preference after this one.
 				$cssClasses = [

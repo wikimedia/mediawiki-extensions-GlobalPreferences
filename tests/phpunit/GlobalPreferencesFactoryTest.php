@@ -135,7 +135,7 @@ class GlobalPreferencesFactoryTest extends MediaWikiTestCase {
 		$form->prepareForm();
 
 		$status = $form->trySubmit();
-		self::assertType( \Status::class, $status );
+		self::assertInstanceOf( \Status::class, $status );
 		self::assertEquals( $expected !== false, $status->isGood() );
 	}
 

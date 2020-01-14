@@ -31,7 +31,7 @@ class SpecialGlobalPreferences extends SpecialPreferences {
 		parent::execute( $par );
 
 		// Remove subpages other than 'reset', including trailing slash.
-		if ( !is_null( $par ) && $par !== 'reset' ) {
+		if ( $par !== null && $par !== 'reset' ) {
 			$this->getOutput()->redirect( rtrim( $this->getPageTitle()->getCanonicalURL(), '/' ) );
 			return;
 		}
@@ -51,7 +51,7 @@ class SpecialGlobalPreferences extends SpecialPreferences {
 		}
 
 		// Add link back to (local) Preferences.
-		if ( is_null( $par ) ) {
+		if ( $par === null ) {
 			$link = $this->getLinkRenderer()->makeKnownLink(
 				static::getSafeTitleFor( 'Preferences' ),
 				$this->msg( 'mypreferences' )->text()

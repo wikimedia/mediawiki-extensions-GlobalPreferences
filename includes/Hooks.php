@@ -165,9 +165,9 @@ class Hooks {
 
 		// Only add the global_preferences table to the $wgGlobalPreferencesDB or the $wgSharedDB,
 		// unless neither of them is set. See also \GlobalPreferences\Storage::getDatabase().
-		if ( ( is_null( $globalPreferencesDB ) && is_null( $sharedDB ) )
+		if ( ( $globalPreferencesDB === null && $sharedDB === null )
 			|| $dBname === $globalPreferencesDB
-			|| ( is_null( $globalPreferencesDB ) && $dBname === $sharedDB )
+			|| ( $globalPreferencesDB === null && $dBname === $sharedDB )
 		) {
 			$sqlPath = dirname( __DIR__ ) . '/sql';
 			$updater->addExtensionTable( 'global_preferences', "$sqlPath/tables.sql" );
