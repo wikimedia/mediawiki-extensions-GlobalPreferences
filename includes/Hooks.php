@@ -200,7 +200,8 @@ class Hooks {
 				AuthManager::singleton(),
 				$services->getLinkRendererFactory()->create(),
 				$services->getNamespaceInfo(),
-				$services->getPermissionManager()
+				$services->getPermissionManager(),
+				$services->getLanguageConverterFactory()->getLanguageConverter()
 			);
 			$factory->setLogger( LoggerFactory::getInstance( 'preferences' ) );
 			$factory->setAutoGlobals( $mainConfig->get( 'GlobalPreferencesAutoPrefs' ) );
