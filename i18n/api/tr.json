@@ -7,7 +7,7 @@
 		]
 	},
 	"apihelp-globalpreferences-summary": "Geçerli kullanıcının genel tercihlerini değiştirin.",
-	"apihelp-globalpreferences-extended-description": "Yalnızca geçerli wiki için kaydedilen tercihler yerel olarak değiştirilebilir.",
+	"apihelp-globalpreferences-extended-description": "Yalnızca geçerli viki için kaydedilen tercihler yerel olarak değiştirilebilir.",
 	"apihelp-globalpreferences-param-reset": "Küresel tercihleri sıfırlayın. Tümünü kaldırır veya <code>resetkinds</code> parametresinin değerine bağlı olarak, bazı global tercih türleri ve bunları artık global değiller.",
 	"apihelp-globalpreferences-param-resetkinds": "<var>reset</var> seçeneği ayarlandığında sıfırlanacak tercihlerin listesi.",
 	"apihelp-globalpreferences-param-change": "Değişikliklerin listesi, biçimlendirilmiş ad=değer (örneğin, skin=vector). Herhangi bir değer verilmezse (eşittir işareti bile olmasa bile), örneğin, tercihadı|diğer tercih|..., tercih küresel değildir. Geçirilen herhangi bir değer boru karakterini içeriyorsa (<kbd>|</kbd>), doğru çalışma için [[Special:ApiHelp/main#main/datatypes|alternatif çok değerli ayırıcı]] kullanın.",
