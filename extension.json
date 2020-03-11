@@ -33,30 +33,14 @@
 		"GlobalPreferences\\": "includes/"
 	},
 	"Hooks": {
-		"UserLoadOptions": [
-			"GlobalPreferences\\Hooks::onUserLoadOptions"
-		],
-		"UserSaveOptions": [
-			"GlobalPreferences\\Hooks::onUserSaveOptions"
-		],
-		"PreferencesFormPreSave": [
-			"GlobalPreferences\\Hooks::onPreferencesFormPreSave"
-		],
-		"LoadExtensionSchemaUpdates": [
-			"GlobalPreferences\\Hooks::onLoadExtensionSchemaUpdates"
-		],
-		"MediaWikiServices": [
-			"GlobalPreferences\\Hooks::onMediaWikiServices"
-		],
-		"BeforePageDisplay": [
-			"GlobalPreferences\\Hooks::onBeforePageDisplay"
-		],
-		"DeleteUnknownPreferences": [
-			"GlobalPreferences\\Hooks::onDeleteUnknownPreferences"
-		],
-		"ApiOptions": [
-			"GlobalPreferences\\Hooks::onApiOptions"
-		]
+		"UserLoadOptions": "GlobalPreferences\\Hooks::onUserLoadOptions",
+		"UserSaveOptions": "GlobalPreferences\\Hooks::onUserSaveOptions",
+		"PreferencesFormPreSave": "GlobalPreferences\\Hooks::onPreferencesFormPreSave",
+		"LoadExtensionSchemaUpdates": "GlobalPreferences\\Hooks::onLoadExtensionSchemaUpdates",
+		"MediaWikiServices": "GlobalPreferences\\Hooks::onMediaWikiServices",
+		"BeforePageDisplay": "GlobalPreferences\\Hooks::onBeforePageDisplay",
+		"DeleteUnknownPreferences": "GlobalPreferences\\Hooks::onDeleteUnknownPreferences",
+		"ApiOptions": "GlobalPreferences\\Hooks::onApiOptions"
 	},
 	"ResourceFileModulePaths": {
 		"localBasePath": "resources",
