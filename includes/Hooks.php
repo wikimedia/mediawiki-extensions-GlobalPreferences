@@ -193,11 +193,16 @@ class Hooks {
 			$config = new ServiceOptions( GlobalPreferencesFactory::CONSTRUCTOR_OPTIONS,
 				$mainConfig
 			);
-
+			if ( method_exists( MediaWikiServices::class, 'getAuthManager' ) ) {
+				// MediaWiki 1.35+
+				$authManager = $services->getAuthManager();
+			} else {
+				$authManager = AuthManager::singleton();
+			}
 			$factory = new GlobalPreferencesFactory(
 				$config,
 				$services->getContentLanguage(),
-				AuthManager::singleton(),
+				$authManager,
 				$services->getLinkRendererFactory()->create(),
 				$services->getNamespaceInfo(),
 				$services->getPermissionManager(),
