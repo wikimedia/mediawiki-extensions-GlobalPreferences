@@ -4,5 +4,18 @@
 			"Giromin Cangiaxo"
 		]
 	},
-	"globalpreferences": "Preferençe globale"
+	"globalprefs-desc": "A consente a-i utenti de impostâ e preferense globale",
+	"globalprefs-set-local-exception": "Imposta un'eccession locâ pe questa [[Special:GlobalPreferences#$1|preferensa globâ]].",
+	"globalprefs-has-local-exception": "Questa preferensa globâ a g'ha 'n'[[Special:Preferences#$1|eccession locâ insce sta wiki]].",
+	"tooltip-globalprefs-check-label": "Rendi globâ questa impostassion",
+	"globalprefs-error-header": "Erô",
+	"globalprefs-notglobal": "A toeu a no l'è 'n'utensa globâ e a no poeu impostâ de preferense globæ.",
+	"globalpreferences": "Preferençe globale",
+	"globalprefs-info-label": "Preferençe globæ:",
+	"globalprefs-info-link": "Imposta e to preferense globæ",
+	"globalprefs-info-help": "E preferenze impostæ co-a paggina de preferense globæ saian apricæ a tutte e wikki.",
+	"globalprefs-reset-intro": "Ti poeu doeuviâ sta paggina pe dizattivâ tutte e preferense globæ sciu tutte e wikki e tornâ a-e to preferense locæ. Questo no pertochiâ nisciun-a preferensa de wikki locæ. Quest'opiassion a no poeu ese anulâ.",
+	"globalprefs-restoreprefs": "Leva tutte e preferense globæ (inte tutte e seçioin)",
+	"globalprefs-select-all": "Attiva ò dizattiva tutte e cazelle de controllo",
+	"globalprefs-col-header": "Selession-a chì de sotta i opsuin da globalizâ"
 }
