@@ -2,9 +2,9 @@
 	"@metadata": {
 		"authors": [
 			"Kunal Mehta",
-			"Shirayuki",
 			"Liuxinyu970226",
-			"Sam Wilson"
+			"Sam Wilson",
+			"Shirayuki"
 		]
 	},
 	"globalprefs-desc": "{{desc|name=Global Preferences|url=https://www.mediawiki.org/wiki/Extension:GlobalPreferences}}",

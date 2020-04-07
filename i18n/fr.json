@@ -2,8 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Gomoko",
-			"Wladek92",
-			"Trizek (WMF)"
+			"Trizek (WMF)",
+			"Wladek92"
 		]
 	},
 	"globalprefs-desc": "Permet aux utilisateurs de fixer des préférences globales",

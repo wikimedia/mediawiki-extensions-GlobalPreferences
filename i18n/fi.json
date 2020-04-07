@@ -1,11 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Nike",
-			"Stryn",
-			"Pyscowicz",
 			"01miki10",
-			"Pxos"
+			"Nike",
+			"Pxos",
+			"Pyscowicz",
+			"Stryn"
 		]
 	},
 	"globalprefs-desc": "Antaa käyttäjien asettaa järjestelmänlaajuiset asetukset",

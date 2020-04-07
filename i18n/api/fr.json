@@ -2,8 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Gomoko",
-			"Wladek92",
-			"Thibaut120094"
+			"Thibaut120094",
+			"Wladek92"
 		]
 	},
 	"apihelp-globalpreferences-summary": "Modifier les préférences globales de l’utilisateur actuel.",

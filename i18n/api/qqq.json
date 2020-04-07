@@ -2,9 +2,9 @@
 	"@metadata": {
 		"authors": [
 			"Kunal Mehta",
-			"Shirayuki",
 			"Liuxinyu970226",
-			"Sam Wilson"
+			"Sam Wilson",
+			"Shirayuki"
 		]
 	},
 	"apihelp-globalpreferences-summary": "{{doc-apihelp-summary|globalpreferences}}",

@@ -1,8 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Αντιγόνη",
-			"Geraki"
+			"Geraki",
+			"Αντιγόνη"
 		]
 	},
 	"globalprefs-set-local-exception": "Ορίστε μια τοπική εξαίρεση για αυτή την [[Special:GlobalPreferences#$1|καθολική προτίμηση]].",

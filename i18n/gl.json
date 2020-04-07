@@ -1,10 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Toliño",
-			"Banjo",
 			"Athena in Wonderland",
-			"Elisardojm"
+			"Banjo",
+			"Elisardojm",
+			"Toliño"
 		]
 	},
 	"globalprefs-desc": "Permite aos usuarios definir preferencias globais",

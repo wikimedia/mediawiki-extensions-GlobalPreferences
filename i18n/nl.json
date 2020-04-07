@@ -1,12 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Siebrand",
-			"Southparkfan",
-			"Mar(c)",
-			"Mainframe98",
 			"Akoopal",
-			"Jeroen N"
+			"Jeroen N",
+			"Mainframe98",
+			"Mar(c)",
+			"Siebrand",
+			"Southparkfan"
 		]
 	},
 	"globalprefs-desc": "Maakt het mogelijk voor gebruikers om globale voorkeuren in te stellen",
