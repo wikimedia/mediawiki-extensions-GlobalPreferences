@@ -21,6 +21,7 @@
 	"apihelp-query+globalpreferences-paramvalue-prop-localoverrides": "Lokala åsidosättanden för globala inställningar.",
 	"apierror-globalpreferences-notglobalized": "Nuvarande användare är inte global.",
 	"apihelp-globalpreferenceoverrides-summary": "Ändra lokala åsidosättningar för globala inställningar till nuvarande användare.",
+	"apihelp-globalpreferenceoverrides-extended-description": "Globala värden för påverkade inställningar kommer att ignoreras",
 	"apihelp-globalpreferenceoverrides-param-optionname": "Namnet på åsidosättningen som bör ändras till värdet som anges av <var>optionvalue</var>.",
 	"apihelp-globalpreferenceoverrides-example-reset": "Ta bort alla lokala åsidosättningar.",
 	"apihelp-globalpreferenceoverrides-example-change": "Ange eller ändra åsidosättning för inställningarna <kbd>skin</kbd> och <kbd>hideminor</kbd>.",
