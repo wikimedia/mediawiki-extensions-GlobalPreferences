@@ -3,10 +3,11 @@
 		"authors": [
 			"Creepario",
 			"FF11",
+			"Kghbln",
 			"Metalhead64"
 		]
 	},
-	"globalprefs-desc": "Ermöglicht es Benutzern, globale Einstellungen festzulegen.",
+	"globalprefs-desc": "Ermöglicht es Benutzern, Einstellungen global festzulegen",
 	"globalprefs-set-local-exception": "Eine lokale Ausnahme für diese [[Special:GlobalPreferences#$1|globale Einstellung]] festlegen.",
 	"globalprefs-has-local-exception": "Diese globale Einstellung hat eine [[Special:Preferences#$1|lokale Ausnahme auf diesem Wiki]].",
 	"tooltip-globalprefs-check-label": "Diese Einstellung global machen",
