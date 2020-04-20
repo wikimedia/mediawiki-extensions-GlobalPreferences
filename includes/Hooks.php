@@ -206,7 +206,8 @@ class Hooks {
 				$services->getLinkRendererFactory()->create(),
 				$services->getNamespaceInfo(),
 				$services->getPermissionManager(),
-				$services->getLanguageConverterFactory()->getLanguageConverter()
+				$services->getLanguageConverterFactory()->getLanguageConverter(),
+				$services->getLanguageNameUtils()
 			);
 			$factory->setLogger( LoggerFactory::getInstance( 'preferences' ) );
 			$factory->setAutoGlobals( $mainConfig->get( 'GlobalPreferencesAutoPrefs' ) );
