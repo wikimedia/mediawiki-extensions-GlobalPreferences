@@ -1,11 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Manvydasz"
+			"Manvydasz",
+			"Tomasdd"
 		]
 	},
 	"globalprefs-set-local-exception": "Naudoti vietinę išimtį [[Special:GlobalPreferences#$1|visuotiniuose nustatymuose]].",
 	"globalprefs-has-local-exception": "Šis visuotinis nustatymas turi [[Special:Preferences#$1|vietinę išimtį šiame projekte]].",
+	"globalprefs-error-header": "Klaida",
 	"globalpreferences": "Visuotiniai nustatymai",
 	"globalprefs-info-label": "Visuotiniai nustatymai:",
 	"globalprefs-info-link": "Keisti visuotinius nustatymus",
