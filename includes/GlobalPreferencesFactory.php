@@ -43,9 +43,6 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	 */
 	public const GLOBAL_EXCEPTION_SUFFIX = '-global';
 
-	/** @var User */
-	protected $user;
-
 	/** @var MapCacheLRU Runtime cache of users' central IDs. */
 	protected $centralIds;
 
@@ -97,16 +94,6 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	];
 
 	/**
-	 * Set the preferences user.
-	 * Note that not many of this class's methods use this, and you have to pass $user again.
-	 * @todo This should really be higher up the class hierarchy.
-	 * @param User $user The user.
-	 */
-	public function setUser( User $user ) {
-		$this->user = $user;
-	}
-
-	/**
 	 * Sets the list of options for which setting the local value should transparently update
 	 * the global value.
 	 *
@@ -118,12 +105,14 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 
 	/**
 	 * Get all user preferences.
-	 * @param User $user The user.
+	 * @param User $user Deprecated, and will be ignored if $this->setUser() has been used.
 	 * @param IContextSource $context The current request context
 	 * @return array|null
 	 */
 	public function getFormDescriptor( User $user, IContextSource $context ) {
-		$this->setUser( $user );
+		if ( !$this->user instanceof User ) {
+			$this->setUser( $user );
+		}
 		$prefs = $this->getGlobalPreferencesValues( Storage::SKIP_CACHE );
 		// The above function can return false
 		$globalPrefNames = $prefs ? array_keys( $prefs ) : [];
