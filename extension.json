@@ -14,8 +14,12 @@
 		"MediaWiki": ">= 1.35.0"
 	},
 	"config": {
-		"GlobalPreferencesDB": null,
-		"GlobalPreferencesAutoPrefs": []
+		"GlobalPreferencesDB": {
+			"value": null
+		},
+		"GlobalPreferencesAutoPrefs": {
+			"value": []
+		}
 	},
 	"SpecialPages": {
 		"GlobalPreferences": "GlobalPreferences\\SpecialGlobalPreferences"
@@ -55,7 +59,9 @@
 				"mediawiki.widgets.CheckMatrixWidget",
 				"mediawiki.widgets.UsersMultiselectWidget"
 			],
-			"messages": [ "globalprefs-select-all" ]
+			"messages": [
+				"globalprefs-select-all"
+			]
 		},
 		"ext.GlobalPreferences.global-nojs": {
 			"styles": "ext.GlobalPreferences.global-nojs.css"
@@ -65,7 +71,10 @@
 			"scripts": [
 				"ext.GlobalPreferences.local.js"
 			],
-			"dependencies": [ "oojs-ui-core", "mediawiki.widgets.CheckMatrixWidget" ]
+			"dependencies": [
+				"oojs-ui-core",
+				"mediawiki.widgets.CheckMatrixWidget"
+			]
 		},
 		"ext.GlobalPreferences.local-nojs": {
 			"styles": "ext.GlobalPreferences.local-nojs.css"
@@ -81,5 +90,5 @@
 			"factory": "GlobalPreferences\\Hooks::makeApiQueryGlobalPreferences"
 		}
 	},
-	"manifest_version": 1
+	"manifest_version": 2
 }
