@@ -44,8 +44,7 @@ class SpecialGlobalPreferences extends SpecialPreferences {
 		/** @var GlobalPreferencesFactory $globalPreferencesFactory */
 		$globalPreferencesFactory = MediaWikiServices::getInstance()->getPreferencesFactory();
 		'@phan-var GlobalPreferencesFactory $globalPreferencesFactory';
-		$globalPreferencesFactory->setUser( $this->getUser() );
-		if ( !$globalPreferencesFactory->isUserGlobalized() ) {
+		if ( !$globalPreferencesFactory->isUserGlobalized( $this->getUser() ) ) {
 			$this->setHeaders();
 			throw new ErrorPageError( 'globalprefs-error-header', 'globalprefs-notglobal' );
 		}
@@ -130,8 +129,7 @@ class SpecialGlobalPreferences extends SpecialPreferences {
 		/** @var GlobalPreferencesFactory $preferencesFactory */
 		$preferencesFactory = MediaWikiServices::getInstance()->getPreferencesFactory();
 		'@phan-var GlobalPreferencesFactory $preferencesFactory';
-		$preferencesFactory->setUser( $this->getUser() );
-		$preferencesFactory->resetGlobalUserSettings();
+		$preferencesFactory->resetGlobalUserSettings( $this->getUser() );
 
 		$url = $this->getPageTitle()->getFullURL( 'success' );
 

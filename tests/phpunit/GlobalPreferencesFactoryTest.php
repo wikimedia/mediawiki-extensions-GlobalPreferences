@@ -125,7 +125,6 @@ class GlobalPreferencesFactoryTest extends MediaWikiTestCase {
 		$request = new \FauxRequest( $postData, true );
 		/** @var GlobalPreferencesFactory $factory */
 		/** @var User $user */
-		$factory->setUser( $user );
 		$context = new \DerivativeContext( \RequestContext::getMain() );
 		$context->setRequest( $request );
 		$context->setUser( $user );

@@ -18,11 +18,8 @@ class ApiGlobalPreferenceOverrides extends ApiOptions {
 		$factory = MediaWikiServices::getInstance()->getPreferencesFactory();
 		'@phan-var GlobalPreferencesFactory $factory';
 		$user = $this->getUserForUpdates();
-		if ( $user ) {
-			$factory->setUser( $user );
-			if ( !$factory->isUserGlobalized() ) {
-				$this->dieWithError( 'apierror-globalpreferences-notglobalized', 'notglobalized' );
-			}
+		if ( $user && !$factory->isUserGlobalized( $user ) ) {
+			$this->dieWithError( 'apierror-globalpreferences-notglobalized', 'notglobalized' );
 		}
 		parent::execute();
 	}

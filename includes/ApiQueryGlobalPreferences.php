@@ -34,9 +34,8 @@ class ApiQueryGlobalPreferences extends ApiQueryBase {
 				[ 'apierror-mustbeloggedin', $this->msg( 'action-editmyoptions' ) ], 'notloggedin'
 			);
 		}
-		$this->preferencesFactory->setUser( $this->getUser() );
 
-		if ( !$this->preferencesFactory->isUserGlobalized() ) {
+		if ( !$this->preferencesFactory->isUserGlobalized( $this->getUser() ) ) {
 			$this->dieWithError( 'apierror-globalpreferences-notglobalized', 'notglobalized' );
 		}
 
@@ -46,7 +45,7 @@ class ApiQueryGlobalPreferences extends ApiQueryBase {
 		ApiResult::setArrayType( $result, 'assoc' );
 
 		if ( isset( $prop['preferences'] ) ) {
-			$prefs = $this->preferencesFactory->getGlobalPreferencesValues();
+			$prefs = $this->preferencesFactory->getGlobalPreferencesValues( $this->getUser() );
 			$result['preferences'] = $prefs;
 			ApiResult::setArrayType( $result['preferences'], 'assoc' );
 		}

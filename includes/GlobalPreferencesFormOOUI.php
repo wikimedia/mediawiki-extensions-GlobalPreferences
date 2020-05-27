@@ -41,8 +41,10 @@ class GlobalPreferencesFormOOUI extends PreferencesFormOOUI {
 		/** @var GlobalPreferencesFactory $globalPreferences */
 		$globalPreferences = MediaWikiServices::getInstance()->getPreferencesFactory();
 		'@phan-var GlobalPreferencesFactory $globalPreferences';
-		$globalPreferences->setUser( $this->getUser() );
-		$globalPrefValues = $globalPreferences->getGlobalPreferencesValues( Storage::SKIP_CACHE );
+		$globalPrefValues = $globalPreferences->getGlobalPreferencesValues(
+			$this->getUser(),
+			Storage::SKIP_CACHE
+		);
 
 		// Fetch a set of global-only preferences with which we can populate the form,
 		// but none of which will actually be in effect (i.e. when viewing the global form, all

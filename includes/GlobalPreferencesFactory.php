@@ -105,15 +105,12 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 
 	/**
 	 * Get all user preferences.
-	 * @param User $user Deprecated, and will be ignored if $this->setUser() has been used.
+	 * @param User $user
 	 * @param IContextSource $context The current request context
 	 * @return array|null
 	 */
 	public function getFormDescriptor( User $user, IContextSource $context ) {
-		if ( !$this->user instanceof User ) {
-			$this->setUser( $user );
-		}
-		$prefs = $this->getGlobalPreferencesValues( Storage::SKIP_CACHE );
+		$prefs = $this->getGlobalPreferencesValues( $user, Storage::SKIP_CACHE );
 		// The above function can return false
 		$globalPrefNames = $prefs ? array_keys( $prefs ) : [];
 		$preferences = parent::getFormDescriptor( $user, $context );
@@ -124,9 +121,9 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 					. 'preference values failed to load'
 				);
 			}
-			return $this->getPreferencesGlobal( $preferences, $globalPrefNames, $context );
+			return $this->getPreferencesGlobal( $user, $preferences, $globalPrefNames, $context );
 		}
-		return $this->getPreferencesLocal( $preferences, $globalPrefNames, $context );
+		return $this->getPreferencesLocal( $user, $preferences, $globalPrefNames, $context );
 	}
 
 	/**
@@ -144,16 +141,19 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	/**
 	 * Add help-text to the local preferences where they're globalized,
 	 * and add the link to Special:GlobalPreferences to the personal preferences tab.
+	 * @param User $user
 	 * @param mixed[][] $preferences The preferences array.
 	 * @param string[] $globalPrefNames The names of those preferences that are already global.
 	 * @param IContextSource $context The current request context
 	 * @return mixed[][]
 	 */
-	protected function getPreferencesLocal( array $preferences,
+	protected function getPreferencesLocal(
+		User $user,
+		array $preferences,
 		array $globalPrefNames,
 		IContextSource $context
 	) {
-		$this->logger->debug( "Creating local preferences array for '{$this->user->getName()}'" );
+		$this->logger->debug( "Creating local preferences array for '{$user->getName()}'" );
 		$modifiedPrefs = [];
 		foreach ( $preferences as $name => $def ) {
 			$modifiedPrefs[$name] = $def;
@@ -169,7 +169,7 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 				// This is because HTMLForm changes submitted values to their defaults
 				// after preferences have been defined here, if a field is disabled.
 				$localExName = $name . static::LOCAL_EXCEPTION_SUFFIX;
-				$localExValueUser = $this->user->getOption( $localExName );
+				$localExValueUser = $user->getOption( $localExName );
 				$localExValueRequest = $context->getRequest()->getVal( 'wp' . $localExName );
 				$modifiedPrefs[$name]['disabled'] = $localExValueUser === null
 					&& $localExValueRequest === null;
@@ -216,12 +216,15 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 
 	/**
 	 * Add the '-global' counterparts to all preferences.
+	 * @param User $user
 	 * @param mixed[][] $preferences The preferences array.
 	 * @param string[] $globalPrefNames The names of those preferences that are already global.
 	 * @param IContextSource $context The current request context
 	 * @return mixed[][]
 	 */
-	protected function getPreferencesGlobal( array $preferences,
+	protected function getPreferencesGlobal(
+		User $user,
+		array $preferences,
 		array $globalPrefNames,
 		IContextSource $context
 	) {
@@ -245,7 +248,7 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 			];
 			// If this has a local exception, append a help message to say so.
 			if ( $isGlobal
-				&& $this->user->getOption( $pref . static::LOCAL_EXCEPTION_SUFFIX )
+				&& $user->getOption( $pref . static::LOCAL_EXCEPTION_SUFFIX )
 			) {
 				$help = '';
 				if ( isset( $def['help-message'] ) ) {
@@ -351,8 +354,7 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 			}
 			unset( $prefs[$globalName] );
 		}
-		$this->setUser( $user );
-		$this->setGlobalPreferences( $prefs, $form->getContext(), $matricesToClear );
+		$this->setGlobalPreferences( $user, $prefs, $form->getContext(), $matricesToClear );
 
 		return $result;
 	}
@@ -452,60 +454,66 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 
 	/**
 	 * Checks if the user is globalized.
+	 * @param User $user
 	 * @return bool
 	 */
-	public function isUserGlobalized() {
-		if ( $this->user->isAnon() ) {
+	public function isUserGlobalized( User $user ) {
+		if ( $user->isAnon() ) {
 			// No prefs for anons, sorry :(
 			return false;
 		}
-		return $this->getUserID() !== 0;
+		return $this->getUserID( $user ) !== 0;
 	}
 
 	/**
 	 * Gets the user's ID that we're using in the table
 	 * Returns 0 if the user is not global
+	 * @param User $user
 	 * @return int
 	 */
-	public function getUserID() {
-		$id = $this->user->getId();
+	public function getUserID( User $user ) {
+		$id = $user->getId();
 		$cache = $this->getCache();
-		return $cache->getWithSetCallback( (string)$id, function () {
+		return $cache->getWithSetCallback( (string)$id, function () use ( $user ) {
 			$lookup = CentralIdLookup::factory();
-			return $lookup->centralIdFromLocalUser( $this->user, CentralIdLookup::AUDIENCE_RAW );
+			return $lookup->centralIdFromLocalUser( $user, CentralIdLookup::AUDIENCE_RAW );
 		} );
 	}
 
 	/**
 	 * Get the user's global preferences.
+	 * @param User $user
 	 * @param bool $skipCache Whether the preferences should be loaded strictly from DB
 	 * @return bool|string[] Array keyed by preference name, or false if not found.
 	 */
-	public function getGlobalPreferencesValues( $skipCache = false ) {
-		$id = $this->getUserID();
+	public function getGlobalPreferencesValues( User $user, $skipCache = false ) {
+		$id = $this->getUserID( $user );
 		if ( !$id ) {
 			$this->logger->warning( "Couldn't find a global ID for user {user}",
-				[ 'user' => $this->user->getName() ]
+				[ 'user' => $user->getName() ]
 			);
 			return false;
 		}
-		$storage = $this->makeStorage();
+		$storage = $this->makeStorage( $user );
 		return $storage->load( $skipCache );
 	}
 
 	/**
 	 * Save the user's global preferences.
+	 * @param User $user
 	 * @param array $newGlobalPrefs Array keyed by preference name.
 	 * @param IContextSource $context The request context.
 	 * @param string[] $checkMatricesToClear List of check matrix controls that
 	 *        need their rows purged
 	 * @return bool True on success, false if the user isn't global.
 	 */
-	public function setGlobalPreferences( $newGlobalPrefs,
+	public function setGlobalPreferences(
+		User $user,
+		$newGlobalPrefs,
 		IContextSource $context,
 		array $checkMatricesToClear = []
 	) {
-		$id = $this->getUserID();
+		$id = $this->getUserID( $user );
 		if ( !$id ) {
 			return false;
 		}
@@ -514,27 +522,25 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 		// we're working with the previous user options and not those that are currently in the
 		// process of being saved (we only want the option names here, so don't care what the
 		// values are).
-		$actualUser = $this->user;
-		$this->user = User::newFromId( $this->user->getId() );
+		$userForDescriptor = User::newFromId( $user->getId() );
 
 		// Save the global options.
-		$storage = $this->makeStorage();
-		$knownPrefs = array_keys( $this->getFormDescriptor( $this->user, $context ) );
+		$storage = $this->makeStorage( $user );
+		$knownPrefs = array_keys( $this->getFormDescriptor( $userForDescriptor, $context ) );
 
 		$storage->save( $newGlobalPrefs, $knownPrefs, $checkMatricesToClear );
 
-		// Return to the actual user object.
-		$this->user = $actualUser;
-		$this->user->clearInstanceCache();
+		$user->clearInstanceCache();
 		return true;
 	}
 
 	/**
 	 * Deletes all of a user's global preferences.
 	 * Assumes that the user is globalized.
+	 * @param User $user
 	 */
-	public function resetGlobalUserSettings() {
-		$this->makeStorage()->delete();
+	public function resetGlobalUserSettings( User $user ) {
+		$this->makeStorage( $user )->delete();
 	}
 
 	/**
@@ -563,17 +569,18 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	/**
 	 * Processes local user options before they're saved
 	 *
+	 * @param User $user
 	 * @param array &$options
 	 * @throws Exception
 	 */
-	public function handleLocalPreferencesChange( array &$options ) {
+	public function handleLocalPreferencesChange( User $user, array &$options ) {
 		// nothing to do if autoGlobals is empty
 		if ( !$this->autoGlobals ) {
 			return;
 		}
 
 		$preferencesChanged = false;
-		$globals = $this->getGlobalPreferencesValues( true );
+		$globals = $this->getGlobalPreferencesValues( $user, true );
 
 		if ( $globals ) {
 			foreach ( $options as $optName => $optVal ) {
@@ -594,7 +601,7 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 			}
 
 			if ( $preferencesChanged ) {
-				$this->makeStorage()->save( $globals, array_keys( $globals ) );
+				$this->makeStorage( $user )->save( $globals, array_keys( $globals ) );
 			}
 		}
 	}
@@ -602,10 +609,11 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	/**
 	 * Factory for preference storage
 	 *
+	 * @param User $user
 	 * @return Storage
 	 */
-	protected function makeStorage() {
-		$id = $this->getUserID();
+	protected function makeStorage( $user ) {
+		$id = $this->getUserID( $user );
 		if ( !$id ) {
 			throw new LogicException( 'User not set or is not global on call to ' . __METHOD__ );
 		}

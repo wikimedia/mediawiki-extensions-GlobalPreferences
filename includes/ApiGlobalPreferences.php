@@ -17,7 +17,7 @@ class ApiGlobalPreferences extends ApiOptions {
 		$user = $this->getUserForUpdates();
 		if ( $user ) {
 			$factory = $this->getFactory();
-			if ( !$factory->isUserGlobalized() ) {
+			if ( !$factory->isUserGlobalized( $user ) ) {
 				$this->dieWithError( 'apierror-globalpreferences-notglobalized', 'notglobalized' );
 			}
 		}
@@ -31,7 +31,6 @@ class ApiGlobalPreferences extends ApiOptions {
 		/** @var GlobalPreferencesFactory $factory */
 		$factory = MediaWikiServices::getInstance()->getPreferencesFactory();
 		'@phan-var GlobalPreferencesFactory $factory';
-		$factory->setUser( $this->getUserForUpdates() );
 		return $factory;
 	}
 
@@ -40,7 +39,7 @@ class ApiGlobalPreferences extends ApiOptions {
 	 */
 	protected function resetPreferences( array $kinds ) {
 		if ( in_array( 'all', $kinds ) ) {
-			$this->getFactory()->resetGlobalUserSettings();
+			$this->getFactory()->resetGlobalUserSettings( $this->getUserForUpdates() );
 		} else {
 			$this->resetPrefTypes = $kinds;
 		}
@@ -62,7 +61,8 @@ class ApiGlobalPreferences extends ApiOptions {
 	 */
 	protected function commitChanges() {
 		$factory = $this->getFactory();
-		$prefs = $this->getFactory()->getGlobalPreferencesValues( true );
+		$user = $this->getUserForUpdates();
+		$prefs = $this->getFactory()->getGlobalPreferencesValues( $user, true );
 		if ( $this->resetPrefTypes ) {
 			$kinds = $this->getUserForUpdates()->getOptionKinds( $this->getContext(), $prefs );
 			foreach ( $prefs as $pref => $value ) {
@@ -76,7 +76,7 @@ class ApiGlobalPreferences extends ApiOptions {
 		foreach ( $this->resetPrefs as $pref ) {
 			unset( $prefs[$pref] );
 		}
-		$factory->setGlobalPreferences( $prefs, $this->getContext() );
+		$factory->setGlobalPreferences( $user, $prefs, $this->getContext() );
 	}
 
 	/**

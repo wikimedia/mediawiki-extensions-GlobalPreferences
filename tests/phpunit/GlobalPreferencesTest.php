@@ -65,7 +65,6 @@ class GlobalPreferencesTest extends MediaWikiTestCase {
 		$user = $this->getTestUser()->getUser();
 		/** @var GlobalPreferencesFactory $globalPreferences */
 		$globalPreferences = MediaWikiServices::getInstance()->getPreferencesFactory();
-		$globalPreferences->setUser( $user );
 		$globalPreferences->setAutoGlobals( [] );
 		// Set up the context.
 		// Once preference definitions don't require the context, this can be removed.
@@ -74,7 +73,7 @@ class GlobalPreferencesTest extends MediaWikiTestCase {
 
 		// Confirm the site default.
 		$this->assertEquals( 'en', $user->getOption( 'language' ) );
-		$this->assertEquals( [], $globalPreferences->getGlobalPreferencesValues() );
+		$this->assertEquals( [], $globalPreferences->getGlobalPreferencesValues( $user ) );
 
 		// Set a local preference.
 		$user->setOption( 'language', 'bn' );
@@ -82,18 +81,18 @@ class GlobalPreferencesTest extends MediaWikiTestCase {
 		$this->assertEquals( 'bn', $user->getOption( 'language' ) );
 
 		// Set it to be global (with a different value).
-		$globalPreferences->setGlobalPreferences( [ 'language' => 'de' ], $context );
+		$globalPreferences->setGlobalPreferences( $user, [ 'language' => 'de' ], $context );
 		$this->assertEquals(
 			[ 'language' => 'de' ],
-			$globalPreferences->getGlobalPreferencesValues()
+			$globalPreferences->getGlobalPreferencesValues( $user )
 		);
 		$this->assertEquals( 'de', $user->getOption( 'language' ) );
-		$globalPreferences->setGlobalPreferences( [ 'language' => 'ru' ], $context );
+		$globalPreferences->setGlobalPreferences( $user, [ 'language' => 'ru' ], $context );
 		$this->assertEquals( 'ru', $user->getOption( 'language' ) );
 
 		// Then unglobalize it, and it should return to the local value.
-		$globalPreferences->setGlobalPreferences( [], $context );
-		$this->assertEquals( [], $globalPreferences->getGlobalPreferencesValues() );
+		$globalPreferences->setGlobalPreferences( $user, [], $context );
+		$this->assertEquals( [], $globalPreferences->getGlobalPreferencesValues( $user ) );
 		// @TODO Instance caching on User doesn't clear User::$mOptionOverrides
 		// $this->assertEquals( 'bn', $user->getOption( 'language' ) );
 	}
@@ -102,7 +101,6 @@ class GlobalPreferencesTest extends MediaWikiTestCase {
 		$user = $this->getTestUser()->getUser();
 		/** @var GlobalPreferencesFactory $globalPreferences */
 		$globalPreferences = MediaWikiServices::getInstance()->getPreferencesFactory();
-		$globalPreferences->setUser( $user );
 		$globalPreferences->setAutoGlobals( [] );
 		// Set up the context.
 		// Once preference definitions don't require the context, this can be removed.
@@ -110,20 +108,23 @@ class GlobalPreferencesTest extends MediaWikiTestCase {
 		$context->setTitle( Title::newFromText( 'Test' ) );
 
 		// Set it to be global (with a different value).
-		$globalPreferences->setGlobalPreferences( [ 'language' => 'de' ], $context );
+		$globalPreferences->setGlobalPreferences( $user, [ 'language' => 'de' ], $context );
 		$this->assertEquals(
 			[ 'language' => 'de' ],
-			$globalPreferences->getGlobalPreferencesValues()
+			$globalPreferences->getGlobalPreferencesValues( $user )
 		);
 		$this->assertEquals( 'de', $user->getOption( 'language' ) );
-		$globalPreferences->setGlobalPreferences( [ 'language' => 'ru' ], $context );
+		$globalPreferences->setGlobalPreferences( $user, [ 'language' => 'ru' ], $context );
 		$this->assertEquals( 'ru', $user->getOption( 'language' ) );
 
 		// Make it autoglobal
 		$globalPreferences->setAutoGlobals( [ 'language' ] );
 		$user->setOption( 'language', 'sq' );
 		$user->saveSettings();
-		$this->assertEquals( [ 'language' => 'sq' ], $globalPreferences->getGlobalPreferencesValues() );
+		$this->assertEquals(
+			[ 'language' => 'sq' ],
+			$globalPreferences->getGlobalPreferencesValues( $user )
+		);
 	}
 
 	/**
