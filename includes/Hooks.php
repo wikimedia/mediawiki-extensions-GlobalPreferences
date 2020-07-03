@@ -207,7 +207,8 @@ class Hooks {
 				$services->getNamespaceInfo(),
 				$services->getPermissionManager(),
 				$services->getLanguageConverterFactory()->getLanguageConverter(),
-				$services->getLanguageNameUtils()
+				$services->getLanguageNameUtils(),
+				$services->getHookContainer()
 			);
 			$factory->setLogger( LoggerFactory::getInstance( 'preferences' ) );
 			$factory->setAutoGlobals( $mainConfig->get( 'GlobalPreferencesAutoPrefs' ) );
