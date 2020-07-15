@@ -43,6 +43,11 @@ $specialPageAliases['fa'] = [
 	'GlobalPreferences' => [ 'ترجیحات_سراسری' ],
 ];
 
+/** Finnish (suomi) */
+$specialPageAliases['fi'] = [
+	'GlobalPreferences' => [ 'Järjestelmänlaajuiset_asetukset' ],
+];
+
 /** Hebrew (עברית) */
 $specialPageAliases['he'] = [
 	'GlobalPreferences' => [ 'העדפות_גלובליות' ],
