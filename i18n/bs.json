@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Srdjan m"
+			"Srdjan m",
+			"Srđan"
 		]
 	},
 	"globalprefs-set-local-exception": "Postavi lokalni izuzetak za ovu [[Special:GlobalPreferences#$1|globalnu postavku]].",
