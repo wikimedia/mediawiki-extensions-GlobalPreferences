@@ -245,6 +245,7 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 				'default' => $isGlobal,
 				'section' => $def['section'],
 				'cssclass' => 'mw-globalprefs-global-check mw-globalprefs-checkbox-for-' . $pref,
+				'hide-if' => $def['hide-if'] ?? false,
 			];
 			// If this has a local exception, append a help message to say so.
 			if ( $isGlobal
