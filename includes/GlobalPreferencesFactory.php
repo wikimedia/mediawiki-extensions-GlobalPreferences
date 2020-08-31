@@ -91,6 +91,7 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 		'NewHTMLCheckField',
 		'HTMLFeatureField',
 		'HTMLCheckMatrix',
+		'Vector\HTMLForm\Fields\HTMLLegacySkinVersionField',
 	];
 
 	/**
