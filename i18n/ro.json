@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"NGC 54",
 			"Strainu"
 		]
 	},
@@ -9,5 +10,6 @@
 	"globalprefs-error-header": "Eroare",
 	"globalpreferences": "Preferințe globale",
 	"globalprefs-info-label": "Preferințe globale:",
-	"globalprefs-info-link": "Setați-vă preferințele globale"
+	"globalprefs-info-link": "Setați-vă preferințele globale",
+	"globalprefs-info-help": "Preferințele setate prin intermediul paginii preferințelor globale se vor aplica tuturor wiki-urilor."
 }
