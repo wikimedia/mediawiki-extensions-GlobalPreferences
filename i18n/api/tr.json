@@ -3,12 +3,13 @@
 		"authors": [
 			"BaRaN6161 TURK",
 			"Hedda",
+			"MuratTheTurkish",
 			"Sayginer"
 		]
 	},
 	"apihelp-globalpreferences-summary": "Geçerli kullanıcının genel tercihlerini değiştirin.",
 	"apihelp-globalpreferences-extended-description": "Yalnızca geçerli viki için kaydedilen tercihler yerel olarak değiştirilebilir.",
-	"apihelp-globalpreferences-param-reset": "Küresel tercihleri sıfırlayın. Tümünü kaldırır veya <code>resetkinds</code> parametresinin değerine bağlı olarak, bazı global tercih türleri ve bunları artık global değiller.",
+	"apihelp-globalpreferences-param-reset": "Küresel tercihleri sıfırlayın. Tümünü kaldırır veya <code>resetkinds</code> parametresinin değerine bağlı olarak, bazı küresel tercih türleri ve bunları artık küresel değiller.",
 	"apihelp-globalpreferences-param-resetkinds": "<var>reset</var> seçeneği ayarlandığında sıfırlanacak tercihlerin listesi.",
 	"apihelp-globalpreferences-param-change": "Değişikliklerin listesi, biçimlendirilmiş name=value (örneğin, skin=vector). Herhangi bir değer verilmezse (eşittir işareti bile olmasa bile), örneğin, preferencename|otherpreference|..., tercih küresel değildir. Geçirilen herhangi bir değer boru karakterini içeriyorsa (<kbd>|</kbd>), doğru çalışması için [[Special:ApiHelp/main#main/datatypes|alternatif çok değerli ayırıcı]] kullanın.",
 	"apihelp-globalpreferences-param-optionname": "<var>optionvalue</var> tarafından verilen değere ayarlanması gereken tercihin adı.",
@@ -31,5 +32,5 @@
 	"apihelp-globalpreferenceoverrides-param-optionvalue": "<var>optionname</var> tarafından belirtilen geçersiz kılma değeri.",
 	"apihelp-globalpreferenceoverrides-example-reset": "Tüm yerel geçersiz kılmaları kaldırın.",
 	"apihelp-globalpreferenceoverrides-example-change": "<kbd>skin</kbd> ve <kbd>hideminor</kbd> tercihleri için geçersiz kılmaları ayarlayın veya değiştirin.",
-	"apiwarn-globally-overridden": "{{PLURAL:$2|Seçenek|Seçenek}} $1 küresel olarak geçersiz kılındı."
+	"apiwarn-globally-overridden": "{{PLURAL:$2|Seçenek|Seçenekler}} $1 küresel olarak geçersiz kılındı."
 }

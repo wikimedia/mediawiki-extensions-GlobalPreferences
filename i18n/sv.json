@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Jopparn",
+			"Sabelöga",
 			"Tobulos1",
 			"WikiPhoenix"
 		]
@@ -16,7 +17,7 @@
 	"globalprefs-info-label": "Globala inställningar:",
 	"globalprefs-info-link": "Ange dina globala inställningar",
 	"globalprefs-info-help": "Inställningar som har ändrats via den globala inställningssidan kommer att tillämpas på alla wikier.",
-	"globalprefs-reset-intro": "Du kan använda denna sida för att inaktivera alla globala inställningar på alla wikis och återvända till dina lokala inställningar. Detta påverkar inte några lokala wikiinställningar. Detta kan inte ångras.",
+	"globalprefs-reset-intro": "Du kan använda denna sida för att inaktivera alla globala inställningar på alla wikier och återvända till dina lokala inställningar. Detta påverkar inte några lokala wikiinställningar. Detta kan inte ångras.",
 	"globalprefs-restoreprefs": "Ta bort alla globala inställningar (i alla avsnitt)",
 	"globalprefs-select-all": "Markera/avmarkera alla kryssrutor",
 	"globalprefs-col-header": "Välj alternativ nedan som ska vara globala"
