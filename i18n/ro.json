@@ -6,6 +6,7 @@
 		]
 	},
 	"globalprefs-desc": "Permite utilizatorilor să seteze preferințe globale",
+	"globalprefs-set-local-exception": "Setează o excepție locală pentru această [[Special:GlobalPreferences#$1|preferință globală]].",
 	"tooltip-globalprefs-check-label": "Fă această setare globală",
 	"globalprefs-error-header": "Eroare",
 	"globalpreferences": "Preferințe globale",
