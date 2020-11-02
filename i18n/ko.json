@@ -3,6 +3,7 @@
 		"authors": [
 			"Hym411",
 			"IRTC1015",
+			"Kwj2772",
 			"Revi",
 			"Ykhwong",
 			"아라"
@@ -10,6 +11,7 @@
 	},
 	"globalprefs-desc": "사용자가 전역 환경 설정을 설정할 수 있게 합니다",
 	"globalprefs-set-local-exception": "이 위키를 이 [[Special:GlobalPreferences#$1|전역 환경 설정]]의 예외로 설정합니다.",
+	"globalprefs-has-local-exception": "이 전역 환경 설정은 [[Special:Preferences#$1|이 위키의 로컬 예외]]가 적용됩니다.",
 	"tooltip-globalprefs-check-label": "이 설정을 전역적으로 적용하기",
 	"globalprefs-error-header": "오류",
 	"globalprefs-notglobal": "당신의 계정은 전역 계정이 아니므로 전역 설정을 할 수 없습니다.",
