@@ -1,8 +1,34 @@
 {
 	"@metadata": {
 		"authors": [
+			"ArenaL5",
 			"Elisardojm"
 		]
 	},
-	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Preferencias globais."
+	"apihelp-globalpreferences-summary": "Cambiar as preferencias da conta de usuario actual.",
+	"apihelp-globalpreferences-extended-description": "Só as preferencias rexitradas para a wiki actual poden ser cambiadas localmente.",
+	"apihelp-globalpreferences-param-reset": "Restablecer preferencias globais. Borra todas ou algunhas preferencias globais, dependendo do valor de <code>resetkinds</code>, e as fai non globais.",
+	"apihelp-globalpreferences-param-resetkinds": "Lista de tipos de preferencias a reinicializar cando a opción <var>reset</var> está definida.",
+	"apihelp-globalpreferences-param-change": "Lista de cambios, con formato nome=valor (p. ex. skin=vector). Se non se da un valor (sen un símbolo de igual), p.ex. nomedapreferencia|outrapreferencia|..., a opción pasará ao valor por defecto. Para calquera valor que conteña o carácter barra vertical (<kbd>|</kbd>), use o [[Special:ApiHelp/main#main/datatypes|separador alternativo para valores múltiples]] para unha operación correcta.",
+	"apihelp-globalpreferences-param-optionname": "O nome da preferencia que debe fixarse ao valor dado por <var>optionvalue</var>.",
+	"apihelp-globalpreferences-param-optionvalue": "O valor para a preferencia especificada por <var>optionname</var>.",
+	"apihelp-globalpreferences-example-reset-one": "Fai unha soa preferencia non global.",
+	"apihelp-globalpreferences-example-reset": "Fai todas as preferencias non globais.",
+	"apihelp-globalpreferences-example-change": "Cambiar as preferencias <kbd>skin</kbd> e <kbd>hideminor</kbd>.",
+	"apihelp-query+globalpreferences-summary": "Recuperar as preferencias globais para a conta de usuario actual.",
+	"apihelp-query+globalpreferences-extended-description": "Pode recuperar as preferencias globais e mais as locais.",
+	"apihelp-query+globalpreferences-param-prop": "Que preferencias incluír:",
+	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Preferencias globais.",
+	"apihelp-query+globalpreferences-paramvalue-prop-localoverrides": "Preferencias locais a usar en lugar das globais.",
+	"apierror-globalpreferences-notglobalized": "A conta de usuario actual non é global.",
+	"apihelp-globalpreferenceoverrides-summary": "Cambiar preferencias locais para a conta de usuario actual.",
+	"apihelp-globalpreferenceoverrides-extended-description": "Ignoraranse os valores globais das preferencias afectadas.",
+	"apihelp-globalpreferenceoverrides-param-reset": "Restablecer preferencias globais. Borra todas ou algunhas preferencias locais, dependendo do valor de <code>resetkinds</code>, e as fai globais de novo.",
+	"apihelp-globalpreferenceoverrides-param-resetkinds": "Lista de tipos de preferencias locais a reinicializar cando a opción <var>reset</var> está definida.",
+	"apihelp-globalpreferenceoverrides-param-change": "Lista de cambios, con formato nome=valor (p. ex. skin=vector). Se non se da un valor (sen un símbolo de igual), p.ex. nomedapreferencia|outrapreferencia|..., borrarase a preferencia local e usarase a global. Se algún valor que conteña o carácter barra vertical (<kbd>|</kbd>), deberá usarse o [[Special:ApiHelp/main#main/datatypes|separador alternativo para valores múltiples]] para unha operación correcta.",
+	"apihelp-globalpreferenceoverrides-param-optionname": "O nome da preferencia local que debe fixarse ao valor dado por <var>optionvalue</var>.",
+	"apihelp-globalpreferenceoverrides-param-optionvalue": "O valor para a preferencia local especificada por <var>optionname</var>.",
+	"apihelp-globalpreferenceoverrides-example-reset": "Borrar todas as preferencias locais.",
+	"apihelp-globalpreferenceoverrides-example-change": "Definir ou cambiar preferencias locais para as preferencias <kbd>skin</kbd> e <kbd>hideminor</kbd>.",
+	"apiwarn-globally-overridden": "{{PLURAL:$2|A opción|As opcións}} $1 {{PLURAL:$2|está usando o seu valor local|están usando os seus valores locais}}."
 }

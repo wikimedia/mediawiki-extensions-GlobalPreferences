@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"ArenaL5",
 			"Athena in Wonderland",
 			"Banjo",
 			"Elisardojm",
@@ -8,13 +9,17 @@
 		]
 	},
 	"globalprefs-desc": "Permite aos usuarios definir preferencias globais",
+	"globalprefs-set-local-exception": "Definir unha excepción local para esta [[Special:GlobalPreferences#$1|preferencia global]].",
+	"globalprefs-has-local-exception": "Esta preferencia global ten unha [[Special:Preferences#$1|excepción local nesta wiki]].",
 	"tooltip-globalprefs-check-label": "Facer esta configuración en global",
 	"globalprefs-error-header": "Erro",
 	"globalprefs-notglobal": "A súa conta non é global e non pode definir preferencias globais.",
 	"globalpreferences": "Preferencias globais",
 	"globalprefs-info-label": "Preferencias globais:",
 	"globalprefs-info-link": "Definir as súas preferencias globais",
-	"globalprefs-reset-intro": "Podes usar esta páxina para desactivar tódalas preferencias globais e volver ás túas preferencias locais.\nEsta acción non pode desfacerse.",
+	"globalprefs-info-help": "As opcións definidas a través da páxina de preferencias globais aplicaranse a todas as wikis.",
+	"globalprefs-reset-intro": "Podes usar esta páxina para desactivar tódalas preferencias globais en todas as wikis e volver ás túas preferencias locais. Non serán afectadas as preferencias locais de ningunha wiki. Esta acción non pode desfacerse.",
 	"globalprefs-restoreprefs": "Eliminar tódalas preferencias globais (en tódalas seccións)",
-	"globalprefs-select-all": "Marcar ou desmarcar tódalas caixas"
+	"globalprefs-select-all": "Marcar ou desmarcar tódalas caixas",
+	"globalprefs-col-header": "Selecciona abaixo que opcións serán globais"
 }
