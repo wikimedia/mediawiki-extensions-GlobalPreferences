@@ -9,7 +9,6 @@ use IContextSource;
 use MediaWiki\MediaWikiServices;
 use PermissionsError;
 use PreferencesFormOOUI;
-use SpecialPage;
 use SpecialPreferences;
 use User;
 use UserNotLoggedIn;
@@ -17,7 +16,8 @@ use UserNotLoggedIn;
 class SpecialGlobalPreferences extends SpecialPreferences {
 
 	public function __construct() {
-		SpecialPage::__construct( 'GlobalPreferences' );
+		parent::__construct();
+		$this->mName = 'GlobalPreferences';
 	}
 
 	/**
