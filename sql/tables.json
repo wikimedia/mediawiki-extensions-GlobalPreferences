@@ -1,0 +1,34 @@
+[
+	{
+		"name": "global_preferences",
+		"comment": "Central table that stores global preferences",
+		"columns": [
+			{
+				"name": "gp_user",
+				"comment": "Key to globaluser.gu_id",
+				"type": "integer",
+				"options": { "notnull": true, "unsigned": true }
+			},
+			{
+				"name": "gp_property",
+				"comment": "Property name, same as user_properties.up_property",
+				"type": "binary",
+				"options": { "length": 255, "notnull": true }
+			},
+			{
+				"name": "gp_value",
+				"comment": "Property value, same as user_properties.up_value",
+				"type": "blob",
+				"options": { "length": 65530, "notnull": false }
+			}
+		],
+		"indexes": [
+			{
+				"name": "global_preferences_property",
+				"columns": [ "gp_property" ],
+				"unique": false
+			}
+		],
+		"pk": [ "gp_user", "gp_property" ]
+	}
+]

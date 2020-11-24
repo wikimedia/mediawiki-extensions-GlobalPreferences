@@ -169,16 +169,21 @@ class Hooks {
 			|| $dBname === $globalPreferencesDB
 			|| ( $globalPreferencesDB === null && $dBname === $sharedDB )
 		) {
-			$sqlPath = dirname( __DIR__ ) . '/sql';
-			$updater->addExtensionTable( 'global_preferences', "$sqlPath/tables.sql" );
-			$updater->dropExtensionIndex( 'global_preferences',
-				'global_preferences_user_property',
-				"$sqlPath/patch_primary_index.sql"
-			);
-			$updater->modifyExtensionField( 'global_preferences',
-				'gp_user',
-				"$sqlPath/patch-gp_user.sql"
-			);
+			$type = $updater->getDB()->getType();
+			$sqlPath = dirname( __DIR__ ) . '/sql/';
+
+			$updater->addExtensionTable( 'global_preferences', "$sqlPath/$type/tables-generated.sql" );
+
+			if ( $type === 'mysql' || $type === 'sqlite' ) {
+				$updater->dropExtensionIndex( 'global_preferences',
+					'global_preferences_user_property',
+					"$sqlPath/patch_primary_index.sql"
+				);
+				$updater->modifyExtensionField( 'global_preferences',
+					'gp_user',
+					"$sqlPath/patch-gp_user.sql"
+				);
+			}
 		}
 	}
 
