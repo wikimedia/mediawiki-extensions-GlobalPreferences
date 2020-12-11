@@ -484,7 +484,7 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	 * Get the user's global preferences.
 	 * @param User $user
 	 * @param bool $skipCache Whether the preferences should be loaded strictly from DB
-	 * @return bool|string[] Array keyed by preference name, or false if not found.
+	 * @return false|string[] Array keyed by preference name, or false if not found.
 	 */
 	public function getGlobalPreferencesValues( User $user, $skipCache = false ) {
 		$id = $this->getUserID( $user );
