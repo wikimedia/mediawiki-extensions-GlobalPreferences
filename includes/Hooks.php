@@ -53,6 +53,9 @@ class Hooks {
 		);
 		// Overwrite all options that have a global counterpart.
 		$globalPrefs = $globalPreferences->getGlobalPreferencesValues( $user );
+		if ( $globalPrefs === false ) {
+			return;
+		}
 		foreach ( $globalPrefs as $optName => $globalValue ) {
 			// Don't overwrite if it has a local exception, unless we're just trying to get .
 			if (
@@ -264,7 +267,7 @@ class Hooks {
 			}
 			$exceptionName = $preference . GlobalPreferencesFactory::LOCAL_EXCEPTION_SUFFIX;
 			if ( $user->getOption( $exceptionName ) === null ) {
-				if ( array_key_exists( $preference, $globalPrefs ) ) {
+				if ( $globalPrefs && array_key_exists( $preference, $globalPrefs ) ) {
 					$toWarn[] = $preference;
 				}
 			}
