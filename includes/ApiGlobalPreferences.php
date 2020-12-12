@@ -63,6 +63,9 @@ class ApiGlobalPreferences extends ApiOptions {
 		$factory = $this->getFactory();
 		$user = $this->getUserForUpdates();
 		$prefs = $this->getFactory()->getGlobalPreferencesValues( $user, true );
+		if ( $prefs === false ) {
+			return;
+		}
 		if ( $this->resetPrefTypes ) {
 			$kinds = $this->getUserForUpdates()->getOptionKinds( $this->getContext(), $prefs );
 			foreach ( $prefs as $pref => $value ) {
