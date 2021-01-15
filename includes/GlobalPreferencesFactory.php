@@ -315,7 +315,11 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 		// checks for changes in that preference to update a hidden one, but the
 		// RCFilters product is okay with having that be localized
 
-		// We are also not resetting unused preferences in the global context
+		// We are also not resetting unused preferences in the global context.
+		// Otherwise, users could lose data by editing their global preferences
+		// on a wiki where some of the preferences don't exist. However, this means
+		// that preferences for undeployed extensions or removed code are never
+		// removed from the database...
 
 		// Setting the actual preference values:
 		$prefs = [];
