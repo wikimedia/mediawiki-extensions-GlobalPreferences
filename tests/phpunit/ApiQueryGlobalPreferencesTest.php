@@ -59,10 +59,6 @@ class ApiQueryGlobalPreferencesTest extends MediaWikiTestCase {
 	 * @covers \GlobalPreferences\ApiQueryGlobalPreferences::execute()
 	 *
 	 * @dataProvider provideApi
-	 * @param array $requestData
-	 * @param array $globalPrefs
-	 * @param array $localPrefs
-	 * @param array $expected
 	 */
 	public function testApi( array $requestData,
 		array $globalPrefs,
