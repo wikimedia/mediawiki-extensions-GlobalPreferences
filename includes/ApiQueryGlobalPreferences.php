@@ -29,7 +29,7 @@ class ApiQueryGlobalPreferences extends ApiQueryBase {
 	 * @inheritDoc
 	 */
 	public function execute() {
-		if ( $this->getUser()->isAnon() ) {
+		if ( !$this->getUser()->isRegistered() ) {
 			$this->dieWithError(
 				[ 'apierror-mustbeloggedin', $this->msg( 'action-editmyoptions' ) ], 'notloggedin'
 			);

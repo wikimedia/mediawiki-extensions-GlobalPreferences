@@ -27,12 +27,12 @@ class ApiQueryGlobalPreferencesTest extends MediaWikiTestCase {
 		array $localPrefs
 	) {
 		$user = $this->getMockBuilder( User::class )
-			->setMethods( [ 'getOptions', 'isAnon' ] )
+			->setMethods( [ 'getOptions', 'isRegistered' ] )
 			->getMock();
 		$user->method( 'getOptions' )
 			->willReturn( $localPrefs );
-		$user->method( 'isAnon' )
-			->willReturn( false );
+		$user->method( 'isRegistered' )
+			->willReturn( true );
 		$request = new FauxRequest( $requestData );
 		$context = new DerivativeContext( RequestContext::getMain() );
 		/** @var User $user */

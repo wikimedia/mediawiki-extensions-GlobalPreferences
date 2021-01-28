@@ -36,7 +36,7 @@ class SpecialGlobalPreferences extends SpecialPreferences {
 			return;
 		}
 		// Dirty override to check user can set global prefs.
-		if ( $this->getUser()->isAnon() ) {
+		if ( !$this->getUser()->isRegistered() ) {
 			// @todo use our own error messages here
 			$this->setHeaders();
 			throw new UserNotLoggedIn();

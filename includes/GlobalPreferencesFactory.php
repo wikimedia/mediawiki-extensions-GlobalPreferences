@@ -448,7 +448,7 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 
 	/**
 	 * A convenience function to check a string to see if it ends in a given suffix.
-	 * @todo This could probably exist somewhere like StringUtils.
+	 * @todo Replace with str_ends_with() when PHP 7 support was dropped.
 	 * @param string $name The name to check.
 	 * @param string $suffix The suffix to check for.
 	 * @return bool
@@ -464,11 +464,7 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	 * @return bool
 	 */
 	public function isUserGlobalized( User $user ) {
-		if ( $user->isAnon() ) {
-			// No prefs for anons, sorry :(
-			return false;
-		}
-		return $this->getUserID( $user ) !== 0;
+		return $user->isRegistered() && $this->getUserID( $user ) !== 0;
 	}
 
 	/**
