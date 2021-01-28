@@ -30,5 +30,5 @@
 	"apihelp-globalpreferenceoverrides-param-optionvalue": "The value for the override specified by <var>optionname</var>.",
 	"apihelp-globalpreferenceoverrides-example-reset": "Remove all local overrides.",
 	"apihelp-globalpreferenceoverrides-example-change": "Set or change overrides for <kbd>skin</kbd> and <kbd>hideminor</kbd> preferences.",
-	"apiwarn-globally-overridden": "{{PLURAL:$2|Option|Options}} $1 {{PLURAL:$2|is|are}} globally overridden."
+	"apiwarn-globally-overridden": "{{PLURAL:$2|Option|Options}} $1 {{PLURAL:$2|is|are}} globally overridden. You can use the \"globalpreferences\" API to change the option globally, or the \"globalpreferenceoverrides\" API to set a local override."
 }
