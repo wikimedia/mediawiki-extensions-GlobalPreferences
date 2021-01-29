@@ -31,5 +31,5 @@
 	"apihelp-globalpreferenceoverrides-param-optionvalue": "Der Wert für die Umgehung, angegeben durch <var>optionname</var>.",
 	"apihelp-globalpreferenceoverrides-example-reset": "Entfernt alle lokalen Umgehungen.",
 	"apihelp-globalpreferenceoverrides-example-change": "Legt Umgehungen für die Einstellungen <kbd>skin</kbd> und <kbd>hideminor</kbd> fest oder ändert sie.",
-	"apiwarn-globally-overridden": "Die {{PLURAL:$2|Option|Optionen}} $1 {{PLURAL:$2|wird|werden}} global überschrieben."
+	"apiwarn-globally-overridden": "Die {{PLURAL:$2|Option|Optionen}} $1 {{PLURAL:$2|wird|werden}} global überschrieben. Du kannst die API \"globalpreferences\" verwenden, um die Option global zu ändern, oder die API \"globalpreferenceoverrides\", um eine lokale Überschreibung zu setzen."
 }
