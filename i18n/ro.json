@@ -12,5 +12,6 @@
 	"globalpreferences": "Preferințe globale",
 	"globalprefs-info-label": "Preferințe globale:",
 	"globalprefs-info-link": "Setați-vă preferințele globale",
-	"globalprefs-info-help": "Preferințele setate prin intermediul paginii preferințelor globale se vor aplica tuturor wiki-urilor."
+	"globalprefs-info-help": "Preferințele setate prin intermediul paginii preferințelor globale se vor aplica tuturor wiki-urilor.",
+	"globalprefs-restoreprefs": "Eliminați toate preferințele globale (în toate secțiunile)"
 }
