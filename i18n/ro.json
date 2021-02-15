@@ -7,11 +7,15 @@
 	},
 	"globalprefs-desc": "Permite utilizatorilor să seteze preferințe globale",
 	"globalprefs-set-local-exception": "Setează o excepție locală pentru această [[Special:GlobalPreferences#$1|preferință globală]].",
+	"globalprefs-has-local-exception": "Această preferință globală are o [[Special:Preferences#$1|excepție locală pe acest wiki]].",
 	"tooltip-globalprefs-check-label": "Fă această setare globală",
 	"globalprefs-error-header": "Eroare",
+	"globalprefs-notglobal": "Contul dvs. nu este un cont global și nu poate seta preferințe globale.",
 	"globalpreferences": "Preferințe globale",
 	"globalprefs-info-label": "Preferințe globale:",
 	"globalprefs-info-link": "Setați-vă preferințele globale",
 	"globalprefs-info-help": "Preferințele setate prin intermediul paginii preferințelor globale se vor aplica tuturor wiki-urilor.",
-	"globalprefs-restoreprefs": "Eliminați toate preferințele globale (în toate secțiunile)"
+	"globalprefs-reset-intro": "Puteți utiliza această pagină pentru a dezactiva toate preferințele globale pe toate wiki-urile și întoarce la preferințele dvs. globale. Această pagină nu afectează nicio preferință locală de la oricare wiki. Acest lucru nu poate fi anulat.",
+	"globalprefs-restoreprefs": "Eliminați toate preferințele globale (în toate secțiunile)",
+	"globalprefs-col-header": "Selectați opțiunile de jos pentru a fi globale"
 }
