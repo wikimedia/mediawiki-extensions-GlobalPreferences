@@ -3,6 +3,7 @@
 		"authors": [
 			"Gomoko",
 			"Thibaut120094",
+			"Verdy p",
 			"Wladek92"
 		]
 	},
@@ -31,5 +32,5 @@
 	"apihelp-globalpreferenceoverrides-param-optionvalue": "La valeur de la surcharge spécifiée par <var>optionname</var>.",
 	"apihelp-globalpreferenceoverrides-example-reset": "Supprimer toutes les redéfinitions locales.",
 	"apihelp-globalpreferenceoverrides-example-change": "Initialiser ou modifier les redéfinitions pour les préférences de <kbd>skin</kbd> et <kbd>hideminor</kbd> .",
-	"apiwarn-globally-overridden": "{{PLURAL:$2|L’option|Les options}} $1 {{PLURAL:$2|est globalement écrasée|sont globalement écrasées}}. Vous pouvez utiliser l’API « globalpreferences » pour modifier l’option globalement, ou l’API « globalpreferenceoverrides » pour définir un écrasement local."
+	"apiwarn-globally-overridden": "{{PLURAL:$2|L’option|Les options}} $1 {{PLURAL:$2|est globalement écrasée|sont globalement écrasées}}. Vous pouvez utiliser l’API « globalpreferences » pour modifier l’option globalement, ou bien l’API « globalpreferenceoverrides » pour définir un écrasement local."
 }
