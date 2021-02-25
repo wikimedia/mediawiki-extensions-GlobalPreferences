@@ -1,10 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
+			"Neriman2003",
 			"Toghrul Rahimli",
 			"Wertuose"
 		]
 	},
+	"globalprefs-set-local-exception": "Bu [[Special:GlobalPreferences#$1|qlobal parametr]] üçün yerli bir istisna təyin edin.",
 	"globalpreferences": "Qlobal nizamlamalar",
 	"globalprefs-info-label": "Qlobal nizamlamalar:",
 	"globalprefs-info-link": "Qlobal nizamlamalarınızı təyin edin",
