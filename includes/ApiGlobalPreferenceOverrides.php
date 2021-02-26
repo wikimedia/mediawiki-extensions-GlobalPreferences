@@ -2,8 +2,9 @@
 
 namespace GlobalPreferences;
 
+use ApiMain;
 use ApiOptions;
-use MediaWiki\MediaWikiServices;
+use MediaWiki\User\UserOptionsManager;
 use User;
 
 class ApiGlobalPreferenceOverrides extends ApiOptions {
@@ -11,14 +12,38 @@ class ApiGlobalPreferenceOverrides extends ApiOptions {
 	private $resetPrefTypes = [];
 
 	/**
+	 * @var GlobalPreferencesFactory
+	 */
+	private $preferencesFactory;
+
+	/**
+	 * @var UserOptionsManager
+	 */
+	private $userOptionsManager;
+
+	/**
+	 * @param ApiMain $mainModule
+	 * @param string $moduleName
+	 * @param GlobalPreferencesFactory $factory
+	 * @param UserOptionsManager $userOptionsManager
+	 */
+	public function __construct(
+		ApiMain $mainModule,
+		$moduleName,
+		GlobalPreferencesFactory $factory,
+		UserOptionsManager $userOptionsManager
+	) {
+		parent::__construct( $mainModule, $moduleName );
+		$this->preferencesFactory = $factory;
+		$this->userOptionsManager = $userOptionsManager;
+	}
+
+	/**
 	 * @inheritDoc
 	 */
 	public function execute() {
-		/** @var GlobalPreferencesFactory $factory */
-		$factory = MediaWikiServices::getInstance()->getPreferencesFactory();
-		'@phan-var GlobalPreferencesFactory $factory';
 		$user = $this->getUserForUpdates();
-		if ( $user && !$factory->isUserGlobalized( $user ) ) {
+		if ( $user && !$this->preferencesFactory->isUserGlobalized( $user ) ) {
 			$this->dieWithError( 'apierror-globalpreferences-notglobalized', 'notglobalized' );
 		}
 		parent::execute();
@@ -52,21 +77,29 @@ class ApiGlobalPreferenceOverrides extends ApiOptions {
 	 * @inheritDoc
 	 */
 	protected function commitChanges() {
-		$user = $this->getUserForUpdates();
+		$user = $this->getUser();
 		if ( $this->resetPrefTypes ) {
-			$prefs = $user->getOptions();
-			$kinds = $this->getUserForUpdates()->getOptionKinds( $this->getContext(), $prefs );
+			$prefs = $this->userOptionsManager->getOptions( $user, UserOptionsManager::READ_EXCLUSIVE );
+			$kinds = $this->userOptionsManager->getOptionKinds(
+				$user,
+				$this->getContext(),
+				$prefs
+			);
 			foreach ( $prefs as $pref => $value ) {
 				$kind = $kinds[$pref];
 				if ( in_array( $kind, $this->resetPrefTypes ) ) {
-					$user->setOption( $pref . GlobalPreferencesFactory::LOCAL_EXCEPTION_SUFFIX, null );
+					$this->userOptionsManager->setOption(
+						$user,
+						$pref . GlobalPreferencesFactory::LOCAL_EXCEPTION_SUFFIX,
+						null
+					);
 				}
 			}
 		}
 		foreach ( $this->prefs as $pref => $value ) {
-			$user->setOption( $pref, $value );
+			$this->userOptionsManager->setOption( $user, $pref, $value );
 		}
-		$user->saveSettings();
+		$this->userOptionsManager->saveOptions( $user );
 	}
 
 	/**

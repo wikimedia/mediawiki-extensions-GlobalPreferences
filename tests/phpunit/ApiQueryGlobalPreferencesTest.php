@@ -8,6 +8,7 @@ use DerivativeContext;
 use FauxRequest;
 use GlobalPreferences\ApiQueryGlobalPreferences;
 use GlobalPreferences\GlobalPreferencesFactory;
+use MediaWiki\User\UserOptionsLookup;
 use MediaWikiTestCase;
 use RequestContext;
 use User;
@@ -22,15 +23,12 @@ class ApiQueryGlobalPreferencesTest extends MediaWikiTestCase {
 	 * @param array $localPrefs
 	 * @return ApiQueryGlobalPreferences
 	 */
-	private function makeApi( array $requestData,
+	private function makeApi(
+		array $requestData,
 		array $globalPrefs,
 		array $localPrefs
 	) {
-		$user = $this->getMockBuilder( User::class )
-			->setMethods( [ 'getOptions', 'isRegistered' ] )
-			->getMock();
-		$user->method( 'getOptions' )
-			->willReturn( $localPrefs );
+		$user = $this->createMock( User::class );
 		$user->method( 'isRegistered' )
 			->willReturn( true );
 		$request = new FauxRequest( $requestData );
@@ -51,8 +49,17 @@ class ApiQueryGlobalPreferencesTest extends MediaWikiTestCase {
 		$factory->method( 'isUserGlobalized' )
 			->willReturn( true );
 
+		$userOptionsLookup = $this->createMock( UserOptionsLookup::class );
+		$userOptionsLookup->method( 'getOptions' )
+			->willReturn( $localPrefs );
+
 		/** @var GlobalPreferencesFactory $factory */
-		return new ApiQueryGlobalPreferences( $query, 'globalpreferences', $factory );
+		return new ApiQueryGlobalPreferences(
+			$query,
+			'globalpreferences',
+			$factory,
+			$userOptionsLookup
+		);
 	}
 
 	/**

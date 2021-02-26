@@ -3,7 +3,6 @@
 namespace GlobalPreferences;
 
 use ApiOptions;
-use ApiQuery;
 use DatabaseUpdater;
 use HTMLForm;
 use MediaWiki\Config\ServiceOptions;
@@ -209,7 +208,8 @@ class Hooks {
 				$services->getPermissionManager(),
 				$services->getLanguageConverterFactory()->getLanguageConverter(),
 				$services->getLanguageNameUtils(),
-				$services->getHookContainer()
+				$services->getHookContainer(),
+				$services->getUserOptionsLookup()
 			);
 			$factory->setLogger( LoggerFactory::getInstance( 'preferences' ) );
 			$factory->setAutoGlobals( $mainConfig->get( 'GlobalPreferencesAutoPrefs' ) );
@@ -227,19 +227,6 @@ class Hooks {
 	public static function onDeleteUnknownPreferences( &$where, IDatabase $db ) : void {
 		$like = $db->buildLike( $db->anyString(), GlobalPreferencesFactory::LOCAL_EXCEPTION_SUFFIX );
 		$where[] = "up_property NOT $like";
-	}
-
-	/**
-	 * Factory function for API query=globalpreferences
-	 *
-	 * @param ApiQuery $queryModule
-	 * @param string $moduleName
-	 * @return ApiQueryGlobalPreferences
-	 */
-	public static function makeApiQueryGlobalPreferences( ApiQuery $queryModule, $moduleName
-	) : ApiQueryGlobalPreferences {
-		$factory = self::getPreferencesFactory();
-		return new ApiQueryGlobalPreferences( $queryModule, $moduleName, $factory );
 	}
 
 	/**

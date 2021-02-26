@@ -6,6 +6,7 @@ use ApiBase;
 use ApiQuery;
 use ApiQueryBase;
 use ApiResult;
+use MediaWiki\User\UserOptionsLookup;
 
 class ApiQueryGlobalPreferences extends ApiQueryBase {
 	/**
@@ -14,15 +15,25 @@ class ApiQueryGlobalPreferences extends ApiQueryBase {
 	private $preferencesFactory;
 
 	/**
+	 * @var UserOptionsLookup
+	 */
+	private $userOptionsLookup;
+
+	/**
 	 * @param ApiQuery $queryModule
 	 * @param string $moduleName
 	 * @param GlobalPreferencesFactory $factory
+	 * @param UserOptionsLookup $userOptionsLookup
 	 */
-	public function __construct( ApiQuery $queryModule, $moduleName,
-		GlobalPreferencesFactory $factory
+	public function __construct(
+		ApiQuery $queryModule,
+		$moduleName,
+		GlobalPreferencesFactory $factory,
+		UserOptionsLookup $userOptionsLookup
 	) {
-		$this->preferencesFactory = $factory;
 		parent::__construct( $queryModule, $moduleName, 'gpr' );
+		$this->preferencesFactory = $factory;
+		$this->userOptionsLookup = $userOptionsLookup;
 	}
 
 	/**
@@ -52,7 +63,7 @@ class ApiQueryGlobalPreferences extends ApiQueryBase {
 
 		if ( isset( $prop['localoverrides'] ) ) {
 			$overriddenPrefs = [];
-			$userOptions = $this->getUser()->getOptions();
+			$userOptions = $this->userOptionsLookup->getOptions( $this->getUser() );
 			foreach ( $userOptions as $pref => $value ) {
 				if ( GlobalPreferencesFactory::isLocalPrefName( $pref ) ) {
 					$mainPref = substr( $pref, 0,

@@ -81,13 +81,28 @@
 		}
 	},
 	"APIModules": {
-		"globalpreferences": "GlobalPreferences\\ApiGlobalPreferences",
-		"globalpreferenceoverrides": "GlobalPreferences\\ApiGlobalPreferenceOverrides"
+		"globalpreferences": {
+			"class": "GlobalPreferences\\ApiGlobalPreferences",
+			"services": [
+				"PreferencesFactory",
+				"UserOptionsManager"
+			]
+		},
+		"globalpreferenceoverrides": {
+			"class": "GlobalPreferences\\ApiGlobalPreferenceOverrides",
+			"services": [
+				"PreferencesFactory",
+				"UserOptionsManager"
+			]
+		}
 	},
 	"APIMetaModules": {
 		"globalpreferences": {
 			"class": "GlobalPreferences\\ApiQueryGlobalPreferences",
-			"factory": "GlobalPreferences\\Hooks::makeApiQueryGlobalPreferences"
+			"services": [
+				"PreferencesFactory",
+				"UserOptionsLookup"
+			]
 		}
 	},
 	"manifest_version": 2

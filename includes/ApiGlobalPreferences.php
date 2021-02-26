@@ -2,13 +2,42 @@
 
 namespace GlobalPreferences;
 
+use ApiMain;
 use ApiOptions;
-use MediaWiki\MediaWikiServices;
+use MediaWiki\Preferences\PreferencesFactory;
+use MediaWiki\User\UserOptionsManager;
 
 class ApiGlobalPreferences extends ApiOptions {
 	private $prefs = [];
 	private $resetPrefTypes = [];
 	private $resetPrefs = [];
+
+	/**
+	 * @var PreferencesFactory
+	 */
+	private $factory;
+
+	/**
+	 * @var UserOptionsManager
+	 */
+	private $userOptionsManager;
+
+	/**
+	 * @param ApiMain $mainModule
+	 * @param string $moduleName
+	 * @param PreferencesFactory $factory
+	 * @param UserOptionsManager $userOptionsManager
+	 */
+	public function __construct(
+		ApiMain $mainModule,
+		$moduleName,
+		PreferencesFactory $factory,
+		UserOptionsManager $userOptionsManager
+	) {
+		parent::__construct( $mainModule, $moduleName );
+		$this->factory = $factory;
+		$this->userOptionsManager = $userOptionsManager;
+	}
 
 	/**
 	 * @inheritDoc
@@ -28,10 +57,7 @@ class ApiGlobalPreferences extends ApiOptions {
 	 * @return GlobalPreferencesFactory
 	 */
 	private function getFactory() {
-		/** @var GlobalPreferencesFactory $factory */
-		$factory = MediaWikiServices::getInstance()->getPreferencesFactory();
-		'@phan-var GlobalPreferencesFactory $factory';
-		return $factory;
+		return $this->factory;
 	}
 
 	/**
@@ -67,7 +93,11 @@ class ApiGlobalPreferences extends ApiOptions {
 			return;
 		}
 		if ( $this->resetPrefTypes ) {
-			$kinds = $this->getUserForUpdates()->getOptionKinds( $this->getContext(), $prefs );
+			$kinds = $this->userOptionsManager->getOptionKinds(
+				$this->getUserForUpdates(),
+				$this->getContext(),
+				$prefs
+			);
 			foreach ( $prefs as $pref => $value ) {
 				$kind = $kinds[$pref];
 				if ( in_array( $kind, $this->resetPrefTypes ) ) {
