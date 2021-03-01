@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Piramidion"
+			"Piramidion",
+			"Ата"
 		]
 	},
 	"apihelp-globalpreferences-summary": "Змінити глобальні налаштування поточного користувача.",
@@ -29,5 +30,5 @@
 	"apihelp-globalpreferenceoverrides-param-optionvalue": "Значення локальної заміни, задане через <var>optionname</var>.",
 	"apihelp-globalpreferenceoverrides-example-reset": "Вилучити всі локальні заміни.",
 	"apihelp-globalpreferenceoverrides-example-change": "Встановити чи змінити локальні заміни для налаштувань <kbd>skin</kbd> та <kbd>hideminor</kbd>.",
-	"apiwarn-globally-overridden": "{{PLURAL:$2|Опцію|Опції}} $1 {{PLURAL:$2|замінено}} глобально."
+	"apiwarn-globally-overridden": "{{PLURAL:$2|Опцію|Опції}} $1 {{PLURAL:$2|замінено}} глобально. Ви можете використати \"globalpreferences\" API, щоб змінити опцію глобально, або \"globalpreferenceoverrides\" API, щоб встановити локальний виняток."
 }
