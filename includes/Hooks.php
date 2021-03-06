@@ -6,7 +6,6 @@ use ApiOptions;
 use ApiQuery;
 use DatabaseUpdater;
 use HTMLForm;
-use MediaWiki\Auth\AuthManager;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
@@ -201,16 +200,10 @@ class Hooks {
 			$config = new ServiceOptions( GlobalPreferencesFactory::CONSTRUCTOR_OPTIONS,
 				$mainConfig
 			);
-			if ( method_exists( MediaWikiServices::class, 'getAuthManager' ) ) {
-				// MediaWiki 1.35+
-				$authManager = $services->getAuthManager();
-			} else {
-				$authManager = AuthManager::singleton();
-			}
 			$factory = new GlobalPreferencesFactory(
 				$config,
 				$services->getContentLanguage(),
-				$authManager,
+				$services->getAuthManager(),
 				$services->getLinkRendererFactory()->create(),
 				$services->getNamespaceInfo(),
 				$services->getPermissionManager(),
