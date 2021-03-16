@@ -78,9 +78,19 @@ $specialPageAliases['ms'] = [
 	'GlobalPreferences' => [ 'Keutamaan_global' ],
 ];
 
+/** Norwegian Bokmål (norsk bokmål) */
+$specialPageAliases['nb'] = [
+	'GlobalPreferences' => [ 'Globale_innstillinger' ],
+];
+
 /** Dutch (Nederlands) */
 $specialPageAliases['nl'] = [
 	'GlobalPreferences' => [ 'GlobaleVoorkeuren' ],
+];
+
+/** Norwegian Nynorsk (norsk nynorsk) */
+$specialPageAliases['nn'] = [
+	'GlobalPreferences' => [ 'Globale_innstillingar' ],
 ];
 
 /** Polish (polski) */
