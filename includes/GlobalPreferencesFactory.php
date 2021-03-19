@@ -56,7 +56,7 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	 * Special:GlobalPrefs
 	 * @var array
 	 */
-	protected $prefsBlacklist = [
+	protected $disallowedPreferences = [
 		// Stored in user table, doesn't work yet
 		'realname',
 		// @todo Show CA user id / shared user table id?
@@ -75,7 +75,7 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	 * Preference types that we should not add a checkbox for
 	 * @var array
 	 */
-	protected $typeBlacklist = [
+	protected $typesPrevented = [
 		'info',
 		'hidden',
 		'api',
@@ -85,7 +85,7 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	 * Preference classes that are allowed to be global
 	 * @var array
 	 */
-	protected $classWhitelist = [
+	protected $allowedClasses = [
 		'HTMLSelectOrOtherField',
 		'CirrusSearch\HTMLCompletionProfileSettings',
 		'NewHTMLCheckField',
@@ -419,11 +419,11 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 		}
 
 		$isAllowedType = isset( $info['type'] )
-						 && !in_array( $info['type'], $this->typeBlacklist )
-						 && !in_array( $name, $this->prefsBlacklist );
+			&& !in_array( $info['type'], $this->typesPrevented )
+			&& !in_array( $name, $this->disallowedPreferences );
 
 		$isAllowedClass = isset( $info['class'] )
-						  && in_array( $info['class'], $this->classWhitelist );
+			&& in_array( $info['class'], $this->allowedClasses );
 
 		return $isAllowedType || $isAllowedClass;
 	}
@@ -565,7 +565,7 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	public function onLocalPrefsPage( $context = null ) {
 		$context = $context ?: RequestContext::getMain();
 		return $context->getTitle()
-		&& $context->getTitle()->isSpecial( 'Preferences' );
+			&& $context->getTitle()->isSpecial( 'Preferences' );
 	}
 
 	/**

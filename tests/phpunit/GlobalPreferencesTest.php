@@ -226,7 +226,7 @@ class GlobalPreferencesTest extends MediaWikiTestCase {
 				],
 			],
 			[
-				'Ignore preferences with blacklisted names',
+				'Ignore preferences with disallowed names',
 				false,
 				'realname',
 				[
