@@ -135,6 +135,7 @@ class Hooks {
 	 * @return bool Hook return value
 	 */
 	private static function localPreferencesFormPreSave( array $formData, User $user ): bool {
+		$userOptionsManager = MediaWikiServices::getInstance()->getUserOptionsManager();
 		foreach ( $formData as $pref => $value ) {
 			if ( !GlobalPreferencesFactory::isLocalPrefName( $pref ) ) {
 				continue;
@@ -149,7 +150,7 @@ class Hooks {
 			$checkMatrix = preg_grep( "/^$realName-/", array_keys( $formData ) );
 			foreach ( $checkMatrix as $check ) {
 				$exceptionName = $check . GlobalPreferencesFactory::LOCAL_EXCEPTION_SUFFIX;
-				$user->setOption( $exceptionName, true );
+				$userOptionsManager->setOption( $user, $exceptionName, true );
 			}
 		}
 		return true;
