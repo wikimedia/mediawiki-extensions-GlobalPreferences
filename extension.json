@@ -11,7 +11,7 @@
 	"descriptionmsg": "globalprefs-desc",
 	"type": "specialpage",
 	"requires": {
-		"MediaWiki": ">= 1.37.0"
+		"MediaWiki": ">= 1.38.0"
 	},
 	"config": {
 		"GlobalPreferencesDB": {
@@ -65,18 +65,6 @@
 		},
 		"ext.GlobalPreferences.global-nojs": {
 			"styles": "ext.GlobalPreferences.global-nojs.css"
-		},
-		"ext.GlobalPreferences.local": {
-			"scripts": [
-				"ext.GlobalPreferences.local.js"
-			],
-			"dependencies": [
-				"oojs-ui-core",
-				"mediawiki.widgets.SelectWithInputWidget",
-				"mediawiki.widgets.CheckMatrixWidget",
-				"mediawiki.widgets.TitlesMultiselectWidget",
-				"mediawiki.widgets.UsersMultiselectWidget"
-			]
 		},
 		"ext.GlobalPreferences.local-nojs": {
 			"styles": "ext.GlobalPreferences.local-nojs.css"

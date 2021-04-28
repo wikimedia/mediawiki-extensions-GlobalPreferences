@@ -84,35 +84,16 @@
 
 		// Go over all checkboxes, assign their matching widgets, and connect to events
 		$root.find( '.mw-globalprefs-global-check.oo-ui-checkboxInputWidget' ).each( function () {
-			var associatedWidgetOOUI,
-				checkbox = OO.ui.infuse( this ),
-				sectionID = checkbox.$element.closest( '.oo-ui-layout.oo-ui-tabPanelLayout' ).prop( 'id' ),
-				fullName = checkbox.$input.prop( 'name' ),
-				// Find the name (without the '-global' suffix, but with the 'wp' prefix).
-				prefName = fullName.substr( 0, fullName.length - '-global'.length ).replace( /[\\"]/g, '\\$&' ),
-				// eslint-disable-next-line no-jquery/no-sizzle
-				$associatedWidget = $( ':input[name="' + prefName + '"], :input[name="' + prefName + '[]"]' )
-					.closest( '.oo-ui-widget[data-ooui]' );
-
-			try {
-				associatedWidgetOOUI = OO.ui.infuse( $associatedWidget );
-			} catch ( err ) {
-				// If, for whatever reason, we could not find an associated widget,
-				// or infuse it, fail gracefully and move to the next iteration
-				return true;
-			}
+			var checkbox = OO.ui.infuse( this ),
+				sectionID = checkbox.$element.closest( '.oo-ui-layout.oo-ui-tabPanelLayout' ).prop( 'id' );
 
 			// Store references to all checkboxes in the same section
 			checkboxesBySection[ sectionID ] = checkboxesBySection[ sectionID ] || [];
 			checkboxesBySection[ sectionID ].push( checkbox );
 
-			// Initialize starting state depending on checkbox state
-			associatedWidgetOOUI.setDisabled( !checkbox.isSelected() );
 			updateSelectAllCheckboxState( sectionID );
 			// Respond to event
-			checkbox.on( 'change', function ( isChecked ) {
-				associatedWidgetOOUI.setDisabled( !isChecked );
-
+			checkbox.on( 'change', function () {
 				// Update the 'select all' checkbox for this section
 				updateSelectAllCheckboxState( sectionID );
 			} );

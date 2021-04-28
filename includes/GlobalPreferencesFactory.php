@@ -182,9 +182,17 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 					'default' => $localExValueUser,
 					'cssclass' => implode( ' ', $cssClasses ),
 					'hide-if' => $def['hide-if'] ?? false,
+					'disable-if' => $def['disable-if'] ?? false,
 				];
 				if ( $section !== '' ) {
 					$modifiedPrefs[$localExName]['section'] = $section;
+				}
+				if ( isset( $def['disable-if'] ) ) {
+					$modifiedPrefs[$name]['disable-if'] = [ 'OR', $def['disable-if'],
+						[ '!==', $localExName, '1' ]
+					];
+				} else {
+					$modifiedPrefs[$name]['disable-if'] = [ '!==', $localExName, '1' ];
 				}
 			}
 		}
@@ -241,7 +249,15 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 				'section' => $def['section'],
 				'cssclass' => 'mw-globalprefs-global-check mw-globalprefs-checkbox-for-' . $pref,
 				'hide-if' => $def['hide-if'] ?? false,
+				'disable-if' => $def['disable-if'] ?? false,
 			];
+			if ( isset( $def['disable-if'] ) ) {
+				$def['disable-if'] = [ 'OR', $def['disable-if'],
+					[ '!==', $pref . static::GLOBAL_EXCEPTION_SUFFIX, '1' ]
+				];
+			} else {
+				$def['disable-if'] = [ '!==', $pref . static::GLOBAL_EXCEPTION_SUFFIX, '1' ];
+			}
 			// If this has a local exception, override it and append a help message to say so.
 			$hasLocalException = MediaWikiServices::getInstance()
 				->getUserOptionsLookup()
