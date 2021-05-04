@@ -194,7 +194,7 @@ class Hooks {
 	 * @param MediaWikiServices $services The services object to use.
 	 */
 	public static function onMediaWikiServices( MediaWikiServices $services ) : void {
-		$services->redefineService( 'PreferencesFactory', function ( MediaWikiServices $services ) {
+		$services->redefineService( 'PreferencesFactory', static function ( MediaWikiServices $services ) {
 			$mainConfig = $services->getMainConfig();
 			$config = new ServiceOptions( GlobalPreferencesFactory::CONSTRUCTOR_OPTIONS,
 				$mainConfig
@@ -258,7 +258,7 @@ class Hooks {
 			}
 		}
 		if ( $toWarn ) {
-			$toWarn = array_map( function ( $str ) {
+			$toWarn = array_map( static function ( $str ) {
 				return wfEscapeWikiText( "`$str`" );
 			}, $toWarn );
 			$apiModule->addWarning(

@@ -107,7 +107,7 @@ class GlobalPreferencesFactoryTest extends MediaWikiTestCase {
 
 		$factory = $this->getMockBuilder( GlobalPreferencesFactory::class )
 			->disableOriginalConstructor()
-			->setMethods( [ 'getUserID', 'makeStorage', 'getFormDescriptor' ] )
+			->onlyMethods( [ 'getUserID', 'makeStorage', 'getFormDescriptor' ] )
 			->getMock();
 		$factory->method( 'getUserID' )
 			->willReturn( 1 );

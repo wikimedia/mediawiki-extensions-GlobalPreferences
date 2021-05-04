@@ -21,7 +21,7 @@ class HooksTest extends MediaWikiTestCase {
 	public function testOnApiOptions( array $changes, $errorExpected ) {
 		$apiOptions = $this->getMockBuilder( ApiOptions::class )
 			->disableOriginalConstructor()
-			->setMethods( [ 'addWarning', 'getModuleName' ] )
+			->onlyMethods( [ 'addWarning', 'getModuleName' ] )
 			->getMock();
 		$apiOptions->method( 'getModuleName' )
 			->willReturn( 'options' );
@@ -35,7 +35,7 @@ class HooksTest extends MediaWikiTestCase {
 
 		$user = $this->getMockBuilder( User::class )
 			->disableOriginalConstructor()
-			->setMethods( [ 'getOption' ] )
+			->onlyMethods( [ 'getOption' ] )
 			->getMock();
 		$user->method( 'getOption' )
 			->will( self::returnValueMap( [
@@ -45,7 +45,7 @@ class HooksTest extends MediaWikiTestCase {
 
 		$factory = $this->getMockBuilder( GlobalPreferencesFactory::class )
 			->disableOriginalConstructor()
-			->setMethods( [ 'getGlobalPreferencesValues' ] )
+			->onlyMethods( [ 'getGlobalPreferencesValues' ] )
 			->getMock();
 		$factory->method( 'getGlobalPreferencesValues' )
 			->willReturn( [

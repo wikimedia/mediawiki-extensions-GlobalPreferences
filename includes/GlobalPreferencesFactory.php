@@ -476,7 +476,7 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	public function getUserID( User $user ) {
 		$id = $user->getId();
 		$cache = $this->getCache();
-		return $cache->getWithSetCallback( (string)$id, function () use ( $user ) {
+		return $cache->getWithSetCallback( (string)$id, static function () use ( $user ) {
 			$lookup = CentralIdLookup::factory();
 			return $lookup->centralIdFromLocalUser( $user, CentralIdLookup::AUDIENCE_RAW );
 		} );

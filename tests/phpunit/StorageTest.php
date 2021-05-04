@@ -35,7 +35,7 @@ class StorageTest extends MediaWikiTestCase {
 			->willReturn( [ (object)[ 'gp_property' => 'foo', 'gp_value' => 'bar' ] ] );
 
 		$storage = $this->makeMock()
-			->setMethods( [ 'getDatabase' ] )
+			->onlyMethods( [ 'getDatabase' ] )
 			->getMock();
 
 		$storage->expects( self::once() )
@@ -76,7 +76,7 @@ class StorageTest extends MediaWikiTestCase {
 		*/
 
 		$storage = $this->makeMock()
-			->setMethods( [ 'loadFromDB', 'getDatabase', 'getCacheKey', 'delete' ] )
+			->onlyMethods( [ 'loadFromDB', 'getDatabase', 'getCacheKey', 'delete' ] )
 			->getMock();
 		$storage->expects( self::once() )
 			->method( 'loadFromDB' )

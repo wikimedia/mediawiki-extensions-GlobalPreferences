@@ -42,7 +42,7 @@ class ApiQueryGlobalPreferencesTest extends MediaWikiTestCase {
 
 		$factory = $this->getMockBuilder( GlobalPreferencesFactory::class )
 			->disableOriginalConstructor()
-			->setMethods( [ 'isUserGlobalized', 'getGlobalPreferencesValues' ] )
+			->onlyMethods( [ 'isUserGlobalized', 'getGlobalPreferencesValues' ] )
 			->getMock();
 		$factory->method( 'getGlobalPreferencesValues' )
 			->willReturn( $globalPrefs );
