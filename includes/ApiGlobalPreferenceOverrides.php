@@ -5,7 +5,6 @@ namespace GlobalPreferences;
 use ApiMain;
 use ApiOptions;
 use MediaWiki\User\UserOptionsManager;
-use User;
 
 class ApiGlobalPreferenceOverrides extends ApiOptions {
 	private $prefs = [];
@@ -54,7 +53,7 @@ class ApiGlobalPreferenceOverrides extends ApiOptions {
 	 */
 	protected function resetPreferences( array $kinds ) {
 		if ( in_array( 'all', $kinds ) ) {
-			$this->resetPrefTypes = User::listOptionKinds();
+			$this->resetPrefTypes = $this->userOptionsManager->listOptionKinds();
 		} else {
 			$this->resetPrefTypes = $kinds;
 		}
