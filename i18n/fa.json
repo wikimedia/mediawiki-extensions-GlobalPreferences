@@ -4,13 +4,14 @@
 			"Ahmad252",
 			"Alifakoor",
 			"Armin1392",
+			"Jeeputer",
 			"Ladsgroup",
 			"Mcuteangel",
 			"Reza1615"
 		]
 	},
 	"globalprefs-desc": "اجازهٔ کاربران برای تنظیم ترجیحات سراسری",
-	"globalprefs-set-local-exception": "تنظیم که استثنای محلی برای این [[Special:GlobalPreferences#$1|ترجیحات سراسری]]",
+	"globalprefs-set-local-exception": "تنظیم استثنای محلی برای این [[Special:GlobalPreferences#$1|ترجیحات سراسری]]",
 	"globalprefs-has-local-exception": "این ترجیحات سراسری [[Special:Preferences#$1|استثنای محلی در این ویکی دارد.]]",
 	"tooltip-globalprefs-check-label": "سراسری کردن این تنظیم",
 	"globalprefs-error-header": "خطا",
@@ -21,5 +22,6 @@
 	"globalprefs-info-help": "ترجیحاتی که از طریق صفحهٔ ترجیحات سراسری تنظیم شوند، در تمام ویکی‌ها اعمال خواهند شد.",
 	"globalprefs-reset-intro": "از این صفحه برای غیرفعال‌کردن همهٔ ترجیحات سراسری در همهٔ ویکی‌ها و بازگشت به ترجیحات محلی استفاده کنید. تأثیری بر روی تنظیمات محلی در سایر ویکی‌ها ندارد. این تغییر غیر قابل بازگشت است.",
 	"globalprefs-restoreprefs": "حذف همهٔ تنظیمات سراسری (در همهٔ بخش‌ها)",
-	"globalprefs-select-all": "خاموش یا روشن کردن ه‍مهٔ جعبه‌های انتخاب"
+	"globalprefs-select-all": "خاموش یا روشن کردن ه‍مهٔ جعبه‌های انتخاب",
+	"globalprefs-col-header": "گزینه‌های زیر را برای سراسری‌شدن انتخاب کنید"
 }
