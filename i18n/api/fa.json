@@ -2,10 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Jeeputer",
-			"Ladsgroup"
+			"Ladsgroup",
+			"Mahdy Saffar"
 		]
 	},
-	"apihelp-globalpreferences-summary": "تغییر ترجیحات سراسری برای کاربر کنونی.",
+	"apihelp-globalpreferences-summary": "تغییر ترجیحات سراسری کاربر کنونی.",
 	"apihelp-globalpreferences-extended-description": "تنها ترجیحات ثبت‌شده برای این ویکی را می‌توان به‌صورت محلی تغییر داد.",
 	"apihelp-globalpreferences-example-reset-one": "یک تنظیم واحد را غیرسراسری کن.",
 	"apihelp-globalpreferences-example-reset": "تمام ترجیحات را غیرسراسری کن.",
