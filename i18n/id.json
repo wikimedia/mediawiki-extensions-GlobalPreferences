@@ -1,11 +1,22 @@
 {
 	"@metadata": {
 		"authors": [
+			"Hidayatsrf",
 			"Iwan Novirion"
 		]
 	},
+	"globalprefs-desc": "Memungkinkan pengguna untuk mengatur preferensi global",
+	"globalprefs-set-local-exception": "Tetapkan pengecualian lokal untuk [[Special:GlobalPreferences#$1|preferensi global]] ini.",
+	"globalprefs-has-local-exception": "Preferensi global ini memiliki [[Special:Preferences#$1|pengecualian lokal di wiki ini]].",
+	"tooltip-globalprefs-check-label": "Jadikan pengaturan ini global",
+	"globalprefs-error-header": "Galat",
+	"globalprefs-notglobal": "Akun Anda bukan akun global dan tidak dapat mengatur preferensi global.",
 	"globalpreferences": "Preferensi global",
+	"globalprefs-info-label": "Preferensi global:",
 	"globalprefs-info-link": "Atur preferensi global",
 	"globalprefs-info-help": "Preferensi yang diatur melalui preferensi global akan tampil disemua wiki.",
+	"globalprefs-reset-intro": "Anda dapat menggunakan halaman ini untuk menonaktifkan semua preferensi global di semua wiki dan kembali ke preferensi lokal Anda. Ini tidak mempengaruhi preferensi wiki lokal Anda. Tindakan ini tidak dapat dibatalkan.",
+	"globalprefs-restoreprefs": "Hapus semua preferensi global (di semua bagian)",
+	"globalprefs-select-all": "Aktifkan atau nonaktifkan semua kotak centang",
 	"globalprefs-col-header": "Pilih pilihan di bawah untuk diatur global"
 }
