@@ -88,8 +88,8 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	protected $allowedClasses = [
 		'HTMLSelectOrOtherField',
 		'CirrusSearch\HTMLCompletionProfileSettings',
-		'NewHTMLCheckField',
-		'HTMLFeatureField',
+		'MediaWiki\Extension\BetaFeatures\NewHTMLCheckField',
+		'MediaWiki\Extension\BetaFeatures\HTMLFeatureField',
 		'HTMLCheckMatrix',
 		'Vector\HTMLForm\Fields\HTMLLegacySkinVersionField',
 	];
