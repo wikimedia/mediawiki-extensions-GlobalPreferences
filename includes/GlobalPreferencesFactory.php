@@ -15,7 +15,6 @@ namespace GlobalPreferences;
 
 use CentralIdLookup;
 use Exception;
-use HTMLCheckMatrix;
 use IContextSource;
 use LogicException;
 use MapCacheLRU;
@@ -86,12 +85,11 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	 * @var array
 	 */
 	protected $allowedClasses = [
-		'HTMLSelectOrOtherField',
-		'CirrusSearch\HTMLCompletionProfileSettings',
-		'MediaWiki\Extension\BetaFeatures\NewHTMLCheckField',
-		'MediaWiki\Extension\BetaFeatures\HTMLFeatureField',
-		'HTMLCheckMatrix',
-		'Vector\HTMLForm\Fields\HTMLLegacySkinVersionField',
+		\HTMLSelectOrOtherField::class,
+		\MediaWiki\Extension\BetaFeatures\NewHTMLCheckField::class,
+		\MediaWiki\Extension\BetaFeatures\HTMLFeatureField::class,
+		\HTMLCheckMatrix::class,
+		\Vector\HTMLForm\Fields\HTMLLegacySkinVersionField::class,
 	];
 
 	/**
@@ -375,7 +373,7 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 		$result = [];
 		foreach ( $formDescriptor as $name => $info ) {
 			if ( ( isset( $info['type'] ) && $info['type'] == 'checkmatrix' ) ||
-				 ( isset( $info['class'] ) && $info['class'] == HTMLCheckMatrix::class )
+				 ( isset( $info['class'] ) && $info['class'] == \HTMLCheckMatrix::class )
 			) {
 				$result[] = $name;
 			}
