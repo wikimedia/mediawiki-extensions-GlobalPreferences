@@ -3,42 +3,7 @@
 	display: none;
 }
 
-/* For core fields */
-.mw-htmlform-field-HTMLAutoCompleteSelectField,
-.mw-htmlform-field-HTMLButtonField,
-.mw-htmlform-field-HTMLCheckField,
-.mw-htmlform-field-HTMLCheckMatrix,
-.mw-htmlform-field-HTMLComboboxField,
-.mw-htmlform-field-HTMLDateTimeField,
-.mw-htmlform-field-HTMLEditTools,
-.mw-htmlform-field-HTMLFloatField,
-.mw-htmlform-field-HTMLFormFieldCloner,
-.mw-htmlform-field-HTMLFormFieldWithButton,
-.mw-htmlform-field-HTMLHiddenField,
-.mw-htmlform-field-HTMLInfoField,
-.mw-htmlform-field-HTMLIntField,
-.mw-htmlform-field-HTMLMultiSelectField,
-.mw-htmlform-field-HTMLRadioField,
-.mw-htmlform-field-HTMLRestrictionsField,
-.mw-htmlform-field-HTMLSelectAndOtherField,
-.mw-htmlform-field-HTMLSelectField,
-.mw-htmlform-field-HTMLSelectLimitField,
-.mw-htmlform-field-HTMLSelectNamespace,
-.mw-htmlform-field-HTMLSelectNamespaceWithButton,
-.mw-htmlform-field-HTMLSelectOrOtherField,
-.mw-htmlform-field-HTMLSizeFilterField,
-.mw-htmlform-field-HTMLSubmitField,
-.mw-htmlform-field-HTMLTagFilter,
-.mw-htmlform-field-HTMLTextAreaField,
-.mw-htmlform-field-HTMLTextField,
-.mw-htmlform-field-HTMLTextFieldWithButton,
-.mw-htmlform-field-HTMLTitleTextField,
-.mw-htmlform-field-HTMLUsersMultiselectField,
-.mw-htmlform-field-HTMLUserTextField,
-/* For Extension:BetaFeatures */
-.mw-htmlform-field-NewHTMLCheckField,
-.mw-htmlform-field-HTMLFeatureField,
-/* For Extension:GlobalPrefences */
+[ class^='mw-htmlform-field-' ],
 .mw-special-GlobalPreferences .htmlform-tip {
 	padding-left: 7%;
 }
