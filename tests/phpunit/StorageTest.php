@@ -80,7 +80,7 @@ class StorageTest extends MediaWikiTestCase {
 			->getMock();
 		$storage->expects( self::once() )
 			->method( 'loadFromDB' )
-			->with( DB_MASTER )
+			->with( DB_PRIMARY )
 			->willReturn( [
 				'keep this' => 'yes',
 				'change this' => '1',
@@ -92,7 +92,7 @@ class StorageTest extends MediaWikiTestCase {
 			] );
 		$storage->expects( self::once() )
 			->method( 'getDatabase' )
-			->with( DB_MASTER )
+			->with( DB_PRIMARY )
 			->willReturn( $db );
 		$storage->expects( self::once() )
 			->method( 'getCacheKey' )

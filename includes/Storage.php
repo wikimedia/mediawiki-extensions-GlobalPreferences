@@ -88,7 +88,7 @@ class Storage {
 	 */
 	public function save( array $newPrefs, array $knownPrefs, array $checkMatricesToClear = []
 	) : void {
-		$currentPrefs = $this->loadFromDB( DB_MASTER );
+		$currentPrefs = $this->loadFromDB( DB_PRIMARY );
 
 		// Find records needing an insert or update
 		$save = [];
@@ -114,7 +114,7 @@ class Storage {
 		}
 		// Save
 		if ( $rows ) {
-			$dbw = $this->getDatabase( DB_MASTER );
+			$dbw = $this->getDatabase( DB_PRIMARY );
 			$dbw->replace(
 				static::TABLE_NAME,
 				[ [ 'gp_user', 'gp_property' ] ],
@@ -154,7 +154,7 @@ class Storage {
 	 * @param string[]|null $knownPrefs Only delete the preferences we know about.
 	 */
 	public function delete( ?array $knownPrefs = null ) : void {
-		$db = $this->getDatabase( DB_MASTER );
+		$db = $this->getDatabase( DB_PRIMARY );
 		$conds = [ 'gp_user' => $this->userId ];
 		if ( $knownPrefs !== null ) {
 			$conds['gp_property'] = $knownPrefs;
