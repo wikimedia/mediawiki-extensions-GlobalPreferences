@@ -22,7 +22,7 @@ class Hooks {
 	 * @param OutputPage &$out The output page.
 	 * @param Skin &$skin The skin. Not used.
 	 */
-	public static function onBeforePageDisplay( OutputPage &$out, Skin &$skin ) : void {
+	public static function onBeforePageDisplay( OutputPage &$out, Skin &$skin ): void {
 		if ( $out->getTitle()->isSpecial( 'Preferences' ) ) {
 			// Add module styles and scripts separately
 			// so non-JS users get the styles quicker and to avoid a FOUC.
@@ -113,7 +113,7 @@ class Hooks {
 		HTMLForm $form,
 		User $user,
 		&$result
-	) : bool {
+	): bool {
 		$preferencesFactory = self::getPreferencesFactory();
 		if ( !$preferencesFactory->onGlobalPrefsPage( $form ) ) {
 			return self::localPreferencesFormPreSave( $formData, $user );
@@ -129,7 +129,7 @@ class Hooks {
 	 * @param User $user Current user
 	 * @return bool Hook return value
 	 */
-	private static function localPreferencesFormPreSave( array $formData, User $user ) : bool {
+	private static function localPreferencesFormPreSave( array $formData, User $user ): bool {
 		foreach ( $formData as $pref => $value ) {
 			if ( !GlobalPreferencesFactory::isLocalPrefName( $pref ) ) {
 				continue;
@@ -154,7 +154,7 @@ class Hooks {
 	 * @link https://www.mediawiki.org/wiki/Manual:Hooks/LoadExtensionSchemaUpdates
 	 * @param DatabaseUpdater $updater The database updater.
 	 */
-	public static function onLoadExtensionSchemaUpdates( DatabaseUpdater $updater ) : void {
+	public static function onLoadExtensionSchemaUpdates( DatabaseUpdater $updater ): void {
 		$config = MediaWikiServices::getInstance()->getMainConfig();
 		$dBname = $config->get( 'DBname' );
 		$sharedDB = $config->get( 'SharedDB' );
@@ -193,7 +193,7 @@ class Hooks {
 	 * @link https://www.mediawiki.org/wiki/Manual:Hooks/MediaWikiServices
 	 * @param MediaWikiServices $services The services object to use.
 	 */
-	public static function onMediaWikiServices( MediaWikiServices $services ) : void {
+	public static function onMediaWikiServices( MediaWikiServices $services ): void {
 		$services->redefineService( 'PreferencesFactory', static function ( MediaWikiServices $services ) {
 			$mainConfig = $services->getMainConfig();
 			$config = new ServiceOptions( GlobalPreferencesFactory::CONSTRUCTOR_OPTIONS,
@@ -224,7 +224,7 @@ class Hooks {
 	 * @param string[] &$where Array of where clause conditions to add to.
 	 * @param IDatabase $db
 	 */
-	public static function onDeleteUnknownPreferences( &$where, IDatabase $db ) : void {
+	public static function onDeleteUnknownPreferences( &$where, IDatabase $db ): void {
 		$like = $db->buildLike( $db->anyString(), GlobalPreferencesFactory::LOCAL_EXCEPTION_SUFFIX );
 		$where[] = "up_property NOT $like";
 	}
@@ -236,7 +236,7 @@ class Hooks {
 	 */
 	public static function onApiOptions( ApiOptions $apiModule, User $user,
 		array $changes
-	) : void {
+	): void {
 		// Only hook to the core module but not to our code that inherits from it
 		if ( $apiModule->getModuleName() !== 'options' ) {
 			return;
@@ -278,7 +278,7 @@ class Hooks {
 	 *
 	 * @return GlobalPreferencesFactory
 	 */
-	private static function getPreferencesFactory() : GlobalPreferencesFactory {
+	private static function getPreferencesFactory(): GlobalPreferencesFactory {
 		/** @var GlobalPreferencesFactory $factory */
 		$factory = MediaWikiServices::getInstance()->getPreferencesFactory();
 

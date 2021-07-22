@@ -46,7 +46,7 @@ class Storage {
 	 * @param bool $skipCache Whether the preferences should be loaded strictly from DB
 	 * @return string[] Keyed by the preference name.
 	 */
-	public function load( bool $skipCache = false ) : array {
+	public function load( bool $skipCache = false ): array {
 		if ( $skipCache ) {
 			return $this->loadFromDB();
 		}
@@ -63,7 +63,7 @@ class Storage {
 	 * @param int $dbType One of DB_* constants
 	 * @return string[]
 	 */
-	protected function loadFromDB( $dbType = DB_REPLICA ) : array {
+	protected function loadFromDB( $dbType = DB_REPLICA ): array {
 		$dbr = $this->getDatabase( $dbType );
 		$res = $dbr->select(
 			static::TABLE_NAME,
@@ -87,7 +87,7 @@ class Storage {
 	 *        need their rows purged
 	 */
 	public function save( array $newPrefs, array $knownPrefs, array $checkMatricesToClear = []
-	) : void {
+	): void {
 		$currentPrefs = $this->loadFromDB( DB_PRIMARY );
 
 		// Find records needing an insert or update
@@ -153,7 +153,7 @@ class Storage {
 	 * Delete all of this user's global preferences.
 	 * @param string[]|null $knownPrefs Only delete the preferences we know about.
 	 */
-	public function delete( ?array $knownPrefs = null ) : void {
+	public function delete( ?array $knownPrefs = null ): void {
 		$db = $this->getDatabase( DB_PRIMARY );
 		$conds = [ 'gp_user' => $this->userId ];
 		if ( $knownPrefs !== null ) {
@@ -169,7 +169,7 @@ class Storage {
 	 * @param int $type One of the DB_* constants
 	 * @return IDatabase
 	 */
-	protected function getDatabase( int $type = DB_REPLICA ) : IDatabase {
+	protected function getDatabase( int $type = DB_REPLICA ): IDatabase {
 		$config = MediaWikiServices::getInstance()->getMainConfig();
 		$globalPreferencesDB = (string)$config->get( 'GlobalPreferencesDB' );
 		$sharedDB = (string)$config->get( 'SharedDB' );
@@ -189,14 +189,14 @@ class Storage {
 	/**
 	 * @return WANObjectCache
 	 */
-	protected function getCache() : WANObjectCache {
+	protected function getCache(): WANObjectCache {
 		return MediaWikiServices::getInstance()->getMainWANObjectCache();
 	}
 
 	/**
 	 * @return string
 	 */
-	protected function getCacheKey() : string {
+	protected function getCacheKey(): string {
 		return $this->getCache()
 			->makeGlobalKey( 'globalpreferences', 'prefs', self::CACHE_VERSION, $this->userId );
 	}
