@@ -8,6 +8,7 @@ use HTMLForm;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\User\UserIdentity;
 use Message;
 use OutputPage;
 use Skin;
@@ -83,11 +84,14 @@ class Hooks {
 	/**
 	 * When saving a user's options, remove any global ones and never save any on the Global
 	 * Preferences page. Global options are saved separately, in the PreferencesFormPreSave hook.
-	 * @param User $user The user. Not used.
-	 * @param string[] &$options The user's options.
+	 *
+	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/SaveUserOptions
+	 * @param UserIdentity $user The user.
+	 * @param string[] &$modifiedOptions The user's options that were modified.
+	 * @param string[] $originalOptions The original options.
 	 * @return bool False if nothing changed, true otherwise.
 	 */
-	public static function onUserSaveOptions( User $user, array &$options ) {
+	public static function onSaveUserOptions( UserIdentity $user, array &$modifiedOptions, array $originalOptions ) {
 		$preferencesFactory = self::getPreferencesFactory();
 		if ( $preferencesFactory->onGlobalPrefsPage() ) {
 			// It shouldn't be possible to save local options here,
@@ -95,7 +99,7 @@ class Hooks {
 			return false;
 		}
 
-		$preferencesFactory->handleLocalPreferencesChange( $user, $options );
+		$preferencesFactory->handleLocalPreferencesChange( $user, $modifiedOptions, $originalOptions );
 
 		return true;
 	}

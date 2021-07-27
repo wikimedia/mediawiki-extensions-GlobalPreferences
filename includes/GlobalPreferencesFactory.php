@@ -19,6 +19,7 @@ use IContextSource;
 use LogicException;
 use MapCacheLRU;
 use MediaWiki\Preferences\DefaultPreferencesFactory;
+use MediaWiki\User\UserIdentity;
 use OOUI\ButtonWidget;
 use RequestContext;
 use SpecialPage;
@@ -468,10 +469,10 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	/**
 	 * Gets the user's ID that we're using in the table
 	 * Returns 0 if the user is not global
-	 * @param User $user
+	 * @param UserIdentity $user
 	 * @return int
 	 */
-	public function getUserID( User $user ) {
+	public function getUserID( UserIdentity $user ) {
 		$id = $user->getId();
 		$cache = $this->getCache();
 		return $cache->getWithSetCallback( (string)$id, static function () use ( $user ) {
@@ -482,11 +483,11 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 
 	/**
 	 * Get the user's global preferences.
-	 * @param User $user
+	 * @param UserIdentity $user
 	 * @param bool $skipCache Whether the preferences should be loaded strictly from DB
 	 * @return false|string[] Array keyed by preference name, or false if not found.
 	 */
-	public function getGlobalPreferencesValues( User $user, $skipCache = false ) {
+	public function getGlobalPreferencesValues( UserIdentity $user, $skipCache = false ) {
 		$id = $this->getUserID( $user );
 		if ( !$id ) {
 			$this->logger->warning( "Couldn't find a global ID for user {user}",
@@ -569,11 +570,16 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	/**
 	 * Processes local user options before they're saved
 	 *
-	 * @param User $user
-	 * @param array &$options
+	 * @param UserIdentity $user
+	 * @param array &$modifiedOptions
+	 * @param array $originalOptions
 	 * @throws Exception
 	 */
-	public function handleLocalPreferencesChange( User $user, array &$options ) {
+	public function handleLocalPreferencesChange(
+		UserIdentity $user,
+		array &$modifiedOptions,
+		array $originalOptions
+	) {
 		// nothing to do if autoGlobals is empty
 		if ( !$this->autoGlobals ) {
 			return;
@@ -583,16 +589,18 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 		$globals = $this->getGlobalPreferencesValues( $user, true );
 
 		if ( $globals ) {
-			foreach ( $options as $optName => $optVal ) {
+			// Need this so we can check for newly added options as well as soon-to-be-deleted options
+			$mergedOptions = array_merge( $originalOptions, $modifiedOptions );
+			foreach ( $mergedOptions as $optName => $optVal ) {
 				// Ignore if ends in "-global".
 				if ( static::isGlobalPrefName( $optName ) ) {
-					unset( $options[ $optName ] );
+					unset( $modifiedOptions[ $optName ] );
 				}
 
 				$isAutoGlobal = in_array( $optName, $this->autoGlobals );
 				$localOverride = $optName . static::LOCAL_EXCEPTION_SUFFIX;
 				if ( $isAutoGlobal
-					&& !array_key_exists( $localOverride, $options )
+					&& !isset( $mergedOptions[ $localOverride ] )
 					&& array_key_exists( $optName, $globals )
 				) {
 					$globals[$optName] = $optVal;
@@ -609,10 +617,10 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	/**
 	 * Factory for preference storage
 	 *
-	 * @param User $user
+	 * @param UserIdentity $user
 	 * @return Storage
 	 */
-	protected function makeStorage( $user ) {
+	protected function makeStorage( UserIdentity $user ) {
 		$id = $this->getUserID( $user );
 		if ( !$id ) {
 			throw new LogicException( 'User not set or is not global on call to ' . __METHOD__ );

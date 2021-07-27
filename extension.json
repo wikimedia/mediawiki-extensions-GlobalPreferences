@@ -11,7 +11,7 @@
 	"descriptionmsg": "globalprefs-desc",
 	"type": "specialpage",
 	"requires": {
-		"MediaWiki": ">= 1.36.0"
+		"MediaWiki": ">= 1.37.0"
 	},
 	"config": {
 		"GlobalPreferencesDB": {
@@ -38,7 +38,7 @@
 	},
 	"Hooks": {
 		"UserLoadOptions": "GlobalPreferences\\Hooks::onUserLoadOptions",
-		"UserSaveOptions": "GlobalPreferences\\Hooks::onUserSaveOptions",
+		"SaveUserOptions": "GlobalPreferences\\Hooks::onSaveUserOptions",
 		"PreferencesFormPreSave": "GlobalPreferences\\Hooks::onPreferencesFormPreSave",
 		"LoadExtensionSchemaUpdates": "GlobalPreferences\\Hooks::onLoadExtensionSchemaUpdates",
 		"MediaWikiServices": "GlobalPreferences\\Hooks::onMediaWikiServices",
