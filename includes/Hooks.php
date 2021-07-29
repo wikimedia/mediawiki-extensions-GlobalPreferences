@@ -34,11 +34,11 @@ class Hooks {
 
 	/**
 	 * Load global preferences.
-	 * @link https://www.mediawiki.org/wiki/Manual:Hooks/UserLoadOptions
-	 * @param User $user The user for whom options are being loaded.
+	 * @link https://www.mediawiki.org/wiki/Manual:Hooks/LoadUserOptions
+	 * @param UserIdentity $user The user for whom options are being loaded.
 	 * @param array &$options The user's options; can be modified.
 	 */
-	public static function onUserLoadOptions( User $user, array &$options ) {
+	public static function onLoadUserOptions( UserIdentity $user, array &$options ) {
 		$globalPreferences = self::getPreferencesFactory();
 		if ( !$globalPreferences->isUserGlobalized( $user ) ) {
 			// Not a global user.
@@ -59,7 +59,8 @@ class Hooks {
 			// Don't overwrite if it has a local exception, unless we're just trying to get .
 			if (
 				!GlobalPreferencesFormOOUI::gettingGlobalOnly()
-				&& $user->getOption( $optName . GlobalPreferencesFactory::LOCAL_EXCEPTION_SUFFIX )
+				&& array_key_exists( $optName . GlobalPreferencesFactory::LOCAL_EXCEPTION_SUFFIX, $options )
+
 			) {
 				continue;
 			}
