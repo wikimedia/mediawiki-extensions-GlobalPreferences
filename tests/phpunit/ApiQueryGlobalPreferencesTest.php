@@ -3,7 +3,6 @@
 namespace GlobalPreferences\Test;
 
 use ApiMain;
-use ApiQuery;
 use DerivativeContext;
 use FauxRequest;
 use GlobalPreferences\ApiQueryGlobalPreferences;
@@ -38,7 +37,7 @@ class ApiQueryGlobalPreferencesTest extends MediaWikiTestCase {
 		$context->setRequest( $request );
 
 		$main = new ApiMain( $context );
-		$query = new ApiQuery( $main, 'query' );
+		$query = $main->getModuleManager()->getModule( 'query' );
 
 		$factory = $this->getMockBuilder( GlobalPreferencesFactory::class )
 			->disableOriginalConstructor()
