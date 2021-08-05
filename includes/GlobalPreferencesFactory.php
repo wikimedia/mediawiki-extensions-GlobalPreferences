@@ -459,10 +459,10 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 
 	/**
 	 * Checks if the user is globalized.
-	 * @param User $user
+	 * @param UserIdentity $user
 	 * @return bool
 	 */
-	public function isUserGlobalized( User $user ) {
+	public function isUserGlobalized( UserIdentity $user ) {
 		return $user->isRegistered() && $this->getUserID( $user ) !== 0;
 	}
 

@@ -37,7 +37,7 @@
 		"GlobalPreferences\\": "includes/"
 	},
 	"Hooks": {
-		"UserLoadOptions": "GlobalPreferences\\Hooks::onUserLoadOptions",
+		"LoadUserOptions": "GlobalPreferences\\Hooks::onLoadUserOptions",
 		"SaveUserOptions": "GlobalPreferences\\Hooks::onSaveUserOptions",
 		"PreferencesFormPreSave": "GlobalPreferences\\Hooks::onPreferencesFormPreSave",
 		"LoadExtensionSchemaUpdates": "GlobalPreferences\\Hooks::onLoadExtensionSchemaUpdates",
