@@ -63,8 +63,9 @@ class GlobalPreferencesTest extends MediaWikiTestCase {
 
 	public function testUserPreference() {
 		$user = $this->getTestUser()->getUser();
+		$services = $this->getServiceContainer();
 		/** @var GlobalPreferencesFactory $globalPreferences */
-		$globalPreferences = MediaWikiServices::getInstance()->getPreferencesFactory();
+		$globalPreferences = $services->getPreferencesFactory();
 		$globalPreferences->setAutoGlobals( [] );
 		// Set up the context.
 		// Once preference definitions don't require the context, this can be removed.
@@ -76,8 +77,9 @@ class GlobalPreferencesTest extends MediaWikiTestCase {
 		$this->assertEquals( [], $globalPreferences->getGlobalPreferencesValues( $user ) );
 
 		// Set a local preference.
-		$user->setOption( 'language', 'bn' );
-		$user->saveSettings();
+		$userOptionsManager = $services->getUserOptionsManager();
+		$userOptionsManager->setOption( $user, 'language', 'bn' );
+		$userOptionsManager->saveOptions( $user );
 		$this->assertEquals( 'bn', $user->getOption( 'language' ) );
 
 		// Set it to be global (with a different value).
@@ -99,8 +101,9 @@ class GlobalPreferencesTest extends MediaWikiTestCase {
 
 	public function testAutoGlobals() {
 		$user = $this->getTestUser()->getUser();
+		$services = $this->getServiceContainer();
 		/** @var GlobalPreferencesFactory $globalPreferences */
-		$globalPreferences = MediaWikiServices::getInstance()->getPreferencesFactory();
+		$globalPreferences = $services->getPreferencesFactory();
 		$globalPreferences->setAutoGlobals( [] );
 		// Set up the context.
 		// Once preference definitions don't require the context, this can be removed.
@@ -119,8 +122,9 @@ class GlobalPreferencesTest extends MediaWikiTestCase {
 
 		// Make it autoglobal
 		$globalPreferences->setAutoGlobals( [ 'language' ] );
-		$user->setOption( 'language', 'sq' );
-		$user->saveSettings();
+		$userOptionsManager = $services->getUserOptionsManager();
+		$userOptionsManager->setOption( $user, 'language', 'sq' );
+		$userOptionsManager->saveOptions( $user );
 		$this->assertEquals(
 			[ 'language' => 'sq' ],
 			$globalPreferences->getGlobalPreferencesValues( $user )
