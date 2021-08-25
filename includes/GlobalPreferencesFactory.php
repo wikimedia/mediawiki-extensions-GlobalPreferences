@@ -18,6 +18,7 @@ use Exception;
 use IContextSource;
 use LogicException;
 use MapCacheLRU;
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Preferences\DefaultPreferencesFactory;
 use MediaWiki\User\UserIdentity;
 use OOUI\ButtonWidget;
@@ -476,7 +477,7 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 		$id = $user->getId();
 		$cache = $this->getCache();
 		return $cache->getWithSetCallback( (string)$id, static function () use ( $user ) {
-			$lookup = CentralIdLookup::factory();
+			$lookup = MediaWikiServices::getInstance()->getCentralIdLookupFactory()->getLookup();
 			return $lookup->centralIdFromLocalUser( $user, CentralIdLookup::AUDIENCE_RAW );
 		} );
 	}
