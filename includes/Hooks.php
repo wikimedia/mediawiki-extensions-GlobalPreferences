@@ -287,6 +287,7 @@ class Hooks {
 	private static function getPreferencesFactory(): GlobalPreferencesFactory {
 		/** @var GlobalPreferencesFactory $factory */
 		$factory = MediaWikiServices::getInstance()->getPreferencesFactory();
+		'@phan-var GlobalPreferencesFactory $factory';
 
 		return $factory;
 	}

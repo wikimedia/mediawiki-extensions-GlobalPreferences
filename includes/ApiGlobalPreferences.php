@@ -4,7 +4,6 @@ namespace GlobalPreferences;
 
 use ApiMain;
 use ApiOptions;
-use MediaWiki\Preferences\PreferencesFactory;
 use MediaWiki\User\UserOptionsManager;
 
 class ApiGlobalPreferences extends ApiOptions {
@@ -13,7 +12,7 @@ class ApiGlobalPreferences extends ApiOptions {
 	private $resetPrefs = [];
 
 	/**
-	 * @var PreferencesFactory
+	 * @var GlobalPreferencesFactory
 	 */
 	private $factory;
 
@@ -25,13 +24,13 @@ class ApiGlobalPreferences extends ApiOptions {
 	/**
 	 * @param ApiMain $mainModule
 	 * @param string $moduleName
-	 * @param PreferencesFactory $factory
+	 * @param GlobalPreferencesFactory $factory
 	 * @param UserOptionsManager $userOptionsManager
 	 */
 	public function __construct(
 		ApiMain $mainModule,
 		$moduleName,
-		PreferencesFactory $factory,
+		GlobalPreferencesFactory $factory,
 		UserOptionsManager $userOptionsManager
 	) {
 		parent::__construct( $mainModule, $moduleName );
