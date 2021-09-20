@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"PastelKos"
+		]
+	},
+	"tooltip-globalprefs-check-label": "Τὴνδε τὴν προαιρέσιν γενικὴν ποιεῖν",
+	"globalprefs-error-header": "Σφάλμα",
+	"globalpreferences": "Γενικαὶ προαιρέσεις",
+	"globalprefs-info-label": "Γενικαὶ προαιρέσεις:",
+	"globalprefs-info-link": "Θὲς τὰς σᾶς γενικὰς προαιρέσεις",
+	"globalprefs-col-header": "Τὰς κάτω προαιρέσεις θὲς γενικὰς εἶναι"
+}
