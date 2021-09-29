@@ -74,6 +74,11 @@
 	 * htmlform.enhance is run when a preference tab is made visible
 	 */
 	mw.hook( 'htmlform.enhance' ).add( function ( $root ) {
+		// Make sure $root is a preferences form tab panel.
+		if ( $root.find( 'fieldset.mw-prefs-section-fieldset' ).length !== 1 ) {
+			return;
+		}
+
 		// Add the 'select all' checkbox
 		infuseSelectAllToHeader( $root );
 
