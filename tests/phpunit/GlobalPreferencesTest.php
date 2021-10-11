@@ -5,7 +5,7 @@ namespace GlobalPreferences\Test;
 use GlobalPreferences\GlobalPreferencesFactory;
 use GlobalPreferences\Storage;
 use MediaWiki\MediaWikiServices;
-use MediaWikiTestCase;
+use MediaWikiIntegrationTestCase;
 use RequestContext;
 use Title;
 use Wikimedia\TestingAccessWrapper;
@@ -16,7 +16,7 @@ use Wikimedia\TestingAccessWrapper;
  * @group GlobalPreferences
  * @group Database
  */
-class GlobalPreferencesTest extends MediaWikiTestCase {
+class GlobalPreferencesTest extends MediaWikiIntegrationTestCase {
 
 	protected function setUp(): void {
 		parent::setUp();

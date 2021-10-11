@@ -5,13 +5,13 @@ namespace GlobalPreferences\Test;
 use ApiOptions;
 use GlobalPreferences\GlobalPreferencesFactory;
 use GlobalPreferences\Hooks;
-use MediaWikiTestCase;
+use MediaWikiIntegrationTestCase;
 use User;
 
 /**
  * @group GlobalPreferences
  */
-class HooksTest extends MediaWikiTestCase {
+class HooksTest extends MediaWikiIntegrationTestCase {
 	/**
 	 * @covers \GlobalPreferences\Hooks::onApiOptions()
 	 * @dataProvider provideOnApiOptions

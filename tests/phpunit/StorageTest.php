@@ -3,14 +3,14 @@
 namespace GlobalPreferences\Test;
 
 use GlobalPreferences\Storage;
-use MediaWikiTestCase;
+use MediaWikiIntegrationTestCase;
 use Wikimedia\Rdbms\IDatabase;
 use Wikimedia\TestingAccessWrapper;
 
 /**
  * @group GlobalPreferences
  */
-class StorageTest extends MediaWikiTestCase {
+class StorageTest extends MediaWikiIntegrationTestCase {
 	private const USER_ID = 123;
 	private const CACHE_KEY = 'test:cache:key';
 

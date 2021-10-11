@@ -7,14 +7,14 @@ use GlobalPreferences\Storage;
 use HTMLCheckMatrix;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\MediaWikiServices;
-use MediaWikiTestCase;
+use MediaWikiIntegrationTestCase;
 use User;
 use Wikimedia\TestingAccessWrapper;
 
 /**
  * @group GlobalPreferences
  */
-class GlobalPreferencesFactoryTest extends MediaWikiTestCase {
+class GlobalPreferencesFactoryTest extends MediaWikiIntegrationTestCase {
 	private $formDescriptor = [
 		'onbydefault' => [
 			'type' => 'radio',

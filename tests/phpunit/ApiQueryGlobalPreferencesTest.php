@@ -8,14 +8,14 @@ use FauxRequest;
 use GlobalPreferences\ApiQueryGlobalPreferences;
 use GlobalPreferences\GlobalPreferencesFactory;
 use MediaWiki\User\UserOptionsLookup;
-use MediaWikiTestCase;
+use MediaWikiIntegrationTestCase;
 use RequestContext;
 use User;
 
 /**
  * @group GlobalPreferences
  */
-class ApiQueryGlobalPreferencesTest extends MediaWikiTestCase {
+class ApiQueryGlobalPreferencesTest extends MediaWikiIntegrationTestCase {
 	/**
 	 * @param array $requestData
 	 * @param array $globalPrefs
