@@ -188,7 +188,7 @@ class Hooks {
 				);
 				$updater->modifyExtensionField( 'global_preferences',
 					'gp_user',
-					"$sqlPath/patch-gp_user.sql"
+					"$sqlPath/$type/patch-gp_user-unsigned.sql"
 				);
 			}
 		}
