@@ -171,7 +171,7 @@ class Hooks {
 			|| ( $globalPreferencesDB === null && $dBname === $sharedDB )
 		) {
 			$type = $updater->getDB()->getType();
-			$sqlPath = dirname( __DIR__ ) . '/sql/';
+			$sqlPath = dirname( __DIR__ ) . '/sql';
 
 			$updater->addExtensionTable( 'global_preferences', "$sqlPath/$type/tables-generated.sql" );
 
