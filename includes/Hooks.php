@@ -172,6 +172,7 @@ class Hooks {
 			|| $dBname === $globalPreferencesDB
 			|| ( $globalPreferencesDB === null && $dBname === $sharedDB )
 		) {
+			$type = $updater->getDB()->getType();
 			$sqlPath = dirname( __DIR__ ) . '/sql';
 			$updater->addExtensionTable( 'global_preferences', "$sqlPath/tables.sql" );
 			$updater->dropExtensionIndex( 'global_preferences',
@@ -180,7 +181,7 @@ class Hooks {
 			);
 			$updater->modifyExtensionField( 'global_preferences',
 				'gp_user',
-				"$sqlPath/patch-gp_user.sql"
+				"$sqlPath/$type/patch-gp_user-unsigned.sql"
 			);
 		}
 	}
