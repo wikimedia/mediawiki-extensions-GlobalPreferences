@@ -101,8 +101,6 @@ class GlobalPreferencesFactoryTest extends MediaWikiIntegrationTestCase {
 
 		$user = $this->getMockBuilder( User::class )
 			->getMock();
-		$user->expects( self::never() )->method( 'setOption' );
-		$user->expects( self::never() )->method( 'saveSettings' );
 		$this->overrideUserPermissions( $user, [ 'editmyoptions' ] );
 
 		$factory = $this->getMockBuilder( GlobalPreferencesFactory::class )
