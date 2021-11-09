@@ -53,9 +53,12 @@
 	// OOUI
 	$( '.mw-globalprefs-local-exception.oo-ui-checkboxInputWidget' ).each( function () {
 		var checkbox = OO.ui.infuse( this );
+		// Update on change.
 		checkbox.on( 'change', function () {
 			updatePrefInput( checkbox.$input.attr( 'name' ), checkbox.isSelected() );
 		} );
+		// Also update once on initialization, to get it in sync.
+		updatePrefInput( checkbox.$input.attr( 'name' ), checkbox.isSelected() );
 	} );
 
 	/**
