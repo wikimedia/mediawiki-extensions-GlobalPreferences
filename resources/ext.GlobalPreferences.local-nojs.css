@@ -1,12 +1,4 @@
-#preferences tr.mw-globalprefs-local-exception td.mw-input {
-	padding-left: 2em;
-}
-
-tr.mw-globalprefs-local-exception td.mw-input label {
-	font-size: smaller;
-}
-
-/* In OOUI view, indent the local exception checkbox.
+/* Indent the local exception checkbox.
  * Load in nojs mode so it loads early on the php-ooui widgets.
  */
 .mw-htmlform-ooui-wrapper .mw-globalprefs-local-exception {

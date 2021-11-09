@@ -67,7 +67,6 @@
 			"styles": "ext.GlobalPreferences.global-nojs.css"
 		},
 		"ext.GlobalPreferences.local": {
-			"styles": "ext.GlobalPreferences.local.css",
 			"scripts": [
 				"ext.GlobalPreferences.local.js"
 			],
