@@ -88,9 +88,9 @@
 				checkbox = OO.ui.infuse( this ),
 				sectionID = checkbox.$element.closest( '.oo-ui-layout.oo-ui-tabPanelLayout' ).prop( 'id' ),
 				fullName = checkbox.$input.prop( 'name' ),
-				// id = checkbox.$input.prop( 'id' ).replace( /[\\"]/g, '\\$&' ),
 				// Find the name (without the '-global' suffix, but with the 'wp' prefix).
 				prefName = fullName.substr( 0, fullName.length - '-global'.length ).replace( /[\\"]/g, '\\$&' ),
+				// eslint-disable-next-line no-jquery/no-sizzle
 				$associatedWidget = $( ':input[name="' + prefName + '"], :input[name="' + prefName + '[]"]' )
 					.closest( '.oo-ui-widget[data-ooui]' );
 

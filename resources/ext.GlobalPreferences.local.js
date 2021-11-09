@@ -14,6 +14,7 @@
 		prefName = localExName.substr( 0, localExName.length - '-local-exception'.length )
 			.replace( /[\\"]/g, '\\$&' );
 		enabled = checked;
+		// eslint-disable-next-line no-jquery/no-sizzle
 		$prefInput = $( ':input[name="' + prefName + '"], :input[name="' + prefName + '[]"]' );
 
 		if ( $prefInput.parents( '.mw-widget-checkMatrixWidget' ).length ) {
@@ -31,6 +32,7 @@
 			oouiWidget = OO.ui.infuse( $prefInput );
 			oouiWidget.setDisabled( !enabled );
 		} else {
+			// eslint-disable-next-line no-jquery/no-sizzle
 			$prefInput
 				.parents( '.mw-input' )
 				.find( ':input' )
@@ -43,6 +45,7 @@
 	/**
 	 * Enable and disable the related preference field when selecting the local exception checkbox.
 	 */
+	// eslint-disable-next-line no-jquery/no-sizzle
 	$( ':input.mw-globalprefs-local-exception' ).on( 'change', function () {
 		updatePrefInput( $( this ).attr( 'name' ), $( this ).prop( 'checked' ) );
 	} );
