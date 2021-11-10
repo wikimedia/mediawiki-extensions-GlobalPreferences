@@ -56,12 +56,11 @@ class Hooks {
 			return;
 		}
 		foreach ( $globalPrefs as $optName => $globalValue ) {
-			// Don't overwrite if it has a local exception, unless we're just trying to get .
-			if (
-				!GlobalPreferencesFormOOUI::gettingGlobalOnly()
-				&& array_key_exists( $optName . GlobalPreferencesFactory::LOCAL_EXCEPTION_SUFFIX, $options )
-
-			) {
+			// Ignore global preference if it has a local exception
+			// and we're not explicitely fetching all global pref values.
+			$localExceptionName = $optName . GlobalPreferencesFactory::LOCAL_EXCEPTION_SUFFIX;
+			$hasLocalException = isset( $options[ $localExceptionName ] ) && $options[ $localExceptionName ];
+			if ( !GlobalPreferencesFormOOUI::gettingGlobalOnly() && $hasLocalException ) {
 				continue;
 			}
 
@@ -149,8 +148,8 @@ class Hooks {
 			}
 			$checkMatrix = preg_grep( "/^$realName-/", array_keys( $formData ) );
 			foreach ( $checkMatrix as $check ) {
-				$exceptionName = $check . GlobalPreferencesFactory::LOCAL_EXCEPTION_SUFFIX;
-				$userOptionsManager->setOption( $user, $exceptionName, true );
+				$localExceptionName = $check . GlobalPreferencesFactory::LOCAL_EXCEPTION_SUFFIX;
+				$userOptionsManager->setOption( $user, $localExceptionName, true );
 			}
 		}
 		return true;
@@ -257,7 +256,7 @@ class Hooks {
 				continue;
 			}
 			$exceptionName = $preference . GlobalPreferencesFactory::LOCAL_EXCEPTION_SUFFIX;
-			if ( $user->getOption( $exceptionName ) === null ) {
+			if ( !$user->getOption( $exceptionName ) ) {
 				if ( $globalPrefs && array_key_exists( $preference, $globalPrefs ) ) {
 					$toWarn[] = $preference;
 				}
