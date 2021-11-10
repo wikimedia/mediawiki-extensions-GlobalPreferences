@@ -81,6 +81,36 @@ class GlobalPreferencesFactoryTest extends MediaWikiIntegrationTestCase {
 	];
 
 	/**
+	 * @covers       \GlobalPreferences\GlobalPreferencesFactory::filterLocalPrefs()
+	 *
+	 * @dataProvider provideFilterLocalPrefs
+	 *
+	 * @param array $formData
+	 * @param array $expected
+	 */
+	public function testFilterLocalPrefs( array $formData, $expected ) {
+		$instance = TestingAccessWrapper::newFromClass( '\GlobalPreferences\GlobalPreferencesFactory' );
+		$this->assertEquals( $instance->filterLocalPrefs( $formData ), $expected );
+	}
+
+	public function provideFilterLocalPrefs() {
+		return [
+			0 => [
+				[
+					'foo' => true,
+					'foo-local-exception' => true,
+					'bar' => true,
+					'bar-local-exception' => false,
+				], [
+					'foo' => true,
+					'foo-local-exception' => true,
+					'bar-local-exception' => false,
+				]
+			]
+		];
+	}
+
+	/**
 	 * @covers       \GlobalPreferences\GlobalPreferencesFactory::saveFormData()
 	 *
 	 * @dataProvider provideFormSaving

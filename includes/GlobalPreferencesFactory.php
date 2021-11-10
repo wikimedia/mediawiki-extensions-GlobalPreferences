@@ -165,15 +165,8 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 			}
 			// If this has been set globally.
 			if ( in_array( $name, $globalPrefNames ) ) {
-				// Disable this local preference unless it either
-				// A) already has a local exception, or
-				// B) a local exception is being enabled in the current request.
-				// This is because HTMLForm changes submitted values to their defaults
-				// after preferences have been defined here, if a field is disabled.
 				$localExName = $name . static::LOCAL_EXCEPTION_SUFFIX;
 				$localExValueUser = $userOptionsLookup->getBoolOption( $user, $localExName );
-				$localExValueRequest = $context->getRequest()->getVal( 'wp' . $localExName );
-				$modifiedPrefs[$name]['disabled'] = !$localExValueUser && $localExValueRequest === null;
 
 				// Add a new local exception preference after this one.
 				$cssClasses = [
@@ -275,10 +268,30 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	}
 
 	/**
+	 * Filter out fields without local exceptions, for compatibility with users who
+	 * disabled the js in the browser.
+	 * @param array $formData
+	 * @return array
+	 */
+	protected static function filterLocalPrefs( array $formData ) {
+		$suffixLen = strlen( self::LOCAL_EXCEPTION_SUFFIX );
+		foreach ( $formData as $name => $value ) {
+			if ( self::isLocalPrefName( $name ) && $value !== true ) {
+				$realName = substr( $name, 0, -$suffixLen );
+				if ( array_key_exists( $realName, $formData ) ) {
+					unset( $formData[$realName] );
+				}
+			}
+		}
+		return $formData;
+	}
+
+	/**
 	 * @inheritDoc
 	 */
 	protected function saveFormData( $formData, \PreferencesFormOOUI $form, array $formDescriptor ) {
 		if ( !$this->onGlobalPrefsPage( $form ) ) {
+			$formData = static::filterLocalPrefs( $formData );
 			return parent::saveFormData( $formData, $form, $formDescriptor );
 		}
 		'@phan-var GlobalPreferencesFormOOUI $form';
