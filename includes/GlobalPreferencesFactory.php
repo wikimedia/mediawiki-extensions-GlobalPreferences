@@ -111,18 +111,18 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	 * @return array|null
 	 */
 	public function getFormDescriptor( User $user, IContextSource $context ) {
-		$prefs = $this->getGlobalPreferencesValues( $user, Storage::SKIP_CACHE );
+		$globalPrefs = $this->getGlobalPreferencesValues( $user, Storage::SKIP_CACHE );
 		// The above function can return false
-		$globalPrefNames = $prefs ? array_keys( $prefs ) : [];
+		$globalPrefNames = $globalPrefs ? array_keys( $globalPrefs ) : [];
 		$preferences = parent::getFormDescriptor( $user, $context );
 		if ( $this->onGlobalPrefsPage( $context ) ) {
-			if ( $prefs === false ) {
+			if ( $globalPrefs === false ) {
 				throw new Exception(
 					"Attempted to load global preferences page for {$user->getName()} whose "
 					. 'preference values failed to load'
 				);
 			}
-			return $this->getPreferencesGlobal( $user, $preferences, $globalPrefNames, $context );
+			return $this->getPreferencesGlobal( $user, $preferences, $globalPrefs, $context );
 		}
 		return $this->getPreferencesLocal( $user, $preferences, $globalPrefNames, $context );
 	}
@@ -216,17 +216,17 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	}
 
 	/**
-	 * Add the '-global' counterparts to all preferences.
+	 * Add the '-global' counterparts to all preferences, and override the local exception.
 	 * @param User $user
 	 * @param mixed[][] $preferences The preferences array.
-	 * @param string[] $globalPrefNames The names of those preferences that are already global.
+	 * @param mixed[] $globalPrefs The array of global preferences.
 	 * @param IContextSource $context The current request context
 	 * @return mixed[][]
 	 */
 	protected function getPreferencesGlobal(
 		User $user,
 		array $preferences,
-		array $globalPrefNames,
+		array $globalPrefs,
 		IContextSource $context
 	) {
 		// Add all corresponding new global fields.
@@ -237,7 +237,7 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 				continue;
 			}
 			// Create the new preference.
-			$isGlobal = in_array( $pref, $globalPrefNames );
+			$isGlobal = isset( $globalPrefs[$pref] );
 			$allPrefs[$pref . static::GLOBAL_EXCEPTION_SUFFIX] = [
 				'type' => 'toggle',
 				// Make the tooltip and the label the same, because the label is normally hidden.
@@ -248,11 +248,12 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 				'cssclass' => 'mw-globalprefs-global-check mw-globalprefs-checkbox-for-' . $pref,
 				'hide-if' => $def['hide-if'] ?? false,
 			];
-			// If this has a local exception, append a help message to say so.
+			// If this has a local exception, override it and append a help message to say so.
 			$hasLocalException = MediaWikiServices::getInstance()
 				->getUserOptionsLookup()
 				->getBoolOption( $user, $pref . static::LOCAL_EXCEPTION_SUFFIX );
 			if ( $isGlobal && $hasLocalException ) {
+				$def['default'] = $globalPrefs[$pref];
 				$help = '';
 				if ( isset( $def['help-message'] ) ) {
 					$help .= $context->msg( $def['help-message'] )->parse() . '<br />';

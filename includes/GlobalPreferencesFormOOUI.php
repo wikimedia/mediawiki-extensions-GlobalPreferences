@@ -2,9 +2,7 @@
 
 namespace GlobalPreferences;
 
-use MediaWiki\MediaWikiServices;
 use PreferencesFormOOUI;
-use User;
 use Xml;
 
 /**
@@ -16,69 +14,11 @@ use Xml;
 class GlobalPreferencesFormOOUI extends PreferencesFormOOUI {
 
 	/**
-	 * Flag that we're in the process of getting global preferences ONLY, i.e. we want to ignore
-	 * local exceptions. This is used when we need to overwrite the values of the
-	 * GlobalPreferences form and not display the local exception values.
-	 * @var bool
-	 */
-	protected static $gettingGlobalOnly = false;
-
-	/**
-	 * Get the value of static::$gettingGlobalOnly (see there for why).
-	 * @return bool
-	 */
-	public static function gettingGlobalOnly() {
-		return static::$gettingGlobalOnly;
-	}
-
-	/**
 	 * Get the whole body of the form, adding the global preferences header text to the top of each
 	 * section. JavaScript will later add the 'select all' checkbox to this header.
 	 * @return string
 	 */
 	public function getBody() {
-		// Load global values for any preferences with local exceptions.
-		/** @var GlobalPreferencesFactory $globalPreferences */
-		$globalPreferences = MediaWikiServices::getInstance()->getPreferencesFactory();
-		'@phan-var GlobalPreferencesFactory $globalPreferences';
-		$globalPrefValues = $globalPreferences->getGlobalPreferencesValues(
-			$this->getUser(),
-			Storage::SKIP_CACHE
-		);
-
-		// Fetch a set of global-only preferences with which we can populate the form,
-		// but none of which will actually be in effect (i.e. when viewing the global form, all
-		// local exceptions should be in use, but the global values are the ones shown).
-		static::$gettingGlobalOnly = true;
-		$globalOnlyUser = User::newFromId( $this->getUser()->getId() );
-		$globalPrefDefinitions = $globalPreferences->getFormDescriptor(
-			$globalOnlyUser,
-			$this->getContext()
-		);
-		static::$gettingGlobalOnly = false;
-
-		// Manually set global pref fields to their global values if they have a local exception.
-		foreach ( $this->mFlatFields as $fieldName => $field ) {
-			// Ignore this if it's a global or a local-exception preference.
-			$isGlobal = GlobalPreferencesFactory::isGlobalPrefName( $fieldName );
-			$isLocalException = GlobalPreferencesFactory::isLocalPrefName( $fieldName );
-			if ( $isGlobal || $isLocalException ) {
-				continue;
-			}
-			// See if it's got a local exception. It should also always then have a global value,
-			// but we check anyway just to be sure.
-			$localExceptionName = $fieldName . GlobalPreferencesFactory::LOCAL_EXCEPTION_SUFFIX;
-			$hasGlobalValue = isset( $globalPrefValues[ $fieldName ] );
-			$hasLocalException = MediaWikiServices::getInstance()
-				->getUserOptionsLookup()
-				->getBoolOption( $this->getUser(), $localExceptionName );
-			if ( $hasLocalException && $hasGlobalValue ) {
-				// And if it does, use the global value.
-				// @phan-suppress-next-line PhanTypeArraySuspiciousNullable
-				$this->mFieldData[$fieldName] = $globalPrefDefinitions[$fieldName]['default'];
-			}
-		}
-
 		// Add checbox to the top of every section.
 		foreach ( $this->getPreferenceSections() as $section ) {
 			$colHeaderText = $this->getMessage( 'globalprefs-col-header' )->text();
