@@ -69,7 +69,10 @@ class GlobalPreferencesFormOOUI extends PreferencesFormOOUI {
 			// but we check anyway just to be sure.
 			$localExceptionName = $fieldName . GlobalPreferencesFactory::LOCAL_EXCEPTION_SUFFIX;
 			$hasGlobalValue = isset( $globalPrefValues[ $fieldName ] );
-			if ( $this->getUser()->getOption( $localExceptionName ) && $hasGlobalValue ) {
+			$hasLocalException = MediaWikiServices::getInstance()
+				->getUserOptionsLookup()
+				->getBoolOption( $this->getUser(), $localExceptionName );
+			if ( $hasLocalException && $hasGlobalValue ) {
 				// And if it does, use the global value.
 				// @phan-suppress-next-line PhanTypeArraySuspiciousNullable
 				$this->mFieldData[$fieldName] = $globalPrefDefinitions[$fieldName]['default'];
