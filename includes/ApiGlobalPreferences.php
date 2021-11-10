@@ -7,8 +7,14 @@ use ApiOptions;
 use MediaWiki\User\UserOptionsManager;
 
 class ApiGlobalPreferences extends ApiOptions {
+
+	/** @var mixed[] */
 	private $prefs = [];
+
+	/** @var string[] */
 	private $resetPrefTypes = [];
+
+	/** @var string[] */
 	private $resetPrefs = [];
 
 	/**

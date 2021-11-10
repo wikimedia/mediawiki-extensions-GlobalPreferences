@@ -15,6 +15,8 @@ use Wikimedia\TestingAccessWrapper;
  * @group GlobalPreferences
  */
 class GlobalPreferencesFactoryTest extends MediaWikiIntegrationTestCase {
+
+	/** @var mixed[][] */
 	private $formDescriptor = [
 		'onbydefault' => [
 			'type' => 'radio',
