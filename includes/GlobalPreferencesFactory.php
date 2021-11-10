@@ -156,6 +156,7 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	) {
 		$this->logger->debug( "Creating local preferences array for '{$user->getName()}'" );
 		$modifiedPrefs = [];
+		$userOptionsLookup = MediaWikiServices::getInstance()->getUserOptionsLookup();
 		foreach ( $preferences as $name => $def ) {
 			$modifiedPrefs[$name] = $def;
 			if ( !isset( $def['section'] ) ) {
@@ -170,10 +171,9 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 				// This is because HTMLForm changes submitted values to their defaults
 				// after preferences have been defined here, if a field is disabled.
 				$localExName = $name . static::LOCAL_EXCEPTION_SUFFIX;
-				$localExValueUser = $user->getOption( $localExName );
+				$localExValueUser = $userOptionsLookup->getBoolOption( $user, $localExName );
 				$localExValueRequest = $context->getRequest()->getVal( 'wp' . $localExName );
-				$modifiedPrefs[$name]['disabled'] = $localExValueUser === null
-					&& $localExValueRequest === null;
+				$modifiedPrefs[$name]['disabled'] = !$localExValueUser && $localExValueRequest === null;
 
 				// Add a new local exception preference after this one.
 				$cssClasses = [
@@ -249,9 +249,10 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 				'hide-if' => $def['hide-if'] ?? false,
 			];
 			// If this has a local exception, append a help message to say so.
-			if ( $isGlobal
-				&& $user->getOption( $pref . static::LOCAL_EXCEPTION_SUFFIX )
-			) {
+			$hasLocalException = MediaWikiServices::getInstance()
+				->getUserOptionsLookup()
+				->getBoolOption( $user, $pref . static::LOCAL_EXCEPTION_SUFFIX );
+			if ( $isGlobal && $hasLocalException ) {
 				$help = '';
 				if ( isset( $def['help-message'] ) ) {
 					$help .= $context->msg( $def['help-message'] )->parse() . '<br />';
@@ -305,10 +306,11 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 		# If users have saved a value for a preference which has subsequently been disabled
 		# via $wgHiddenPrefs, we don't want to destroy that setting in case the preference
 		# is subsequently re-enabled
+		$userOptionsLookup = MediaWikiServices::getInstance()->getUserOptionsLookup();
 		foreach ( $hiddenPrefs as $pref ) {
 			# If the user has not set a non-default value here, the default will be returned
 			# and subsequently discarded
-			$formData[$pref] = $user->getOption( $pref, null, true );
+			$formData[$pref] = $userOptionsLookup->getOption( $user, $pref, null, true );
 		}
 
 		// Difference from parent: We are ignoring RClimit preference; the parent
@@ -599,9 +601,11 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 				}
 
 				$isAutoGlobal = in_array( $optName, $this->autoGlobals );
-				$localOverride = $optName . static::LOCAL_EXCEPTION_SUFFIX;
+				$localExceptionName = $optName . static::LOCAL_EXCEPTION_SUFFIX;
+				$hasLocalException = isset( $mergedOptions[ $localExceptionName ] )
+					&& $mergedOptions[ $localExceptionName ];
 				if ( $isAutoGlobal
-					&& !isset( $mergedOptions[ $localOverride ] )
+					&& !$hasLocalException
 					&& array_key_exists( $optName, $globals )
 				) {
 					$globals[$optName] = $optVal;
