@@ -56,11 +56,9 @@ class Hooks {
 			return;
 		}
 		foreach ( $globalPrefs as $optName => $globalValue ) {
-			// Ignore global preference if it has a local exception
-			// and we're not explicitely fetching all global pref values.
+			// Don't overwrite if it has a local exception.
 			$localExceptionName = $optName . GlobalPreferencesFactory::LOCAL_EXCEPTION_SUFFIX;
-			$hasLocalException = isset( $options[ $localExceptionName ] ) && $options[ $localExceptionName ];
-			if ( !GlobalPreferencesFormOOUI::gettingGlobalOnly() && $hasLocalException ) {
+			if ( isset( $options[ $localExceptionName ] ) && $options[ $localExceptionName ] ) {
 				continue;
 			}
 
