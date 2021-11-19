@@ -72,6 +72,7 @@
 			],
 			"dependencies": [
 				"oojs-ui-core",
+				"mediawiki.widgets.SelectWithInputWidget",
 				"mediawiki.widgets.CheckMatrixWidget"
 			]
 		},

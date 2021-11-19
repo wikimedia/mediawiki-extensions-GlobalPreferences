@@ -8,7 +8,7 @@
 	 * @param {boolean} checked Whether local exception is checked
 	 */
 	function updatePrefInput( name, checked ) {
-		var localExName, prefName, enabled, $prefInput, oouiWidget;
+		var localExName, prefName, enabled, $prefInput;
 		// Figure out what the preference name is by stripping the local exception suffix.
 		localExName = name;
 		prefName = localExName.substr( 0, localExName.length - '-local-exception'.length )
@@ -24,14 +24,13 @@
 				$prefInput.parents( '.mw-widget-checkMatrixWidget' )
 			);
 			matrixWidget.setDisabled( !enabled );
-		} else if ( $prefInput.parent( '.oo-ui-widget' ).length > 0 ) {
-			// First see if this is a OOUI field.
-			$prefInput = $prefInput
-				.parents( '[data-ooui]' )
-				.first();
-			oouiWidget = OO.ui.infuse( $prefInput );
-			oouiWidget.setDisabled( !enabled );
+		} else if ( $prefInput.parents( '.oo-ui-widget[data-ooui]' ).length > 0 ) {
+			// OOUI widget.
+			var $prefInputOoui = $prefInput.parents( '.oo-ui-widget[data-ooui]' ).first();
+			OO.ui.infuse( $prefInputOoui ).setDisabled( !enabled );
 		} else {
+			// Old-style inputs.
+			// @todo is this still needed?
 			// eslint-disable-next-line no-jquery/no-sizzle
 			$prefInput
 				.parents( '.mw-input' )
