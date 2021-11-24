@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Sabelöga",
-			"WikiPhoenix"
+			"WikiPhoenix",
+			"JRyan"
 		]
 	},
 	"apihelp-globalpreferences-summary": "Ändra globala inställningar för nuvarande användare.",
@@ -30,5 +31,5 @@
 	"apihelp-globalpreferenceoverrides-param-optionvalue": "Värdet för åsidosättandet som specificeras av <var>optionname</var>.",
 	"apihelp-globalpreferenceoverrides-example-reset": "Ta bort alla lokala åsidosättanden.",
 	"apihelp-globalpreferenceoverrides-example-change": "Ange eller ändra åsidosättandet för inställningarna <kbd>skin</kbd> och <kbd>hideminor</kbd>.",
-	"apiwarn-globally-overridden": "{{PLURAL:$2|Alternativet|Alternativen}} $1 {{PLURAL:$2|skrivs över}} globalt."
+	"apiwarn-globally-overridden": "{{PLURAL:$2|Alternativet|Alternativen}} $1 {{PLURAL:$2|skrivs över}} globalt. Du kan använda \"globalpreferences\" API för att ändra alternativet globalt, eller \"globalpreferencesoverrides\" API för att sätta en lokal överskridning."
 }
