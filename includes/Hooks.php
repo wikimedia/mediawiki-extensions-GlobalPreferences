@@ -247,6 +247,7 @@ class Hooks {
 
 		$factory = self::getPreferencesFactory();
 		$globalPrefs = $factory->getGlobalPreferencesValues( $user );
+		$userOptionsLookup = MediaWikiServices::getInstance()->getUserOptionsLookup();
 
 		$toWarn = [];
 		foreach ( array_keys( $changes ) as $preference ) {
@@ -254,7 +255,7 @@ class Hooks {
 				continue;
 			}
 			$exceptionName = $preference . GlobalPreferencesFactory::LOCAL_EXCEPTION_SUFFIX;
-			if ( !$user->getOption( $exceptionName ) ) {
+			if ( !$userOptionsLookup->getOption( $user, $exceptionName ) ) {
 				if ( $globalPrefs && array_key_exists( $preference, $globalPrefs ) ) {
 					$toWarn[] = $preference;
 				}

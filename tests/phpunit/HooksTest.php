@@ -5,6 +5,7 @@ namespace GlobalPreferences\Test;
 use ApiOptions;
 use GlobalPreferences\GlobalPreferencesFactory;
 use GlobalPreferences\Hooks;
+use MediaWiki\User\UserOptionsLookup;
 use MediaWikiIntegrationTestCase;
 use User;
 
@@ -35,13 +36,17 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 
 		$user = $this->getMockBuilder( User::class )
 			->disableOriginalConstructor()
-			->onlyMethods( [ 'getOption' ] )
 			->getMock();
-		$user->method( 'getOption' )
+
+		$userOptionsLookup = $this->getMockBuilder( UserOptionsLookup::class )
+			->disableOriginalConstructor()
+			->getMock();
+		$userOptionsLookup->method( 'getOption' )
 			->will( self::returnValueMap( [
-				[ 'skin', null, false, 'monobook' ],
-				[ 'skin-local-exception', null, false, true ],
+				[ $user, 'skin', null, false, 0, 'monobook' ],
+				[ $user, 'skin-local-exception', null, false, 0, true ],
 			] ) );
+		$this->setService( 'UserOptionsLookup', $userOptionsLookup );
 
 		$factory = $this->getMockBuilder( GlobalPreferencesFactory::class )
 			->disableOriginalConstructor()
@@ -54,7 +59,6 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 			] );
 
 		$this->setService( 'PreferencesFactory', $factory );
-
 		/**
 		 * @var ApiOptions $apiOptions
 		 * @var User $user
