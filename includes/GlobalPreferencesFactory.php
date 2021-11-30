@@ -188,6 +188,7 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 					'label-raw' => $labelMsg->parse(),
 					'default' => $localExValueUser,
 					'cssclass' => implode( ' ', $cssClasses ),
+					'hide-if' => $def['hide-if'] ?? false,
 				];
 				if ( $section !== '' ) {
 					$modifiedPrefs[$localExName]['section'] = $section;
