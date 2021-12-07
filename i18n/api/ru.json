@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Evs",
-			"Vlad5250"
+			"Vlad5250",
+			"Okras"
 		]
 	},
 	"apihelp-globalpreferences-summary": "Сменить глобальные настройки текущего участника.",
@@ -30,5 +31,5 @@
 	"apihelp-globalpreferenceoverrides-param-optionvalue": "Значение настройки, заданной <var>optionname</var>.",
 	"apihelp-globalpreferenceoverrides-example-reset": "Убрать все локальные замены.",
 	"apihelp-globalpreferenceoverrides-example-change": "Задать или изменить замены для настроек <kbd>skin</kbd> и <kbd>hideminor</kbd>.",
-	"apiwarn-globally-overridden": "{{PLURAL:$2|Опция|Опции}} $1 {{PLURAL:$2|глобально заменена|глобально заменены}}."
+	"apiwarn-globally-overridden": "{{PLURAL:$2|Опция|Опции}} $1 {{PLURAL:$2|глобально заменена|глобально заменены}}. Вы можете использовать API «globalpreferences», чтобы изменить параметр глобально, или API «globalpreferenceoverrides», чтобы установить локальное переопределение."
 }

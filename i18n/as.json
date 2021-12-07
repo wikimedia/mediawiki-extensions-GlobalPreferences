@@ -1,12 +1,22 @@
 {
 	"@metadata": {
 		"authors": [
-			"Gitartha.bordoloi"
+			"Gitartha.bordoloi",
+			"Simbu123"
 		]
 	},
 	"globalprefs-desc": "ব্যৱহাৰকাৰীক গোলকীয় পছন্দসমূহ নিৰ্ধাৰণ কৰিবলৈ অনুমতি দিয়ে",
+	"globalprefs-set-local-exception": "এই [[Special:GlobalPreferences#$1|গোলকীয় পছন্দৰ]] বাবে স্থানীয় ব্যতিক্ৰম এটা নিৰ্ধাৰণ কৰক।",
+	"globalprefs-has-local-exception": "এই গোলকীয় পছন্দৰ এটি [[Special:Preferences#$1|স্থানীয় ব্যতিক্ৰম এই ৱিকিত আছে]]।",
+	"tooltip-globalprefs-check-label": "এই ছেটিংটো গোলকীয় কৰক",
+	"globalprefs-error-header": "ত্ৰুটি",
+	"globalprefs-notglobal": "আপোনাৰ একাউণ্টটো এটা গোলকীয় একাউণ্ট নহয় আৰু সেয়ে গোলকীয় পছন্দসমূহ নিৰ্ধাৰণ কৰিব নোৱাৰে।",
 	"globalpreferences": "গোলকীয় পছন্দসমূহ",
 	"globalprefs-info-label": "গোলকীয় পছন্দসমূহ:",
 	"globalprefs-info-link": "আপোনাৰ গোলকীয় পছন্দসমূহ নিৰ্ধাৰণ কৰক",
-	"globalprefs-info-help": "গোলকীয় পছন্দসমূহ পৃষ্ঠাত নিৰ্ধাৰণ কৰা পছন্দবোৰ সকলো ৱিকিতে প্ৰয়োগ কৰা হ'ব।"
+	"globalprefs-info-help": "গোলকীয় পছন্দসমূহ পৃষ্ঠাত নিৰ্ধাৰণ কৰা পছন্দবোৰ সকলো ৱিকিতে প্ৰয়োগ কৰা হ'ব।",
+	"globalprefs-reset-intro": "আপুনি এই পৃষ্ঠাটো সকলো ৱিকিৰ বাবে গোলকীয় পছন্দসমূহ অক্ষম কৰিব পাৰে আৰু আপোনাৰ স্থানীয় পছন্দসমূহৰ ব্যৱহাৰলৈ ঘূৰি যাব পাৰে। ই কোনো স্থানীয় ৱিকিৰ পছন্দক প্ৰভাৱিত নকৰে। ইয়াক 'আনডু' কৰিব নোৱাৰি।",
+	"globalprefs-restoreprefs": "সকলো গোলকীয় পছন্দ আঁতৰাওক (সকলো বিভাগত)",
+	"globalprefs-select-all": "সকলো চেকবক্স অন বা অফ টগল কৰক",
+	"globalprefs-col-header": "গোলকীয়ভাবে প্ৰয়োগ কৰিবৰ বাবে তলৰ বিকল্পসমূহ বাছনি কৰক"
 }

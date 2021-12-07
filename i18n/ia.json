@@ -1,0 +1,21 @@
+{
+	"@metadata": {
+		"authors": [
+			"McDutchie"
+		]
+	},
+	"globalprefs-desc": "Permitte que usatores defini preferentias global",
+	"globalprefs-set-local-exception": "Definir un exception local pro iste [[Special:GlobalPreferences#$1|preferentia global]].",
+	"globalprefs-has-local-exception": "Iste preferentia global ha un [[Special:Preferences#$1|exception local sur iste wiki]].",
+	"tooltip-globalprefs-check-label": "Render iste preferentia global",
+	"globalprefs-error-header": "Error",
+	"globalprefs-notglobal": "Tu conto non es un conto global e non pote definir preferentias global.",
+	"globalpreferences": "Preferentias global",
+	"globalprefs-info-label": "Preferentias global:",
+	"globalprefs-info-link": "Definir tu preferentias global",
+	"globalprefs-info-help": "Le preferentias definite via le pagina de preferentias global se applicara a tote le wikis.",
+	"globalprefs-reset-intro": "Iste pagina es pro disactivar tote le preferentias global sur tote le wikis e retornar a tu preferentias local. Isto non affecta le preferentias local. Isto non pote esser disfacite.",
+	"globalprefs-restoreprefs": "Remover tote le preferentias global (in tote le sectiones)",
+	"globalprefs-select-all": "Marcar o dismarcar tote le quadratos",
+	"globalprefs-col-header": "Selige hic infra le optiones que debe esser global"
+}
