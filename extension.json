@@ -74,7 +74,8 @@
 				"oojs-ui-core",
 				"mediawiki.widgets.SelectWithInputWidget",
 				"mediawiki.widgets.CheckMatrixWidget",
-				"mediawiki.widgets.TitlesMultiselectWidget"
+				"mediawiki.widgets.TitlesMultiselectWidget",
+				"mediawiki.widgets.UsersMultiselectWidget"
 			]
 		},
 		"ext.GlobalPreferences.local-nojs": {
