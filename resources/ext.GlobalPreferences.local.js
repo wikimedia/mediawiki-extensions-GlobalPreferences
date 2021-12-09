@@ -1,6 +1,5 @@
 ( function () {
 	'use strict';
-	var matrixWidget;
 	/**
 	 * Updates preference input based if user wants to set a local exception.
 	 *
@@ -17,17 +16,10 @@
 		// eslint-disable-next-line no-jquery/no-sizzle
 		$prefInput = $( ':input[name="' + prefName + '"], :input[name="' + prefName + '[]"]' );
 
-		if ( $prefInput.parents( '.mw-widget-checkMatrixWidget' ).length ) {
-			// Complex widget; make sure we find the parent widget rather
-			// than the individual inner widgets
-			matrixWidget = matrixWidget || OO.ui.infuse(
-				$prefInput.parents( '.mw-widget-checkMatrixWidget' )
-			);
-			matrixWidget.setDisabled( !enabled );
-		} else if ( $prefInput.parents( '.oo-ui-widget[data-ooui]' ).length > 0 ) {
+		if ( $prefInput.parents( '.oo-ui-fieldLayout[data-ooui]' ).length > 0 ) {
 			// OOUI widget.
-			var $prefInputOoui = $prefInput.parents( '.oo-ui-widget[data-ooui]' ).first();
-			OO.ui.infuse( $prefInputOoui ).setDisabled( !enabled );
+			var $prefLayout = $prefInput.parents( '.oo-ui-fieldLayout[data-ooui]' ).first();
+			OO.ui.infuse( $prefLayout ).fieldWidget.setDisabled( !enabled );
 		} else {
 			// Old-style inputs.
 			// @todo is this still needed?
@@ -44,14 +36,16 @@
 	/**
 	 * Enable and disable the related preference field when selecting the local exception checkbox.
 	 */
-	$( '.mw-globalprefs-local-exception.oo-ui-checkboxInputWidget' ).each( function () {
-		var checkbox = OO.ui.infuse( this );
-		// Update on change.
-		checkbox.on( 'change', function () {
+	mw.hook( 'htmlform.enhance' ).add( function ( $root ) {
+		$root.find( '.mw-globalprefs-local-exception.oo-ui-checkboxInputWidget' ).each( function () {
+			var checkbox = OO.ui.infuse( this );
+			// Update on change.
+			checkbox.on( 'change', function () {
+				updatePrefInput( checkbox.$input.attr( 'name' ), checkbox.isSelected() );
+			} );
+			// Also update once on initialization, to get it in sync.
 			updatePrefInput( checkbox.$input.attr( 'name' ), checkbox.isSelected() );
 		} );
-		// Also update once on initialization, to get it in sync.
-		updatePrefInput( checkbox.$input.attr( 'name' ), checkbox.isSelected() );
 	} );
 
 }() );
