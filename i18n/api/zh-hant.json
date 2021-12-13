@@ -3,7 +3,8 @@
 		"authors": [
 			"A2093064",
 			"Kly",
-			"Xiplus"
+			"Xiplus",
+			"LNDDYL"
 		]
 	},
 	"apihelp-globalpreferences-summary": "更改當前使用者的全域偏好設定。",
@@ -22,7 +23,7 @@
 	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "全域偏好設定。",
 	"apihelp-query+globalpreferences-paramvalue-prop-localoverrides": "用於全域偏好設定的本地覆蓋。",
 	"apierror-globalpreferences-notglobalized": "當前使用者並非全域使用者。",
-	"apihelp-globalpreferenceoverrides-summary": "替目前使用者的全域偏好設置更改本地覆蓋內容。",
+	"apihelp-globalpreferenceoverrides-summary": "替目前使用者的全域偏好設定變更本地覆蓋內容。",
 	"apihelp-globalpreferenceoverrides-extended-description": "用於所影響到偏好設置的全域值內容將會忽略。",
 	"apihelp-globalpreferenceoverrides-param-reset": "重設本地覆蓋內容。移除全部，或是基於 <code>resetkinds</code> 參數值（一些本地覆蓋內容類型）來讓全域內容再次生效。",
 	"apihelp-globalpreferenceoverrides-param-resetkinds": "當設定 <var>reset</var> 選項時，要重設的覆蓋類型清單。",

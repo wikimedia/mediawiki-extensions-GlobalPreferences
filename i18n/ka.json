@@ -1,9 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Otogi"
+			"Otogi",
+			"Გიო ოქრო",
+			"Იო ოქრო"
 		]
 	},
+	"globalprefs-set-local-exception": "[[Special:GlobalPreferences#$1|გლობალური კონფიგურაციისათვის]] ადგილობრივი გამონაკლისის დაშვება.",
 	"globalpreferences": "გლობალური მომართვები",
 	"globalprefs-info-label": "გლობალური მომართვები:",
 	"globalprefs-info-link": "დააყენეთ თქვენი გლობალური მომართვები",

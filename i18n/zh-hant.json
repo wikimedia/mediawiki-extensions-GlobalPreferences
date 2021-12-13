@@ -9,18 +9,18 @@
 			"Xiplus"
 		]
 	},
-	"globalprefs-desc": "允許使用者設定全域偏好設置",
-	"globalprefs-set-local-exception": "為此[[Special:GlobalPreferences#$1|全域偏好設置]]設定一個本地例外內容.",
-	"globalprefs-has-local-exception": "此全域偏好設置[[Special:Preferences#$1|在此wiki有本地例外]]。",
+	"globalprefs-desc": "允許使用者設定全域偏好設定",
+	"globalprefs-set-local-exception": "為此[[Special:GlobalPreferences#$1|全域偏好設定]]設定一個本地例外內容。",
+	"globalprefs-has-local-exception": "此全域偏好設定[[Special:Preferences#$1|在此wiki有本地例外]]。",
 	"tooltip-globalprefs-check-label": "讓此設定全域化",
 	"globalprefs-error-header": "錯誤",
-	"globalprefs-notglobal": "您的帳號不是全域帳號，因此不能設定全域偏好設置。",
-	"globalpreferences": "全域偏好設置",
+	"globalprefs-notglobal": "您的帳號不是全域帳號，因此不能設定全域偏好設定。",
+	"globalpreferences": "全域偏好設定",
 	"globalprefs-info-label": "全域偏好設定：",
 	"globalprefs-info-link": "設定您的全域偏好設定",
 	"globalprefs-info-help": "通過全域偏好設定頁面設定的設定集將應用到所有wiki。",
 	"globalprefs-reset-intro": "您可以使用此頁面在所有 wiki 停用所有全域偏好設定，並改回您的本地偏好設定。這不會涉及任何本地 wiki 的偏好設定。這無法復原。",
-	"globalprefs-restoreprefs": "移除所有全域偏好設置（所有部份）",
+	"globalprefs-restoreprefs": "移除所有全域偏好設定（所有部份）",
 	"globalprefs-select-all": "切換所有核取方塊開啟或關閉",
 	"globalprefs-col-header": "選擇下方的選項以使其全域化"
 }

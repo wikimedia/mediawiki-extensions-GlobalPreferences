@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Strainu"
+			"Strainu",
+			"NGC 54"
 		]
 	},
+	"apihelp-globalpreferences-extended-description": "Doar preferințele înregistrate pentru wiki-ul actual pot fi schimbate actual.",
 	"apihelp-query+globalpreferences-param-prop": "Ce preferințe să fie incluse:",
 	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Preferințe globale.",
 	"apierror-globalpreferences-notglobalized": "Utilizatorul curent nu are un cont global.",

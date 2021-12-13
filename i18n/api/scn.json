@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ajeje Brazorf"
+		]
+	},
+	"apihelp-globalpreferences-summary": "Cancia li prifirenzi glubbali pi l'utenti attuali.",
+	"apihelp-globalpreferences-example-change": "Cancia li prifirenzi <kbd>skin</kbd> e <kbd>hideminor</kbd>.",
+	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Prifirenzi glubbali."
+}

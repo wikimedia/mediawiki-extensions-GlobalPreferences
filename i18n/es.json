@@ -2,20 +2,21 @@
 	"@metadata": {
 		"authors": [
 			"Fitoschido",
-			"MarcoAurelio"
+			"MarcoAurelio",
+			"Jakeukalane"
 		]
 	},
 	"globalprefs-desc": "Permite a los usuarios establecer preferencias globales",
 	"globalprefs-set-local-exception": "Definir una excepción local para esta [[Special:GlobalPreferences#$1|preferencia global]].",
-	"globalprefs-has-local-exception": "Esta preferencia global tiene una [[Special:Preferences#$1|excepción local en este wiki]].",
+	"globalprefs-has-local-exception": "Esta preferencia global tiene una [[Special:Preferences#$1|excepción local en esta wiki]].",
 	"tooltip-globalprefs-check-label": "Convertir esta configuración en global",
 	"globalprefs-error-header": "Error",
 	"globalprefs-notglobal": "Tu cuenta no es global; no se pueden establecer preferencias globales.",
 	"globalpreferences": "Preferencias globales",
 	"globalprefs-info-label": "Preferencias globales:",
 	"globalprefs-info-link": "Definir las preferencias globales",
-	"globalprefs-info-help": "Las opciones definidas a través de las preferencias globales se aplicarán a todos los wikis.",
-	"globalprefs-reset-intro": "Puedes emplear esta página para desactivar las preferencias globales de todos los wikis y volver a tus preferencias locales. No se afectarán las preferencias locales de ningún wiki. No se puede deshacer esta acción.",
+	"globalprefs-info-help": "Las opciones definidas a través de las preferencias globales se aplicarán a todas las wikis.",
+	"globalprefs-reset-intro": "Puedes emplear esta página para desactivar las preferencias globales de todas las wikis y volver a tus preferencias locales. No se afectarán las preferencias locales de ninguna wiki. No se puede deshacer esta acción.",
 	"globalprefs-restoreprefs": "Quitar todas las preferencias globales (en todas las secciones)",
 	"globalprefs-select-all": "Marcar o desmarcar todas las casillas",
 	"globalprefs-col-header": "Selecciona las opciones que serán globales más abajo"

@@ -16,5 +16,6 @@
 	"apihelp-query+globalpreferences-param-prop": "포함할 환경 설정:",
 	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "통합 계정 환경 설정입니다.",
 	"apierror-globalpreferences-notglobalized": "현재 사용자는 통합 계정이 아닙니다.",
+	"apihelp-globalpreferenceoverrides-summary": "현재 사용자의 전역 환경 설정의 로컬 오버라이드를 변경합니다.",
 	"apihelp-globalpreferenceoverrides-extended-description": "영향을 받는 환경 설정의 전역 값들은 무시됩니다."
 }

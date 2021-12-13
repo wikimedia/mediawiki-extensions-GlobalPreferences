@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Dbc334",
-			"Janezdrilc"
+			"Janezdrilc",
+			"Eleassar"
 		]
 	},
 	"globalprefs-desc": "Uporabnikom omogoči, da si nastavijo globalne nastavitve",
@@ -13,10 +14,10 @@
 	"globalprefs-notglobal": "Tvoj račun ni globalen, zato ni mogoče shraniti globalnih nastavitev.",
 	"globalpreferences": "Globalne nastavitve",
 	"globalprefs-info-label": "Globalne nastavitve:",
-	"globalprefs-info-link": "Nastavi si svoje globalne nastavitve",
-	"globalprefs-info-help": "Nastavitve, ki so nastavljene na globalnih nastavitvah, bodo uveljavljene na tem wikiju.",
+	"globalprefs-info-link": "Izbira globalnih nastavitev",
+	"globalprefs-info-help": "V tem vikiju bodo uveljavljene nastavitve, ki so izbrane v globalnih nastavitvah.",
 	"globalprefs-reset-intro": "Na tej strani lahko izključite vse globalne nastavitve na vseh wikijih in povrnete lokalne nastavitve. To ne vpliva na noben lokalni wiki. Tega dejanja se ne da razveljaviti.",
 	"globalprefs-restoreprefs": "Odstrani vse globalne nastavitve (v vseh razdelkih)",
 	"globalprefs-select-all": "Obkljukaj ali odkljukaj vse kvadratke",
-	"globalprefs-col-header": "Izberi spodnje možnosti, da postanejo globalne"
+	"globalprefs-col-header": "Izbrane možnosti uveljavi globalno"
 }

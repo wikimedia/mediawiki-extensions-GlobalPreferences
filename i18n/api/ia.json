@@ -1,0 +1,32 @@
+{
+	"@metadata": {
+		"authors": [
+			"McDutchie"
+		]
+	},
+	"apihelp-globalpreferences-summary": "Cambiar le preferentias global del usator actual.",
+	"apihelp-globalpreferences-extended-description": "Solmente le preferentias registrate pro le wiki actual pote esser cambiate localmente.",
+	"apihelp-globalpreferences-param-reset": "Reinitialisar le preferentias global. Remove totes, o, dependente del valor del parametro <code>resetkinds</code>, remove alcun typos de preferentias global, e los rende non global.",
+	"apihelp-globalpreferences-param-resetkinds": "Lista de typos de preferentias a reinitialisar quando le option <var>reset</var> es activate.",
+	"apihelp-globalpreferences-param-change": "Lista de cambiamentos, in formato nomine=valor (p.ex. skin=vector). Si nulle valor es date (non mesmo un signo equal), p.ex., nominedepreferentia|alterepreferentia|..., le preferentia essera rendite non global. Si alcun valor passate contine le character de barra vertical (<kbd>|</kbd>), usa le [[Special:ApiHelp/main#main/datatypes|separator alternative de valores]] pro assecurar un operation correcte.",
+	"apihelp-globalpreferences-param-optionname": "Le nomine del preferentia que debe esser definite con le valor date per <var>optionvalue</var>.",
+	"apihelp-globalpreferences-param-optionvalue": "Le valor del preferentia specificate per <var>optionname</var>.",
+	"apihelp-globalpreferences-example-reset-one": "Render un singule preferentia non global.",
+	"apihelp-globalpreferences-example-reset": "Render tote le preferentias non global.",
+	"apihelp-globalpreferences-example-change": "Cambiar le preferentias <kbd>skin</kbd> e <kbd>hideminor</kbd>.",
+	"apihelp-query+globalpreferences-summary": "Recuperar le preferentias global del usator actual.",
+	"apihelp-query+globalpreferences-extended-description": "Pote recuperar e le preferentias global e lor valores de reimplaciamento local.",
+	"apihelp-query+globalpreferences-param-prop": "Qual preferentias includer:",
+	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Preferentias global.",
+	"apihelp-query+globalpreferences-paramvalue-prop-localoverrides": "Valores de reimplaciamento local pro preferentias global.",
+	"apierror-globalpreferences-notglobalized": "Le usator actual non es global.",
+	"apihelp-globalpreferenceoverrides-summary": "Cambiar le valores de reimplaciamento local pro preferentias global pro le usator actual.",
+	"apihelp-globalpreferenceoverrides-extended-description": "Le valores global pro le preferentias affectate essera ignorate.",
+	"apihelp-globalpreferenceoverrides-param-reset": "Reinitialisar le valores de reimplaciamento local. Remove totes, o, dependente del valor del parametro <code>resetkinds</code>, remove alcun typos de valores de reimplaciamento local, e los rende global de novo.",
+	"apihelp-globalpreferenceoverrides-param-resetkinds": "Lista de typos de valores de reimplaciamento local a reinitialisar quando le option <var>reset</var> es activate.",
+	"apihelp-globalpreferenceoverrides-param-change": "Lista de cambiamentos, in formato nomine=valor (p.ex. skin=vector). Si nulle valor es date (non mesmo un signo equal), p.ex., nominedepreferentia|alterepreferentia|..., le valor de reimplaciamento local essera removite. Si alcun valor passate contine le character de barra vertical (<kbd>|</kbd>), usa le [[Special:ApiHelp/main#main/datatypes|separator alternative de valores]] pro assecurar un operation correcte.",
+	"apihelp-globalpreferenceoverrides-param-optionname": "Le nomine del reimplaciamento local que debe esser definite con le valor date per <var>optionvalue</var>.",
+	"apihelp-globalpreferenceoverrides-param-optionvalue": "Le valor del reimplaciamento local specificate per <var>optionname</var>.",
+	"apihelp-globalpreferenceoverrides-example-reset": "Remover tote le valores de reimplaciamento local.",
+	"apihelp-globalpreferenceoverrides-example-change": "Definir o cambiar valores de reimplaciamento local pro le preferentias <kbd>skin</kbd> e <kbd>hideminor</kbd>."
+}

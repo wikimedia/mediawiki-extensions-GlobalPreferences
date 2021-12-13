@@ -1,0 +1,21 @@
+{
+	"@metadata": {
+		"authors": [
+			"Salvemm el lombard"
+		]
+	},
+	"globalprefs-desc": "El permet ai utent de impostà i preferenze globai",
+	"globalprefs-set-local-exception": "Imposta un'ecezzion local per questa [[Special:GlobalPreferences#$1|preferenza global]].",
+	"globalprefs-has-local-exception": "Questa preferenza globale chì la  gh'ha un'[[Special:Preferences#$1|eccezion local in su quell wiki chì]].",
+	"tooltip-globalprefs-check-label": "Fà diventà global quell impostazzion chì",
+	"globalprefs-error-header": "Eror",
+	"globalprefs-notglobal": "El to cunt l'è minga un cunt global e te podet impostà no una preferenza global.",
+	"globalpreferences": "Preferenze globai",
+	"globalprefs-info-label": "Preferenze globaiː",
+	"globalprefs-info-link": "Imposta i to preferenze globai",
+	"globalprefs-info-help": "I preferenza globai impostade per mezz de la pagina di preferenze i sarann aplicade a tut i wiki.",
+	"globalprefs-reset-intro": "Te podet drovà quella pagina chì per disativà tute i preferenze globai in su tucc i wiki e tornà ai preferenze locai. Quel'operazzion l'influenzarà minga i preferenze locai e la po vesser anulada.",
+	"globalprefs-restoreprefs": "Toeu via tute i preferenze globai (in tute i sezzion)",
+	"globalprefs-select-all": "Ativa o disativa tute i caselle de control",
+	"globalprefs-col-header": "Scerniss foeura i opzion chì de sota per fai diventà globai"
+}

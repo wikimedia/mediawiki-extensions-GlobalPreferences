@@ -3,13 +3,14 @@
 		"authors": [
 			"Gomoko",
 			"Trizek (WMF)",
-			"Wladek92"
+			"Wladek92",
+			"McDutchie"
 		]
 	},
 	"globalprefs-desc": "Permet aux utilisateurs de fixer des préférences globales",
 	"globalprefs-set-local-exception": "Définir une exception locale pour cette [[Special:GlobalPreferences#$1|préférence globale]].",
 	"globalprefs-has-local-exception": "Cette préférence globale a une [[Special:Preferences#$1|exception locale sur ce wiki]].",
-	"tooltip-globalprefs-check-label": "Rendre cette initialisation globale",
+	"tooltip-globalprefs-check-label": "Rendre cette préférence globale",
 	"globalprefs-error-header": "Erreur",
 	"globalprefs-notglobal": "Votre compte n’est pas un compte global et ne peut pas fixer de préférences globales.",
 	"globalpreferences": "Préférences globales",

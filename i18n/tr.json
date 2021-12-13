@@ -7,21 +7,22 @@
 			"Rapsar",
 			"Sayginer",
 			"TmY e12",
-			"ToprakM"
+			"ToprakM",
+			"MuratTheTurkish"
 		]
 	},
 	"globalprefs-desc": "Kullanıcıların küresel tercihleri ayarlamasına izin verir",
-	"globalprefs-set-local-exception": "Bunun [[Special:GlobalPreferences#$1|küresel tercih]] için yerel bir istisna ayarlayın.",
-	"globalprefs-has-local-exception": "Bu global tercihin [[Special:Preferences#$1|bu wikide yerel istisna]] var.",
+	"globalprefs-set-local-exception": "Bu [[Special:GlobalPreferences#$1|küresel tercih]] için yerel bir istisna ayarlayın.",
+	"globalprefs-has-local-exception": "Bu küresel tercihin [[Special:Preferences#$1|bu vikide yerel istisna]] var.",
 	"tooltip-globalprefs-check-label": "Bu ayarı küresel yap",
 	"globalprefs-error-header": "Hata",
 	"globalprefs-notglobal": "Hesabınızın küresel hesap değil ve küresel tercihler ayarlayamazsınız.",
 	"globalpreferences": "Küresel tercihler",
 	"globalprefs-info-label": "Küresel tercihler:",
 	"globalprefs-info-link": "Küresel tercihlerinizi ayarlayın",
-	"globalprefs-info-help": "Genel tercihler sayfası aracılığıyla ayarlanan tercihler, tüm vikilere uygulanır.",
-	"globalprefs-reset-intro": "Tüm wikilerde global tercihleri devre dışı bırakmak ve yerel tercihlerinize dönmek için bu sayfayı kullanabilirsiniz. Bu herhangi bir yerel wiki tercihini etkilemez. Bu geri alınamaz.",
-	"globalprefs-restoreprefs": "Tüm global tercihleri sil (tüm bölümlerde)",
+	"globalprefs-info-help": "Küresel tercihler sayfası üzerinden ayarlanan tercihler tüm vikilere uygulanır.",
+	"globalprefs-reset-intro": "Tüm vikilerde küresel tercihleri devre dışı bırakmak ve yerel tercihlerinize dönmek için bu sayfayı kullanabilirsiniz. Bu herhangi bir yerel viki tercihini etkilemez. Bu geri alınamaz.",
+	"globalprefs-restoreprefs": "Tüm küresel tercihleri sil (tüm bölümlerde)",
 	"globalprefs-select-all": "Tüm onay kutularını aç veya kapat",
-	"globalprefs-col-header": "Ayarın global olması için seçin"
+	"globalprefs-col-header": "Ayarın küresel olması için seçin"
 }

@@ -1,12 +1,22 @@
 {
 	"@metadata": {
 		"authors": [
-			"Njardarlogar"
+			"Njardarlogar",
+			"Ranveig"
 		]
 	},
+	"globalprefs-desc": "Let brukarar setje globale innstillingar",
+	"globalprefs-set-local-exception": "Set eit lokalt unntak for denne [[Special:GlobalPreferences#$1|globale innstillinga]].",
+	"globalprefs-has-local-exception": "Denne globale innstillinga har eit [[Special:Preferences#$1|lokalt unntak på denne wikien]].",
+	"tooltip-globalprefs-check-label": "Gjer denne innstillinga global",
+	"globalprefs-error-header": "Feil",
+	"globalprefs-notglobal": "Kontoen din er ikkje ein global konto og kan ikkje setje globale innstillingar.",
 	"globalpreferences": "Globale innstillingar",
+	"globalprefs-info-label": "Globale innstillingar",
 	"globalprefs-info-link": "Vel dei globale innstillingane dine",
 	"globalprefs-info-help": "Innstillingar som er valde gjennom sida for globale innstillingar vil gjelda for alle wikiar.",
+	"globalprefs-reset-intro": "Du kan bruke denne sida til å slå av alle globale innstillingar på alle wikier og koma attende til dine lokale innstillingar.\n\nDette påverkar ikkje lokale innstillingar på enkeltwikiane. Dette kan ikkje gjerast om.",
 	"globalprefs-restoreprefs": "Fjern alle globale innstillingar (i alle bolkar)",
+	"globalprefs-select-all": "Slå alle avmerkingsboksar på eller av",
 	"globalprefs-col-header": "Vel innstillingar under som skal gjelda globalt"
 }

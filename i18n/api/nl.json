@@ -1,9 +1,33 @@
 {
 	"@metadata": {
 		"authors": [
-			"Mainframe98"
+			"Mainframe98",
+			"McDutchie"
 		]
 	},
 	"apihelp-globalpreferences-summary": "De globale voorkeuren van de huidige gebruiker wijzigen.",
-	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Globale voorkeuren"
+	"apihelp-globalpreferences-extended-description": "Alleen instellingen die voor de huidige wiki geregistreerd zijn kunnen lokaal veranderd worden.",
+	"apihelp-globalpreferences-param-reset": "De globale voorkeuren opnieuw instellen. Hiermee verwijdert u of alle, of de door de parameter <code>resetkinds</code> aangegeven typen globale voorkeuren, waardoor die niet meer globaal zijn.",
+	"apihelp-globalpreferences-param-resetkinds": "Lijst met typen van opnieuw in te stellen voorkeuren wanneer de optie <var>reset</var> is aangegeven.",
+	"apihelp-globalpreferences-param-change": "Lijst met wijzigingen, opgemaakt als <kbd>naam=waarde</kbd> (bv. <kbd>skin=vector</kbd>). Als er geen waarde wordt opgegeven (ook geen isgelijkteken), bv. <kbd>voorkeurnaam|anderevoorkeur|...</kbd>, dan wordt de voorkeur niet-globaal gemaakt. Als een opgegeven waarde een sluisteken bevat (<kbd>|</kbd>), gebruik dan het [[Special:ApiHelp/main#main/datatypes|alternatieve scheidingsteken voor meerdere waarden]] voor een juiste werking.",
+	"apihelp-globalpreferences-param-optionname": "De naam van de voorkeur die moet worden ingesteld op de door <var>optionvalue</var> gegeven waarde.",
+	"apihelp-globalpreferences-param-optionvalue": "De waarde van de door <var>optionname</var> aangegeven voorkeur.",
+	"apihelp-globalpreferences-example-reset-one": "Een enkele voorkeur niet-globaal maken.",
+	"apihelp-globalpreferences-example-reset": "Alle voorkeuren niet-globaal maken.",
+	"apihelp-globalpreferences-example-change": "De voorkeuren <kbd>skin</kbd> en <kbd>hideminor</kbd> wijzigen.",
+	"apihelp-query+globalpreferences-summary": "De globale voorkeuren van de huidige gebruiker oproepen.",
+	"apihelp-query+globalpreferences-extended-description": "Kan zowel globale voorkeuren als hun lokale uitzonderingen oproepen.",
+	"apihelp-query+globalpreferences-param-prop": "De te behandelen voorkeuren:",
+	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Globale voorkeuren",
+	"apihelp-query+globalpreferences-paramvalue-prop-localoverrides": "Lokale uitzonderingen voor globale voorkeuren.",
+	"apierror-globalpreferences-notglobalized": "De huidige gebruiker is niet globaal.",
+	"apihelp-globalpreferenceoverrides-summary": "De lokale uitzonderingen van de globale voorkeuren van de huidige gebruiker wijzigen.",
+	"apihelp-globalpreferenceoverrides-extended-description": "De globale waarden van de betrokken voorkeuren worden genegeerd.",
+	"apihelp-globalpreferenceoverrides-param-reset": "De lokale uitzonderingen opnieuw instellen. Hiermee verwijdert u of alle, of de door de parameter <code>resetkinds</code> aangegeven typen lokale uitzonderingen, waardoor de bijbehorende voorkeuren weer globaal worden.",
+	"apihelp-globalpreferenceoverrides-param-resetkinds": "Lijst met typen van opnieuw in te stellen uitzonderingen wanneer de optie <var>reset</var> is aangegeven.",
+	"apihelp-globalpreferenceoverrides-param-change": "Lijst met wijzigingen, opgemaakt als <kbd>naam=waarde</kbd> (bv. <kbd>skin=vector</kbd>). Als er geen waarde wordt opgegeven (ook geen isgelijkteken), bv. <kbd>voorkeurnaam|anderevoorkeur|...</kbd>, dan wordt de uitzondering verwijderd. Als een opgegeven waarde een sluisteken bevat (<kbd>|</kbd>), gebruik dan het [[Special:ApiHelp/main#main/datatypes|alternatieve scheidingsteken voor meerdere waarden]] voor een juiste werking.",
+	"apihelp-globalpreferenceoverrides-param-optionname": "De naam van de uitzondering die moet worden ingesteld op de door <var>optionvalue</var> gegeven waarde.",
+	"apihelp-globalpreferenceoverrides-param-optionvalue": "De waarde van de door <var>optionname</var> aangegeven uitzondering.",
+	"apihelp-globalpreferenceoverrides-example-reset": "Alle lokale uitzonderingen verwijderen.",
+	"apihelp-globalpreferenceoverrides-example-change": "Uitzonderingen voor de voorkeuren <kbd>skin</kbd> en <kbd>hideminor</kbd> instellen of wijzigen."
 }
