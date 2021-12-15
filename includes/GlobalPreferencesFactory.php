@@ -263,7 +263,7 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 				->getUserOptionsLookup()
 				->getBoolOption( $user, $pref . static::LOCAL_EXCEPTION_SUFFIX );
 			if ( $isGlobal && $hasLocalException ) {
-				$def['default'] = $globalPrefs[$pref];
+				$def['default'] = $this->getOptionFromUser( $pref, $def, $globalPrefs );
 				$help = '';
 				if ( isset( $def['help-message'] ) ) {
 					$help .= $context->msg( $def['help-message'] )->parse() . '<br />';
