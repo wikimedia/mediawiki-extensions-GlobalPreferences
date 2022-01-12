@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Hanyanbo98",
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"SolidBlock"
 		]
 	},
 	"apihelp-globalpreferences-summary": "更改当前用户的全域参数设置。",
@@ -21,5 +22,8 @@
 	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "全域参数设置。",
 	"apihelp-query+globalpreferences-paramvalue-prop-localoverrides": "用于全域参数设置的本地覆盖。",
 	"apierror-globalpreferences-notglobalized": "当前用户并非全域用户。",
+	"apihelp-globalpreferenceoverrides-summary": "为当前用户的全域参数设置更改本地覆盖。",
+	"apihelp-globalpreferenceoverrides-extended-description": "受影响的参数设置的全域值将被忽略。",
+	"apihelp-globalpreferenceoverrides-param-reset": "重置本地覆盖。移除所有（或部分，基于<code>resetkinds</code>参数的值）类型的本地覆盖并使其再次全域有效。",
 	"apihelp-globalpreferenceoverrides-param-resetkinds": "当<var>reset</var>选项设置时，要重置的参数设置类型列表。"
 }
