@@ -140,14 +140,14 @@ class Hooks {
 			// Determine the real name of the preference.
 			$suffixLen = strlen( GlobalPreferencesFactory::LOCAL_EXCEPTION_SUFFIX );
 			$realName = substr( $pref, 0, -$suffixLen );
-			if ( isset( $formData[$realName] ) || !$value ) {
-				// Not a checked CheckMatrix
+			if ( isset( $formData[$realName] ) ) {
+				// Not a CheckMatrix field
 				continue;
 			}
 			$checkMatrix = preg_grep( "/^$realName-/", array_keys( $formData ) );
 			foreach ( $checkMatrix as $check ) {
 				$localExceptionName = $check . GlobalPreferencesFactory::LOCAL_EXCEPTION_SUFFIX;
-				$userOptionsManager->setOption( $user, $localExceptionName, true );
+				$userOptionsManager->setOption( $user, $localExceptionName, $value );
 			}
 		}
 		return true;
