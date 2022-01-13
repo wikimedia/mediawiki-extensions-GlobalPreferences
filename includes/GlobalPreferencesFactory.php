@@ -88,7 +88,6 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	 */
 	protected $allowedClasses = [
 		\HTMLSelectOrOtherField::class,
-		\MediaWiki\Extension\BetaFeatures\NewHTMLCheckField::class,
 		\MediaWiki\Extension\BetaFeatures\HTMLFeatureField::class,
 		\HTMLCheckMatrix::class,
 		\Vector\HTMLForm\Fields\HTMLLegacySkinVersionField::class,
