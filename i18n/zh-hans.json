@@ -6,6 +6,7 @@
 			"Liuxinyu970226",
 			"SolidBlock",
 			"Suesue",
+			"Tranve",
 			"Xiaomingyan",
 			"Xiplus",
 			"Yfdyh000"
@@ -16,7 +17,7 @@
 	"globalprefs-has-local-exception": "此全域参数设置[[Special:Preferences#$1|在该wiki有本地例外]]。",
 	"tooltip-globalprefs-check-label": "将此设置全域化",
 	"globalprefs-error-header": "错误",
-	"globalprefs-notglobal": "您的账户不是一个全域账户，因此不能设置全域参数设置。",
+	"globalprefs-notglobal": "您的账号不是一个全域账号，因此不能设置全域参数设置。",
 	"globalpreferences": "全域参数设置",
 	"globalprefs-info-label": "全域参数设置：",
 	"globalprefs-info-link": "设置您的全域参数设置",
