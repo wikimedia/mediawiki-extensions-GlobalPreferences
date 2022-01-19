@@ -158,41 +158,36 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 		$userOptionsLookup = MediaWikiServices::getInstance()->getUserOptionsLookup();
 		foreach ( $preferences as $name => $def ) {
 			$modifiedPrefs[$name] = $def;
-			if ( !isset( $def['section'] ) ) {
-				// Preference has no control in the UI
+			// If this is an api preference or hasn't been set globally.
+			if ( !isset( $def['section'] ) || !in_array( $name, $globalPrefNames ) ) {
 				continue;
 			}
-			// If this has been set globally.
-			if ( in_array( $name, $globalPrefNames ) ) {
-				$localExName = $name . static::LOCAL_EXCEPTION_SUFFIX;
-				$localExValueUser = $userOptionsLookup->getBoolOption( $user, $localExName );
+			$localExName = $name . static::LOCAL_EXCEPTION_SUFFIX;
+			$localExValueUser = $userOptionsLookup->getBoolOption( $user, $localExName );
 
-				// Add a new local exception preference after this one.
-				$cssClasses = [
-					'mw-globalprefs-local-exception',
-					'mw-globalprefs-local-exception-for-' . $name,
+			// Add a new local exception preference after this one.
+			$cssClasses = [
+				'mw-globalprefs-local-exception',
+				'mw-globalprefs-local-exception-for-' . $name,
+			];
+			$section = $def['section'];
+			$secFragment = static::getSectionFragmentId( $section );
+			$labelMsg = $context->msg( 'globalprefs-set-local-exception', [ $secFragment ] );
+			$modifiedPrefs[$localExName] = [
+				'type' => 'toggle',
+				'label-raw' => $labelMsg->parse(),
+				'default' => $localExValueUser,
+				'section' => $section,
+				'cssclass' => implode( ' ', $cssClasses ),
+				'hide-if' => $def['hide-if'] ?? false,
+				'disable-if' => $def['disable-if'] ?? false,
+			];
+			if ( isset( $def['disable-if'] ) ) {
+				$modifiedPrefs[$name]['disable-if'] = [ 'OR', $def['disable-if'],
+					[ '!==', $localExName, '1' ]
 				];
-				$section = $def['section'];
-				$secFragment = static::getSectionFragmentId( $section );
-				$labelMsg = $context->msg( 'globalprefs-set-local-exception', [ $secFragment ] );
-				$modifiedPrefs[$localExName] = [
-					'type' => 'toggle',
-					'label-raw' => $labelMsg->parse(),
-					'default' => $localExValueUser,
-					'cssclass' => implode( ' ', $cssClasses ),
-					'hide-if' => $def['hide-if'] ?? false,
-					'disable-if' => $def['disable-if'] ?? false,
-				];
-				if ( $section !== '' ) {
-					$modifiedPrefs[$localExName]['section'] = $section;
-				}
-				if ( isset( $def['disable-if'] ) ) {
-					$modifiedPrefs[$name]['disable-if'] = [ 'OR', $def['disable-if'],
-						[ '!==', $localExName, '1' ]
-					];
-				} else {
-					$modifiedPrefs[$name]['disable-if'] = [ '!==', $localExName, '1' ];
-				}
+			} else {
+				$modifiedPrefs[$name]['disable-if'] = [ '!==', $localExName, '1' ];
 			}
 		}
 		$preferences = $modifiedPrefs;
@@ -232,6 +227,7 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	) {
 		// Add all corresponding new global fields.
 		$allPrefs = [];
+		$userOptionsLookup = MediaWikiServices::getInstance()->getUserOptionsLookup();
 		foreach ( $preferences as $pref => $def ) {
 			// Ignore unwanted preferences.
 			if ( !$this->isGlobalizablePreference( $pref, $def ) ) {
@@ -258,10 +254,7 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 				$def['disable-if'] = [ '!==', $pref . static::GLOBAL_EXCEPTION_SUFFIX, '1' ];
 			}
 			// If this has a local exception, override it and append a help message to say so.
-			$hasLocalException = MediaWikiServices::getInstance()
-				->getUserOptionsLookup()
-				->getBoolOption( $user, $pref . static::LOCAL_EXCEPTION_SUFFIX );
-			if ( $isGlobal && $hasLocalException ) {
+			if ( $isGlobal && $userOptionsLookup->getBoolOption( $user, $pref . static::LOCAL_EXCEPTION_SUFFIX ) ) {
 				$def['default'] = $this->getOptionFromUser( $pref, $def, $globalPrefs );
 				$help = '';
 				if ( isset( $def['help-message'] ) ) {
@@ -292,8 +285,6 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 		'@phan-var GlobalPreferencesFormOOUI $form';
 
 		$user = $form->getModifiedUser();
-		$hiddenPrefs = $this->options->get( 'HiddenPrefs' );
-		$result = true;
 
 		// Difference from parent: removed 'editmyprivateinfo'
 		if ( !$this->permissionManager->userHasRight( $user, 'editmyoptions' ) ) {
@@ -316,6 +307,7 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 		# If users have saved a value for a preference which has subsequently been disabled
 		# via $wgHiddenPrefs, we don't want to destroy that setting in case the preference
 		# is subsequently re-enabled
+		$hiddenPrefs = $this->options->get( 'HiddenPrefs' );
 		$userOptionsLookup = MediaWikiServices::getInstance()->getUserOptionsLookup();
 		foreach ( $hiddenPrefs as $pref ) {
 			# If the user has not set a non-default value here, the default will be returned
@@ -335,11 +327,11 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 
 		// Setting the actual preference values:
 		$prefs = [];
+		$suffixLen = strlen( self::GLOBAL_EXCEPTION_SUFFIX );
 		foreach ( $formData as $name => $value ) {
 			// If this is the '-global' counterpart to a preference.
 			if ( self::isGlobalPrefName( $name ) && $value === true ) {
 				// Determine the real name of the preference.
-				$suffixLen = strlen( self::GLOBAL_EXCEPTION_SUFFIX );
 				$realName = substr( $name, 0, -$suffixLen );
 				if ( array_key_exists( $realName, $formData ) ) {
 					$prefs[$realName] = $formData[$realName];
@@ -374,7 +366,7 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 		}
 		$this->setGlobalPreferences( $user, $prefs, $form->getContext(), $matricesToClear );
 
-		return $result;
+		return true;
 	}
 
 	/**
@@ -568,16 +560,14 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	}
 
 	/**
-	 * Convenience function to check if we're on the local
-	 * prefs page
+	 * Convenience function to check if we're on the local prefs page.
 	 *
 	 * @param IContextSource|null $context The context to use; if not set main request context is used.
 	 * @return bool
 	 */
 	public function onLocalPrefsPage( $context = null ) {
 		$context = $context ?: RequestContext::getMain();
-		return $context->getTitle()
-			&& $context->getTitle()->isSpecial( 'Preferences' );
+		return $context->getTitle() && $context->getTitle()->isSpecial( 'Preferences' );
 	}
 
 	/**
