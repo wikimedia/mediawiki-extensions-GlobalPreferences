@@ -2,12 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"Bugoslav",
-			"MaGa"
+			"MaGa",
+			"Ponor"
 		]
 	},
 	"globalprefs-desc": "Omogućava suradnicima postavljanje globalnih postavki",
 	"globalprefs-set-local-exception": "Lokalno postavi iznimku za ovu [[Special:GlobalPreferences#$1|globalnu mogućnost]].",
-	"globalprefs-error-header": "Pogrješka",
+	"globalprefs-error-header": "Pogreška",
 	"globalpreferences": "Globalne postavke",
 	"globalprefs-info-label": "Globalne postavke:",
 	"globalprefs-info-link": "Postavi svoje globalne postavke",
