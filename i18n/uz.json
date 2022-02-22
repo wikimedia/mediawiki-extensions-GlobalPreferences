@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Malikxan"
+		]
+	},
+	"globalprefs-desc": "Foydalanuvchilarga global moslamalarini oʻrnatishga izn berish",
+	"globalprefs-set-local-exception": "Bu [[Special:GlobalPreferences#$1|global moslama]] uchun mahalliy istisno oʻrnatish.",
+	"globalprefs-has-local-exception": "Bu global moslama [[Special:Preferences#$1|ushbu vikida mahalliy istisnoga]] ega.",
+	"globalprefs-error-header": "Xato",
+	"globalpreferences": "Global moslamalar",
+	"globalprefs-info-label": "Global moslamalar:",
+	"globalprefs-info-link": "Global moslamalaringizni oʻrnatish",
+	"globalprefs-info-help": "Global moslamalar sahifasi orqali oʻrnatilgan moslamalar barcha vikilarda qoʻllaniladi.",
+	"globalprefs-restoreprefs": "Barcha global moslamalarni olish tashlash (barcha boʻlimlarda)"
+}
