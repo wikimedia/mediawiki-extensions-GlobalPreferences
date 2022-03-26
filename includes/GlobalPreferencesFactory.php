@@ -90,7 +90,6 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 		\HTMLSelectOrOtherField::class,
 		\MediaWiki\Extension\BetaFeatures\HTMLFeatureField::class,
 		\HTMLCheckMatrix::class,
-		\Vector\HTMLForm\Fields\HTMLLegacySkinVersionField::class,
 	];
 
 	/**
