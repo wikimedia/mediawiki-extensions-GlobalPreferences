@@ -582,8 +582,21 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 		array &$modifiedOptions,
 		array $originalOptions
 	) {
-		// nothing to do if autoGlobals is empty
-		if ( !$this->autoGlobals ) {
+		$shouldModify = [];
+		$mergedOptions = array_merge( $originalOptions, $modifiedOptions );
+		foreach ( $this->autoGlobals as $optName ) {
+			// $modifiedOptions can contains options that not actually modified, filter out them
+			if ( array_key_exists( $optName, $modifiedOptions ) &&
+				( !array_key_exists( $optName, $originalOptions ) ||
+				$modifiedOptions[$optName] !== $originalOptions[$optName] ) &&
+				// And skip options that have local exceptions
+				!( $mergedOptions[$optName . static::LOCAL_EXCEPTION_SUFFIX] ?? false )
+			) {
+				$shouldModify[$optName] = $modifiedOptions[$optName];
+			}
+		}
+		// No auto-global options are modified
+		if ( !$shouldModify ) {
 			return;
 		}
 
@@ -591,22 +604,8 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 		$globals = $this->getGlobalPreferencesValues( $user, true );
 
 		if ( $globals ) {
-			// Need this so we can check for newly added options as well as soon-to-be-deleted options
-			$mergedOptions = array_merge( $originalOptions, $modifiedOptions );
-			foreach ( $mergedOptions as $optName => $optVal ) {
-				// Ignore if ends in "-global".
-				if ( static::isGlobalPrefName( $optName ) ) {
-					unset( $modifiedOptions[ $optName ] );
-				}
-
-				$isAutoGlobal = in_array( $optName, $this->autoGlobals );
-				$localExceptionName = $optName . static::LOCAL_EXCEPTION_SUFFIX;
-				$hasLocalException = isset( $mergedOptions[ $localExceptionName ] )
-					&& $mergedOptions[ $localExceptionName ];
-				if ( $isAutoGlobal
-					&& !$hasLocalException
-					&& array_key_exists( $optName, $globals )
-				) {
+			foreach ( $shouldModify as $optName => $optVal ) {
+				if ( array_key_exists( $optName, $globals ) ) {
 					$globals[$optName] = $optVal;
 					$preferencesChanged = true;
 				}
