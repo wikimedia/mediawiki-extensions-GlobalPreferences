@@ -7,6 +7,7 @@ use ApiQuery;
 use ApiQueryBase;
 use ApiResult;
 use MediaWiki\User\UserOptionsLookup;
+use Wikimedia\ParamValidator\ParamValidator;
 
 class ApiQueryGlobalPreferences extends ApiQueryBase {
 	/**
@@ -86,12 +87,12 @@ class ApiQueryGlobalPreferences extends ApiQueryBase {
 	public function getAllowedParams() {
 		return [
 			'prop' => [
-				ApiBase::PARAM_TYPE => [
+				ParamValidator::PARAM_TYPE => [
 					'preferences',
 					'localoverrides',
 				],
-				ApiBase::PARAM_ISMULTI => true,
-				ApiBase::PARAM_DFLT => 'preferences|localoverrides',
+				ParamValidator::PARAM_ISMULTI => true,
+				ParamValidator::PARAM_DEFAULT => 'preferences|localoverrides',
 				ApiBase::PARAM_HELP_MSG_PER_VALUE => [],
 			],
 		];
