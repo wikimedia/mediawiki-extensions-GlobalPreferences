@@ -1,13 +1,16 @@
 {
 	"@metadata": {
 		"authors": [
-			"Artsiom91"
+			"Artsiom91",
+			"Chadyka"
 		]
 	},
+	"globalprefs-error-header": "Памылка",
 	"globalpreferences": "Глабальныя настройкі",
 	"globalprefs-info-label": "Глабальныя настройкі:",
 	"globalprefs-info-link": "Усталяваць глабальныя настройкі",
 	"globalprefs-info-help": "Настройкі, усталяваныя праз старонку глабальных настроек, будуць прымяняцца ва ўсіх вікіпраектах.",
 	"globalprefs-restoreprefs": "Выдаліць усе глабальныя настройкі (ва ўсіх секцыях)",
+	"globalprefs-select-all": "Усталяваць ці зняць усе адзнакі",
 	"globalprefs-col-header": "Выбраць усе настройкі ніжэй як глабальныя"
 }
