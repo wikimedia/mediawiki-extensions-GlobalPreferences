@@ -6,7 +6,8 @@
 			"Revi",
 			"Ykhwong",
 			"아라",
-			"Kwj2772"
+			"Kwj2772",
+			"Bluehill"
 		]
 	},
 	"globalprefs-desc": "사용자가 전역 환경 설정을 설정할 수 있게 합니다",
@@ -15,7 +16,7 @@
 	"tooltip-globalprefs-check-label": "이 설정을 전역적으로 적용하기",
 	"globalprefs-error-header": "오류",
 	"globalprefs-notglobal": "당신의 계정은 전역 계정이 아니므로 전역 설정을 할 수 없습니다.",
-	"globalpreferences": "전역 설정",
+	"globalpreferences": "전역 환경 설정",
 	"globalprefs-info-label": "전역 환경 설정:",
 	"globalprefs-info-link": "전역 설정하기",
 	"globalprefs-info-help": "전역 환경 설정 페이지에서 설정된 환경 설정은 모든 위키에 적용됩니다.",
