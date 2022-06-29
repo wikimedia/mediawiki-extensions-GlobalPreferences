@@ -8,11 +8,12 @@
 			"Rapsar",
 			"Sayginer",
 			"TmY e12",
-			"ToprakM"
+			"ToprakM",
+			"Satirdan kahraman"
 		]
 	},
 	"globalprefs-desc": "Kullanıcıların küresel tercihleri ayarlamasına izin verir",
-	"globalprefs-set-local-exception": "Bu [[Special:GlobalPreferences#$1|küresel tercih]] için yerel bir istisna ayarlayın.",
+	"globalprefs-set-local-exception": "Bu ayarı [[Special:GlobalPreferences#$1|diğer Vikilerde]] değiştirmeksizin sadece bu proje için kullanın.",
 	"globalprefs-has-local-exception": "Bu küresel tercihin [[Special:Preferences#$1|bu vikide yerel istisna]] var.",
 	"tooltip-globalprefs-check-label": "Bu ayarı küresel yap",
 	"globalprefs-error-header": "Hata",
