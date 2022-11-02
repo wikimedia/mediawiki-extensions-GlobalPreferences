@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"ديفيد"
+			"ديفيد",
+			"Meno25"
 		]
 	},
 	"apihelp-globalpreferences-summary": "تغيير التفضيلات العالمية للمستخدم الحالي.",
@@ -29,5 +30,5 @@
 	"apihelp-globalpreferenceoverrides-param-optionvalue": "قيمة التجاوز المحددة بواسطة <var>optionname</var>.",
 	"apihelp-globalpreferenceoverrides-example-reset": "أزل جميع التجاوزات المحلية.",
 	"apihelp-globalpreferenceoverrides-example-change": "قم بتعيين أو تغيير التجاوزات لتفضيلات <kbd>skin</kbd> و<kbd>hideminor</kbd>.",
-	"apiwarn-globally-overridden": "{{PLURAL:$2|الخيار|الخيارات}} $1 تم {{PLURAL:$2|تجاوزه|تجاوزها}} عالميا."
+	"apiwarn-globally-overridden": "{{PLURAL:$2| خيار | خيارات}} $1 {{PLURAL:$2| تم تجاوز | هي}} عالميًا. يمكنك استخدام واجهة برمجة التطبيقات \"globalpreferences\" لتغيير الخيار عالميًا ، أو واجهة برمجة التطبيقات \"globalpreferenceoverrides\" لتعيين تجاوز محلي."
 }
