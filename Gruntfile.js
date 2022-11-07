@@ -22,9 +22,6 @@ module.exports = function ( grunt ) {
 		},
 		// Lint – Styling
 		stylelint: {
-			options: {
-				syntax: 'less'
-			},
 			all: [
 				'resources/**/*.css',
 				'resources/**/*.less'
