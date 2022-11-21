@@ -4,21 +4,22 @@
 			"Gomoko",
 			"Trizek (WMF)",
 			"Wladek92",
-			"McDutchie"
+			"McDutchie",
+			"Verdy p"
 		]
 	},
-	"globalprefs-desc": "Permet aux utilisateurs de fixer des préférences globales",
+	"globalprefs-desc": "Permet aux utilisateurs de définir des préférences globales",
 	"globalprefs-set-local-exception": "Définir une exception locale pour cette [[Special:GlobalPreferences#$1|préférence globale]].",
 	"globalprefs-has-local-exception": "Cette préférence globale a une [[Special:Preferences#$1|exception locale sur ce wiki]].",
 	"tooltip-globalprefs-check-label": "Rendre cette préférence globale",
 	"globalprefs-error-header": "Erreur",
-	"globalprefs-notglobal": "Votre compte n’est pas un compte global et ne peut pas fixer de préférences globales.",
+	"globalprefs-notglobal": "Votre compte n’est pas un compte global et ne peut définir aucune préférence globale.",
 	"globalpreferences": "Préférences globales",
-	"globalprefs-info-label": "Préférences globales :",
+	"globalprefs-info-label": "Préférences globales :",
 	"globalprefs-info-link": "Configurer vos préférences globales",
-	"globalprefs-info-help": "Les préférences définies via la page des préférences globales s'appliqueront à tous les wikis.",
+	"globalprefs-info-help": "Les préférences définies via la page des préférences globales s’appliqueront à tous les wikis.",
 	"globalprefs-reset-intro": "Vous pouvez utiliser cette page pour désactiver toutes les préférences globales sur tous les wikis et retourner à vos préférences locales. Cela n’affectera pas les préférences locales d’un wiki. Cette opération ne pourra pas être annulée.",
 	"globalprefs-restoreprefs": "Enlever toutes les préférences globales (dans toutes les sections)",
-	"globalprefs-select-all": "Basculer toutes les cases à cocher à « activé » ou « désactivé »",
+	"globalprefs-select-all": "Basculer toutes les cases à cocher à « activé » ou « désactivé »",
 	"globalprefs-col-header": "Sélectionner ci-dessous les options qui seront globales"
 }
