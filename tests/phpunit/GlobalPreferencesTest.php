@@ -36,7 +36,7 @@ class GlobalPreferencesTest extends MediaWikiIntegrationTestCase {
 		$gpStorage = new Storage( $user->getId() );
 
 		// No prefs to start with.
-		$this->assertEmpty( $gpStorage->load() );
+		$this->assertSame( [], $gpStorage->load() );
 
 		// Save one, and retrieve it.
 		$gpStorage->save( [ 'testpref' => 'test' ], [ 'testpref' ] );
@@ -58,7 +58,7 @@ class GlobalPreferencesTest extends MediaWikiIntegrationTestCase {
 			$gpStorage->load()
 		);
 		$gpStorage->delete();
-		$this->assertEmpty( $gpStorage->load() );
+		$this->assertSame( [], $gpStorage->load() );
 	}
 
 	public function testUserPreference() {
