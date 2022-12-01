@@ -48,6 +48,7 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 			] ) );
 		$this->setService( 'UserOptionsLookup', $userOptionsLookup );
 
+		/** @var GlobalPreferencesFactory */
 		$factory = $this->getMockBuilder( GlobalPreferencesFactory::class )
 			->disableOriginalConstructor()
 			->onlyMethods( [ 'getGlobalPreferencesValues' ] )
@@ -59,11 +60,14 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 			] );
 
 		$this->setService( 'PreferencesFactory', $factory );
-		/**
-		 * @var ApiOptions $apiOptions
-		 * @var User $user
-		 */
-		Hooks::onApiOptions( $apiOptions, $user, $changes );
+
+		$hooks = new Hooks(
+			$factory,
+			$this->getServiceContainer()->getUserOptionsManager(),
+			$this->getServiceContainer()->getUserOptionsLookup(),
+			$this->getServiceContainer()->getMainConfig()
+		);
+		$hooks->onApiOptions( $apiOptions, $user, $changes, [] );
 	}
 
 	public function provideOnApiOptions() {
