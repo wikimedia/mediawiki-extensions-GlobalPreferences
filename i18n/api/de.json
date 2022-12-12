@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Brettchenweber",
 			"Creepario",
 			"FF-11",
 			"FF11",
@@ -9,9 +10,9 @@
 	},
 	"apihelp-globalpreferences-summary": "Ändert die globalen Einstellungen des aktuellen Benutzers.",
 	"apihelp-globalpreferences-extended-description": "Nur Einstellungen, die auf dem aktuellen Wiki registriert sind, können lokal geändert werden.",
-	"apihelp-globalpreferences-param-reset": "Setzt die globalen Einstellungen zurück. Entfernt alle oder abhängig von dem Wert des Parameters <code>resetkinds</code>, einige Typen von globalen Einstellungen und macht sie nicht mehr global.",
+	"apihelp-globalpreferences-param-reset": "Setzt die globalen Einstellungen zurück. Entfernt alle oder – abhängig von dem Wert des Parameters <code>resetkinds</code> – einige Typen von globalen Einstellungen und macht sie nicht mehr global.",
 	"apihelp-globalpreferences-param-resetkinds": "Liste der Typen von Einstellungen, die zurückgesetzt werden sollen, falls die Option <var>reset</var> festgelegt ist.",
-	"apihelp-globalpreferences-param-change": "Liste von Änderungen, die mit name=wert formatiert sind (z.&nbsp;B. skin=vector). Falls kein Wert angegeben wurde (ohne einem Gleichheitszeichen), z.&nbsp;B. Optionname|AndereOption|…, wird die Option auf ihren Standardwert zurückgesetzt. Falls ein übergebener Wert ein Trennzeichen enthält (<kbd>|</kbd>), verwende den [[Special:ApiHelp/main#main/datatypes|alternativen Mehrfachwerttrenner]] zur korrekten Bedienung.",
+	"apihelp-globalpreferences-param-change": "Liste von Änderungen, die mit name=wert formatiert sind (z.&nbsp;B. skin=vector). Falls kein Wert angegeben wurde (ohne Gleichheitszeichen), z.&nbsp;B. Optionname|AndereOption|…, wird die Option auf ihren Standardwert zurückgesetzt. Falls ein übergebener Wert ein Trennzeichen enthält (<kbd>|</kbd>), verwende den [[Special:ApiHelp/main#main/datatypes|alternativen Mehrfachwerttrenner]] zur korrekten Bedienung.",
 	"apihelp-globalpreferences-param-optionname": "Der Name der Einstellung, die auf den mit <var>optionvalue</var> angegebenen Wert gesetzt werden soll.",
 	"apihelp-globalpreferences-param-optionvalue": "Der Wert für die Option, die durch <var>optionname</var> angegeben ist.",
 	"apihelp-globalpreferences-example-reset-one": "Macht eine einzelne Einstellung nicht-global.",
@@ -25,9 +26,9 @@
 	"apierror-globalpreferences-notglobalized": "Der aktuelle Benutzer ist nicht global.",
 	"apihelp-globalpreferenceoverrides-summary": "Ändert lokale Umgehungen für globale Einstellungen für den aktuellen Benutzer.",
 	"apihelp-globalpreferenceoverrides-extended-description": "Globale Werte für betroffene Einstellungen werden ignoriert.",
-	"apihelp-globalpreferenceoverrides-param-reset": "Setzt die lokalen Überschreibungen zurück. Entfernt alle oder abhängig von dem Wert des Parameters <code>resetkinds</code>, einige Typen von lokalen Überschreibungen und macht sie wieder global.",
+	"apihelp-globalpreferenceoverrides-param-reset": "Setzt die lokalen Überschreibungen zurück. Entfernt alle oder – abhängig von dem Wert des Parameters <code>resetkinds</code> – einige Typen von lokalen Überschreibungen und macht sie wieder global.",
 	"apihelp-globalpreferenceoverrides-param-resetkinds": "Liste der Typen von Umgehungen, die zurückgesetzt werden sollen, wenn die Option <var>reset</var> festgelegt ist.",
-	"apihelp-globalpreferenceoverrides-param-change": "Liste von Änderungen, die mit name=wert formatiert sind (z.&nbsp;B. skin=vector). Falls kein Wert angegeben wurde (ohne einem Gleichheitszeichen), z.&nbsp;B. Optionname|AndereOption|…, wird die Option auf ihren Standardwert zurückgesetzt. Falls ein übergebener Wert ein Trennzeichen enthält (<kbd>|</kbd>), verwende den [[Special:ApiHelp/main#main/datatypes|alternativen Mehrfachwerttrenner]] zur korrekten Bedienung.",
+	"apihelp-globalpreferenceoverrides-param-change": "Liste von Änderungen, die mit name=wert formatiert sind (z.&nbsp;B. skin=vector). Falls kein Wert angegeben wurde (ohne Gleichheitszeichen), z.&nbsp;B. Optionname|AndereOption|…, wird die Option auf ihren Standardwert zurückgesetzt. Falls ein übergebener Wert ein Trennzeichen enthält (<kbd>|</kbd>), verwende den [[Special:ApiHelp/main#main/datatypes|alternativen Mehrfachwerttrenner]] zur korrekten Bedienung.",
 	"apihelp-globalpreferenceoverrides-param-optionname": "Der Name der Umgehung, die auf den Wert festgelegt werden soll, der durch <var>optionvalue</var> angegeben ist.",
 	"apihelp-globalpreferenceoverrides-param-optionvalue": "Der Wert für die Umgehung, angegeben durch <var>optionname</var>.",
 	"apihelp-globalpreferenceoverrides-example-reset": "Entfernt alle lokalen Umgehungen.",
