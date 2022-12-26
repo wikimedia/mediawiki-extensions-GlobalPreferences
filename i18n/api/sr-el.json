@@ -4,5 +4,6 @@
 			"Prevodim"
 		]
 	},
+	"apihelp-globalpreferences-summary": "Promena globalnih podešavanja trenutnog korisnika.",
 	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Globalna podešavanja."
 }
