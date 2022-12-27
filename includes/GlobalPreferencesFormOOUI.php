@@ -33,7 +33,7 @@ class GlobalPreferencesFormOOUI extends PreferencesFormOOUI {
 					'classes' => [ 'globalprefs-section-header' ],
 				]
 			);
-			$this->addHeaderText( $secHeader, $section );
+			$this->addHeaderHtml( $secHeader, $section );
 		}
 
 		return parent::getBody();
