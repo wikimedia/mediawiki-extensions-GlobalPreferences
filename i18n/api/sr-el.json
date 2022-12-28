@@ -4,5 +4,7 @@
 			"Prevodim"
 		]
 	},
-	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Globalna podešavanja."
+	"apihelp-globalpreferences-summary": "Promena globalnih podešavanja trenutnog korisnika.",
+	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Globalna podešavanja.",
+	"apiwarn-globally-overridden": "{{PLURAL:$2|Opcija|Opcije}} $1 {{PLURAL:$2|je globalno zamenjena|su globalno zamenjene}}."
 }

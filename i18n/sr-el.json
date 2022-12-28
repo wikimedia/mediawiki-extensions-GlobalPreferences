@@ -4,8 +4,18 @@
 			"Prevodim"
 		]
 	},
+	"globalprefs-desc": "Omogućava korisnicima da postavljaju globalna podešavanja",
+	"globalprefs-set-local-exception": "Postavi lokalni izuzetak za ovo [[Special:GlobalPreferences#$1|globalno podešavanje]].",
+	"globalprefs-has-local-exception": "Ovo globalno podešavanje ima [[Special:Preferences#$1|lokalni izuzetak na ovom vikiju]].",
+	"tooltip-globalprefs-check-label": "Globalizujte ovo podešavanje",
+	"globalprefs-error-header": "Greška",
+	"globalprefs-notglobal": "Nalog nije globalan i ne mogu se postaviti globalna podešavanja.",
 	"globalpreferences": "Globalna podešavanja",
 	"globalprefs-info-label": "Globalna podešavanja:",
-	"globalprefs-info-link": "Postavi svoja globalna podešavanja",
-	"globalprefs-restoreprefs": "Ukloni sva globalna podešavanja (u svim odeljcima)"
+	"globalprefs-info-link": "Postavi globalna podešavanja",
+	"globalprefs-info-help": "Podešavanja koja su postavljena pomoću stranice globalnih podešavanja primenjivaće se na sve vikije.",
+	"globalprefs-reset-intro": "Možete koristiti ovu stranicu da biste onemogućili sva globalna podešavanja na svim vikijima i vratili se na lokalna podešavanja. Ovo ne utiče na bilo koja lokalna viki podešavanja. Ova radnja se ne može opozvati.",
+	"globalprefs-restoreprefs": "Ukloni sva globalna podešavanja (u svim odeljcima)",
+	"globalprefs-select-all": "Uključite ili isključite sva polja za potvrdu.",
+	"globalprefs-col-header": "Globalizuj sva donja podešavanja"
 }
