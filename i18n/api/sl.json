@@ -1,17 +1,34 @@
 {
 	"@metadata": {
 		"authors": [
-			"Janezdrilc"
+			"Janezdrilc",
+			"Eleassar"
 		]
 	},
 	"apihelp-globalpreferences-summary": "Spremeni globalne nastavitve trenutnega uporabnika.",
+	"apihelp-globalpreferences-extended-description": "Lokalno je mogoče spreminjati samo nastavitve, registrirane za trenutni viki.",
+	"apihelp-globalpreferences-param-reset": "Ponastavitev globalnih nastavitev. Odstrani vse ali, odvisno od vrednosti parametra <code>resetkinds</code>, nekatere vrste globalnih nastavitev in naredi, da niso več globalne.",
+	"apihelp-globalpreferences-param-resetkinds": "Seznam vrst nastavitev za ponastavitev, ko je nastavljena možnost <var>reset</var>.",
+	"apihelp-globalpreferences-param-change": "Seznam sprememb, oblikovan kot ime=vrednost (npr. skin=vector). Če ni podana nobena vrednost (niti enačaj), npr. imenastavitve|druganastavitev|..., bo nastavitev neglobalna. Če katera koli posredovana vrednost vsebuje navpičnico (<kbd>|</kbd>), za pravilno delovanje uporabite [[Special:ApiHelp/main#main/datatypes|alternativno ločilo za več vrednosti]].",
+	"apihelp-globalpreferences-param-optionname": "Ime nastavitve, ki mora biti nastavljeno na vrednost, podano z <var>optionvalue</var>.",
+	"apihelp-globalpreferences-param-optionvalue": "Vrednost za nastavitev, podano z <var>optionname</var>.",
 	"apihelp-globalpreferences-example-reset-one": "Nastavi samo eno nastavitev za neglobalno.",
 	"apihelp-globalpreferences-example-reset": "Nastavi vse nastavitve za neglobalne",
+	"apihelp-globalpreferences-example-change": "Sprememba nastavitev <kbd>skin</kbd> in <kbd>hideminor</kbd>.",
+	"apihelp-query+globalpreferences-summary": "Pridobi globalne nastavitve za trenutnega uporabnika.",
+	"apihelp-query+globalpreferences-extended-description": "Lahko pridobi tako globalne nastavitve kot tudi njihove lokalne preglasitve.",
 	"apihelp-query+globalpreferences-param-prop": "Katere nastavitve so vključene:",
 	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Globalne nastavitve.",
 	"apihelp-query+globalpreferences-paramvalue-prop-localoverrides": "Lokalne nastavitve, ki povozijo globalne.",
 	"apierror-globalpreferences-notglobalized": "Trenutni uporabnik ni globalni.",
 	"apihelp-globalpreferenceoverrides-summary": "Spremeni lokalne prepise za globalne nastavitve trenutnega uporabnika.",
 	"apihelp-globalpreferenceoverrides-extended-description": "Globalne vrednosti zadevajočih nastavitev bodo spregledane.",
-	"apihelp-globalpreferenceoverrides-example-reset": "Odstrani vse lokalne prepise."
+	"apihelp-globalpreferenceoverrides-param-reset": "Ponastavitev lokalnih nastavitev. Odstrani vse ali, odvisno od vrednosti parametra <code>resetkinds</code>, nekatere vrste lokalnih nastavitev in jih znova naredi globalne.",
+	"apihelp-globalpreferenceoverrides-param-resetkinds": "Seznam vrst preglasitev za ponastavitev, ko je nastavljena možnost <var>reset</var>.",
+	"apihelp-globalpreferenceoverrides-param-change": "Seznam sprememb, oblikovan kot ime=vrednost (npr. skin=vector). Če ni podana nobena vrednost (niti enačaj), npr. imenastavitve|druganastavitev|..., bo preglasitev odstranjena. Če katera koli posredovana vrednost vsebuje navpičnico (<kbd>|</kbd>), za pravilno delovanje uporabite [[Special:ApiHelp/main#main/datatypes|alternativno ločilo za več vrednosti]].",
+	"apihelp-globalpreferenceoverrides-param-optionname": "Ime preglasitve, ki mora biti nastavljeno na vrednost, podano z <var>optionvalue</var>.",
+	"apihelp-globalpreferenceoverrides-param-optionvalue": "Vrednost za preglasitev, podano z <var>optionname</var>.",
+	"apihelp-globalpreferenceoverrides-example-reset": "Odstrani vse lokalne prepise.",
+	"apihelp-globalpreferenceoverrides-example-change": "Nastavitev ali sprememba preglasitev za nastavitvi <kbd>skin</kbd> in <kbd>hideminor</kbd>.",
+	"apiwarn-globally-overridden": "{{PLURAL:$2|Možnost $1 je globalno preglašena|Možnosti $1 sta globalno preglašeni|Možnosti $1 so globalno preglašene}}. Uporabite lahko API »globalpreferences«, da spremenite možnost globalno, ali API »globalpreferenceoverrrides«, da nastavite lokalno preglasitev."
 }
