@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Artsiom91",
-			"Chadyka"
+			"Chadyka",
+			"Plaga med"
 		]
 	},
 	"globalprefs-desc": "Дазваляе ўдзельнікам вызначаць глабальныя налады",
@@ -10,7 +11,7 @@
 	"globalprefs-has-local-exception": "Гэтая глабальныя налада мае [[Special:Preferences#$1|лякальнае выключэнне ў гэтай вікі]].",
 	"tooltip-globalprefs-check-label": "Зрабіць гэтую наладу глабальнай",
 	"globalprefs-error-header": "Памылка",
-	"globalprefs-notglobal": "Ваш рахунак не глабальны і не можа вызначаць глабальныя налады.",
+	"globalprefs-notglobal": "Ваш уліковы запіс не глабальны і не можа вызначаць глабальныя параметры.",
 	"globalpreferences": "Глабальныя параметры",
 	"globalprefs-info-label": "Глабальныя параметры:",
 	"globalprefs-info-link": "Усталяваць глабальныя параметры",
