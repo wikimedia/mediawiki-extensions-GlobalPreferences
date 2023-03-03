@@ -24,6 +24,9 @@ class GlobalPreferencesTest extends MediaWikiIntegrationTestCase {
 		$this->setMwGlobals( [
 			'wgCentralIdLookupProvider' => 'local',
 		] );
+
+		// Prevent cache hits in GlobalPreferences\Storage
+		$this->setMainCache( CACHE_NONE );
 	}
 
 	public function testService() {
