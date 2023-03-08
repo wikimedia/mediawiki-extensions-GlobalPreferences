@@ -1,12 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
+			"Pacha Tchernof",
 			"פוילישער"
 		]
 	},
 	"globalprefs-desc": "דערמעגלעכט באנציער צו שטעלן גלאבאלע פרעפערענצן",
 	"tooltip-globalprefs-check-label": "מאכן די דאזיקע איינשטעלונג גלאבאל",
-	"globalprefs-error-header": "גרײַז",
+	"globalprefs-error-header": "פֿעלער",
 	"globalprefs-notglobal": "אייער קאנטע איז נישט קיין גלאבאלע קאנטע און קען נישט שטעלן גלאבאלע פרעפֿערענצן.",
 	"globalpreferences": "גלאבלע פרעפערענצן",
 	"globalprefs-info-label": "גלאבלע פרעפערענצן:",
