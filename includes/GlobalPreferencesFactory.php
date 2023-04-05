@@ -168,6 +168,7 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 			$cssClasses = [
 				'mw-globalprefs-local-exception',
 				'mw-globalprefs-local-exception-for-' . $name,
+				'mw-prefs-search-noindex',
 			];
 			$section = $def['section'];
 			$secFragment = static::getSectionFragmentId( $section );

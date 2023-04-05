@@ -75,6 +75,9 @@
 				"globalprefs-select-all"
 			]
 		},
+		"ext.GlobalPreferences.local": {
+			"scripts": "ext.GlobalPreferences.local.js"
+		},
 		"ext.GlobalPreferences.global-nojs": {
 			"styles": "ext.GlobalPreferences.global-nojs.css"
 		},
