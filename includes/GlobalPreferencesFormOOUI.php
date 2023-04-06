@@ -19,7 +19,7 @@ class GlobalPreferencesFormOOUI extends PreferencesFormOOUI {
 	 * @return string
 	 */
 	public function getBody() {
-		// Add checbox to the top of every section.
+		// Add checkbox to the top of every section.
 		foreach ( $this->getPreferenceSections() as $section ) {
 			$colHeaderText = $this->getMessage( 'globalprefs-col-header' )->text();
 			$secHeader = new \OOUI\FieldLayout(
