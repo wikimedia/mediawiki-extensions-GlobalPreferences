@@ -30,5 +30,5 @@
 	"apihelp-globalpreferenceoverrides-param-optionvalue": "El valor de la preferencia local especificada por <var>optionname</var>.",
 	"apihelp-globalpreferenceoverrides-example-reset": "Borrar todas las preferencias locales.",
 	"apihelp-globalpreferenceoverrides-example-change": "Establecer o cambiar preferencias locales para <kbd>skin</kbd> y <kbd>hideminor</kbd>.",
-	"apiwarn-globally-overridden": "{{PLURAL:$2|La opción|Las opciones}} $1 {{PLURAL:$2|está usando su valor local|están usando sus valores locales}}."
+	"apiwarn-globally-overridden": "{{PLURAL:$2|La opción|Las opciones}} $1 {{PLURAL:$2|está usando su valor global|están usando sus valores globales}}. Puedes usar el módulo API \"globalpreferences\" para cambiar la opción globalmente o bien el módulo API \"globalpreferencesoverrides\" para establecer una excepción local."
 }
