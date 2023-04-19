@@ -15,6 +15,7 @@ namespace GlobalPreferences;
 
 use CentralIdLookup;
 use Exception;
+use Html;
 use IContextSource;
 use LogicException;
 use MapCacheLRU;
@@ -226,9 +227,27 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 		array $globalPrefs,
 		IContextSource $context
 	) {
-		// Add all corresponding new global fields.
 		$allPrefs = [];
 		$userOptionsLookup = MediaWikiServices::getInstance()->getUserOptionsLookup();
+
+		// Add the "Restore all default preferences" link like on Special:Preferences
+		// (the normal preference entry is not globalizable)
+		$allPrefs['restoreprefs'] = [
+			'type' => 'info',
+			'raw' => true,
+			'label-message' => 'prefs-user-restoreprefs-label',
+			'default' => Html::element(
+				'a',
+				[
+					'href' => SpecialPage::getTitleFor( 'GlobalPreferences' )
+						->getSubpage( 'reset' )->getLocalURL()
+				],
+				$context->msg( 'globalprefs-restoreprefs' )->text()
+			),
+			'section' => 'personal/info',
+		];
+
+		// Add all corresponding new global fields.
 		foreach ( $preferences as $pref => $def ) {
 			// Ignore unwanted preferences.
 			if ( !$this->isGlobalizablePreference( $pref, $def ) ) {
@@ -277,6 +296,7 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 
 			$allPrefs[$pref] = $def;
 		}
+
 		return $allPrefs;
 	}
 
