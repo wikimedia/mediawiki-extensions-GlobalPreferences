@@ -1,0 +1,21 @@
+{
+	"@metadata": {
+		"authors": [
+			"Nokeoo"
+		]
+	},
+	"apihelp-globalpreferences-summary": "Keisti dabartinio naudotojo visuotinius nustatymus.",
+	"apihelp-globalpreferences-extended-description": "Vietoje galima keisti tik dabartiniame viki užregistruotas nuostatas.",
+	"apihelp-globalpreferences-param-reset": "Iš naujo nustatyti visuotines nuostatas. Pašalina visas arba, priklausomai nuo parametro <code>resetkinds</code> reikšmės, kai kurių tipų visuotines nuostatas ir padaro jas nebe visuotines.",
+	"apihelp-globalpreferences-param-resetkinds": "Nuostatų, kurias reikia nustatyti iš naujo, kai nustatyta <var>reset</var> parinktis, tipų sąrašas.",
+	"apihelp-globalpreferences-param-optionname": "Nuostatos, kuri turėtų būti nustatyta į reikšmę, kurią suteikia <var>optionvalue</var>, pavadinimas.",
+	"apihelp-globalpreferences-param-optionvalue": "<var>optionname</var> nurodytų nuostatų reikšmė.",
+	"apihelp-globalpreferences-example-reset-one": "Padaryti vieną nuostatą ne visuotinę.",
+	"apihelp-globalpreferences-example-reset": "Padaryti visas nuostatas ne visuotines.",
+	"apihelp-globalpreferences-example-change": "Keisti <kbd>skin</kbd> ir <kbd>hideminor</kbd> nuostatas.",
+	"apihelp-query+globalpreferences-summary": "Gauti visuotines dabartinio naudotojo nuostatas.",
+	"apihelp-query+globalpreferences-extended-description": "Gali gauti ir visuotines nuostatas, ir vietinius pakeitimus.",
+	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Visuotiniai nustatymai.",
+	"apihelp-query+globalpreferences-paramvalue-prop-localoverrides": "Vietiniai visuotinių nuostatų nepaisymai.",
+	"apierror-globalpreferences-notglobalized": "Dabartinis naudotojas vėra visuotinis."
+}

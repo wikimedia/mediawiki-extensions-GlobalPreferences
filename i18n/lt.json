@@ -2,17 +2,22 @@
 	"@metadata": {
 		"authors": [
 			"Manvydasz",
+			"Nokeoo",
 			"Tomasdd"
 		]
 	},
+	"globalprefs-desc": "Leidžia naudotojams nustatyti visuotines nuostatas",
 	"globalprefs-set-local-exception": "Naudoti vietinę išimtį [[Special:GlobalPreferences#$1|visuotiniuose nustatymuose]].",
 	"globalprefs-has-local-exception": "Šis visuotinis nustatymas turi [[Special:Preferences#$1|vietinę išimtį šiame projekte]].",
+	"tooltip-globalprefs-check-label": "Padaryti šį nustatymą visuotinu",
 	"globalprefs-error-header": "Klaida",
+	"globalprefs-notglobal": "Jūsų paskyra nėra visuotinė ir negalima nustatyti visuotinių nuostatų.",
 	"globalpreferences": "Visuotiniai nustatymai",
 	"globalprefs-info-label": "Visuotiniai nustatymai:",
 	"globalprefs-info-link": "Keisti visuotinius nustatymus",
 	"globalprefs-info-help": "Nustatymai iš visuotinių nustatymų puslapio bus taikomi visiems projektams.",
 	"globalprefs-reset-intro": "Galite pasinaudoti šiuo puslapiu norėdami išjungti visus visuotinius nustatymus visuose projektuose ir sugrąžinti jūsų vietinius nustatymus. Tai nepakeis jokių vietinių nustatymų. Tai nėra atšaukiama.",
 	"globalprefs-restoreprefs": "Pašalinti visus visuotinus nustatymus (visose skyriuose)",
+	"globalprefs-select-all": "Pažymėti ar atžymėti visus laukelius",
 	"globalprefs-col-header": "Naudoti nurodytus nustatymus visuotinai"
 }
