@@ -11,7 +11,7 @@
 	"descriptionmsg": "globalprefs-desc",
 	"type": "specialpage",
 	"requires": {
-		"MediaWiki": ">= 1.38.0"
+		"MediaWiki": ">= 1.40.0"
 	},
 	"config": {
 		"GlobalPreferencesDB": {
@@ -49,7 +49,12 @@
 	"HookHandlers": {
 		"Hooks": {
 			"class": "GlobalPreferences\\Hooks",
-			"services": [ "PreferencesFactory", "UserOptionsManager", "UserOptionsLookup", "MainConfig" ]
+			"services": [
+				"PreferencesFactory",
+				"UserOptionsManager",
+				"UserOptionsLookup",
+				"MainConfig"
+			]
 		},
 		"MediaWikiServices": {
 			"class": "GlobalPreferences\\HookHandler\\MediaWikiServicesHookHandler"

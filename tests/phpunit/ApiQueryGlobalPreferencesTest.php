@@ -4,9 +4,9 @@ namespace GlobalPreferences\Test;
 
 use ApiMain;
 use DerivativeContext;
-use FauxRequest;
 use GlobalPreferences\ApiQueryGlobalPreferences;
 use GlobalPreferences\GlobalPreferencesFactory;
+use MediaWiki\Request\FauxRequest;
 use MediaWiki\User\UserOptionsLookup;
 use MediaWikiIntegrationTestCase;
 use RequestContext;
