@@ -70,7 +70,7 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 		$hooks->onApiOptions( $apiOptions, $user, $changes, [] );
 	}
 
-	public function provideOnApiOptions() {
+	public static function provideOnApiOptions() {
 		return [
 			[ [ 'blah' => 'whatever' ], false ],
 			[ [], false ],

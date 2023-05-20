@@ -80,7 +80,7 @@ class ApiQueryGlobalPreferencesTest extends MediaWikiIntegrationTestCase {
 		self::assertEquals( $expected, self::filterApiResult( $result ) );
 	}
 
-	public function provideApi() {
+	public static function provideApi() {
 		return [
 			[
 				[],

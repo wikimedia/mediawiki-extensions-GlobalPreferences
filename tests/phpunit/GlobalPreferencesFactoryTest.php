@@ -138,7 +138,7 @@ class GlobalPreferencesFactoryTest extends MediaWikiIntegrationTestCase {
 		self::assertEquals( $expected !== false, $status->isGood() );
 	}
 
-	public function provideFormSaving() {
+	public static function provideFormSaving() {
 		return [
 			0 => [
 				[],

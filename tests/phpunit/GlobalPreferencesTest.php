@@ -157,7 +157,7 @@ class GlobalPreferencesTest extends MediaWikiIntegrationTestCase {
 		$this->assertEquals( $expected, $result, $message );
 	}
 
-	public function provideIsGlobalizablePreference() {
+	public static function provideIsGlobalizablePreference() {
 		return [
 			// message, expected, name, info
 			[
