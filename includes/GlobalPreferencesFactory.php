@@ -18,6 +18,7 @@ use Exception;
 use IContextSource;
 use LogicException;
 use MapCacheLRU;
+use MediaWiki\Language\RawMessage;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Preferences\DefaultPreferencesFactory;
 use MediaWiki\User\UserIdentity;
@@ -256,18 +257,22 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 			// If this has a local exception, override it and append a help message to say so.
 			if ( $isGlobal && $userOptionsLookup->getBoolOption( $user, $pref . static::LOCAL_EXCEPTION_SUFFIX ) ) {
 				$def['default'] = $this->getOptionFromUser( $pref, $def, $globalPrefs );
-				$help = '';
-				if ( isset( $def['help-message'] ) ) {
-					$help .= $context->msg( $def['help-message'] )->parse() . '<br />';
-				} elseif ( isset( $def['help'] ) ) {
-					$help .= $def['help'] . '<br />';
-				}
 				// Create a link to the relevant section of GlobalPreferences.
 				$secFragment = static::getSectionFragmentId( $def['section'] );
-				// Merge the help texts.
-				$helpMsg = $context->msg( 'globalprefs-has-local-exception', [ $secFragment ] );
-				unset( $def['help-message'] );
-				$def['help'] = $help . $helpMsg->parse();
+				$helpMsg = [ 'globalprefs-has-local-exception', $secFragment ];
+				// Merge the help messages.
+				if ( isset( $def['help'] ) ) {
+					$def['help-messages'] = [ new RawMessage( $def['help'] . '<br />' ), $helpMsg ];
+					unset( $def['help'] );
+				} elseif ( isset( $def['help-message'] ) ) {
+					$def['help-messages'] = [ $def['help-message'], new RawMessage( '<br />' ), $helpMsg ];
+					unset( $def['help-message'] );
+				} elseif ( isset( $def['help-messages'] ) ) {
+					$def['help-messages'][] = new RawMessage( '<br />' );
+					$def['help-messages'][] = $helpMsg;
+				} else {
+					$def['help-message'] = $helpMsg;
+				}
 			}
 
 			$allPrefs[$pref] = $def;
