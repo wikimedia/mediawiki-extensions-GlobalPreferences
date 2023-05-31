@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"NMW03"
+		]
+	},
+	"apihelp-globalpreferences-summary": "Cari istifadəçinin qlobal nizamlamalarını dəyişin.",
+	"apihelp-globalpreferences-extended-description": "Yalnız cari viki üçün qeydiyyatdan keçmiş nizamlamalar lokal olaraq dəyişdirilə bilər."
+}
