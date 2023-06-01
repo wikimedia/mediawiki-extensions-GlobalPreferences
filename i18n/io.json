@@ -8,5 +8,7 @@
 	"globalpreferences": "Globala preferaji",
 	"globalprefs-info-label": "Globala preferaji:",
 	"globalprefs-info-link": "Figurizar vua globala preferaji",
-	"globalprefs-info-help": "La preferaji establisata globale aplikesos por omna Wiki."
+	"globalprefs-info-help": "La preferaji establisata globale aplikesos por omna Wiki.",
+	"globalprefs-restoreprefs": "Removar omna globala preferaji, omnaloke",
+	"globalprefs-col-header": "Selektez adinfre opcioni qui divenus globala (t.e., uzesos en omna Wikipedii)"
 }
