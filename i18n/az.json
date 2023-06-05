@@ -7,9 +7,18 @@
 			"Neriman2003"
 		]
 	},
+	"globalprefs-desc": "İstifadəçilərə qlobal nizamlamaları təyin etməyə imkan verir",
 	"globalprefs-set-local-exception": "Bu [[Special:GlobalPreferences#$1|qlobal parametr]] üçün yerli bir istisna təyin edin.",
+	"globalprefs-has-local-exception": "Bu qlobal nizamlamanın [[Special:Preferences#$1|bu vikidə lokal istisnası]] var.",
+	"tooltip-globalprefs-check-label": "Bu parametri qlobal edin",
+	"globalprefs-error-header": "Xəta",
+	"globalprefs-notglobal": "Hesabınız qlobal hesab deyil və qlobal nizamlamalar təyin edə bilməz.",
 	"globalpreferences": "Qlobal nizamlamalar",
 	"globalprefs-info-label": "Qlobal nizamlamalar:",
 	"globalprefs-info-link": "Qlobal nizamlamalarınızı təyin edin",
-	"globalprefs-info-help": "Qlobal nizamlamalar səhifəsində etdiyiniz seçimlər bütün vikilərdə tətbiq ediləcək."
+	"globalprefs-info-help": "Qlobal nizamlamalar səhifəsində etdiyiniz seçimlər bütün vikilərdə tətbiq ediləcək.",
+	"globalprefs-reset-intro": "Siz bu səhifədən istifadə edərək bütün vikilərdə bütün qlobal nizamlamaları söndürə və lokal nizamlamalarınıza qayıda bilərsiniz. Bu, heç bir lokal viki nizamlamalarına təsir etmir. Bu geri qaytarıla bilməz.",
+	"globalprefs-restoreprefs": "Bütün qlobal nizamlamaları sil (bütün bölmələrdə)",
+	"globalprefs-select-all": "Bütün qutucuqları yandır və ya söndür",
+	"globalprefs-col-header": "Qlobal olması üçün aşağıdakı parametrləri seçin"
 }
