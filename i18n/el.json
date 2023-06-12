@@ -2,9 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Geraki",
-			"Αντιγόνη"
+			"Αντιγόνη",
+			"Gpbiza"
 		]
 	},
+	"globalprefs-desc": "Επιτρέπει στους χρήστες να ορίζουν καθολικές προτιμήσεις",
 	"globalprefs-set-local-exception": "Ορίστε μια τοπική εξαίρεση για αυτή την [[Special:GlobalPreferences#$1|καθολική προτίμηση]].",
 	"globalpreferences": "Καθολικές προτιμήσεις",
 	"globalprefs-info-label": "Καθολικές προτιμήσεις:",
