@@ -443,7 +443,7 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	 * @return bool
 	 */
 	public static function isGlobalPrefName( $name ) {
-		return static::strEndsWith( $name, static::GLOBAL_EXCEPTION_SUFFIX );
+		return str_ends_with( $name, static::GLOBAL_EXCEPTION_SUFFIX );
 	}
 
 	/**
@@ -452,19 +452,7 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	 * @return bool
 	 */
 	public static function isLocalPrefName( $name ) {
-		return static::strEndsWith( $name, static::LOCAL_EXCEPTION_SUFFIX );
-	}
-
-	/**
-	 * A convenience function to check a string to see if it ends in a given suffix.
-	 * @todo Replace with str_ends_with() when PHP 7 support was dropped.
-	 * @param string $name The name to check.
-	 * @param string $suffix The suffix to check for.
-	 * @return bool
-	 */
-	protected static function strEndsWith( $name, $suffix ) {
-		$nameSuffix = substr( $name, -strlen( $suffix ) );
-		return ( $nameSuffix === $suffix );
+		return str_ends_with( $name, static::LOCAL_EXCEPTION_SUFFIX );
 	}
 
 	/**
