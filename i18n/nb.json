@@ -17,5 +17,5 @@
 	"globalprefs-reset-intro": "Du ka bruke denne siden for å slå av alle globale innstillinger på alle wikier og komme tilbake til dine lokale innstillinger.\nDette påvirker ikke lokale innstillinger på enkeltwikiene. Dette kan ikke gjøres om.",
 	"globalprefs-restoreprefs": "Fjern alle globale innstillinger (i alle seksjoner)",
 	"globalprefs-select-all": "Slå alle avmerkingsbokser på eller av",
-	"globalprefs-col-header": "Velg hvilke innstillinger som skal være globale"
+	"globalprefs-col-header": "Velg at innstillingene nedenfor skal være globale"
 }
