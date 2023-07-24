@@ -1,8 +1,0 @@
-{
-	"@metadata": {
-		"authors": [
-			"Piano1forte2"
-		]
-	},
-	"apiwarn-globally-overridden": "{{PLURAL:$2|Option|Options}} $1 {{PLURAL:$2|is|are}} globally overridden. You can use the 'globalpreferences' API to change the option globally, or the 'globalpreferenceoverrides' API to set a local override."
-}
