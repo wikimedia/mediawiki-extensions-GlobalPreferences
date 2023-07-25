@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Winston Sung"
+		]
+	},
+	"globalprefs-error-header": "錯",
+	"globalpreferences": "全域喜好設定",
+	"globalprefs-info-label": "全域喜好設定：",
+	"globalprefs-info-help": "喺全域喜好設定揀咗嘅設定會喺所有維基通用。"
+}
