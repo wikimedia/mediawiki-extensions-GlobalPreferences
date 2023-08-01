@@ -183,7 +183,7 @@ class Storage {
 			$domainId = false;
 		}
 
-		return $lbf->getMainLB( $domainId )->getConnectionRef( $type, [], $domainId );
+		return $lbf->getMainLB( $domainId )->getConnection( $type, [], $domainId );
 	}
 
 	/**
