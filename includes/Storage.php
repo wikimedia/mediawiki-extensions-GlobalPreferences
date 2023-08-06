@@ -6,9 +6,9 @@
 
 namespace GlobalPreferences;
 
-use IExpiringStore;
 use MediaWiki\MediaWikiServices;
 use WANObjectCache;
+use Wikimedia\LightweightObjectStore\ExpirationAwareness;
 use Wikimedia\Rdbms\IDatabase;
 
 /**
@@ -24,7 +24,7 @@ class Storage {
 	private const CACHE_VERSION = 1;
 
 	/** Cache lifetime */
-	private const CACHE_TTL = IExpiringStore::TTL_WEEK;
+	private const CACHE_TTL = ExpirationAwareness::TTL_WEEK;
 
 	/** Instructs preference loading code to load the preferences from cache directly */
 	public const SKIP_CACHE = true;
