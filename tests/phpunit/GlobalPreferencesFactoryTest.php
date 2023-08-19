@@ -7,6 +7,7 @@ use GlobalPreferences\Storage;
 use HTMLCheckMatrix;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Request\FauxRequest;
 use MediaWikiIntegrationTestCase;
 use User;
 use Wikimedia\TestingAccessWrapper;
@@ -122,7 +123,7 @@ class GlobalPreferencesFactoryTest extends MediaWikiIntegrationTestCase {
 		foreach ( $formData as $name => $value ) {
 			$postData["wp{$name}"] = $value;
 		}
-		$request = new \FauxRequest( $postData, true );
+		$request = new FauxRequest( $postData, true );
 		/** @var GlobalPreferencesFactory $factory */
 		/** @var User $user */
 		$context = new \DerivativeContext( \RequestContext::getMain() );
