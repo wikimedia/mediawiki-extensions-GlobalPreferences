@@ -5,9 +5,9 @@ namespace GlobalPreferences\Test;
 use GlobalPreferences\GlobalPreferencesFactory;
 use GlobalPreferences\Storage;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 use MediaWikiIntegrationTestCase;
 use RequestContext;
-use Title;
 use Wikimedia\TestingAccessWrapper;
 
 /**
