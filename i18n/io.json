@@ -4,6 +4,7 @@
 			"Joao Xavier"
 		]
 	},
+	"globalprefs-set-local-exception": "Krear lokal eceptajo por ca [[Special:GlobalPreferences#$1|globala preferajo]].",
 	"globalprefs-error-header": "Eroro",
 	"globalpreferences": "Globala preferaji",
 	"globalprefs-info-label": "Globala preferaji:",
