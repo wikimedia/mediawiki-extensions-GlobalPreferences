@@ -2,13 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"Fryed-peach",
+			"Kokage si",
 			"Omotecho",
 			"Shirayuki",
 			"Yusuke1109"
 		]
 	},
 	"globalprefs-desc": "利用者がグローバル個人設定を使用できるようにする",
-	"globalprefs-set-local-exception": "この[[Special:GlobalPreferences#$1|グローバル設定]]に対してローカルの例外を設定します。",
+	"globalprefs-set-local-exception": "この[[Special:GlobalPreferences#$1|グローバル個人設定]]に対してローカルの例外を設定します。",
 	"globalprefs-has-local-exception": "このグローバル設定には、[[Special:Preferences#$1|このウィキにローカルの例外]]があります。",
 	"tooltip-globalprefs-check-label": "この設定をグローバルにする",
 	"globalprefs-error-header": "エラー",
@@ -18,7 +19,7 @@
 	"globalprefs-info-link": "グローバル個人設定の閲覧と変更",
 	"globalprefs-info-help": "グローバル個人設定ページで設定した設定はすべてのウィキに適用されます。",
 	"globalprefs-reset-intro": "このページの操作により、すべてのウィキでグローバルな個人設定を無効にして、ローカルの個人設定を有効に戻します。ローカルのウィキの個人設定はこの操作の影響を受けません。この操作は取り消せません。",
-	"globalprefs-restoreprefs": "すべてグローバル設定を削除する (すべての節について)",
+	"globalprefs-restoreprefs": "すべてのグローバル個人設定を除去する (すべての節について)",
 	"globalprefs-select-all": "すべてのチェックボックスをオンまたはオフに切り替えます",
 	"globalprefs-col-header": "以下のオプションをグローバルにする"
 }
