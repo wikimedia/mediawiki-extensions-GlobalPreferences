@@ -159,8 +159,11 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 		$userOptionsLookup = MediaWikiServices::getInstance()->getUserOptionsLookup();
 		foreach ( $preferences as $name => $def ) {
 			$modifiedPrefs[$name] = $def;
-			// If this is an api preference or hasn't been set globally.
-			if ( !isset( $def['section'] ) || !in_array( $name, $globalPrefNames ) ) {
+			// If this is not globalizable, or hasn't been set globally.
+			if ( !isset( $def['section'] )
+				|| !in_array( $name, $globalPrefNames )
+				|| !$this->isGlobalizablePreference( $name, $def )
+			) {
 				continue;
 			}
 			$localExName = $name . static::LOCAL_EXCEPTION_SUFFIX;
