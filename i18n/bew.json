@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"Bangrapip"
+		]
+	},
+	"globalprefs-desc": "Mungkinin pemaké nyetèl pengaturan global",
+	"tooltip-globalprefs-check-label": "Keja ni pengaturan global",
+	"globalprefs-error-header": "Kengabluan",
+	"globalprefs-notglobal": "Lu punya rèkening bukan rèkening global èn kaga' bisa nyetèl pengaturan global.",
+	"globalpreferences": "Pengaturan global",
+	"globalprefs-info-label": "Pengaturan global:",
+	"globalprefs-info-link": "Setèl lu punya pengaturan global",
+	"globalprefs-info-help": "Pengaturan nyang disetèl liwat halaman pengaturan global bakal diterepin ke semua wiki.",
+	"globalprefs-restoreprefs": "Buang semua pengaturan global (di semua bagèan)",
+	"globalprefs-select-all": "Cetèkin semua kotak contrèng nyala apa mati",
+	"globalprefs-col-header": "Pilih ni pilihan di bawah bakal jadi global"
+}
