@@ -3,7 +3,8 @@
 		"authors": [
 			"WikiPhoenix",
 			"JRyan",
-			"Sabelöga"
+			"Sabelöga",
+			"Amire80"
 		]
 	},
 	"apihelp-globalpreferences-summary": "Ändra globala inställningar för nuvarande användare.",
@@ -26,7 +27,7 @@
 	"apihelp-globalpreferenceoverrides-extended-description": "Globala värden för påverkade inställningar kommer att ignoreras",
 	"apihelp-globalpreferenceoverrides-param-reset": "Återställ lokala åsidosättanden. Tar bort alla, eller, beroende på värdet i parametern <code>resetkinds</code>, vissa typer av lokala åsidosättanden och gör dem globala igen.",
 	"apihelp-globalpreferenceoverrides-param-resetkinds": "Lista över typer av åsidosättanden att återställa när alternativet <var>reset</var> anges.",
-	"apihelp-globalpreferenceoverrides-param-change": "Lista över ändringar, formaterade namn=värde (t.ex. skin=vector). Om inget värde anges (inte ens som likhetstecken), t.ex., preferencename|otherpreference|..., kommer åsidosättandet tas bort. Om något godkänt värde innehåller ett vertikalstreck (<kbd>|</kbd>), använd  [[Special:ApiHelp/main#main/datatypes|alternativa avskiljare för flera värden]] för rätt åtgärd.",
+	"apihelp-globalpreferenceoverrides-param-change": "Lista över ändringar, formaterade namn=värde (t.ex. skin=vector). Om inget värde anges (inte ens som likhetstecken), t.ex., preferencename|otherpreference|..., kommer åsidosättandet tas bort. Om något godkänt värde innehåller ett vertikalstreck (<kbd>|</kbd>), använd [[Special:ApiHelp/main#main/datatypes|alternativa avskiljare för flera värden]] för rätt åtgärd.",
 	"apihelp-globalpreferenceoverrides-param-optionname": "Namnet på åsidosättandet som bör ändras till värdet som anges av <var>optionvalue</var>.",
 	"apihelp-globalpreferenceoverrides-param-optionvalue": "Värdet för åsidosättandet som specificeras av <var>optionname</var>.",
 	"apihelp-globalpreferenceoverrides-example-reset": "Ta bort alla lokala åsidosättanden.",
