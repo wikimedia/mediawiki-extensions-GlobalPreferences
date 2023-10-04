@@ -450,6 +450,13 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 			return false;
 		}
 
+		// Allow explicitly define if a preference can be globalized,
+		// especially useful for custom field classes.
+		// TODO: Deprecate 'noglobal' in favour of this param.
+		if ( isset( $info['canglobal'] ) ) {
+			return (bool)$info['canglobal'];
+		}
+
 		$isAllowedType = isset( $info['type'] )
 			&& !in_array( $info['type'], $this->typesPrevented )
 			&& !in_array( $name, $this->disallowedPreferences );
