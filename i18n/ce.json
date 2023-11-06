@@ -5,11 +5,14 @@
 		]
 	},
 	"globalprefs-desc": "Декъашхошна аьтто бо глобалан нисдаран гӀирс нисбан",
+	"tooltip-globalprefs-check-label": "ХӀара нисдаран гӀирс глобалан бе",
 	"globalprefs-error-header": "ГӀалат",
+	"globalprefs-notglobal": "Хьан аккаунт — глобалан йац, цундела цуьна глобалан нисдаран дӀахӀоттойла дац.",
 	"globalpreferences": "Глобалан нисдаран гӀирс",
 	"globalprefs-info-label": "Глобалан нисдаран гӀирс:",
 	"globalprefs-info-link": "Глобалан нисдаран гӀирс дӀахӀоттабе",
 	"globalprefs-info-help": "Глобалан нисдаран гӀирсан агӀонехь хӀиттинарш лелор ду массо викешкахь.",
 	"globalprefs-restoreprefs": "ДӀабаккха берриге глобалан нисдаран гӀирс (массо секцешкахь)",
+	"globalprefs-select-all": "Йерриге байракхаш латайе йа дӀайайъа",
 	"globalprefs-col-header": "Лахара берриге нисдаран гӀирс глобалан санна харжа"
 }
