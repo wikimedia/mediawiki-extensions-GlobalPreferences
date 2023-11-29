@@ -4,7 +4,7 @@ namespace GlobalPreferences;
 
 use ApiMain;
 use ApiOptions;
-use MediaWiki\User\UserOptionsManager;
+use MediaWiki\User\Options\UserOptionsManager;
 
 class ApiGlobalPreferenceOverrides extends ApiOptions {
 
