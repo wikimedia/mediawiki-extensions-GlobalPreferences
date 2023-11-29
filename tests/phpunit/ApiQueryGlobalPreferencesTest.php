@@ -7,7 +7,7 @@ use DerivativeContext;
 use GlobalPreferences\ApiQueryGlobalPreferences;
 use GlobalPreferences\GlobalPreferencesFactory;
 use MediaWiki\Request\FauxRequest;
-use MediaWiki\User\UserOptionsLookup;
+use MediaWiki\User\Options\UserOptionsLookup;
 use MediaWikiIntegrationTestCase;
 use RequestContext;
 use User;

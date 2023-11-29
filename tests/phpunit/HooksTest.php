@@ -5,7 +5,7 @@ namespace GlobalPreferences\Test;
 use ApiOptions;
 use GlobalPreferences\GlobalPreferencesFactory;
 use GlobalPreferences\Hooks;
-use MediaWiki\User\UserOptionsLookup;
+use MediaWiki\User\Options\UserOptionsLookup;
 use MediaWikiIntegrationTestCase;
 use User;
 

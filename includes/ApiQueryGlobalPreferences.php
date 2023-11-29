@@ -6,7 +6,7 @@ use ApiBase;
 use ApiQuery;
 use ApiQueryBase;
 use ApiResult;
-use MediaWiki\User\UserOptionsLookup;
+use MediaWiki\User\Options\UserOptionsLookup;
 use Wikimedia\ParamValidator\ParamValidator;
 
 class ApiQueryGlobalPreferences extends ApiQueryBase {
