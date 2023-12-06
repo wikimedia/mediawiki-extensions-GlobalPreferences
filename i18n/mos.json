@@ -1,0 +1,21 @@
+{
+	"@metadata": {
+		"authors": [
+			"Soumaya"
+		]
+	},
+	"globalprefs-desc": "Sõsdb tõe n yãka b sẽn dat n maan bũmb ninsã",
+	"globalprefs-set-local-exception": "Yãk-y n yãk y sẽn yaa tẽn-tẽngã sẽn pa rat n maan bũmb ning n na n maan bũmb ningã.",
+	"globalprefs-has-local-exception": "Sẽn yɩɩd fãa, b sẽn dat n wilg tɩ b pa mi b sẽn dat tɩ b maan bũmb ninsã, b pa tõe n wilg tɩ d pa mi b yell ye.",
+	"tooltip-globalprefs-check-label": "Maan-y tɩ b yel-kãngã yɩ dũniyã gill zugu",
+	"globalprefs-error-header": "Yʋsg",
+	"globalprefs-notglobal": "Fo ka tar ligd dũniyã gill zug ye, la fo pa tõe n yãk bũmb ning sẽn noom dũniyã gill zug n dat n maan ye.",
+	"globalpreferences": "Tẽns fãa sẽn dat n maan bũmb ninsã",
+	"globalprefs-info-label": "Tẽns fãa sẽn dat n maan bũmb ninsã:",
+	"globalprefs-info-link": "Yãk y sẽn dat n maan bũmb ninsã",
+	"globalprefs-info-help": "Sẽn dat n bãng n bãng n paasã yaa bũmb ning sẽn be b sẽn dat n bãng tɩ b pa tõe n bãng n maan bũmb ning sẽn pa zems ne b sẽn datã.",
+	"globalprefs-reset-intro": "Y tõe n tũsa seb-kãngã n yiis y sẽn dat n maan bũmb ninsã fãa, n lebg n wa y sẽn dat tɩ y maan bũmb ninsã. Woto pa namsdẽ wiki wã sẽn dat n maan to-to ye. Woto pa tõe n yɩ zaalem ye.",
+	"globalprefs-restoreprefs": "Yãk-y n yiisd sõss nins fãa sẽn yaa globalã (sẽn be zĩiga fãa pʋgẽ)",
+	"globalprefs-select-all": "Yãk- y sõssã fãa n yãk n yãk- b n yãk- ba",
+	"globalprefs-col-header": "Sõng-y n yãk sõss nins sẽn be kaorengã pʋgẽ wã"
+}
