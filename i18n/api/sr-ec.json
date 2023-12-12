@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"BadDog"
+			"BadDog",
+			"Milicevic01"
 		]
 	},
 	"apihelp-globalpreferences-summary": "Промена глобалних подешавања тренутног корисника.",
 	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Глобална подешавања.",
-	"apiwarn-globally-overridden": "{{PLURAL:$2|Опција|Опције}} $1 {{PLURAL:$2|је глобално замењена|су глобално замењене}}."
+	"apiwarn-globally-overridden": "{{PLURAL:$2|Опција|Опције}} $1 {{PLURAL:$2|је глобално преиначена|су глобално преиначене}}. Можете искористити „globalpreferences” API да преиначите опцију глобално или „globalpreferenceoverrides” API да поставите локално преиначење."
 }
