@@ -7,10 +7,18 @@
 			"Y-M D"
 		]
 	},
+	"globalprefs-desc": "Aotren a ra an implijerien da spisaat penndibaboù hollek",
+	"globalprefs-set-local-exception": "Spisaat un nemedenn lec’hel d’ar [[Special:GlobalPreferences#$1|penndibab hollek]]-mañ.",
+	"globalprefs-has-local-exception": "Un [[Special:Preferences#$1|nemedenn lec’hel er wiki-mañ]] ez eus d’ar penndibab hollek-mañ.",
+	"tooltip-globalprefs-check-label": "Lakaat ar penndibab-mañ hollek",
 	"globalprefs-error-header": "Fazi",
+	"globalprefs-notglobal": "Ho kont n’eo ket ur gont hollek ha ne c’hall ket spisaat penndibaboù hollek.",
 	"globalpreferences": "Penndibaboù hollek",
 	"globalprefs-info-label": "Penndibaboù hollek :",
 	"globalprefs-info-link": "Lakaat ho penndibaboù hollek",
 	"globalprefs-info-help": "Talvezout a raio ar penndibaboù spisaet e pajenn ar penndibaboù hollek en holl wikioù.",
-	"globalprefs-select-all": "Diuzañ pep tra"
+	"globalprefs-reset-intro": "Gant ar bajenn-mañ e c’hallit diweredekaat an holl penndibaboù hollek en holl wikioù ha distreiñ d’ho penndibaboù lec’hel. N’eus efed ebet war ar penndibaboù lec’hel. Ne c’hall ket bezañ disc’hraet.",
+	"globalprefs-restoreprefs": "Dilemel an holl penndibaboù hollek (en holl rannoù)",
+	"globalprefs-select-all": "Gwintañ an holl logoù kochet pe digochet",
+	"globalprefs-col-header": "Diuzañ dibaboù a-is da vezañ hollek"
 }
