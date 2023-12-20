@@ -1,12 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Soumaya"
+			"Soumaya",
+			"Raizkgh"
 		]
 	},
 	"globalprefs-desc": "Sõsdb tõe n yãka b sẽn dat n maan bũmb ninsã",
-	"globalprefs-set-local-exception": "Yãk-y n yãk y sẽn yaa tẽn-tẽngã sẽn pa rat n maan bũmb ning n na n maan bũmb ningã.",
-	"globalprefs-has-local-exception": "Sẽn yɩɩd fãa, b sẽn dat n wilg tɩ b pa mi b sẽn dat tɩ b maan bũmb ninsã, b pa tõe n wilg tɩ d pa mi b yell ye.",
+	"globalprefs-set-local-exception": "Yãk-y n yãk y sẽn yaa tẽn-tẽngã sẽn pa rat n maan bũmb ning n na n maan bũmb ningã [[Special:GlobalPreferences#$1|global preference]].",
+	"globalprefs-has-local-exception": "Sẽn yɩɩd fãa, b sẽn dat n wilg tɩ b pa mi b sẽn dat tɩ b maan bũmb ninsã, b pa tõe n wilg tɩ d pa mi b yell ye [[Special:Preferences#$1|local exception on this wiki]].",
 	"tooltip-globalprefs-check-label": "Maan-y tɩ b yel-kãngã yɩ dũniyã gill zugu",
 	"globalprefs-error-header": "Yʋsg",
 	"globalprefs-notglobal": "Fo ka tar ligd dũniyã gill zug ye, la fo pa tõe n yãk bũmb ning sẽn noom dũniyã gill zug n dat n maan ye.",
