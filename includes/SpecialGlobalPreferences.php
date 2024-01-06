@@ -7,10 +7,10 @@ use ErrorPageError;
 use HTMLForm;
 use IContextSource;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Specials\SpecialPreferences;
+use MediaWiki\User\User;
 use PermissionsError;
 use PreferencesFormOOUI;
-use SpecialPreferences;
-use User;
 use UserNotLoggedIn;
 
 class SpecialGlobalPreferences extends SpecialPreferences {

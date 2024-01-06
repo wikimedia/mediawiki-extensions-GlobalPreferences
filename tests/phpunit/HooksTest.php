@@ -6,8 +6,8 @@ use ApiOptions;
 use GlobalPreferences\GlobalPreferencesFactory;
 use GlobalPreferences\Hooks;
 use MediaWiki\User\Options\UserOptionsLookup;
+use MediaWiki\User\User;
 use MediaWikiIntegrationTestCase;
-use User;
 
 /**
  * @group GlobalPreferences

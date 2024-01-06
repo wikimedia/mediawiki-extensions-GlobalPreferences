@@ -3,23 +3,23 @@
 namespace GlobalPreferences;
 
 use ApiOptions;
-use Config;
 use HTMLForm;
 use MediaWiki\Api\Hook\ApiOptionsHook;
+use MediaWiki\Config\Config;
 use MediaWiki\Hook\BeforePageDisplayHook;
 use MediaWiki\Hook\DeleteUnknownPreferencesHook;
 use MediaWiki\Logger\LoggerFactory;
+use MediaWiki\Output\OutputPage;
 use MediaWiki\Preferences\Hook\PreferencesFormPreSaveHook;
 use MediaWiki\Preferences\PreferencesFactory;
 use MediaWiki\User\Options\Hook\LoadUserOptionsHook;
 use MediaWiki\User\Options\Hook\SaveUserOptionsHook;
 use MediaWiki\User\Options\UserOptionsLookup;
 use MediaWiki\User\Options\UserOptionsManager;
+use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
 use Message;
-use OutputPage;
 use Skin;
-use User;
 use Wikimedia\Rdbms\IDatabase;
 
 class Hooks implements

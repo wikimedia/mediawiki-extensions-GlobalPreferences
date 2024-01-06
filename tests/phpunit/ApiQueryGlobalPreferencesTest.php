@@ -8,9 +8,9 @@ use GlobalPreferences\ApiQueryGlobalPreferences;
 use GlobalPreferences\GlobalPreferencesFactory;
 use MediaWiki\Request\FauxRequest;
 use MediaWiki\User\Options\UserOptionsLookup;
+use MediaWiki\User\User;
 use MediaWikiIntegrationTestCase;
 use RequestContext;
-use User;
 
 /**
  * @group GlobalPreferences

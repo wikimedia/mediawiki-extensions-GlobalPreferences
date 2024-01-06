@@ -13,21 +13,21 @@
 
 namespace GlobalPreferences;
 
-use CentralIdLookup;
 use Exception;
-use Html;
 use IContextSource;
 use LogicException;
 use MapCacheLRU;
+use MediaWiki\Html\Html;
 use MediaWiki\Language\RawMessage;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Preferences\DefaultPreferencesFactory;
+use MediaWiki\SpecialPage\SpecialPage;
+use MediaWiki\Status\Status;
+use MediaWiki\User\CentralId\CentralIdLookup;
+use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
 use OOUI\ButtonWidget;
 use RequestContext;
-use SpecialPage;
-use Status;
-use User;
 
 /**
  * Global preferences.

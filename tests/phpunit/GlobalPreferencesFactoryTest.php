@@ -8,8 +8,10 @@ use HTMLCheckMatrix;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Request\FauxRequest;
+use MediaWiki\SpecialPage\SpecialPage;
+use MediaWiki\Status\Status;
+use MediaWiki\User\User;
 use MediaWikiIntegrationTestCase;
-use User;
 use Wikimedia\TestingAccessWrapper;
 
 /**
@@ -129,13 +131,13 @@ class GlobalPreferencesFactoryTest extends MediaWikiIntegrationTestCase {
 		$context = new \DerivativeContext( \RequestContext::getMain() );
 		$context->setRequest( $request );
 		$context->setUser( $user );
-		$context->setTitle( \SpecialPage::getTitleFor( 'GlobalPreferences' ) );
+		$context->setTitle( SpecialPage::getTitleFor( 'GlobalPreferences' ) );
 
 		$form = $factory->getForm( $user, $context );
 		$form->prepareForm();
 
 		$status = $form->trySubmit();
-		self::assertInstanceOf( \Status::class, $status );
+		self::assertInstanceOf( Status::class, $status );
 		self::assertEquals( $expected !== false, $status->isGood() );
 	}
 
