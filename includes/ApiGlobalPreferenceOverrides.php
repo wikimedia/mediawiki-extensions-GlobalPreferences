@@ -4,6 +4,7 @@ namespace GlobalPreferences;
 
 use ApiMain;
 use ApiOptions;
+use IDBAccessObject;
 use MediaWiki\User\Options\UserOptionsManager;
 
 class ApiGlobalPreferenceOverrides extends ApiOptions {
@@ -82,7 +83,7 @@ class ApiGlobalPreferenceOverrides extends ApiOptions {
 	protected function commitChanges() {
 		$user = $this->getUser();
 		if ( $this->resetPrefTypes ) {
-			$prefs = $this->userOptionsManager->getOptions( $user, UserOptionsManager::READ_EXCLUSIVE );
+			$prefs = $this->userOptionsManager->getOptions( $user, IDBAccessObject::READ_EXCLUSIVE );
 			$kinds = $this->userOptionsManager->getOptionKinds(
 				$user,
 				$this->getContext(),
