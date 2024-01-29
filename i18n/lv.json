@@ -5,6 +5,7 @@
 			"Silraks"
 		]
 	},
+	"globalprefs-set-local-exception": "Veikt izņēmumu šim [[Special:GlobalPreferences#$1|globālajam iestatījumam]].",
 	"globalprefs-error-header": "Kļūda",
 	"globalpreferences": "Globālās izvēles",
 	"globalprefs-info-label": "Globālās izvēles:",
