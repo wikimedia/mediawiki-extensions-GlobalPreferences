@@ -13,7 +13,6 @@
 
 namespace GlobalPreferences;
 
-use Exception;
 use IContextSource;
 use LogicException;
 use MapCacheLRU;
@@ -28,6 +27,7 @@ use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
 use OOUI\ButtonWidget;
 use RequestContext;
+use RuntimeException;
 
 /**
  * Global preferences.
@@ -117,7 +117,7 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 		$preferences = parent::getFormDescriptor( $user, $context );
 		if ( $this->onGlobalPrefsPage( $context ) ) {
 			if ( $globalPrefs === false ) {
-				throw new Exception(
+				throw new RuntimeException(
 					"Attempted to load global preferences page for {$user->getName()} whose "
 					. 'preference values failed to load'
 				);
@@ -599,7 +599,6 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	 * @param UserIdentity $user
 	 * @param array &$modifiedOptions
 	 * @param array $originalOptions
-	 * @throws Exception
 	 */
 	public function handleLocalPreferencesChange(
 		UserIdentity $user,
