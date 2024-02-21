@@ -491,7 +491,8 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	 * @return bool
 	 */
 	public function isUserGlobalized( UserIdentity $user ) {
-		return $user->isRegistered() && $this->getUserID( $user ) !== 0;
+		$utils = MediaWikiServices::getInstance()->getUserIdentityUtils();
+		return $utils->isNamed( $user ) && $this->getUserID( $user ) !== 0;
 	}
 
 	/**
