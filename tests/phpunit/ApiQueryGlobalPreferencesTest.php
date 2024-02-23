@@ -28,7 +28,7 @@ class ApiQueryGlobalPreferencesTest extends MediaWikiIntegrationTestCase {
 		array $localPrefs
 	) {
 		$user = $this->createMock( User::class );
-		$user->method( 'isRegistered' )
+		$user->method( 'isNamed' )
 			->willReturn( true );
 		$request = new FauxRequest( $requestData );
 		$context = new DerivativeContext( RequestContext::getMain() );
