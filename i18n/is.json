@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"Stefán Örvar Sigmundsson",
 			"Sveinn í Felli"
 		]
 	},
-	"globalprefs-desc": "Leyfir notendum að stilla víðværar kjörstillingar",
+	"globalprefs-desc": "Leyfir notendum að stilla altækar kjörstillingar",
 	"globalprefs-notglobal": "Reikningurinn þinn er ekki víðvær reikningur og getur ekki stillt víðværar kjörstillingar.",
 	"globalprefs-info-label": "Víðværar kjörstillingar:",
 	"globalprefs-info-help": "Kjörstillingar sem stilltar eru í gegnum víðværar kjörstillingasíðuna eiga við um öll wiki-svæði.",
