@@ -6,8 +6,8 @@
 		]
 	},
 	"globalprefs-desc": "Leyfir notendum að stilla altækar kjörstillingar",
-	"globalprefs-notglobal": "Reikningurinn þinn er ekki víðvær reikningur og getur ekki stillt víðværar kjörstillingar.",
-	"globalprefs-info-label": "Víðværar kjörstillingar:",
-	"globalprefs-info-help": "Kjörstillingar sem stilltar eru í gegnum víðværar kjörstillingasíðuna eiga við um öll wiki-svæði.",
-	"globalprefs-restoreprefs": "Fjarlægja allar víðværar stillingar (í öllum hlutum)"
+	"globalprefs-notglobal": "Aðgangurinn þinn er ekki altækur aðgangur og getur ekki stillt altækar kjörstillingar.",
+	"globalprefs-info-label": "Altækar kjörstillingar:",
+	"globalprefs-info-help": "Kjörstillingar sem stilltar eru í gegnum altæku kjörstillingasíðuna eiga við um alla wiki.",
+	"globalprefs-restoreprefs": "Fjarlægja allar altækar kjörstillingar (í öllum hlutum)"
 }
