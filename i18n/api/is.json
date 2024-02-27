@@ -1,12 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Sveinn í Felli"
+			"Sveinn í Felli",
+			"Stefán Örvar Sigmundsson"
 		]
 	},
-	"apihelp-globalpreferences-summary": "Breyta víðværum kjörstillingum núverandi notanda.",
-	"apihelp-query+globalpreferences-summary": "Ná í víðværar kjörstillingar núverandi notanda.",
-	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Víðværar kjörstillingar.",
-	"apihelp-query+globalpreferences-paramvalue-prop-localoverrides": "Staðbundin frávik á víðværum kjörstillingum.",
-	"apihelp-globalpreferenceoverrides-summary": "Breyta staðbundnum frávikum á víðværum kjörstillingum fyrir núverandi notanda."
+	"apihelp-globalpreferences-summary": "Breyta altækum kjörstillingum núverandi notanda.",
+	"apihelp-query+globalpreferences-summary": "Sækja altækar kjörstillingar fyrir núverandi notanda.",
+	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Altækar kjörstillingar.",
+	"apihelp-query+globalpreferences-paramvalue-prop-localoverrides": "Staðbundnar hnekkingar á altækum kjörstillingum.",
+	"apihelp-globalpreferenceoverrides-summary": "Breyta staðbundnum hnekkingum á altækum kjörstillingum fyrir núverandi notanda."
 }
