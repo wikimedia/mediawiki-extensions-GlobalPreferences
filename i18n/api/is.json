@@ -6,7 +6,9 @@
 		]
 	},
 	"apihelp-globalpreferences-summary": "Breyta altækum kjörstillingum núverandi notanda.",
+	"apihelp-globalpreferences-param-reset": "Endurstilla altækar kjörstillingar. Fjarlægir allar eða, allt eftir gildi <code>resetkinds</code>-færibreytunni, sumar tegundir altækra kjörstillinga og gerir þær ekki lengur altækar.",
 	"apihelp-query+globalpreferences-summary": "Sækja altækar kjörstillingar fyrir núverandi notanda.",
+	"apihelp-query+globalpreferences-extended-description": "Getur sótt bæði altækar kjörstillingar og staðbundnar hnekkingar þeirra.",
 	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Altækar kjörstillingar.",
 	"apihelp-query+globalpreferences-paramvalue-prop-localoverrides": "Staðbundnar hnekkingar á altækum kjörstillingum.",
 	"apihelp-globalpreferenceoverrides-summary": "Breyta staðbundnum hnekkingum á altækum kjörstillingum fyrir núverandi notanda."

@@ -7,7 +7,10 @@
 	},
 	"globalprefs-desc": "Leyfir notendum að stilla altækar kjörstillingar",
 	"globalprefs-notglobal": "Aðgangurinn þinn er ekki altækur aðgangur og getur ekki stillt altækar kjörstillingar.",
+	"globalpreferences": "Altækar kjörstillingar",
 	"globalprefs-info-label": "Altækar kjörstillingar:",
+	"globalprefs-info-link": "Stilla þínar altæku kjörstillingar",
 	"globalprefs-info-help": "Kjörstillingar sem stilltar eru í gegnum altæku kjörstillingasíðuna eiga við um alla wiki.",
+	"globalprefs-reset-intro": "Þú getur notað þessa síðu til að afvirkja allar altækar kjörstillingar á öllum wiki og farið aftur í staðbundnu kjörstillingarnar þínar. Þetta hefur ekki áhrif á neinar staðbundnar wiki-kjörstillingar. Þetta er ekki hægt að afturkalla.",
 	"globalprefs-restoreprefs": "Fjarlægja allar altækar kjörstillingar (í öllum hlutum)"
 }
