@@ -4,5 +4,7 @@
 			"Bashkorttan"
 		]
 	},
-	"globalprefs-info-label": "Глобаль көйләүҙәр:"
+	"globalprefs-info-label": "Глобаль көйләүҙәр:",
+	"globalprefs-info-link": "Глобаль көйләүҙәрегеҙҙе билдәләгеҙ",
+	"globalprefs-info-help": "Глобаль көйләүҙәр бите аша эшләнгән көйләүҙәр бөтә вики сайттарҙа ҡулланыласаҡ."
 }
