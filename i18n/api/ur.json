@@ -7,8 +7,10 @@
 	"apihelp-globalpreferences-summary": "موجودہ صارف کی عالمی ترجیحات کو تبدیل کرتا ہے۔",
 	"apihelp-globalpreferences-example-reset-one": "ایک ترجیح کو غیر عالمی بنائیں۔",
 	"apihelp-globalpreferences-example-reset": "تمام ترجیحات کو غیر عالمی بنائیں۔",
-	"apihelp-query+globalpreferences-summary": "موجودہ صارف کی عالمی ترجیحات ختم کریں۔",
+	"apihelp-query+globalpreferences-summary": "موجودہ صارف کی عالمی ترجیحات کو اخذ کرتا ہے۔",
 	"apihelp-query+globalpreferences-param-prop": "کن ترجیحات کو شامل کرنا مقصود ہے:",
 	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "عالمی ترجیحات۔",
-	"apierror-globalpreferences-notglobalized": "موجودہ صارف کا کھاتا عالمی نہیں ہے۔"
+	"apierror-globalpreferences-notglobalized": "موجودہ صارف کا کھاتا عالمی نہیں ہے۔",
+	"apihelp-globalpreferenceoverrides-summary": "موجودہ صارف کی عالمی ترجیحات کے لیے مقامی ترجیحات کو تبدیل کرتا ہے۔",
+	"apihelp-globalpreferenceoverrides-example-reset": "تمام مقامی ترجیحات کو ہٹائیں۔"
 }
