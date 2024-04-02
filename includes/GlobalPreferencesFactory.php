@@ -15,7 +15,6 @@ namespace GlobalPreferences;
 
 use IContextSource;
 use LogicException;
-use MapCacheLRU;
 use MediaWiki\Html\Html;
 use MediaWiki\Language\RawMessage;
 use MediaWiki\MediaWikiServices;
@@ -45,9 +44,6 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	 * The suffix appended to preference names for their global counterparts.
 	 */
 	public const GLOBAL_EXCEPTION_SUFFIX = '-global';
-
-	/** @var MapCacheLRU Runtime cache of users' central IDs. */
-	protected $centralIds;
 
 	/**
 	 * @var string[] Names of autoglobal options
@@ -125,18 +121,6 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 			return $this->getPreferencesGlobal( $user, $preferences, $globalPrefs, $context );
 		}
 		return $this->getPreferencesLocal( $user, $preferences, $globalPrefNames, $context );
-	}
-
-	/**
-	 * Lazy-init getter for central ID instance cache
-	 * @return MapCacheLRU
-	 */
-	protected function getCache() {
-		if ( !$this->centralIds ) {
-			// Max of 20 is arbitrary and matches what CentralAuth uses.
-			$this->centralIds = new MapCacheLRU( 20 );
-		}
-		return $this->centralIds;
 	}
 
 	/**
@@ -502,12 +486,8 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	 * @return int
 	 */
 	public function getUserID( UserIdentity $user ) {
-		$id = $user->getId();
-		$cache = $this->getCache();
-		return $cache->getWithSetCallback( (string)$id, static function () use ( $user ) {
-			$lookup = MediaWikiServices::getInstance()->getCentralIdLookupFactory()->getLookup();
-			return $lookup->centralIdFromLocalUser( $user, CentralIdLookup::AUDIENCE_RAW );
-		} );
+		return MediaWikiServices::getInstance()->getCentralIdLookupFactory()->getLookup()
+			->centralIdFromLocalUser( $user, CentralIdLookup::AUDIENCE_RAW );
 	}
 
 	/**
