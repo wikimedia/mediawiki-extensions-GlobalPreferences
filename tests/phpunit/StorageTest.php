@@ -5,6 +5,7 @@ namespace GlobalPreferences\Test;
 use GlobalPreferences\Storage;
 use MediaWikiIntegrationTestCase;
 use Wikimedia\Rdbms\IDatabase;
+use Wikimedia\Rdbms\ReplaceQueryBuilder;
 use Wikimedia\TestingAccessWrapper;
 
 /**
@@ -52,17 +53,21 @@ class StorageTest extends MediaWikiIntegrationTestCase {
 	 * @covers \GlobalPreferences\Storage::save()
 	 */
 	public function testSave() {
+		$rqb = $this->createMock( ReplaceQueryBuilder::class );
 		$db = $this->getMockBuilder( IDatabase::class )
 			->getMock();
 		$db->expects( self::once() )
-			->method( 'replace' )
-			->with( Storage::TABLE_NAME,
-				[ [ 'gp_user', 'gp_property' ] ],
-				[
-					[ 'gp_user' => self::USER_ID, 'gp_property' => 'add this', 'gp_value' => 'added' ],
-					[ 'gp_user' => self::USER_ID, 'gp_property' => 'change this', 'gp_value' => 'changed' ],
-				]
-			);
+			->method( 'newReplaceQueryBuilder' )
+			->willReturn( $rqb );
+		$rqb->expects( self::once() )->method( 'replaceInto' )->with( Storage::TABLE_NAME )->willReturn( $rqb );
+		$rqb->expects( self::once() )->method( 'uniqueIndexFields' )->with( [ 'gp_user', 'gp_property' ] )
+			->willReturn( $rqb );
+		$rqb->expects( self::once() )->method( 'rows' )->with( [
+				[ 'gp_user' => self::USER_ID, 'gp_property' => 'add this', 'gp_value' => 'added' ],
+				[ 'gp_user' => self::USER_ID, 'gp_property' => 'change this', 'gp_value' => 'changed' ],
+			]
+		)->willReturn( $rqb );
+		$rqb->expects( self::once() )->method( 'caller' )->willReturn( $rqb );
 
 		/* TODO:
 		 $cache = $this->getMockBuilder( \WANObjectCache::class )

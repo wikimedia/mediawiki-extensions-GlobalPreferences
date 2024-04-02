@@ -115,12 +115,12 @@ class Storage {
 		// Save
 		if ( $rows ) {
 			$dbw = $this->getDatabase( DB_PRIMARY );
-			$dbw->replace(
-				static::TABLE_NAME,
-				[ [ 'gp_user', 'gp_property' ] ],
-				$rows,
-				__METHOD__
-			);
+			$dbw->newReplaceQueryBuilder()
+				->replaceInto( static::TABLE_NAME )
+				->uniqueIndexFields( [ 'gp_user', 'gp_property' ] )
+				->rows( $rows )
+				->caller( __METHOD__ )
+				->execute();
 		}
 
 		// Delete unneeded rows
