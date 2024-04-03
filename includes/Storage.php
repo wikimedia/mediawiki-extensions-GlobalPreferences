@@ -159,7 +159,11 @@ class Storage {
 		if ( $knownPrefs !== null ) {
 			$conds['gp_property'] = $knownPrefs;
 		}
-		$db->delete( static::TABLE_NAME, $conds, __METHOD__ );
+		$db->newDeleteQueryBuilder()
+			->deleteFrom( static::TABLE_NAME )
+			->where( $conds )
+			->caller( __METHOD__ )
+			->execute();
 		$key = $this->getCacheKey();
 		$this->getCache()->delete( $key );
 	}
