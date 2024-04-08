@@ -5,6 +5,7 @@
 		]
 	},
 	"globalpreferences": "Keutamaan global",
+	"globalprefs-info-label": "Keutamaan global:",
 	"globalprefs-info-link": "Tetapkan keutamaan global anda",
 	"globalprefs-info-help": "Keutamaan yang ditetapkan melalui halaman keutamaan global akan digunakan untuk semua laman wiki."
 }

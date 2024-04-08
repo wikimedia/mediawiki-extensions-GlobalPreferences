@@ -1,0 +1,19 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kuldeepburjbhalaike"
+		]
+	},
+	"globalprefs-desc": "ਵਰਤੋਂਕਾਰਾਂ ਨੂੰ ਗਲੋਬਲ ਤਰਜੀਹਾਂ ਸੈਟ ਕਰਨ ਦੀ ਆਗਿਆ ਦਿੰਦਾ ਹੈ",
+	"globalprefs-set-local-exception": "ਇਸ [[Special:GlobalPreferences#$1|ਗਲੋਬਲ ਤਰਜੀਹ]] ਲਈ ਇੱਕ ਸਥਾਨਕ ਅਪਵਾਦ ਸੈੱਟ ਕਰੋ।",
+	"globalprefs-has-local-exception": "ਇਸ ਗਲੋਬਲ ਤਰਜੀਹ ਵਿੱਚ [[Special:Preferences#$1|ਇਸ ਵਿਕੀ ਉੱਤੇ ਸਥਾਨਕ ਅਪਵਾਦ]] ਹੈ।",
+	"tooltip-globalprefs-check-label": "ਇਸ ਸੈਟਿੰਗ ਨੂੰ ਗਲੋਬਲ ਬਣਾਓ",
+	"globalprefs-error-header": "ਗ਼ਲਤੀ",
+	"globalprefs-notglobal": "ਤੁਹਾਡਾ ਖਾਤਾ ਇੱਕ ਗਲੋਬਲ ਖਾਤਾ ਨਹੀਂ ਹੈ ਅਤੇ ਗਲੋਬਲ ਤਰਜੀਹਾਂ ਨੂੰ ਸੈੱਟ ਨਹੀਂ ਕਰ ਸਕਦਾ ਹੈ।",
+	"globalpreferences": "ਗਲੋਬਲ ਤਰਜੀਹਾਂ",
+	"globalprefs-info-label": "ਗਲੋਬਲ ਤਰਜੀਹਾਂ:",
+	"globalprefs-info-link": "ਆਪਣੀਆਂ ਗਲੋਬਲ ਤਰਜੀਹਾਂ ਸੈੱਟ ਕਰੋ",
+	"globalprefs-info-help": "ਗਲੋਬਲ ਤਰਜੀਹਾਂ ਪੰਨੇ ਰਾਹੀਂ ਨਿਰਧਾਰਿਤ ਤਰਜੀਹਾਂ ਸਾਰੇ ਵਿਕੀਆਂ ਉੱਤੇ ਲਾਗੂ ਹੋਣਗੀਆਂ।",
+	"globalprefs-restoreprefs": "ਸਾਰੀਆਂ ਗਲੋਬਲ ਤਰਜੀਹਾਂ ਨੂੰ ਹਟਾਓ (ਸਾਰੇ ਭਾਗਾਂ ਵਿੱਚ)",
+	"globalprefs-col-header": "ਗਲੋਬਲ ਹੋਣ ਲਈ ਹੇਠਾਂ ਦਿੱਤੇ ਵਿਕਲਪਾਂ ਨੂੰ ਚੁਣੋ"
+}
