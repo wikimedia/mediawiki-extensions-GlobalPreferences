@@ -14,9 +14,6 @@ class ApiGlobalPreferences extends ApiOptions {
 	/** @var string[] */
 	private $resetPrefTypes = [];
 
-	/** @var string[] */
-	private $resetPrefs = [];
-
 	/**
 	 * @var GlobalPreferencesFactory
 	 */
@@ -80,11 +77,7 @@ class ApiGlobalPreferences extends ApiOptions {
 	 * @inheritDoc
 	 */
 	protected function setPreference( $preference, $value ) {
-		if ( $value === null ) {
-			$this->resetPrefs[] = $preference;
-		} else {
-			$this->prefs[$preference] = $value;
-		}
+		$this->prefs[$preference] = $value;
 	}
 
 	/**
@@ -106,14 +99,11 @@ class ApiGlobalPreferences extends ApiOptions {
 			foreach ( $prefs as $pref => $value ) {
 				$kind = $kinds[$pref];
 				if ( in_array( $kind, $this->resetPrefTypes ) ) {
-					unset( $prefs[$pref] );
+					$prefs[$pref] = null;
 				}
 			}
 		}
 		$prefs = array_merge( $prefs, $this->prefs );
-		foreach ( $this->resetPrefs as $pref ) {
-			unset( $prefs[$pref] );
-		}
 		$factory->setGlobalPreferences( $user, $prefs, $this->getContext() );
 	}
 
