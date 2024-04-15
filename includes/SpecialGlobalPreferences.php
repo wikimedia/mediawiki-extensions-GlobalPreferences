@@ -99,7 +99,6 @@ class SpecialGlobalPreferences extends SpecialPreferences {
 		$htmlForm->setSubmitTextMsg( 'globalprefs-restoreprefs' );
 		$htmlForm->setSubmitDestructive();
 		$htmlForm->setSubmitCallback( [ $this, 'submitReset' ] );
-		$htmlForm->suppressReset();
 
 		$htmlForm->show();
 	}
