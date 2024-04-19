@@ -4,6 +4,7 @@ namespace GlobalPreferences\Test;
 
 use GlobalPreferences\Storage;
 use MediaWikiIntegrationTestCase;
+use Wikimedia\Rdbms\FakeResultWrapper;
 use Wikimedia\Rdbms\IDatabase;
 use Wikimedia\Rdbms\ReplaceQueryBuilder;
 use Wikimedia\TestingAccessWrapper;
@@ -33,7 +34,9 @@ class StorageTest extends MediaWikiIntegrationTestCase {
 				[ 'gp_property', 'gp_value' ],
 				[ 'gp_user' => self::USER_ID ]
 			)
-			->willReturn( [ (object)[ 'gp_property' => 'foo', 'gp_value' => 'bar' ] ] );
+			->willReturn( new FakeResultWrapper( [
+				(object)[ 'gp_property' => 'foo', 'gp_value' => 'bar' ]
+			] ) );
 
 		$storage = $this->makeMock()
 			->onlyMethods( [ 'getDatabase' ] )
