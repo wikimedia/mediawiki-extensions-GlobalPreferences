@@ -20,7 +20,9 @@ use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
 use Message;
 use Skin;
-use Wikimedia\Rdbms\IDatabase;
+use Wikimedia\Rdbms\IExpression;
+use Wikimedia\Rdbms\IReadableDatabase;
+use Wikimedia\Rdbms\LikeValue;
 
 class Hooks implements
 	BeforePageDisplayHook,
@@ -192,12 +194,15 @@ class Hooks implements
 	/**
 	 * Prevent local exception preferences from being cleaned up.
 	 * @link https://www.mediawiki.org/wiki/Manual:Hooks/DeleteUnknownPreferences
-	 * @param string[] &$where Array of where clause conditions to add to.
-	 * @param IDatabase $db
+	 * @param array &$where Array of where clause conditions to add to.
+	 * @param IReadableDatabase $db
 	 */
 	public function onDeleteUnknownPreferences( &$where, $db ) {
-		$like = $db->buildLike( $db->anyString(), GlobalPreferencesFactory::LOCAL_EXCEPTION_SUFFIX );
-		$where[] = "up_property NOT $like";
+		$where[] = $db->expr(
+			'up_property',
+			IExpression::NOT_LIKE,
+			new LikeValue( $db->anyString(), GlobalPreferencesFactory::LOCAL_EXCEPTION_SUFFIX )
+		);
 	}
 
 	/**
