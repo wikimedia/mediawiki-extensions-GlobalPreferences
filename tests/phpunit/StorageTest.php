@@ -7,6 +7,7 @@ use MediaWikiIntegrationTestCase;
 use Wikimedia\Rdbms\FakeResultWrapper;
 use Wikimedia\Rdbms\IDatabase;
 use Wikimedia\Rdbms\ReplaceQueryBuilder;
+use Wikimedia\Rdbms\SelectQueryBuilder;
 use Wikimedia\TestingAccessWrapper;
 
 /**
@@ -28,15 +29,29 @@ class StorageTest extends MediaWikiIntegrationTestCase {
 	public function testLoadFromDB() {
 		$db = $this->getMockBuilder( IDatabase::class )
 			->getMock();
-		$db->expects( self::once() )
+		$queryBuilder = $this->createMock( SelectQueryBuilder::class );
+		$queryBuilder->expects( self::once() )
 			->method( 'select' )
-			->with( Storage::TABLE_NAME,
-				[ 'gp_property', 'gp_value' ],
-				[ 'gp_user' => self::USER_ID ]
-			)
+			->with( [ 'gp_property', 'gp_value' ] )
+			->willReturnSelf();
+		$queryBuilder->expects( self::once() )
+			->method( 'from' )
+			->with( Storage::TABLE_NAME )
+			->willReturnSelf();
+		$queryBuilder->expects( self::once() )
+			->method( 'where' )
+			->with( [ 'gp_user' => self::USER_ID ] )
+			->willReturnSelf();
+		$queryBuilder->expects( self::once() )
+			->method( 'caller' )->willReturnSelf();
+		$queryBuilder->expects( self::once() )
+			->method( 'fetchResultSet' )
 			->willReturn( new FakeResultWrapper( [
 				(object)[ 'gp_property' => 'foo', 'gp_value' => 'bar' ]
 			] ) );
+		$db->expects( self::once() )
+			->method( 'newSelectQueryBuilder' )
+			->willReturn( $queryBuilder );
 
 		$storage = $this->makeMock()
 			->onlyMethods( [ 'getDatabase' ] )

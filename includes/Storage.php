@@ -65,12 +65,12 @@ class Storage {
 	 */
 	protected function loadFromDB( $dbType = DB_REPLICA ): array {
 		$dbr = $this->getDatabase( $dbType );
-		$res = $dbr->select(
-			static::TABLE_NAME,
-			[ 'gp_property', 'gp_value' ],
-			[ 'gp_user' => $this->userId ],
-			__METHOD__
-		);
+		$res = $dbr->newSelectQueryBuilder()
+			->select( [ 'gp_property', 'gp_value' ] )
+			->from( static::TABLE_NAME )
+			->where( [ 'gp_user' => $this->userId ] )
+			->caller( __METHOD__ )
+			->fetchResultSet();
 		$preferences = [];
 		foreach ( $res as $row ) {
 			$preferences[$row->gp_property] = $row->gp_value;
