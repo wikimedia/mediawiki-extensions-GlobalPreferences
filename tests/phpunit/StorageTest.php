@@ -77,15 +77,15 @@ class StorageTest extends MediaWikiIntegrationTestCase {
 		$db->expects( self::once() )
 			->method( 'newReplaceQueryBuilder' )
 			->willReturn( $rqb );
-		$rqb->expects( self::once() )->method( 'replaceInto' )->with( Storage::TABLE_NAME )->willReturn( $rqb );
+		$rqb->expects( self::once() )->method( 'replaceInto' )->with( Storage::TABLE_NAME )->willReturnSelf();
 		$rqb->expects( self::once() )->method( 'uniqueIndexFields' )->with( [ 'gp_user', 'gp_property' ] )
-			->willReturn( $rqb );
+			->willReturnSelf();
 		$rqb->expects( self::once() )->method( 'rows' )->with( [
 				[ 'gp_user' => self::USER_ID, 'gp_property' => 'add this', 'gp_value' => 'added' ],
 				[ 'gp_user' => self::USER_ID, 'gp_property' => 'change this', 'gp_value' => 'changed' ],
 			]
-		)->willReturn( $rqb );
-		$rqb->expects( self::once() )->method( 'caller' )->willReturn( $rqb );
+		)->willReturnSelf();
+		$rqb->expects( self::once() )->method( 'caller' )->willReturnSelf();
 
 		/* TODO:
 		 $cache = $this->getMockBuilder( \WANObjectCache::class )
