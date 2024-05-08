@@ -24,6 +24,10 @@ class ApiGlobalPreferencesTest extends ApiTestCase {
 	protected function setUp(): void {
 		parent::setUp();
 
+		$this->setMwGlobals( [
+			'wgCentralIdLookupProvider' => 'local',
+		] );
+
 		$this->user = $this->getTestUser()->getUser();
 	}
 
