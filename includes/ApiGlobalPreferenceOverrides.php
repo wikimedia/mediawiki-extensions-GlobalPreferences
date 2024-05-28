@@ -58,7 +58,7 @@ class ApiGlobalPreferenceOverrides extends ApiOptions {
 	 */
 	protected function resetPreferences( array $kinds ) {
 		if ( in_array( 'all', $kinds ) ) {
-			$this->resetPrefTypes = $this->userOptionsManager->listOptionKinds();
+			$this->resetPrefTypes = $this->preferencesFactory->listResetKinds();
 		} else {
 			$this->resetPrefTypes = $kinds;
 		}
@@ -84,7 +84,7 @@ class ApiGlobalPreferenceOverrides extends ApiOptions {
 		$user = $this->getUser();
 		if ( $this->resetPrefTypes ) {
 			$prefs = $this->userOptionsManager->getOptions( $user, IDBAccessObject::READ_EXCLUSIVE );
-			$kinds = $this->userOptionsManager->getOptionKinds(
+			$kinds = $this->preferencesFactory->getResetKinds(
 				$user,
 				$this->getContext(),
 				$prefs
