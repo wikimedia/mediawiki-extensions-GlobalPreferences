@@ -6,6 +6,7 @@
 
 namespace GlobalPreferences;
 
+use IDBAccessObject;
 use MediaWiki\MediaWikiServices;
 use WANObjectCache;
 use Wikimedia\LightweightObjectStore\ExpirationAwareness;
@@ -61,14 +62,17 @@ class Storage {
 
 	/**
 	 * @param int $dbType One of DB_* constants
+	 * @param int $recency One of the IDBAccessObject::READ_* constants
 	 * @return string[]
 	 */
-	protected function loadFromDB( $dbType = DB_REPLICA ): array {
+	public function loadFromDB( $dbType = DB_REPLICA, $recency = IDBAccessObject::READ_NORMAL
+	): array {
 		$dbr = $this->getDatabase( $dbType );
 		$res = $dbr->newSelectQueryBuilder()
 			->select( [ 'gp_property', 'gp_value' ] )
 			->from( static::TABLE_NAME )
 			->where( [ 'gp_user' => $this->userId ] )
+			->recency( $recency )
 			->caller( __METHOD__ )
 			->fetchResultSet();
 		$preferences = [];
@@ -103,26 +107,6 @@ class Storage {
 			}
 		}
 
-		// Assemble the records to save
-		$rows = [];
-		foreach ( $save as $prop => $value ) {
-			$rows[] = [
-				'gp_user' => $this->userId,
-				'gp_property' => $prop,
-				'gp_value' => $value,
-			];
-		}
-		// Save
-		if ( $rows ) {
-			$dbw = $this->getDatabase( DB_PRIMARY );
-			$dbw->newReplaceQueryBuilder()
-				->replaceInto( static::TABLE_NAME )
-				->uniqueIndexFields( [ 'gp_user', 'gp_property' ] )
-				->rows( $rows )
-				->caller( __METHOD__ )
-				->execute();
-		}
-
 		// Delete unneeded rows
 		$keys = array_keys( $currentPrefs );
 		// Only delete prefs present on the local wiki
@@ -140,13 +124,56 @@ class Storage {
 		}
 		$delete = array_unique( $delete );
 
-		if ( $delete ) {
-			$this->delete( $delete );
-		}
+		$this->replaceAndDelete( $save, $delete );
 
 		$key = $this->getCacheKey();
 		// Because we don't have the full preferences, just clear the cache
 		$this->getCache()->delete( $key );
+	}
+
+	/**
+	 * Do a replace query and a delete query to update the database
+	 *
+	 * @param string[] $replacements
+	 * @param string[] $deletions
+	 * @return void
+	 */
+	public function replaceAndDelete( array $replacements, array $deletions ) {
+		// Assemble the records to save
+		$rows = [];
+		foreach ( $replacements as $prop => $value ) {
+			$rows[] = [
+				'gp_user' => $this->userId,
+				'gp_property' => $prop,
+				'gp_value' => $value,
+			];
+		}
+		// Save
+		$dbw = null;
+		if ( $rows ) {
+			$dbw = $this->getDatabase( DB_PRIMARY );
+			$dbw->newReplaceQueryBuilder()
+				->replaceInto( static::TABLE_NAME )
+				->uniqueIndexFields( [ 'gp_user', 'gp_property' ] )
+				->rows( $rows )
+				->caller( __METHOD__ )
+				->execute();
+		}
+		if ( $deletions ) {
+			$dbw ??= $this->getDatabase( DB_PRIMARY );
+			$dbw->newDeleteQueryBuilder()
+				->deleteFrom( static::TABLE_NAME )
+				->where( [
+					'gp_user' => $this->userId,
+					'gp_property' => $deletions
+				] )
+				->caller( __METHOD__ )
+				->execute();
+		}
+		if ( $rows || $deletions ) {
+			$key = $this->getCacheKey();
+			$this->getCache()->delete( $key );
+		}
 	}
 
 	/**

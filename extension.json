@@ -37,13 +37,11 @@
 		"GlobalPreferences\\": "includes/"
 	},
 	"Hooks": {
-		"LoadUserOptions": "Hooks",
 		"SaveUserOptions": "Hooks",
 		"PreferencesFormPreSave": "Hooks",
 		"LoadExtensionSchemaUpdates": "LoadExtensionSchemaUpdates",
 		"MediaWikiServices": "MediaWikiServices",
 		"BeforePageDisplay": "Hooks",
-		"DeleteUnknownPreferences": "Hooks",
 		"ApiOptions": "Hooks"
 	},
 	"HookHandlers": {
@@ -51,9 +49,7 @@
 			"class": "GlobalPreferences\\Hooks",
 			"services": [
 				"PreferencesFactory",
-				"UserOptionsManager",
-				"UserOptionsLookup",
-				"MainConfig"
+				"UserOptionsManager"
 			]
 		},
 		"MediaWikiServices": {
@@ -61,6 +57,14 @@
 		},
 		"LoadExtensionSchemaUpdates": {
 			"class": "GlobalPreferences\\HookHandler\\LoadExtensionSchemaUpdatesHookHandler"
+		}
+	},
+	"UserOptionsStoreProviders": {
+		"GlobalPreferences": {
+			"class": "GlobalPreferences\\GlobalUserOptionsStore",
+			"services": [
+				"CentralIdLookup"
+			]
 		}
 	},
 	"ResourceFileModulePaths": {

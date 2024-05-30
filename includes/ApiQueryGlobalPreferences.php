@@ -68,7 +68,7 @@ class ApiQueryGlobalPreferences extends ApiQueryBase {
 			foreach ( $userOptions as $pref => $value ) {
 				if ( GlobalPreferencesFactory::isLocalPrefName( $pref ) ) {
 					$mainPref = substr( $pref, 0,
-						-strlen( GlobalPreferencesFactory::LOCAL_EXCEPTION_SUFFIX ) );
+						-strlen( UserOptionsLookup::LOCAL_EXCEPTION_SUFFIX ) );
 					if ( isset( $userOptions[$mainPref] ) ) {
 						$overriddenPrefs[$mainPref] = $userOptions[$mainPref];
 					}

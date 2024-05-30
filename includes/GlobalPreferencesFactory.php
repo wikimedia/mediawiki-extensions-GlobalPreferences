@@ -25,6 +25,7 @@ use MediaWiki\Preferences\DefaultPreferencesFactory;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Status\Status;
 use MediaWiki\User\CentralId\CentralIdLookup;
+use MediaWiki\User\Options\UserOptionsLookup;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
 use OOUI\ButtonWidget;
@@ -156,7 +157,7 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 			) {
 				continue;
 			}
-			$localExName = $name . static::LOCAL_EXCEPTION_SUFFIX;
+			$localExName = $name . UserOptionsLookup::LOCAL_EXCEPTION_SUFFIX;
 			$localExValueUser = $userOptionsLookup->getBoolOption( $user, $localExName );
 
 			// Add a new local exception preference after this one.
@@ -267,7 +268,9 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 				$def['disable-if'] = [ '!==', $pref . static::GLOBAL_EXCEPTION_SUFFIX, '1' ];
 			}
 			// If this has a local exception, override it and append a help message to say so.
-			if ( $isGlobal && $userOptionsLookup->getBoolOption( $user, $pref . static::LOCAL_EXCEPTION_SUFFIX ) ) {
+			if ( $isGlobal
+				&& $userOptionsLookup->getBoolOption( $user, $pref . UserOptionsLookup::LOCAL_EXCEPTION_SUFFIX )
+			) {
 				$def['default'] = $this->getOptionFromUser( $pref, $def, $globalPrefs );
 				// Create a link to the relevant section of GlobalPreferences.
 				$secFragment = static::getSectionFragmentId( $def['section'] );
@@ -474,7 +477,7 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	 * @return bool
 	 */
 	public static function isLocalPrefName( $name ) {
-		return str_ends_with( $name, static::LOCAL_EXCEPTION_SUFFIX );
+		return str_ends_with( $name, UserOptionsLookup::LOCAL_EXCEPTION_SUFFIX );
 	}
 
 	/**
@@ -602,7 +605,7 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 				( !array_key_exists( $optName, $originalOptions ) ||
 				$modifiedOptions[$optName] !== $originalOptions[$optName] ) &&
 				// And skip options that have local exceptions
-				!( $mergedOptions[$optName . static::LOCAL_EXCEPTION_SUFFIX] ?? false )
+				!( $mergedOptions[$optName . UserOptionsLookup::LOCAL_EXCEPTION_SUFFIX] ?? false )
 			) {
 				$shouldModify[$optName] = $modifiedOptions[$optName];
 			}

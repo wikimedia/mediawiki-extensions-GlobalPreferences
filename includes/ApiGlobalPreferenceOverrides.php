@@ -6,6 +6,7 @@ use ApiMain;
 use ApiOptionsBase;
 use IDBAccessObject;
 use MediaWiki\User\Options\UserOptionsManager;
+use MediaWiki\User\UserOptionsLookup;
 
 class ApiGlobalPreferenceOverrides extends ApiOptionsBase {
 
@@ -62,7 +63,7 @@ class ApiGlobalPreferenceOverrides extends ApiOptionsBase {
 	 * @inheritDoc
 	 */
 	protected function setPreference( $preference, $value ) {
-		$exceptionName = $preference . GlobalPreferencesFactory::LOCAL_EXCEPTION_SUFFIX;
+		$exceptionName = $preference . UserOptionsLookup::LOCAL_EXCEPTION_SUFFIX;
 		if ( $value === null ) {
 			$this->prefs[$exceptionName] = null;
 		} else {
@@ -88,7 +89,7 @@ class ApiGlobalPreferenceOverrides extends ApiOptionsBase {
 				if ( in_array( $kind, $this->resetPrefTypes ) ) {
 					$this->getUserOptionsManager()->setOption(
 						$user,
-						$pref . GlobalPreferencesFactory::LOCAL_EXCEPTION_SUFFIX,
+						$pref . UserOptionsLookup::LOCAL_EXCEPTION_SUFFIX,
 						null
 					);
 				}

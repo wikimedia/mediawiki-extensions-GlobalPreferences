@@ -6,7 +6,6 @@ use GlobalPreferences\Storage;
 use MediaWikiIntegrationTestCase;
 use Wikimedia\Rdbms\FakeResultWrapper;
 use Wikimedia\Rdbms\IDatabase;
-use Wikimedia\Rdbms\ReplaceQueryBuilder;
 use Wikimedia\Rdbms\SelectQueryBuilder;
 use Wikimedia\TestingAccessWrapper;
 
@@ -45,6 +44,8 @@ class StorageTest extends MediaWikiIntegrationTestCase {
 		$queryBuilder->expects( self::once() )
 			->method( 'caller' )->willReturnSelf();
 		$queryBuilder->expects( self::once() )
+			->method( 'recency' )->willReturnSelf();
+		$queryBuilder->expects( self::once() )
 			->method( 'fetchResultSet' )
 			->willReturn( new FakeResultWrapper( [
 				(object)[ 'gp_property' => 'foo', 'gp_value' => 'bar' ]
@@ -71,35 +72,8 @@ class StorageTest extends MediaWikiIntegrationTestCase {
 	 * @covers \GlobalPreferences\Storage::save()
 	 */
 	public function testSave() {
-		$rqb = $this->createMock( ReplaceQueryBuilder::class );
-		$db = $this->getMockBuilder( IDatabase::class )
-			->getMock();
-		$db->expects( self::once() )
-			->method( 'newReplaceQueryBuilder' )
-			->willReturn( $rqb );
-		$rqb->expects( self::once() )->method( 'replaceInto' )->with( Storage::TABLE_NAME )->willReturnSelf();
-		$rqb->expects( self::once() )->method( 'uniqueIndexFields' )->with( [ 'gp_user', 'gp_property' ] )
-			->willReturnSelf();
-		$rqb->expects( self::once() )->method( 'rows' )->with( [
-				[ 'gp_user' => self::USER_ID, 'gp_property' => 'add this', 'gp_value' => 'added' ],
-				[ 'gp_user' => self::USER_ID, 'gp_property' => 'change this', 'gp_value' => 'changed' ],
-			]
-		)->willReturnSelf();
-		$rqb->expects( self::once() )->method( 'caller' )->willReturnSelf();
-
-		/* TODO:
-		 $cache = $this->getMockBuilder( \WANObjectCache::class )
-			->disableOriginalConstructor()
-			->setMethodsExcept( [] )
-			->getMock();
-		$cache->expects( self::once() )
-			->method( 'delete' )
-			->with( self::CACHE_KEY )
-			->willReturn( true );
-		*/
-
 		$storage = $this->makeMock()
-			->onlyMethods( [ 'loadFromDB', 'getDatabase', 'getCacheKey', 'delete' ] )
+			->onlyMethods( [ 'loadFromDB', 'getDatabase', 'getCacheKey', 'replaceAndDelete' ] )
 			->getMock();
 		$storage->expects( self::once() )
 			->method( 'loadFromDB' )
@@ -113,19 +87,15 @@ class StorageTest extends MediaWikiIntegrationTestCase {
 				'matrix' => 'to be deleted',
 				'matrix-web' => 'to be deleted',
 			] );
-		$storage->expects( self::once() )
-			->method( 'getDatabase' )
-			->with( DB_PRIMARY )
-			->willReturn( $db );
-		$storage->expects( self::once() )
+		$storage->expects( self::any() )
 			->method( 'getCacheKey' )
 			->willReturn( self::CACHE_KEY );
-		/*$storage->expects( self::once() )
-			->method( 'getCache' )
-			->willReturn( $cache );*/
 		$storage->expects( self::once() )
-			->method( 'delete' )
-			->with( [ 'this will die explicitly', 'this will die', 'matrix', 'matrix-web' ] );
+			->method( 'replaceAndDelete' )
+			->with(
+				[ 'add this' => 'added', 'change this' => 'changed' ],
+				[ 'this will die explicitly', 'this will die', 'matrix', 'matrix-web' ]
+			);
 
 		/** @var Storage $storage */
 		$storage->save(

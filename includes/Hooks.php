@@ -4,32 +4,23 @@ namespace GlobalPreferences;
 
 use ApiOptions;
 use MediaWiki\Api\Hook\ApiOptionsHook;
-use MediaWiki\Config\Config;
-use MediaWiki\Hook\DeleteUnknownPreferencesHook;
 use MediaWiki\HTMLForm\HTMLForm;
-use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Message\Message;
 use MediaWiki\Output\Hook\BeforePageDisplayHook;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\Preferences\Hook\PreferencesFormPreSaveHook;
 use MediaWiki\Preferences\PreferencesFactory;
-use MediaWiki\User\Options\Hook\LoadUserOptionsHook;
 use MediaWiki\User\Options\Hook\SaveUserOptionsHook;
 use MediaWiki\User\Options\UserOptionsLookup;
 use MediaWiki\User\Options\UserOptionsManager;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
 use Skin;
-use Wikimedia\Rdbms\IExpression;
-use Wikimedia\Rdbms\IReadableDatabase;
-use Wikimedia\Rdbms\LikeValue;
 
 class Hooks implements
 	BeforePageDisplayHook,
-	LoadUserOptionsHook,
 	SaveUserOptionsHook,
 	PreferencesFormPreSaveHook,
-	DeleteUnknownPreferencesHook,
 	ApiOptionsHook
 	{
 
@@ -39,28 +30,16 @@ class Hooks implements
 	/** @var UserOptionsManager */
 	private $userOptionsManager;
 
-	/** @var UserOptionsLookup */
-	private $userOptionsLookup;
-
-	/** @var Config */
-	private $config;
-
 	/**
 	 * @param PreferencesFactory $preferencesFactory
 	 * @param UserOptionsManager $userOptionsManager
-	 * @param UserOptionsLookup $userOptionsLookup
-	 * @param Config $config
 	 */
 	public function __construct(
 		PreferencesFactory $preferencesFactory,
-		UserOptionsManager $userOptionsManager,
-		UserOptionsLookup $userOptionsLookup,
-		Config $config
+		UserOptionsManager $userOptionsManager
 	) {
 		$this->preferencesFactory = $preferencesFactory;
 		$this->userOptionsManager = $userOptionsManager;
-		$this->userOptionsLookup = $userOptionsLookup;
-		$this->config = $config;
 	}
 
 	/**
@@ -75,52 +54,6 @@ class Hooks implements
 			// so non-JS users get the styles quicker and to avoid a FOUC.
 			$out->addModuleStyles( 'ext.GlobalPreferences.local-nojs' );
 			$out->addModules( 'ext.GlobalPreferences.local' );
-		}
-	}
-
-	/**
-	 * Load global preferences.
-	 * @link https://www.mediawiki.org/wiki/Manual:Hooks/LoadUserOptions
-	 * @param UserIdentity $user The user for whom options are being loaded.
-	 * @param array &$options The user's options; can be modified.
-	 */
-	public function onLoadUserOptions( UserIdentity $user, array &$options ): void {
-		if ( !$this->preferencesFactory->isUserGlobalized( $user ) ) {
-			// Not a global user.
-			return;
-		}
-
-		$logger = LoggerFactory::getInstance( 'preferences' );
-		$logger->debug(
-			'Loading global options for user \'{user}\'',
-			[ 'user' => $user->getName() ]
-		);
-		// Overwrite all options that have a global counterpart.
-		$globalPrefs = $this->preferencesFactory->getGlobalPreferencesValues( $user );
-		if ( $globalPrefs === false ) {
-			return;
-		}
-		foreach ( $globalPrefs as $optName => $globalValue ) {
-			// Don't overwrite if it has a local exception.
-			$localExceptionName = $optName . GlobalPreferencesFactory::LOCAL_EXCEPTION_SUFFIX;
-			if ( isset( $options[ $localExceptionName ] ) && $options[ $localExceptionName ] ) {
-				continue;
-			}
-
-			// FIXME: temporary plug for T201340: DB might have rows for deglobalized
-			// Echo notifications. Don't allow these through if the main checkbox is not checked.
-			if ( !( $globalPrefs['echo-subscriptions'] ?? false )
-				&& strpos( $optName, 'echo-subscriptions-' ) === 0
-			) {
-				continue;
-			}
-
-			// Convert '0' to 0. PHP's boolean conversion considers them both false,
-			// but e.g. JavaScript considers the former as true.
-			if ( $globalValue === '0' ) {
-				$globalValue = 0;
-			}
-			$options[ $optName ] = $globalValue;
 		}
 	}
 
@@ -176,7 +109,7 @@ class Hooks implements
 				continue;
 			}
 			// Determine the real name of the preference.
-			$suffixLen = strlen( GlobalPreferencesFactory::LOCAL_EXCEPTION_SUFFIX );
+			$suffixLen = strlen( UserOptionsLookup::LOCAL_EXCEPTION_SUFFIX );
 			$realName = substr( $pref, 0, -$suffixLen );
 			if ( isset( $formData[$realName] ) ) {
 				// Not a CheckMatrix field
@@ -184,25 +117,11 @@ class Hooks implements
 			}
 			$checkMatrix = preg_grep( "/^$realName-/", array_keys( $formData ) );
 			foreach ( $checkMatrix as $check ) {
-				$localExceptionName = $check . GlobalPreferencesFactory::LOCAL_EXCEPTION_SUFFIX;
+				$localExceptionName = $check . UserOptionsLookup::LOCAL_EXCEPTION_SUFFIX;
 				$this->userOptionsManager->setOption( $user, $localExceptionName, $value );
 			}
 		}
 		return true;
-	}
-
-	/**
-	 * Prevent local exception preferences from being cleaned up.
-	 * @link https://www.mediawiki.org/wiki/Manual:Hooks/DeleteUnknownPreferences
-	 * @param array &$where Array of where clause conditions to add to.
-	 * @param IReadableDatabase $db
-	 */
-	public function onDeleteUnknownPreferences( &$where, $db ) {
-		$where[] = $db->expr(
-			'up_property',
-			IExpression::NOT_LIKE,
-			new LikeValue( $db->anyString(), GlobalPreferencesFactory::LOCAL_EXCEPTION_SUFFIX )
-		);
 	}
 
 	/**
@@ -222,7 +141,7 @@ class Hooks implements
 				continue;
 			}
 			$exceptionName = $preference . GlobalPreferencesFactory::LOCAL_EXCEPTION_SUFFIX;
-			if ( !$this->userOptionsLookup->getOption( $user, $exceptionName ) ) {
+			if ( !$this->userOptionsManager->getOption( $user, $exceptionName ) ) {
 				if ( $globalPrefs && array_key_exists( $preference, $globalPrefs ) ) {
 					$toWarn[] = $preference;
 				}

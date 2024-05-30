@@ -26,6 +26,7 @@ class ApiGlobalPreferencesTest extends ApiTestCase {
 
 		$this->setMwGlobals( [
 			'wgCentralIdLookupProvider' => 'local',
+			'wgGlobalPreferencesDB' => false,
 		] );
 
 		$this->user = $this->getTestUser()->getUser();
