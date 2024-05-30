@@ -497,7 +497,7 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	 * @return int
 	 */
 	public function getUserID( UserIdentity $user ) {
-		return MediaWikiServices::getInstance()->getCentralIdLookupFactory()->getLookup()
+		return MediaWikiServices::getInstance()->getCentralIdLookup()
 			->centralIdFromLocalUser( $user, CentralIdLookup::AUDIENCE_RAW );
 	}
 

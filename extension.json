@@ -41,8 +41,7 @@
 		"PreferencesFormPreSave": "Hooks",
 		"LoadExtensionSchemaUpdates": "LoadExtensionSchemaUpdates",
 		"MediaWikiServices": "MediaWikiServices",
-		"BeforePageDisplay": "Hooks",
-		"ApiOptions": "Hooks"
+		"BeforePageDisplay": "Hooks"
 	},
 	"HookHandlers": {
 		"Hooks": {

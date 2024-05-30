@@ -2,10 +2,7 @@
 
 namespace GlobalPreferences;
 
-use ApiOptions;
-use MediaWiki\Api\Hook\ApiOptionsHook;
 use MediaWiki\HTMLForm\HTMLForm;
-use MediaWiki\Message\Message;
 use MediaWiki\Output\Hook\BeforePageDisplayHook;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\Preferences\Hook\PreferencesFormPreSaveHook;
@@ -20,8 +17,7 @@ use Skin;
 class Hooks implements
 	BeforePageDisplayHook,
 	SaveUserOptionsHook,
-	PreferencesFormPreSaveHook,
-	ApiOptionsHook
+	PreferencesFormPreSaveHook
 	{
 
 	/** @var GlobalPreferencesFactory */
@@ -122,43 +118,5 @@ class Hooks implements
 			}
 		}
 		return true;
-	}
-
-	/**
-	 * @param ApiOptions $apiModule Calling ApiOptions object
-	 * @param User $user User object whose preferences are being changed
-	 * @param array $changes Associative array of preference name => value
-	 * @param string[] $resetKinds Array of strings specifying which options kinds to reset
-	 *   See PreferencesFactory::listResetKinds() for possible values.
-	 * @return bool|void True or no return value to continue or false to abort
-	 */
-	public function onApiOptions( $apiModule, $user, $changes, $resetKinds ) {
-		$globalPrefs = $this->preferencesFactory->getGlobalPreferencesValues( $user );
-
-		$toWarn = [];
-		foreach ( array_keys( $changes ) as $preference ) {
-			if ( GlobalPreferencesFactory::isLocalPrefName( $preference ) ) {
-				continue;
-			}
-			$exceptionName = $preference . GlobalPreferencesFactory::LOCAL_EXCEPTION_SUFFIX;
-			if ( !$this->userOptionsManager->getOption( $user, $exceptionName ) ) {
-				if ( $globalPrefs && array_key_exists( $preference, $globalPrefs ) ) {
-					$toWarn[] = $preference;
-				}
-			}
-		}
-		if ( $toWarn ) {
-			$toWarn = array_map( static function ( $str ) {
-				return wfEscapeWikiText( "`$str`" );
-			}, $toWarn );
-			$apiModule->addWarning(
-				[
-					'apiwarn-globally-overridden',
-					Message::listParam( $toWarn ),
-					count( $toWarn ),
-				],
-				'globally-overridden'
-			);
-		}
 	}
 }
