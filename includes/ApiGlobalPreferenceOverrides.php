@@ -3,11 +3,11 @@
 namespace GlobalPreferences;
 
 use ApiMain;
-use ApiOptions;
+use ApiOptionsBase;
 use IDBAccessObject;
 use MediaWiki\User\Options\UserOptionsManager;
 
-class ApiGlobalPreferenceOverrides extends ApiOptions {
+class ApiGlobalPreferenceOverrides extends ApiOptionsBase {
 
 	/** @var mixed[] */
 	private $prefs = [];
@@ -18,12 +18,7 @@ class ApiGlobalPreferenceOverrides extends ApiOptions {
 	/**
 	 * @var GlobalPreferencesFactory
 	 */
-	private $preferencesFactory;
-
-	/**
-	 * @var UserOptionsManager
-	 */
-	private $userOptionsManager;
+	private $globalPrefs;
 
 	/**
 	 * @param ApiMain $mainModule
@@ -37,17 +32,16 @@ class ApiGlobalPreferenceOverrides extends ApiOptions {
 		GlobalPreferencesFactory $factory,
 		UserOptionsManager $userOptionsManager
 	) {
-		parent::__construct( $mainModule, $moduleName );
-		$this->preferencesFactory = $factory;
-		$this->userOptionsManager = $userOptionsManager;
+		parent::__construct( $mainModule, $moduleName, $userOptionsManager, $factory );
+		$this->globalPrefs = $factory;
 	}
 
 	/**
 	 * @inheritDoc
 	 */
 	public function execute() {
-		$user = $this->getUserForUpdates();
-		if ( $user && !$this->preferencesFactory->isUserGlobalized( $user ) ) {
+		$user = $this->getUserForUpdatesOrNull();
+		if ( $user && !$this->globalPrefs->isUserGlobalized( $user ) ) {
 			$this->dieWithError( 'apierror-globalpreferences-notglobalized', 'notglobalized' );
 		}
 		parent::execute();
@@ -58,7 +52,7 @@ class ApiGlobalPreferenceOverrides extends ApiOptions {
 	 */
 	protected function resetPreferences( array $kinds ) {
 		if ( in_array( 'all', $kinds ) ) {
-			$this->resetPrefTypes = $this->preferencesFactory->listResetKinds();
+			$this->resetPrefTypes = $this->globalPrefs->listResetKinds();
 		} else {
 			$this->resetPrefTypes = $kinds;
 		}
@@ -83,8 +77,8 @@ class ApiGlobalPreferenceOverrides extends ApiOptions {
 	protected function commitChanges() {
 		$user = $this->getUser();
 		if ( $this->resetPrefTypes ) {
-			$prefs = $this->userOptionsManager->getOptions( $user, IDBAccessObject::READ_EXCLUSIVE );
-			$kinds = $this->preferencesFactory->getResetKinds(
+			$prefs = $this->getUserOptionsManager()->getOptions( $user, IDBAccessObject::READ_EXCLUSIVE );
+			$kinds = $this->globalPrefs->getResetKinds(
 				$user,
 				$this->getContext(),
 				$prefs
@@ -92,7 +86,7 @@ class ApiGlobalPreferenceOverrides extends ApiOptions {
 			foreach ( $prefs as $pref => $value ) {
 				$kind = $kinds[$pref];
 				if ( in_array( $kind, $this->resetPrefTypes ) ) {
-					$this->userOptionsManager->setOption(
+					$this->getUserOptionsManager()->setOption(
 						$user,
 						$pref . GlobalPreferencesFactory::LOCAL_EXCEPTION_SUFFIX,
 						null
@@ -101,9 +95,9 @@ class ApiGlobalPreferenceOverrides extends ApiOptions {
 			}
 		}
 		foreach ( $this->prefs as $pref => $value ) {
-			$this->userOptionsManager->setOption( $user, $pref, $value );
+			$this->getUserOptionsManager()->setOption( $user, $pref, $value );
 		}
-		$this->userOptionsManager->saveOptions( $user );
+		$this->getUserOptionsManager()->saveOptions( $user );
 	}
 
 	/**

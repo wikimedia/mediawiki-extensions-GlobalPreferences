@@ -3,10 +3,10 @@
 namespace GlobalPreferences;
 
 use ApiMain;
-use ApiOptions;
+use ApiOptionsBase;
 use MediaWiki\User\Options\UserOptionsManager;
 
-class ApiGlobalPreferences extends ApiOptions {
+class ApiGlobalPreferences extends ApiOptionsBase {
 
 	/** @var mixed[] */
 	private $prefs = [];
@@ -20,11 +20,6 @@ class ApiGlobalPreferences extends ApiOptions {
 	private $factory;
 
 	/**
-	 * @var UserOptionsManager
-	 */
-	private $userOptionsManager;
-
-	/**
 	 * @param ApiMain $mainModule
 	 * @param string $moduleName
 	 * @param GlobalPreferencesFactory $factory
@@ -36,16 +31,15 @@ class ApiGlobalPreferences extends ApiOptions {
 		GlobalPreferencesFactory $factory,
 		UserOptionsManager $userOptionsManager
 	) {
-		parent::__construct( $mainModule, $moduleName );
+		parent::__construct( $mainModule, $moduleName, $userOptionsManager, $factory );
 		$this->factory = $factory;
-		$this->userOptionsManager = $userOptionsManager;
 	}
 
 	/**
 	 * @inheritDoc
 	 */
 	public function execute() {
-		$user = $this->getUserForUpdates();
+		$user = $this->getUserForUpdatesOrNull();
 		if ( $user ) {
 			$factory = $this->getFactory();
 			if ( !$factory->isUserGlobalized( $user ) ) {

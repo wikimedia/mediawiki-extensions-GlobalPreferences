@@ -214,11 +214,6 @@ class Hooks implements
 	 * @return bool|void True or no return value to continue or false to abort
 	 */
 	public function onApiOptions( $apiModule, $user, $changes, $resetKinds ) {
-		// Only hook to the core module but not to our code that inherits from it
-		if ( $apiModule->getModuleName() !== 'options' ) {
-			return;
-		}
-
 		$globalPrefs = $this->preferencesFactory->getGlobalPreferencesValues( $user );
 
 		$toWarn = [];
