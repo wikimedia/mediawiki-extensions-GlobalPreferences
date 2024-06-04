@@ -35,6 +35,7 @@ class ApiGlobalPreferencesTest extends ApiTestCase {
 	 * @dataProvider provideExecute
 	 */
 	public function testExecute( array $params, array $initialPrefs, array $expectedPrefs ): void {
+		$this->hideDeprecated( 'MediaWiki\User\Options\UserOptionsManager::getOptionKinds' );
 		$params = array_merge( [
 			'action' => 'globalpreferences',
 			'format' => 'json',
