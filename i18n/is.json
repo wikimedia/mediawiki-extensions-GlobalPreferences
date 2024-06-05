@@ -6,6 +6,7 @@
 		]
 	},
 	"globalprefs-desc": "Leyfir notendum að stilla altækar kjörstillingar",
+	"globalprefs-set-local-exception": "Stilla staðbundið frávik fyrir þessa [[Special:GlobalPreferences#$1|altæku kjörstillingu]].",
 	"globalprefs-notglobal": "Aðgangurinn þinn er ekki altækur aðgangur og getur ekki stillt altækar kjörstillingar.",
 	"globalpreferences": "Altækar kjörstillingar",
 	"globalprefs-info-label": "Altækar kjörstillingar:",
