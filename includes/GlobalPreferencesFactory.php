@@ -13,9 +13,12 @@
 
 namespace GlobalPreferences;
 
-use IContextSource;
 use LogicException;
+use MediaWiki\Context\IContextSource;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\Html\Html;
+use MediaWiki\HTMLForm\Field\HTMLCheckMatrix;
+use MediaWiki\HTMLForm\Field\HTMLSelectOrOtherField;
 use MediaWiki\Language\RawMessage;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Preferences\DefaultPreferencesFactory;
@@ -25,7 +28,6 @@ use MediaWiki\User\CentralId\CentralIdLookup;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
 use OOUI\ButtonWidget;
-use RequestContext;
 use RuntimeException;
 
 /**
@@ -85,9 +87,13 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	 * @var array
 	 */
 	protected $allowedClasses = [
+		// Checking old alias for compatibility with unchanged extensions
 		\HTMLSelectOrOtherField::class,
+		HTMLSelectOrOtherField::class,
 		\MediaWiki\Extension\BetaFeatures\HTMLFeatureField::class,
+		// Checking old alias for compatibility with unchanged extensions
 		\HTMLCheckMatrix::class,
+		HTMLCheckMatrix::class,
 	];
 
 	/**
@@ -391,7 +397,9 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 		$result = [];
 		foreach ( $formDescriptor as $name => $info ) {
 			if ( ( isset( $info['type'] ) && $info['type'] == 'checkmatrix' ) ||
-				 ( isset( $info['class'] ) && $info['class'] == \HTMLCheckMatrix::class )
+				// Checking old alias for compatibility with unchanged extensions
+				( isset( $info['class'] ) && $info['class'] == \HTMLCheckMatrix::class ) ||
+				( isset( $info['class'] ) && $info['class'] == HTMLCheckMatrix::class )
 			) {
 				$result[] = $name;
 			}

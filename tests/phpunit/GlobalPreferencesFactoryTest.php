@@ -4,8 +4,10 @@ namespace GlobalPreferences\Test;
 
 use GlobalPreferences\GlobalPreferencesFactory;
 use GlobalPreferences\Storage;
-use HTMLCheckMatrix;
 use MediaWiki\Config\ServiceOptions;
+use MediaWiki\Context\DerivativeContext;
+use MediaWiki\Context\RequestContext;
+use MediaWiki\HTMLForm\Field\HTMLCheckMatrix;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Request\FauxRequest;
 use MediaWiki\SpecialPage\SpecialPage;
@@ -128,7 +130,7 @@ class GlobalPreferencesFactoryTest extends MediaWikiIntegrationTestCase {
 		$request = new FauxRequest( $postData, true );
 		/** @var GlobalPreferencesFactory $factory */
 		/** @var User $user */
-		$context = new \DerivativeContext( \RequestContext::getMain() );
+		$context = new DerivativeContext( RequestContext::getMain() );
 		$context->setRequest( $request );
 		$context->setUser( $user );
 		$context->setTitle( SpecialPage::getTitleFor( 'GlobalPreferences' ) );

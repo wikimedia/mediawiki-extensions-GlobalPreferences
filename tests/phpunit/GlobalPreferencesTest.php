@@ -4,10 +4,10 @@ namespace GlobalPreferences\Test;
 
 use GlobalPreferences\GlobalPreferencesFactory;
 use GlobalPreferences\Storage;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use MediaWikiIntegrationTestCase;
-use RequestContext;
 use Wikimedia\TestingAccessWrapper;
 
 /**

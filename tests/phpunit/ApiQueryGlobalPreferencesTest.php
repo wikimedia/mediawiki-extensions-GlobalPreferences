@@ -3,14 +3,14 @@
 namespace GlobalPreferences\Test;
 
 use ApiMain;
-use DerivativeContext;
 use GlobalPreferences\ApiQueryGlobalPreferences;
 use GlobalPreferences\GlobalPreferencesFactory;
+use MediaWiki\Context\DerivativeContext;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\Request\FauxRequest;
 use MediaWiki\User\Options\UserOptionsLookup;
 use MediaWiki\User\User;
 use MediaWikiIntegrationTestCase;
-use RequestContext;
 
 /**
  * @group GlobalPreferences

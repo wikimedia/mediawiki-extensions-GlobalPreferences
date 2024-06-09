@@ -2,10 +2,10 @@
 
 namespace GlobalPreferences;
 
-use DerivativeContext;
 use ErrorPageError;
-use HTMLForm;
-use IContextSource;
+use MediaWiki\Context\DerivativeContext;
+use MediaWiki\Context\IContextSource;
+use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Specials\SpecialPreferences;
 use MediaWiki\User\User;
