@@ -91,7 +91,7 @@ class ApiGlobalPreferences extends ApiOptions {
 			return;
 		}
 		if ( $this->resetPrefTypes ) {
-			$kinds = $this->userOptionsManager->getOptionKinds(
+			$kinds = $this->getFactory()->getResetKinds(
 				$this->getUserForUpdates(),
 				$this->getContext(),
 				$prefs
