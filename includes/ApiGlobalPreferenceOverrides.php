@@ -78,7 +78,7 @@ class ApiGlobalPreferenceOverrides extends ApiOptionsBase {
 	protected function commitChanges() {
 		$user = $this->getUser();
 		if ( $this->resetPrefTypes ) {
-			$prefs = $this->getUserOptionsManager()->getOptions( $user, IDBAccessObject::READ_EXCLUSIVE );
+			$prefs = $this->getUserOptionsManager()->getOptions( $user, 0, IDBAccessObject::READ_EXCLUSIVE );
 			$kinds = $this->globalPrefs->getResetKinds(
 				$user,
 				$this->getContext(),
