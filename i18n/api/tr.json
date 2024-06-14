@@ -32,6 +32,5 @@
 	"apihelp-globalpreferenceoverrides-param-optionname": "<var>optionvalue</var> tarafından verilen değere ayarlanması gereken geçersiz kılma adı.",
 	"apihelp-globalpreferenceoverrides-param-optionvalue": "<var>optionname</var> tarafından belirtilen geçersiz kılma değeri.",
 	"apihelp-globalpreferenceoverrides-example-reset": "Tüm yerel geçersiz kılmaları kaldırın.",
-	"apihelp-globalpreferenceoverrides-example-change": "<kbd>skin</kbd> ve <kbd>hideminor</kbd> tercihleri için geçersiz kılmaları ayarlayın veya değiştirin.",
-	"apiwarn-globally-overridden": "{{PLURAL:$2|Seçenek|Seçenekler}} $1 küresel olarak geçersiz kılındı. Seçeneği küresel olarak değiştirmek için \"globalpreferences\" API'sini veya yerel bir geçersiz kılma ayarlamak için \"globalpreferenceoverrides\" API'sini kullanabilirsiniz."
+	"apihelp-globalpreferenceoverrides-example-change": "<kbd>skin</kbd> ve <kbd>hideminor</kbd> tercihleri için geçersiz kılmaları ayarlayın veya değiştirin."
 }

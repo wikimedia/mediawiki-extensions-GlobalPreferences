@@ -29,6 +29,5 @@
 	"apihelp-globalpreferenceoverrides-param-optionname": "Ime preglasitve, ki mora biti nastavljeno na vrednost, podano z <var>optionvalue</var>.",
 	"apihelp-globalpreferenceoverrides-param-optionvalue": "Vrednost za preglasitev, podano z <var>optionname</var>.",
 	"apihelp-globalpreferenceoverrides-example-reset": "Odstrani vse lokalne prepise.",
-	"apihelp-globalpreferenceoverrides-example-change": "Nastavitev ali sprememba preglasitev za nastavitvi <kbd>skin</kbd> in <kbd>hideminor</kbd>.",
-	"apiwarn-globally-overridden": "{{PLURAL:$2|Možnost $1 je globalno preglašena|Možnosti $1 sta globalno preglašeni|Možnosti $1 so globalno preglašene}}. Uporabite lahko API »globalpreferences«, da spremenite možnost globalno, ali API »globalpreferenceoverrrides«, da nastavite lokalno preglasitev."
+	"apihelp-globalpreferenceoverrides-example-change": "Nastavitev ali sprememba preglasitev za nastavitvi <kbd>skin</kbd> in <kbd>hideminor</kbd>."
 }

@@ -9,6 +9,5 @@
 	"apihelp-query+globalpreferences-param-prop": "Ce preferințe să fie incluse:",
 	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Preferințe globale.",
 	"apierror-globalpreferences-notglobalized": "Utilizatorul curent nu are un cont global.",
-	"apihelp-globalpreferenceoverrides-example-reset": "Elimină toate valorile locale.",
-	"apiwarn-globally-overridden": "{{PLURAL:$2|Opțiunea|Opțiunile}} $1 {{PLURAL:$2|este|sunt}} suprascrise global. Puteți utiliza API-ul „globalpreferences” pentru a schimba lobal opțiunea sau API-ul „globalpreferenceoverrides” pentru a seta o suprascriere locală."
+	"apihelp-globalpreferenceoverrides-example-reset": "Elimină toate valorile locale."
 }

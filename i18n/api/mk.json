@@ -29,6 +29,5 @@
 	"apihelp-globalpreferenceoverrides-param-optionname": "Назив на замената на која се задава вредноста укажана од <var>optionvalue</var>.",
 	"apihelp-globalpreferenceoverrides-param-optionvalue": "Вредност на нагодувањата укажана од <var>optionname</var>.",
 	"apihelp-globalpreferenceoverrides-example-reset": "Отстрани ги сите месни замени.",
-	"apihelp-globalpreferenceoverrides-example-change": "Задај или измени замени за нагодувањата <kbd>skin</kbd> и <kbd>hideminor</kbd>.",
-	"apiwarn-globally-overridden": "{{PLURAL:$2|Можноста|Можностите}} $1 {{PLURAL:$2|е глобално заменета|се глобално заменети}}. Можете да се послужите со приложникот „globalpreferences“ за да ја измените можноста глобално, или пак „globalpreferenceoverrides“ за да зададете месна замена."
+	"apihelp-globalpreferenceoverrides-example-change": "Задај или измени замени за нагодувањата <kbd>skin</kbd> и <kbd>hideminor</kbd>."
 }

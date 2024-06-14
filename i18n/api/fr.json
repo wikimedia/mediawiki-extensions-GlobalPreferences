@@ -31,6 +31,5 @@
 	"apihelp-globalpreferenceoverrides-param-optionname": "Le nom désignant la préférence remplacée localement qui doit être positionnée à la valeur donnée par <var>optionvalue</var>.",
 	"apihelp-globalpreferenceoverrides-param-optionvalue": "La valeur de remplacement local pour la préférence désignée par <var>optionname</var>.",
 	"apihelp-globalpreferenceoverrides-example-reset": "Supprimer tous les remplacements locaux.",
-	"apihelp-globalpreferenceoverrides-example-change": "Initialiser ou modifier les remplacements pour les préférences de <kbd>skin</kbd> (habillage) et <kbd>hideminor</kbd> (masquer les éléments mineurs).",
-	"apiwarn-globally-overridden": "{{PLURAL:$2|L’option|Les options}} $1 {{PLURAL:$2|est globalement écrasée|sont globalement écrasées}}. Vous pouvez utiliser l’API « globalpreferences » pour modifier l’option globalement, ou bien l’API « globalpreferenceoverrides » pour définir un écrasement local."
+	"apihelp-globalpreferenceoverrides-example-change": "Initialiser ou modifier les remplacements pour les préférences de <kbd>skin</kbd> (habillage) et <kbd>hideminor</kbd> (masquer les éléments mineurs)."
 }

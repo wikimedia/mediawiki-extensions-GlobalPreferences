@@ -28,6 +28,5 @@
 	"apihelp-globalpreferenceoverrides-param-optionname": "'U nome d'a sovrascretture avessa essere 'mbostate a 'u valore date da <var>optionvalue</var>.",
 	"apihelp-globalpreferenceoverrides-param-optionvalue": "'U valore pa sovrascretture specificate da <var>optionname</var>.",
 	"apihelp-globalpreferenceoverrides-example-reset": "Live tutte le sovrascretture locale.",
-	"apihelp-globalpreferenceoverrides-example-change": "'Mboste o cnage le sovrascretture pe le preferenze <kbd>skin</kbd> e <kbd>hideminor</kbd>.",
-	"apiwarn-globally-overridden": "{{PLURAL:$2|Opzione|Opziune}} $1 {{PLURAL:$2|jè|sò}} globbalmende sovrascritte. Puè ausà l'API \"globalpreferences\" pe cangià le opziune globbale, o l'API \"globalpreferenceoverrides\" pe 'mbostà 'na sovrascretture locale."
+	"apihelp-globalpreferenceoverrides-example-change": "'Mboste o cnage le sovrascretture pe le preferenze <kbd>skin</kbd> e <kbd>hideminor</kbd>."
 }

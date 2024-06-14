@@ -28,6 +28,5 @@
 	"apihelp-globalpreferenceoverrides-param-optionname": "Navnet på overstyringen som skal settes til verdien gitt av <var>optionvalue</var>.",
 	"apihelp-globalpreferenceoverrides-param-optionvalue": "Verdien til overstyringen angitt av <var>optionname</var>.",
 	"apihelp-globalpreferenceoverrides-example-reset": "Fjern alle lokale overstyringer.",
-	"apihelp-globalpreferenceoverrides-example-change": "Sett eller endre overstyringene for innstillingene for <kbd>skin</kbd> og <kbd>hideminor</kbd>.",
-	"apiwarn-globally-overridden": "{{PLURAL:$2|Alternativet|Alternativene}} $1 blir overstyrt globalt. Du kan bruke API-et «globalpreferences» for å endre alternativet globalt, eller «globalpreferenceoverrides» for å sette et lokalt unntak."
+	"apihelp-globalpreferenceoverrides-example-change": "Sett eller endre overstyringene for innstillingene for <kbd>skin</kbd> og <kbd>hideminor</kbd>."
 }

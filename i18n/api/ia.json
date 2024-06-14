@@ -28,6 +28,5 @@
 	"apihelp-globalpreferenceoverrides-param-optionname": "Le nomine del reimplaciamento local que debe esser definite con le valor date per <var>optionvalue</var>.",
 	"apihelp-globalpreferenceoverrides-param-optionvalue": "Le valor del reimplaciamento local specificate per <var>optionname</var>.",
 	"apihelp-globalpreferenceoverrides-example-reset": "Remover tote le valores de reimplaciamento local.",
-	"apihelp-globalpreferenceoverrides-example-change": "Definir o cambiar valores de reimplaciamento local pro le preferentias <kbd>skin</kbd> e <kbd>hideminor</kbd>.",
-	"apiwarn-globally-overridden": "Le option{{PLURAL:$2||es}} $1 es globalmente supplantate. Tu pote usar le API \"globalpreferences\" pro cambiar globalmente le option, o le API \"globalpreferenceoverrides\" pro definir un valor de reimplaciamento local."
+	"apihelp-globalpreferenceoverrides-example-change": "Definir o cambiar valores de reimplaciamento local pro le preferentias <kbd>skin</kbd> e <kbd>hideminor</kbd>."
 }

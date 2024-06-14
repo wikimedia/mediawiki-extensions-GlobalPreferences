@@ -29,6 +29,5 @@
 	"apihelp-globalpreferenceoverrides-param-optionname": "O nome da sobreposição que deve ser definida com o valor dado em <var>optionvalue</var>.",
 	"apihelp-globalpreferenceoverrides-param-optionvalue": "O valor para a sobreposição especificada por <var>optionname</var>.",
 	"apihelp-globalpreferenceoverrides-example-reset": "Remover todas as sobreposições locais.",
-	"apihelp-globalpreferenceoverrides-example-change": "Definir ou alterar sobreposições para as preferências <kbd>skin</kbd> e <kbd>hideminor</kbd>.",
-	"apiwarn-globally-overridden": "{{PLURAL:$2|A opção|As opções}} $1 {{PLURAL:$2|foi sobreposta|foram sobrepostas}} a nível global. Você pode usar a API \"globalpreferences\" para alterar a opção globalmente ou a API \"globalpreferenceoverrides\" para definir uma substituição local."
+	"apihelp-globalpreferenceoverrides-example-change": "Definir ou alterar sobreposições para as preferências <kbd>skin</kbd> e <kbd>hideminor</kbd>."
 }

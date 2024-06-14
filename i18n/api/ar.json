@@ -29,6 +29,5 @@
 	"apihelp-globalpreferenceoverrides-param-optionname": "اسم التفضيل الذي يجب تعيينه إلى القيمة المعطاة بواسطة <var>optionvalue</var>.",
 	"apihelp-globalpreferenceoverrides-param-optionvalue": "قيمة التجاوز المحددة بواسطة <var>optionname</var>.",
 	"apihelp-globalpreferenceoverrides-example-reset": "أزل جميع التجاوزات المحلية.",
-	"apihelp-globalpreferenceoverrides-example-change": "قم بتعيين أو تغيير التجاوزات لتفضيلات <kbd>skin</kbd> و<kbd>hideminor</kbd>.",
-	"apiwarn-globally-overridden": "{{PLURAL:$2| خيار | خيارات}} $1 {{PLURAL:$2| تم تجاوز | هي}} عالميًا. يمكنك استخدام واجهة برمجة التطبيقات \"globalpreferences\" لتغيير الخيار عالميًا ، أو واجهة برمجة التطبيقات \"globalpreferenceoverrides\" لتعيين تجاوز محلي."
+	"apihelp-globalpreferenceoverrides-example-change": "قم بتعيين أو تغيير التجاوزات لتفضيلات <kbd>skin</kbd> و<kbd>hideminor</kbd>."
 }

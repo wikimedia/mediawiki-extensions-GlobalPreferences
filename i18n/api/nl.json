@@ -29,6 +29,5 @@
 	"apihelp-globalpreferenceoverrides-param-optionname": "De naam van de uitzondering die moet worden ingesteld op de door <var>optionvalue</var> gegeven waarde.",
 	"apihelp-globalpreferenceoverrides-param-optionvalue": "De waarde van de door <var>optionname</var> aangegeven uitzondering.",
 	"apihelp-globalpreferenceoverrides-example-reset": "Alle lokale uitzonderingen verwijderen.",
-	"apihelp-globalpreferenceoverrides-example-change": "Uitzonderingen voor de voorkeuren <kbd>skin</kbd> en <kbd>hideminor</kbd> instellen of wijzigen.",
-	"apiwarn-globally-overridden": "De {{PLURAL:$2|optie|opties}} $1 {{PLURAL:$2|is|zijn}} globaal overschreven. U kunt de API \"globalpreferences\" gebruiken om de optie globaal te wijzigen, of de API \"globalpreferenceoverrides\" om een lokale uitzondering in te stellen."
+	"apihelp-globalpreferenceoverrides-example-change": "Uitzonderingen voor de voorkeuren <kbd>skin</kbd> en <kbd>hideminor</kbd> instellen of wijzigen."
 }
