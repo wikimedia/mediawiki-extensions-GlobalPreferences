@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kuldeepburjbhalaike"
+			"Kuldeepburjbhalaike",
+			"Cabal"
 		]
 	},
 	"globalprefs-desc": "ਵਰਤੋਂਕਾਰਾਂ ਨੂੰ ਗਲੋਬਲ ਤਰਜੀਹਾਂ ਸੈਟ ਕਰਨ ਦੀ ਆਗਿਆ ਦਿੰਦਾ ਹੈ",
@@ -13,7 +14,7 @@
 	"globalpreferences": "ਗਲੋਬਲ ਤਰਜੀਹਾਂ",
 	"globalprefs-info-label": "ਗਲੋਬਲ ਤਰਜੀਹਾਂ:",
 	"globalprefs-info-link": "ਆਪਣੀਆਂ ਗਲੋਬਲ ਤਰਜੀਹਾਂ ਸੈੱਟ ਕਰੋ",
-	"globalprefs-info-help": "ਗਲੋਬਲ ਤਰਜੀਹਾਂ ਪੰਨੇ ਰਾਹੀਂ ਨਿਰਧਾਰਿਤ ਤਰਜੀਹਾਂ ਸਾਰੇ ਵਿਕੀਆਂ ਉੱਤੇ ਲਾਗੂ ਹੋਣਗੀਆਂ।",
+	"globalprefs-info-help": "ਵਿਸ਼ਵ-ਵਿਆਪੀ ਤਰਜੀਹਾਂ ਸਫ਼ੇ ਰਾਹੀਂ ਨਿਰਧਾਰਿਤ ਤਰਜੀਹਾਂ ਸਾਰੇ ਵਿਕੀਆਂ ਉੱਤੇ ਲਾਗੂ ਹੋਣਗੀਆਂ।",
 	"globalprefs-restoreprefs": "ਸਾਰੀਆਂ ਗਲੋਬਲ ਤਰਜੀਹਾਂ ਨੂੰ ਹਟਾਓ (ਸਾਰੇ ਭਾਗਾਂ ਵਿੱਚ)",
 	"globalprefs-col-header": "ਗਲੋਬਲ ਹੋਣ ਲਈ ਹੇਠਾਂ ਦਿੱਤੇ ਵਿਕਲਪਾਂ ਨੂੰ ਚੁਣੋ"
 }
