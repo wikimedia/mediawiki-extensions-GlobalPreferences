@@ -6,11 +6,12 @@
 			"Kly",
 			"LNDDYL",
 			"Liuxinyu970226",
-			"Xiplus"
+			"Xiplus",
+			"Cookai1205"
 		]
 	},
 	"globalprefs-desc": "允許使用者設定全域偏好設定",
-	"globalprefs-set-local-exception": "為此[[Special:GlobalPreferences#$1|全域偏好設定]]設定一個本地例外內容。",
+	"globalprefs-set-local-exception": "為此[[Special:GlobalPreferences#$1|全域偏好設定]]設定本地例外。",
 	"globalprefs-has-local-exception": "此全域偏好設定[[Special:Preferences#$1|在此wiki有本地例外]]。",
 	"tooltip-globalprefs-check-label": "讓此設定全域化",
 	"globalprefs-error-header": "錯誤",
