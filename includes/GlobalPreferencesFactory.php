@@ -247,6 +247,12 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 			if ( !$this->isGlobalizablePreference( $pref, $def ) ) {
 				continue;
 			}
+			// If a 'info' preference was allowed (i.e. 'canglobal' is set to true), then we should not add a checkbox
+			// as it doesn't make sense.
+			if ( isset( $def['type'] ) && $def['type'] === 'info' ) {
+				$allPrefs[$pref] = $def;
+				continue;
+			}
 			// Create the new preference.
 			$isGlobal = isset( $globalPrefs[$pref] );
 			$allPrefs[$pref . static::GLOBAL_EXCEPTION_SUFFIX] = [

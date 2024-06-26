@@ -136,6 +136,29 @@ class GlobalPreferencesTest extends MediaWikiIntegrationTestCase {
 		);
 	}
 
+	public function testGetPreferencesGlobalWhenInfoTypeIsGlobalised() {
+		$this->setUserLang( 'qqx' );
+		$user = $this->getTestUser()->getUser();
+		$globalPreferencesFactory = TestingAccessWrapper::newFromObject(
+			$this->getServiceContainer()->getPreferencesFactory()
+		);
+		$globalPreferences = $globalPreferencesFactory->getPreferencesGlobal(
+			$user,
+			[ 'foo-description' => [ 'type' => 'info', 'canglobal' => true, 'default' => 'Foo' ] ],
+			[], RequestContext::getMain()
+		);
+		// Verify that the foo-description preference is globalised, but without an associated checkbox
+		$this->assertArrayHasKey( 'foo-description', $globalPreferences );
+		$this->assertArrayNotHasKey( 'foo-description-global', $globalPreferences );
+		// Verify that the foo-description preference is unmodified.
+		$this->assertArrayEquals(
+			[ 'type' => 'info', 'canglobal' => true, 'default' => 'Foo' ],
+			$globalPreferences['foo-description']
+		);
+		// Verify that the 'restoreprefs' preference is always present.
+		$this->assertArrayHasKey( 'restoreprefs', $globalPreferences );
+	}
+
 	/**
 	 * @dataProvider provideIsGlobalizablePreference
 	 *
@@ -250,6 +273,15 @@ class GlobalPreferencesTest extends MediaWikiIntegrationTestCase {
 					'class' => 'SomethingNew',
 				],
 			],
+			[
+				'Globalize preferences with canglobal as true',
+				true,
+				'pref-description',
+				[
+					'type' => 'info',
+					'canglobal' => true,
+				],
+			]
 		];
 	}
 }
