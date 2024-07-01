@@ -5,5 +5,8 @@
 		]
 	},
 	"globalprefs-set-local-exception": "Aturakan pangacualian lukal gasan [[Special:GlobalPreferences#$1|kakatujuan global]] ngini.",
-	"globalpreferences": "Kakatujuan global"
+	"globalpreferences": "Kakatujuan global",
+	"globalprefs-info-label": "Kakatujuan global:",
+	"globalprefs-info-link": "Atur kakatujuan global:",
+	"globalprefs-info-help": "Kakatujuan nang diatur liwat kakatujuan global pacangan batampai di samunyaan wiki."
 }
