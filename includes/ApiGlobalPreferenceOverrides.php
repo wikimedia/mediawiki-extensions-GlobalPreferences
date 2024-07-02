@@ -63,13 +63,7 @@ class ApiGlobalPreferenceOverrides extends ApiOptionsBase {
 	 * @inheritDoc
 	 */
 	protected function setPreference( $preference, $value ) {
-		$exceptionName = $preference . UserOptionsLookup::LOCAL_EXCEPTION_SUFFIX;
-		if ( $value === null ) {
-			$this->prefs[$exceptionName] = null;
-		} else {
-			$this->prefs[$preference] = $value;
-			$this->prefs[$exceptionName] = 1;
-		}
+		$this->prefs[$preference] = $value;
 	}
 
 	/**
@@ -77,8 +71,9 @@ class ApiGlobalPreferenceOverrides extends ApiOptionsBase {
 	 */
 	protected function commitChanges() {
 		$user = $this->getUser();
+		$userOptionsManager = $this->getUserOptionsManager();
 		if ( $this->resetPrefTypes ) {
-			$prefs = $this->getUserOptionsManager()->getOptions( $user, 0, IDBAccessObject::READ_EXCLUSIVE );
+			$prefs = $userOptionsManager->getOptions( $user, 0, IDBAccessObject::READ_EXCLUSIVE );
 			$kinds = $this->globalPrefs->getResetKinds(
 				$user,
 				$this->getContext(),
@@ -87,7 +82,7 @@ class ApiGlobalPreferenceOverrides extends ApiOptionsBase {
 			foreach ( $prefs as $pref => $value ) {
 				$kind = $kinds[$pref];
 				if ( in_array( $kind, $this->resetPrefTypes ) ) {
-					$this->getUserOptionsManager()->setOption(
+					$userOptionsManager->setOption(
 						$user,
 						$pref . UserOptionsLookup::LOCAL_EXCEPTION_SUFFIX,
 						null
@@ -96,9 +91,17 @@ class ApiGlobalPreferenceOverrides extends ApiOptionsBase {
 			}
 		}
 		foreach ( $this->prefs as $pref => $value ) {
-			$this->getUserOptionsManager()->setOption( $user, $pref, $value );
+			if ( $value === null ) {
+				$userOptionsManager->setOption(
+					$user,
+					$pref . UserOptionsLookup::LOCAL_EXCEPTION_SUFFIX,
+					null
+				);
+			} else {
+				$userOptionsManager->setOption( $user, $pref, $value, UserOptionsManager::GLOBAL_OVERRIDE );
+			}
 		}
-		$this->getUserOptionsManager()->saveOptions( $user );
+		$userOptionsManager->saveOptions( $user );
 	}
 
 	/**
