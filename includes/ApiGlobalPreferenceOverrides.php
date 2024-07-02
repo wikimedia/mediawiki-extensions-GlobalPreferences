@@ -4,17 +4,10 @@ namespace GlobalPreferences;
 
 use ApiMain;
 use ApiOptionsBase;
-use IDBAccessObject;
 use MediaWiki\User\Options\UserOptionsLookup;
 use MediaWiki\User\Options\UserOptionsManager;
 
 class ApiGlobalPreferenceOverrides extends ApiOptionsBase {
-
-	/** @var mixed[] */
-	private $prefs = [];
-
-	/** @var string[] */
-	private $resetPrefTypes = [];
 
 	/**
 	 * @var GlobalPreferencesFactory
@@ -52,56 +45,35 @@ class ApiGlobalPreferenceOverrides extends ApiOptionsBase {
 	 * @inheritDoc
 	 */
 	protected function resetPreferences( array $kinds ) {
-		if ( in_array( 'all', $kinds ) ) {
-			$this->resetPrefTypes = $this->globalPrefs->listResetKinds();
-		} else {
-			$this->resetPrefTypes = $kinds;
-		}
+		$optionNames = array_map(
+			static fn ( $name ) => $name . UserOptionsLookup::LOCAL_EXCEPTION_SUFFIX,
+			$this->globalPrefs->getOptionNamesForReset(
+				$this->getUserForUpdates(), $this->getContext(), $kinds )
+		);
+		$this->getUserOptionsManager()->resetOptionsByName( $this->getUserForUpdates(), $optionNames );
 	}
 
 	/**
 	 * @inheritDoc
 	 */
 	protected function setPreference( $preference, $value ) {
-		$this->prefs[$preference] = $value;
+		if ( $value === null ) {
+			$this->getUserOptionsManager()->setOption(
+				$this->getUserForUpdates(),
+				$preference . UserOptionsLookup::LOCAL_EXCEPTION_SUFFIX,
+				null
+			);
+		} else {
+			$this->getUserOptionsManager()->setOption(
+				$this->getUserForUpdates(), $preference, $value, UserOptionsManager::GLOBAL_OVERRIDE );
+		}
 	}
 
 	/**
 	 * @inheritDoc
 	 */
 	protected function commitChanges() {
-		$user = $this->getUser();
-		$userOptionsManager = $this->getUserOptionsManager();
-		if ( $this->resetPrefTypes ) {
-			$prefs = $userOptionsManager->getOptions( $user, 0, IDBAccessObject::READ_EXCLUSIVE );
-			$kinds = $this->globalPrefs->getResetKinds(
-				$user,
-				$this->getContext(),
-				$prefs
-			);
-			foreach ( $prefs as $pref => $value ) {
-				$kind = $kinds[$pref];
-				if ( in_array( $kind, $this->resetPrefTypes ) ) {
-					$userOptionsManager->setOption(
-						$user,
-						$pref . UserOptionsLookup::LOCAL_EXCEPTION_SUFFIX,
-						null
-					);
-				}
-			}
-		}
-		foreach ( $this->prefs as $pref => $value ) {
-			if ( $value === null ) {
-				$userOptionsManager->setOption(
-					$user,
-					$pref . UserOptionsLookup::LOCAL_EXCEPTION_SUFFIX,
-					null
-				);
-			} else {
-				$userOptionsManager->setOption( $user, $pref, $value, UserOptionsManager::GLOBAL_OVERRIDE );
-			}
-		}
-		$userOptionsManager->saveOptions( $user );
+		$this->getUserOptionsManager()->saveOptions( $this->getUserForUpdates() );
 	}
 
 	/**
