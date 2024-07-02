@@ -3,12 +3,10 @@
 namespace GlobalPreferences\Test;
 
 use GlobalPreferences\Storage;
-use IDBAccessObject;
+use MediaWiki\MainConfigNames;
 use MediaWiki\Tests\Api\ApiTestCase;
 use MediaWiki\Title\Title;
-use MediaWiki\User\CentralId\CentralIdLookup;
 use MediaWiki\User\User;
-use MediaWiki\User\UserIdentity;
 use Wikimedia\TestingAccessWrapper;
 
 /**
@@ -17,6 +15,7 @@ use Wikimedia\TestingAccessWrapper;
  * @group GlobalPreferences
  * @group Database
  * @covers \GlobalPreferences\GlobalUserOptionsStore
+ * @covers \GlobalPreferences\ApiGlobalPreferenceOverrides
  */
 class ApiOptionsGlobalIntegrationTest extends ApiTestCase {
 	/** @var User */
@@ -25,36 +24,9 @@ class ApiOptionsGlobalIntegrationTest extends ApiTestCase {
 	public function setUp(): void {
 		parent::setUp();
 
-		$this->overrideConfigValue( 'GlobalPreferencesDB', '' );
-
-		$centralIdLookup = new class extends CentralIdLookup {
-			public function isAttached( UserIdentity $user, $wikiId = UserIdentity::LOCAL
-			): bool {
-				return true;
-			}
-
-			public function lookupCentralIds(
-				array $idToName, $audience = self::AUDIENCE_PUBLIC,
-				$flags = IDBAccessObject::READ_NORMAL
-			): array {
-				return $idToName;
-			}
-
-			public function lookupUserNames(
-				array $nameToId, $audience = self::AUDIENCE_PUBLIC,
-				$flags = IDBAccessObject::READ_NORMAL
-			): array {
-				return array_combine(
-					array_keys( $nameToId ),
-					range( 1, count( $nameToId ) )
-				);
-			}
-		};
-
-		$this->overrideMwServices( null, [
-			'CentralIdLookup' => static function () use ( $centralIdLookup ) {
-				return $centralIdLookup;
-			}
+		$this->overrideConfigValues( [
+			MainConfigNames::CentralIdLookupProvider => 'local',
+			'GlobalPreferencesDB' => false,
 		] );
 
 		$this->user = $this->getTestUser()->getUser();
@@ -74,6 +46,9 @@ class ApiOptionsGlobalIntegrationTest extends ApiTestCase {
 	}
 
 	private function assertPrefsContain( $expected ) {
+		// Make sure the changed options are stored into the database
+		$this->getServiceContainer()->getUserOptionsManager()
+			->clearUserOptionsCache( $this->user );
 		$res = $this->doOptionsRequest( [
 			'action' => 'query',
 			'meta' => 'userinfo',
@@ -124,6 +99,15 @@ class ApiOptionsGlobalIntegrationTest extends ApiTestCase {
 		$this->assertSame( 'success', $res[0]['options'] );
 		$this->assertPrefsContain( [ 'gender' => 'male' ] );
 
+		// Override the global preference with a non-default value
+		$res = $this->doOptionsRequest( [
+			'optionname' => 'gender',
+			'optionvalue' => 'female',
+			'global' => 'override',
+		] );
+		$this->assertSame( 'success', $res[0]['options'] );
+		$this->assertPrefsContain( [ 'gender' => 'female', 'gender-local-exception' => '1' ] );
+
 		// Override the global preference with the default
 		$res = $this->doOptionsRequest( [
 			'optionname' => 'gender',
@@ -133,13 +117,13 @@ class ApiOptionsGlobalIntegrationTest extends ApiTestCase {
 		$this->assertSame( 'success', $res[0]['options'] );
 		$this->assertPrefsContain( [ 'gender' => 'unknown', 'gender-local-exception' => '1' ] );
 
-		// Override the global preference with a non-default value
+		// Override the global preference with action=globalpreferenceoverrides
 		$res = $this->doOptionsRequest( [
+			'action' => 'globalpreferenceoverrides',
 			'optionname' => 'gender',
-			'optionvalue' => 'female',
-			'global' => 'override',
+			'optionvalue' => 'male',
 		] );
-		$this->assertSame( 'success', $res[0]['options'] );
-		$this->assertPrefsContain( [ 'gender' => 'female', 'gender-local-exception' => '1' ] );
+		$this->assertSame( 'success', $res[0]['globalpreferenceoverrides'] );
+		$this->assertPrefsContain( [ 'gender' => 'male', 'gender-local-exception' => '1' ] );
 	}
 }
