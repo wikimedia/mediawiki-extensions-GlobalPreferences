@@ -6,12 +6,12 @@
 			"बडा काजी"
 		]
 	},
-	"globalprefs-desc": "प्रयोगकर्ताहरूलाई वैश्विक प्राथमिकताहरू तोक्न अनुमति दिने",
-	"globalprefs-set-local-exception": "यस [[Special:GlobalPreferences#$1|वैश्विक प्राथमिकता]]का लागि स्थानीय अपवाद तोक्नुहोस्।",
-	"globalprefs-has-local-exception": "यस वैश्विक प्राथमिकतामा [[Special:Preferences#$1|यस विकिमा स्थानीय अपवाद छ]]।",
-	"tooltip-globalprefs-check-label": "यस सेटिङलाई वैश्विक बनाउनुहोस्",
+	"globalprefs-desc": "प्रयोगकर्ताहरूलाई विश्वव्यापी प्राथमिकताहरू तोक्न अनुमति दिने",
+	"globalprefs-set-local-exception": "यस [[Special:GlobalPreferences#$1|विश्वव्यापी प्राथमिकता]]का लागि स्थानीय अपवाद तोक्नुहोस्।",
+	"globalprefs-has-local-exception": "यस विश्वव्यापी प्राथमिकतामा [[Special:Preferences#$1|यस विकिमा स्थानीय अपवाद छ]]।",
+	"tooltip-globalprefs-check-label": "यस सेटिङलाई विश्वव्यापी बनाउनुहोस्",
 	"globalprefs-error-header": "त्रुटी",
-	"globalprefs-notglobal": "तपाईँको खाता वैश्विक खाता होइन त्यसैले वैश्विक प्राथमिकताहरू तोक्न सकिदैन।",
+	"globalprefs-notglobal": "तपाईँको खाता विश्वव्यापी खाता होइन त्यसैले विश्वव्यापी प्राथमिकताहरू तोक्न सकिँदैन।",
 	"globalpreferences": "विश्वव्यापी अभिरूचिहरू",
 	"globalprefs-info-label": "विश्वव्यापी अभिरूचिहरू",
 	"globalprefs-info-link": "विश्वव्यापी अभिरूचिहरू राख्नुहाेस्",
