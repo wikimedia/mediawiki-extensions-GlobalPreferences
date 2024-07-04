@@ -5,8 +5,8 @@ namespace GlobalPreferences;
 use ApiMain;
 use ApiOptionsBase;
 use IDBAccessObject;
+use MediaWiki\User\Options\UserOptionsLookup;
 use MediaWiki\User\Options\UserOptionsManager;
-use MediaWiki\User\UserOptionsLookup;
 
 class ApiGlobalPreferenceOverrides extends ApiOptionsBase {
 

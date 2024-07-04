@@ -5,6 +5,7 @@ namespace GlobalPreferences\Test;
 use GlobalPreferences\Storage;
 use IDBAccessObject;
 use MediaWiki\Tests\Api\ApiTestCase;
+use MediaWiki\Title\Title;
 use MediaWiki\User\CentralId\CentralIdLookup;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
@@ -83,7 +84,7 @@ class ApiOptionsGlobalIntegrationTest extends ApiTestCase {
 
 	public function testApiOptions() {
 		// DefaultPreferencesFactory needs a context title for the signature preference
-		$this->apiContext->setTitle( \Title::newFromText( 'ApiOptions' ) );
+		$this->apiContext->setTitle( Title::newFromText( 'ApiOptions' ) );
 
 		// Set a local option
 		$res = $this->doOptionsRequest( [ 'change' => 'gender=male' ] );
