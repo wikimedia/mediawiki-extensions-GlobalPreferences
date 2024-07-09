@@ -5,6 +5,7 @@ namespace GlobalPreferences\Test;
 use GlobalPreferences\GlobalPreferencesFactory;
 use GlobalPreferences\Storage;
 use MediaWiki\Context\RequestContext;
+use MediaWiki\MainConfigNames;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use MediaWikiIntegrationTestCase;
@@ -21,9 +22,9 @@ class GlobalPreferencesTest extends MediaWikiIntegrationTestCase {
 	protected function setUp(): void {
 		parent::setUp();
 
-		$this->setMwGlobals( [
-			'wgCentralIdLookupProvider' => 'local',
-			'wgGlobalPreferencesDB' => false,
+		$this->overrideConfigValues( [
+			MainConfigNames::CentralIdLookupProvider => 'local',
+			'GlobalPreferencesDB' => false,
 		] );
 
 		// Prevent cache hits in GlobalPreferences\Storage

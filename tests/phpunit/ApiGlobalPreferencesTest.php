@@ -4,6 +4,7 @@ namespace phpunit;
 
 use Generator;
 use GlobalPreferences\Storage;
+use MediaWiki\MainConfigNames;
 use MediaWiki\Tests\Api\ApiTestCase;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
@@ -24,9 +25,9 @@ class ApiGlobalPreferencesTest extends ApiTestCase {
 	protected function setUp(): void {
 		parent::setUp();
 
-		$this->setMwGlobals( [
-			'wgCentralIdLookupProvider' => 'local',
-			'wgGlobalPreferencesDB' => false,
+		$this->overrideConfigValues( [
+			MainConfigNames::CentralIdLookupProvider => 'local',
+			'GlobalPreferencesDB' => false,
 		] );
 
 		$this->user = $this->getTestUser()->getUser();
