@@ -1,0 +1,21 @@
+{
+	"@metadata": {
+		"authors": [
+			"IJzeren Jan"
+		]
+	},
+	"globalprefs-desc": "Pozvaljaje koristnikam ustaviti globalne prědpočitanja",
+	"globalprefs-set-local-exception": "Ustanoviti lokalno izključenje za tuto [[Special:GlobalPreferences#$1|globalno nastavjenje]].",
+	"globalprefs-has-local-exception": "Tuto globalno nastavjenje imaje [[Special:Preferences#$1|lokalno izključenje na tutoj viki]].",
+	"tooltip-globalprefs-check-label": "Priměniti tuto nastavjenje globalno",
+	"globalprefs-error-header": "Pogrěška",
+	"globalprefs-notglobal": "Vaše koristničsko konto ne jest globalno konto, zato ustanovjenje globalnyh nastavjenij jest nemožno.",
+	"globalpreferences": "Globalne nastavjenja",
+	"globalprefs-info-label": "Globalne nastavjenja:",
+	"globalprefs-info-link": "Ustanovite svoje globalne nastavjenja",
+	"globalprefs-info-help": "Prědpočitanja, ustanovjene črěz stranicu globalnyh nastavjenij, budut priměnjane vo vsih viki.",
+	"globalprefs-reset-intro": "Vy možete upotrěbiti tutu stranicu za izključenje vsih globalnyh nastavjenij vo vsih viki i vratiti se k svojim lokalnym nastavjenjam. To ne vlije na lokalne nastavjenja viki. Tuto dějanje ne može byti odčinjeno.",
+	"globalprefs-restoreprefs": "Udaliti vse globalne nastavjenje (vo vsih razdělah)",
+	"globalprefs-select-all": "Označiti ili odznačiti vse polja",
+	"globalprefs-col-header": "Označiti opcije niže, da by stali globalne"
+}
