@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"IJzeren Jan"
+		]
+	},
+	"apihelp-globalpreferences-summary": "Izměniti globalne nastavjenja nyněšnjego koristnika.",
+	"apihelp-globalpreferences-extended-description": "Samo nastavjenja zapisane za nyněšnu viki mogut byti izměnjene lokalno.",
+	"apihelp-globalpreferences-param-reset": "Resetovati globalne nastavjenje. Odstranjaje vse ili – zavisno od značenja parametra <code>resetkinds</code> – někoje tipy globalnyh nastavjenij i pričinjaje, že uže ne sut globalne."
+}
