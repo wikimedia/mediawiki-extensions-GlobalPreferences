@@ -20,7 +20,7 @@
 	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Globalne nastavjenja",
 	"apihelp-query+globalpreferences-paramvalue-prop-localoverrides": "Lokalne zaměny za globalne nastavjenja.",
 	"apierror-globalpreferences-notglobalized": "Nyněšnji koristnika nest jest globalny.",
-	"apihelp-globalpreferenceoverrides-summary": "Izměniti lokale zaměny za globalne nastavjenja nyněšnjego koristnika.",
+	"apihelp-globalpreferenceoverrides-summary": "Izměniti lokalne zaměny za globalne nastavjenja nyněšnjego koristnika.",
 	"apihelp-globalpreferenceoverrides-extended-description": "Globale značenja za dotknute nastavjenja budut ignorovane.",
 	"apihelp-globalpreferenceoverrides-param-reset": "Resetovati lokalne zaměny. Odstranjaje vse ili – zavisno od značenja parametra <code>resetkinds</code> – někoje tipy lokalnyh nastavjenij i pričinjaje, že ponovno sut globalne.",
 	"apihelp-globalpreferenceoverrides-param-resetkinds": "Spisok tipov zaměn za resetovanje, kogda ustanovjenja jest opcija <var>reset</var>.",
