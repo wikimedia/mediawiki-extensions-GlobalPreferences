@@ -12,7 +12,7 @@
 	"globalprefs-notglobal": "Vaše koristničsko konto ne jest globalno konto, zato ustanovjenje globalnyh nastavjenij jest nemožno.",
 	"globalpreferences": "Globalne nastavjenja",
 	"globalprefs-info-label": "Globalne nastavjenja:",
-	"globalprefs-info-link": "Ustanovite svoje globalne nastavjenja",
+	"globalprefs-info-link": "Ustavite svoje globalne nastavjenja",
 	"globalprefs-info-help": "Prědpočitanja, ustanovjene črěz stranicu globalnyh nastavjenij, budut priměnjane vo vsih viki.",
 	"globalprefs-reset-intro": "Vy možete upotrěbiti tutu stranicu za izključenje vsih globalnyh nastavjenij vo vsih viki i vratiti se k svojim lokalnym nastavjenjam. To ne vlije na lokalne nastavjenja viki. Tuto dějanje ne može byti odčinjeno.",
 	"globalprefs-restoreprefs": "Udaliti vse globalne nastavjenje (vo vsih razdělah)",
