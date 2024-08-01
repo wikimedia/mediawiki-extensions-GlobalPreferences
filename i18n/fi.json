@@ -5,7 +5,8 @@
 			"Nike",
 			"Pxos",
 			"Pyscowicz",
-			"Stryn"
+			"Stryn",
+			"Samoasambia"
 		]
 	},
 	"globalprefs-desc": "Antaa käyttäjien asettaa järjestelmänlaajuiset asetukset",
@@ -18,6 +19,7 @@
 	"globalprefs-info-label": "Järjestelmänlaajuiset asetukset:",
 	"globalprefs-info-link": "Määritä järjestelmänlaajuiset asetuksesi",
 	"globalprefs-info-help": "Järjestelmänlaajuisten asetusten kautta määritetyt valinnat ovat voimassa kaikissa wikeissä.",
+	"globalprefs-reset-intro": "Tällä sivulla voit poistaa käytöstä kaikki järjestelmänlaajuiset asetukset kaikissa wikeissä ja palata paikallisiin asetuksiisi. Tällä ei ole vaikutusta mihinkään paikallisten wikien asetuksiin. Tätä toimintoa ei voi perua.",
 	"globalprefs-restoreprefs": "Poista kaikki järjestelmänlaajuiset asetukset (kaikissa osioissa)",
 	"globalprefs-select-all": "Valitse tai tyhjennä kaikki valintaruudut",
 	"globalprefs-col-header": "Valitse kaikki alla olevat valinnat ja tee niistä järjestelmänlaajuiset"
