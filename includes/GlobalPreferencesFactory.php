@@ -549,7 +549,7 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 		// we're working with the previous user options and not those that are currently in the
 		// process of being saved (we only want the option names here, so don't care what the
 		// values are).
-		$userForDescriptor = User::newFromId( $user->getId() );
+		$userForDescriptor = MediaWikiServices::getInstance()->getUserFactory()->newFromId( $user->getId() );
 
 		// Save the global options.
 		$storage = $this->makeStorage( $user );
