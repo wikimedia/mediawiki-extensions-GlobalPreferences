@@ -76,7 +76,7 @@ class GlobalPreferencesTest extends MediaWikiIntegrationTestCase {
 		// Set up the context.
 		// Once preference definitions don't require the context, this can be removed.
 		$context = RequestContext::getMain();
-		$context->setTitle( Title::newFromText( 'Test' ) );
+		$context->setTitle( Title::makeTitle( NS_MAIN, 'Test' ) );
 
 		// Confirm the site default.
 		$this->assertEquals( 'en', $userOptionsManager->getOption( $user, 'language' ) );
@@ -114,7 +114,7 @@ class GlobalPreferencesTest extends MediaWikiIntegrationTestCase {
 		// Set up the context.
 		// Once preference definitions don't require the context, this can be removed.
 		$context = RequestContext::getMain();
-		$context->setTitle( Title::newFromText( 'Test' ) );
+		$context->setTitle( Title::makeTitle( NS_MAIN, 'Test' ) );
 
 		// Set it to be global (with a different value).
 		$globalPreferences->setGlobalPreferences( $user, [ 'language' => 'de' ], $context );
