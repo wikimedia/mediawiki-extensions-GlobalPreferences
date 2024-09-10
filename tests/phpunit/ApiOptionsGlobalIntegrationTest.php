@@ -59,7 +59,7 @@ class ApiOptionsGlobalIntegrationTest extends ApiTestCase {
 
 	public function testApiOptions() {
 		// DefaultPreferencesFactory needs a context title for the signature preference
-		$this->apiContext->setTitle( Title::newFromText( 'ApiOptions' ) );
+		$this->apiContext->setTitle( Title::makeTitle( NS_MAIN, 'ApiOptions' ) );
 
 		// Set a local option
 		$res = $this->doOptionsRequest( [ 'change' => 'gender=male' ] );
