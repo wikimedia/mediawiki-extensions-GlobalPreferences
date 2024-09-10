@@ -72,7 +72,10 @@ class GlobalUserOptionsStore implements UserOptionsStore {
 	}
 
 	private function getStorage( UserIdentity $user ): ?Storage {
-		$id = $this->centralIdLookup->centralIdFromLocalUser( $user );
+		if ( !$this->centralIdLookup->isOwned( $user ) ) {
+			return null;
+		}
+		$id = $this->centralIdLookup->centralIdFromName( $user->getName() );
 		if ( !$id ) {
 			return null;
 		}

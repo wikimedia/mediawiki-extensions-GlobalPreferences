@@ -503,8 +503,10 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	 * @return int
 	 */
 	public function getUserID( UserIdentity $user ) {
-		return MediaWikiServices::getInstance()->getCentralIdLookup()
-			->centralIdFromLocalUser( $user, CentralIdLookup::AUDIENCE_RAW );
+		$lookup = MediaWikiServices::getInstance()->getCentralIdLookup();
+		return $lookup->isOwned( $user ) ?
+			$lookup->centralIdFromName( $user->getName(), CentralIdLookup::AUDIENCE_RAW ) :
+			0;
 	}
 
 	/**
