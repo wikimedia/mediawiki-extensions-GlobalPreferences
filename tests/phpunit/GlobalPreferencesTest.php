@@ -5,6 +5,7 @@ namespace GlobalPreferences\Test;
 use GlobalPreferences\GlobalPreferencesFactory;
 use GlobalPreferences\Storage;
 use MediaWiki\Context\RequestContext;
+use MediaWiki\HTMLForm\Field\HTMLCheckMatrix;
 use MediaWiki\MainConfigNames;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
@@ -207,7 +208,15 @@ class GlobalPreferencesTest extends MediaWikiIntegrationTestCase {
 				true,
 				'foo',
 				[
-					'class' => 'HTMLCheckMatrix',
+					'class' => HTMLCheckMatrix::class,
+				],
+			],
+			[
+				'Globalize preferences with known class alias',
+				true,
+				'foo',
+				[
+					'class' => \HTMLCheckMatrix::class,
 				],
 			],
 			[
