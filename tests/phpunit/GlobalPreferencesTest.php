@@ -7,7 +7,6 @@ use GlobalPreferences\Storage;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\HTMLForm\Field\HTMLCheckMatrix;
 use MediaWiki\MainConfigNames;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use MediaWikiIntegrationTestCase;
 use Wikimedia\TestingAccessWrapper;
@@ -33,7 +32,7 @@ class GlobalPreferencesTest extends MediaWikiIntegrationTestCase {
 	}
 
 	public function testService() {
-		$factory = MediaWikiServices::getInstance()->getPreferencesFactory();
+		$factory = $this->getServiceContainer()->getPreferencesFactory();
 		$this->assertInstanceOf( GlobalPreferencesFactory::class, $factory );
 	}
 
@@ -172,7 +171,7 @@ class GlobalPreferencesTest extends MediaWikiIntegrationTestCase {
 	public function testIsGlobalizablePreference( $message, $expected, $name, array $info ) {
 		/** @var GlobalPreferencesFactory $globalPreferences */
 		$globalPreferences = TestingAccessWrapper::newFromObject(
-			MediaWikiServices::getInstance()->getPreferencesFactory()
+			$this->getServiceContainer()->getPreferencesFactory()
 		);
 
 		// Not calling directly because TestingAccessWrapper strips reference otherwise

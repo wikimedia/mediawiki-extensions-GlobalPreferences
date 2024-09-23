@@ -8,7 +8,6 @@ use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Context\DerivativeContext;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\HTMLForm\Field\HTMLCheckMatrix;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Request\FauxRequest;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Status\Status;
@@ -121,7 +120,7 @@ class GlobalPreferencesFactoryTest extends MediaWikiIntegrationTestCase {
 		$factory->method( 'getFormDescriptor' )->willReturn( $this->formDescriptor );
 		$wrapper = TestingAccessWrapper::newFromObject( $factory );
 		$wrapper->options = new ServiceOptions( [ 'HiddenPrefs' ], [ 'HiddenPrefs' => [] ] );
-		$wrapper->permissionManager = MediaWikiServices::getInstance()->getPermissionManager();
+		$wrapper->permissionManager = $this->getServiceContainer()->getPermissionManager();
 
 		$postData = [ 'wpFormIdentifier' => 'testFormSaving' ];
 		foreach ( $formData as $name => $value ) {
