@@ -6,7 +6,7 @@ use ErrorPageError;
 use MediaWiki\Context\DerivativeContext;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\HTMLForm\HTMLForm;
-use MediaWiki\MediaWikiServices;
+use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\Specials\SpecialPreferences;
 use MediaWiki\User\User;
 use PermissionsError;
@@ -15,9 +15,17 @@ use UserNotLoggedIn;
 
 class SpecialGlobalPreferences extends SpecialPreferences {
 
-	public function __construct() {
+	private PermissionManager $permissionManager;
+	private GlobalPreferencesFactory $preferencesFactory;
+
+	public function __construct(
+		PermissionManager $permissionManager,
+		GlobalPreferencesFactory $preferencesFactory
+	) {
 		parent::__construct();
 		$this->mName = 'GlobalPreferences';
+		$this->permissionManager = $permissionManager;
+		$this->preferencesFactory = $preferencesFactory;
 	}
 
 	/**
@@ -41,10 +49,7 @@ class SpecialGlobalPreferences extends SpecialPreferences {
 			$this->setHeaders();
 			throw new UserNotLoggedIn();
 		}
-		/** @var GlobalPreferencesFactory $globalPreferencesFactory */
-		$globalPreferencesFactory = MediaWikiServices::getInstance()->getPreferencesFactory();
-		'@phan-var GlobalPreferencesFactory $globalPreferencesFactory';
-		if ( !$globalPreferencesFactory->isUserGlobalized( $this->getUser() ) ) {
+		if ( !$this->preferencesFactory->isUserGlobalized( $this->getUser() ) ) {
 			$this->setHeaders();
 			throw new ErrorPageError( 'globalprefs-error-header', 'globalprefs-notglobal' );
 		}
@@ -72,8 +77,7 @@ class SpecialGlobalPreferences extends SpecialPreferences {
 	 * @return PreferencesFormOOUI|HTMLForm
 	 */
 	protected function getFormObject( $user, IContextSource $context ) {
-		$preferencesFactory = MediaWikiServices::getInstance()->getPreferencesFactory();
-		$form = $preferencesFactory->getForm( $user, $context, GlobalPreferencesFormOOUI::class );
+		$form = $this->preferencesFactory->getForm( $user, $context, GlobalPreferencesFormOOUI::class );
 		return $form;
 	}
 
@@ -83,9 +87,7 @@ class SpecialGlobalPreferences extends SpecialPreferences {
 	 * @throws PermissionsError
 	 */
 	protected function showResetForm() {
-		if ( !MediaWikiServices::getInstance()->getPermissionManager()
-				->userHasRight( $this->getUser(), 'editmyoptions' )
-		) {
+		if ( !$this->permissionManager->userHasRight( $this->getUser(), 'editmyoptions' ) ) {
 			throw new PermissionsError( 'editmyoptions' );
 		}
 
@@ -119,16 +121,11 @@ class SpecialGlobalPreferences extends SpecialPreferences {
 	 * @throws PermissionsError
 	 */
 	public function submitReset( $formData ) {
-		if ( !MediaWikiServices::getInstance()->getPermissionManager()
-				->userHasRight( $this->getUser(), 'editmyoptions' )
-		) {
+		if ( !$this->permissionManager->userHasRight( $this->getUser(), 'editmyoptions' ) ) {
 			throw new PermissionsError( 'editmyoptions' );
 		}
 
-		/** @var GlobalPreferencesFactory $preferencesFactory */
-		$preferencesFactory = MediaWikiServices::getInstance()->getPreferencesFactory();
-		'@phan-var GlobalPreferencesFactory $preferencesFactory';
-		$preferencesFactory->resetGlobalUserSettings( $this->getUser() );
+		$this->preferencesFactory->resetGlobalUserSettings( $this->getUser() );
 
 		$url = $this->getPageTitle()->getFullURL( 'success' );
 
