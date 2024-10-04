@@ -22,7 +22,13 @@
 		}
 	},
 	"SpecialPages": {
-		"GlobalPreferences": "GlobalPreferences\\SpecialGlobalPreferences"
+		"GlobalPreferences": {
+			"class": "GlobalPreferences\\SpecialGlobalPreferences",
+			"services": [
+				"PermissionManager",
+				"PreferencesFactory"
+			]
+		}
 	},
 	"MessagesDirs": {
 		"GlobalPreferences": [
