@@ -2,8 +2,8 @@
 
 namespace GlobalPreferences;
 
-use ApiMain;
-use ApiOptionsBase;
+use MediaWiki\Api\ApiMain;
+use MediaWiki\Api\ApiOptionsBase;
 use MediaWiki\User\Options\UserOptionsManager;
 
 class ApiGlobalPreferences extends ApiOptionsBase {

@@ -2,9 +2,9 @@
 
 namespace GlobalPreferences\Test;
 
-use ApiMain;
 use GlobalPreferences\ApiQueryGlobalPreferences;
 use GlobalPreferences\GlobalPreferencesFactory;
+use MediaWiki\Api\ApiMain;
 use MediaWiki\Context\DerivativeContext;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Request\FauxRequest;

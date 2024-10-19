@@ -2,13 +2,13 @@
 
 namespace GlobalPreferences;
 
-use DBAccessObjectUtils;
-use IDBAccessObject;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\User\CentralId\CentralIdLookup;
 use MediaWiki\User\Options\UserOptionsStore;
 use MediaWiki\User\UserIdentity;
 use Psr\Log\LoggerInterface;
+use Wikimedia\Rdbms\DBAccessObjectUtils;
+use Wikimedia\Rdbms\IDBAccessObject;
 
 /**
  * An interface which allows core to update pre-existing global preferences

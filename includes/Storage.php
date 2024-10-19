@@ -6,11 +6,11 @@
 
 namespace GlobalPreferences;
 
-use IDBAccessObject;
 use MediaWiki\MediaWikiServices;
-use WANObjectCache;
 use Wikimedia\LightweightObjectStore\ExpirationAwareness;
+use Wikimedia\ObjectCache\WANObjectCache;
 use Wikimedia\Rdbms\IDatabase;
+use Wikimedia\Rdbms\IDBAccessObject;
 
 /**
  * This class handles all database storage of global preferences.
