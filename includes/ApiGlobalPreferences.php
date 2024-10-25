@@ -14,20 +14,11 @@ class ApiGlobalPreferences extends ApiOptionsBase {
 	/** @var string[] */
 	private $resetPrefTypes = [];
 
-	/**
-	 * @var GlobalPreferencesFactory
-	 */
-	private $factory;
+	private GlobalPreferencesFactory $factory;
 
-	/**
-	 * @param ApiMain $mainModule
-	 * @param string $moduleName
-	 * @param GlobalPreferencesFactory $factory
-	 * @param UserOptionsManager $userOptionsManager
-	 */
 	public function __construct(
 		ApiMain $mainModule,
-		$moduleName,
+		string $moduleName,
 		GlobalPreferencesFactory $factory,
 		UserOptionsManager $userOptionsManager
 	) {

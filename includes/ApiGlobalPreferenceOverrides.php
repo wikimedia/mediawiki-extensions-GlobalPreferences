@@ -9,20 +9,11 @@ use MediaWiki\User\Options\UserOptionsManager;
 
 class ApiGlobalPreferenceOverrides extends ApiOptionsBase {
 
-	/**
-	 * @var GlobalPreferencesFactory
-	 */
-	private $globalPrefs;
+	private GlobalPreferencesFactory $globalPrefs;
 
-	/**
-	 * @param ApiMain $mainModule
-	 * @param string $moduleName
-	 * @param GlobalPreferencesFactory $factory
-	 * @param UserOptionsManager $userOptionsManager
-	 */
 	public function __construct(
 		ApiMain $mainModule,
-		$moduleName,
+		string $moduleName,
 		GlobalPreferencesFactory $factory,
 		UserOptionsManager $userOptionsManager
 	) {

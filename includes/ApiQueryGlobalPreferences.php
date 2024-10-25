@@ -10,25 +10,12 @@ use MediaWiki\User\Options\UserOptionsLookup;
 use Wikimedia\ParamValidator\ParamValidator;
 
 class ApiQueryGlobalPreferences extends ApiQueryBase {
-	/**
-	 * @var GlobalPreferencesFactory
-	 */
-	private $preferencesFactory;
+	private GlobalPreferencesFactory $preferencesFactory;
+	private UserOptionsLookup $userOptionsLookup;
 
-	/**
-	 * @var UserOptionsLookup
-	 */
-	private $userOptionsLookup;
-
-	/**
-	 * @param ApiQuery $queryModule
-	 * @param string $moduleName
-	 * @param GlobalPreferencesFactory $factory
-	 * @param UserOptionsLookup $userOptionsLookup
-	 */
 	public function __construct(
 		ApiQuery $queryModule,
-		$moduleName,
+		string $moduleName,
 		GlobalPreferencesFactory $factory,
 		UserOptionsLookup $userOptionsLookup
 	) {
