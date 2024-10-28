@@ -1,6 +1,6 @@
 <?php
 
-namespace GlobalPreferences\Test;
+namespace GlobalPreferences\Tests\Integration;
 
 use GlobalPreferences\GlobalPreferencesFactory;
 use GlobalPreferences\Storage;

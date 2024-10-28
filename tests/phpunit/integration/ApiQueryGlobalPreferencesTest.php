@@ -1,6 +1,6 @@
 <?php
 
-namespace GlobalPreferences\Test;
+namespace GlobalPreferences\Tests\Integration;
 
 use GlobalPreferences\ApiQueryGlobalPreferences;
 use GlobalPreferences\GlobalPreferencesFactory;
