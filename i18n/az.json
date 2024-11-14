@@ -4,7 +4,9 @@
 			"NMW03",
 			"Neriman2003",
 			"Toghrul Rahimli",
-			"Wertuose"
+			"Wertuose",
+			"Nemoralis",
+			"Əkrəm Cəfər"
 		]
 	},
 	"globalprefs-desc": "İstifadəçilərə qlobal nizamlamaları təyin etməyə imkan verir",
@@ -20,5 +22,5 @@
 	"globalprefs-reset-intro": "Siz bu səhifədən istifadə edərək bütün vikilərdə bütün qlobal nizamlamaları söndürə və lokal nizamlamalarınıza qayıda bilərsiniz. Bu, heç bir lokal viki nizamlamalarına təsir etmir. Bu geri qaytarıla bilməz.",
 	"globalprefs-restoreprefs": "Bütün qlobal nizamlamaları sil (bütün bölmələrdə)",
 	"globalprefs-select-all": "Bütün qutucuqları yandır və ya söndür",
-	"globalprefs-col-header": "Qlobal olması üçün aşağıdakı parametrləri seçin"
+	"globalprefs-col-header": "Aşağıdakı parametrləri qlobal kimi təyin edin"
 }
