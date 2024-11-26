@@ -1,6 +1,6 @@
 <?php
 
-namespace phpunit;
+namespace GlobalPreferences\Tests\Integration;
 
 use Generator;
 use GlobalPreferences\Storage;

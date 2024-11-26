@@ -11,6 +11,7 @@ use Wikimedia\LightweightObjectStore\ExpirationAwareness;
 use Wikimedia\ObjectCache\WANObjectCache;
 use Wikimedia\Rdbms\IDatabase;
 use Wikimedia\Rdbms\IDBAccessObject;
+use Wikimedia\Rdbms\IReadableDatabase;
 
 /**
  * This class handles all database storage of global preferences.
@@ -198,23 +199,16 @@ class Storage {
 	/**
 	 * Get the database object pointing to the Global Preferences database.
 	 * @param int $type One of the DB_* constants
-	 * @return IDatabase
+	 * @return IDatabase|IReadableDatabase
 	 */
-	protected function getDatabase( int $type = DB_REPLICA ): IDatabase {
-		$config = MediaWikiServices::getInstance()->getMainConfig();
-		$globalPreferencesDB = (string)$config->get( 'GlobalPreferencesDB' );
-		$sharedDB = (string)$config->get( 'SharedDB' );
-		$lbf = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
-		if ( $globalPreferencesDB != '' ) {
-			$domainId = $globalPreferencesDB;
-		} elseif ( $sharedDB != '' ) {
-			$domainId = $sharedDB;
+	protected function getDatabase( int $type = DB_REPLICA ) {
+		$globalPreferencesConnectionProvider = GlobalPreferencesServices::wrap( MediaWikiServices::getInstance() )
+			->getGlobalPreferencesConnectionProvider();
+		if ( $type === DB_PRIMARY ) {
+			return $globalPreferencesConnectionProvider->getPrimaryDatabase();
 		} else {
-			// local wiki
-			$domainId = false;
+			return $globalPreferencesConnectionProvider->getReplicaDatabase();
 		}
-
-		return $lbf->getMainLB( $domainId )->getConnection( $type, [], $domainId );
 	}
 
 	/**
