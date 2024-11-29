@@ -4,6 +4,7 @@ namespace GlobalPreferences\Tests\Integration;
 
 use GlobalPreferences\GlobalPreferencesServices;
 use GlobalPreferences\Services\GlobalPreferencesConnectionProvider;
+use GlobalPreferences\Services\GlobalPreferencesHookRunner;
 use MediaWikiIntegrationTestCase;
 
 /**
@@ -22,6 +23,9 @@ class GlobalPreferencesServicesTest extends MediaWikiIntegrationTestCase {
 		return [
 			'::getGlobalPreferencesConnectionProvider' => [
 				'getGlobalPreferencesConnectionProvider', GlobalPreferencesConnectionProvider::class
+			],
+			'::getGlobalPreferencesHookRunner' => [
+				'getGlobalPreferencesHookRunner', GlobalPreferencesHookRunner::class
 			],
 		];
 	}

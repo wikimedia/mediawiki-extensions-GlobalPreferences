@@ -13,17 +13,27 @@
 
 namespace GlobalPreferences;
 
+use GlobalPreferences\Services\GlobalPreferencesHookRunner;
 use LogicException;
+use MediaWiki\Auth\AuthManager;
+use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Context\RequestContext;
+use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Html\Html;
 use MediaWiki\HTMLForm\Field\HTMLCheckMatrix;
 use MediaWiki\HTMLForm\Field\HTMLSelectOrOtherField;
+use MediaWiki\Language\ILanguageConverter;
+use MediaWiki\Language\Language;
 use MediaWiki\Language\RawMessage;
+use MediaWiki\Languages\LanguageNameUtils;
+use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\Preferences\DefaultPreferencesFactory;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Status\Status;
+use MediaWiki\Title\NamespaceInfo;
 use MediaWiki\User\CentralId\CentralIdLookup;
 use MediaWiki\User\Options\UserOptionsLookup;
 use MediaWiki\User\User;
@@ -96,6 +106,37 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 		\HTMLCheckMatrix::class,
 		HTMLCheckMatrix::class,
 	];
+
+	private GlobalPreferencesHookRunner $globalPreferencesHookRunner;
+
+	public function __construct(
+		ServiceOptions $options,
+		Language $contLang,
+		AuthManager $authManager,
+		LinkRenderer $linkRenderer,
+		NamespaceInfo $nsInfo,
+		PermissionManager $permissionManager,
+		ILanguageConverter $languageConverter,
+		LanguageNameUtils $languageNameUtils,
+		HookContainer $hookContainer,
+		UserOptionsLookup $userOptionsLookup,
+		GlobalPreferencesHookRunner $globalPreferencesHookRunner
+	) {
+		parent::__construct(
+			$options,
+			$contLang,
+			$authManager,
+			$linkRenderer,
+			$nsInfo,
+			$permissionManager,
+			$languageConverter,
+			$languageNameUtils,
+			$hookContainer,
+			$userOptionsLookup
+		);
+
+		$this->globalPreferencesHookRunner = $globalPreferencesHookRunner;
+	}
 
 	/**
 	 * Sets the list of options for which setting the local value should transparently update
@@ -557,7 +598,14 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 		$storage = $this->makeStorage( $user );
 		$knownPrefs = array_keys( $this->getFormDescriptor( $userForDescriptor, $context ) );
 
+		$oldPreferences = $this->getGlobalPreferencesValues( $user );
 		$storage->save( $newGlobalPrefs, $knownPrefs, $checkMatricesToClear );
+
+		$this->globalPreferencesHookRunner->onGlobalPreferencesSetGlobalPreferences(
+			$user,
+			$oldPreferences,
+			$newGlobalPrefs
+		);
 
 		$user->clearInstanceCache();
 		return true;
@@ -569,7 +617,13 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	 * @param User $user
 	 */
 	public function resetGlobalUserSettings( User $user ) {
+		$oldPreferences = $this->getGlobalPreferencesValues( $user );
 		$this->makeStorage( $user )->delete();
+		$this->globalPreferencesHookRunner->onGlobalPreferencesSetGlobalPreferences(
+			$user,
+			$oldPreferences,
+			[]
+		);
 	}
 
 	/**

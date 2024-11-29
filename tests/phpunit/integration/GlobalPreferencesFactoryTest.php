@@ -3,6 +3,7 @@
 namespace GlobalPreferences\Tests\Integration;
 
 use GlobalPreferences\GlobalPreferencesFactory;
+use GlobalPreferences\GlobalPreferencesServices;
 use GlobalPreferences\Storage;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Context\DerivativeContext;
@@ -94,6 +95,13 @@ class GlobalPreferencesFactoryTest extends MediaWikiIntegrationTestCase {
 	 * @param string[] $expectedMatrixRemovals
 	 */
 	public function testFormSaving( array $formData, $expected, array $expectedMatrixRemovals = [] ) {
+		$hookCalled = false;
+		$this->setTemporaryHook(
+			'GlobalPreferencesSetGlobalPreferences',
+			static function () use ( &$hookCalled ) {
+				$hookCalled = true;
+			}
+		);
 		$storage = $this->getMockBuilder( Storage::class )
 			->disableOriginalConstructor()
 			->getMock();
@@ -121,6 +129,9 @@ class GlobalPreferencesFactoryTest extends MediaWikiIntegrationTestCase {
 		$wrapper = TestingAccessWrapper::newFromObject( $factory );
 		$wrapper->options = new ServiceOptions( [ 'HiddenPrefs' ], [ 'HiddenPrefs' => [] ] );
 		$wrapper->permissionManager = $this->getServiceContainer()->getPermissionManager();
+		$wrapper->globalPreferencesHookRunner = GlobalPreferencesServices::wrap(
+			$this->getServiceContainer()
+		)->getGlobalPreferencesHookRunner();
 
 		$postData = [ 'wpFormIdentifier' => 'testFormSaving' ];
 		foreach ( $formData as $name => $value ) {
@@ -139,7 +150,13 @@ class GlobalPreferencesFactoryTest extends MediaWikiIntegrationTestCase {
 
 		$status = $form->trySubmit();
 		self::assertInstanceOf( Status::class, $status );
-		self::assertEquals( $expected !== false, $status->isGood() );
+		if ( $expected === false ) {
+			self::assertFalse( $status->isGood() );
+			self::assertFalse( $hookCalled );
+		} else {
+			self::assertTrue( $status->isGood() );
+			self::assertTrue( $hookCalled );
+		}
 	}
 
 	public static function provideFormSaving() {
