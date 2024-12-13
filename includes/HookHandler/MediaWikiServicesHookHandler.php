@@ -3,6 +3,7 @@
 namespace GlobalPreferences\HookHandler;
 
 use GlobalPreferences\GlobalPreferencesFactory;
+use GlobalPreferences\GlobalPreferencesServices;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Hook\MediaWikiServicesHook;
 use MediaWiki\Logger\LoggerFactory;
@@ -21,6 +22,8 @@ class MediaWikiServicesHookHandler implements MediaWikiServicesHook {
 			$config = new ServiceOptions( GlobalPreferencesFactory::CONSTRUCTOR_OPTIONS,
 				$mainConfig
 			);
+			$hookRunner = GlobalPreferencesServices::wrap( $services )
+				->getGlobalPreferencesHookRunner();
 			$factory = new GlobalPreferencesFactory(
 				$config,
 				$services->getContentLanguage(),
@@ -31,7 +34,8 @@ class MediaWikiServicesHookHandler implements MediaWikiServicesHook {
 				$services->getLanguageConverterFactory()->getLanguageConverter(),
 				$services->getLanguageNameUtils(),
 				$services->getHookContainer(),
-				$services->getUserOptionsLookup()
+				$services->getUserOptionsLookup(),
+				$hookRunner
 			);
 			$factory->setLogger( LoggerFactory::getInstance( 'preferences' ) );
 			$factory->setAutoGlobals( $mainConfig->get( 'GlobalPreferencesAutoPrefs' ) );
