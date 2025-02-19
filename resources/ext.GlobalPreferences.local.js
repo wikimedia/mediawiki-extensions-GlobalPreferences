@@ -6,10 +6,10 @@
 	 *
 	 * @param {string} index Search index
 	 */
-	mw.hook( 'prefs.search.buildIndex' ).add( function ( index ) {
-		Object.keys( index ).forEach( function ( key ) {
-			index[ key ].forEach( function ( item ) {
-				var $localException = item.$field.next( '.mw-globalprefs-local-exception' );
+	mw.hook( 'prefs.search.buildIndex' ).add( ( index ) => {
+		Object.keys( index ).forEach( ( key ) => {
+			index[ key ].forEach( ( item ) => {
+				const $localException = item.$field.next( '.mw-globalprefs-local-exception' );
 				if ( $localException.length ) {
 					item.$field = item.$field.add( $localException );
 				}
