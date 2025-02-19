@@ -4,9 +4,9 @@
 	 * Store all OOUI widgets with their reference so we can toggle
 	 * them easily on/off.
 	 */
-	let checkboxesBySection = {},
-		checkboxSelectAllBySection = {},
-		selectAllCheckboxesOngoing = false;
+	const checkboxesBySection = {},
+		checkboxSelectAllBySection = {};
+	let selectAllCheckboxesOngoing = false;
 
 	/**
 	 * Infuse the 'select all' checkbox

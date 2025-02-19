@@ -7,7 +7,6 @@
 	],
 	"rules": {
 		"no-jquery/no-global-selector": "off",
-		"no-jquery/no-sizzle": "warn",
-		"prefer-const": "warn"
+		"no-jquery/no-sizzle": "warn"
 	}
 }
