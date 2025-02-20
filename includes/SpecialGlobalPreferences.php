@@ -35,9 +35,6 @@ class SpecialGlobalPreferences extends SpecialPreferences {
 	 * @throws UserNotLoggedIn
 	 */
 	public function execute( $par ) {
-		// Call the parent
-		parent::execute( $par );
-
 		// Remove subpages other than 'reset', including trailing slash.
 		if ( $par !== null && $par !== 'reset' ) {
 			$this->getOutput()->redirect( rtrim( $this->getPageTitle()->getCanonicalURL(), '/' ) );
@@ -68,6 +65,8 @@ class SpecialGlobalPreferences extends SpecialPreferences {
 		// so non-JS users get the styles quicker and to avoid a FOUC.
 		$this->getOutput()->addModuleStyles( 'ext.GlobalPreferences.global-nojs' );
 		$this->getOutput()->addModules( 'ext.GlobalPreferences.global' );
+
+		parent::execute( $par );
 	}
 
 	/**

@@ -109,6 +109,9 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 
 	private GlobalPreferencesHookRunner $globalPreferencesHookRunner;
 
+	/** @var int|null Lazy-initialised user ID linked to gp_user */
+	private $globalUserId;
+
 	public function __construct(
 		ServiceOptions $options,
 		Language $contLang,
@@ -544,10 +547,13 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	 * @return int
 	 */
 	public function getUserID( UserIdentity $user ) {
-		$lookup = MediaWikiServices::getInstance()->getCentralIdLookup();
-		return $lookup->isOwned( $user ) ?
-			$lookup->centralIdFromName( $user->getName(), CentralIdLookup::AUDIENCE_RAW ) :
-			0;
+		if ( $this->globalUserId === null ) {
+			$lookup = MediaWikiServices::getInstance()->getCentralIdLookup();
+			$this->globalUserId = $lookup->isOwned( $user ) ?
+				$lookup->centralIdFromName( $user->getName(), CentralIdLookup::AUDIENCE_RAW ) :
+				0;
+		}
+		return $this->globalUserId;
 	}
 
 	/**
