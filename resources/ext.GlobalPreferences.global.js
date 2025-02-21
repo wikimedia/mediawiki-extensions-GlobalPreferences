@@ -4,7 +4,7 @@
 	 * Store all OOUI widgets with their reference so we can toggle
 	 * them easily on/off.
 	 */
-	var checkboxesBySection = {},
+	let checkboxesBySection = {},
 		checkboxSelectAllBySection = {},
 		selectAllCheckboxesOngoing = false;
 
@@ -14,16 +14,16 @@
 	 * @param {jQuery} $root Section root
 	 */
 	function infuseSelectAllToHeader( $root ) {
-		var checkbox = OO.ui.infuse( $root.find( '.globalprefs-section-select-all' ) ),
+		const checkbox = OO.ui.infuse( $root.find( '.globalprefs-section-select-all' ) ),
 			sectionID = $root.prop( 'id' );
 
 		// Store for reference
 		checkboxSelectAllBySection[ sectionID ] = checkbox;
 
-		checkbox.on( 'change', function ( isChecked ) {
+		checkbox.on( 'change', ( isChecked ) => {
 			// Don't update child widgets if event was triggered by updateSelectAllCheckboxState
 			if ( !selectAllCheckboxesOngoing && checkboxesBySection[ sectionID ] ) {
-				checkboxesBySection[ sectionID ].forEach( function ( checkboxWidget ) {
+				checkboxesBySection[ sectionID ].forEach( ( checkboxWidget ) => {
 					checkboxWidget.setSelected( isChecked );
 				} );
 			}
@@ -37,7 +37,7 @@
 	 * @param {string} sectionID Section ID
 	 */
 	function updateSelectAllCheckboxState( sectionID ) {
-		var sectionCheckbox = checkboxSelectAllBySection[ sectionID ],
+		const sectionCheckbox = checkboxSelectAllBySection[ sectionID ],
 			sectionCheckboxes = checkboxesBySection[ sectionID ];
 		if ( selectAllCheckboxesOngoing ) {
 			// Do not change the state of the 'select all' checkbox
@@ -48,16 +48,12 @@
 		// Suppress event listener
 		selectAllCheckboxesOngoing = true;
 		if (
-			sectionCheckboxes.every( function ( c ) {
-				return c.isSelected();
-			} )
+			sectionCheckboxes.every( ( c ) => c.isSelected() )
 		) {
 			sectionCheckbox.setSelected( true );
 			sectionCheckbox.setIndeterminate( false );
 		} else if (
-			sectionCheckboxes.some( function ( c ) {
-				return c.isSelected();
-			} )
+			sectionCheckboxes.some( ( c ) => c.isSelected() )
 		) {
 			sectionCheckbox.setIndeterminate( true );
 		} else {
@@ -73,7 +69,7 @@
 	 *
 	 * htmlform.enhance is run when a preference tab is made visible
 	 */
-	mw.hook( 'htmlform.enhance' ).add( function ( $root ) {
+	mw.hook( 'htmlform.enhance' ).add( ( $root ) => {
 		// Make sure $root is a preferences form tab panel.
 		if ( $root.find( 'fieldset.mw-prefs-section-fieldset' ).length !== 1 ) {
 			return;
@@ -84,7 +80,7 @@
 
 		// Go over all checkboxes, assign their matching widgets, and connect to events
 		$root.find( '.mw-globalprefs-global-check.oo-ui-checkboxInputWidget' ).each( function () {
-			var checkbox = OO.ui.infuse( this ),
+			const checkbox = OO.ui.infuse( this ),
 				sectionID = checkbox.$element.closest( '.oo-ui-layout.oo-ui-tabPanelLayout' ).prop( 'id' );
 
 			// Store references to all checkboxes in the same section
@@ -93,7 +89,7 @@
 
 			updateSelectAllCheckboxState( sectionID );
 			// Respond to event
-			checkbox.on( 'change', function () {
+			checkbox.on( 'change', () => {
 				// Update the 'select all' checkbox for this section
 				updateSelectAllCheckboxState( sectionID );
 			} );
