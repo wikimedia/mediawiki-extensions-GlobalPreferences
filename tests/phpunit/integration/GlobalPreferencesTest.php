@@ -8,6 +8,7 @@ use MediaWiki\Context\RequestContext;
 use MediaWiki\HTMLForm\Field\HTMLCheckMatrix;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Title\Title;
+use MediaWiki\User\User;
 use MediaWikiIntegrationTestCase;
 use Wikimedia\TestingAccessWrapper;
 
@@ -292,5 +293,27 @@ class GlobalPreferencesTest extends MediaWikiIntegrationTestCase {
 				],
 			]
 		];
+	}
+
+	public function testFactoryGetUserId() {
+		$user1 = User::createNew( 'User1' );
+		$user2 = User::createNew( 'User2' );
+		$services = $this->getServiceContainer();
+		/** @var GlobalPreferencesFactory $globalPreferences */
+		$globalPreferences = $services->getPreferencesFactory();
+
+		// We're using LocalIdLookup so the local ID is the same as the global ID
+		$this->assertSame( $user1->getId(), $globalPreferences->getUserID( $user1 ) );
+
+		// Is the cache confusing the two users?
+		$this->assertSame( $user2->getId(), $globalPreferences->getUserID( $user2 ) );
+
+		// Does the cache prevent DB queries?
+		// SpecialGlobalPreferences needs a stable state (T314741).
+		$this->getDb()->newDeleteQueryBuilder()
+			->deleteFrom( 'user' )
+			->where( [ 'user_id' => $user2->getId() ] )
+			->caller( __METHOD__ )->execute();
+		$this->assertSame( $user2->getId(), $globalPreferences->getUserID( $user2 ) );
 	}
 }

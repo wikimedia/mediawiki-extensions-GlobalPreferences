@@ -40,6 +40,7 @@ use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
 use OOUI\ButtonWidget;
 use RuntimeException;
+use WeakReference;
 
 /**
  * Global preferences.
@@ -109,7 +110,12 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 
 	private GlobalPreferencesHookRunner $globalPreferencesHookRunner;
 
-	/** @var int|null Lazy-initialised user ID linked to gp_user */
+	/**
+	 * Weak reference to the UserIdentity with global ID $this->globalUserId
+	 * @var WeakReference|null
+	 */
+	private $globalUserRef;
+	/** @var int|null */
 	private $globalUserId;
 
 	public function __construct(
@@ -547,8 +553,12 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	 * @return int
 	 */
 	public function getUserID( UserIdentity $user ) {
-		if ( $this->globalUserId === null ) {
+		// Implement a single-element cache where $this->globalUserRef holds the
+		// cache key of the currently-stored item and $this->globalUserId is
+		// the value.
+		if ( !$this->globalUserRef || $this->globalUserRef->get() !== $user ) {
 			$lookup = MediaWikiServices::getInstance()->getCentralIdLookup();
+			$this->globalUserRef = WeakReference::create( $user );
 			$this->globalUserId = $lookup->isOwned( $user ) ?
 				$lookup->centralIdFromName( $user->getName(), CentralIdLookup::AUDIENCE_RAW ) :
 				0;
