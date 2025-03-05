@@ -8,13 +8,14 @@
 	"globalprefs-desc": "ਵਰਤੋਂਕਾਰਾਂ ਨੂੰ ਗਲੋਬਲ ਤਰਜੀਹਾਂ ਸੈਟ ਕਰਨ ਦੀ ਆਗਿਆ ਦਿੰਦਾ ਹੈ",
 	"globalprefs-set-local-exception": "ਇਸ [[Special:GlobalPreferences#$1|ਗਲੋਬਲ ਤਰਜੀਹ]] ਲਈ ਇੱਕ ਸਥਾਨਕ ਅਪਵਾਦ ਸੈੱਟ ਕਰੋ।",
 	"globalprefs-has-local-exception": "ਇਸ ਗਲੋਬਲ ਤਰਜੀਹ ਵਿੱਚ [[Special:Preferences#$1|ਇਸ ਵਿਕੀ ਉੱਤੇ ਸਥਾਨਕ ਅਪਵਾਦ]] ਹੈ।",
-	"tooltip-globalprefs-check-label": "ਇਸ ਸੈਟਿੰਗ ਨੂੰ ਗਲੋਬਲ ਬਣਾਓ",
+	"tooltip-globalprefs-check-label": "ਇਸ ਤਰਜੀਹਾਂ ਨੂੰ ਵਿਸ਼ਵਪੱਧਰੀ ਬਣਾਓ",
 	"globalprefs-error-header": "ਗ਼ਲਤੀ",
 	"globalprefs-notglobal": "ਤੁਹਾਡਾ ਖਾਤਾ ਇੱਕ ਗਲੋਬਲ ਖਾਤਾ ਨਹੀਂ ਹੈ ਅਤੇ ਗਲੋਬਲ ਤਰਜੀਹਾਂ ਨੂੰ ਸੈੱਟ ਨਹੀਂ ਕਰ ਸਕਦਾ ਹੈ।",
 	"globalpreferences": "ਵਿਸ਼ਵ ਪੱਧਰੀ ਤਰਜੀਹਾਂ",
 	"globalprefs-info-label": "ਵਿਸ਼ਵ ਪੱਧਰੀ ਤਰਜੀਹਾਂ:",
 	"globalprefs-info-link": "ਆਪਣੀਆਂ ਗਲੋਬਲ ਤਰਜੀਹਾਂ ਸੈੱਟ ਕਰੋ",
 	"globalprefs-info-help": "ਵਿਸ਼ਵ-ਵਿਆਪੀ ਤਰਜੀਹਾਂ ਸਫ਼ੇ ਰਾਹੀਂ ਨਿਰਧਾਰਿਤ ਤਰਜੀਹਾਂ ਸਾਰੇ ਵਿਕੀਆਂ ਉੱਤੇ ਲਾਗੂ ਹੋਣਗੀਆਂ।",
+	"globalprefs-reset-intro": "ਤੁਸੀਂ ਇਸ ਸਫ਼ੇ ਦੀ ਵਰਤੋਂ ਸਾਰੀਆਂ ਵਿਕੀਆਂ ਉੱਤੇ ਸਾਰੀਆਂ ਵਿਸ਼ਵਪੱਧਰੀ ਤਰਜੀਹਾਂ ਨੂੰ ਅਸਮਰੱਥ ਕਰਨ ਅਤੇ ਆਪਣੀਆਂ ਸਥਾਨਕ ਤਰਜੀਹਾਂ ਉੱਤੇ ਵਾਪਸ ਜਾਣ ਲਈ ਕਰ ਸਕਦੇ ਹੋ। ਇਹ ਕਿਸੇ ਵੀ ਸਥਾਨਕ ਵਿਕੀ ਤਰਜੀਹਾਂ ਨੂੰ ਪ੍ਰਭਾਵਿਤ ਨਹੀਂ ਕਰਦਾ। ਇਸ ਨੂੰ ਵਾਪਸ ਨਹੀਂ ਲਿਆ ਜਾ ਸਕਦਾ।",
 	"globalprefs-restoreprefs": "ਸਾਰੀਆਂ ਗਲੋਬਲ ਤਰਜੀਹਾਂ ਨੂੰ ਹਟਾਓ (ਸਾਰੇ ਭਾਗਾਂ ਵਿੱਚ)",
 	"globalprefs-col-header": "ਗਲੋਬਲ ਹੋਣ ਲਈ ਹੇਠਾਂ ਦਿੱਤੇ ਵਿਕਲਪਾਂ ਨੂੰ ਚੁਣੋ"
 }
