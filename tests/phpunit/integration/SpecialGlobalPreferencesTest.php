@@ -34,6 +34,15 @@ class SpecialGlobalPreferencesTest extends MediaWikiIntegrationTestCase {
 			->willReturnCallback( static function ( $name ) {
 				return $name === 'Global' ? 1 : 0;
 			} );
+		$lookup->method( 'lookupOwnedUserNames' )
+			->willReturnCallback( static function ( $nameToId ) {
+				foreach ( $nameToId as $name => &$id ) {
+					if ( $name === 'Global' ) {
+						$id = 1;
+					}
+				}
+				return $nameToId;
+			} );
 		return $lookup;
 	}
 
