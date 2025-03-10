@@ -56,10 +56,7 @@ class GenderCacheIntegrationTest extends MediaWikiIntegrationTestCase {
 
 	private function newGenderCache() {
 		$services = $this->getServiceContainer();
-		return new GenderCache(
-			$services->getNamespaceInfo(),
-			null,
-			$services->getUserOptionsLookup()
-		);
+		$services->resetServiceForTesting( 'GenderCache' );
+		return $services->getGenderCache();
 	}
 }
