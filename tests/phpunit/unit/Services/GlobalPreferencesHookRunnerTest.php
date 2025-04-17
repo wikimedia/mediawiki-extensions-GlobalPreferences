@@ -13,4 +13,9 @@ class GlobalPreferencesHookRunnerTest extends HookRunnerTestBase {
 	public static function provideHookRunners() {
 		yield GlobalPreferencesHookRunner::class => [ GlobalPreferencesHookRunner::class ];
 	}
+
+	protected static array $voidMethodsNotUnabortableHooks = [
+		'onGlobalPreferencesSetGlobalPreferences',
+	];
+
 }
