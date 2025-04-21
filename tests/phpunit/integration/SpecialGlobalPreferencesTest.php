@@ -1,6 +1,8 @@
 <?php
 
 use GlobalPreferences\SpecialGlobalPreferences;
+use MediaWiki\Exception\ErrorPageError;
+use MediaWiki\Exception\UserNotLoggedIn;
 use MediaWiki\Permissions\SimpleAuthority;
 use MediaWiki\User\CentralId\CentralIdLookup;
 use MediaWiki\User\User;

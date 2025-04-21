@@ -2,16 +2,16 @@
 
 namespace GlobalPreferences;
 
-use ErrorPageError;
 use MediaWiki\Context\DerivativeContext;
 use MediaWiki\Context\IContextSource;
+use MediaWiki\Exception\ErrorPageError;
+use MediaWiki\Exception\PermissionsError;
+use MediaWiki\Exception\UserNotLoggedIn;
 use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\Specials\SpecialPreferences;
 use MediaWiki\User\User;
-use PermissionsError;
 use PreferencesFormOOUI;
-use UserNotLoggedIn;
 
 class SpecialGlobalPreferences extends SpecialPreferences {
 

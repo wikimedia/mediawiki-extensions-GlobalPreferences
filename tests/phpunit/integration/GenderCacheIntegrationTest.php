@@ -1,9 +1,11 @@
 <?php
 
 use GlobalPreferences\GlobalPreferencesFactory;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Title\Title;
-use MediaWiki\User\UserOptionsManager;
+use MediaWiki\User\Options\UserOptionsManager;
+use MediaWiki\User\User;
 
 /**
  * Test GenderCache integrated with GlobalPreferences

@@ -7,12 +7,12 @@ use MediaWiki\Output\Hook\BeforePageDisplayHook;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\Preferences\Hook\PreferencesFormPreSaveHook;
 use MediaWiki\Preferences\PreferencesFactory;
+use MediaWiki\Skin\Skin;
 use MediaWiki\User\Options\Hook\SaveUserOptionsHook;
 use MediaWiki\User\Options\UserOptionsLookup;
 use MediaWiki\User\Options\UserOptionsManager;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
-use Skin;
 
 class Hooks implements
 	BeforePageDisplayHook,
