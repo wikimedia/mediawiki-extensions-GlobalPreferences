@@ -6,5 +6,6 @@
 	},
 	"globalprefs-info-label": "Global sazlamalar:",
 	"globalprefs-info-link": "Global sazlamarıñıznı tayin etiñiz",
-	"globalprefs-info-help": "Global sazlamalar saifesi üzerinden yapılğan sazlamalar bütün vikilerde qullanılır."
+	"globalprefs-info-help": "Global sazlamalar saifesi üzerinden yapılğan sazlamalar bütün vikilerde qullanılır.",
+	"globalprefs-col-header": "Aşağıdaki parametrler global olsun"
 }
