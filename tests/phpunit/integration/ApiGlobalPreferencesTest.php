@@ -53,7 +53,7 @@ class ApiGlobalPreferencesTest extends ApiTestCase {
 		$this->assertArrayEquals( $expectedPrefs, $storage->load( true ) );
 	}
 
-	public function provideExecute(): Generator {
+	public static function provideExecute(): Generator {
 		yield 'set userjs' => [
 			[ 'change' => 'userjs-foo=bar' ],
 			[],
