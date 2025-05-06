@@ -24,7 +24,8 @@ class GlobalPreferencesHookRunner implements
 	): void {
 		$this->container->run(
 			'GlobalPreferencesSetGlobalPreferences',
-			[ $user, $oldPreferences, $newPreferences ]
+			[ $user, $oldPreferences, $newPreferences ],
+			[ 'abortable' => false ]
 		);
 	}
 }
