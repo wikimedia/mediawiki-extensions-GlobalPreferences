@@ -126,4 +126,48 @@ class ApiOptionsGlobalIntegrationTest extends ApiTestCase {
 		$this->assertSame( 'success', $res[0]['globalpreferenceoverrides'] );
 		$this->assertPrefsContain( [ 'gender' => 'male', 'gender-local-exception' => '1' ] );
 	}
+
+	public function testApiOptionsWhenGlobalSetToCreate() {
+		// DefaultPreferencesFactory needs a context title for the signature preference
+		$this->apiContext->setTitle( Title::makeTitle( NS_MAIN, 'ApiOptions' ) );
+
+		// Set the 'hideminor' option globally so that the user has some global preferences set before the
+		// code under test is called.
+		$res = $this->doOptionsRequest( [
+			'action' => 'globalpreferences',
+			'change' => 'hideminor=1',
+		] );
+		$this->assertSame( 'success', $res[0]['globalpreferences'] );
+		$this->assertPrefsContain( [ 'hideminor' => '1' ] );
+
+		// Expect that the GlobalPreferencesSetGlobalPreferences hook is called but not the
+		// LocalUserOptionsStoreSave hook, as the preference should have only been set globally.
+		$this->setTemporaryHook( 'LocalUserOptionsStoreSave', function () {
+			$this->fail( 'Did not expect the LocalUserOptionsStoreSave hook to be run.' );
+		} );
+		$globalPreferencesHookRun = false;
+		$this->setTemporaryHook(
+			'GlobalPreferencesSetGlobalPreferences',
+			function ( $actualUser, $oldPreferences, $newPreferences ) use ( &$globalPreferencesHookRun ) {
+				$globalPreferencesHookRun = true;
+
+				$this->assertTrue( $this->user->equals( $actualUser ) );
+				$this->assertSame( [ 'hideminor' => '1' ], $oldPreferences );
+				$this->assertArrayEquals(
+					[ 'gender' => 'male', 'hideminor' => '1' ],
+					$newPreferences,
+					false, true
+				);
+			}
+		);
+
+		$res = $this->doOptionsRequest( [
+			'optionname' => 'gender',
+			'optionvalue' => 'male',
+			'global' => 'create',
+		] );
+		$this->assertSame( 'success', $res[0]['options'] );
+		$this->assertPrefsContain( [ 'gender' => 'male' ] );
+		$this->assertTrue( $globalPreferencesHookRun );
+	}
 }

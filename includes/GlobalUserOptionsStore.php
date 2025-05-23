@@ -3,6 +3,7 @@
 namespace GlobalPreferences;
 
 use GlobalPreferences\Services\GlobalPreferencesConnectionProvider;
+use GlobalPreferences\Services\GlobalPreferencesHookRunner;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\User\CentralId\CentralIdLookup;
 use MediaWiki\User\Options\UserOptionsStore;
@@ -16,21 +17,19 @@ use Wikimedia\Rdbms\IDBAccessObject;
  */
 class GlobalUserOptionsStore implements UserOptionsStore {
 
-	/** @var CentralIdLookup */
-	private $centralIdLookup;
-
-	/** @var LoggerInterface */
-	private $logger;
-
-	/** @var GlobalPreferencesConnectionProvider */
-	private $globalDbProvider;
+	private CentralIdLookup $centralIdLookup;
+	private LoggerInterface $logger;
+	private GlobalPreferencesConnectionProvider $globalDbProvider;
+	private GlobalPreferencesHookRunner $globalPreferencesHookRunner;
 
 	public function __construct(
 		CentralIdLookup $centralIdLookup,
-		GlobalPreferencesConnectionProvider $globalDbProvider
+		GlobalPreferencesConnectionProvider $globalDbProvider,
+		GlobalPreferencesHookRunner $globalPreferencesHookRunner
 	) {
 		$this->centralIdLookup = $centralIdLookup;
 		$this->globalDbProvider = $globalDbProvider;
+		$this->globalPreferencesHookRunner = $globalPreferencesHookRunner;
 		$this->logger = LoggerFactory::getInstance( 'preferences' );
 	}
 
@@ -98,16 +97,29 @@ class GlobalUserOptionsStore implements UserOptionsStore {
 			);
 			return false;
 		}
+		$oldPreferences = $storage->load();
+		$newPreferences = $oldPreferences;
+
 		$replacements = [];
 		$deletions = [];
 		foreach ( $updates as $key => $value ) {
 			if ( $value === null ) {
 				$deletions[] = $key;
+				unset( $newPreferences[$key] );
 			} else {
 				$replacements[$key] = $value;
+				$newPreferences[$key] = $value;
 			}
 		}
+
 		$storage->replaceAndDelete( $replacements, $deletions );
+
+		// Run the set preferences hook here because global preferences may be set by the local options API
+		// and we still want hook handlers to know about this.
+		$this->globalPreferencesHookRunner->onGlobalPreferencesSetGlobalPreferences(
+			$user, $oldPreferences, $newPreferences
+		);
+
 		return $replacements || $deletions;
 	}
 

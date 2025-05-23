@@ -69,7 +69,8 @@
 			"class": "GlobalPreferences\\GlobalUserOptionsStore",
 			"services": [
 				"CentralIdLookup",
-				"GlobalPreferences.GlobalPreferencesConnectionProvider"
+				"GlobalPreferences.GlobalPreferencesConnectionProvider",
+				"GlobalPreferences.GlobalPreferencesHookRunner"
 			]
 		}
 	},
