@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kxeo"
+		]
+	},
+	"globalprefs-desc": "Preiwērpuns tērpautajans ensadīntun lōkalins pirminiskwans",
+	"globalprefs-set-local-exception": "Ensadinnais lōkalin izīmsenin pēr šin [[Special:GlobalPreferences#$1|glōbalin pirminiskwan]].",
+	"globalpreferences": "Glōbalai pirminiskwas"
+}
