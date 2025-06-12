@@ -22,6 +22,9 @@ module.exports = function ( grunt ) {
 		},
 		// Lint – Styling
 		stylelint: {
+			options: {
+				cache: true
+			},
 			all: [
 				'resources/**/*.css',
 				'resources/**/*.less'
