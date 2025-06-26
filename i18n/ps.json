@@ -1,13 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ahmed-Najib-Biabani-Ibrahimkhel"
+			"Ahmed-Najib-Biabani-Ibrahimkhel",
+			"شاه زمان پټان"
 		]
 	},
-	"globalprefs-desc": "کارنان پرېږدي چې خپل نړېوال غورتوبونه وټاکي",
+	"globalprefs-desc": "کارنانو ته د خپل ټوليز غوره‌توبونو ټاکلو پرېښولی ورکوي",
 	"globalprefs-error-header": "تېروتنه",
-	"globalprefs-notglobal": "ستاسې گڼون يو نړېوال گڼون نه دی او نه شی کولی چې نړېوال غوره توبونه وټاکۍ",
-	"globalpreferences": "نړېوال غوره توبونه",
-	"globalprefs-info-label": "نړېوال غوره توبونه:",
-	"globalprefs-info-link": "خپل نړېوال غوره توبونه وټاکئ"
+	"globalprefs-notglobal": "ستاسې گڼون يو ټوليز گڼون نه دی او نشي کولی چې ټوليز غوره‌توبونه وټاکي.",
+	"globalpreferences": "ټوليز غوره‌توبونه",
+	"globalprefs-info-label": "ټوليز غوره‌توبونه:",
+	"globalprefs-info-link": "خپل ټوليز غوره‌توبونه ټاکل"
 }
