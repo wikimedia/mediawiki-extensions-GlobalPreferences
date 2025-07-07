@@ -1,0 +1,32 @@
+{
+	"@metadata": {
+		"authors": [
+			"شاه زمان پټان"
+		]
+	},
+	"apihelp-globalpreferences-summary": "د اوسني کارن ټوليز غوره‌توبونه بدلول.",
+	"apihelp-globalpreferences-extended-description": "يوازې هغه غوره‌توبونه چې د اوسنۍ ويکي لپاره ثبت شوي په سيمه‌ييزه توگه بدلېدلی شي.",
+	"apihelp-globalpreferences-param-reset": "ټوليز غوره‌توبونه بيااوڼل.\nټول يا د <code>resetkinds</code> پاراميتر ارزښت پورې اړه لري ، ځينې ټوليز غوره‌توبونه لرې کوي او هغوی له ټوليزتوب نه د تل لپاره وباسي.",
+	"apihelp-globalpreferences-param-resetkinds": "د غوره‌توبونو ډولونو لړليک چې بياواوڼل شي کله چې <var>reset</var> خوښنه اوڼل شوې وي.",
+	"apihelp-globalpreferences-param-change": "د بدلونونو لړليک، بڼل‌شوی نوم=ارزښت (د بېلگې په توگه skin=vector). که ارزښت نه وي ورکړل شوی (حتا مساوي نښه هم نه وي) د بېلگې په توگه غوره‌توب‌نوم|بل‌غوره‌توب|...، سپرېدنې به لرې شي. که چېرته يو داسې ارزښت پاس شوی وي چې پائپ کرکټر (<kbd>|</kbd>) ولري، د سم چلند لپاره [[Special:ApiHelp/main#main/datatypes|انتخابي گڼ ارزښته جلاکوونکی]] وکاروئ.",
+	"apihelp-globalpreferences-param-optionname": "د هغه غوره توب نوم چې بايد د <var>optionvalue</var> له خوا ورکړل‌شوي ارزښت ته واوڼل شي.",
+	"apihelp-globalpreferences-param-optionvalue": "د غوره‌توب ارزښت چې د <var>optionname</var> له خوا مشخص شوی.",
+	"apihelp-globalpreferences-example-reset-one": "يوگړی غوره‌توب ناټوليز کول.",
+	"apihelp-globalpreferences-example-reset": "ټول غوره‌توبونه ناټوليز کول.",
+	"apihelp-globalpreferences-example-change": "<kbd>skin</kbd> او <kbd>hideminor</kbd> غوره‌توبونه بدلول.",
+	"apihelp-query+globalpreferences-summary": "د اوسني کارن ټوليزو غوره‌توبونو بياموندل.",
+	"apihelp-query+globalpreferences-extended-description": "دواړه ټوليز غوره‌توبونه او د هغې ځايي بدلونونه ترلاسه کېدای شي.",
+	"apihelp-query+globalpreferences-param-prop": "کوم مخکې‌توبونه پکې راونغاړي:",
+	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "ټوليز غوره‌توبونه.",
+	"apihelp-query+globalpreferences-paramvalue-prop-localoverrides": "ټوليز غوره‌توبونو لپاره ځايي سپرېدنې.",
+	"apierror-globalpreferences-notglobalized": "اوسنی کارن ټوليز نه دی.",
+	"apihelp-globalpreferenceoverrides-summary": "د اوسني کارن د ټوليز غوره‌توبونه لپاره ځايي سپرېدنې بدلول.",
+	"apihelp-globalpreferenceoverrides-extended-description": "د اغېزمنو غوره‌توبونو لپاره به  ټوليز ارزښتونه له پامه وغورځول شي.",
+	"apihelp-globalpreferenceoverrides-param-reset": "ټوليز غوره‌توبونه بيااوڼل. ټول يا د <code>resetkinds</code> پاراميتر ارزښت پورې اړه لري ، ځينې ځايي بدلونونه لرې کوي او هغوی بېرته ټوليز کوي.",
+	"apihelp-globalpreferenceoverrides-param-resetkinds": "د بدلونونو ډولونو لړليک چې بياواوڼل شي کله چې <var>reset</var> خوښنه اوڼل شوې وي.",
+	"apihelp-globalpreferenceoverrides-param-change": "د بدلونونو لړليک، بڼل‌شوی نوم=ارزښت (د بېلگې په توگه skin=vector). که ارزښت نه وي ورکړل شوی (حتا مساوي نښه هم نه وي) د بېلگې په توگه غوره‌توب‌نوم|بل‌غوره‌توب|...، سپرېدنې به لرې شي. که چېرته يو داسې ارزښت پاس شوی وي چې پائپ کرکټر (<kbd>|</kbd>) ولري، د سم چلند لپاره [[Special:ApiHelp/main#main/datatypes|انتخابي گڼ ارزښته جلاکوونکی]] وکاروئ.",
+	"apihelp-globalpreferenceoverrides-param-optionname": "د هغه سپرېدنې نوم چې بايد د <var>optionvalue</var> له خوا ورکړل‌شوي ارزښت ته واوڼل شي.",
+	"apihelp-globalpreferenceoverrides-param-optionvalue": "د سپرېدنې ارزښت چې د <var>optionname</var> له خوا مشخص شوی.",
+	"apihelp-globalpreferenceoverrides-example-reset": "ټولې ځايي سپرېدنې لرې‌کول.",
+	"apihelp-globalpreferenceoverrides-example-change": "د <kbd>skin</kbd> او <kbd>hideminor</kbd> لپاره د غوره‌توبونو اوڼل يا د سپرېدنو بدلول."
+}
