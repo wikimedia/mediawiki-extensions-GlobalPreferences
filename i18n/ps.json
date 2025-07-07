@@ -6,9 +6,17 @@
 		]
 	},
 	"globalprefs-desc": "کارنانو ته د خپل ټوليز غوره‌توبونو ټاکلو پرېښولی ورکوي",
+	"globalprefs-set-local-exception": "د دې  [[Special:GlobalPreferences#$1|ټوليز غوره‌توب]] لپاره ځايي استثنا اوڼل.",
+	"globalprefs-has-local-exception": "دا ټوليز غوره‌توب په [[Special:Preferences#$1|دې ويکي کې يو ځايي استثنا لري]].",
+	"tooltip-globalprefs-check-label": "دا اوڼنې ټوليزې وگرځوئ",
 	"globalprefs-error-header": "تېروتنه",
 	"globalprefs-notglobal": "ستاسې گڼون يو ټوليز گڼون نه دی او نشي کولی چې ټوليز غوره‌توبونه وټاکي.",
 	"globalpreferences": "ټوليز غوره‌توبونه",
 	"globalprefs-info-label": "ټوليز غوره‌توبونه:",
-	"globalprefs-info-link": "خپل ټوليز غوره‌توبونه ټاکل"
+	"globalprefs-info-link": "خپل ټوليز غوره‌توبونه ټاکل",
+	"globalprefs-info-help": "هغه غوره‌توبونه چې د ټوليزو غوره‌توبونو پاڼې له لارې ټاکل شوي وي په ټولو ويکي‌گانو کې به پلي شي.",
+	"globalprefs-reset-intro": "تاسو دا مخ د ټولو ويکي‌گانو د ټوليزو غوره‌توبونو ناچارنولو او بېرته خپل ځايي غوره‌توبونو ته راگرځېدلو لپاره کارولی شئ. دا د هېڅ ويکي ځايي غوره‌توبونه نه اغېزمنوي. له ترسره‌کولو وروسته بېرته نه راگرځول کېږي.",
+	"globalprefs-restoreprefs": "د ټولو ټوليزو غوره‌توبونو لرې‌کول (په ټولو برخو کې)",
+	"globalprefs-select-all": "ډ ټولو نښه‌کېډونکو بکسونو بلول يا گولول",
+	"globalprefs-col-header": "ټوليز کېدو لپاره لاندې خوښنې وټاکئ"
 }
