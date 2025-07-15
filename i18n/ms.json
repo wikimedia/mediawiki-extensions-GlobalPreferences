@@ -4,8 +4,18 @@
 			"Hakimi97"
 		]
 	},
-	"globalpreferences": "Keutamaan global",
-	"globalprefs-info-label": "Keutamaan global:",
+	"globalprefs-desc": "Membenarkan pengguna menetapkan keutamaan sejagat",
+	"globalprefs-set-local-exception": "Tetapkan pengecualian setempat untuk [[Special:GlobalPreferences#$1|keutamaan sejagat]] ini.",
+	"globalprefs-has-local-exception": "Keutamaan sejagat ini mempunyai [[Special:Preferences#$1|pengecualian tempatan pada wiki ini]].",
+	"tooltip-globalprefs-check-label": "Jadikan tetapan ini bersifat sejagat",
+	"globalprefs-error-header": "Ralat",
+	"globalprefs-notglobal": "Akaun anda bukanlah akaun sejagat dan tidak boleh menetapkan keutamaan sejagat.",
+	"globalpreferences": "Keutamaan sejagat",
+	"globalprefs-info-label": "Keutamaan sejagat:",
 	"globalprefs-info-link": "Tetapkan keutamaan global anda",
-	"globalprefs-info-help": "Keutamaan yang ditetapkan melalui halaman keutamaan global akan digunakan untuk semua laman wiki."
+	"globalprefs-info-help": "Keutamaan yang ditetapkan melalui halaman keutamaan global akan digunakan untuk semua laman wiki.",
+	"globalprefs-reset-intro": "Anda boleh menggunakan laman ini untuk melumpuhkan semua keutamaan sejagat pada kesemua wiki dan kembali kepada keutamaan tempatan anda. Hal ini tidak menjejaskan sebarang keutamaan wiki tempatan. Perkara ini juga tidak boleh dibuat asal.",
+	"globalprefs-restoreprefs": "Alih keluar semua keutamaan sejagat (pada semua bahagian)",
+	"globalprefs-select-all": "Togol semua kotak pilihan buka atau tutup",
+	"globalprefs-col-header": "Pilih beberapa pilihan berikut untuk menjadikannya sejagat"
 }
