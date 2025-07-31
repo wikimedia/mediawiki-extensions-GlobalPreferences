@@ -133,12 +133,17 @@ $specialPageAliases['vi'] = [
 	'GlobalPreferences' => [ 'Tùy_chọn_toàn_cục', 'Tuỳ_chọn_toàn_cục' ],
 ];
 
-/** Simplified Chinese (中文（简体）‎) */
-$specialPageAliases['zh-hans'] = [
-	'GlobalPreferences' => [ '全域设置' ],
+/** Chinese (中文) */
+$specialPageAliases['zh'] = [
+	'GlobalPreferences' => [ 'GlobalPreferences' ],
 ];
 
-/** Traditional Chinese (中文（繁體）‎) */
+/** Simplified Chinese (中文（简体）) */
+$specialPageAliases['zh-hans'] = [
+	'GlobalPreferences' => [ '全域参数设置', '全域设置' ],
+];
+
+/** Traditional Chinese (中文（繁體）) */
 $specialPageAliases['zh-hant'] = [
-	'GlobalPreferences' => [ '全域設定' ],
+	'GlobalPreferences' => [ '全域偏好設定', '全域設定' ],
 ];
