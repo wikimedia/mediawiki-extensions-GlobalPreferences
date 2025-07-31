@@ -7,7 +7,6 @@ use GlobalPreferences\Storage;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Tests\Api\ApiTestCase;
 use MediaWiki\Title\Title;
-use MediaWiki\User\User;
 
 /**
  * @group GlobalPreferences
@@ -16,8 +15,6 @@ use MediaWiki\User\User;
  * @covers \GlobalPreferences\ApiGlobalPreferences
  */
 class ApiGlobalPreferencesTest extends ApiTestCase {
-
-	private User $user;
 
 	/**
 	 * @inheritDoc
@@ -29,14 +26,13 @@ class ApiGlobalPreferencesTest extends ApiTestCase {
 			MainConfigNames::CentralIdLookupProvider => 'local',
 			'GlobalPreferencesDB' => false,
 		] );
-
-		$this->user = $this->getTestUser()->getUser();
 	}
 
 	/**
 	 * @dataProvider provideExecute
 	 */
 	public function testExecute( array $params, array $initialPrefs, array $expectedPrefs ): void {
+		$performer = $this->getTestUser()->getAuthority();
 		$params = array_merge( [
 			'action' => 'globalpreferences',
 			'format' => 'json',
@@ -44,12 +40,12 @@ class ApiGlobalPreferencesTest extends ApiTestCase {
 		// Necessary despite the API request not actually needing a title.
 		$this->apiContext->setTitle( Title::makeTitle( 0, 'GlobalPreferences' ) );
 		// Save the initial preferences to the database.
-		$storage = new Storage( $this->user->getId() );
+		$storage = new Storage( $performer->getUser()->getId() );
 		$storage->save( $initialPrefs, array_keys( $initialPrefs ) );
 		// Verify that the initial preferences are as expected.
 		$this->assertArrayEquals( $initialPrefs, $storage->load( true ) );
 		// Make the API request, then check that the preferences have been updated.
-		$this->doApiRequestWithToken( $params, null, $this->user );
+		$this->doApiRequestWithToken( $params, null, $performer );
 		$this->assertArrayEquals( $expectedPrefs, $storage->load( true ) );
 	}
 
