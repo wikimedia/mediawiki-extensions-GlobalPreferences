@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"JeffreyKim",
+			"Ktchankt",
 			"Winston Sung"
 		]
 	},
@@ -10,7 +11,7 @@
 	"globalprefs-has-local-exception": "呢個全域偏好設定有個[[Special:Preferences#$1|呢個 wiki 上面嘅本地例外]]。",
 	"tooltip-globalprefs-check-label": "將呢個設定設為全域性",
 	"globalprefs-error-header": "錯",
-	"globalprefs-notglobal": "你嘅帳戶唔係全域帳戶，所以唔可以設定全域偏好設定。",
+	"globalprefs-notglobal": "你嘅戶口唔係全域戶口，所以唔可以設定全域自訂喜好。",
 	"globalpreferences": "全域喜好設定",
 	"globalprefs-info-label": "全域喜好設定：",
 	"globalprefs-info-link": "設定你嘅全域偏好設定",
