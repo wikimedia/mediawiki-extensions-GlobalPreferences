@@ -6,18 +6,18 @@
 			"Winston Sung"
 		]
 	},
-	"globalprefs-desc": "畀用戶設定全域偏好設定",
-	"globalprefs-set-local-exception": "為呢個設定本地例外[[Special:GlobalPreferences#$1|全球偏好]]。",
-	"globalprefs-has-local-exception": "呢個全域偏好設定有個[[Special:Preferences#$1|呢個 wiki 上面嘅本地例外]]。",
+	"globalprefs-desc": "畀用戶設定全域喜好設定",
+	"globalprefs-set-local-exception": "為呢個[[Special:GlobalPreferences#$1|全域喜好設定]]設定本地例外。",
+	"globalprefs-has-local-exception": "呢個全域喜好設定有個[[Special:Preferences#$1|本地例外喺呢個 wiki 上面]]。",
 	"tooltip-globalprefs-check-label": "將呢個設定設為全域性",
 	"globalprefs-error-header": "錯",
 	"globalprefs-notglobal": "你嘅戶口唔係全域戶口，所以唔可以設定全域自訂喜好。",
 	"globalpreferences": "全域喜好設定",
 	"globalprefs-info-label": "全域喜好設定：",
-	"globalprefs-info-link": "設定你嘅全域偏好設定",
+	"globalprefs-info-link": "設定你嘅全域喜好設定",
 	"globalprefs-info-help": "喺全域喜好設定揀咗嘅設定會喺所有維基通用。",
-	"globalprefs-reset-intro": "你可以用呢個頁面停用所有 wiki 上面嘅所有全域偏好設定，然後返去你嘅本地偏好設定。 呢個唔會影響任何本地嘅 wiki 偏好設定。 呢個係復原唔到嘅。",
-	"globalprefs-restoreprefs": "移除晒所有全域偏好設定（喺所有部分）",
+	"globalprefs-reset-intro": "你可以用呢個頁面停用所有 wiki 上面嘅所有全域喜好設定，然後返去你嘅本地喜好設定。 呢個唔會影響任何本地嘅 wiki 喜好設定。 呢個係復原唔到嘅。",
+	"globalprefs-restoreprefs": "剷走晒所有全域喜好設定（喺所有部分）",
 	"globalprefs-select-all": "開或者閂晒所有選框",
 	"globalprefs-col-header": "揀下面嘅選項嚟做全域選項"
 }
