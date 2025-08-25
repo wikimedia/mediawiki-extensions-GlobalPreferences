@@ -1,0 +1,21 @@
+{
+	"@metadata": {
+		"authors": [
+			"Xhulianoo"
+		]
+	},
+	"globalprefs-desc": "Lejon përdoruesit të vendosin parapëlqime globale",
+	"globalprefs-set-local-exception": "Cakto një përjashtim lokal për këtë [[Special:GlobalPreferences#$1|parapëlqim global]].",
+	"globalprefs-has-local-exception": "Ky parapëlqim global ka një [[Special:Preferences#$1|përjashtim lokal në këtë wiki]].",
+	"tooltip-globalprefs-check-label": "Bëj këtë cilësim global",
+	"globalprefs-error-header": "Gabim",
+	"globalprefs-notglobal": "Llogaria jote nuk është një llogari globale dhe nuk mund të vendosësh parapëlqime globale.",
+	"globalpreferences": "Parapëlqimet globale",
+	"globalprefs-info-label": "Parapëlqimet globale:",
+	"globalprefs-info-link": "Vendos parapëlqimet e tua globale",
+	"globalprefs-info-help": "Parapëlqimet e vendosura nëpërmjet faqes së parapëlqimeve globale do të zbatohen për të gjitha wiki-të.",
+	"globalprefs-reset-intro": "Mund ta përdorësh këtë faqe për të çaktivizuar të gjitha parapëlqimet globale në të gjitha wiki-të dhe për t'u kthyer te parapëlqimet e tua lokale. Kjo nuk ndikon në asnjë parapëlqim të wiki-ve lokale. Kjo nuk mund të anulohet.",
+	"globalprefs-restoreprefs": "Hiq të gjitha parapëlqimet (në të gjitha pjesët)",
+	"globalprefs-select-all": "Zgjidh ose çzgjidh të gjitha mundësitë",
+	"globalprefs-col-header": "Zgjidh mundësitë më poshtë për të qenë global"
+}
