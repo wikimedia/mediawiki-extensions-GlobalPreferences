@@ -5,7 +5,8 @@
 			"Liuxinyu970226",
 			"SolidBlock",
 			"Tr jason",
-			"沈澄心"
+			"沈澄心",
+			"Peterxy12"
 		]
 	},
 	"apihelp-globalpreferences-summary": "更改当前用户的全域参数设置。",
@@ -28,6 +29,9 @@
 	"apihelp-globalpreferenceoverrides-extended-description": "受影响的参数设置的全域值将被忽略。",
 	"apihelp-globalpreferenceoverrides-param-reset": "重置本地覆盖。移除所有（或部分，基于<code>resetkinds</code>参数的值）类型的本地覆盖并使其再次全域有效。",
 	"apihelp-globalpreferenceoverrides-param-resetkinds": "当<var>reset</var>选项设置时，要重置的参数设置类型列表。",
+	"apihelp-globalpreferenceoverrides-param-change": "更改列表，格式化为“名称=值”（例如skin=vector）。如果未提供值（甚至没有等号，例如preferencename|otherpreference|...），那么参数将不会全域设置。如果传递的任何值包含竖线字符（<kbd>|</kbd>），请使用[[Special:ApiHelp/main#main/datatypes|备选多值分隔符]]以便正确操作。",
+	"apihelp-globalpreferenceoverrides-param-optionname": "覆蓋名稱，其應設定為由 <var>optionvalue</var> 所提供的值。",
 	"apihelp-globalpreferenceoverrides-param-optionvalue": "由<var>optionname</var>所指定，用于覆盖的值。",
-	"apihelp-globalpreferenceoverrides-example-reset": "移除所有本地覆盖内容。"
+	"apihelp-globalpreferenceoverrides-example-reset": "移除所有本地覆盖内容。",
+	"apihelp-globalpreferenceoverrides-example-change": "替<kbd>skin</kbd>以及<kbd>hideminor</kbd>的偏好設置來設定或更改覆蓋內容。"
 }
