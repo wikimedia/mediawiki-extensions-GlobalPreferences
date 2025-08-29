@@ -17,19 +17,13 @@ use Wikimedia\Rdbms\IDBAccessObject;
  */
 class GlobalUserOptionsStore implements UserOptionsStore {
 
-	private CentralIdLookup $centralIdLookup;
 	private LoggerInterface $logger;
-	private GlobalPreferencesConnectionProvider $globalDbProvider;
-	private GlobalPreferencesHookRunner $globalPreferencesHookRunner;
 
 	public function __construct(
-		CentralIdLookup $centralIdLookup,
-		GlobalPreferencesConnectionProvider $globalDbProvider,
-		GlobalPreferencesHookRunner $globalPreferencesHookRunner
+		private readonly CentralIdLookup $centralIdLookup,
+		private readonly GlobalPreferencesConnectionProvider $globalDbProvider,
+		private readonly GlobalPreferencesHookRunner $globalPreferencesHookRunner,
 	) {
-		$this->centralIdLookup = $centralIdLookup;
-		$this->globalDbProvider = $globalDbProvider;
-		$this->globalPreferencesHookRunner = $globalPreferencesHookRunner;
 		$this->logger = LoggerFactory::getInstance( 'preferences' );
 	}
 

@@ -108,8 +108,6 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 		HTMLCheckMatrix::class,
 	];
 
-	private GlobalPreferencesHookRunner $globalPreferencesHookRunner;
-
 	/**
 	 * Weak reference to the UserIdentity with global ID $this->globalUserId
 	 * @var WeakReference|null
@@ -129,7 +127,7 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 		LanguageNameUtils $languageNameUtils,
 		HookContainer $hookContainer,
 		UserOptionsLookup $userOptionsLookup,
-		GlobalPreferencesHookRunner $globalPreferencesHookRunner
+		private readonly GlobalPreferencesHookRunner $globalPreferencesHookRunner,
 	) {
 		parent::__construct(
 			$options,
@@ -143,8 +141,6 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 			$hookContainer,
 			$userOptionsLookup
 		);
-
-		$this->globalPreferencesHookRunner = $globalPreferencesHookRunner;
 	}
 
 	/**

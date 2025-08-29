@@ -6,7 +6,6 @@ use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\Output\Hook\BeforePageDisplayHook;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\Preferences\Hook\PreferencesFormPreSaveHook;
-use MediaWiki\Preferences\PreferencesFactory;
 use MediaWiki\Skin\Skin;
 use MediaWiki\User\Options\Hook\SaveUserOptionsHook;
 use MediaWiki\User\Options\UserOptionsLookup;
@@ -20,22 +19,10 @@ class Hooks implements
 	PreferencesFormPreSaveHook
 	{
 
-	/** @var GlobalPreferencesFactory */
-	private $preferencesFactory;
-
-	/** @var UserOptionsManager */
-	private $userOptionsManager;
-
-	/**
-	 * @param PreferencesFactory $preferencesFactory
-	 * @param UserOptionsManager $userOptionsManager
-	 */
 	public function __construct(
-		PreferencesFactory $preferencesFactory,
-		UserOptionsManager $userOptionsManager
+		private readonly GlobalPreferencesFactory $preferencesFactory,
+		private readonly UserOptionsManager $userOptionsManager,
 	) {
-		$this->preferencesFactory = $preferencesFactory;
-		$this->userOptionsManager = $userOptionsManager;
 	}
 
 	/**

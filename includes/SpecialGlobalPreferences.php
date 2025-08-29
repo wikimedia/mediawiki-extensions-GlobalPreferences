@@ -15,17 +15,12 @@ use PreferencesFormOOUI;
 
 class SpecialGlobalPreferences extends SpecialPreferences {
 
-	private PermissionManager $permissionManager;
-	private GlobalPreferencesFactory $preferencesFactory;
-
 	public function __construct(
-		PermissionManager $permissionManager,
-		GlobalPreferencesFactory $preferencesFactory
+		private readonly PermissionManager $permissionManager,
+		private readonly GlobalPreferencesFactory $preferencesFactory,
 	) {
 		parent::__construct();
 		$this->mName = 'GlobalPreferences';
-		$this->permissionManager = $permissionManager;
-		$this->preferencesFactory = $preferencesFactory;
 	}
 
 	/**

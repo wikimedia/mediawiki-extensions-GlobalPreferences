@@ -26,10 +26,7 @@ use MediaWiki\MediaWikiServices;
 
 class GlobalPreferencesServices {
 
-	private MediaWikiServices $serviceContainer;
-
-	public function __construct( MediaWikiServices $serviceContainer ) {
-		$this->serviceContainer = $serviceContainer;
+	public function __construct( private readonly MediaWikiServices $serviceContainer ) {
 	}
 
 	/**

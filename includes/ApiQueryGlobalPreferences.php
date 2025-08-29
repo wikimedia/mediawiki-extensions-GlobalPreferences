@@ -10,18 +10,13 @@ use MediaWiki\User\Options\UserOptionsLookup;
 use Wikimedia\ParamValidator\ParamValidator;
 
 class ApiQueryGlobalPreferences extends ApiQueryBase {
-	private GlobalPreferencesFactory $preferencesFactory;
-	private UserOptionsLookup $userOptionsLookup;
-
 	public function __construct(
 		ApiQuery $queryModule,
 		string $moduleName,
-		GlobalPreferencesFactory $factory,
-		UserOptionsLookup $userOptionsLookup
+		private readonly GlobalPreferencesFactory $preferencesFactory,
+		private readonly UserOptionsLookup $userOptionsLookup,
 	) {
 		parent::__construct( $queryModule, $moduleName, 'gpr' );
-		$this->preferencesFactory = $factory;
-		$this->userOptionsLookup = $userOptionsLookup;
 	}
 
 	/**

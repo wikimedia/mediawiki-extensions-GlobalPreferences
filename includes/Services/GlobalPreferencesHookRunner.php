@@ -10,10 +10,7 @@ class GlobalPreferencesHookRunner implements
 	GlobalPreferencesSetGlobalPreferencesHook
 {
 
-	private HookContainer $container;
-
-	public function __construct( HookContainer $container ) {
-		$this->container = $container;
+	public function __construct( private readonly HookContainer $container ) {
 	}
 
 	/** @inheritDoc */

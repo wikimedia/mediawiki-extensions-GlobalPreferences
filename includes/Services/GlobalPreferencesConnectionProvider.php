@@ -17,13 +17,11 @@ class GlobalPreferencesConnectionProvider {
 		'SharedDB',
 	];
 
-	private ServiceOptions $options;
-	private IConnectionProvider $dbProvider;
-
-	public function __construct( ServiceOptions $options, IConnectionProvider $dbProvider ) {
+	public function __construct(
+		private readonly ServiceOptions $options,
+		private readonly IConnectionProvider $dbProvider,
+	) {
 		$options->assertRequiredOptions( self::CONSTRUCTOR_OPTIONS );
-		$this->options = $options;
-		$this->dbProvider = $dbProvider;
 	}
 
 	/**
