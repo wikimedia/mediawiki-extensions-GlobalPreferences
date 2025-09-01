@@ -1,8 +1,22 @@
 {
 	"@metadata": {
 		"authors": [
-			"Abijeet Patro"
+			"Abijeet Patro",
+			"Saurmandal"
 		]
 	},
-	"globalprefs-error-header": "त्रुटि"
+	"globalprefs-desc": "सभी सदस्यों को ग्लोबल वरीयताएँ सेट करने देता है",
+	"globalprefs-set-local-exception": "इस [[Special:GlobalPreferences#$1|ग्लोबल अनुमति]] के लिए एक लोकल अपवाद सेट करें।",
+	"globalprefs-has-local-exception": "इस ग्लोबल अनुमति का [[Special:Preferences#$1|इस विकि पर एक लोकल अपवाद]] है।",
+	"tooltip-globalprefs-check-label": "इस सेटिंग को ग्लोबल बनाएँ",
+	"globalprefs-error-header": "त्रुटि",
+	"globalprefs-notglobal": "आपका खाता ग्लोबल खाता नहीं है और ग्लोबल वरीयताएँ सेट नहीं कर सकता।",
+	"globalpreferences": "ग्लोबल वरीयताएँ",
+	"globalprefs-info-label": "ग्लोबल वरीयताएँ:",
+	"globalprefs-info-link": "अपनी ग्लोबल वरीयताएँ सेट करें",
+	"globalprefs-info-help": "ग्लोबल वरीयताओं के माध्यम से सेट की गई वरीयताएँ सभी विकियों पर लागू की जाएँगी।",
+	"globalprefs-reset-intro": "आप सभी विकियों पर ग्लोबल वरीयताएँ अक्षम करके अपनी लोकल वरीयताओं पर लौटने के लिए इस पृष्ठ का उपयोग कर सकते हैं। यह किसी भी लोकल विकि वरीयता को प्रभावित नहीं करेगा। यह पूर्ववत नहीं किया जा सकता।",
+	"globalprefs-restoreprefs": "सभी ग्लोबल वरीयताएँ हटाएँ (सभी अनुभागों में)",
+	"globalprefs-select-all": "सभी टिकबक्से चालू या बंद करें",
+	"globalprefs-col-header": "ग्लोबल करने के लिए नीचे विकल्प चुनें"
 }
