@@ -116,6 +116,8 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	/** @var int|null */
 	private $globalUserId;
 
+	private readonly GlobalPreferencesHookRunner $globalPreferencesHookRunner;
+
 	public function __construct(
 		ServiceOptions $options,
 		Language $contLang,
@@ -127,7 +129,6 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 		LanguageNameUtils $languageNameUtils,
 		HookContainer $hookContainer,
 		UserOptionsLookup $userOptionsLookup,
-		private readonly GlobalPreferencesHookRunner $globalPreferencesHookRunner,
 	) {
 		parent::__construct(
 			$options,
@@ -141,6 +142,7 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 			$hookContainer,
 			$userOptionsLookup
 		);
+		$this->globalPreferencesHookRunner = new GlobalPreferencesHookRunner( $hookContainer );
 	}
 
 	/**

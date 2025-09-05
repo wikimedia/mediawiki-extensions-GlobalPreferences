@@ -21,7 +21,6 @@
 namespace GlobalPreferences;
 
 use GlobalPreferences\Services\GlobalPreferencesConnectionProvider;
-use GlobalPreferences\Services\GlobalPreferencesHookRunner;
 use MediaWiki\MediaWikiServices;
 
 class GlobalPreferencesServices {
@@ -41,9 +40,5 @@ class GlobalPreferencesServices {
 
 	public function getGlobalPreferencesConnectionProvider(): GlobalPreferencesConnectionProvider {
 		return $this->serviceContainer->get( 'GlobalPreferences.GlobalPreferencesConnectionProvider' );
-	}
-
-	public function getGlobalPreferencesHookRunner(): GlobalPreferencesHookRunner {
-		return $this->serviceContainer->get( 'GlobalPreferences.GlobalPreferencesHookRunner' );
 	}
 }

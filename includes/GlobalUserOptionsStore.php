@@ -4,6 +4,7 @@ namespace GlobalPreferences;
 
 use GlobalPreferences\Services\GlobalPreferencesConnectionProvider;
 use GlobalPreferences\Services\GlobalPreferencesHookRunner;
+use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\User\CentralId\CentralIdLookup;
 use MediaWiki\User\Options\UserOptionsStore;
@@ -18,13 +19,15 @@ use Wikimedia\Rdbms\IDBAccessObject;
 class GlobalUserOptionsStore implements UserOptionsStore {
 
 	private LoggerInterface $logger;
+	private readonly GlobalPreferencesHookRunner $globalPreferencesHookRunner;
 
 	public function __construct(
 		private readonly CentralIdLookup $centralIdLookup,
 		private readonly GlobalPreferencesConnectionProvider $globalDbProvider,
-		private readonly GlobalPreferencesHookRunner $globalPreferencesHookRunner,
+		HookContainer $hookContainer,
 	) {
 		$this->logger = LoggerFactory::getInstance( 'preferences' );
+		$this->globalPreferencesHookRunner = new GlobalPreferencesHookRunner( $hookContainer );
 	}
 
 	/**

@@ -3,7 +3,7 @@
 namespace GlobalPreferences\Tests\Integration;
 
 use GlobalPreferences\GlobalPreferencesFactory;
-use GlobalPreferences\GlobalPreferencesServices;
+use GlobalPreferences\Services\GlobalPreferencesHookRunner;
 use GlobalPreferences\Storage;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Context\DerivativeContext;
@@ -129,9 +129,9 @@ class GlobalPreferencesFactoryTest extends MediaWikiIntegrationTestCase {
 		$wrapper = TestingAccessWrapper::newFromObject( $factory );
 		$wrapper->options = new ServiceOptions( [ 'HiddenPrefs' ], [ 'HiddenPrefs' => [] ] );
 		$wrapper->permissionManager = $this->getServiceContainer()->getPermissionManager();
-		$wrapper->globalPreferencesHookRunner = GlobalPreferencesServices::wrap(
-			$this->getServiceContainer()
-		)->getGlobalPreferencesHookRunner();
+		$wrapper->globalPreferencesHookRunner = new GlobalPreferencesHookRunner(
+			$this->getServiceContainer()->getHookContainer()
+		);
 
 		$postData = [ 'wpFormIdentifier' => 'testFormSaving' ];
 		foreach ( $formData as $name => $value ) {

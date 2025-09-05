@@ -70,7 +70,7 @@
 			"services": [
 				"CentralIdLookup",
 				"GlobalPreferences.GlobalPreferencesConnectionProvider",
-				"GlobalPreferences.GlobalPreferencesHookRunner"
+				"HookContainer"
 			]
 		}
 	},

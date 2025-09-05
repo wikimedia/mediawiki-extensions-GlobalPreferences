@@ -3,7 +3,6 @@
 namespace GlobalPreferences;
 
 use GlobalPreferences\Services\GlobalPreferencesConnectionProvider;
-use GlobalPreferences\Services\GlobalPreferencesHookRunner;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\MediaWikiServices;
 
@@ -21,13 +20,6 @@ return [
 				$services->getMainConfig()
 			),
 			$services->getConnectionProvider()
-		);
-	},
-	'GlobalPreferences.GlobalPreferencesHookRunner' => static function (
-		MediaWikiServices $services
-	): GlobalPreferencesHookRunner {
-		return new GlobalPreferencesHookRunner(
-			$services->getHookContainer()
 		);
 	},
 ];
