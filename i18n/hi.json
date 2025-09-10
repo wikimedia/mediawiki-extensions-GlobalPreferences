@@ -6,7 +6,7 @@
 		]
 	},
 	"globalprefs-desc": "सभी सदस्यों को ग्लोबल वरीयताएँ सेट करने देता है",
-	"globalprefs-set-local-exception": "इस [[Special:GlobalPreferences#$1|ग्लोबल अनुमति]] के लिए एक लोकल अपवाद सेट करें।",
+	"globalprefs-set-local-exception": "इस [[Special:GlobalPreferences#$1|ग्लोबल वरीयता]] के लिए एक लोकल अपवाद सेट करें।",
 	"globalprefs-has-local-exception": "इस ग्लोबल अनुमति का [[Special:Preferences#$1|इस विकि पर एक लोकल अपवाद]] है।",
 	"tooltip-globalprefs-check-label": "इस सेटिंग को ग्लोबल बनाएँ",
 	"globalprefs-error-header": "त्रुटि",
