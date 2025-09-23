@@ -27,7 +27,7 @@ class ApiGlobalPreferences extends ApiOptionsBase {
 	 * @inheritDoc
 	 */
 	public function execute() {
-		$user = $this->getUserForUpdatesOrNull();
+		$user = $this->getUserFromPrimaryOrNull();
 		if ( $user ) {
 			$factory = $this->getFactory();
 			if ( !$factory->isUserGlobalized( $user ) ) {
@@ -49,7 +49,7 @@ class ApiGlobalPreferences extends ApiOptionsBase {
 	 */
 	protected function resetPreferences( array $kinds ) {
 		if ( in_array( 'all', $kinds ) ) {
-			$this->getFactory()->resetGlobalUserSettings( $this->getUserForUpdates() );
+			$this->getFactory()->resetGlobalUserSettings( $this->getUserFromPrimary() );
 		} else {
 			$this->resetPrefTypes = $kinds;
 		}
@@ -67,14 +67,14 @@ class ApiGlobalPreferences extends ApiOptionsBase {
 	 */
 	protected function commitChanges() {
 		$factory = $this->getFactory();
-		$user = $this->getUserForUpdates();
+		$user = $this->getUserFromPrimary();
 		$prefs = $this->getFactory()->getGlobalPreferencesValues( $user, true );
 		if ( $prefs === false ) {
 			return;
 		}
 		if ( $this->resetPrefTypes ) {
 			$kinds = $this->getFactory()->getResetKinds(
-				$this->getUserForUpdates(),
+				$this->getUserFromPrimary(),
 				$this->getContext(),
 				$prefs
 			);

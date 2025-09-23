@@ -25,7 +25,7 @@ class ApiGlobalPreferenceOverrides extends ApiOptionsBase {
 	 * @inheritDoc
 	 */
 	public function execute() {
-		$user = $this->getUserForUpdatesOrNull();
+		$user = $this->getUserFromPrimaryOrNull();
 		if ( $user && !$this->globalPrefs->isUserGlobalized( $user ) ) {
 			$this->dieWithError( 'apierror-globalpreferences-notglobalized', 'notglobalized' );
 		}
@@ -39,9 +39,9 @@ class ApiGlobalPreferenceOverrides extends ApiOptionsBase {
 		$optionNames = array_map(
 			static fn ( $name ) => $name . UserOptionsLookup::LOCAL_EXCEPTION_SUFFIX,
 			$this->globalPrefs->getOptionNamesForReset(
-				$this->getUserForUpdates(), $this->getContext(), $kinds )
+				$this->getUserFromPrimary(), $this->getContext(), $kinds )
 		);
-		$this->getUserOptionsManager()->resetOptionsByName( $this->getUserForUpdates(), $optionNames );
+		$this->getUserOptionsManager()->resetOptionsByName( $this->getUserFromPrimary(), $optionNames );
 	}
 
 	/**
@@ -50,13 +50,13 @@ class ApiGlobalPreferenceOverrides extends ApiOptionsBase {
 	protected function setPreference( $preference, $value ) {
 		if ( $value === null ) {
 			$this->getUserOptionsManager()->setOption(
-				$this->getUserForUpdates(),
+				$this->getUserFromPrimary(),
 				$preference . UserOptionsLookup::LOCAL_EXCEPTION_SUFFIX,
 				null
 			);
 		} else {
 			$this->getUserOptionsManager()->setOption(
-				$this->getUserForUpdates(), $preference, $value, UserOptionsManager::GLOBAL_OVERRIDE );
+				$this->getUserFromPrimary(), $preference, $value, UserOptionsManager::GLOBAL_OVERRIDE );
 		}
 	}
 
@@ -64,7 +64,7 @@ class ApiGlobalPreferenceOverrides extends ApiOptionsBase {
 	 * @inheritDoc
 	 */
 	protected function commitChanges() {
-		$this->getUserOptionsManager()->saveOptions( $this->getUserForUpdates() );
+		$this->getUserOptionsManager()->saveOptions( $this->getUserFromPrimary() );
 	}
 
 	/**
