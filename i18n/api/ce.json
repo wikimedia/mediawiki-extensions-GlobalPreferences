@@ -4,6 +4,11 @@
 			"Умар"
 		]
 	},
+	"apihelp-globalpreferences-summary": "Карара декъашхочун глобалан нисдаран гӀирс хийца.",
+	"apihelp-globalpreferences-extended-description": "ХӀинца йолчу вики-проектана дӀайазйина йолу нисдаран гӀирсаш локалан бен хийца йиш йац.",
+	"apihelp-globalpreferences-param-reset": "Локалан нисдаран гӀирс меттахӀоттабе. ДӀайоккху йерриг йа, <code>resetkinds</code> параметран маьӀна хьаьжжина, цхьадолу тайпанаш глобалан низамаш, уьш глобалан йо.",
+	"apihelp-globalpreferences-param-resetkinds": "Нагахь санна <var>reset</var> опци билгалйаьккхинехь, меттахӀотто дезачу тайпанийн могӀам.",
+	"apihelp-globalpreferences-param-change": "Форматехь хийцамаш хиларан могӀам цӀе=маьӀна (масала, skin=vector). Нагахь санна цхьа а маьӀна дацахь (атта цхьатерра билгало йац), масала, нисдаран гӀирсан цӀе|кхин нисдаран гӀирс|..., нисдаран гӀирс глобалан хир бац. Нагахь санна муьлхха а пайпан маьӀна (<kbd>|</kbd>) хьаьрк хилча, [[Special:ApiHelp/main#main/datatypes|альтернативан маьӀна къасторан гӀирс]], операци нийса кхочушйархьама.\nДехар до, альтернативан маьӀна къасторан гӀирс лелабе, операци нийса кхочушйархьама.",
 	"apihelp-globalpreferences-example-change": "Хийца <kbd>skin</kbd> а, <kbd>hideminor</kbd> а нисдаран гӀирс.",
 	"apihelp-query+globalpreferences-summary": "Карара декъашхочун глобалан нисдаран гӀирс гайта.",
 	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Глобалан нисдаран гӀирс.",
