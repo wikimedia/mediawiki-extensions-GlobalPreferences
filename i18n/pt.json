@@ -3,21 +3,22 @@
 		"authors": [
 			"Athena in Wonderland",
 			"Hamilton Abreu",
-			"Vitorvicentevalente"
+			"Vitorvicentevalente",
+			"Mansil alfalb"
 		]
 	},
-	"globalprefs-desc": "Permite que os utilizadores definam as suas preferências globais",
+	"globalprefs-desc": "Permite que os utilizadores definam as preferências globais",
 	"globalprefs-set-local-exception": "Defina uma exceção local para esta [[Special:GlobalPreferences#$1|preferência global]].",
-	"globalprefs-has-local-exception": "Esta preferência global tem uma [[Special:Preferences#$1|exceção local sobre esta wiki]].",
-	"tooltip-globalprefs-check-label": "Torne esta configuração global",
+	"globalprefs-has-local-exception": "Esta preferência global tem uma [[Special:Preferences#$1|exceção local nesta wiki]].",
+	"tooltip-globalprefs-check-label": "Tornar esta definição global",
 	"globalprefs-error-header": "Erro",
-	"globalprefs-notglobal": "A sua conta não é uma conta global e não é possível definir preferências globais.",
+	"globalprefs-notglobal": "A sua conta não é uma conta global e não pode definir as preferências globais.",
 	"globalpreferences": "Preferências globais",
 	"globalprefs-info-label": "Preferências globais:",
-	"globalprefs-info-link": "Definir as suas preferências globais",
-	"globalprefs-info-help": "As preferências definidas na página das preferências globais serão aplicáveis a todas as wikis.",
-	"globalprefs-reset-intro": "Pode usar esta página para desativar todas as preferências globais em todas as wikis e voltar às suas preferências locais. Isto não afeta as preferências locais da wiki. Esta operação não pode ser desfeita.",
+	"globalprefs-info-link": "Defina as suas preferências globais",
+	"globalprefs-info-help": "As preferências definidas na página das preferências globais serão aplicáveis para todas as wikis.",
+	"globalprefs-reset-intro": "Pode utilizar esta página para desativar todas as preferências globais em todas as wikis e voltar às suas preferências locais. Isto não afeta as preferências da wiki local. Esta operação não pode ser anulada.",
 	"globalprefs-restoreprefs": "Remover todas as preferências globais (em todas as secções)",
 	"globalprefs-select-all": "Alternar todas as caixas de seleção, marcando-as ou desmarcando-as",
-	"globalprefs-col-header": "Selecionar as opções abaixo que serão globais"
+	"globalprefs-col-header": "Selecione as opções em baixo que serão globais"
 }
