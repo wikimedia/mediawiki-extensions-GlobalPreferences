@@ -15,9 +15,7 @@ use MediaWiki\User\UserIdentityValue;
 class SpecialGlobalPreferencesTest extends MediaWikiIntegrationTestCase {
 	protected function setUp(): void {
 		$this->overrideMwServices( null, [
-			'CentralIdLookup' => function () {
-				return $this->getMockCentralLookup();
-			}
+			'CentralIdLookup' => $this->getMockCentralLookup( ... )
 		] );
 		parent::setUp();
 	}
