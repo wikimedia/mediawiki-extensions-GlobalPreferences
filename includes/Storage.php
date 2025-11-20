@@ -56,7 +56,9 @@ class Storage {
 		$cache = $this->getCache();
 		$key = $this->getCacheKey();
 
-		return $cache->getWithSetCallback( $key, self::CACHE_TTL, $this->loadFromDB( ... ) );
+		return $cache->getWithSetCallback( $key, self::CACHE_TTL,
+			fn ( $oldValue, &$ttl ) => $this->loadFromDB()
+		);
 	}
 
 	/**
