@@ -27,12 +27,10 @@ class ApiGlobalPreferences extends ApiOptionsBase {
 	 * @inheritDoc
 	 */
 	public function execute() {
-		$user = $this->getUserFromPrimaryOrNull();
-		if ( $user ) {
-			$factory = $this->getFactory();
-			if ( !$factory->isUserGlobalized( $user ) ) {
-				$this->dieWithError( 'apierror-globalpreferences-notglobalized', 'notglobalized' );
-			}
+		$user = $this->getUser();
+		$factory = $this->getFactory();
+		if ( $user->isNamed() && !$factory->isUserGlobalized( $user ) ) {
+			$this->dieWithError( 'apierror-globalpreferences-notglobalized', 'notglobalized' );
 		}
 		parent::execute();
 	}
@@ -49,7 +47,7 @@ class ApiGlobalPreferences extends ApiOptionsBase {
 	 */
 	protected function resetPreferences( array $kinds ) {
 		if ( in_array( 'all', $kinds ) ) {
-			$this->getFactory()->resetGlobalUserSettings( $this->getUserFromPrimary() );
+			$this->getFactory()->resetGlobalUserSettings( $this->getUser() );
 		} else {
 			$this->resetPrefTypes = $kinds;
 		}
@@ -67,14 +65,14 @@ class ApiGlobalPreferences extends ApiOptionsBase {
 	 */
 	protected function commitChanges() {
 		$factory = $this->getFactory();
-		$user = $this->getUserFromPrimary();
+		$user = $this->getUser();
 		$prefs = $this->getFactory()->getGlobalPreferencesValues( $user, true );
 		if ( $prefs === false ) {
 			return;
 		}
 		if ( $this->resetPrefTypes ) {
 			$kinds = $this->getFactory()->getResetKinds(
-				$this->getUserFromPrimary(),
+				$this->getUser(),
 				$this->getContext(),
 				$prefs
 			);
