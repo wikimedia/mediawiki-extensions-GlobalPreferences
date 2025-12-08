@@ -17,6 +17,7 @@
 	"globalprefs-info-link": "Promijeni globalne postavke",
 	"globalprefs-info-help": "Globalne postavke primjenjuju se na sve projekte.",
 	"globalprefs-reset-intro": "Ova stranica služi za onemogućavanje svih globalnih podešavanja na svim wikijama za povratak mjesnih podešavanja. To ne utječe na mjesna podešavanja. Djelovanje je nepovratno.",
-	"globalprefs-restoreprefs": "Ukloni sva globalna podešavanja (u svim odeljcima)",
-	"globalprefs-select-all": "Izaberi/poništi sve"
+	"globalprefs-restoreprefs": "Uklanjanje svih globalnih postavki (u svim odeljcima)",
+	"globalprefs-select-all": "Izaberi/poništi sve",
+	"globalprefs-col-header": "Globalno primijeni sve postavke"
 }
