@@ -3,7 +3,8 @@
 		"authors": [
 			"Hidayatsrf",
 			"Iwan Novirion",
-			"Ezagren"
+			"Ezagren",
+			"Penyuwangi"
 		]
 	},
 	"globalprefs-desc": "Memungkinkan pengguna untuk mengatur preferensi global",
@@ -16,8 +17,8 @@
 	"globalprefs-info-label": "Preferensi global:",
 	"globalprefs-info-link": "Atur preferensi global",
 	"globalprefs-info-help": "Preferensi yang diatur melalui preferensi global akan tampil di semua wiki.",
-	"globalprefs-reset-intro": "Anda dapat menggunakan halaman ini untuk menonaktifkan semua preferensi global di semua wiki dan kembali ke preferensi lokal Anda. Ini tidak mempengaruhi preferensi wiki lokal Anda. Tindakan ini tidak dapat dibatalkan.",
+	"globalprefs-reset-intro": "Anda dapat menggunakan halaman ini untuk mematikan semua preferensi global di semua wiki dan kembali ke preferensi lokal Anda. Ini tidak memengaruhi preferensi wiki lokal Anda. Tindakan ini tidak dapat dibatalkan.",
 	"globalprefs-restoreprefs": "Hapus semua preferensi global (di semua bagian)",
-	"globalprefs-select-all": "Aktifkan atau nonaktifkan semua kotak centang",
+	"globalprefs-select-all": "Nyalakan atau matikan semua kotak centang",
 	"globalprefs-col-header": "Pilih pilihan di bawah untuk diatur global"
 }
