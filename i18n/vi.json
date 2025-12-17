@@ -8,7 +8,7 @@
 	},
 	"globalprefs-desc": "Cho phép thành viên đặt tùy chọn toàn cục",
 	"globalprefs-set-local-exception": "Ghi đè [[Special:GlobalPreferences#$1|tùy chọn toàn cục]] cho wiki này.",
-	"globalprefs-has-local-exception": "Tùy chọn toàn cục này có [[Special:Preferences#$1|ngoại lệ địa phương tại wiki này]].",
+	"globalprefs-has-local-exception": "Tùy chọn toàn cục này có [[Special:Preferences#$1|ngoại lệ cục bộ tại wiki này]].",
 	"tooltip-globalprefs-check-label": "Áp dụng tùy chọn này toàn cục",
 	"globalprefs-error-header": "Lỗi",
 	"globalprefs-notglobal": "Tài khoản này không phải là tài khoản toàn cục nên không thể áp dụng tùy chọn toàn cục.",
