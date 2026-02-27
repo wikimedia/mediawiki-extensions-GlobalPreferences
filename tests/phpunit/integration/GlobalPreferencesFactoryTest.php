@@ -151,10 +151,10 @@ class GlobalPreferencesFactoryTest extends MediaWikiIntegrationTestCase {
 		$status = $form->trySubmit();
 		self::assertInstanceOf( Status::class, $status );
 		if ( $expected === false ) {
-			self::assertFalse( $status->isGood() );
+			$this->assertStatusNotGood( $status );
 			self::assertFalse( $hookCalled );
 		} else {
-			self::assertTrue( $status->isGood() );
+			$this->assertStatusGood( $status );
 			self::assertTrue( $hookCalled );
 		}
 	}
