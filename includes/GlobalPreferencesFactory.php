@@ -205,6 +205,10 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 			) {
 				continue;
 			}
+			if ( $this->isAutoGlobal( $name ) ) {
+				// Auto globals don't have local exceptions, so skip adding the help message about that.
+				continue;
+			}
 			$localExName = $name . UserOptionsLookup::LOCAL_EXCEPTION_SUFFIX;
 			$localExValueUser = $userOptionsLookup->getBoolOption( $user, $localExName );
 
@@ -303,18 +307,31 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 			}
 			// Create the new preference.
 			$isGlobal = isset( $globalPrefs[$pref] );
-			$allPrefs[$pref . static::GLOBAL_EXCEPTION_SUFFIX] = [
+			$autoGlobal = $this->isAutoGlobal( $pref );
+			$globalPrefKey = $pref . static::GLOBAL_EXCEPTION_SUFFIX;
+			// This ensures saving the form doesn't set this as a global.
+			if ( $autoGlobal ) {
+				$globalPrefKey .= '-auto';
+			}
+
+			$allPrefs[$globalPrefKey] = [
 				'type' => 'toggle',
 				// Make the tooltip and the label the same, because the label is normally hidden.
 				'tooltip' => 'globalprefs-check-label',
 				'label-message' => 'tooltip-globalprefs-check-label',
-				'default' => $isGlobal,
+				// For auto globals it is marked as checked but due to `-auto` suffix it will not save
+				'default' => $autoGlobal || $isGlobal,
 				'section' => $def['section'],
 				'cssclass' => 'mw-globalprefs-global-check mw-globalprefs-checkbox-for-' . $pref,
 				'hide-if' => $def['hide-if'] ?? false,
+				// For auto globals it should not be possible to check the global field.
+				'disabled' => $autoGlobal,
 				'disable-if' => $def['disable-if'] ?? false,
 			];
-			if ( isset( $def['disable-if'] ) ) {
+
+			if ( $autoGlobal ) {
+				// ignore. Logic already correct above.
+			} elseif ( isset( $def['disable-if'] ) ) {
 				$def['disable-if'] = [ 'OR', $def['disable-if'],
 					[ '!==', $pref . static::GLOBAL_EXCEPTION_SUFFIX, '1' ]
 				];
@@ -439,6 +456,10 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 			}
 			unset( $prefs[$globalName] );
 		}
+		// append auto globals to the save
+		foreach ( $this->autoGlobals as $name ) {
+			$prefs[ $name ] = $formData[$name];
+		}
 		$this->setGlobalPreferences( $user, $prefs, $form->getContext(), $matricesToClear );
 
 		return true;
@@ -474,6 +495,17 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	public static function getSectionFragmentId( $section ) {
 		$sectionId = preg_replace( '#/.*$#', '', $section );
 		return 'mw-prefsection-' . $sectionId;
+	}
+
+	/**
+	 * @param string $pref
+	 * @return bool
+	 */
+	private function isAutoGlobal( string $pref ) {
+		return in_array(
+			$pref,
+			$this->autoGlobals
+		);
 	}
 
 	/**
@@ -513,6 +545,9 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 		$isAllowedClass = isset( $info['class'] )
 			&& in_array( $info['class'], $this->allowedClasses );
 
+		if ( $this->isAutoGlobal( $name ) ) {
+			return true;
+		}
 		return $isAllowedType || $isAllowedClass;
 	}
 

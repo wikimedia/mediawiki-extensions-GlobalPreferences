@@ -24,7 +24,9 @@
 			// Don't update child widgets if event was triggered by updateSelectAllCheckboxState
 			if ( !selectAllCheckboxesOngoing && checkboxesBySection[ sectionID ] ) {
 				checkboxesBySection[ sectionID ].forEach( ( checkboxWidget ) => {
-					checkboxWidget.setSelected( isChecked );
+					if ( !checkboxWidget.isDisabled() ) {
+						checkboxWidget.setSelected( isChecked );
+					}
 				} );
 			}
 		} );
@@ -48,12 +50,12 @@
 		// Suppress event listener
 		selectAllCheckboxesOngoing = true;
 		if (
-			sectionCheckboxes.every( ( c ) => c.isSelected() )
+			sectionCheckboxes.every( ( c ) => c.isSelected() && !c.isDisabled() )
 		) {
 			sectionCheckbox.setSelected( true );
 			sectionCheckbox.setIndeterminate( false );
 		} else if (
-			sectionCheckboxes.some( ( c ) => c.isSelected() )
+			sectionCheckboxes.some( ( c ) => c.isSelected() && !c.isDisabled() )
 		) {
 			sectionCheckbox.setIndeterminate( true );
 		} else {
