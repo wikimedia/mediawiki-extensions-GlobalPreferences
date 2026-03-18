@@ -34,7 +34,14 @@ class MediaWikiServicesHookHandler implements MediaWikiServicesHook {
 				$services->getUserOptionsLookup(),
 			);
 			$factory->setLogger( LoggerFactory::getInstance( 'preferences' ) );
-			$factory->setAutoGlobals( $mainConfig->get( 'GlobalPreferencesAutoPrefs' ) );
+			$factory->setAutoGlobals(
+				array_merge(
+					// Extensions can register global preferences via attributes property.
+					$services->getExtensionRegistry()->getAttribute( 'GlobalPreferencesAutoPrefs' ),
+					// They can also be defined via configuration
+					$mainConfig->get( 'GlobalPreferencesAutoPrefs' )
+				)
+			);
 
 			return $factory;
 		} );
