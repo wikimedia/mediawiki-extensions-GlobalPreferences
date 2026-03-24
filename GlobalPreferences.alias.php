@@ -103,6 +103,11 @@ $specialPageAliases['pt'] = [
 	'GlobalPreferences' => [ 'Preferências_globais' ],
 ];
 
+/** Slovak (slovenčina) */
+$specialPageAliases['sk'] = [
+	'GlobalPreferences' => [ 'GlobálneNastavenia' ],
+];
+
 /** Serbian (Cyrillic script) (српски (ћирилица)‎) */
 $specialPageAliases['sr-ec'] = [
 	'GlobalPreferences' => [ 'Глобална_подешавања' ],
