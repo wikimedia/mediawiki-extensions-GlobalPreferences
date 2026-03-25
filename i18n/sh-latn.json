@@ -6,7 +6,7 @@
 			"Aca"
 		]
 	},
-	"globalprefs-desc": "Omogućava suradnicima postavljanje globalnih podešavanja",
+	"globalprefs-desc": "Omogućava korisnicima da postavljaju globalne postavke",
 	"globalprefs-set-local-exception": "Postavi lokalni izuzetak za ovu [[Special:GlobalPreferences#$1|globalnu postavku]]",
 	"globalprefs-has-local-exception": "Ova globalna postavka ima [[Special:Preferences#$1|mjesnu iznimku na ovom wikiju]].",
 	"tooltip-globalprefs-check-label": "Napravi ovu postavku globalnom",
