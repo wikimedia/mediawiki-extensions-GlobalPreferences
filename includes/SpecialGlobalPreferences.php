@@ -9,9 +9,9 @@ use MediaWiki\Exception\PermissionsError;
 use MediaWiki\Exception\UserNotLoggedIn;
 use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\Permissions\PermissionManager;
+use MediaWiki\Specials\Forms\PreferencesFormOOUI;
 use MediaWiki\Specials\SpecialPreferences;
 use MediaWiki\User\User;
-use PreferencesFormOOUI;
 
 class SpecialGlobalPreferences extends SpecialPreferences {
 

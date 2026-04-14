@@ -2,7 +2,7 @@
 
 namespace GlobalPreferences;
 
-use PreferencesFormOOUI;
+use MediaWiki\Specials\Forms\PreferencesFormOOUI;
 
 /**
  * The GlobalPreferencesForm changes the display format, and adds section headers linking back to

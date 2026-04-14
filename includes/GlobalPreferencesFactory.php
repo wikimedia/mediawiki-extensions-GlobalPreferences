@@ -25,13 +25,14 @@ use MediaWiki\HTMLForm\Field\HTMLCheckMatrix;
 use MediaWiki\HTMLForm\Field\HTMLSelectOrOtherField;
 use MediaWiki\Language\ILanguageConverter;
 use MediaWiki\Language\Language;
+use MediaWiki\Language\LanguageNameUtils;
 use MediaWiki\Language\RawMessage;
-use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\Preferences\DefaultPreferencesFactory;
 use MediaWiki\SpecialPage\SpecialPage;
+use MediaWiki\Specials\Forms\PreferencesFormOOUI;
 use MediaWiki\Status\Status;
 use MediaWiki\Title\NamespaceInfo;
 use MediaWiki\User\CentralId\CentralIdLookup;
@@ -370,7 +371,7 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 	/**
 	 * @inheritDoc
 	 */
-	protected function saveFormData( $formData, \PreferencesFormOOUI $form, array $formDescriptor ) {
+	protected function saveFormData( $formData, PreferencesFormOOUI $form, array $formDescriptor ) {
 		if ( !$this->onGlobalPrefsPage( $form ) ) {
 			return parent::saveFormData( $formData, $form, $formDescriptor );
 		}
