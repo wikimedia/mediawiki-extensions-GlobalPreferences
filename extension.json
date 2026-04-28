@@ -11,7 +11,7 @@
 	"descriptionmsg": "globalprefs-desc",
 	"type": "specialpage",
 	"requires": {
-		"MediaWiki": ">= 1.46"
+		"MediaWiki": ">= 1.47.0"
 	},
 	"config": {
 		"GlobalPreferencesDB": {
