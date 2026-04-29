@@ -4,8 +4,9 @@
 			"Merrahtar"
 		]
 	},
-	"globalprefs-set-local-exception": "Я̄ррас-налла тэсьт тэнн [[Special:GlobalPreferences#$1|глобальнэ оа̄ссмуж]] пыйе.",
+	"globalprefs-set-local-exception": "Е̄ресь-налла тэсьт тэнн [[Special:GlobalPreferences#$1|глобальнэ оа̄ссмуж]] пыйе.",
 	"globalpreferences": "Глобальнэ оа̄ссмуж",
 	"globalprefs-info-label": "Глобальнэ оа̄ссмуж:",
-	"globalprefs-info-link": "Пый ӣжянт глобальнэ оа̄ссмужэтҍ"
+	"globalprefs-info-link": "Пый ӣжянт глобальнэ оа̄ссмужэтҍ",
+	"globalprefs-info-help": "Глобальнэ оа̄ссмужэ лыстэсьт пыййма оа̄ссмуж аллькэв пугк википроэктэнҍ о̄ннъюввэ."
 }
