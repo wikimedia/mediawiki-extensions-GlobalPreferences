@@ -546,9 +546,6 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 		$isAllowedClass = isset( $info['class'] )
 			&& in_array( $info['class'], $this->allowedClasses );
 
-		if ( $this->isAutoGlobal( $name ) ) {
-			return true;
-		}
 		return $isAllowedType || $isAllowedClass;
 	}
 
