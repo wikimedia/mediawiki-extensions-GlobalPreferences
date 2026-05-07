@@ -5,7 +5,7 @@
 		]
 	},
 	"globalprefs-desc": "Võimaldab määrata kasutajal globaalsed eelistused.",
-	"globalprefs-set-local-exception": "Määra sellele [[Special:GlobalPreferences#$1|globaalsele eelistusele]] kohalik erand.",
+	"globalprefs-set-local-exception": "Määra sellele [[Special:GlobalPreferences#$1|globaalsele eelistusele]] kohalik erand",
 	"globalprefs-has-local-exception": "Sellel globaalsel eelistusel on [[Special:Preferences#$1|siin vikis kohalik erand]].",
 	"tooltip-globalprefs-check-label": "Tee see eelistus globaalseks",
 	"globalprefs-error-header": "Tõrge",
