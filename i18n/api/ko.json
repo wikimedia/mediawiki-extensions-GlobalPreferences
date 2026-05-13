@@ -1,12 +1,16 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ykhwong"
+			"Ykhwong",
+			"Tensama0415"
 		]
 	},
 	"apihelp-globalpreferences-summary": "현재 사용자의 통합 계정 환경설정을 변경합니다.",
 	"apihelp-globalpreferences-extended-description": "현재 위키에 등록된 환경 설정만 지역적으로 변경할 수 있습니다.",
-	"apihelp-globalpreferences-param-optionname": "환경 설정의 이름은 <var>optionvalue</var>를 통해 지정된 값으로 설정해야 합니다.",
+	"apihelp-globalpreferences-param-reset": "전역 환경 설정을 초기화합니다. 모든, 혹은 <code>resetkinds</code> 매개변수 값에 따라 일부 유형의 전역 환경 설정을 제거하고 더 이상 전역이 아니도록 합니다.",
+	"apihelp-globalpreferences-param-resetkinds": "<var>reset</var> 옵션을 설정할 때 초기화할 환경 설정의 유형 목록입니다.",
+	"apihelp-globalpreferences-param-change": "변경사항 목록으로, name=value 형식으로 표기됩니다 (예: skin=vector). 값이 지정되지 않은 경우 (등호조차 없는 경우), 예: preferencename|otherpreference|..., 해당 환경 설정은 전역이 아니게 됩니다. 전달된 값에 파이프 문자(<kbd>|</kbd>)가 포함된 경우, 올바른 작동을 위해 [[Special:ApiHelp/main#main/datatypes|대체 다중 값 구분자]]를 사용하세요.",
+	"apihelp-globalpreferences-param-optionname": "<var>optionvalue</var>를 통해 지정된 값으로 설정해야 하는 환경 설정의 이름입니다.",
 	"apihelp-globalpreferences-param-optionvalue": "<var>optionname</var>에 지정된 환경 설정의 값입니다.",
 	"apihelp-globalpreferences-example-reset-one": "하나의 환경 설정을 통합 계정으로 적용되지 않게 합니다.",
 	"apihelp-globalpreferences-example-reset": "모든 환경 설정을 통합 계정으로 적용되지 않게 합니다.",
@@ -15,7 +19,15 @@
 	"apihelp-query+globalpreferences-extended-description": "통합 계정 환경 설정과 로컬 계정 환경 설정을 둘 다 검색할 수 있습니다.",
 	"apihelp-query+globalpreferences-param-prop": "포함할 환경 설정:",
 	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "통합 계정 환경 설정입니다.",
+	"apihelp-query+globalpreferences-paramvalue-prop-localoverrides": "전역 환경 설정에 대한 로컬 재정의입니다.",
 	"apierror-globalpreferences-notglobalized": "현재 사용자는 통합 계정이 아닙니다.",
-	"apihelp-globalpreferenceoverrides-summary": "현재 사용자의 전역 환경 설정의 로컬 오버라이드를 변경합니다.",
-	"apihelp-globalpreferenceoverrides-extended-description": "영향을 받는 환경 설정의 전역 값들은 무시됩니다."
+	"apihelp-globalpreferenceoverrides-summary": "현재 사용자의 전역 환경 설정의 로컬 재정의를 변경합니다.",
+	"apihelp-globalpreferenceoverrides-extended-description": "영향을 받는 환경 설정의 전역 값들은 무시됩니다.",
+	"apihelp-globalpreferenceoverrides-param-reset": "로컬 재정의를 초기화합니다. 모든, 혹은 <code>resetkinds</code> 매개변수 값에 따라 일부 유형의 로컬 재정의를 제거하고 다시 전역으로 만듭니다.",
+	"apihelp-globalpreferenceoverrides-param-resetkinds": "<var>reset</var> 옵션을 설정할 때 초기화할 재정의의 유형 목록입니다.",
+	"apihelp-globalpreferenceoverrides-param-change": "변경사항 목록으로, name=value 형식으로 표기됩니다 (예: skin=vector). 값이 지정되지 않은 경우 (등호조차 없는 경우), 예: preferencename|otherpreference|..., 해당 재정의는 제거됩니다. 전달된 값에 파이프 문자(<kbd>|</kbd>)가 포함된 경우, 올바른 작동을 위해 [[Special:ApiHelp/main#main/datatypes|대체 다중 값 구분자]]를 사용하세요.",
+	"apihelp-globalpreferenceoverrides-param-optionname": "<var>optionvalue</var>를 통해 지정된 값으로 설정해야 하는 덮어쓰기의 이름입니다.",
+	"apihelp-globalpreferenceoverrides-param-optionvalue": "<var>optionname</var>에 지정된 덮어쓰기의 값입니다.",
+	"apihelp-globalpreferenceoverrides-example-reset": "모든 로컬 재정의를 제거합니다",
+	"apihelp-globalpreferenceoverrides-example-change": "<kbd>skin</kbd> 및 <kbd>hideminor</kbd> 환경 설정에 대한 재정의를 설정하거나 변경합니다."
 }
