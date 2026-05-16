@@ -23,6 +23,11 @@ $specialPageAliases['arz'] = [
 	'GlobalPreferences' => [ 'تفضيلات_عامه' ],
 ];
 
+/** Azerbaijani (azərbaycanca) */
+$specialPageAliases['az'] = [
+	'GlobalPreferences' => [ 'QlobalNizamlamalar' ],
+];
+
 /** Western Balochi (بلوچی رخشانی) */
 $specialPageAliases['bgn'] = [
 	'GlobalPreferences' => [ 'سراسرین_تنزیمات' ],
@@ -103,6 +108,11 @@ $specialPageAliases['pt'] = [
 	'GlobalPreferences' => [ 'Preferências_globais' ],
 ];
 
+/** Russian (русский) */
+$specialPageAliases['ru'] = [
+	'GlobalPreferences' => [ 'Глобальные_настройки' ],
+];
+
 /** Slovak (slovenčina) */
 $specialPageAliases['sk'] = [
 	'GlobalPreferences' => [ 'GlobálneNastavenia' ],
@@ -121,6 +131,11 @@ $specialPageAliases['sr-el'] = [
 /** Swedish (svenska) */
 $specialPageAliases['sv'] = [
 	'GlobalPreferences' => [ 'Globala_inställningar' ],
+];
+
+/** Turkish (Türkçe) */
+$specialPageAliases['tr'] = [
+	'GlobalPreferences' => [ 'KüreselTercihler' ],
 ];
 
 /** Ukrainian (українська) */
