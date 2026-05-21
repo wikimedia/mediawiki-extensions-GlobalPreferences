@@ -4,5 +4,18 @@
 			"AhmedG612"
 		]
 	},
-	"globalprefs-info-label": "Dooqyada caalamiga ah:"
+	"globalprefs-desc": "Waxay u oggolaanaysaa isticmaalayaasha inay dejiyaan dooqyo caalami ah",
+	"globalprefs-set-local-exception": "U samee ka reebis maxalli ah [[Special:GlobalPreferences#$1|dookh caalami ah]].",
+	"globalprefs-has-local-exception": "Dookhan caalamiga ah wuxuu leeyahay [[Special:Preferences#$1|ka reebis maxalli ah oo ku yaal wiki-kan]].",
+	"tooltip-globalprefs-check-label": "Ka dhig dejintan mid caalami ah",
+	"globalprefs-error-header": "Khalad",
+	"globalprefs-notglobal": "Koontadaada ma aha koonto caalami ah, mana dejin karto dooqyo caalami ah.",
+	"globalpreferences": "Dooqyada caalamiga ah",
+	"globalprefs-info-label": "Dooqyada caalamiga ah:",
+	"globalprefs-info-link": "Deji dooqyadaada caalamiga ah",
+	"globalprefs-info-help": "Dooqyada lagu dejiyo bogga dooqyada caalamiga ah waxay ka shaqayn doonaan dhammaan wiki-yada.",
+	"globalprefs-reset-intro": "Waxaad isticmaali kartaa boggan si aad u damiso dhammaan dooqyada caalamiga ah ee wiki-yada oo dhan una laabato dooqyadaada maxalliga ah. Tani saameyn kuma yeelanayso dooqyada maxalliga ah ee wiki kasta. Tani lama noqon karo.",
+	"globalprefs-restoreprefs": "Ka saar dhammaan dooqyada caalamiga ah (dhammaan qaybaha)",
+	"globalprefs-select-all": "Daar ama dami dhammaan sanduuqyada calaamadaynta",
+	"globalprefs-col-header": "Dooro xulashooyinka hoose si ay u noqdaan caalami"
 }
