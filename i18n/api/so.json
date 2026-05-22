@@ -1,0 +1,32 @@
+{
+	"@metadata": {
+		"authors": [
+			"AhmedG612"
+		]
+	},
+	"apihelp-globalpreferences-summary": "Beddel dooqyada caalamiga ah ee isticmaalaha hadda.",
+	"apihelp-globalpreferences-extended-description": "Kaliya dooqyada ku diiwaangashan wiki-kan ayaa si maxalli ah loo beddeli karaa.",
+	"apihelp-globalpreferences-param-reset": "Dib u habee dooqyada caalamiga ah. Waxay tirtiraysaa dhammaan, ama iyadoo ku xiran qiimaha cabbirka <code>resetkinds</code>, qaar ka mid ah noocyada dooqyada caalamiga ah, waxayna ka dhigaysaa kuwo aan caalami ahayn.",
+	"apihelp-globalpreferences-param-resetkinds": "Liiska noocyada dooqyada ee la dib u habaynayo marka xulashada <var>reset</var> la dejiyo.",
+	"apihelp-globalpreferences-param-change": "Liiska isbeddelada, oo loo qaabeeyey magac=qiime (tusaale skin=vector). Haddii aan qiime la bixin (xitaa calaamadda \"=\" la'aanteed), tusaale preferencename|otherpreference|..., dooqga waxaa laga dhigi doonaa mid aan caalami ahayn. Haddii qiime kasta oo la gudbiyo uu ka kooban yahay calaamadda tuubada (<kbd>|</kbd>), isticmaal [[Special:ApiHelp/main#main/datatypes|kala-soocaha qiimayaal badan ee beddelka ah]] si uu si sax ah u shaqeeyo.",
+	"apihelp-globalpreferences-param-optionname": "Magaca dooqga ee la dejinayo si uu u noqdo qiimaha uu bixiyo <var>optionvalue</var>.",
+	"apihelp-globalpreferences-param-optionvalue": "Qiimaha dooqga ee lagu qeexay <var>optionname</var>.",
+	"apihelp-globalpreferences-example-reset-one": "Ka dhig hal dooq mid aan caalami ahayn.",
+	"apihelp-globalpreferences-example-reset": "Ka dhig dhammaan dooqyada kuwo aan caalami ahayn.",
+	"apihelp-globalpreferences-example-change": "Beddel dooqyada <kbd>skin</kbd> iyo <kbd>hideminor</kbd>.",
+	"apihelp-query+globalpreferences-summary": "Soo hel dooqyada caalamiga ah ee isticmaalaha hadda.",
+	"apihelp-query+globalpreferences-extended-description": "Waxay soo celin kartaa dooqyada caalamiga ah iyo sidoo kale ka-reebitaannada maxalliga ah ee ku saabsan.",
+	"apihelp-query+globalpreferences-param-prop": "Dooqyada la rabo in lagu daro:",
+	"apihelp-query+globalpreferences-paramvalue-prop-preferences": "Dooqyada caalamiga ah.",
+	"apihelp-query+globalpreferences-paramvalue-prop-localoverrides": "Ka reebitaannada maxalliga ah ee dooqyada caalamiga ah.",
+	"apierror-globalpreferences-notglobalized": "Isticmaalaha hadda ma aha mid caalami ah.",
+	"apihelp-globalpreferenceoverrides-summary": "Beddel ka-reebitaannada maxalliga ah ee dooqyada caalamiga ah ee isticmaalaha hadda.",
+	"apihelp-globalpreferenceoverrides-extended-description": "Qiimayaasha caalamiga ah ee dooqyada la saameeyay waa la iska indhatiri doonaa.",
+	"apihelp-globalpreferenceoverrides-param-reset": "Dib u habee ka-reebitaannada maxalliga ah. Waxay tirtiraysaa dhammaan, ama iyadoo ku xiran qiimaha cabbirka <code>resetkinds</code>, qaar ka mid ah noocyada ka-reebitaannada maxalliga ah, waxayna mar kale ka dhigaysaa kuwo caalami ah.",
+	"apihelp-globalpreferenceoverrides-param-resetkinds": "Liiska noocyada ka-reebitaannada ee la dib u habaynayo marka xulashada <var>reset</var> la dejiyo.",
+	"apihelp-globalpreferenceoverrides-param-change": "Liiska isbeddelada, oo loo qaabeeyey magac=qiime (tusaale. skin=vector). Haddii aan qiime la bixin (xitaa calaamadda \"=\" la'aanteed), \ntusaale., preferencename|otherpreference|..., ka-reebitaanka waa la saari doonaa. Haddii qiime kasta oo la gudbiyo uu ka kooban yahay calaamadda tuubada (<kbd>|</kbd>), isticmaal [[Special:ApiHelp/main#main/datatypes|kala-soocaha qiimayaal badan ee beddelka ah]] si uu si sax ah u shaqeeyo.",
+	"apihelp-globalpreferenceoverrides-param-optionname": "Magaca ka reebitaanka ee la dejinayo si uu u noqdo qiimaha uu bixiyo <var>optionvalue</var>.",
+	"apihelp-globalpreferenceoverrides-param-optionvalue": "Qiimaha ka-reebitaanka ee lagu qeexay <var>optionname</var>.",
+	"apihelp-globalpreferenceoverrides-example-reset": "Ka saar dhammaan ka reebitaannada maxalliga ah.",
+	"apihelp-globalpreferenceoverrides-example-change": "Deji ama beddel ka-reebitaannada dooqyada <kbd>skin</kbd> iyo <kbd>hideminor</kbd>."
+}
