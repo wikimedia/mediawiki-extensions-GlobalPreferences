@@ -459,7 +459,9 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 		}
 		// append auto globals to the save
 		foreach ( $this->autoGlobals as $name ) {
-			$prefs[ $name ] = $formData[$name];
+			if ( isset( $formData[$name] ) ) {
+				$prefs[ $name ] = $formData[$name];
+			}
 		}
 		$this->setGlobalPreferences( $user, $prefs, $form->getContext(), $matricesToClear );
 
