@@ -40,7 +40,8 @@
 		"GlobalPreferencesAlias": "GlobalPreferences.alias.php"
 	},
 	"AutoloadNamespaces": {
-		"GlobalPreferences\\": "includes/"
+		"GlobalPreferences\\": "includes/",
+		"GlobalPreferences\\Maintenance\\": "maintenance/"
 	},
 	"Hooks": {
 		"SaveUserOptions": "Hooks",
