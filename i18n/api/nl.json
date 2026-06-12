@@ -2,11 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Mainframe98",
-			"McDutchie"
+			"McDutchie",
+			"Siebrand"
 		]
 	},
 	"apihelp-globalpreferences-summary": "De globale voorkeuren van de huidige gebruiker wijzigen.",
-	"apihelp-globalpreferences-extended-description": "Alleen instellingen die voor de huidige wiki geregistreerd zijn kunnen lokaal veranderd worden.",
+	"apihelp-globalpreferences-extended-description": "Alleen instellingen die voor de huidige wiki geregistreerd zijn kunnen lokaal gewijzigd worden.",
 	"apihelp-globalpreferences-param-reset": "De globale voorkeuren opnieuw instellen. Hiermee verwijdert u of alle, of de door de parameter <code>resetkinds</code> aangegeven typen globale voorkeuren, waardoor die niet meer globaal zijn.",
 	"apihelp-globalpreferences-param-resetkinds": "Lijst met typen van opnieuw in te stellen voorkeuren wanneer de optie <var>reset</var> is aangegeven.",
 	"apihelp-globalpreferences-param-change": "Lijst met wijzigingen, opgemaakt als <kbd>naam=waarde</kbd> (bv. <kbd>skin=vector</kbd>). Als er geen waarde wordt opgegeven (ook geen isgelijkteken), bv. <kbd>voorkeurnaam|anderevoorkeur|...</kbd>, dan wordt de voorkeur niet-globaal gemaakt. Als een opgegeven waarde een sluisteken bevat (<kbd>|</kbd>), gebruik dan het [[Special:ApiHelp/main#main/datatypes|alternatieve scheidingsteken voor meerdere waarden]] voor een juiste werking.",
