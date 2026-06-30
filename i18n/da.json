@@ -4,11 +4,13 @@
 			"Christian List",
 			"Saederup92",
 			"Sarrus",
+			"Steenth",
 			"Weblars"
 		]
 	},
 	"globalprefs-desc": "Giver brugerne mulighed for at angive globale indstillinger",
 	"globalprefs-set-local-exception": "Sæt en lokal undtagelse for denne [[Special:GlobalPreferences#$1|globale indstilling]].",
+	"globalprefs-has-local-exception": "Denne globale indstilling har en [[Special:Preferences#$1|lokal undtagelse på denne wiki]].",
 	"tooltip-globalprefs-check-label": "Gør denne indstilling global",
 	"globalprefs-error-header": "Fejl",
 	"globalprefs-notglobal": "Din konto er ikke en global konto og kan ikke angive globale indstillinger.",
@@ -16,6 +18,8 @@
 	"globalprefs-info-label": "Globale indstillinger:",
 	"globalprefs-info-link": "Angiv dine globale indstillinger",
 	"globalprefs-info-help": "Indstillinger som er angivet på den globale indstillingsside vil gælde for alle wikier.",
+	"globalprefs-reset-intro": "Du kan bruge denne side til at deaktivere alle globale indstillinger på alle wikier og vende tilbage til dine lokale indstillinger. Dette påvirker ikke nogen lokale wiki-præferencer. Dette kan ikke fortrydes.",
 	"globalprefs-restoreprefs": "Fjern alle globale indstillinger (i alle sektioner)",
+	"globalprefs-select-all": "Slå alle afkrydsningsfelter til eller fra",
 	"globalprefs-col-header": "Vælg hvilke indstillinger som skal være globale"
 }
