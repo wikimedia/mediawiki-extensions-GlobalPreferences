@@ -1,0 +1,21 @@
+{
+	"@metadata": {
+		"authors": [
+			"Alhadis"
+		]
+	},
+	"globalprefs-desc": "Allows users to set global preferences",
+	"globalprefs-set-local-exception": "Set a local exception for this [[Special:GlobalPreferences#$1|global preference]].",
+	"globalprefs-has-local-exception": "This global preference has a [[Special:Preferences#$1|local exception on this wiki]].",
+	"tooltip-globalprefs-check-label": "Make this setting global",
+	"globalprefs-error-header": "Error",
+	"globalprefs-notglobal": "Your account is not a global account and cannot set global preferences.",
+	"globalpreferences": "Global preferences",
+	"globalprefs-info-label": "Global preferences:",
+	"globalprefs-info-link": "Set your global preferences",
+	"globalprefs-info-help": "Preferences set via the global preferences page will apply to all wikis.",
+	"globalprefs-reset-intro": "You can use this page to disable all global preferences on all wikis and return to your local preferences. This does not affect any local wiki preferences. This cannot be undone.",
+	"globalprefs-restoreprefs": "Remove all global preferences (in all sections)",
+	"globalprefs-select-all": "Toggle all checkboxes on or off",
+	"globalprefs-col-header": "Select options below to be global"
+}
