@@ -2,14 +2,22 @@
 	"@metadata": {
 		"authors": [
 			"Luky001",
-			"Teslaton"
+			"Teslaton",
+			"Wizzard"
 		]
 	},
 	"globalprefs-desc": "Umožňuje používateľov nastaviť si globálne nastavenia",
+	"globalprefs-set-local-exception": "Nastaviť lokálnu výnimku pre túto [[Special:GlobalPreferences#$1|globálnu predvoľbu]].",
+	"globalprefs-has-local-exception": "Táto globálna predvoľba má [[Special:Preferences#$1|lokálnu výnimku na tejto wiki]].",
+	"tooltip-globalprefs-check-label": "Nastaviť toto nastavenie ako globálne",
+	"globalprefs-error-header": "Chyba",
+	"globalprefs-notglobal": "Váš účet nie je globálny účet, a preto nemôže nastavovať globálne predvoľby.",
 	"globalpreferences": "Globálne nastavenia",
 	"globalprefs-info-label": "Globálne nastavenia:",
 	"globalprefs-info-link": "Prispôsobiť globálne nastavenia",
 	"globalprefs-info-help": "Nastavenia zvolené na stránke globálnych nastavení budú platiť na všetkých wiki.",
+	"globalprefs-reset-intro": "Na tejto stránke môžete vypnúť všetky globálne predvoľby na všetkých wiki a vrátiť sa k svojim lokálnym predvoľbám. Lokálne predvoľby jednotlivých wiki to neovplyvní. Túto akciu nemožno vrátiť späť.",
 	"globalprefs-restoreprefs": "Odstrániť všetky globálne nastavenia (vo všetkých sekciách)",
+	"globalprefs-select-all": "Zapnúť alebo vypnúť všetky zaškrtávacie polia",
 	"globalprefs-col-header": "Nižšie vyberte nastavenia, ktoré majú byť globálne"
 }
