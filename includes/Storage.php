@@ -7,7 +7,6 @@
 namespace GlobalPreferences;
 
 use MediaWiki\MediaWikiServices;
-use Wikimedia\LightweightObjectStore\ExpirationAwareness;
 use Wikimedia\ObjectCache\WANObjectCache;
 use Wikimedia\Rdbms\IDatabase;
 use Wikimedia\Rdbms\IDBAccessObject;
@@ -24,9 +23,6 @@ class Storage {
 
 	/** Update this constant when making incompatible changes to caching */
 	private const CACHE_VERSION = 1;
-
-	/** Cache lifetime */
-	private const CACHE_TTL = ExpirationAwareness::TTL_WEEK;
 
 	/** Instructs preference loading code to load the preferences from cache directly */
 	public const SKIP_CACHE = true;
@@ -53,12 +49,11 @@ class Storage {
 			return $this->loadFromDB();
 		}
 
-		$cache = $this->getCache();
-		$key = $this->getCacheKey();
-
-		return $cache->getWithSetCallback( $key, self::CACHE_TTL,
-			fn ( $oldValue, &$ttl ) => $this->loadFromDB()
-		);
+		return $this->getCache()->buildGetWithSetCallback()
+			->rawKey( $this->getCacheKey() )
+			->keepForAWeek()
+			->callback( fn () => $this->loadFromDB() )
+			->fetch();
 	}
 
 	/**
@@ -127,9 +122,8 @@ class Storage {
 
 		$this->replaceAndDelete( $save, $delete );
 
-		$key = $this->getCacheKey();
 		// Because we don't have the full preferences, just clear the cache
-		$this->getCache()->delete( $key );
+		$this->getCache()->delete( $this->getCacheKey() );
 	}
 
 	/**
@@ -172,8 +166,7 @@ class Storage {
 				->execute();
 		}
 		if ( $rows || $deletions ) {
-			$key = $this->getCacheKey();
-			$this->getCache()->delete( $key );
+			$this->getCache()->delete( $this->getCacheKey() );
 		}
 	}
 
@@ -192,8 +185,7 @@ class Storage {
 			->where( $conds )
 			->caller( __METHOD__ )
 			->execute();
-		$key = $this->getCacheKey();
-		$this->getCache()->delete( $key );
+		$this->getCache()->delete( $this->getCacheKey() );
 	}
 
 	/**
