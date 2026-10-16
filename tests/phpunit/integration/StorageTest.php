@@ -110,4 +110,28 @@ class StorageTest extends MediaWikiIntegrationTestCase {
 		);
 	}
 
+	/**
+	 * @covers \GlobalPreferences\Storage::clearCache()
+	 * @covers \GlobalPreferences\Storage::load()
+	 */
+	public function testClearCache() {
+		$storage = $this->makeMock()
+			->onlyMethods( [ 'loadFromDB' ] )
+			->getMock();
+		$storage->expects( self::exactly( 2 ) )
+			->method( 'loadFromDB' )
+			->willReturn( [ 'foo' => 'bar' ] );
+
+		// first load is from the DB and writes to cache
+		self::assertEquals( [ 'foo' => 'bar' ], $storage->load() );
+
+		// second load reads from cache
+		self::assertEquals( [ 'foo' => 'bar' ], $storage->load() );
+
+		$storage->clearCache();
+
+		// reads from the DB again after cache has been cleared
+		self::assertEquals( [ 'foo' => 'bar' ], $storage->load() );
+	}
+
 }

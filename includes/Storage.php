@@ -123,7 +123,7 @@ class Storage {
 		$this->replaceAndDelete( $save, $delete );
 
 		// Because we don't have the full preferences, just clear the cache
-		$this->getCache()->delete( $this->getCacheKey() );
+		$this->clearCache();
 	}
 
 	/**
@@ -166,7 +166,7 @@ class Storage {
 				->execute();
 		}
 		if ( $rows || $deletions ) {
-			$this->getCache()->delete( $this->getCacheKey() );
+			$this->clearCache();
 		}
 	}
 
@@ -185,6 +185,13 @@ class Storage {
 			->where( $conds )
 			->caller( __METHOD__ )
 			->execute();
+		$this->clearCache();
+	}
+
+	/**
+	 * Clear the cached preferences for the current user.
+	 */
+	public function clearCache(): void {
 		$this->getCache()->delete( $this->getCacheKey() );
 	}
 
