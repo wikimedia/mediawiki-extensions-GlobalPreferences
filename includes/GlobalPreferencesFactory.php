@@ -318,8 +318,9 @@ class GlobalPreferencesFactory extends DefaultPreferencesFactory {
 			$allPrefs[$globalPrefKey] = [
 				'type' => 'toggle',
 				// Make the tooltip and the label the same, because the label is normally hidden.
-				'tooltip' => 'globalprefs-check-label',
-				'label-message' => 'tooltip-globalprefs-check-label',
+				'tooltip' => $autoGlobal ? 'globalprefs-check-label-auto' : 'globalprefs-check-label',
+				'label-message' =>
+					$autoGlobal ? 'tooltip-globalprefs-check-label-auto' : 'tooltip-globalprefs-check-label',
 				// For auto globals it is marked as checked but due to `-auto` suffix it will not save
 				'default' => $autoGlobal || $isGlobal,
 				'section' => $def['section'],

@@ -9,6 +9,7 @@
 	"globalprefs-set-local-exception": "Set a local exception for this [[Special:GlobalPreferences#$1|global preference]].",
 	"globalprefs-has-local-exception": "This global preference has a [[Special:Preferences#$1|local exception on this wiki]].",
 	"tooltip-globalprefs-check-label": "Make this setting global",
+	"tooltip-globalprefs-check-label-auto": "This setting is always global",
 	"globalprefs-error-header": "Error",
 	"globalprefs-notglobal": "Your account is not a global account and cannot set global preferences.",
 	"globalpreferences": "Global preferences",

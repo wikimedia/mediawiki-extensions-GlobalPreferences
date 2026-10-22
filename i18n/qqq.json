@@ -11,6 +11,7 @@
 	"globalprefs-set-local-exception": "Label for the checkbox below a globally-set preference, inviting user to set a local exception for it. $1 is the fragment identifier for the current preferences section, with which to link to the correct section on Special:GlobalPreferences.",
 	"globalprefs-has-local-exception": "Help text on a global preference that has a local exception. $1 is the fragment identifier for the current preferences section, with which to link to the correct section on Special:Preferences.",
 	"tooltip-globalprefs-check-label": "The tooltip for the checkboxes that enable preferences globally.",
+	"tooltip-globalprefs-check-label-auto": "The tooltip for the disabled checked checkboxes for preferences which are always enabled globally. See {{msg-mw|tooltip-globalprefs-check-label}}",
 	"globalprefs-error-header": "Page title for error message.\n{{Identical|Error}}",
 	"globalprefs-notglobal": "Error message a user sees if they do not have a global account.",
 	"globalpreferences": "{{doc-special|GlobalPreferences}}",
