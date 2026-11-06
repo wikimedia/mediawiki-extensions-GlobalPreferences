@@ -3,6 +3,7 @@
 		"authors": [
 			"A2093064",
 			"Diskdance",
+			"GuoPC",
 			"Hanyanbo98",
 			"Liuxinyu970226",
 			"SolidBlock",
@@ -17,6 +18,7 @@
 	"globalprefs-set-local-exception": "为此[[Special:GlobalPreferences#$1|全域参数设置]]设置本地例外。",
 	"globalprefs-has-local-exception": "此全域参数设置[[Special:Preferences#$1|在该wiki有本地例外]]。",
 	"tooltip-globalprefs-check-label": "将此设置全域化",
+	"tooltip-globalprefs-check-label-auto": "此设置始终全域",
 	"globalprefs-error-header": "错误",
 	"globalprefs-notglobal": "您的账号不是一个全域账号，因此不能设置全域参数设置。",
 	"globalpreferences": "全域参数设置",

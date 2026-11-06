@@ -10,6 +10,7 @@
 	"globalprefs-set-local-exception": "Eng lokal Ausnam fir dës  [[Special:GlobalPreferences#$1|global Astellung]] festleeën.",
 	"globalprefs-has-local-exception": "Dës global Astellung huet eng [[Special:Preferences#$1|lokal Ausnam op dëser Wiki]].",
 	"tooltip-globalprefs-check-label": "Dës Astellung global maachen",
+	"tooltip-globalprefs-check-label-auto": "Dës Astellung ass ëmmer global",
 	"globalprefs-error-header": "Feeler",
 	"globalprefs-notglobal": "Äre Benotzerkont ass kee globale Benotzerkont a ka keng global Astellunge festleeën.",
 	"globalpreferences": "Global Astellungen",

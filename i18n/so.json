@@ -8,6 +8,7 @@
 	"globalprefs-set-local-exception": "U samee ka reebis maxalli ah [[Special:GlobalPreferences#$1|dookh caalami ah]].",
 	"globalprefs-has-local-exception": "Dookhan caalamiga ah wuxuu leeyahay [[Special:Preferences#$1|ka reebis maxalli ah oo ku yaal wiki-kan]].",
 	"tooltip-globalprefs-check-label": "Ka dhig dejintan mid caalami ah",
+	"tooltip-globalprefs-check-label-auto": "Dejintani mar walba waa mid guud",
 	"globalprefs-error-header": "Khalad",
 	"globalprefs-notglobal": "Koontadaada ma aha koonto caalami ah, mana dejin karto dooqyo caalami ah.",
 	"globalpreferences": "Dooqyada caalamiga ah",
