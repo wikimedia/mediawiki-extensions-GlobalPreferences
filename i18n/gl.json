@@ -12,6 +12,7 @@
 	"globalprefs-set-local-exception": "Definir unha excepción local para esta [[Special:GlobalPreferences#$1|preferencia global]].",
 	"globalprefs-has-local-exception": "Esta preferencia global ten unha [[Special:Preferences#$1|excepción local neste wiki]].",
 	"tooltip-globalprefs-check-label": "Facer que esta configuración sexa global",
+	"tooltip-globalprefs-check-label-auto": "Esta configuración sempre é global",
 	"globalprefs-error-header": "Erro",
 	"globalprefs-notglobal": "A túa conta non é global e non pode establecer preferencias globais.",
 	"globalpreferences": "Preferencias globais",

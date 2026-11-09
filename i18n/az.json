@@ -14,6 +14,7 @@
 	"globalprefs-set-local-exception": "Bu [[Special:GlobalPreferences#$1|qlobal parametr]] üçün yerli bir istisna təyin edin.",
 	"globalprefs-has-local-exception": "Bu qlobal nizamlamanın [[Special:Preferences#$1|bu vikidə lokal istisnası]] var.",
 	"tooltip-globalprefs-check-label": "Bu parametri qlobal edin",
+	"tooltip-globalprefs-check-label-auto": "Bu parametr həmişə qlobaldır",
 	"globalprefs-error-header": "Xəta",
 	"globalprefs-notglobal": "Hesabınız qlobal hesab deyil və qlobal nizamlamalar təyin edə bilməz.",
 	"globalpreferences": "Qlobal nizamlamalar",

@@ -13,6 +13,7 @@
 	"globalprefs-set-local-exception": "Aseta paikallinen poikkeus tälle [[Special:GlobalPreferences#$1|järjestelmänlaajuiselle asetukselle]].",
 	"globalprefs-has-local-exception": "Tällä järjestelmänlaajuisella asetuksella [[Special:Preferences#$1|on paikallinen poikkeus tässä wikissä]].",
 	"tooltip-globalprefs-check-label": "Tee tästä asetuksesta järjestelmänlaajuinen",
+	"tooltip-globalprefs-check-label-auto": "Tämä asetus on aina järjestelmänlaajuinen",
 	"globalprefs-error-header": "Virhe",
 	"globalprefs-notglobal": "Tunnuksesi ei ole järjestelmänlaajuinen tunnus, joten siihen ei voi asettaa järjestelmänlaajuisia asetuksia.",
 	"globalpreferences": "Järjestelmänlaajuiset asetukset",

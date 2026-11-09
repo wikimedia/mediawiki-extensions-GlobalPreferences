@@ -10,6 +10,7 @@
 	"globalprefs-set-local-exception": "اضبط استثناء محليا لهذا [[Special:GlobalPreferences#$1|التفضيل العالمي]].",
 	"globalprefs-has-local-exception": "هذا التفضيل العالمي له [[Special:Preferences#$1|استثناء محلي على هذه الويكي]].",
 	"tooltip-globalprefs-check-label": "اجعل هذا الإعداد عالميا",
+	"tooltip-globalprefs-check-label-auto": "هذا الإعداد يكون دائمًا عامًا",
 	"globalprefs-error-header": "خطأ",
 	"globalprefs-notglobal": "حسابك ليس حسابا عالميا ولا يمكنه ضبط التفضيلات العالمية.",
 	"globalpreferences": "تفضيلات عالمية",

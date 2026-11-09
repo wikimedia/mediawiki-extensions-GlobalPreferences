@@ -9,6 +9,7 @@
 	"globalprefs-set-local-exception": "Постави месен исклучок за ова [[Special:GlobalPreferences#$1|глобално нагодување]].",
 	"globalprefs-has-local-exception": "Оваа глобална поставка има [[Special:Preferences#$1|месен исклучок на ова вики]].",
 	"tooltip-globalprefs-check-label": "Направи ја поставкава глобална",
+	"tooltip-globalprefs-check-label-auto": "Оваа поставка е секогаш глобална",
 	"globalprefs-error-header": "Грешка",
 	"globalprefs-notglobal": "Сметката не ви е глобална и затоа не можете да задавате глобални нагодувања.",
 	"globalpreferences": "Глобални нагодувања",
