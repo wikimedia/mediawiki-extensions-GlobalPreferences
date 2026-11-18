@@ -11,7 +11,7 @@
 	"descriptionmsg": "globalprefs-desc",
 	"type": "wikifamily",
 	"requires": {
-		"MediaWiki": ">= 1.47.0"
+		"MediaWiki": ">= 1.48.0"
 	},
 	"config": {
 		"GlobalPreferencesDB": {
