@@ -9,6 +9,7 @@
 	"globalprefs-set-local-exception": "د دې  [[Special:GlobalPreferences#$1|ټوليز غوره‌توب]] لپاره ځايي استثنا اوڼل.",
 	"globalprefs-has-local-exception": "دا ټوليز غوره‌توب په [[Special:Preferences#$1|دې ويکي کې يو ځايي استثنا لري]].",
 	"tooltip-globalprefs-check-label": "دا اوڼنې ټوليزې وگرځوئ",
+	"tooltip-globalprefs-check-label-auto": "دا اوڼنه تل ټوليزه وي",
 	"globalprefs-error-header": "تېروتنه",
 	"globalprefs-notglobal": "ستاسې گڼون يو ټوليز گڼون نه دی او نشي کولی چې ټوليز غوره‌توبونه وټاکي.",
 	"globalpreferences": "ټوليز غوره‌توبونه",
